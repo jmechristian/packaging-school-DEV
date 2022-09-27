@@ -16,10 +16,10 @@ export const navSlice = createSlice({
       state.mobileMenuOpen = false;
     },
     showSearch: (state) => {
-      state.showSearch = true;
+      state.searchOpen = true;
     },
     closeSearch: (state) => {
-      state.showSearch = false;
+      state.searchOpen = false;
     },
   },
 });

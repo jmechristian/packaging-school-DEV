@@ -4,6 +4,10 @@
   html {
     @apply text-zinc-900;
   }
+
+  body {
+    @apply bg-dark;
+  }
 }
 
 @tailwind components;
