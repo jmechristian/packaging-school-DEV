@@ -7,7 +7,7 @@ import {
 
 const Header = () => {
   return (
-    <header className='w-full hidden lg:flex justify-center absolute top-0 left-0 px-4 sm:px-6 md:px-8'>
+    <header className='w-full hidden lg:flex justify-center px-4 sm:px-6 md:px-8'>
       <div className='w-full max-w-6xl h-28 text-white flex justify-between items-center'>
         <div className='flex items-center'>
           <div className='w-48 mr-6'>
