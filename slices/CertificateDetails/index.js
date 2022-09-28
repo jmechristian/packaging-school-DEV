@@ -5,14 +5,14 @@ import { CheckBadgeIcon } from '@heroicons/react/20/solid';
 const CertificateDetails = ({ slice }) => (
   <section className='container__inner mt-16 flex flex-col lg:flex-row justify-between items-center gap-8 w-full md:w-4/5 lg:w-full'>
     <div className='flex flex-col gap-6 lg:gap-8 w-full lg:w-7/12'>
-      <div className='font-extrabold text-3xl lg:text-4xl'>
+      <div className='font-extrabold text-3xl lg:text-5xl'>
         {slice.primary.headline ? (
           <PrismicRichText field={slice.primary.headline} />
         ) : (
           <h2>Template slice, update me!</h2>
         )}
       </div>
-      <div className='text-neutral-600 text-base lg:text-lg leading-relaxed'>
+      <div className='text-neutral-600 text-lg leading-relaxed'>
         {slice.primary.description ? (
           <PrismicRichText field={slice.primary.description} />
         ) : (
@@ -24,7 +24,7 @@ const CertificateDetails = ({ slice }) => (
       {slice?.items?.map((item, i) => (
         <div
           key={i}
-          className='text-neutral-600 text-base lg:text-lg font-medium border-b py-3 border-gray-500 flex justify-start items-center gap-2'
+          className='text-neutral-600 text-lg font-medium border-b py-3 border-gray-500 flex justify-start items-center gap-2'
         >
           <CheckBadgeIcon className='w-6 h-6 fill-base-brand' />
           <PrismicRichText field={item.icon_text} />

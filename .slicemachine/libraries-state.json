@@ -59,6 +59,113 @@
         },
         "screenshotPaths": {}
       },
+      "certificate_benefits": {
+        "library": "slices",
+        "id": "certificate_benefits",
+        "name": "CertificateBenefits",
+        "description": "CertificateBenefits",
+        "model": {
+          "id": "certificate_benefits",
+          "type": "SharedSlice",
+          "name": "CertificateBenefits",
+          "description": "CertificateBenefits",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "CertificateBenefits",
+              "primary": {
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "heading1",
+                    "label": "Title",
+                    "placeholder": "This is where it all begins..."
+                  }
+                },
+                "description": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "paragraph",
+                    "label": "Description",
+                    "placeholder": "A nice description of your feature"
+                  }
+                }
+              },
+              "items": {
+                "icon": {
+                  "type": "Image",
+                  "config": {
+                    "label": "icon",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                },
+                "benefit_text": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "benefit text",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {
+                "icon": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": null,
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1587905069134-008460d7a636"
+                },
+                "benefit_text": [
+                  {
+                    "type": "paragraph",
+                    "text": "Magna eu consequat sint ex deserunt minim duis in excepteur reprehenderit dolor proident. Excepteur sint deserunt velit ad consequat ullamco laborum mollit aliqua cillum cupidatat non. Labore non occaecat ullamco mollit ullamco nostrud duis sint aliqua labore.",
+                    "spans": []
+                  }
+                ]
+              }
+            ],
+            "primary": {
+              "title": [
+                {
+                  "type": "heading1",
+                  "text": "Apart",
+                  "spans": []
+                }
+              ],
+              "description": [
+                {
+                  "type": "paragraph",
+                  "text": "Quis consectetur in culpa nulla excepteur voluptate deserunt.",
+                  "spans": []
+                }
+              ]
+            },
+            "slice_type": "certificate_benefits"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {}
+      },
       "certificate_details": {
         "library": "slices",
         "id": "certificate_details",
