@@ -3,6 +3,8 @@ import Head from 'next/head';
 import Header from '../navigation/Header';
 import Footer from '../navigation/Footer';
 import MobileHeader from '../navigation/MobileHeader';
+import MobileMenu from '../navigation/MobileMenu';
+import SearchMenu from '../navigation/SearchMenu';
 
 const Layout = ({ children }) => {
   return (
@@ -20,6 +22,8 @@ const Layout = ({ children }) => {
       </Head>
       <Header />
       <MobileHeader />
+      <SearchMenu />
+      <MobileMenu />
       {children}
       <Footer />
     </>

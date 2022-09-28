@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { XMarkIcon, ArrowRightCircleIcon } from '@heroicons/react/24/outline';
 import { useDispatch, useSelector } from 'react-redux';
 import { closeSearch } from '../../store/navigation/navigationSlice';
-import Image from 'next/image';
 
 const SearchMenu = () => {
   const [searchText, setSearchText] = useState('');

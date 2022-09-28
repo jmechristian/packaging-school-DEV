@@ -1,8 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
 import { useDispatch, useSelector } from 'react-redux';
-import { showSearch } from '../../store/navigation/navigationSlice';
-import SearchMenu from './SearchMenu';
+import {
+  showSearch,
+  showMobileMenu,
+} from '../../store/navigation/navigationSlice';
 import {
   EllipsisVerticalIcon,
   MagnifyingGlassIcon,
@@ -13,9 +15,9 @@ const MobileHeader = () => {
 
   return (
     <header className='w-full relative block lg:hidden drop-shadow-lg'>
-      <section className='h-20 w-full pt-4 px-4 sm:px-6 md:px-8'>
+      <section className='h-20 w-full pt-4 px-6 md:px-8'>
         <div className='w-full h-full flex justify-between items-center'>
-          <div className='w-48'>
+          <div className='w-44'>
             <Image
               src='https://res.cloudinary.com/dno7xxmmy/image/upload/v1664295580/pschool/logo_white_krqpbc.svg'
               alt='Packaging School'
@@ -29,11 +31,13 @@ const MobileHeader = () => {
               className='w-6 h-6 stroke-base-brand'
               onClick={() => dispatch(showSearch())}
             />
-            <EllipsisVerticalIcon className='w-6 h-6 stroke-base-brand' />
+            <EllipsisVerticalIcon
+              className='w-6 h-6 stroke-base-brand'
+              onClick={() => dispatch(showMobileMenu())}
+            />
           </div>
         </div>
       </section>
-      <SearchMenu />
     </header>
   );
 };

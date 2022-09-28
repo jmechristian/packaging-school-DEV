@@ -1,4 +1,6 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { showSearch } from '../../store/navigation/navigationSlice';
 import Image from 'next/image';
 import {
   MagnifyingGlassIcon,
@@ -6,6 +8,8 @@ import {
 } from '@heroicons/react/24/outline';
 
 const Header = () => {
+  const dispatch = useDispatch();
+
   return (
     <header className='w-full hidden lg:flex justify-center px-4 sm:px-6 md:px-8'>
       <div className='w-full max-w-6xl h-28 text-white flex justify-between items-center'>
@@ -29,7 +33,10 @@ const Header = () => {
           </div>
         </div>
         <div className='flex gap-4 items-center'>
-          <MagnifyingGlassIcon className='w-6 h-6 stroke-base-brand' />
+          <MagnifyingGlassIcon
+            className='w-6 h-6 stroke-base-brand'
+            onClick={() => dispatch(showSearch())}
+          />
           <UserCircleIcon className='w-6 h-6 stroke-base-brand hidden lg:block xl:hidden' />
           <div className='text-base-light hidden xl:block text-sm xl:text-base'>
             Log In
