@@ -25,6 +25,9 @@
             },
             "certificate_details": {
               "type": "SharedSlice"
+            },
+            "certificate_benefits": {
+              "type": "SharedSlice"
             }
           }
         }
