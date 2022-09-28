@@ -1,6 +1,7 @@
 {
   "_cts": {
-    "certification": {}
+    "certification": {},
+    "icon_text": {}
   },
   "slices": {
     "NameBlock": {},
@@ -44,6 +45,26 @@
       "default": {
         "primary": {},
         "items": {}
+      }
+    },
+    "CertificateDetails": {
+      "default": {
+        "primary": {
+          "headline": {
+            "config": {
+              "patternType": "HEADING",
+              "blocks": 1
+            }
+          }
+        },
+        "items": {
+          "icon_text": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
       }
     }
   }

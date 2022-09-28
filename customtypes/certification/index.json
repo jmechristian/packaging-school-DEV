@@ -22,6 +22,9 @@
             },
             "cert_menu": {
               "type": "SharedSlice"
+            },
+            "certificate_details": {
+              "type": "SharedSlice"
             }
           }
         }

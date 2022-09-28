@@ -26,7 +26,7 @@ const CertMenu = ({ slice }) => {
     <section className='container__inner flex relative w-full justify-between items-center mt-3 lg:mt-5'>
       <div className=' font-medium flex lg:hidden'>
         <motion.div
-          className='flex flex-col gap-3 absolute top-12'
+          className='flex flex-col gap-3 absolute top-8 left-4 md:left-7 bg-white px-4 py-4 drop-shadow-lg'
           variants={menuVariants}
           initial={false}
           animate={contentMenuOpen ? 'open' : 'closed'}

@@ -45,12 +45,103 @@
             "version": "sktwi1xtmkfgx8626",
             "items": [
               {
-                "link_name": "wrote",
-                "link_ref": "bare"
+                "link_name": "contain",
+                "link_ref": "establish"
               }
             ],
             "primary": {},
             "slice_type": "cert_menu"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {}
+      },
+      "certificate_details": {
+        "library": "slices",
+        "id": "certificate_details",
+        "name": "CertificateDetails",
+        "description": "CertificateDetails",
+        "model": {
+          "id": "certificate_details",
+          "type": "SharedSlice",
+          "name": "CertificateDetails",
+          "description": "CertificateDetails",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "CertificateDetails",
+              "primary": {
+                "headline": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Headline",
+                    "placeholder": "This is where it all begins...",
+                    "allowTargetBlank": true,
+                    "single": "heading1,heading2"
+                  }
+                },
+                "description": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "paragraph",
+                    "label": "Description",
+                    "placeholder": "A nice description of your feature"
+                  }
+                }
+              },
+              "items": {
+                "icon_text": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "icon text",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "single": "paragraph,image"
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {
+                "icon_text": [
+                  {
+                    "type": "paragraph",
+                    "text": "Ea duis anim elit cillum sunt mollit. Irure quis sunt tempor sunt sit enim esse. Lorem Lorem in amet sint sit occaecat deserunt Lorem sunt sunt anim.",
+                    "spans": []
+                  }
+                ]
+              }
+            ],
+            "primary": {
+              "headline": [
+                {
+                  "type": "heading1",
+                  "text": "Harder",
+                  "spans": []
+                }
+              ],
+              "description": [
+                {
+                  "type": "paragraph",
+                  "text": "Exercitation fugiat veniam sunt fugiat. Ad nulla aute sunt sint. Cupidatat officia ex proident proident ad qui deserunt excepteur quis id voluptate deserunt proident enim.",
+                  "spans": []
+                }
+              ]
+            },
+            "slice_type": "certificate_details"
           }
         },
         "meta": {

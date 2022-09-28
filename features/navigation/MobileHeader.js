@@ -15,7 +15,7 @@ const MobileHeader = () => {
 
   return (
     <header className='w-full relative block lg:hidden bg-dark'>
-      <section className='h-20 w-full pt-4 px-6 md:px-8'>
+      <section className='h-20 w-full container__inner'>
         <div className='w-full h-full flex justify-between items-center'>
           <div className='w-44'>
             <Image
