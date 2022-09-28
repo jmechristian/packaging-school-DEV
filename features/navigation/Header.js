@@ -23,7 +23,7 @@ const Header = () => {
               height={267}
             />
           </div>
-          <div className='flex gap-6 text-sm xl:text-base'>
+          <div className='flex gap-6 text-sm xl:text-base cursor-pointer'>
             <div>About</div>
             <div>Certifications</div>
             <div>Courses</div>
@@ -34,7 +34,7 @@ const Header = () => {
         </div>
         <div className='flex gap-4 items-center'>
           <MagnifyingGlassIcon
-            className='w-6 h-6 stroke-base-brand'
+            className='w-6 h-6 stroke-base-brand cursor-pointer'
             onClick={() => dispatch(showSearch())}
           />
           <UserCircleIcon className='w-6 h-6 stroke-base-brand hidden lg:block xl:hidden' />

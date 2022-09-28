@@ -19,6 +19,9 @@
           "choices": {
             "certificate_hero": {
               "type": "SharedSlice"
+            },
+            "cert_menu": {
+              "type": "SharedSlice"
             }
           }
         }

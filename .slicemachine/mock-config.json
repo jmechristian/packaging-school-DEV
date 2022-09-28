@@ -39,6 +39,12 @@
           }
         }
       }
+    },
+    "CertMenu": {
+      "default": {
+        "primary": {},
+        "items": {}
+      }
     }
   }
 }

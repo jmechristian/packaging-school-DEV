@@ -3,7 +3,7 @@ import { PrismicRichText } from '@prismicio/react';
 
 const CertificateHero = ({ slice }) => (
   <section className='bg-dark'>
-    <div className='container__inner container__top-padding flex flex-col pb-20'>
+    <div className='container__inner container__top-padding flex flex-col pb-20 lg:pb-24'>
       <div className='flex w-full justify-between items-center'>
         <div className='flex flex-col lg:w-7/12'>
           <div className='text-white text-5xl xl:text-6xl font-bold w-full'>
@@ -13,7 +13,7 @@ const CertificateHero = ({ slice }) => (
               <h2>Template slice, update me!</h2>
             )}
           </div>
-          <div className='text-gray-400 text-lg lg:text-xl leading-relaxed mt-8'>
+          <div className='text-gray-400 text-lg lg:text-xl leading-relaxed mt-8 max-w-prose'>
             {slice.primary.subheadline ? (
               <PrismicRichText field={slice.primary.subheadline} />
             ) : (
@@ -28,13 +28,13 @@ const CertificateHero = ({ slice }) => (
           />
         </div>
       </div>
-      <div className='bg-base-dark flex flex-col mt-12 pt-5 pb-6 px-4 gap-6 rounded'>
-        <div className='text-white font-semibold text-2xl leading-tight'>
+      <div className='bg-base-dark flex flex-col lg:flex-row mt-12 lg:mt-20 pt-5 pb-6 px-4 lg:px-8 gap-6 rounded'>
+        <div className='text-white font-semibold text-2xl lg:text-3xl leading-tight w-full lg:w-5/12 flex justify-center items-center'>
           {slice.primary.cta_headline}
         </div>
-        <div className='bg-base-light rounded flex flex-col px-4 py-4 gap-3'>
+        <div className='bg-base-light rounded flex flex-col lg:flex-row px-4 py-4 gap-3 w-full lg:w-7/12'>
           <div className='flex w-full '>
-            <div className='flex flex-col w-1/4 justify-center items-center'>
+            <div className='flex flex-col  w-1/4 justify-center items-center'>
               <div className='text-base-dark font-plex font-bold text-3xl'>
                 06
               </div>

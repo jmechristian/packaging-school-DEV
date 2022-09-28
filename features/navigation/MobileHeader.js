@@ -14,7 +14,7 @@ const MobileHeader = () => {
   const dispatch = useDispatch();
 
   return (
-    <header className='w-full relative block lg:hidden drop-shadow-lg bg-dark'>
+    <header className='w-full relative block lg:hidden bg-dark'>
       <section className='h-20 w-full pt-4 px-6 md:px-8'>
         <div className='w-full h-full flex justify-between items-center'>
           <div className='w-44'>
@@ -28,11 +28,11 @@ const MobileHeader = () => {
           </div>
           <div className='flex gap-3'>
             <MagnifyingGlassIcon
-              className='w-6 h-6 stroke-base-brand'
+              className='w-6 h-6 stroke-base-brand cursor-pointer'
               onClick={() => dispatch(showSearch())}
             />
             <EllipsisVerticalIcon
-              className='w-6 h-6 stroke-base-brand'
+              className='w-6 h-6 stroke-base-brand cursor-pointer'
               onClick={() => dispatch(showMobileMenu())}
             />
           </div>
