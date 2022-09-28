@@ -1,0 +1,44 @@
+{
+  "_cts": {
+    "certification": {}
+  },
+  "slices": {
+    "NameBlock": {},
+    "CertificationHero": {},
+    "CertificationHeroImage": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "HeroCta": {
+      "default": {
+        "primary": {
+          "headline": {
+            "config": {
+              "patternType": "HEADING",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "CertificateHero": {
+      "default": {
+        "primary": {
+          "headline": {
+            "config": {
+              "patternType": "HEADING",
+              "blocks": 1
+            }
+          },
+          "subheadline": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    }
+  }
+}

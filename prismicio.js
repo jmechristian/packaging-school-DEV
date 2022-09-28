@@ -18,8 +18,8 @@ export function linkResolver(doc) {
   switch (doc.type) {
     case 'homepage':
       return '/';
-    case 'page':
-      return `/${doc.uid}`;
+    case 'certification':
+      return `/certifications/${doc.uid}`;
     default:
       return null;
   }

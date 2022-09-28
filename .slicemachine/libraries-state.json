@@ -1,5 +1,105 @@
 {
   "slices": {
-    "components": {}
+    "components": {
+      "certificate_hero": {
+        "library": "slices",
+        "id": "certificate_hero",
+        "name": "CertificateHero",
+        "description": "CertificateHero",
+        "model": {
+          "id": "certificate_hero",
+          "type": "SharedSlice",
+          "name": "CertificateHero",
+          "description": "CertificateHero",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "CertificateHero",
+              "primary": {
+                "headline": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Headline",
+                    "placeholder": "This is where it all begins...",
+                    "allowTargetBlank": true,
+                    "single": "heading1,heading2"
+                  }
+                },
+                "subheadline": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Subheadline",
+                    "placeholder": "A nice description of your feature",
+                    "allowTargetBlank": true,
+                    "single": "paragraph"
+                  }
+                },
+                "hero_image": {
+                  "type": "Image",
+                  "config": {
+                    "label": "Hero Image",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                },
+                "cta_headline": {
+                  "type": "Text",
+                  "config": {
+                    "label": "CTA Headline",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {}
+            ],
+            "primary": {
+              "headline": [
+                {
+                  "type": "heading1",
+                  "text": "Visitor",
+                  "spans": []
+                }
+              ],
+              "subheadline": [
+                {
+                  "type": "paragraph",
+                  "text": "Sint ad esse proident ex cillum consequat magna labore ea anim magna deserunt.",
+                  "spans": []
+                }
+              ],
+              "hero_image": {
+                "dimensions": {
+                  "width": 900,
+                  "height": 500
+                },
+                "alt": null,
+                "copyright": null,
+                "url": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853"
+              },
+              "cta_headline": "adult"
+            },
+            "slice_type": "certificate_hero"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {}
+      }
+    }
   }
 }

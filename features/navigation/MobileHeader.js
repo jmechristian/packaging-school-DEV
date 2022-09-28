@@ -14,7 +14,7 @@ const MobileHeader = () => {
   const dispatch = useDispatch();
 
   return (
-    <header className='w-full relative block lg:hidden drop-shadow-lg'>
+    <header className='w-full relative block lg:hidden drop-shadow-lg bg-dark'>
       <section className='h-20 w-full pt-4 px-6 md:px-8'>
         <div className='w-full h-full flex justify-between items-center'>
           <div className='w-44'>

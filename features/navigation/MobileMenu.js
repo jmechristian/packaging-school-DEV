@@ -14,13 +14,13 @@ const MobileMenu = () => {
       transition: {
         duration: 0.3,
         staggerChildren: 0.5,
-        ease: 'easeIn',
+        ease: 'easeInOut',
       },
     },
     closed: {
       x: '-100%',
       transition: {
-        ease: 'circIn',
+        ease: 'easeInOut',
         duration: 0.3,
       },
     },
