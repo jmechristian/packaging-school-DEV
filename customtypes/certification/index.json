@@ -28,6 +28,12 @@
             },
             "certificate_benefits": {
               "type": "SharedSlice"
+            },
+            "certification_cirriculum": {
+              "type": "SharedSlice"
+            },
+            "certificate_instructor": {
+              "type": "SharedSlice"
             }
           }
         }

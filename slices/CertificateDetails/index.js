@@ -4,7 +4,7 @@ import { CheckBadgeIcon } from '@heroicons/react/20/solid';
 
 const CertificateDetails = ({ slice }) => (
   <section
-    className='container__inner mt-24 xl:mt-36 flex flex-col lg:flex-row justify-between items-center gap-8 w-full md:w-4/5 lg:w-full'
+    className='container__inner mt-24 xl:mt-36 flex flex-col lg:flex-row justify-between items-center gap-8'
     id='details'
   >
     <div className='flex flex-col gap-6 lg:gap-8 w-full lg:w-7/12'>

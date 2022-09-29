@@ -3,7 +3,7 @@ import { PrismicRichText } from '@prismicio/react';
 
 const CertificateBenefits = ({ slice }) => (
   <section
-    className='container__inner flex flex-col mt-40 xl:mt-52 gap-12 w-full md:w-4/5 lg:w-full'
+    className='container__inner flex flex-col inner__section__margin gap-12'
     id='benefits'
   >
     <div className='flex flex-col gap-3 lg:text-center'>

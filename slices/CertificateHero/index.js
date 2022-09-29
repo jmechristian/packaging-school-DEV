@@ -3,7 +3,7 @@ import { PrismicRichText } from '@prismicio/react';
 
 const CertificateHero = ({ slice }) => (
   <section className='bg-dark'>
-    <div className='container__inner container__top-padding flex flex-col pb-20 lg:pb-32 w-full md:w-4/5 lg:w-full'>
+    <div className='container__inner container__top-padding flex flex-col pb-20 lg:pb-32'>
       <div className='flex w-full justify-between items-center'>
         <div className='flex flex-col lg:w-7/12'>
           <div className='text-white text-4xl lg:text-5xl font-bold w-full'>

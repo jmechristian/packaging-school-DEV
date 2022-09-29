@@ -4,12 +4,16 @@ import CertMenu from './CertMenu';
 import CertificateBenefits from './CertificateBenefits';
 import CertificateDetails from './CertificateDetails';
 import CertificateHero from './CertificateHero';
+import CertificateInstructor from './CertificateInstructor';
+import CertificationCirriculum from './CertificationCirriculum';
 
 export {
 	CertMenu,
 	CertificateBenefits,
 	CertificateDetails,
 	CertificateHero,
+	CertificateInstructor,
+	CertificationCirriculum,
 };
 
 export const components = {
@@ -17,4 +21,6 @@ export const components = {
 	certificate_benefits: CertificateBenefits,
 	certificate_details: CertificateDetails,
 	certificate_hero: CertificateHero,
+	certificate_instructor: CertificateInstructor,
+	certification_cirriculum: CertificationCirriculum,
 };
