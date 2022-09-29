@@ -43,7 +43,7 @@
             "label": "instructor bio",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph"
+            "multi": "paragraph,strong"
           }
         },
         "instructor_name": {

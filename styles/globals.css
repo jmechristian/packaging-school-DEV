@@ -17,8 +17,12 @@
     @apply pt-12 lg:pt-40 xl:pt-44;
   }
 
-  .inner__section__margin {
-    @apply mt-32 md:mt-40;
+  .inner__section-margin {
+    @apply my-32 md:my-40;
+  }
+
+  .dark__section__margin {
+    @apply my-16 md:my-20;
   }
 
   .subheadline {
