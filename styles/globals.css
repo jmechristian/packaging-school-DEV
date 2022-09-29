@@ -24,6 +24,18 @@
   .body__text {
     @apply text-neutral-600 text-lg leading-relaxed;
   }
+
+  .content__box:nth-child(3n + 1) {
+    @apply rounded-br-3xl;
+  }
+
+  .content__box:nth-child(3n + 2) {
+    @apply rounded-tr-3xl;
+  }
+
+  .content__box:nth-child(3n + 3) {
+    @apply rounded-bl-3xl;
+  }
 }
 
 @tailwind components;

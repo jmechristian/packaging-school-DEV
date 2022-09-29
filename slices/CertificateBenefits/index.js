@@ -2,8 +2,11 @@ import React from 'react';
 import { PrismicRichText } from '@prismicio/react';
 
 const CertificateBenefits = ({ slice }) => (
-  <section className='container__inner flex flex-col mt-32 gap-6' id='benefits'>
-    <div className='flex flex-col gap-6'>
+  <section
+    className='container__inner flex flex-col mt-40 xl:mt-52 gap-12 w-full md:w-4/5 lg:w-full'
+    id='benefits'
+  >
+    <div className='flex flex-col gap-3 lg:text-center'>
       <div className='subheadline'>
         {slice.primary.title ? (
           <PrismicRichText field={slice.primary.title} />
@@ -19,9 +22,12 @@ const CertificateBenefits = ({ slice }) => (
         )}
       </div>
     </div>
-    <div className='flex flex-col gap-6'>
+    <div className='grid md:grid-cols-2 lg:grid-cols-3 flex-wrap gap-x-4 gap-y-6'>
       {slice?.items?.map((item, i) => (
-        <div key={i} className='bg-base-light px-6 pt-10 pb-12 rounded-br-3xl'>
+        <div
+          key={i}
+          className='bg-base-light px-6 xl:px-8 pt-10 pb-16 content__box'
+        >
           <div className='flex flex-col gap-4'>
             <div className='w-12 h-12 rounded-full bg-base-dark '>
               <div className='flex justify-center items-center box-border p-3'>
