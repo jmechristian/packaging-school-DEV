@@ -7,7 +7,7 @@ const InstructorBenefits = ({ slice }) => {
       {slice?.items?.map((item, i) => (
         <div
           key={i}
-          className='flex flex-row md:flex-col md:justify-center gap-3 items-center md:items-start'
+          className='flex flex-row md:flex-col md:justify-center gap-3 items-center md:items-center'
         >
           <div className='w-12 h-12 bg-base-dark rounded-full p-3 flex justify-center items-center'>
             <div className='box-border w-12 h-12 flex justify-center items-center'>
@@ -17,7 +17,7 @@ const InstructorBenefits = ({ slice }) => {
               />
             </div>
           </div>
-          <div className='body__text leading-tight'>
+          <div className='body__text leading-tight lg:text-center'>
             <PrismicRichText field={item.instructor_icon_detail} />
           </div>
         </div>
