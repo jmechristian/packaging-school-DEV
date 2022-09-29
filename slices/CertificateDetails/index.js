@@ -3,16 +3,19 @@ import { PrismicRichText } from '@prismicio/react';
 import { CheckBadgeIcon } from '@heroicons/react/20/solid';
 
 const CertificateDetails = ({ slice }) => (
-  <section className='container__inner mt-16 flex flex-col lg:flex-row justify-between items-center gap-8 w-full md:w-4/5 lg:w-full'>
+  <section
+    className='container__inner mt-16 flex flex-col lg:flex-row justify-between items-center gap-8 w-full md:w-4/5 lg:w-full'
+    id='details'
+  >
     <div className='flex flex-col gap-6 lg:gap-8 w-full lg:w-7/12'>
-      <div className='font-extrabold text-3xl lg:text-4xl xl:text-5xl'>
+      <div className='subheadline'>
         {slice.primary.headline ? (
           <PrismicRichText field={slice.primary.headline} />
         ) : (
           <h2>Template slice, update me!</h2>
         )}
       </div>
-      <div className='text-neutral-600 text-lg leading-relaxed'>
+      <div className='body__text'>
         {slice.primary.description ? (
           <PrismicRichText field={slice.primary.description} />
         ) : (

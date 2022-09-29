@@ -80,17 +80,19 @@
                 "title": {
                   "type": "StructuredText",
                   "config": {
-                    "single": "heading1",
                     "label": "Title",
-                    "placeholder": "This is where it all begins..."
+                    "placeholder": "This is where it all begins...",
+                    "allowTargetBlank": true,
+                    "single": "heading2"
                   }
                 },
                 "description": {
                   "type": "StructuredText",
                   "config": {
-                    "single": "paragraph",
                     "label": "Description",
-                    "placeholder": "A nice description of your feature"
+                    "placeholder": "A nice description of your feature",
+                    "allowTargetBlank": true,
+                    "single": "paragraph"
                   }
                 }
               },
@@ -103,13 +105,22 @@
                     "thumbnails": []
                   }
                 },
+                "benefit_title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "benefit title",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "single": "heading3"
+                  }
+                },
                 "benefit_text": {
                   "type": "StructuredText",
                   "config": {
                     "label": "benefit text",
                     "placeholder": "",
                     "allowTargetBlank": true,
-                    "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                    "single": "paragraph"
                   }
                 }
               },
@@ -130,12 +141,19 @@
                   },
                   "alt": null,
                   "copyright": null,
-                  "url": "https://images.unsplash.com/photo-1587905069134-008460d7a636"
+                  "url": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef"
                 },
+                "benefit_title": [
+                  {
+                    "type": "heading3",
+                    "text": "Package",
+                    "spans": []
+                  }
+                ],
                 "benefit_text": [
                   {
                     "type": "paragraph",
-                    "text": "Magna eu consequat sint ex deserunt minim duis in excepteur reprehenderit dolor proident. Excepteur sint deserunt velit ad consequat ullamco laborum mollit aliqua cillum cupidatat non. Labore non occaecat ullamco mollit ullamco nostrud duis sint aliqua labore.",
+                    "text": "Aliqua cupidatat fugiat ad fugiat.",
                     "spans": []
                   }
                 ]
@@ -144,15 +162,15 @@
             "primary": {
               "title": [
                 {
-                  "type": "heading1",
-                  "text": "Apart",
+                  "type": "heading2",
+                  "text": "Clothes",
                   "spans": []
                 }
               ],
               "description": [
                 {
                   "type": "paragraph",
-                  "text": "Quis consectetur in culpa nulla excepteur voluptate deserunt.",
+                  "text": "Labore sunt sit exercitation. Lorem ea cillum nisi consectetur sit dolore esse in. Est ea nisi do ea aute magna pariatur consectetur irure in mollit velit elit amet.",
                   "spans": []
                 }
               ]

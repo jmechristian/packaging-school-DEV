@@ -16,6 +16,14 @@
   .container__top-padding {
     @apply pt-12 lg:pt-40 xl:pt-44;
   }
+
+  .subheadline {
+    @apply font-extrabold text-3xl lg:text-4xl;
+  }
+
+  .body__text {
+    @apply text-neutral-600 text-lg leading-relaxed;
+  }
 }
 
 @tailwind components;

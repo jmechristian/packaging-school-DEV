@@ -6,14 +6,14 @@ const CertificateHero = ({ slice }) => (
     <div className='container__inner container__top-padding flex flex-col pb-20 lg:pb-32 w-full md:w-4/5 lg:w-full'>
       <div className='flex w-full justify-between items-center'>
         <div className='flex flex-col lg:w-7/12'>
-          <div className='text-white text-4xl lg:text-5xl xl:text-6xl font-bold w-full'>
+          <div className='text-white text-4xl lg:text-5xl font-bold w-full'>
             {slice.primary.headline ? (
               <PrismicRichText field={slice.primary.headline} />
             ) : (
               <h2>Template slice, update me!</h2>
             )}
           </div>
-          <div className='text-gray-400 text-lg lg:text-xl leading-relaxed mt-8 max-w-prose'>
+          <div className='text-gray-400 text-lg lg:text-xl leading-relaxed mt-8 lg:mt-12 max-w-prose'>
             {slice.primary.subheadline ? (
               <PrismicRichText field={slice.primary.subheadline} />
             ) : (
