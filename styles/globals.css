@@ -14,11 +14,11 @@
   }
 
   .container__top-padding {
-    @apply pt-12 lg:pt-40 xl:pt-44;
+    @apply pt-12 md:pt-20 lg:pt-40 xl:pt-44;
   }
 
   .inner__section-margin {
-    @apply my-32 md:my-40;
+    @apply my-32 lg:my-40;
   }
 
   .dark__section__margin {
