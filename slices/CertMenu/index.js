@@ -1,9 +1,22 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, useScroll } from 'framer-motion';
 
 const CertMenu = ({ slice }) => {
   const [contentMenuOpen, setContentMenuOpen] = useState(false);
+
+  const menuRef = useRef();
+
+  const { scrollYProgress } = useScroll({
+    target: menuRef,
+    offset: ['end end', 'start start'],
+  });
+
+  useEffect(() => {
+    return scrollYProgress.onChange((latest) => {
+      console.log('Page scroll: ', latest);
+    });
+  });
 
   const menuVariants = {
     open: {
@@ -23,7 +36,7 @@ const CertMenu = ({ slice }) => {
   };
 
   return (
-    <div className='w-full bg-white sticky top-0 '>
+    <div className='w-full bg-white sticky top-0' ref={menuRef}>
       <section className='container__inner flex w-full justify-between items-start lg:items-center py-4 relative'>
         <div className=' font-medium flex flex-col lg:hidden'>
           <div
@@ -64,9 +77,12 @@ const CertMenu = ({ slice }) => {
           ))}
         </div>
         <div className='rounded'>
-          <div className='bg-base-dark text-white text-sm px-4 py-2 rounded'>
+          <motion.div
+            className='bg-base-dark text-white text-sm px-4 py-2 rounded'
+            style={{ opacity: scrollYProgress }}
+          >
             Enroll Now
-          </div>
+          </motion.div>
         </div>
       </section>
     </div>
