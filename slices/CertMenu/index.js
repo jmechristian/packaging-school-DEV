@@ -45,8 +45,9 @@ const CertMenu = ({ slice }) => {
                 href={item.link_ref}
                 key={i}
                 onClick={() => setContentMenuOpen(!contentMenuOpen)}
+                className='first:text-base-brand text-zinc-800'
               >
-                <span className='first:text-base-brand'>{item.link_name}</span>
+                <span>{item.link_name}</span>
               </a>
             ))}
           </motion.div>

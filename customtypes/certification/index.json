@@ -37,6 +37,9 @@
             },
             "reviews": {
               "type": "SharedSlice"
+            },
+            "certificate_enrollment": {
+              "type": "SharedSlice"
             }
           }
         }

@@ -275,6 +275,96 @@
         },
         "screenshotPaths": {}
       },
+      "certificate_enrollment": {
+        "library": "slices",
+        "id": "certificate_enrollment",
+        "name": "CertificateEnrollment",
+        "description": "CertificateEnrollment",
+        "model": {
+          "id": "certificate_enrollment",
+          "type": "SharedSlice",
+          "name": "CertificateEnrollment",
+          "description": "CertificateEnrollment",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "CertificateEnrollment",
+              "primary": {
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "heading1",
+                    "label": "Title",
+                    "placeholder": "This is where it all begins..."
+                  }
+                },
+                "description": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "paragraph",
+                    "label": "Description",
+                    "placeholder": "A nice description of your feature"
+                  }
+                },
+                "price": {
+                  "type": "Text",
+                  "config": {
+                    "label": "price",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "items": {
+                "enrollment_benefit": {
+                  "type": "Text",
+                  "config": {
+                    "label": "enrollment benefit",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {
+                "enrollment_benefit": "gas"
+              }
+            ],
+            "primary": {
+              "title": [
+                {
+                  "type": "heading1",
+                  "text": "Search",
+                  "spans": []
+                }
+              ],
+              "description": [
+                {
+                  "type": "paragraph",
+                  "text": "Id nisi ipsum proident amet officia excepteur aliquip laboris aute esse elit nostrud eu commodo adipisicing.",
+                  "spans": []
+                }
+              ],
+              "price": "correct"
+            },
+            "slice_type": "certificate_enrollment"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {}
+      },
       "certificate_hero": {
         "library": "slices",
         "id": "certificate_hero",
@@ -772,12 +862,12 @@
             "version": "sktwi1xtmkfgx8626",
             "items": [
               {
-                "review_name": "master",
-                "review_title": "writer",
+                "review_name": "fellow",
+                "review_title": "changing",
                 "review_content": [
                   {
                     "type": "paragraph",
-                    "text": "Dolor deserunt tempor laboris do occaecat anim sint ipsum sunt do culpa minim elit ipsum laborum. Amet duis laborum incididunt adipisicing adipisicing deserunt qui.",
+                    "text": "Aliquip in ex non do sit deserunt. Mollit adipisicing dolore anim exercitation do fugiat. Sint et est mollit exercitation aliqua ut.",
                     "spans": []
                   }
                 ],
@@ -788,11 +878,11 @@
                   },
                   "alt": null,
                   "copyright": null,
-                  "url": "https://images.unsplash.com/photo-1589321599763-d66926c29613"
+                  "url": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef"
                 },
                 "review_social": {
                   "link_type": "Web",
-                  "url": "https://prismic.io"
+                  "url": "http://google.com"
                 },
                 "review_social_image": {
                   "dimensions": {
@@ -801,7 +891,7 @@
                   },
                   "alt": null,
                   "copyright": null,
-                  "url": "https://images.unsplash.com/photo-1494173853739-c21f58b16055"
+                  "url": "https://images.unsplash.com/photo-1493119508027-2b584f234d6c"
                 }
               }
             ],
@@ -809,14 +899,14 @@
               "title": [
                 {
                   "type": "heading1",
-                  "text": "Health",
+                  "text": "Themselves",
                   "spans": []
                 }
               ],
               "description": [
                 {
                   "type": "paragraph",
-                  "text": "Ut magna ipsum reprehenderit fugiat est proident minim et reprehenderit ut officia tempor. Sit nulla non magna velit fugiat sint consectetur incididunt esse.",
+                  "text": "Incididunt sint enim Lorem veniam. Et quis culpa reprehenderit consectetur voluptate voluptate quis excepteur velit aliqua irure sit eu laboris esse.",
                   "spans": []
                 }
               ]
