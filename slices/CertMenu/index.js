@@ -5,18 +5,6 @@ import { motion, useInView } from 'framer-motion';
 const CertMenu = ({ slice }) => {
   const [contentMenuOpen, setContentMenuOpen] = useState(false);
 
-  const menuRef = useRef();
-
-  const inView = useInView(menuRef);
-
-  // useEffect(() => {
-  //   if (inView) {
-  //     console.log('In View');
-  //   } else {
-  //     console.log('Not In View');
-  //   }
-  // }, [inView]);
-
   const menuVariants = {
     open: {
       opacity: 1,
@@ -36,23 +24,8 @@ const CertMenu = ({ slice }) => {
 
   return (
     <div className='w-full bg-white sticky top-0 '>
-      <motion.section
-        className='container__inner flex w-full justify-between items-center py-4 relative'
-        ref={menuRef}
-      >
-        <div className=' font-medium flex lg:hidden'>
-          <motion.div
-            className='flex flex-col gap-3 absolute top-12 left-4 md:left-7 bg-white px-4 py-4 drop-shadow-lg'
-            variants={menuVariants}
-            initial={false}
-            animate={contentMenuOpen ? 'open' : 'closed'}
-          >
-            {slice?.items?.map((item, i) => (
-              <span className='first:text-base-brand' key={i}>
-                {item.link_name}
-              </span>
-            ))}
-          </motion.div>
+      <section className='container__inner flex w-full justify-between items-start py-4 relative'>
+        <div className=' font-medium flex flex-col lg:hidden'>
           <div
             className='flex text-base-brand gap-2 items-center'
             onClick={() => setContentMenuOpen(!contentMenuOpen)}
@@ -60,6 +33,19 @@ const CertMenu = ({ slice }) => {
             Jump To{' '}
             <ChevronDownIcon className='w-5 h-5 stroke-base-brand cursor-pointer' />
           </div>
+          <motion.div
+            className='flex flex-col gap-3 static bg-white py-4'
+            variants={menuVariants}
+            initial={false}
+            animate={contentMenuOpen ? 'open' : 'closed'}
+            style={{ display: contentMenuOpen ? 'flex' : 'none' }}
+          >
+            {slice?.items?.map((item, i) => (
+              <span className='first:text-base-brand' key={i}>
+                {item.link_name}
+              </span>
+            ))}
+          </motion.div>
         </div>
         <div className='hidden lg:flex gap-6 font-medium'>
           {slice?.items?.map((item, i) => (
@@ -73,7 +59,7 @@ const CertMenu = ({ slice }) => {
             Enroll Now
           </div>
         </div>
-      </motion.section>
+      </section>
     </div>
   );
 };
