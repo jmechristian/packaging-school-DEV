@@ -8,6 +8,7 @@ import CertificateHero from './CertificateHero';
 import CertificateInstructor from './CertificateInstructor';
 import CertificationCirriculum from './CertificationCirriculum';
 import Reviews from './Reviews';
+import TopCompanies from './TopCompanies';
 
 export {
 	CertMenu,
@@ -18,6 +19,7 @@ export {
 	CertificateInstructor,
 	CertificationCirriculum,
 	Reviews,
+	TopCompanies,
 };
 
 export const components = {
@@ -29,4 +31,5 @@ export const components = {
 	certificate_instructor: CertificateInstructor,
 	certification_cirriculum: CertificationCirriculum,
 	reviews: Reviews,
+	top_companies: TopCompanies,
 };

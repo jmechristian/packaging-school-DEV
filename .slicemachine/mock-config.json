@@ -175,6 +175,11 @@
         }
       }
     },
-    "CertificateEnrollment": {}
+    "CertificateEnrollment": {},
+    "TopCompanies": {
+      "default": {
+        "primary": {}
+      }
+    }
   }
 }

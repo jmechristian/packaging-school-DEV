@@ -40,6 +40,9 @@
             },
             "certificate_enrollment": {
               "type": "SharedSlice"
+            },
+            "top_companies": {
+              "type": "SharedSlice"
             }
           }
         }
