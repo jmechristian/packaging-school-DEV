@@ -41,17 +41,21 @@ const CertMenu = ({ slice }) => {
             style={{ display: contentMenuOpen ? 'flex' : 'none' }}
           >
             {slice?.items?.map((item, i) => (
-              <span className='first:text-base-brand' key={i}>
-                {item.link_name}
-              </span>
+              <a href={item.link_ref} key={i}>
+                <span className='first:text-base-brand'>{item.link_name}</span>
+              </a>
             ))}
           </motion.div>
         </div>
         <div className='hidden lg:flex gap-6 lg:items-center font-medium'>
           {slice?.items?.map((item, i) => (
-            <span className='first:text-base-brand' key={i}>
-              {item.link_name}
-            </span>
+            <a
+              href={item.link_ref}
+              key={i}
+              className='first:text-base-brand text-zinc-800'
+            >
+              <span>{item.link_name}</span>
+            </a>
           ))}
         </div>
         <div className='rounded'>
