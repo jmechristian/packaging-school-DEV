@@ -41,7 +41,11 @@ const CertMenu = ({ slice }) => {
             style={{ display: contentMenuOpen ? 'flex' : 'none' }}
           >
             {slice?.items?.map((item, i) => (
-              <a href={item.link_ref} key={i}>
+              <a
+                href={item.link_ref}
+                key={i}
+                onClick={() => setContentMenuOpen(!contentMenuOpen)}
+              >
                 <span className='first:text-base-brand'>{item.link_name}</span>
               </a>
             ))}

@@ -4,7 +4,10 @@ import InstructorHeadshot from './components/InstructorHeadshot';
 import InstructorBio from './components/InstructorBio';
 
 const CertificateInstructor = ({ slice }) => (
-  <section className='inner__section-margin container__inner' id='instructor'>
+  <section
+    className='inner__section-margin container__inner scroll-mt-28'
+    id='instructor'
+  >
     <div className='flex flex-col gap-12'>
       <div className='flex flex-col gap-3'>
         <div className='subheadline'>
