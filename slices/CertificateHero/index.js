@@ -25,6 +25,7 @@ const CertificateHero = ({ slice }) => (
           <img
             src={slice.primary.hero_image.url}
             alt={slice.primary.hero_image.alt}
+            className='w-4/5'
           />
         </div>
       </div>
