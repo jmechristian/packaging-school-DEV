@@ -3,7 +3,7 @@ import { PrismicRichText, PrismicLink } from '@prismicio/react';
 
 const ReviewBlock = ({ item }) => {
   return (
-    <div className='bg-base-dark'>
+    <div className='bg-base-dark content__box'>
       <div className='flex flex-col justify-between items-between gap-9 px-5 py-7 w-[342px]'>
         <div className='grid grid-cols-5 items-start'>
           <div className='bg-white w-11 h-11 rounded-full col-span-1'></div>
