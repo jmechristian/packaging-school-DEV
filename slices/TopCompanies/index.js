@@ -11,7 +11,12 @@ const TopCompanies = ({ slice }) => (
       </div>
       <div className='flex flex-row justify-center flex-nowrap overflow-auto gap-16'>
         {slice?.items?.map((item, i) => (
-          <img src={item.logo.url} alt={item.logo.alt} className='w-28' />
+          <img
+            src={item.logo.url}
+            alt={item.logo.alt}
+            className='w-28'
+            key={i}
+          />
         ))}
       </div>
     </div>
