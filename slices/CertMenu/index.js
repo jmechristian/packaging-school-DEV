@@ -24,7 +24,7 @@ const CertMenu = ({ slice }) => {
 
   return (
     <div className='w-full bg-white sticky top-0 '>
-      <section className='container__inner flex w-full justify-between items-start py-4 relative'>
+      <section className='container__inner flex w-full justify-between items-start lg:items-center py-4 relative'>
         <div className=' font-medium flex flex-col lg:hidden'>
           <div
             className='flex text-base-brand gap-2 items-center'
@@ -47,7 +47,7 @@ const CertMenu = ({ slice }) => {
             ))}
           </motion.div>
         </div>
-        <div className='hidden lg:flex gap-6 font-medium'>
+        <div className='hidden lg:flex gap-6 lg:items-center font-medium'>
           {slice?.items?.map((item, i) => (
             <span className='first:text-base-brand' key={i}>
               {item.link_name}
