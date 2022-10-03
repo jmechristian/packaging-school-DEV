@@ -1,6 +1,8 @@
 import React from 'react';
 import { PrismicRichText } from '@prismicio/react';
 import EnrollmentCalendar from './components/EnrollmentCalendar';
+import EnrollmentDetails from './components/EnrollmentDetails';
+import SalesBar from './components/SalesBar';
 
 const CertificateEnrollment = ({ slice }) => (
   <section
@@ -17,13 +19,15 @@ const CertificateEnrollment = ({ slice }) => (
         )}
       </div>
     </div>
-    <div className='grid grid-col-1 lg:grid-cols-5 gap-y-12'>
-      <div className='col-span-3'>
+    <div className='grid grid-col-1 lg:grid-cols-5 gap-y-12 lg:gap-x-12 lg:justify-between'>
+      <div className='col-span-1 lg:col-span-2'>
+        <EnrollmentDetails items={slice?.items} price={slice.primary.price} />
+      </div>
+      <div className='col-span-1 lg:col-span-3 lg:pl-16'>
         <EnrollmentCalendar />
       </div>
-      <div>details</div>
     </div>
-    <div className='bg-base-light'>sales bar</div>
+    <SalesBar />
   </section>
 );
 

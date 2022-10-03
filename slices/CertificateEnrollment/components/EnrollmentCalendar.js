@@ -15,11 +15,11 @@ const EnrollmentCalendar = () => {
   }, []);
 
   return (
-    <div className='w-full flex flex-col gap-4'>
+    <div className='w-full flex flex-col gap-2'>
       {calendar &&
         calendar.data.slices[0].items.map((item, i) => (
           <div key={i} className='text-black grid grid-cols-2 w-full'>
-            <div className='col-span-2 bg-base-dark text-white font-semibold p-2'>
+            <div className='col-span-2 bg-base-dark text-white font-semibold px-2 py-1'>
               {item.session}
             </div>
             <div className='col-span-1 bg-base-light text-gray-600 text-sm font-semibold px-2 py-1'>
@@ -29,7 +29,9 @@ const EnrollmentCalendar = () => {
               Deadline
             </div>
             <div className='col-span-1 text-sm px-2 py-1'>{item.date}</div>
-            <div className='col-span-1 text-sm px-4 py-1'>{item.deadline}</div>
+            <div className='col-span-1 text-sm px-4 py-1 font-bold'>
+              {item.deadline}
+            </div>
           </div>
         ))}
     </div>

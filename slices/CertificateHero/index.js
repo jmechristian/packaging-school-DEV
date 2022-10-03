@@ -1,5 +1,6 @@
 import React from 'react';
 import { PrismicRichText } from '@prismicio/react';
+import CTAButtonLarge from '../../components/CTAButtonLarge';
 
 const CertificateHero = ({ slice }) => (
   <section className='bg-dark'>
@@ -60,11 +61,7 @@ const CertificateHero = ({ slice }) => (
               <div className='text-base-dark font-plex uppercase'>Sec</div>
             </div>
           </div>
-          <div className='w-full bg-clemson text-center rounded'>
-            <div className='w-full py-5 uppercase font-bold text-xl md:text-2xl text-white'>
-              Enroll Now!
-            </div>
-          </div>
+          <CTAButtonLarge />
         </div>
       </div>
     </div>
