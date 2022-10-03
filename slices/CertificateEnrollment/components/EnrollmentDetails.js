@@ -9,7 +9,9 @@ const EnrollmentDetails = ({ items, price }) => {
         Future Proof Your Skills
       </div>
       <div className='flex flex-col md:flex-row md:items-center lg:flex-col lg:items-start gap-3'>
-        <div className='font-semibold text-6xl md:mr-8 lg:mr-0'>{price}</div>
+        <div className='font-semibold text-6xl xl:text-7xl md:mr-8 lg:mr-0'>
+          {price}
+        </div>
         <div className='mt-2'>
           {items.map((item, i) => (
             <div key={i} className='flex gap-2 items-center'>
