@@ -6,6 +6,7 @@ import CertificateDetails from './CertificateDetails';
 import CertificateEnrollment from './CertificateEnrollment';
 import CertificateHero from './CertificateHero';
 import CertificateInstructor from './CertificateInstructor';
+import CertificateResources from './CertificateResources';
 import CertificationCalendar from './CertificationCalendar';
 import CertificationCirriculum from './CertificationCirriculum';
 import Reviews from './Reviews';
@@ -18,6 +19,7 @@ export {
 	CertificateEnrollment,
 	CertificateHero,
 	CertificateInstructor,
+	CertificateResources,
 	CertificationCalendar,
 	CertificationCirriculum,
 	Reviews,
@@ -31,6 +33,7 @@ export const components = {
 	certificate_enrollment: CertificateEnrollment,
 	certificate_hero: CertificateHero,
 	certificate_instructor: CertificateInstructor,
+	certificate_resources: CertificateResources,
 	certification_calendar: CertificationCalendar,
 	certification_cirriculum: CertificationCirriculum,
 	reviews: Reviews,

@@ -46,6 +46,9 @@
             },
             "certification_calendar": {
               "type": "SharedSlice"
+            },
+            "certificate_resources": {
+              "type": "SharedSlice"
             }
           }
         }

@@ -2,7 +2,7 @@ import React from 'react';
 import { PrismicRichText } from '@prismicio/react';
 
 const TopCompanies = ({ slice }) => (
-  <section className='bg-base-dark container__inner md:rounded'>
+  <section className='bg-base-dark container__inner md:rounded-lg'>
     <div className='flex flex-col py-10 px-6 gap-6'>
       <div className='text-center font-semibold text-white text-xl'>
         Top companies choose the{' '}
