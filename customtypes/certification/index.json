@@ -43,6 +43,9 @@
             },
             "top_companies": {
               "type": "SharedSlice"
+            },
+            "certification_calendar": {
+              "type": "SharedSlice"
             }
           }
         }

@@ -12,12 +12,6 @@ const CertMenu = ({ slice }) => {
     offset: ['end end', 'start start'],
   });
 
-  useEffect(() => {
-    return scrollYProgress.onChange((latest) => {
-      console.log('Page scroll: ', latest);
-    });
-  });
-
   const menuVariants = {
     open: {
       opacity: 1,

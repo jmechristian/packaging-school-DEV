@@ -5,5 +5,5 @@ export default {
 }
 
 
-export const _Default = () => <MyComponent slice={{"variation":"default","version":"sktwi1xtmkfgx8626","items":[{"enrollment_benefit":"gas"}],"primary":{"title":[{"type":"heading1","text":"Search","spans":[]}],"description":[{"type":"paragraph","text":"Id nisi ipsum proident amet officia excepteur aliquip laboris aute esse elit nostrud eu commodo adipisicing.","spans":[]}],"price":"correct"},"slice_type":"certificate_enrollment","id":"_Default"}} />
+export const _Default = () => <MyComponent slice={{"variation":"default","version":"sktwi1xtmkfgx8626","items":[{"enrollment_benefit":"putting"}],"primary":{"title":[{"type":"heading1","text":"Constantly","spans":[]}],"description":[{"type":"paragraph","text":"Aute id reprehenderit nostrud. Lorem sit cillum magna incididunt et ullamco consequat in. Irure ex dolore nulla est incididunt officia sunt exercitation id tempor tempor quis.","spans":[]}],"price":"certain"},"slice_type":"certificate_enrollment","id":"_Default"}} />
 _Default.storyName = ''

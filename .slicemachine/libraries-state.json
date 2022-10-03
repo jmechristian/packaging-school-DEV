@@ -336,25 +336,25 @@
             "version": "sktwi1xtmkfgx8626",
             "items": [
               {
-                "enrollment_benefit": "gas"
+                "enrollment_benefit": "putting"
               }
             ],
             "primary": {
               "title": [
                 {
                   "type": "heading1",
-                  "text": "Search",
+                  "text": "Constantly",
                   "spans": []
                 }
               ],
               "description": [
                 {
                   "type": "paragraph",
-                  "text": "Id nisi ipsum proident amet officia excepteur aliquip laboris aute esse elit nostrud eu commodo adipisicing.",
+                  "text": "Aute id reprehenderit nostrud. Lorem sit cillum magna incididunt et ullamco consequat in. Irure ex dolore nulla est incididunt officia sunt exercitation id tempor tempor quis.",
                   "spans": []
                 }
               ],
-              "price": "correct"
+              "price": "certain"
             },
             "slice_type": "certificate_enrollment"
           }
@@ -644,6 +644,72 @@
               }
             },
             "slice_type": "certificate_instructor"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {}
+      },
+      "certification_calendar": {
+        "library": "slices",
+        "id": "certification_calendar",
+        "name": "CertificationCalendar",
+        "description": "CertificationCalendar",
+        "model": {
+          "id": "certification_calendar",
+          "type": "SharedSlice",
+          "name": "CertificationCalendar",
+          "description": "CertificationCalendar",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "CertificationCalendar",
+              "primary": {},
+              "items": {
+                "session": {
+                  "type": "Text",
+                  "config": {
+                    "label": "session",
+                    "placeholder": ""
+                  }
+                },
+                "date": {
+                  "type": "Text",
+                  "config": {
+                    "label": "date",
+                    "placeholder": ""
+                  }
+                },
+                "deadline": {
+                  "type": "Text",
+                  "config": {
+                    "label": "deadline",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {
+                "session": "recent",
+                "date": "rapidly",
+                "deadline": "proper"
+              }
+            ],
+            "primary": {},
+            "slice_type": "certification_calendar"
           }
         },
         "meta": {

@@ -9,21 +9,15 @@ const CertificateEnrollment = ({ slice }) => (
   >
     <div className='flex flex-col gap-3'>
       <div className='subheadline'>
-        {slice.primary.title ? (
-          <PrismicRichText field={slice.primary.title} />
-        ) : (
-          <h2>Template slice, update me!</h2>
-        )}
+        {slice.primary.title && <PrismicRichText field={slice.primary.title} />}
       </div>
       <div className='body__text'>
-        {slice.primary.description ? (
+        {slice.primary.description && (
           <PrismicRichText field={slice.primary.description} />
-        ) : (
-          <p>start by editing this slice from inside Slice Machine!</p>
         )}
       </div>
     </div>
-    <div className='grid grid-col-1 lg:grid-cols-5'>
+    <div className='grid grid-col-1 lg:grid-cols-5 gap-y-12'>
       <div className='col-span-3'>
         <EnrollmentCalendar />
       </div>

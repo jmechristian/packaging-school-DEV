@@ -6,6 +6,7 @@ import CertificateDetails from './CertificateDetails';
 import CertificateEnrollment from './CertificateEnrollment';
 import CertificateHero from './CertificateHero';
 import CertificateInstructor from './CertificateInstructor';
+import CertificationCalendar from './CertificationCalendar';
 import CertificationCirriculum from './CertificationCirriculum';
 import Reviews from './Reviews';
 import TopCompanies from './TopCompanies';
@@ -17,6 +18,7 @@ export {
 	CertificateEnrollment,
 	CertificateHero,
 	CertificateInstructor,
+	CertificationCalendar,
 	CertificationCirriculum,
 	Reviews,
 	TopCompanies,
@@ -29,6 +31,7 @@ export const components = {
 	certificate_enrollment: CertificateEnrollment,
 	certificate_hero: CertificateHero,
 	certificate_instructor: CertificateInstructor,
+	certification_calendar: CertificationCalendar,
 	certification_cirriculum: CertificationCirriculum,
 	reviews: Reviews,
 	top_companies: TopCompanies,

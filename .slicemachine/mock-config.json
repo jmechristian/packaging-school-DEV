@@ -1,7 +1,8 @@
 {
   "_cts": {
     "certification": {},
-    "icon_text": {}
+    "icon_text": {},
+    "calendar": {}
   },
   "slices": {
     "NameBlock": {},
@@ -175,8 +176,18 @@
         }
       }
     },
-    "CertificateEnrollment": {},
+    "CertificateEnrollment": {
+      "default": {
+        "items": {},
+        "primary": {}
+      }
+    },
     "TopCompanies": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "CertificationCalendar": {
       "default": {
         "primary": {}
       }
