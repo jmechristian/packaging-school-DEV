@@ -8,7 +8,7 @@ const CertificateResources = ({ slice }) => {
       className='bg-base-dark dark__section__margin scroll-mt-24'
       id='resources'
     >
-      <div className='container__inner flex flex-col py-16 lg:py-24 gap-12'>
+      <div className='container__inner flex flex-col py-16 lg:py-24 gap-12 lg:gap-16'>
         <div className='flex flex-col gap-3'>
           <div className='subheadline text-white'>
             {slice.primary.title ? (
@@ -25,14 +25,15 @@ const CertificateResources = ({ slice }) => {
             )}
           </div>
         </div>
-        <div className='grid grid-cols-1 gap-y-10 w-full aspect-video'>
-          <div
-            dangerouslySetInnerHTML={{
-              __html: slice.primary.video[0].text,
-            }}
-            className='col-span-1'
-          ></div>
-          <div className='col-span-1'>
+        <div className='grid grid-cols-1 lg:grid-cols-2 lg:gap-y-0 gap-x-8 gap-y-10 items-center'>
+          <div className='col-span-1 aspect-video'>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: slice.primary.video[0].text,
+              }}
+            ></div>
+          </div>
+          <div className='col-span-1 lg:pl-6'>
             <div className='flex flex-col gap-4'>
               {slice?.items?.map((item, i) => (
                 <div
@@ -42,7 +43,7 @@ const CertificateResources = ({ slice }) => {
                   <ArrowTopRightOnSquareIcon className='w-4 h-4 stroke-clemson' />
                   <PrismicLink
                     field={item.resource_src}
-                    className='text-base text-white font-semibold'
+                    className='text-base text-white font-semibold lg:text-lg'
                   >
                     {item.resource_name}
                   </PrismicLink>
@@ -51,7 +52,25 @@ const CertificateResources = ({ slice }) => {
             </div>
           </div>
         </div>
-        <div></div>
+        <div className='flex flex-col lg:flex-row justify-between lg:items-center bg-base-light rounded px-6 py-6 gap-4 lg:gap-6 lg:px-8'>
+          <div className='flex flex-col gap-2 lg:w-3/5 lg:pr-6'>
+            <div className='font-bold text-clemson-dark text-2xl'>
+              <PrismicRichText
+                field={slice.primary.resource_salesbar_headline}
+              />
+            </div>
+            <div className='body__text'>
+              <PrismicRichText field={slice.primary.resource_salesbar_copy} />
+            </div>
+          </div>
+          <button className='bg-base-dark hover:bg-base-mid rounded-md py-5 lg:w-2/5'>
+            <PrismicLink field={slice.primary.resource_salebar_button_link}>
+              <div className='text-white font-bold uppercase lg:text-xl'>
+                {slice.primary.resource_salesbar_button_cta}
+              </div>
+            </PrismicLink>
+          </button>
+        </div>
       </div>
     </section>
   );
