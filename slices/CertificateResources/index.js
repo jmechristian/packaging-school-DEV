@@ -40,7 +40,7 @@ const CertificateResources = ({ slice }) => {
                   className='flex gap-2 items-center border-b border-b-base-brand pb-4'
                   key={i}
                 >
-                  <ArrowTopRightOnSquareIcon className='w-4 h-4 stroke-clemson' />
+                  <ArrowTopRightOnSquareIcon className='w-4 h-4 lg:w-5 lg:h-5 stroke-clemson' />
                   <PrismicLink
                     field={item.resource_src}
                     className='text-base text-white font-semibold lg:text-lg'
