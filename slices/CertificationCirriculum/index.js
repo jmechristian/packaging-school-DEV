@@ -1,5 +1,6 @@
 import React from 'react';
 import { PrismicRichText } from '@prismicio/react';
+import CirriculumBlock from './CirriculumBlock';
 
 const CertificationCirriculum = ({ slice }) => {
   return (
@@ -26,23 +27,12 @@ const CertificationCirriculum = ({ slice }) => {
         </div>
         <div className='grid lg:grid-cols-2 gap-4'>
           {slice?.items?.map((item, i) => (
-            <div key={i} className='bg-base-mid px-6 md:px-8 py-8 rounded'>
-              <div className='flex flex-col gap-3'>
-                <div className='flex flex-col md:flex-row flex-wrap gap-2'>
-                  <div className='bg-clemson rounded-lg w-fit flex items-center justify-center'>
-                    <div className='text-white text-xs py-1 px-3 uppercase font-semibold'>
-                      {item.week}
-                    </div>
-                  </div>
-                  <div className='font-semibold text-lg lg:text-xl text-white'>
-                    <PrismicRichText field={item.week_title} />
-                  </div>
-                </div>
-                <div className='body__text text-base-light'>
-                  <PrismicRichText field={item.week_description} />
-                </div>
-              </div>
-            </div>
+            <CirriculumBlock
+              key={i}
+              week={item.week}
+              title={item.week_title}
+              description={item.week_description}
+            />
           ))}
         </div>
       </div>
