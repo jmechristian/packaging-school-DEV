@@ -2,7 +2,8 @@
   "_cts": {
     "certification": {},
     "icon_text": {},
-    "calendar": {}
+    "calendar": {},
+    "contentmenu": {}
   },
   "slices": {
     "NameBlock": {},

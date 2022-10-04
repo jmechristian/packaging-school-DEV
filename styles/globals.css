@@ -14,7 +14,7 @@
   }
 
   .hero__padding {
-    @apply pt-12 md:pt-20 lg:pt-44 xl:pt-48 pb-20 md:pb-40 xl:pb-36;
+    @apply pt-12 md:pt-20 lg:pt-44 xl:pt-48 pb-20 md:pb-40 xl:pb-32;
   }
 
   .inner__section-margin {
