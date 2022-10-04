@@ -1,9 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, useScroll } from 'framer-motion';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
+import RotatingCaret from './RotatingCaret';
 
 const ContentMenu = ({ items }) => {
   const [contentMenuOpen, setContentMenuOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState();
   const [showMenu, setShowMenu] = useState(false);
   const menuRef = useRef();
 
@@ -12,6 +14,15 @@ const ContentMenu = ({ items }) => {
   useEffect(() => {
     return scrollY.onChange(() => updateY());
   });
+
+  const activeLinkHandler = (linkName) => {
+    setActiveLink(linkName);
+  };
+
+  const mobileActiveLinkHandler = (linkName) => {
+    setActiveLink(linkName);
+    setContentMenuOpen(!contentMenuOpen);
+  };
 
   const updateY = () => {
     if (scrollY.current > 75) {
@@ -76,8 +87,11 @@ const ContentMenu = ({ items }) => {
             className='flex text-zinc-800 gap-2 items-center leading-loose'
             onClick={() => setContentMenuOpen(!contentMenuOpen)}
           >
-            Jump To{' '}
-            <ChevronDownIcon className='w-5 h-5 stroke-zinc-800 cursor-pointer' />
+            Jump To
+            <RotatingCaret
+              styling={'w-5 h-5 stroke-zinc-800 cursor-pointer'}
+              open={contentMenuOpen}
+            />
           </div>
           <motion.div
             className='flex flex-col gap-3 static bg-white py-4'
@@ -90,8 +104,12 @@ const ContentMenu = ({ items }) => {
               <a
                 href={item.link_ref}
                 key={i}
-                onClick={() => setContentMenuOpen(!contentMenuOpen)}
-                className='first:text-base-brand text-zinc-800'
+                onClick={() => mobileActiveLinkHandler(item.link_name)}
+                className={`${
+                  activeLink === item.link_name
+                    ? 'text-base-brand'
+                    : 'text-zinc-800'
+                }`}
               >
                 <span>{item.link_name}</span>
               </a>
@@ -103,9 +121,15 @@ const ContentMenu = ({ items }) => {
             <a
               href={item.link_ref}
               key={i}
-              className='first:text-base-brand text-zinc-800'
+              className={`${
+                activeLink === item.link_name
+                  ? 'text-base-brand'
+                  : 'text-zinc-800'
+              }`}
             >
-              <span>{item.link_name}</span>
+              <div onClick={() => activeLinkHandler(item.link_name)}>
+                {item.link_name}
+              </div>
             </a>
           ))}
         </div>

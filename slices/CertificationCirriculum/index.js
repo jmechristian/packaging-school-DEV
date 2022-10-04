@@ -3,6 +3,12 @@ import { PrismicRichText } from '@prismicio/react';
 import CirriculumBlock from './CirriculumBlock';
 
 const CertificationCirriculum = ({ slice }) => {
+  const half = Math.ceil(slice?.items.length / 2);
+  const firstHalf = slice?.items.slice(0, half);
+  const secondHalf = slice?.items.slice(half);
+
+  console.log(secondHalf);
+
   return (
     <section
       className='bg-base-dark dark__section__margin scroll-mt-24'
@@ -26,14 +32,26 @@ const CertificationCirriculum = ({ slice }) => {
           </div>
         </div>
         <div className='grid lg:grid-cols-2 gap-4'>
-          {slice?.items?.map((item, i) => (
-            <CirriculumBlock
-              key={i}
-              week={item.week}
-              title={item.week_title}
-              description={item.week_description}
-            />
-          ))}
+          <div className='flex flex-col gap-4'>
+            {firstHalf.map((item, i) => (
+              <CirriculumBlock
+                key={i}
+                week={item.week}
+                title={item.week_title}
+                description={item.week_description}
+              />
+            ))}
+          </div>
+          <div className='flex flex-col gap-4'>
+            {secondHalf.map((item, i) => (
+              <CirriculumBlock
+                key={i}
+                week={item.week}
+                title={item.week_title}
+                description={item.week_description}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
