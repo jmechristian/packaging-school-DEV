@@ -13,16 +13,16 @@
     @apply w-full max-w-6xl mx-auto px-6 md:px-10 xl:px-0 md:w-4/5 lg:w-full;
   }
 
-  .container__top-padding {
-    @apply pt-12 md:pt-20 lg:pt-40 xl:pt-48;
+  .hero__padding {
+    @apply pt-12 md:pt-20 lg:pt-44 xl:pt-48 pb-20 md:pb-40 xl:pb-36;
   }
 
   .inner__section-margin {
-    @apply my-32 lg:my-40;
+    @apply my-28;
   }
 
   .dark__section__margin {
-    @apply my-16 md:my-20;
+    @apply my-12;
   }
 
   .dark__inner {

@@ -4,17 +4,17 @@ import CTAButtonLarge from '../../components/CTAButtonLarge';
 
 const CertificateHero = ({ slice }) => (
   <section className='bg-dark'>
-    <div className='container__inner container__top-padding flex flex-col pb-20 md:pb-32 xl:pb-36'>
+    <div className='container__inner hero__padding flex flex-col'>
       <div className='flex w-full justify-between items-center'>
         <div className='flex flex-col lg:w-7/12'>
-          <div className='text-white text-4xl lg:text-5xl font-bold w-full'>
+          <div className='text-white text-4xl xl:text-5xl font-bold w-full'>
             {slice.primary.headline ? (
               <PrismicRichText field={slice.primary.headline} />
             ) : (
               <h2>Template slice, update me!</h2>
             )}
           </div>
-          <div className='text-gray-400 text-lg lg:text-xl leading-relaxed mt-8 lg:mt-12 max-w-prose'>
+          <div className='text-gray-400 text-lg xl:text-xl leading-relaxed mt-8 lg:mt-12 max-w-prose'>
             {slice.primary.subheadline ? (
               <PrismicRichText field={slice.primary.subheadline} />
             ) : (
