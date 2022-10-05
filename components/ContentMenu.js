@@ -1,11 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, useScroll } from 'framer-motion';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import RotatingCaret from './RotatingCaret';
 import { setSectionInView } from '../store/navigation/navigationSlice';
 
 const ContentMenu = ({ items }) => {
-  const dispatch = useDispatch();
   const { sectionInView } = useSelector((state) => state.nav);
   const [contentMenuOpen, setContentMenuOpen] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
@@ -22,7 +21,6 @@ const ContentMenu = ({ items }) => {
   };
 
   const mobileActiveLinkHandler = (linkName) => {
-    dispatch(setSectionInView(linkName));
     setContentMenuOpen(!contentMenuOpen);
   };
 
@@ -129,12 +127,7 @@ const ContentMenu = ({ items }) => {
                   : 'text-zinc-800'
               }`}
             >
-              <div
-                onClick={() => activeLinkHandler(item.link_name)}
-                className='capitalize'
-              >
-                {item.link_name}
-              </div>
+              <div className='capitalize'>{item.link_name}</div>
             </a>
           ))}
         </div>
