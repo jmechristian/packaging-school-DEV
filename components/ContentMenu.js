@@ -78,7 +78,7 @@ const ContentMenu = ({ items }) => {
       style={{ display: showMenu ? 'flex' : 'none' }}
     >
       <motion.div
-        className='w-full h-2 bg-base-brand'
+        className='w-full h-2 lg:h-2.5 bg-base-brand'
         style={{ transformOrigin: '0%', scaleX: scrollYProgress }}
       ></motion.div>
       <section className='container__inner flex w-full justify-between items-start lg:items-center py-4 relative'>
