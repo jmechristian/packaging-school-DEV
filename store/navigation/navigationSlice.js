@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   mobileMenuOpen: false,
   searchOpen: false,
+  sectionInView: '',
 };
 
 export const navSlice = createSlice({
@@ -21,10 +22,18 @@ export const navSlice = createSlice({
     closeSearch: (state) => {
       state.searchOpen = false;
     },
+    setSectionInView: (state, action) => {
+      state.sectionInView = action.payload;
+    },
   },
 });
 
-export const { showMobileMenu, closeMobileMenu, showSearch, closeSearch } =
-  navSlice.actions;
+export const {
+  showMobileMenu,
+  closeMobileMenu,
+  showSearch,
+  closeSearch,
+  setSectionInView,
+} = navSlice.actions;
 
 export default navSlice.reducer;

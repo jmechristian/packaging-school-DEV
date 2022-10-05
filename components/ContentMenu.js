@@ -1,11 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, useScroll } from 'framer-motion';
-import { ChevronDownIcon } from '@heroicons/react/20/solid';
+import { useDispatch, useSelector } from 'react-redux';
 import RotatingCaret from './RotatingCaret';
+import { setSectionInView } from '../store/navigation/navigationSlice';
 
 const ContentMenu = ({ items }) => {
+  const dispatch = useDispatch();
+  const { sectionInView } = useSelector((state) => state.nav);
   const [contentMenuOpen, setContentMenuOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState();
   const [showMenu, setShowMenu] = useState(false);
   const menuRef = useRef();
 
@@ -16,11 +18,11 @@ const ContentMenu = ({ items }) => {
   });
 
   const activeLinkHandler = (linkName) => {
-    setActiveLink(linkName);
+    dispatch(setSectionInView(linkName));
   };
 
   const mobileActiveLinkHandler = (linkName) => {
-    setActiveLink(linkName);
+    dispatch(setSectionInView(linkName));
     setContentMenuOpen(!contentMenuOpen);
   };
 
@@ -106,12 +108,12 @@ const ContentMenu = ({ items }) => {
                 key={i}
                 onClick={() => mobileActiveLinkHandler(item.link_name)}
                 className={`${
-                  activeLink === item.link_name
+                  sectionInView === item.link_name
                     ? 'text-base-brand'
                     : 'text-zinc-800'
                 }`}
               >
-                <span>{item.link_name}</span>
+                <div className='capitalize'>{item.link_name}</div>
               </a>
             ))}
           </motion.div>
@@ -122,12 +124,15 @@ const ContentMenu = ({ items }) => {
               href={item.link_ref}
               key={i}
               className={`${
-                activeLink === item.link_name
+                sectionInView === item.link_name
                   ? 'text-base-brand'
                   : 'text-zinc-800'
               }`}
             >
-              <div onClick={() => activeLinkHandler(item.link_name)}>
+              <div
+                onClick={() => activeLinkHandler(item.link_name)}
+                className='capitalize'
+              >
                 {item.link_name}
               </div>
             </a>

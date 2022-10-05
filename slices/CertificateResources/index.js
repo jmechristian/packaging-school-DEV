@@ -1,12 +1,28 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { PrismicRichText, PrismicLink } from '@prismicio/react';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
+import { useDispatch } from 'react-redux';
+import { useInView } from 'framer-motion';
+import { setSectionInView } from '../../store/navigation/navigationSlice';
 
 const CertificateResources = ({ slice }) => {
+  const dispatch = useDispatch();
+  const sectionRef = useRef();
+  const sectionInView = useInView(sectionRef, { amount: 0.5 });
+
+  useEffect(() => {
+    if (sectionInView) {
+      dispatch(setSectionInView(sectionRef.current.id));
+    } else {
+      return;
+    }
+  }, [sectionInView, dispatch]);
+
   return (
     <section
       className='bg-base-dark dark__section__margin scroll-mt-16 lg:scroll-mt-24'
       id='resources'
+      ref={sectionRef}
     >
       <div className='container__inner flex flex-col py-16 lg:py-24 gap-12 lg:gap-16'>
         <div className='flex flex-col gap-3'>

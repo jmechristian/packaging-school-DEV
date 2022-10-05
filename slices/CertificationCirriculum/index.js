@@ -1,16 +1,32 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { PrismicRichText } from '@prismicio/react';
 import CirriculumBlock from './CirriculumBlock';
+import { useDispatch } from 'react-redux';
+import { useInView } from 'framer-motion';
+import { setSectionInView } from '../../store/navigation/navigationSlice';
 
 const CertificationCirriculum = ({ slice }) => {
   const half = Math.ceil(slice?.items.length / 2);
   const firstHalf = slice?.items.slice(0, half);
   const secondHalf = slice?.items.slice(half);
 
+  const dispatch = useDispatch();
+  const sectionRef = useRef();
+  const sectionInView = useInView(sectionRef, { amount: 0.5 });
+
+  useEffect(() => {
+    if (sectionInView) {
+      dispatch(setSectionInView(sectionRef.current.id));
+    } else {
+      return;
+    }
+  }, [sectionInView, dispatch]);
+
   return (
     <section
       className='bg-base-dark dark__section__margin scroll-mt-16 lg:scroll-mt-24'
       id='curriculum'
+      ref={sectionRef}
     >
       <div className='container__inner flex flex-col py-16 lg:py-24 gap-12'>
         <div className='flex flex-col gap-3'>
