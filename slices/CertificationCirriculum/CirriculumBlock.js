@@ -1,9 +1,27 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { PrismicRichText } from '@prismicio/react';
 import RotatingCaret from '../../components/RotatingCaret';
 
 const CirriculumBlock = ({ week, title, description }) => {
   const [showContent, setShowContent] = useState(false);
+
+  const contentVariants = {
+    show: {
+      opacity: 1,
+      transition: {
+        ease: 'easeOut',
+        duration: 0.3,
+      },
+    },
+    hide: {
+      opacity: 0,
+      transition: {
+        ease: 'easeOut',
+        duration: 0.3,
+      },
+    },
+  };
 
   return (
     <div>
@@ -26,11 +44,15 @@ const CirriculumBlock = ({ week, title, description }) => {
             </div>
           </div>
         </div>
-        {showContent && (
-          <div className='body__text text-base-light max-h-min'>
-            <PrismicRichText field={description} />
-          </div>
-        )}
+        <motion.div
+          className='body__text text-base-light'
+          style={{ display: showContent ? 'inline-flex' : 'none' }}
+          variants={contentVariants}
+          animate={showContent ? 'show' : 'hide'}
+          initial={false}
+        >
+          <PrismicRichText field={description} />
+        </motion.div>
       </div>
     </div>
   );

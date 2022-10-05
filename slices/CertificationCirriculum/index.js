@@ -7,8 +7,6 @@ const CertificationCirriculum = ({ slice }) => {
   const firstHalf = slice?.items.slice(0, half);
   const secondHalf = slice?.items.slice(half);
 
-  console.log(secondHalf);
-
   return (
     <section
       className='bg-base-dark dark__section__margin scroll-mt-24'
