@@ -9,7 +9,7 @@ const CertificationCirriculum = ({ slice }) => {
 
   return (
     <section
-      className='bg-base-dark dark__section__margin scroll-mt-24'
+      className='bg-base-dark dark__section__margin scroll-mt-16 lg:scroll-mt-24'
       id='curriculum'
     >
       <div className='container__inner flex flex-col py-16 lg:py-24 gap-12'>

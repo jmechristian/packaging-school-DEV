@@ -5,7 +5,7 @@ import InstructorBio from './components/InstructorBio';
 
 const CertificateInstructor = ({ slice }) => (
   <section
-    className='inner__section-margin container__inner scroll-mt-28'
+    className='inner__section-margin container__inner scroll-mt-28 lg:scroll-mt-32'
     id='instructor'
   >
     <div className='flex flex-col gap-12 lg:gap-16'>

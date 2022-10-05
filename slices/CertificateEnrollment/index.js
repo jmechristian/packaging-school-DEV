@@ -6,7 +6,7 @@ import SalesBar from './components/SalesBar';
 
 const CertificateEnrollment = ({ slice }) => (
   <section
-    className='inner__section-margin container__inner scroll-mt-28 flex flex-col gap-12 lg:gap-16'
+    className='inner__section-margin container__inner scroll-mt-32 flex flex-col gap-12 lg:gap-16'
     id='enrollment'
   >
     <div className='flex flex-col gap-3'>
