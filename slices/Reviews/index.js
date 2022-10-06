@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 import { PrismicRichText } from '@prismicio/react';
 import ReviewBlock from './components/ReviewBlock';
 import { useDispatch } from 'react-redux';
@@ -6,9 +7,11 @@ import { useInView } from 'framer-motion';
 import { setSectionInView } from '../../store/navigation/navigationSlice';
 
 const Reviews = ({ slice }) => {
+  const [width, setWidth] = useState(0);
   const dispatch = useDispatch();
   const sectionRef = useRef();
   const sectionInView = useInView(sectionRef, { amount: 0.5 });
+  const reviewCarousel = useRef();
 
   useEffect(() => {
     if (sectionInView) {
@@ -17,6 +20,12 @@ const Reviews = ({ slice }) => {
       return;
     }
   }, [sectionInView, dispatch]);
+
+  useEffect(() => {
+    setWidth(
+      reviewCarousel.current.offsetWidth - reviewCarousel.current.scrollWidth
+    );
+  }, []);
 
   return (
     <section
@@ -41,16 +50,21 @@ const Reviews = ({ slice }) => {
             )}
           </div>
         </div>
-        <div className='flex flex-row overflow-auto gap-3 w-full'>
-          {slice &&
-            slice?.items.map((item, i) => <ReviewBlock item={item} key={i} />)}
-        </div>
-        <div className='flex flex-row gap-2 justify-center'>
-          {slice &&
-            slice?.items.map((item, i) => (
-              <div key={i} className='w-3 h-3 bg-white rounded-full'></div>
-            ))}
-        </div>
+        <motion.div
+          className='overflow-hidden cursor-pointer'
+          ref={reviewCarousel}
+        >
+          <motion.div
+            className='flex gap-3 w-full'
+            drag='x'
+            dragConstraints={{ right: 0, left: width }}
+          >
+            {slice &&
+              slice?.items.map((item, i) => (
+                <ReviewBlock item={item} key={i} />
+              ))}
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
