@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import RotatingCaret from './RotatingCaret';
 import { setSectionInView } from '../store/navigation/navigationSlice';
 
-const ContentMenu = ({ items }) => {
+const ContentMenu = ({ items, enroll, trial }) => {
   const { sectionInView } = useSelector((state) => state.nav);
   const [contentMenuOpen, setContentMenuOpen] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
@@ -70,7 +70,7 @@ const ContentMenu = ({ items }) => {
 
   return (
     <motion.div
-      className='fixed flex-col top-0 left-0 right-0 z-50 bg-white shadow-xl'
+      className='fixed flex-col top-0 left-0 right-0 z-50 bg-white shadow-md'
       ref={menuRef}
       variants={variants}
       initial={false}
@@ -84,7 +84,7 @@ const ContentMenu = ({ items }) => {
       <section className='container__inner flex w-full justify-between items-start lg:items-center py-4 relative'>
         <div className=' font-medium flex flex-col lg:hidden'>
           <div
-            className='flex text-zinc-800 gap-2 items-center leading-loose'
+            className='flex text-zinc-800 gap-1 items-center leading-loose'
             onClick={() => setContentMenuOpen(!contentMenuOpen)}
           >
             Jump To
@@ -131,10 +131,21 @@ const ContentMenu = ({ items }) => {
             </a>
           ))}
         </div>
-        <div className='rounded'>
-          <motion.div className='bg-clemson text-white font-semibold text-sm px-4 py-2 rounded'>
-            Enroll Now
-          </motion.div>
+        <div className='flex gap-1'>
+          {trial && (
+            <div className='rounded'>
+              <button className='bg-white text-clemson border border-clemson hover:border-clemson-dark hover:text-clemson-dark font-semibold text-xs md:text-sm px-4 py-2 rounded'>
+                <a href={trial} target='_blank' rel='noreferrer'>
+                  Free Preview
+                </a>
+              </button>
+            </div>
+          )}
+          <div className='rounded'>
+            <button className='bg-clemson border border-clemson text-white hover:bg-clemson-dark font-semibold text-xs md:text-sm px-4 py-2 rounded'>
+              Enroll Now
+            </button>
+          </div>
         </div>
       </section>
     </motion.div>

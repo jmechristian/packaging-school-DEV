@@ -70,13 +70,16 @@ const CertMenu = ({ slice }) => {
             </a>
           ))}
         </div>
-        <div className='rounded'>
-          <motion.div
-            className='bg-base-dark text-white text-sm px-4 py-2 rounded'
-            style={{ opacity: scrollYProgress }}
-          >
-            Enroll Now
-          </motion.div>
+        <div className='flex'>
+          <div className='rounded'>
+            <div
+              className='bg-base-dark text-white text-sm px-4 py-2 rounded'
+              style={{ opacity: scrollYProgress }}
+            >
+              Enroll Now
+            </div>
+          </div>
+          <div className='rounded'></div>
         </div>
       </section>
     </div>

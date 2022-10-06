@@ -3,7 +3,21 @@
     "certification": {},
     "icon_text": {},
     "calendar": {},
-    "contentmenu": {}
+    "contentmenu": {},
+    "course": {
+      "course_description": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      },
+      "course_title": {
+        "config": {
+          "patternType": "HEADING",
+          "blocks": 1
+        }
+      }
+    }
   },
   "slices": {
     "NameBlock": {},
@@ -163,6 +177,9 @@
             }
           }
         }
+      },
+      "mulitple": {
+        "items": {}
       }
     },
     "Reviews": {
@@ -228,6 +245,25 @@
           }
         }
       }
-    }
+    },
+    "CourseDetails": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "CourseObjective": {
+      "default": {
+        "primary": {},
+        "items": {
+          "course_objective": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "CertificationMenu": {}
   }
 }

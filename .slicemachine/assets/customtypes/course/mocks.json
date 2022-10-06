@@ -1,0 +1,53 @@
+{
+  "id": "mock-doc-id",
+  "url": null,
+  "type": "course",
+  "href": null,
+  "tags": [],
+  "first_publication_date": "1970-01-01T00:00:01+0000",
+  "last_publication_date": "1970-01-01T00:00:01+0000",
+  "slugs": [],
+  "linked_documents": [],
+  "lang": "en-us",
+  "alternate_languages": [],
+  "data": {
+    "course_hero": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": null,
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6"
+    },
+    "course_title": [
+      {
+        "type": "heading2",
+        "text": "Spread",
+        "spans": []
+      }
+    ],
+    "course_description": [
+      {
+        "type": "paragraph",
+        "text": "Quis sint aliqua cillum pariatur labore velit fugiat reprehenderit irure sit aliquip veniam fugiat dolor. Ipsum quis quis Lorem nisi excepteur ad ad pariatur ea adipisicing occaecat laboris.",
+        "spans": []
+      }
+    ],
+    "course_preview": {
+      "link_type": "Web",
+      "url": "https://slicemachine.dev"
+    },
+    "related_courses": {
+      "id": "mock_document_id",
+      "link_type": "Document",
+      "type": "course",
+      "tags": [],
+      "lang": "en-us",
+      "slug": null,
+      "first_publication_date": "1970-01-01T00:00:01+0000",
+      "last_publication_date": "1970-01-01T01:00:00+0000"
+    },
+    "slices": []
+  }
+}

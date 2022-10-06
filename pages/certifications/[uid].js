@@ -8,9 +8,12 @@ import { components } from '../../slices';
 
 const Page = ({ page, menu }) => {
   const menuItems = menu?.data.slices[0].items;
+  const enrollLink = menu?.data.slices[0].primary.enroll_link;
+  const trialLink = menu?.data.slices[0].primary.trial_link;
+
   return (
     <Layout>
-      <ContentMenu items={menuItems} />
+      <ContentMenu items={menuItems} enroll={enrollLink} trial={trialLink} />
       <SliceZone slices={page.data.slices} components={components} />
     </Layout>
   );

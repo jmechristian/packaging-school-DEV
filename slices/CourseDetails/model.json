@@ -1,28 +1,21 @@
 {
-  "id": "cert_menu",
+  "id": "course_details",
   "type": "SharedSlice",
-  "name": "CertMenu",
-  "description": "CertMenu",
+  "name": "CourseDetails",
+  "description": "CourseDetails",
   "variations": [
     {
       "id": "default",
       "name": "Default",
       "docURL": "...",
       "version": "sktwi1xtmkfgx8626",
-      "description": "CertMenu",
+      "description": "CourseDetails",
       "primary": {},
       "items": {
-        "link_name": {
+        "course_detail": {
           "type": "Text",
           "config": {
-            "label": "link name",
-            "placeholder": ""
-          }
-        },
-        "link_ref": {
-          "type": "Text",
-          "config": {
-            "label": "link ref",
+            "label": "course detail",
             "placeholder": ""
           }
         }

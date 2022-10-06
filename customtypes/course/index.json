@@ -1,0 +1,77 @@
+{
+  "id": "course",
+  "label": "course",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "course slug",
+          "placeholder": ""
+        }
+      },
+      "course_hero": {
+        "type": "Image",
+        "config": {
+          "label": "course hero",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "course_title": {
+        "type": "StructuredText",
+        "config": {
+          "label": "course title",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "heading2"
+        }
+      },
+      "course_description": {
+        "type": "StructuredText",
+        "config": {
+          "label": "course description",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph"
+        }
+      },
+      "course_preview": {
+        "type": "Link",
+        "config": {
+          "label": "course preview",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "select": null
+        }
+      },
+      "related_courses": {
+        "type": "Link",
+        "config": {
+          "label": "related courses",
+          "select": "document",
+          "customtypes": [
+            "course",
+            "certification"
+          ]
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "course_details": {
+              "type": "SharedSlice"
+            },
+            "course_objective": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -4,11 +4,10 @@
     "version": "sktwi1xtmkfgx8626",
     "items": [
       {
-        "link_name": "contain",
-        "link_ref": "establish"
+        "course_detail": "till"
       }
     ],
     "primary": {},
-    "slice_type": "cert_menu"
+    "slice_type": "course_details"
   }
 ]
