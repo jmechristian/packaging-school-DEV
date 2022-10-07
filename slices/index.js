@@ -9,39 +9,33 @@ import CertificateResources from './CertificateResources';
 import CertificationCalendar from './CertificationCalendar';
 import CertificationCirriculum from './CertificationCirriculum';
 import CertificationMenu from './CertificationMenu';
-import CourseDetails from './CourseDetails';
-import CourseObjective from './CourseObjective';
 import Reviews from './Reviews';
 import TopCompanies from './TopCompanies';
 
 export {
-	CertificateBenefits,
-	CertificateDetails,
-	CertificateEnrollment,
-	CertificateHero,
-	CertificateInstructor,
-	CertificateResources,
-	CertificationCalendar,
-	CertificationCirriculum,
-	CertificationMenu,
-	CourseDetails,
-	CourseObjective,
-	Reviews,
-	TopCompanies,
+  CertificateBenefits,
+  CertificateDetails,
+  CertificateEnrollment,
+  CertificateHero,
+  CertificateInstructor,
+  CertificateResources,
+  CertificationCalendar,
+  CertificationCirriculum,
+  CertificationMenu,
+  Reviews,
+  TopCompanies,
 };
 
 export const components = {
-	certificate_benefits: CertificateBenefits,
-	certificate_details: CertificateDetails,
-	certificate_enrollment: CertificateEnrollment,
-	certificate_hero: CertificateHero,
-	certificate_instructor: CertificateInstructor,
-	certificate_resources: CertificateResources,
-	certification_calendar: CertificationCalendar,
-	certification_cirriculum: CertificationCirriculum,
-	cert_menu: CertificationMenu,
-	course_details: CourseDetails,
-	course_objective: CourseObjective,
-	reviews: Reviews,
-	top_companies: TopCompanies,
+  certificate_benefits: CertificateBenefits,
+  certificate_details: CertificateDetails,
+  certificate_enrollment: CertificateEnrollment,
+  certificate_hero: CertificateHero,
+  certificate_instructor: CertificateInstructor,
+  certificate_resources: CertificateResources,
+  certification_calendar: CertificationCalendar,
+  certification_cirriculum: CertificationCirriculum,
+  cert_menu: CertificationMenu,
+  reviews: Reviews,
+  top_companies: TopCompanies,
 };

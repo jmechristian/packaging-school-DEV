@@ -20,6 +20,8 @@ export function linkResolver(doc) {
       return '/';
     case 'certification':
       return `/certifications/${doc.uid}`;
+    case 'course':
+      return `/courses/${doc.uid}`;
     default:
       return null;
   }

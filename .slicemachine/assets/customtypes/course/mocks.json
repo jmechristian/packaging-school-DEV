@@ -11,6 +11,12 @@
   "lang": "en-us",
   "alternate_languages": [],
   "data": {
+    "course_id": "wrapped",
+    "categories": [
+      {
+        "category": "passage"
+      }
+    ],
     "course_hero": {
       "dimensions": {
         "width": 900,
@@ -18,19 +24,37 @@
       },
       "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6"
+      "url": "https://images.unsplash.com/photo-1544731612-de7f96afe55f"
     },
     "course_title": [
       {
         "type": "heading2",
-        "text": "Spread",
+        "text": "Mission",
         "spans": []
       }
     ],
-    "course_description": [
+    "instructor": [
+      {
+        "instructor_headshot": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": null,
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea"
+        },
+        "instructor_name": "off",
+        "instructor_social": {
+          "link_type": "Web",
+          "url": "https://prismic.io"
+        }
+      }
+    ],
+    "course_subtitle": [
       {
         "type": "paragraph",
-        "text": "Quis sint aliqua cillum pariatur labore velit fugiat reprehenderit irure sit aliquip veniam fugiat dolor. Ipsum quis quis Lorem nisi excepteur ad ad pariatur ea adipisicing occaecat laboris.",
+        "text": "Et aliquip tempor occaecat veniam. Commodo quis esse officia ut consectetur esse enim elit excepteur nulla quis.",
         "spans": []
       }
     ],
@@ -38,16 +62,51 @@
       "link_type": "Web",
       "url": "https://slicemachine.dev"
     },
-    "related_courses": {
-      "id": "mock_document_id",
-      "link_type": "Document",
-      "type": "course",
-      "tags": [],
-      "lang": "en-us",
-      "slug": null,
-      "first_publication_date": "1970-01-01T00:00:01+0000",
-      "last_publication_date": "1970-01-01T01:00:00+0000"
+    "course_info_sheet": {
+      "link_type": "Web",
+      "url": "http://google.com"
     },
+    "what_learned": [
+      {
+        "type": "paragraph",
+        "text": "Veniam veniam elit sint officia eu exercitation in proident.",
+        "spans": []
+      }
+    ],
+    "what_learned_items": [
+      {
+        "overview_items": [
+          {
+            "type": "paragraph",
+            "text": "Cupidatat eu incididunt exercitation quis quis pariatur qui elit voluptate eiusmod nostrud eu do sint. Sit ad ullamco eu culpa amet sit laboris. Ex quis proident laboris cupidatat in et reprehenderit pariatur est tempor aliquip pariatur.",
+            "spans": []
+          }
+        ]
+      }
+    ],
+    "course_price": "disease",
+    "course_hours": "silence",
+    "course_lessons": "nice",
+    "course_videos": "belt",
+    "part_of_cert": "thy",
+    "certificate_link": {
+      "link_type": "Web",
+      "url": "https://slicemachine.dev"
+    },
+    "related_courses": [
+      {
+        "related": {
+          "id": "mock_document_id",
+          "link_type": "Document",
+          "type": "course",
+          "tags": [],
+          "lang": "en-us",
+          "slug": null,
+          "first_publication_date": "1970-01-01T00:00:01+0000",
+          "last_publication_date": "1970-01-01T01:00:00+0000"
+        }
+      }
+    ],
     "slices": []
   }
 }

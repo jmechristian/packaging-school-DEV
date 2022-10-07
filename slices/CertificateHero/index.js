@@ -7,7 +7,7 @@ const CertificateHero = ({ slice }) => (
     <div className='container__inner hero__padding flex flex-col'>
       <div className='flex w-full justify-between items-center'>
         <div className='flex flex-col lg:w-7/12'>
-          <div className='text-white text-4xl xl:text-5xl font-bold w-full'>
+          <div className='hero__headline'>
             {slice.primary.headline ? (
               <PrismicRichText field={slice.primary.headline} />
             ) : (

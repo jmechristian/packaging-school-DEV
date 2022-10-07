@@ -12,6 +12,28 @@
           "placeholder": ""
         }
       },
+      "course_id": {
+        "type": "Text",
+        "config": {
+          "label": "course id",
+          "placeholder": ""
+        }
+      },
+      "categories": {
+        "type": "Group",
+        "config": {
+          "label": "categories",
+          "fields": {
+            "category": {
+              "type": "Text",
+              "config": {
+                "label": "category",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      },
       "course_hero": {
         "type": "Image",
         "config": {
@@ -29,47 +51,155 @@
           "single": "heading2"
         }
       },
-      "course_description": {
+      "instructor": {
+        "type": "Group",
+        "config": {
+          "label": "instructor",
+          "fields": {
+            "instructor_headshot": {
+              "type": "Image",
+              "config": {
+                "label": "instructor headshot",
+                "constraint": {},
+                "thumbnails": []
+              }
+            },
+            "instructor_name": {
+              "type": "Text",
+              "config": {
+                "label": "instructor name",
+                "placeholder": ""
+              }
+            },
+            "instructor_social": {
+              "type": "Link",
+              "config": {
+                "label": "instructor social",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
+        }
+      },
+      "course_subtitle": {
         "type": "StructuredText",
         "config": {
-          "label": "course description",
+          "label": "course subtitle",
           "placeholder": "",
           "allowTargetBlank": true,
-          "multi": "paragraph"
+          "single": "paragraph"
         }
       },
       "course_preview": {
         "type": "Link",
         "config": {
-          "label": "course preview",
+          "label": "course video preview",
           "placeholder": "",
           "allowTargetBlank": true,
           "select": null
         }
       },
-      "related_courses": {
+      "course_info_sheet": {
         "type": "Link",
         "config": {
+          "label": "course info sheet",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "what_learned": {
+        "type": "StructuredText",
+        "config": {
+          "label": "what learned",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph"
+        }
+      },
+      "what_learned_items": {
+        "type": "Group",
+        "config": {
+          "label": "what learned items",
+          "fields": {
+            "overview_items": {
+              "type": "StructuredText",
+              "config": {
+                "label": "overview items",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "single": "paragraph"
+              }
+            }
+          }
+        }
+      },
+      "course_price": {
+        "type": "Text",
+        "config": {
+          "label": "course price",
+          "placeholder": ""
+        }
+      },
+      "course_hours": {
+        "type": "Text",
+        "config": {
+          "label": "course hours",
+          "placeholder": ""
+        }
+      },
+      "course_lessons": {
+        "type": "Text",
+        "config": {
+          "label": "course lessons",
+          "placeholder": ""
+        }
+      },
+      "course_videos": {
+        "type": "Text",
+        "config": {
+          "label": "course videos",
+          "placeholder": ""
+        }
+      },
+      "part_of_cert": {
+        "type": "Text",
+        "config": {
+          "label": "part of cert",
+          "placeholder": ""
+        }
+      },
+      "certificate_link": {
+        "type": "Link",
+        "config": {
+          "label": "certificate link",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "related_courses": {
+        "type": "Group",
+        "config": {
           "label": "related courses",
-          "select": "document",
-          "customtypes": [
-            "course",
-            "certification"
-          ]
+          "fields": {
+            "related": {
+              "type": "Link",
+              "config": {
+                "label": "related course",
+                "select": "document",
+                "customtypes": [
+                  "course"
+                ]
+              }
+            }
+          }
         }
       },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
-          "choices": {
-            "course_details": {
-              "type": "SharedSlice"
-            },
-            "course_objective": {
-              "type": "SharedSlice"
-            }
-          }
+          "choices": {}
         }
       }
     }

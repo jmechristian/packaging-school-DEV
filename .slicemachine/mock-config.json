@@ -5,16 +5,30 @@
     "calendar": {},
     "contentmenu": {},
     "course": {
-      "course_description": {
+      "course_title": {
+        "config": {
+          "patternType": "HEADING",
+          "blocks": 1
+        }
+      },
+      "course_subtitle": {
         "config": {
           "patternType": "PARAGRAPH",
           "blocks": 1
         }
       },
-      "course_title": {
+      "what_learned": {
         "config": {
-          "patternType": "HEADING",
+          "patternType": "PARAGRAPH",
           "blocks": 1
+        }
+      },
+      "what_learned_items": {
+        "overview_items": {
+          "config": {
+            "patternType": "PARAGRAPH",
+            "blocks": 1
+          }
         }
       }
     }
