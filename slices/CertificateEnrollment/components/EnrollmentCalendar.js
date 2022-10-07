@@ -22,14 +22,16 @@ const EnrollmentCalendar = () => {
             <div className='col-span-2 bg-base-dark text-white font-semibold px-2 py-1'>
               {item.session}
             </div>
-            <div className='col-span-1 bg-base-light text-gray-600 text-sm font-semibold px-2 py-1'>
+            <div className='col-span-1 bg-base-light text-neutral-600 text-sm font-semibold px-2 py-1'>
               Dates
             </div>
-            <div className='col-span-1 bg-base-light text-gray-600 text-sm font-semibold px-4 py-1'>
+            <div className='col-span-1 bg-base-light text-neutral-600 text-sm font-semibold px-4 py-1'>
               Deadline
             </div>
-            <div className='col-span-1 text-sm px-2 py-1'>{item.date}</div>
-            <div className='col-span-1 text-sm px-4 py-1 font-bold'>
+            <div className='col-span-1 text-sm px-2 py-1 text-neutral-600'>
+              {item.date}
+            </div>
+            <div className='col-span-1 text-sm px-4 py-1 font-bold text-neutral-600'>
               {item.deadline}
             </div>
           </div>

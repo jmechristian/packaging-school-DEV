@@ -22,7 +22,7 @@ const CertificateEnrollment = ({ slice }) => {
 
   return (
     <section
-      className='inner__section-margin container__inner scroll-mt-40 flex flex-col gap-12 lg:gap-16'
+      className='inner__section-margin container__inner scroll-mt-28 lg:scroll-mt-40 flex flex-col gap-10 lg:gap-16'
       id='enrollment'
       ref={sectionRef}
     >
@@ -38,7 +38,7 @@ const CertificateEnrollment = ({ slice }) => {
           )}
         </div>
       </div>
-      <div className='grid grid-col-1 lg:grid-cols-5 gap-y-12 lg:gap-x-12 lg:justify-between'>
+      <div className='grid grid-col-1 lg:grid-cols-5 gap-y-16 lg:gap-x-12 lg:justify-between'>
         <div className='col-span-1 lg:col-span-2'>
           <EnrollmentDetails items={slice?.items} price={slice.primary.price} />
         </div>
