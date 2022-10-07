@@ -51,7 +51,7 @@ const Reviews = ({ slice }) => {
           </div>
         </div>
         <motion.div
-          className='overflow-hidden cursor-pointer'
+          className='overflow-hidden cursor-grab'
           ref={reviewCarousel}
         >
           <motion.div

@@ -24,7 +24,7 @@ const LogoScroller = ({ items }) => {
   };
 
   return (
-    <div className='overflow-hidden cursor-pointer flex' ref={carousel}>
+    <div className='overflow-hidden cursor-grab flex' ref={carousel}>
       <motion.div
         drag='x'
         dragConstraints={{
