@@ -5,8 +5,8 @@ const TopCompanies = ({ slice }) => {
   return (
     <section className='lg:container__inner relative'>
       <div className='bg-base-dark lg:rounded-lg py-12 w-full'>
-        <div className='flex flex-col md:w-4/5 mx-auto'>
-          <div className='text-center text-white text-xl lg:text-2xl font-semibold'>
+        <div className='flex flex-col md:w-10/12 mx-auto'>
+          <div className='text-center text-white text-xl font-semibold'>
             Top Companies Trust{' '}
             <span className='text-clemson'>The Packaging School</span> for
             In-Demand Skills

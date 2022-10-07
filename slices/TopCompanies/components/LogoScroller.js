@@ -24,7 +24,9 @@ const LogoScroller = ({ items }) => {
   };
 
   return (
-    <div className='overflow-hidden cursor-grab flex' ref={carousel}>
+    <div className='overflow-hidden cursor-grab flex relative' ref={carousel}>
+      <div className='absolute top-0 left-0 bg-gradient-to-r from-base-dark  w-1/12 h-full z-30 '></div>
+      <div className='absolute top-0 right-0 bg-gradient-to-l from-base-dark  w-1/12 h-full z-30 '></div>
       <motion.div
         drag='x'
         dragConstraints={{
@@ -36,7 +38,7 @@ const LogoScroller = ({ items }) => {
         className='flex'
       >
         {items.map((item, i) => (
-          <motion.div key={i} className='px-8 pt-6 min-w-max min-h-max'>
+          <motion.div key={i} className='px-8 pt-7 min-w-max min-h-max'>
             <img
               src={item.logo.url}
               alt={item.logo.alt}
