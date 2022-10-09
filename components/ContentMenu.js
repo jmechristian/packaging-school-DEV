@@ -42,10 +42,10 @@ const ContentMenu = ({ items, enroll, trial }) => {
       },
     },
     hidden: {
-      opacity: 0,
-      y: -50,
+      opacity: 1,
+      y: -90,
       transition: {
-        duration: 0.3,
+        duration: 0.2,
         ease: 'easeInOut',
       },
     },
@@ -75,7 +75,7 @@ const ContentMenu = ({ items, enroll, trial }) => {
       variants={variants}
       initial={false}
       animate={showMenu ? 'show' : 'hidden'}
-      style={{ display: showMenu ? 'flex' : 'none' }}
+      // style={{ display: showMenu ? 'flex' : 'none' }}
     >
       <motion.div
         className='w-full h-2 lg:h-2.5 bg-base-brand'
@@ -131,12 +131,12 @@ const ContentMenu = ({ items, enroll, trial }) => {
             </a>
           ))}
         </div>
-        <div className='flex gap-1'>
+        <div className='flex gap-2'>
           {trial && (
             <div className='rounded'>
               <button className='bg-white text-clemson border border-clemson hover:border-clemson-dark hover:text-clemson-dark font-semibold text-xs md:text-sm px-4 py-2 rounded'>
                 <a href={trial} target='_blank' rel='noreferrer'>
-                  Free Preview
+                  Free Trial
                 </a>
               </button>
             </div>

@@ -24,7 +24,7 @@ const CertificationCirriculum = ({ slice }) => {
 
   return (
     <section
-      className='bg-base-dark dark__section__margin scroll-mt-16 lg:scroll-mt-24'
+      className='bg-base-dark scroll-mt-16 lg:scroll-mt-24'
       id='curriculum'
       ref={sectionRef}
     >

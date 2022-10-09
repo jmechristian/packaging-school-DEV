@@ -14,7 +14,7 @@
   }
 
   .hero__padding {
-    @apply pt-12 md:pt-20 lg:pt-44 xl:pt-48 pb-20 md:pb-40 xl:pb-32;
+    @apply pt-12 md:pt-20 lg:pt-44 xl:pt-48 pb-20 md:pb-28 xl:pb-32;
   }
 
   .hero__headline {
@@ -22,15 +22,11 @@
   }
 
   .inner__section-margin {
-    @apply my-28;
-  }
-
-  .dark__section__margin {
-    @apply my-12;
+    @apply my-20 md:my-20;
   }
 
   .dark__inner {
-    @apply py-16 lg:py-24;
+    @apply py-16 lg:py-20;
   }
 
   .subheadline {

@@ -29,7 +29,7 @@ const Reviews = ({ slice }) => {
 
   return (
     <section
-      className='bg-base-light dark__section__margin scroll-mt-24'
+      className='bg-base-light scroll-mt-24'
       id='reviews'
       ref={sectionRef}
     >
