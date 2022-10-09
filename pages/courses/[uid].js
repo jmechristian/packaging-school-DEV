@@ -2,7 +2,6 @@ import * as prismicH from '@prismicio/helpers';
 import Layout from '../../features/layout/Layout';
 import CourseMain from '../../components/courses/CourseMain';
 import { createClient, linkResolver } from '../../prismicio';
-import { PrismicRichText } from '@prismicio/react';
 
 const Page = ({ page }) => {
   return (

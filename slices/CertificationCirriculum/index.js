@@ -28,7 +28,7 @@ const CertificationCirriculum = ({ slice }) => {
       id='curriculum'
       ref={sectionRef}
     >
-      <div className='container__inner flex flex-col py-16 lg:py-24 gap-12'>
+      <div className='container__inner dark__inner flex flex-col gap-12'>
         <div className='flex flex-col gap-3'>
           <div className='subheadline text-white'>
             {slice.primary.title ? (

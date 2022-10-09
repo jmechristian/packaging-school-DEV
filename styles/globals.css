@@ -22,7 +22,7 @@
   }
 
   .inner__section-margin {
-    @apply my-20 md:my-20;
+    @apply my-16 md:my-20;
   }
 
   .dark__inner {
