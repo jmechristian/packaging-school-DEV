@@ -12,6 +12,13 @@
           "placeholder": ""
         }
       },
+      "certificate_name": {
+        "type": "Text",
+        "config": {
+          "label": "certificate name",
+          "placeholder": ""
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

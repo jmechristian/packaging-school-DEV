@@ -16,7 +16,9 @@ export default Page;
 export async function getStaticProps({ params, previewData }) {
   const client = createClient({ previewData });
 
-  const page = await client.getByUID('course', params.uid);
+  const page = await client.getByUID('course', params.uid, {
+    fetchLinks: 'certification.certificate_name',
+  });
 
   return {
     props: {

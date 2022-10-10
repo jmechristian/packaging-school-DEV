@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { motion, useScroll, AnimatePresence } from 'framer-motion';
+import { motion, useScroll } from 'framer-motion';
 import { useSelector } from 'react-redux';
 import RotatingCaret from './RotatingCaret';
 import { setSectionInView } from '../store/navigation/navigationSlice';
