@@ -23,14 +23,7 @@
           "blocks": 1
         }
       },
-      "what_learned_items": {
-        "overview_items": {
-          "config": {
-            "patternType": "PARAGRAPH",
-            "blocks": 1
-          }
-        }
-      }
+      "what_learned_items": {}
     }
   },
   "slices": {

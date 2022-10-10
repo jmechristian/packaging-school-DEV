@@ -1,12 +1,14 @@
 import * as prismicH from '@prismicio/helpers';
 import Layout from '../../features/layout/Layout';
 import CourseMain from '../../components/courses/CourseMain';
+import CourseBottom from '../../components/courses/CourseBottom';
 import { createClient, linkResolver } from '../../prismicio';
 
 const Page = ({ page }) => {
   return (
     <Layout>
       <CourseMain data={page.data} />
+      <CourseBottom />
     </Layout>
   );
 };

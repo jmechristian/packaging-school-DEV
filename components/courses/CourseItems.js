@@ -5,20 +5,20 @@ import {
   ArrowDownOnSquareIcon,
 } from '@heroicons/react/24/outline';
 
-const CourseItems = ({ data }) => {
+const CourseItems = ({ preview, infoSheet }) => {
   return (
     <div className='border border-white max-w-fit'>
-      <div className='py-3 px-5'>
-        <div className='flex flex-col gap-3 justify-center text-white font-semibold'>
-          <div className='flex items-center gap-3'>
+      <div className='py-5 px-5'>
+        <div className='flex flex-col lg:flex-row gap-4 lg:gap-6 justify-center text-white font-semibold'>
+          <div className='flex items-center gap-2'>
             <VideoCameraIcon className='h-6 w-6 stroke-base-brand' />
-            <PrismicLink field={data.course_preview}>
+            <PrismicLink field={preview} className='font-medium uppercase'>
               Preview Course
             </PrismicLink>
           </div>
-          <div className='flex gap-3 items-center'>
+          <div className='flex gap-2 items-center'>
             <ArrowDownOnSquareIcon className='w-6 h-6 stroke-base-brand' />
-            <PrismicLink field={data.course_info_sheet}>
+            <PrismicLink field={infoSheet} className='font-medium uppercase'>
               Information Sheet
             </PrismicLink>
           </div>

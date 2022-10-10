@@ -123,12 +123,10 @@
           "label": "what learned items",
           "fields": {
             "overview_items": {
-              "type": "StructuredText",
+              "type": "Text",
               "config": {
                 "label": "overview items",
-                "placeholder": "",
-                "allowTargetBlank": true,
-                "single": "paragraph"
+                "placeholder": ""
               }
             }
           }

@@ -6,26 +6,28 @@ import CourseCertificate from './CourseCertificate';
 
 const CourseInfo = ({ price, hours, lessons, videos, certification }) => {
   return (
-    <section className='bg-base-dark-highlight rounded'>
-      <div className='flex flex-col gap-4 border-b border-b-gray-600 p-8'>
-        <div className='flex flex-col gap-8'>
-          <div className='flex flex-col gap-2'>
-            <div className='font-bold text-white text-lg'>
-              Future Proof Your Skills
+    <section>
+      <div className='bg-base-dark-highlight rounded'>
+        <div className='flex flex-col gap-4 border-b border-b-gray-600 p-8'>
+          <div className='flex flex-col gap-8'>
+            <div className='flex flex-col gap-2'>
+              <div className='font-medium text-white text-lg'>
+                Future Proof Your Skills
+              </div>
+              <div className='font-bold text-white text-6xl'>${price}</div>
             </div>
-            <div className='font-bold text-white text-6xl'>${price}</div>
-          </div>
-          <div className='flex flex-col gap-2'>
-            <CTAButtonLarge />
-            <CTAButtonTrial />
+            <div className='flex flex-col gap-2'>
+              <CTAButtonLarge />
+              <CTAButtonTrial />
+            </div>
           </div>
         </div>
-      </div>
-      <div className='flex flex-col gap-4 border-b border-b-gray-600 p-8'>
-        <CourseDetails hours={hours} lessons={lessons} videos={videos} />
-      </div>
-      <div className='flex flex-col gap-4  p-8'>
-        <CourseCertificate certification={certification} />
+        <div className='flex flex-col gap-4 border-b border-b-gray-600 p-8'>
+          <CourseDetails hours={hours} lessons={lessons} videos={videos} />
+        </div>
+        <div className='flex flex-col gap-4  p-8'>
+          <CourseCertificate certification={certification} />
+        </div>
       </div>
     </section>
   );
