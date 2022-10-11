@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import RelatedCourse from './RelatedCourse';
 import { related } from '../../dummyData';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -8,12 +8,10 @@ const RelatedCourses = () => {
   const [[currentPage, direction], setCurrentPage] = useState([0, 0]);
 
   const setPage = (newPage, newDirection) => {
-    console.log(newDirection);
     if (!newDirection) {
       newDirection = newPage - currentPage;
     }
     setCurrentPage([newPage, newDirection]);
-    console.log([currentPage]);
   };
 
   const xOffset = 100;
@@ -21,15 +19,30 @@ const RelatedCourses = () => {
     enter: {
       x: direction > 0 ? xOffset : -xOffset,
       opacity: 0,
+      transition: {
+        type: 'spring',
+        stiffness: 300,
+        damping: 30,
+        mass: 1,
+      },
     },
     active: {
       x: 0,
       opacity: 1,
-      transition: { delay: 0.2 },
+      transition: {
+        delay: 0.3,
+        duration: 0.2,
+      },
     },
     exit: {
       x: direction > 0 ? -xOffset : xOffset,
       opacity: 0,
+      transition: {
+        type: 'spring',
+        stiffness: 300,
+        damping: 30,
+        mass: 1,
+      },
     },
   };
 
