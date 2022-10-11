@@ -2,54 +2,56 @@ import React, { useState } from 'react';
 import RelatedCourse from './RelatedCourse';
 import { related } from '../../dummyData';
 import { AnimatePresence, motion } from 'framer-motion';
+import { wrap } from '@popmotion/popcorn';
 
 const RelatedCourses = () => {
-  const [courseIndex, setCourseIndex] = useState(0);
-  const [direction, setDirection] = useState(-1);
+  const [[currentPage, direction], setCurrentPage] = useState([0, 0]);
 
-  const moveBack = () => {
-    if (courseIndex === 0) {
-      return;
-    } else {
-      setDirection(1);
-      setCourseIndex(courseIndex - 1);
+  const setPage = (newPage, newDirection) => {
+    console.log(newDirection);
+    if (!newDirection) {
+      newDirection = newPage - currentPage;
     }
+    setCurrentPage([newPage, newDirection]);
+    console.log([currentPage]);
   };
 
-  const moveForward = () => {
-    if (courseIndex === related.length - 1) {
-      return;
-    } else {
-      setDirection(-1);
-      setCourseIndex(courseIndex + 1);
-    }
-  };
-
+  const xOffset = 100;
   const variants = {
     enter: {
+      x: direction > 0 ? xOffset : -xOffset,
       opacity: 0,
-      x: direction > 0 ? 400 : -400,
-      transition: {
-        type: 'spring',
-        stiffness: 300,
-        damping: 30,
-      },
     },
     active: {
       x: 0,
       opacity: 1,
-      transition: { delay: 0.3 },
+      transition: { delay: 0.2 },
     },
     exit: {
+      x: direction > 0 ? -xOffset : xOffset,
       opacity: 0,
-      x: direction < 0 ? 400 : -400,
-      transition: {
-        type: 'spring',
-        stiffness: 300,
-        damping: 30,
-        mass: 1,
-      },
     },
+  };
+
+  const detectDragGesture = (e, { offset }) => {
+    let newPage = currentPage;
+    const threshold = xOffset / 2;
+
+    if (offset.x < -threshold) {
+      // If user is dragging left, go forward a page
+      newPage = currentPage + 1;
+    } else if (offset.x > threshold) {
+      // Else if the user is dragging right,
+      // go backwards a page
+      newPage = currentPage - 1;
+    }
+
+    if (newPage !== currentPage) {
+      // Wrap the page index to within the
+      // permitted page range
+      newPage = wrap(0, related.length, newPage);
+      setPage(newPage, offset.x < 0 ? 1 : -1);
+    }
   };
 
   return (
@@ -58,23 +60,17 @@ const RelatedCourses = () => {
         <AnimatePresence>
           <motion.div
             className='absolute'
-            key={courseIndex}
+            key={currentPage}
             drag='x'
+            dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
+            onDragEnd={detectDragGesture}
             variants={variants}
             initial='enter'
             animate='active'
             exit='exit'
-            onDragEnd={(_, info) => {
-              console.log(info.offset.x);
-              if (info.offset.x > 50) {
-                moveForward();
-              } else if (info.offset.x < 0) {
-                moveBack();
-              }
-            }}
-            dragConstraints={{ left: 0, right: 0 }}
+            custom={direction}
           >
-            <RelatedCourse title={related[courseIndex].course_title} />
+            <RelatedCourse title={related[currentPage].course_title} />
           </motion.div>
         </AnimatePresence>
       </div>
@@ -82,7 +78,7 @@ const RelatedCourses = () => {
         {related.map((item, i) => (
           <div
             className={`w-2 h-2 rounded-full ${
-              i === courseIndex ? 'bg-base-brand' : 'bg-gray-300'
+              i === currentPage ? 'bg-base-brand' : 'bg-gray-300'
             }`}
             key={i}
           ></div>
