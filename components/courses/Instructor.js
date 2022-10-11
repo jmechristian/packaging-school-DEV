@@ -2,7 +2,6 @@ import React from 'react';
 import { PrismicLink } from '@prismicio/react';
 
 const Instructor = ({ instructor }) => {
-  console.log(instructor);
   return (
     instructor.name &&
     instructor.map((item, i) => (

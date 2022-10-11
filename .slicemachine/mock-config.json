@@ -23,7 +23,9 @@
           "blocks": 1
         }
       },
-      "what_learned_items": {}
+      "what_learned_items": {},
+      "categories": {},
+      "related_courses": {}
     }
   },
   "slices": {

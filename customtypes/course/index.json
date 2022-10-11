@@ -25,10 +25,18 @@
           "label": "categories",
           "fields": {
             "category": {
-              "type": "Text",
+              "type": "Select",
               "config": {
                 "label": "category",
-                "placeholder": ""
+                "placeholder": "",
+                "options": [
+                  "Material",
+                  "Industry",
+                  "Food & Bevarage",
+                  "Business",
+                  "Supply Chain & Logistics",
+                  "Design"
+                ]
               }
             }
           }
@@ -160,21 +168,6 @@
           "placeholder": ""
         }
       },
-      "part_of_cert": {
-        "type": "Text",
-        "config": {
-          "label": "part of cert",
-          "placeholder": ""
-        }
-      },
-      "certificate_link": {
-        "type": "Link",
-        "config": {
-          "label": "certificate link",
-          "placeholder": "",
-          "select": null
-        }
-      },
       "related_courses": {
         "type": "Group",
         "config": {
@@ -187,6 +180,24 @@
                 "select": "document",
                 "customtypes": [
                   "course"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "certificate": {
+        "type": "Group",
+        "config": {
+          "label": "related certificate",
+          "fields": {
+            "certificate_link": {
+              "type": "Link",
+              "config": {
+                "label": "certificate link",
+                "select": "document",
+                "customtypes": [
+                  "certification"
                 ]
               }
             }

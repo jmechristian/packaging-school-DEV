@@ -7,12 +7,15 @@ import CourseInfo from './CourseInfo';
 import CourseObjectives from './CourseObjectives';
 
 const CourseMain = ({ data }) => {
+  console.log(data.certificate);
   return (
     <section className='w-full bg-dark'>
       <div className='container__inner hero__padding'>
         <div className='grid grid-cols-1 lg:grid-cols-3 '>
           <div className='flex flex-col gap-16 lg:col-span-2 lg:pr-16'>
             <CourseIntro
+              id={data.course_id}
+              categories={data.categories}
               title={data.course_title}
               instructor={data.instructor}
               subtitle={data.course_subtitle}
@@ -25,7 +28,7 @@ const CourseMain = ({ data }) => {
                 hours={data.course_hours}
                 lessons={data.course_lessons}
                 videos={data.course_videos}
-                certification={data.certificate_link}
+                certification={data.certificate}
               />
             </div>
             <CourseObjectives
@@ -39,7 +42,7 @@ const CourseMain = ({ data }) => {
               hours={data.course_hours}
               lessons={data.course_lessons}
               videos={data.course_videos}
-              certification={data.certificate_link}
+              certification={data.certificate}
             />
           </div>
         </div>

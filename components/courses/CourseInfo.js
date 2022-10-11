@@ -5,6 +5,7 @@ import CourseDetails from './CourseDetails';
 import CourseCertificate from './CourseCertificate';
 
 const CourseInfo = ({ price, hours, lessons, videos, certification }) => {
+  console.log(certification);
   return (
     <section>
       <div className='bg-base-dark-highlight rounded-md'>
@@ -14,7 +15,7 @@ const CourseInfo = ({ price, hours, lessons, videos, certification }) => {
               <div className='font-medium text-white text-lg'>
                 Future Proof Your Skills
               </div>
-              <div className='font-bold text-white text-6xl'>${price}</div>
+              <div className='font-bold text-white text-5xl'>${price}</div>
             </div>
             <div className='flex flex-col gap-4'>
               <CTAButtonLarge />

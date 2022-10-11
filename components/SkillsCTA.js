@@ -8,7 +8,7 @@ const SkillsCTA = () => {
           <div className='font-bold text-3xl  text-white'>
             Not Sure Where to Start?
           </div>
-          <div className='text-xl xl:text-2xl text-white lg:w-4/5'>
+          <div className='text-xl text-white lg:w-4/5'>
             Know exactly where your teams stands with our currated skills test.
           </div>
         </div>

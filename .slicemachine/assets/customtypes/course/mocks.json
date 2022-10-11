@@ -11,10 +11,10 @@
   "lang": "en-us",
   "alternate_languages": [],
   "data": {
-    "course_id": "slight",
+    "course_id": "forgotten",
     "categories": [
       {
-        "category": "hello"
+        "category": "Business"
       }
     ],
     "course_hero": {
@@ -24,12 +24,12 @@
       },
       "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1591012911207-0dbac31f37da"
+      "url": "https://images.unsplash.com/photo-1607582278038-6bebbd4d7b72"
     },
     "course_title": [
       {
         "type": "heading2",
-        "text": "Standard",
+        "text": "Condition",
         "spans": []
       }
     ],
@@ -42,25 +42,25 @@
           },
           "alt": null,
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1560457079-9a6532ccb118"
+          "url": "https://images.unsplash.com/photo-1544731612-de7f96afe55f"
         },
-        "instructor_name": "phrase",
+        "instructor_name": "pony",
         "instructor_social": {
           "link_type": "Web",
-          "url": "https://slicemachine.dev"
+          "url": "https://prismic.io"
         }
       }
     ],
     "course_subtitle": [
       {
         "type": "paragraph",
-        "text": "Aliquip cillum incididunt et tempor quis minim velit laboris aute non nulla minim fugiat sit. Ullamco deserunt eiusmod nisi deserunt tempor occaecat laborum proident laborum laborum tempor incididunt commodo. Magna amet excepteur deserunt aliqua esse officia.",
+        "text": "Occaecat et deserunt voluptate reprehenderit ad eu velit.",
         "spans": []
       }
     ],
     "course_preview": {
       "link_type": "Web",
-      "url": "https://prismic.io"
+      "url": "http://twitter.com"
     },
     "course_info_sheet": {
       "link_type": "Web",
@@ -69,30 +69,39 @@
     "what_learned": [
       {
         "type": "paragraph",
-        "text": "Veniam sunt ullamco non. Irure veniam quis ex dolore.",
+        "text": "In aute deserunt officia qui aliqua cillum cillum in est in et sint amet tempor. Laborum elit laboris magna occaecat Lorem et officia. Exercitation consequat commodo proident sint proident sit mollit amet.",
         "spans": []
       }
     ],
     "what_learned_items": [
       {
-        "overview_items": "have"
+        "overview_items": "coal"
       }
     ],
-    "course_price": "upper",
-    "course_hours": "spent",
-    "course_lessons": "equal",
-    "course_videos": "vote",
-    "part_of_cert": "perfect",
-    "certificate_link": {
-      "link_type": "Web",
-      "url": "https://slicemachine.dev"
-    },
+    "course_price": "detail",
+    "course_hours": "rain",
+    "course_lessons": "farther",
+    "course_videos": "carbon",
     "related_courses": [
       {
         "related": {
           "id": "mock_document_id",
           "link_type": "Document",
           "type": "course",
+          "tags": [],
+          "lang": "en-us",
+          "slug": null,
+          "first_publication_date": "1970-01-01T00:00:01+0000",
+          "last_publication_date": "1970-01-01T01:00:00+0000"
+        }
+      }
+    ],
+    "certificate": [
+      {
+        "certificate_link": {
+          "id": "mock_document_id",
+          "link_type": "Document",
+          "type": "certification",
           "tags": [],
           "lang": "en-us",
           "slug": null,
