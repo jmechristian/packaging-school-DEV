@@ -16,10 +16,10 @@ const RelatedCourses = () => {
   const indicatorWidth = useTransform(dragX, [0, width], ['0%', '100%']);
 
   return (
-    <div className='flex flex-col gap-16'>
-      <div className='flex flex-col gap-5'>
+    <div className='flex flex-col gap-16 xl:gap-20'>
+      <div className='flex flex-col gap-6'>
         <motion.div
-          className='mt-8 px-2 flex flex-col gap-8 overflow-hidden'
+          className='mt-8 px-2 flex flex-col gap-8 overflow-hidden relative'
           ref={relatedRef}
         >
           <motion.div

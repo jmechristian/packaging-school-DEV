@@ -9,7 +9,7 @@ const CourseItems = ({ preview, infoSheet }) => {
   return (
     <div className='border border-white max-w-fit'>
       <div className='py-5 px-5'>
-        <div className='flex flex-col lg:flex-row gap-4 lg:gap-6 justify-center text-white font-semibold'>
+        <div className='flex flex-col md:flex-row gap-4 lg:gap-6 justify-center text-white font-semibold'>
           <div className='flex items-center gap-2'>
             <VideoCameraIcon className='h-6 w-6 stroke-base-brand' />
             <PrismicLink field={preview} className='font-medium uppercase'>
