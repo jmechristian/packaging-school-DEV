@@ -7,7 +7,7 @@ import CourseCertificate from './CourseCertificate';
 const CourseInfo = ({ price, hours, lessons, videos, certification }) => {
   return (
     <section>
-      <div className='bg-base-dark-highlight rounded'>
+      <div className='bg-base-dark-highlight rounded-md'>
         <div className='flex flex-col gap-4 border-b border-b-gray-600 p-8'>
           <div className='flex flex-col gap-8'>
             <div className='flex flex-col gap-2'>
@@ -16,7 +16,7 @@ const CourseInfo = ({ price, hours, lessons, videos, certification }) => {
               </div>
               <div className='font-bold text-white text-6xl'>${price}</div>
             </div>
-            <div className='flex flex-col gap-2'>
+            <div className='flex flex-col gap-4'>
               <CTAButtonLarge />
               <CTAButtonTrial />
             </div>

@@ -2,7 +2,7 @@ import React from 'react';
 
 const RelatedCourse = ({ title }) => {
   return (
-    <div className='w-80 bg-gray-300 rounded'>
+    <div className='w-80 bg-gray-300 rounded-md'>
       <div className='flex flex-col w-full'>
         <div className='aspect-video bg-black relative'>
           <div className='bg-blue-600 rounded absolute left-3 top-3'>
