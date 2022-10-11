@@ -2,8 +2,9 @@ import React from 'react';
 import { PrismicLink } from '@prismicio/react';
 
 const Instructor = ({ instructor }) => {
+  console.log(instructor);
   return (
-    instructor.length > 0 &&
+    instructor.name &&
     instructor.map((item, i) => (
       <div className='flex gap-2 items-center' key={i}>
         <div
