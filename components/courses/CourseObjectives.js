@@ -17,30 +17,32 @@ const CourseObjectives = ({ what, items }) => {
           <PrismicRichText field={what} />
         </div>
       </div>
-      <div className='flex flex-col gap-4 xl:grid xl:grid-cols-2 w-full'>
-        <div className='flex flex-col gap-6'>
-          {firstHalf &&
-            firstHalf.map((item, i) => (
-              <div className='flex gap-3 w-full' key={i}>
-                <div>
-                  <CheckBadgeIcon className='w-6 h-6 fill-base-brand' />
+      {items.length > 1 && (
+        <div className='flex flex-col gap-4 xl:grid xl:grid-cols-2 w-full'>
+          <div className='flex flex-col gap-6'>
+            {firstHalf &&
+              firstHalf.map((item, i) => (
+                <div className='flex gap-3 w-full' key={i}>
+                  <div>
+                    <CheckBadgeIcon className='w-6 h-6 fill-base-brand' />
+                  </div>
+                  <div className='text-white'>{item.overview_items}</div>
                 </div>
-                <div className='text-white'>{item.overview_items}</div>
-              </div>
-            ))}
-        </div>
-        <div className='flex flex-col gap-6'>
-          {secondHalf &&
-            secondHalf.map((item, i) => (
-              <div className='flex gap-3 w-full' key={i}>
-                <div>
-                  <CheckBadgeIcon className='w-6 h-6 fill-base-brand' />
+              ))}
+          </div>
+          <div className='flex flex-col gap-6'>
+            {secondHalf &&
+              secondHalf.map((item, i) => (
+                <div className='flex gap-3 w-full' key={i}>
+                  <div>
+                    <CheckBadgeIcon className='w-6 h-6 fill-base-brand' />
+                  </div>
+                  <div className='text-white'>{item.overview_items}</div>
                 </div>
-                <div className='text-white'>{item.overview_items}</div>
-              </div>
-            ))}
+              ))}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

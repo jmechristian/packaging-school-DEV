@@ -23,9 +23,9 @@ const CourseIntro = ({
       case 'Food & Beverage':
         return 'bg-cyan-900';
       case 'Supply Chain & Logistics':
-        return 'bg-fuschia-700';
+        return 'bg-fuchsia-700';
       case 'Business':
-        return 'bg-yellow-600';
+        return 'bg-violet-800';
     }
   };
 
