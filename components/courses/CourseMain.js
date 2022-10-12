@@ -7,7 +7,6 @@ import CourseInfo from './CourseInfo';
 import CourseObjectives from './CourseObjectives';
 
 const CourseMain = ({ data }) => {
-  console.log(data.certificate);
   return (
     <section className='w-full bg-dark'>
       <div className='container__inner hero__padding'>

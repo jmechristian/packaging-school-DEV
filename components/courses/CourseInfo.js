@@ -5,7 +5,6 @@ import CourseDetails from './CourseDetails';
 import CourseCertificate from './CourseCertificate';
 
 const CourseInfo = ({ price, hours, lessons, videos, certification }) => {
-  console.log(certification);
   return (
     <section>
       <div className='bg-base-dark-highlight rounded-md'>
