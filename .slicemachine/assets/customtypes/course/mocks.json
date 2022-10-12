@@ -11,10 +11,10 @@
   "lang": "en-us",
   "alternate_languages": [],
   "data": {
-    "course_id": "forgotten",
+    "course_id": "than",
     "categories": [
       {
-        "category": "Business"
+        "category": "Food & Bevarage"
       }
     ],
     "course_hero": {
@@ -24,12 +24,12 @@
       },
       "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1607582278038-6bebbd4d7b72"
+      "url": "https://images.unsplash.com/photo-1587614295999-6c1c13675117"
     },
     "course_title": [
       {
         "type": "heading2",
-        "text": "Condition",
+        "text": "Touch",
         "spans": []
       }
     ],
@@ -42,25 +42,25 @@
           },
           "alt": null,
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1544731612-de7f96afe55f"
+          "url": "https://images.unsplash.com/photo-1576662712957-9c79ae1280f8"
         },
-        "instructor_name": "pony",
+        "instructor_name": "taught",
         "instructor_social": {
           "link_type": "Web",
-          "url": "https://prismic.io"
+          "url": "https://slicemachine.dev"
         }
       }
     ],
     "course_subtitle": [
       {
         "type": "paragraph",
-        "text": "Occaecat et deserunt voluptate reprehenderit ad eu velit.",
+        "text": "Adipisicing est officia sint laboris. Ullamco ea nulla sunt voluptate est incididunt.",
         "spans": []
       }
     ],
     "course_preview": {
       "link_type": "Web",
-      "url": "http://twitter.com"
+      "url": "http://google.com"
     },
     "course_info_sheet": {
       "link_type": "Web",
@@ -69,19 +69,19 @@
     "what_learned": [
       {
         "type": "paragraph",
-        "text": "In aute deserunt officia qui aliqua cillum cillum in est in et sint amet tempor. Laborum elit laboris magna occaecat Lorem et officia. Exercitation consequat commodo proident sint proident sit mollit amet.",
+        "text": "Sint tempor qui sint ut fugiat aliquip eu sint sint ipsum mollit consectetur culpa veniam anim.",
         "spans": []
       }
     ],
     "what_learned_items": [
       {
-        "overview_items": "coal"
+        "overview_items": "willing"
       }
     ],
-    "course_price": "detail",
-    "course_hours": "rain",
-    "course_lessons": "farther",
-    "course_videos": "carbon",
+    "course_price": "physical",
+    "course_hours": "stretch",
+    "course_lessons": "frog",
+    "course_videos": "division",
     "related_courses": [
       {
         "related": {
