@@ -1,18 +1,21 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { motion, useMotionValue, useTransform } from 'framer-motion';
+import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
 import RelatedCourse from './RelatedCourse';
 import SkillsCTA from '../SkillsCTA';
 
 const RelatedCourses = ({ related }) => {
   const [width, setWidth] = useState(0);
   const relatedRef = useRef(null);
+  const dragX = useMotionValue(0);
+  const indicatorWidth = useTransform(dragX, [0, width], ['0%', '100%']);
 
   useEffect(() => {
     setWidth(relatedRef.current.offsetWidth - relatedRef.current.scrollWidth);
   }, []);
 
-  const dragX = useMotionValue(0);
-  const indicatorWidth = useTransform(dragX, [0, width], ['0%', '100%']);
+  const resetDrag = () => {
+    animate(dragX, 0);
+  };
 
   return (
     <div className='flex flex-col gap-16 xl:gap-20'>
@@ -38,6 +41,7 @@ const RelatedCourses = ({ related }) => {
                   price={course.related.data.course_price}
                   categories={course.related.data.categories}
                   slug={course.related.uid}
+                  reset={resetDrag}
                 />
               </motion.div>
             ))}
