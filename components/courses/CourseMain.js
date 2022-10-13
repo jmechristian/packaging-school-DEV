@@ -7,6 +7,7 @@ import CourseInfo from './CourseInfo';
 import CourseObjectives from './CourseObjectives';
 
 const CourseMain = ({ data }) => {
+  console.log(data);
   return (
     <section className='w-full bg-dark'>
       <div className='container__inner course__hero-padding'>

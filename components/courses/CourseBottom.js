@@ -1,7 +1,7 @@
 import React from 'react';
 import RelatedCourses from './RelatedCourses';
 
-const CourseBottom = () => {
+const CourseBottom = ({ related }) => {
   return (
     <section className='container__inner inner__section-margin flex flex-col'>
       <div className='border-b border-b-gray-400 pb-4'>
@@ -9,7 +9,7 @@ const CourseBottom = () => {
           Related Courses in this Program
         </div>
       </div>
-      <RelatedCourses />
+      <RelatedCourses related={related} />
     </section>
   );
 };

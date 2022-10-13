@@ -5,12 +5,6 @@
     "calendar": {},
     "contentmenu": {},
     "course": {
-      "course_title": {
-        "config": {
-          "patternType": "HEADING",
-          "blocks": 1
-        }
-      },
       "course_subtitle": {
         "config": {
           "patternType": "PARAGRAPH",
@@ -26,7 +20,13 @@
       "what_learned_items": {},
       "categories": {},
       "related_courses": {},
-      "instructor": {}
+      "instructor": {},
+      "course_title": {
+        "config": {
+          "patternType": "HEADING",
+          "blocks": 1
+        }
+      }
     }
   },
   "slices": {

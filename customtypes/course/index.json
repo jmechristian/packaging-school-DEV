@@ -56,7 +56,7 @@
           "label": "course title",
           "placeholder": "",
           "allowTargetBlank": true,
-          "single": "heading2"
+          "single": "heading1"
         }
       },
       "instructor": {

@@ -11,10 +11,10 @@
   "lang": "en-us",
   "alternate_languages": [],
   "data": {
-    "course_id": "than",
+    "course_id": "lucky",
     "categories": [
       {
-        "category": "Food & Bevarage"
+        "category": "Industry"
       }
     ],
     "course_hero": {
@@ -24,12 +24,12 @@
       },
       "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1587614295999-6c1c13675117"
+      "url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa"
     },
     "course_title": [
       {
-        "type": "heading2",
-        "text": "Touch",
+        "type": "heading1",
+        "text": "Attack",
         "spans": []
       }
     ],
@@ -42,9 +42,9 @@
           },
           "alt": null,
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1576662712957-9c79ae1280f8"
+          "url": "https://images.unsplash.com/photo-1606248897732-2c5ffe759c04"
         },
-        "instructor_name": "taught",
+        "instructor_name": "fast",
         "instructor_social": {
           "link_type": "Web",
           "url": "https://slicemachine.dev"
@@ -54,7 +54,7 @@
     "course_subtitle": [
       {
         "type": "paragraph",
-        "text": "Adipisicing est officia sint laboris. Ullamco ea nulla sunt voluptate est incididunt.",
+        "text": "Nulla ut excepteur ea esse eu laboris laboris fugiat veniam proident. Ex anim duis irure.",
         "spans": []
       }
     ],
@@ -64,24 +64,24 @@
     },
     "course_info_sheet": {
       "link_type": "Web",
-      "url": "http://twitter.com"
+      "url": "http://google.com"
     },
     "what_learned": [
       {
         "type": "paragraph",
-        "text": "Sint tempor qui sint ut fugiat aliquip eu sint sint ipsum mollit consectetur culpa veniam anim.",
+        "text": "Ut cupidatat proident fugiat fugiat voluptate quis consequat.",
         "spans": []
       }
     ],
     "what_learned_items": [
       {
-        "overview_items": "willing"
+        "overview_items": "together"
       }
     ],
-    "course_price": "physical",
-    "course_hours": "stretch",
-    "course_lessons": "frog",
-    "course_videos": "division",
+    "course_price": "sister",
+    "course_hours": "play",
+    "course_lessons": "ten",
+    "course_videos": "treated",
     "related_courses": [
       {
         "related": {

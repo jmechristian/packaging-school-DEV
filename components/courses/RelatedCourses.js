@@ -2,9 +2,8 @@ import React, { useRef, useEffect, useState } from 'react';
 import { motion, useMotionValue, useTransform } from 'framer-motion';
 import RelatedCourse from './RelatedCourse';
 import SkillsCTA from '../SkillsCTA';
-import { related } from '../../dummyData';
 
-const RelatedCourses = () => {
+const RelatedCourses = ({ related }) => {
   const [width, setWidth] = useState(0);
   const relatedRef = useRef(null);
 
@@ -17,21 +16,28 @@ const RelatedCourses = () => {
 
   return (
     <div className='flex flex-col gap-16 xl:gap-20'>
-      <div className='flex flex-col gap-6'>
+      <div className='flex flex-col gap-8'>
         <motion.div
           className='mt-8 px-2 flex flex-col gap-8 overflow-hidden relative'
           ref={relatedRef}
         >
           <motion.div
-            className='flex flex-row gap-8'
+            className='grid grid-flow-col gap-8'
             drag='x'
             dragConstraints={{ right: 0, left: width }}
             dragTransition={{ power: 0.3 }}
             style={{ x: dragX }}
           >
-            {related.map((item, i) => (
+            {related.map((course, i) => (
               <motion.div key={i} className='w-full'>
-                <RelatedCourse title={item.course_title} />
+                <RelatedCourse
+                  title={course.related.data.course_title[0].text}
+                  hours={course.related.data.course_hours}
+                  lessons={course.related.data.course_lessons}
+                  videos={course.related.data.course_videos}
+                  price={course.related.data.course_price}
+                  categories={course.related.data.categories}
+                />
               </motion.div>
             ))}
           </motion.div>

@@ -1,24 +1,64 @@
 import React from 'react';
+import {
+  ClockIcon,
+  AcademicCapIcon,
+  FilmIcon,
+} from '@heroicons/react/24/outline';
 
-const RelatedCourse = ({ title }) => {
+const RelatedCourse = ({
+  title,
+  hours,
+  lessons,
+  videos,
+  price,
+  categories,
+}) => {
+  const backgroundColor = () => {
+    switch (categories[0].category) {
+      case 'Material':
+        return 'bg-blue-700';
+      case 'Industry':
+        return 'bg-red-800';
+      case 'Design':
+        return 'bg-green-800';
+      case 'Food & Beverage':
+        return 'bg-cyan-900';
+      case 'Supply Chain & Logistics':
+        return 'bg-fuchsia-700';
+      case 'Business':
+        return 'bg-violet-800';
+    }
+  };
+
   return (
-    <div className='w-80 bg-gray-300 rounded-md'>
+    <div className='w-80 bg-gray-300 rounded-md min-h-full'>
       <div className='flex flex-col w-full'>
         <div className='aspect-video bg-black relative'>
-          <div className='bg-blue-600 rounded absolute left-3 top-3'>
+          <div className={`${backgroundColor()} rounded absolute left-3 top-3`}>
             <div className='py-1 px-2 text-white font-semibold text-sm'>
-              Material
+              {categories[0].category}
             </div>
           </div>
         </div>
         <div className='px-3 py-5 flex flex-col gap-2 w-full'>
-          <div className='flex flex-col'>
+          <div className='flex flex-col gap-1'>
             <div className='font-bold text-xl'>{title}</div>
-            <div className='text-gray-600'>
-              16 Hours • 60 Courses • 37 Videos
+            <div className='flex flex-row gap-3 items-center'>
+              <div className='flex gap-1 items-center'>
+                <ClockIcon className='w-4 h-4 stroke-base-brand' />
+                <div className='text-gray-600 text-sm'>{hours} Hours</div>
+              </div>
+              <div className='flex gap-1 items-center'>
+                <AcademicCapIcon className='w-4 h-4 stroke-base-brand' />
+                <div className='text-gray-600 text-sm'>{lessons} Lessons</div>
+              </div>
+              <div className='flex gap-1 items-center'>
+                <FilmIcon className='w-4 h-4 stroke-base-brand' />
+                <div className='text-gray-600 text-sm'>{videos} Videos</div>
+              </div>
             </div>
           </div>
-          <div className='font-bold text-xl'>$399</div>
+          <div className='font-bold text-xl'>${price}</div>
         </div>
       </div>
     </div>

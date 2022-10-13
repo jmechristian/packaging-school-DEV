@@ -8,7 +8,7 @@ const Page = ({ page }) => {
   return (
     <Layout>
       <CourseMain data={page.data} />
-      <CourseBottom />
+      <CourseBottom related={page.data.related_courses} />
     </Layout>
   );
 };
@@ -19,7 +19,16 @@ export async function getStaticProps({ params, previewData }) {
   const client = createClient({ previewData });
 
   const page = await client.getByUID('course', params.uid, {
-    fetchLinks: 'certification.certificate_name',
+    fetchLinks: [
+      'certification.certificate_name',
+      'course.course_title',
+      'course.course_hero',
+      'course.course_price',
+      'course.course_hours',
+      'course.course_lessons',
+      'course.course_videos',
+      'course.categories',
+    ],
   });
 
   return {

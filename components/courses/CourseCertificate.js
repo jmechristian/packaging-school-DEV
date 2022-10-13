@@ -1,7 +1,6 @@
 import React from 'react';
 
 const CourseCertificate = ({ certification }) => {
-  console.log(certification);
   return (
     <div className='flex flex-col gap-8'>
       {certification[0].certificate_link.data ? (
