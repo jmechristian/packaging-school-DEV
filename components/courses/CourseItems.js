@@ -6,7 +6,6 @@ import {
 } from '@heroicons/react/24/outline';
 
 const CourseItems = ({ preview, infoSheet }) => {
-  console.log(preview, infoSheet);
   return preview.url || infoSheet.url ? (
     <div className='border border-white max-w-fit'>
       <div className='py-5 px-5'>

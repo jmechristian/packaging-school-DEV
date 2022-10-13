@@ -9,7 +9,7 @@ import CourseObjectives from './CourseObjectives';
 const CourseMain = ({ data }) => {
   return (
     <section className='w-full bg-dark'>
-      <div className='container__inner hero__padding'>
+      <div className='container__inner course__hero-padding'>
         <div className='grid grid-cols-1 lg:grid-cols-3 '>
           <div className='flex flex-col gap-16 lg:col-span-2 lg:pr-16'>
             <CourseIntro

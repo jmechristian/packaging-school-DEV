@@ -17,6 +17,10 @@
     @apply pt-8 md:pt-16 lg:pt-44 pb-20 md:pb-28 xl:pb-32;
   }
 
+  .course__hero-padding {
+    @apply pt-8 md:pt-12 lg:pt-40 pb-20 xl:pb-24;
+  }
+
   .hero__headline {
     @apply text-white text-5xl lg:text-6xl font-bold w-full;
   }
