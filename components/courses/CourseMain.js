@@ -1,8 +1,5 @@
 import React from 'react';
-import { PrismicRichText } from '@prismicio/react';
-
 import CourseIntro from './CourseIntro';
-import CourseItems from './CourseItems';
 import CourseInfo from './CourseInfo';
 import CourseObjectives from './CourseObjectives';
 

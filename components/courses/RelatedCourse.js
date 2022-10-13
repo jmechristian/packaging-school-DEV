@@ -77,7 +77,7 @@ const RelatedCourse = ({
         onClick={courseClickHandler}
       >
         <div className='bg-white hover:border hover:border-black rounded flex gap-1 py-1 px-3 items-center'>
-          <div className='uppercase font-semibold text-sm'>View Course</div>
+          <div className='uppercase font-semibold text-xs'>View Course</div>
           <ArrowSmallRightIcon className='w-4 h-4 stroke-black' />
         </div>
       </div>

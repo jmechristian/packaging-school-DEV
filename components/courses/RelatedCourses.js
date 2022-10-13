@@ -1,7 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
 import RelatedCourse from './RelatedCourse';
-import SkillsCTA from '../SkillsCTA';
 
 const RelatedCourses = ({ related }) => {
   const [width, setWidth] = useState(0);
@@ -18,7 +17,7 @@ const RelatedCourses = ({ related }) => {
   };
 
   return (
-    <div className='flex flex-col gap-16 xl:gap-20'>
+    <div className='flex flex-col'>
       <div className='flex flex-col gap-8'>
         <motion.div
           className='mt-8 px-2 flex flex-col gap-8 overflow-hidden relative'
@@ -56,7 +55,6 @@ const RelatedCourses = ({ related }) => {
           </motion.div>
         </div>
       </div>
-      <SkillsCTA />
     </div>
   );
 };
