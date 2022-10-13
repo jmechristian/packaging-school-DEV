@@ -2,7 +2,7 @@ import React from 'react';
 
 const StudentSuccess = () => {
   return (
-    <section className='flex border bg-white border-black drop-shadow-lg p-8'>
+    <section className='flex border bg-white border-black drop-shadow-lg p-8 lg:p-12'>
       <div className='grid grid-cols-1 gap-3'>
         <div className='col-span-1 uppercase font-extrabold lg:text-2xl text-base-brand'>
           Student Success Stories
