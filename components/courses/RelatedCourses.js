@@ -22,7 +22,7 @@ const RelatedCourses = ({ related }) => {
           ref={relatedRef}
         >
           <motion.div
-            className='grid grid-flow-col gap-8'
+            className='grid grid-flow-col gap-8 cursor-all-scroll'
             drag='x'
             dragConstraints={{ right: 0, left: width }}
             dragTransition={{ power: 0.3 }}
@@ -37,6 +37,7 @@ const RelatedCourses = ({ related }) => {
                   videos={course.related.data.course_videos}
                   price={course.related.data.course_price}
                   categories={course.related.data.categories}
+                  slug={course.related.uid}
                 />
               </motion.div>
             ))}
