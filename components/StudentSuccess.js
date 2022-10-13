@@ -20,7 +20,7 @@ const StudentSuccess = () => {
         </div>
         <div className='flex flex-col md:flex-row md:items-center lg:justify-end -mt-16 text-neutral-600 gap-2'>
           <div
-            className='w-9 h-9 rounded-full'
+            className='w-12 h-12 rounded-full'
             style={{
               backgroundImage: `url('https://randomuser.me/api/portraits/women/63.jpg')`,
               backgroundSize: 'cover',
