@@ -17,7 +17,7 @@ const RelatedCourses = ({ related }) => {
   };
 
   return (
-    <section className='md:container__inner px-6'>
+    <section className='md:container__inner'>
       <div className='flex flex-col'>
         <div className='flex flex-col gap-8'>
           <motion.div
