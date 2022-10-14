@@ -26,7 +26,7 @@ const RelatedCourses = ({ related }) => {
           <motion.div
             className='grid grid-flow-col gap-8 cursor-all-scroll'
             drag='x'
-            dragConstraints={{ right: 0, left: width }}
+            dragConstraints={{ right: 0, left: width, top: 0, bottom: 0 }}
             dragTransition={{ power: 0.3 }}
             style={{ x: dragX }}
           >

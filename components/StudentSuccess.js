@@ -22,7 +22,7 @@ const StudentSuccess = () => {
           <div
             className='w-12 h-12 rounded-full'
             style={{
-              backgroundImage: `url('https://randomuser.me/api/portraits/women/63.jpg')`,
+              backgroundImage: `url('https://res.cloudinary.com/jmechristian/image/upload/v1665754606/rebeca-granados-andrade-profile-image_gpy9rw.png')`,
               backgroundSize: 'cover',
               backgroundPosition: 'center center',
             }}
