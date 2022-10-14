@@ -17,45 +17,47 @@ const RelatedCourses = ({ related }) => {
   };
 
   return (
-    <div className='flex flex-col'>
-      <div className='flex flex-col gap-8'>
-        <motion.div
-          className='mt-8 px-2 flex flex-col gap-8 overflow-hidden relative'
-          ref={relatedRef}
-        >
+    <section className='md:container__inner px-6'>
+      <div className='flex flex-col'>
+        <div className='flex flex-col gap-8'>
           <motion.div
-            className='grid grid-flow-col gap-8 cursor-all-scroll'
-            drag='x'
-            dragConstraints={{ right: 0, left: width, top: 0, bottom: 0 }}
-            dragTransition={{ power: 0.8 }}
-            style={{ x: dragX }}
+            className='mt-8 px-2 flex flex-col gap-8 overflow-hidden relative'
+            ref={relatedRef}
           >
-            {related.map((course, i) => (
-              <motion.div key={i} className='w-full'>
-                <RelatedCourse
-                  title={course.related.data.course_title[0].text}
-                  hours={course.related.data.course_hours}
-                  lessons={course.related.data.course_lessons}
-                  videos={course.related.data.course_videos}
-                  price={course.related.data.course_price}
-                  categories={course.related.data.categories}
-                  slug={course.related.uid}
-                  reset={resetDrag}
-                />
-              </motion.div>
-            ))}
-          </motion.div>
-        </motion.div>
-        <div className='flex justify-center'>
-          <motion.div className='h-1.5 bg-gray-200 relative w-1/2 rounded-sm'>
             <motion.div
-              className='absolute  bg-gradient-to-r from-base-light via-base-mid to-base-dark h-1.5 z-20 rounded-sm'
-              style={{ width: indicatorWidth }}
-            ></motion.div>
+              className='grid grid-flow-col gap-8 cursor-all-scroll'
+              drag='x'
+              dragConstraints={{ right: 0, left: width, top: 0, bottom: 0 }}
+              dragTransition={{ power: 0.8 }}
+              style={{ x: dragX }}
+            >
+              {related.map((course, i) => (
+                <motion.div key={i} className='w-full'>
+                  <RelatedCourse
+                    title={course.related.data.course_title[0].text}
+                    hours={course.related.data.course_hours}
+                    lessons={course.related.data.course_lessons}
+                    videos={course.related.data.course_videos}
+                    price={course.related.data.course_price}
+                    categories={course.related.data.categories}
+                    slug={course.related.uid}
+                    reset={resetDrag}
+                  />
+                </motion.div>
+              ))}
+            </motion.div>
           </motion.div>
+          <div className='flex justify-center'>
+            <motion.div className='h-1.5 bg-gray-200 relative w-1/2 rounded-sm'>
+              <motion.div
+                className='absolute  bg-gradient-to-r from-base-light via-base-mid to-base-dark h-1.5 z-20 rounded-sm'
+                style={{ width: indicatorWidth }}
+              ></motion.div>
+            </motion.div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
