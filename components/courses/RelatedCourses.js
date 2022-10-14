@@ -27,7 +27,7 @@ const RelatedCourses = ({ related }) => {
             className='grid grid-flow-col gap-8 cursor-all-scroll'
             drag='x'
             dragConstraints={{ right: 0, left: width, top: 0, bottom: 0 }}
-            dragTransition={{ power: 0.3 }}
+            dragTransition={{ power: 0.8 }}
             style={{ x: dragX }}
           >
             {related.map((course, i) => (
