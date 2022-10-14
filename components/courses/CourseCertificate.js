@@ -18,7 +18,7 @@ const CourseCertificate = ({ certification }) => {
           </div>
 
           <div className='text-white text-lg'>
-            Differientiate yourself from your peers with the comprehensive
+            Differentiate yourself from your peers with the comprehensive
             knowledge of a full certificate program.{' '}
             <a
               href={`/certifications/${certification[0].certificate_link.data.uid}`}
