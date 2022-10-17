@@ -7,7 +7,7 @@ import {
 
 const CourseItems = ({ infoSheet }) => {
   return infoSheet.url ? (
-    <div className='dark:border dark:border-white bg-base-brand dark:bg-dark rounded  max-w-fit'>
+    <div className='dark:border dark:border-slate-700 bg-base-brand dark:bg-slate-900 rounded  max-w-fit'>
       <div className='py-5 px-5'>
         <div className='flex flex-col md:flex-row gap-4 lg:gap-6 justify-center '>
           {infoSheet.url && (

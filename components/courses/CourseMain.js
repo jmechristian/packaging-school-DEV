@@ -2,10 +2,24 @@ import React from 'react';
 import CourseIntro from './CourseIntro';
 import CourseInfo from './CourseInfo';
 import CourseObjectives from './CourseObjectives';
+import { useSelector } from 'react-redux';
 
 const CourseMain = ({ data }) => {
+  const { darkMode } = useSelector((state) => state.layout);
+
   return (
-    <section className='w-full dark:bg-dark'>
+    <section
+      className='w-full'
+      style={{
+        backgroundImage: `url(${
+          darkMode
+            ? 'https://res.cloudinary.com/dno7xxmmy/image/upload/v1666045015/pschool/gradient-bg4_rrmnwf.webp'
+            : 'https://res.cloudinary.com/dno7xxmmy/image/upload/v1666045562/pschool/gradient-light-bg1_rzlgts.webp'
+        })`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center center',
+      }}
+    >
       <div className='container__inner course__hero-padding'>
         <div className='grid grid-cols-1 lg:grid-cols-5 '>
           <div className='flex flex-col gap-16 lg:col-span-3 lg:pr-16'>

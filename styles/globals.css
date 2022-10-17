@@ -18,7 +18,7 @@
   }
 
   .course__hero-padding {
-    @apply pt-32 md:pt-36 lg:pt-40 dark:pb-20 dark:xl:pb-24;
+    @apply pt-32 md:pt-36 lg:pt-40 pb-20 xl:pb-24;
   }
 
   .hero__headline {

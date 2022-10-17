@@ -12,7 +12,7 @@ const Header = () => {
   const { darkMode } = useSelector((state) => state.layout);
 
   return (
-    <header className='w-full hidden lg:flex justify-center absolute top-0 left-0 bg-white dark:bg-dark'>
+    <header className='w-full hidden lg:flex justify-center absolute top-0 left-0 bg-transparent'>
       <div className='w-full max-w-6xl h-28 text-dark dark:text-white flex justify-between items-center container__inner'>
         <div className='flex items-center'>
           <div className='w-48 mr-6'>
