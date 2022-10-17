@@ -15,16 +15,16 @@ const CourseInfo = ({
 }) => {
   return (
     <section>
-      <div className='bg-base-dark-highlight rounded-md'>
-        <div className='flex flex-col gap-4 border-b border-b-gray-600 p-8'>
+      <div className='dark:bg-base-dark-highlight bg-neutral-200 rounded-md'>
+        <div className='flex flex-col gap-4 border-b border-b-neutral-300 dark:border-b-gray-600 p-8'>
           <div className='flex flex-col gap-10'>
             {embedid && <YouTubeEmbed embedid={embedid} />}
             <div className='flex flex-col gap-6'>
               <div className='flex flex-col gap-2'>
-                <div className='font-medium text-white text-lg'>
+                <div className='font-medium black__white text-lg'>
                   Future Proof Your Skills
                 </div>
-                <div className='font-bold text-white text-6xl'>${price}</div>
+                <div className='font-bold black__white text-6xl'>${price}</div>
               </div>
               <div className='flex flex-col gap-4'>
                 <CTAButtonLarge />

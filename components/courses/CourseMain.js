@@ -5,10 +5,10 @@ import CourseObjectives from './CourseObjectives';
 
 const CourseMain = ({ data }) => {
   return (
-    <section className='w-full bg-dark'>
+    <section className='w-full dark:bg-dark'>
       <div className='container__inner course__hero-padding'>
-        <div className='grid grid-cols-1 lg:grid-cols-3 '>
-          <div className='flex flex-col gap-16 lg:col-span-2 lg:pr-16'>
+        <div className='grid grid-cols-1 lg:grid-cols-5 '>
+          <div className='flex flex-col gap-16 lg:col-span-3 lg:pr-16'>
             <CourseIntro
               id={data.course_id}
               categories={data.categories}
@@ -32,7 +32,7 @@ const CourseMain = ({ data }) => {
               items={data.what_learned_items}
             />
           </div>
-          <div className='hidden lg:inline-grid lg:col-span-1'>
+          <div className='hidden lg:inline-grid lg:col-span-2 pl-8'>
             <CourseInfo
               embedid={data.embed_id}
               price={data.course_price}

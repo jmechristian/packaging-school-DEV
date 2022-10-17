@@ -3,7 +3,7 @@ import { PrismicRichText } from '@prismicio/react';
 import CirriculumBlock from './CirriculumBlock';
 import { useDispatch } from 'react-redux';
 import { useInView } from 'framer-motion';
-import { setSectionInView } from '../../store/navigation/navigationSlice';
+import { setSectionInView } from '../../features/navigation/navigationSlice';
 
 const CertificationCirriculum = ({ slice }) => {
   const half = Math.ceil(slice?.items.length / 2);

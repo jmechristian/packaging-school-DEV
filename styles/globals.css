@@ -2,7 +2,7 @@
 
 @layer base {
   html {
-    @apply text-zinc-900;
+    @apply text-slate-900 dark:text-white;
   }
 
   /* body {
@@ -10,19 +10,19 @@
   } */
 
   .container__inner {
-    @apply w-full max-w-6xl mx-auto px-6 md:px-10 xl:px-0 md:w-4/5 lg:w-full;
+    @apply w-full max-w-6xl mx-auto px-6 md:px-10 xl:px-0 md:w-5/6 lg:w-full;
   }
 
   .hero__padding {
-    @apply pt-8 md:pt-16 lg:pt-44 pb-20 md:pb-28 xl:pb-32;
+    @apply pt-28 md:pt-32 lg:pt-44 pb-20 md:pb-28 xl:pb-32;
   }
 
   .course__hero-padding {
-    @apply pt-10 md:pt-12 lg:pt-40 pb-20 xl:pb-24;
+    @apply pt-32 md:pt-36 lg:pt-40 dark:pb-20 dark:xl:pb-24;
   }
 
   .hero__headline {
-    @apply text-white text-5xl lg:text-6xl font-bold w-full;
+    @apply text-white text-4xl lg:text-5xl xl:text-6xl font-bold w-full;
   }
 
   .inner__section-margin {
@@ -38,7 +38,7 @@
   }
 
   .body__text {
-    @apply text-neutral-600 text-lg leading-relaxed;
+    @apply text-slate-700 text-lg leading-relaxed;
   }
 
   .body__text__light {
@@ -55,6 +55,14 @@
 
   .content__box:nth-child(3n + 3) {
     @apply rounded-bl-3xl;
+  }
+
+  .black__white {
+    @apply text-slate-900 dark:text-white;
+  }
+
+  .gray__white {
+    @apply text-slate-700 dark:text-white;
   }
 }
 

@@ -10,10 +10,10 @@ const CourseObjectives = ({ what, items }) => {
   return (
     <div className='flex flex-col gap-10 lg:max-w-prose'>
       <div className='flex flex-col gap-4'>
-        <div className='font-semibold text-xl text-white '>
+        <div className='font-semibold text-xl black__white '>
           What You Will Learn
         </div>
-        <div className='text-white'>
+        <div className='gray__white text-lg'>
           <PrismicRichText field={what} />
         </div>
       </div>
@@ -26,7 +26,9 @@ const CourseObjectives = ({ what, items }) => {
                   <div>
                     <CheckBadgeIcon className='w-6 h-6 fill-base-brand' />
                   </div>
-                  <div className='text-white'>{item.overview_items}</div>
+                  <div className='gray__white text-lg line-clamp-2 hover:line-clamp-none'>
+                    {item.overview_items}
+                  </div>
                 </div>
               ))}
           </div>
@@ -37,7 +39,9 @@ const CourseObjectives = ({ what, items }) => {
                   <div>
                     <CheckBadgeIcon className='w-6 h-6 fill-base-brand' />
                   </div>
-                  <div className='text-white'>{item.overview_items}</div>
+                  <div className='gray__white text-lg line-clamp-2 hover:line-clamp-none'>
+                    {item.overview_items}
+                  </div>
                 </div>
               ))}
           </div>

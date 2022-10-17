@@ -11,7 +11,7 @@ const MobileHeader = () => {
   const dispatch = useDispatch();
 
   return (
-    <header className='w-full relative block lg:hidden bg-dark'>
+    <header className='w-full fixed block lg:hidden bg-dark z-40'>
       <section className='h-20 w-full container__inner'>
         <div className='w-full h-full flex justify-between items-center'>
           <div className='w-44'>

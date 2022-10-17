@@ -4,7 +4,7 @@ import InstructorHeadshot from './components/InstructorHeadshot';
 import InstructorBio from './components/InstructorBio';
 import { useDispatch } from 'react-redux';
 import { useInView } from 'framer-motion';
-import { setSectionInView } from '../../store/navigation/navigationSlice';
+import { setSectionInView } from '../../features/navigation/navigationSlice';
 
 const CertificateInstructor = ({ slice }) => {
   const dispatch = useDispatch();

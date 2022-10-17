@@ -4,7 +4,7 @@ import { PrismicRichText } from '@prismicio/react';
 import ReviewBlock from './components/ReviewBlock';
 import { useDispatch } from 'react-redux';
 import { useInView } from 'framer-motion';
-import { setSectionInView } from '../../store/navigation/navigationSlice';
+import { setSectionInView } from '../../features/navigation/navigationSlice';
 
 const Reviews = ({ slice }) => {
   const [width, setWidth] = useState(0);

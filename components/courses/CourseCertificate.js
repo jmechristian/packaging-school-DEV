@@ -5,7 +5,7 @@ const CourseCertificate = ({ certification }) => {
     <div className='flex flex-col gap-8'>
       {certification[0].certificate_link.data ? (
         <>
-          <div className='text-white text-lg'>
+          <div className='black__white text-lg'>
             This course is part of the{' '}
             <span className='text-clemson font-bold cursor-pointer'>
               <a
@@ -17,7 +17,7 @@ const CourseCertificate = ({ certification }) => {
             </span>
           </div>
 
-          <div className='text-white text-lg'>
+          <div className='black__white text-lg'>
             Differentiate yourself from your peers with the comprehensive
             knowledge of a full certificate program.{' '}
             <a
@@ -29,7 +29,7 @@ const CourseCertificate = ({ certification }) => {
           </div>
         </>
       ) : (
-        <div className='text-white text-lg'>
+        <div className='black__white text-lg'>
           Differientiate yourself from your peers with the comprehensive
           knowledge of a full certificate program.{' '}
           <a href='/certifications' className='cursor-pointer'>

@@ -5,8 +5,11 @@ import Footer from '../navigation/Footer';
 import MobileHeader from '../navigation/MobileHeader';
 import MobileMenu from '../navigation/MobileMenu';
 import SearchMenu from '../navigation/SearchMenu';
+import DarkToggle from './DarkToggle';
+import { useSelector } from 'react-redux';
 
 const Layout = ({ children }) => {
+  const { darkMode } = useSelector((state) => state.layout);
   return (
     <>
       <Head>
@@ -20,12 +23,15 @@ const Layout = ({ children }) => {
         <meta name='keywords' content='packaging, sustainability' />
         <meta name='robots' content='index, follow' />
       </Head>
-      <Header />
-      <MobileHeader />
-      <SearchMenu />
-      <MobileMenu />
-      {children}
-      <Footer />
+      <div className={`${darkMode ? 'dark' : ''}`}>
+        <DarkToggle />
+        <Header />
+        <MobileHeader />
+        <SearchMenu />
+        <MobileMenu />
+        {children}
+        <Footer />
+      </div>
     </>
   );
 };

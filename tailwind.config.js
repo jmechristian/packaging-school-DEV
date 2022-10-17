@@ -28,5 +28,10 @@ module.exports = {
       },
     },
   },
-  plugins: [require('@tailwindcss/forms')],
+  variants: {
+    extends: {
+      lineClamp: ['hover'],
+    },
+  },
+  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/line-clamp')],
 };

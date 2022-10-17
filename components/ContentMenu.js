@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, useScroll } from 'framer-motion';
 import { useSelector } from 'react-redux';
 import RotatingCaret from './RotatingCaret';
-import { setSectionInView } from '../store/navigation/navigationSlice';
+import { setSectionInView } from '../features/navigation/navigationSlice';
 
 const ContentMenu = ({ items, enroll, trial }) => {
   const { sectionInView } = useSelector((state) => state.nav);

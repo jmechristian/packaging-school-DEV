@@ -3,7 +3,7 @@ import { PrismicRichText, PrismicLink } from '@prismicio/react';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 import { useDispatch } from 'react-redux';
 import { useInView } from 'framer-motion';
-import { setSectionInView } from '../../store/navigation/navigationSlice';
+import { setSectionInView } from '../../features/navigation/navigationSlice';
 
 const CertificateResources = ({ slice }) => {
   const dispatch = useDispatch();

@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { PrismicRichText } from '@prismicio/react';
 import { useDispatch } from 'react-redux';
 import { useInView } from 'framer-motion';
-import { setSectionInView } from '../../store/navigation/navigationSlice';
+import { setSectionInView } from '../../features/navigation/navigationSlice';
 
 const CertificateBenefits = ({ slice }) => {
   const dispatch = useDispatch();
