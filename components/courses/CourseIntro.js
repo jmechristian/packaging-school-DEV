@@ -9,7 +9,6 @@ const CourseIntro = ({
   title,
   instructor,
   subtitle,
-  preview,
   infoSheet,
 }) => {
   const backgroundColor = () => {
@@ -48,7 +47,7 @@ const CourseIntro = ({
       <div className='text-white text-xl'>
         <PrismicRichText field={subtitle} />
       </div>
-      <CourseItems preview={preview} infoSheet={infoSheet} />
+      <CourseItems infoSheet={infoSheet} />
     </div>
   );
 };

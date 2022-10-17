@@ -13,22 +13,23 @@ const CourseInfo = ({
   certification,
   embedid,
 }) => {
-  console.log(embedid);
   return (
     <section>
       <div className='bg-base-dark-highlight rounded-md'>
         <div className='flex flex-col gap-4 border-b border-b-gray-600 p-8'>
           <div className='flex flex-col gap-10'>
             {embedid && <YouTubeEmbed embedid={embedid} />}
-            <div className='flex flex-col gap-2'>
-              <div className='font-medium text-white text-lg'>
-                Future Proof Your Skills
+            <div className='flex flex-col gap-6'>
+              <div className='flex flex-col gap-2'>
+                <div className='font-medium text-white text-lg'>
+                  Future Proof Your Skills
+                </div>
+                <div className='font-bold text-white text-5xl'>${price}</div>
               </div>
-              <div className='font-bold text-white text-5xl'>${price}</div>
-            </div>
-            <div className='flex flex-col gap-4'>
-              <CTAButtonLarge />
-              <CTAButtonTrial />
+              <div className='flex flex-col gap-4'>
+                <CTAButtonLarge />
+                <CTAButtonTrial />
+              </div>
             </div>
           </div>
         </div>

@@ -16,7 +16,6 @@ const CourseMain = ({ data }) => {
               title={data.course_title}
               instructor={data.instructor}
               subtitle={data.course_subtitle}
-              preview={data.course_preview}
               infoSheet={data.course_info_sheet}
             />
             <div className='lg:hidden'>
