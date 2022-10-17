@@ -1,10 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
-import { useDispatch, useSelector } from 'react-redux';
-import {
-  showSearch,
-  showMobileMenu,
-} from '../../store/navigation/navigationSlice';
+import { useDispatch } from 'react-redux';
+import { showSearch, showMobileMenu } from './navigationSlice';
 import {
   EllipsisVerticalIcon,
   MagnifyingGlassIcon,

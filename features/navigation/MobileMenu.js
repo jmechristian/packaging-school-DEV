@@ -2,7 +2,7 @@ import React from 'react';
 import { XMarkIcon, ArrowRightCircleIcon } from '@heroicons/react/24/outline';
 import { motion } from 'framer-motion';
 import { useDispatch, useSelector } from 'react-redux';
-import { closeMobileMenu } from '../../store/navigation/navigationSlice';
+import { closeMobileMenu } from './navigationSlice';
 
 const MobileMenu = () => {
   const dispatch = useDispatch();

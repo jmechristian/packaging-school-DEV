@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { showSearch } from '../../store/navigation/navigationSlice';
+import { showSearch } from '../navigation/navigationSlice';
 import Image from 'next/image';
 import {
   MagnifyingGlassIcon,

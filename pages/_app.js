@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { PrismicProvider } from '@prismicio/react';
 import { PrismicPreview } from '@prismicio/next';
 import { linkResolver, repositoryName } from '../prismicio';
-import { store } from '../store/store';
+import { store } from '../features/store';
 import { Provider } from 'react-redux';
 
 export default function App({ Component, pageProps }) {

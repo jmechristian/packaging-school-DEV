@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { XMarkIcon, ArrowRightCircleIcon } from '@heroicons/react/24/outline';
 import { useDispatch, useSelector } from 'react-redux';
-import { closeSearch } from '../../store/navigation/navigationSlice';
+import { closeSearch } from './navigationSlice';
 
 const SearchMenu = () => {
   const [searchText, setSearchText] = useState('');
