@@ -3,13 +3,23 @@ import CTAButtonLarge from '../CTAButtonLarge';
 import CTAButtonTrial from '../CTAButtonTrial';
 import CourseDetails from './CourseDetails';
 import CourseCertificate from './CourseCertificate';
+import YouTubeEmbed from '../YouTubeEmbed';
 
-const CourseInfo = ({ price, hours, lessons, videos, certification }) => {
+const CourseInfo = ({
+  price,
+  hours,
+  lessons,
+  videos,
+  certification,
+  embedid,
+}) => {
+  console.log(embedid);
   return (
     <section>
       <div className='bg-base-dark-highlight rounded-md'>
         <div className='flex flex-col gap-4 border-b border-b-gray-600 p-8'>
-          <div className='flex flex-col gap-8'>
+          <div className='flex flex-col gap-10'>
+            {embedid && <YouTubeEmbed embedid={embedid} />}
             <div className='flex flex-col gap-2'>
               <div className='font-medium text-white text-lg'>
                 Future Proof Your Skills

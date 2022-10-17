@@ -9,7 +9,7 @@ const SkillsCTA = () => {
             Not Sure Where to Start?
           </div>
           <div className='text-xl text-white lg:w-4/5'>
-            Know exactly where your teams stands with our currated skills test.
+            Know exactly where your team stands with our curated skills test.
           </div>
         </div>
         <button className='bg-dark py-5 px-6 rounded-md shadow-xl'>

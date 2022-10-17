@@ -141,6 +141,13 @@
           }
         }
       },
+      "embed_id": {
+        "type": "Text",
+        "config": {
+          "label": "embed_Id",
+          "placeholder": ""
+        }
+      },
       "course_price": {
         "type": "Text",
         "config": {

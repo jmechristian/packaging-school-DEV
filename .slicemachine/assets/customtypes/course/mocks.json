@@ -11,10 +11,10 @@
   "lang": "en-us",
   "alternate_languages": [],
   "data": {
-    "course_id": "lucky",
+    "course_id": "valuable",
     "categories": [
       {
-        "category": "Industry"
+        "category": "Business"
       }
     ],
     "course_hero": {
@@ -24,12 +24,12 @@
       },
       "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa"
+      "url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db"
     },
     "course_title": [
       {
         "type": "heading1",
-        "text": "Attack",
+        "text": "Green",
         "spans": []
       }
     ],
@@ -42,46 +42,47 @@
           },
           "alt": null,
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1606248897732-2c5ffe759c04"
+          "url": "https://images.unsplash.com/photo-1593642633279-1796119d5482"
         },
-        "instructor_name": "fast",
+        "instructor_name": "rice",
         "instructor_social": {
           "link_type": "Web",
-          "url": "https://slicemachine.dev"
+          "url": "http://google.com"
         }
       }
     ],
     "course_subtitle": [
       {
         "type": "paragraph",
-        "text": "Nulla ut excepteur ea esse eu laboris laboris fugiat veniam proident. Ex anim duis irure.",
+        "text": "Mollit adipisicing cillum esse irure culpa mollit reprehenderit incididunt aute excepteur officia ipsum. Ullamco laborum dolore fugiat. Do sit magna cillum elit officia consectetur officia anim magna ad in velit est aliquip.",
         "spans": []
       }
     ],
     "course_preview": {
       "link_type": "Web",
-      "url": "http://google.com"
+      "url": "https://slicemachine.dev"
     },
     "course_info_sheet": {
       "link_type": "Web",
-      "url": "http://google.com"
+      "url": "https://slicemachine.dev"
     },
     "what_learned": [
       {
         "type": "paragraph",
-        "text": "Ut cupidatat proident fugiat fugiat voluptate quis consequat.",
+        "text": "Sunt eu nulla tempor veniam sint voluptate et.",
         "spans": []
       }
     ],
     "what_learned_items": [
       {
-        "overview_items": "together"
+        "overview_items": "remarkable"
       }
     ],
-    "course_price": "sister",
-    "course_hours": "play",
-    "course_lessons": "ten",
-    "course_videos": "treated",
+    "embed_id": "music",
+    "course_price": "friendly",
+    "course_hours": "pink",
+    "course_lessons": "manufacturing",
+    "course_videos": "nothing",
     "related_courses": [
       {
         "related": {

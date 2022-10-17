@@ -4,6 +4,7 @@ import CourseInfo from './CourseInfo';
 import CourseObjectives from './CourseObjectives';
 
 const CourseMain = ({ data }) => {
+  console.log(data.embed_id);
   return (
     <section className='w-full bg-dark'>
       <div className='container__inner course__hero-padding'>
@@ -20,6 +21,7 @@ const CourseMain = ({ data }) => {
             />
             <div className='lg:hidden'>
               <CourseInfo
+                embedid={data.embed_id}
                 price={data.course_price}
                 hours={data.course_hours}
                 lessons={data.course_lessons}
@@ -34,6 +36,7 @@ const CourseMain = ({ data }) => {
           </div>
           <div className='hidden lg:inline-grid lg:col-span-1'>
             <CourseInfo
+              embedid={data.embed_id}
               price={data.course_price}
               hours={data.course_hours}
               lessons={data.course_lessons}
