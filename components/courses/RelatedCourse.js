@@ -50,9 +50,9 @@ const RelatedCourse = ({
         <div className='aspect-video bg-black relative cursor-scroll-all'>
           <YouTubeEmbed embedid={embedid} />
         </div>
-        <div className='px-3 pt-5 pb-16 flex flex-col gap-2 w-full relative'>
+        <div className='px-3 pt-5 pb-16 flex flex-col gap-1 w-full relative'>
           <div className='flex flex-col gap-1'>
-            <div className='font-bold text-xl'>{title}</div>
+            <div className='font-bold text-lg'>{title}</div>
             <div className='flex flex-row gap-3 items-center'>
               <div className='flex gap-1 items-center'>
                 <ClockIcon className='w-4 h-4 stroke-base-brand' />
@@ -68,16 +68,10 @@ const RelatedCourse = ({
               </div>
             </div>
           </div>
-          <div className='font-bold text-xl'>${price}</div>
-        </div>
-      </div>
-      <div className={`${backgroundColor()} rounded absolute left-3 bottom-3`}>
-        <div className='py-1 px-3 text-white font-semibold text-xs'>
-          {categories[0].category}
         </div>
       </div>
       <div
-        className='flex w-full justify-end absolute bottom-3 right-3 cursor-pointer'
+        className='flex w-full justify-start absolute bottom-3 left-3 cursor-pointer'
         onClick={courseClickHandler}
       >
         <div className='bg-white hover:border hover:border-black rounded flex gap-1 py-1 px-3 items-center'>
