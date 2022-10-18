@@ -21,7 +21,7 @@ const CourseObjectives = ({ what, items }) => {
         </div>
       </div>
       <div
-        className={`${showObjectives ? '' : 'h-72 overflow-hidden'} relative`}
+        className={`${showObjectives ? '' : 'h-80 overflow-hidden'} relative`}
       >
         {items.length > 1 && (
           <div className='flex flex-col gap-4 xl:grid xl:grid-cols-2 w-full'>
