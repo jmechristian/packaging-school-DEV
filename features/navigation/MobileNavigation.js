@@ -29,16 +29,20 @@ const MobileNavigation = () => {
 
   const variants = {
     show: {
-      opacity: 1,
-      y: 0,
+      backgroundColor: darkMode
+        ? 'rgba(15, 23, 42, 1)'
+        : 'rgba(255,255,255, 1)',
+      boxShadow:
+        '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
       transition: {
-        duration: 0.3,
+        duration: 0.2,
         ease: 'easeInOut',
       },
     },
     hidden: {
-      opacity: 1,
-      y: -90,
+      backgroundColor: darkMode
+        ? 'rgba(15, 23, 42, 0)'
+        : 'rgba(255,255,255, 0)',
       transition: {
         duration: 0.2,
         ease: 'easeInOut',
@@ -48,9 +52,7 @@ const MobileNavigation = () => {
 
   return (
     <motion.header
-      className={`w-full ${
-        showMenu ? 'fixed bg-white dark:bg-slate-900 shadow-md' : 'absolute'
-      } top-0 left-0 right-0 block lg:hidden bg-transparent z-40`}
+      className='w-full fixed top-0 left-0 right-0 block lg:hidden z-40'
       ref={mobileMenuRef}
       variants={variants}
       initial={false}

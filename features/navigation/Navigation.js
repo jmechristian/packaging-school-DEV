@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { showSearch } from '../navigation/navigationSlice';
+import { motion, useScroll } from 'framer-motion';
 import Image from 'next/image';
 import {
   MagnifyingGlassIcon,
@@ -10,10 +11,54 @@ import {
 const Navigation = () => {
   const dispatch = useDispatch();
   const { darkMode } = useSelector((state) => state.layout);
+  const [showMenu, setShowMenu] = useState(false);
+  const mainMenuRef = useRef();
+  const { scrollY } = useScroll();
+
+  useEffect(() => {
+    return scrollY.onChange(() => updateY());
+  });
+
+  const updateY = () => {
+    if (scrollY.current > 75) {
+      setShowMenu(true);
+    } else {
+      setShowMenu(false);
+    }
+  };
+
+  const variants = {
+    show: {
+      backgroundColor: darkMode
+        ? 'rgba(15, 23, 42, 1)'
+        : 'rgba(255,255,255, 1)',
+      boxShadow:
+        '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
+      transition: {
+        duration: 0.2,
+        ease: 'easeInOut',
+      },
+    },
+    hidden: {
+      backgroundColor: darkMode
+        ? 'rgba(15, 23, 42, 0)'
+        : 'rgba(255,255,255, 0)',
+      transition: {
+        duration: 0.2,
+        ease: 'easeInOut',
+      },
+    },
+  };
 
   return (
-    <header className='w-full hidden lg:flex justify-center absolute top-0 left-0 bg-transparent'>
-      <div className='w-full max-w-7xl h-28 text-slate-900 dark:text-white flex justify-between items-center container__inner'>
+    <motion.header
+      className='w-full z-50 hidden fixed lg:flex justify-center top-0 left-0'
+      ref={mainMenuRef}
+      variants={variants}
+      initial={false}
+      animate={showMenu ? 'show' : 'hidden'}
+    >
+      <div className='w-full max-w-7xl h-24 text-slate-900 dark:text-white flex justify-between items-center container__inner'>
         <div className='flex items-center'>
           <div className='w-48 mr-6'>
             {darkMode ? (
@@ -48,7 +93,7 @@ const Navigation = () => {
             className='w-6 h-6 stroke-slate-900 dark:stroke-base-brand cursor-pointer'
             onClick={() => dispatch(showSearch())}
           />
-          <UserCircleIcon className='w-6 h-6 stroke-base-brand hidden lg:block xl:hidden' />
+          <UserCircleIcon className='w-6 h-6 stroke-slate-900 hidden lg:block xl:hidden' />
           <div className='dark:text-base-light text-slate-900 hidden xl:block text-sm font-medium xl:text-base'>
             Log In
           </div>
@@ -57,7 +102,7 @@ const Navigation = () => {
           </button>
         </div>
       </div>
-    </header>
+    </motion.header>
   );
 };
 
