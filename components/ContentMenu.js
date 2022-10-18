@@ -42,7 +42,7 @@ const ContentMenu = ({ items, enroll, trial }) => {
       },
     },
     hidden: {
-      opacity: 1,
+      opacity: 0,
       y: -90,
       transition: {
         duration: 0.2,
@@ -70,7 +70,7 @@ const ContentMenu = ({ items, enroll, trial }) => {
 
   return (
     <motion.div
-      className='fixed flex-col top-0 left-0 right-0 z-50 bg-white shadow-md'
+      className='fixed flex-col top-20 left-0 right-0 z-30 bg-white shadow-md'
       ref={menuRef}
       variants={variants}
       initial={false}
@@ -78,13 +78,13 @@ const ContentMenu = ({ items, enroll, trial }) => {
       // style={{ display: showMenu ? 'flex' : 'none' }}
     >
       <motion.div
-        className='w-full h-2 lg:h-2.5 bg-gradient-to-r from-base-light via-base-brand to-base-dark'
+        className='w-full h-1.5 bg-gradient-to-r from-base-light via-base-brand to-base-dark'
         style={{ transformOrigin: '0%', scaleX: scrollYProgress }}
       ></motion.div>
-      <section className='container__inner flex w-full justify-between items-start lg:items-center py-4 relative'>
+      <section className='container__inner flex w-full justify-between items-start lg:items-center py-3 relative'>
         <div className=' font-medium flex flex-col lg:hidden'>
           <div
-            className='flex text-zinc-800 gap-1 items-center leading-loose'
+            className='flex text-zinc-800 gap-1 items-center leading-loose text-sm'
             onClick={() => setContentMenuOpen(!contentMenuOpen)}
           >
             Jump To
@@ -111,7 +111,7 @@ const ContentMenu = ({ items, enroll, trial }) => {
                     : 'text-zinc-800'
                 }`}
               >
-                <div className='capitalize'>{item.link_name}</div>
+                <div className='capitalize text-sm'>{item.link_name}</div>
               </a>
             ))}
           </motion.div>
@@ -127,14 +127,14 @@ const ContentMenu = ({ items, enroll, trial }) => {
                   : 'text-zinc-800'
               }`}
             >
-              <div className='capitalize'>{item.link_name}</div>
+              <div className='capitalize text-sm'>{item.link_name}</div>
             </a>
           ))}
         </div>
         <div className='flex gap-2'>
           {trial && (
             <div className='rounded'>
-              <button className='bg-white text-clemson border border-clemson hover:border-clemson-dark hover:text-clemson-dark font-semibold text-xs md:text-sm px-4 py-2 rounded'>
+              <button className='bg-white text-clemson border border-clemson hover:border-clemson-dark hover:text-clemson-dark font-semibold text-xs md:text-sm px-4 py-1 rounded'>
                 <a href={trial} target='_blank' rel='noreferrer'>
                   Free Trial
                 </a>
@@ -142,7 +142,7 @@ const ContentMenu = ({ items, enroll, trial }) => {
             </div>
           )}
           <div className='rounded'>
-            <button className='bg-clemson border border-clemson text-white hover:bg-clemson-dark font-semibold text-xs md:text-sm px-4 py-2 rounded'>
+            <button className='bg-clemson border border-clemson text-white hover:bg-clemson-dark font-semibold text-xs md:text-sm px-4 py-1 rounded'>
               Enroll Now
             </button>
           </div>

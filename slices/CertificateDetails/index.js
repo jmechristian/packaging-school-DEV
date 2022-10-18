@@ -20,7 +20,7 @@ const CertificateDetails = ({ slice }) => {
 
   return (
     <section
-      className='container__inner inner__section-margin flex flex-col lg:flex-row justify-between items-center gap-8 scroll-mt-32'
+      className='container__inner inner__section-margin flex flex-col lg:flex-row justify-between items-center gap-8 scroll-mt-44'
       id='details'
       ref={sectionRef}
     >

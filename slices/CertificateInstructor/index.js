@@ -21,7 +21,7 @@ const CertificateInstructor = ({ slice }) => {
 
   return (
     <section
-      className='inner__section-margin container__inner scroll-mt-28 lg:scroll-mt-40'
+      className='inner__section-margin container__inner scroll-mt-28 lg:scroll-mt-44'
       id='instructor'
       ref={sectionRef}
     >

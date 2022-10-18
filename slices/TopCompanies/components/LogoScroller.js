@@ -25,8 +25,8 @@ const LogoScroller = ({ items }) => {
 
   return (
     <div className='overflow-hidden cursor-grab flex relative' ref={carousel}>
-      <div className='absolute top-0 left-0 bg-gradient-to-r from-base-dark  w-1/12 h-full z-30 '></div>
-      <div className='absolute top-0 right-0 bg-gradient-to-l from-base-dark  w-1/12 h-full z-30 '></div>
+      <div className='absolute top-0 left-0 bg-gradient-to-r from-base-dark  w-1/12 h-full z-20 '></div>
+      <div className='absolute top-0 right-0 bg-gradient-to-l from-base-dark  w-1/12 h-full z-20 '></div>
       <motion.div
         drag='x'
         dragConstraints={{
