@@ -57,7 +57,7 @@ const CourseObjectives = ({ what, items }) => {
           className={`${
             showObjectives
               ? ''
-              : 'absolute bottom-0 left-0 right-0 z-20 bg-gradient-to-t from-slate-200 via-slate-200 dark:from-slate-900 dark:via-slate-900 h-64 '
+              : 'absolute bottom-0 left-0 right-0 z-20 bg-gradient-to-t from-slate-100 via-slate-100 dark:from-slate-900 dark:via-slate-900 h-64 '
           } flex justify-center items-end`}
         >
           <button

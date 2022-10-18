@@ -9,7 +9,7 @@ const CourseMain = ({ data }) => {
 
   return (
     <section
-      className='w-full bg-slate-200'
+      className='w-full bg-slate-100'
       style={{
         backgroundImage: `url(${
           darkMode
