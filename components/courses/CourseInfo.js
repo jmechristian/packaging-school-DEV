@@ -15,8 +15,8 @@ const CourseInfo = ({
 }) => {
   return (
     <section>
-      <div className='dark:bg-slate-800 bg-base-light shadow-md rounded-md'>
-        <div className='flex flex-col gap-4 border-b border-b-slate-300 dark:border-b-slate-700 p-8'>
+      <div className='dark:bg-slate-800 bg-slate-300 shadow-lg rounded-md'>
+        <div className='flex flex-col gap-4 border-b border-b-slate-400 dark:border-b-slate-700 p-8'>
           <div className='flex flex-col gap-10'>
             {embedid && <YouTubeEmbed embedid={embedid} />}
             <div className='flex flex-col gap-6'>
@@ -33,7 +33,7 @@ const CourseInfo = ({
             </div>
           </div>
         </div>
-        <div className='flex flex-col gap-4 border-b border-b-slate-300 dark:border-b-slate-700 p-8'>
+        <div className='flex flex-col gap-4 border-b border-b-slate-400 dark:border-b-slate-700 p-8'>
           <CourseDetails hours={hours} lessons={lessons} videos={videos} />
         </div>
         <div className='flex flex-col gap-4  p-8'>
