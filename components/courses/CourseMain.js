@@ -14,7 +14,7 @@ const CourseMain = ({ data }) => {
         backgroundImage: `url(${
           darkMode
             ? 'https://res.cloudinary.com/dno7xxmmy/image/upload/v1666045015/pschool/gradient-bg4_rrmnwf.webp'
-            : 'https://res.cloudinary.com/dno7xxmmy/image/upload/v1666045562/pschool/gradient-light-bg1_rzlgts.webp'
+            : ''
         })`,
         backgroundSize: 'cover',
         backgroundPosition: 'center center',

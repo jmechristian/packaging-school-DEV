@@ -20,7 +20,6 @@ const RelatedCourse = ({
   embedid,
 }) => {
   const router = useRouter();
-  console.log(embedid);
 
   const backgroundColor = () => {
     switch (categories[0].category) {

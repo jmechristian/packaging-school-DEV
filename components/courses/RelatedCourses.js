@@ -16,8 +16,6 @@ const RelatedCourses = ({ related }) => {
     animate(dragX, 0);
   };
 
-  console.log(related);
-
   return (
     <div className='flex flex-col'>
       <div className='flex flex-col gap-8'>
