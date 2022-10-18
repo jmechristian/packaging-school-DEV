@@ -28,6 +28,7 @@ export async function getStaticProps({ params, previewData }) {
       'course.course_lessons',
       'course.course_videos',
       'course.categories',
+      'course.embed_id',
     ],
   });
 

@@ -6,6 +6,7 @@ import {
   ArrowSmallRightIcon,
 } from '@heroicons/react/24/outline';
 import { useRouter } from 'next/router';
+import YouTubeEmbed from '../YouTubeEmbed';
 
 const RelatedCourse = ({
   title,
@@ -16,8 +17,10 @@ const RelatedCourse = ({
   categories,
   slug,
   reset,
+  embedid,
 }) => {
   const router = useRouter();
+  console.log(embedid);
 
   const backgroundColor = () => {
     switch (categories[0].category) {
@@ -45,11 +48,7 @@ const RelatedCourse = ({
     <div className='w-80 bg-gray-300 rounded-md min-h-full relative'>
       <div className='flex flex-col w-full'>
         <div className='aspect-video bg-black relative cursor-scroll-all'>
-          <div className={`${backgroundColor()} rounded absolute left-3 top-3`}>
-            <div className='py-1 px-2 text-white font-semibold text-sm'>
-              {categories[0].category}
-            </div>
-          </div>
+          <YouTubeEmbed embedid={embedid} />
         </div>
         <div className='px-3 pt-5 pb-16 flex flex-col gap-2 w-full relative'>
           <div className='flex flex-col gap-1'>
@@ -70,6 +69,11 @@ const RelatedCourse = ({
             </div>
           </div>
           <div className='font-bold text-xl'>${price}</div>
+        </div>
+      </div>
+      <div className={`${backgroundColor()} rounded absolute left-3 bottom-3`}>
+        <div className='py-1 px-3 text-white font-semibold text-xs'>
+          {categories[0].category}
         </div>
       </div>
       <div

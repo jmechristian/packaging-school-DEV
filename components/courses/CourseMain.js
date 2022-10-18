@@ -22,7 +22,7 @@ const CourseMain = ({ data }) => {
     >
       <div className='container__inner course__hero-padding'>
         <div className='grid grid-cols-1 lg:grid-cols-5 '>
-          <div className='flex flex-col gap-16 lg:col-span-3 lg:pr-16'>
+          <div className='flex flex-col gap-16 lg:col-span-3'>
             <CourseIntro
               id={data.course_id}
               categories={data.categories}

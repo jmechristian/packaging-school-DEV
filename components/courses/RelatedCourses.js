@@ -16,6 +16,8 @@ const RelatedCourses = ({ related }) => {
     animate(dragX, 0);
   };
 
+  console.log(related);
+
   return (
     <div className='flex flex-col'>
       <div className='flex flex-col gap-8'>
@@ -40,6 +42,7 @@ const RelatedCourses = ({ related }) => {
                   price={course.related.data.course_price}
                   categories={course.related.data.categories}
                   slug={course.related.uid}
+                  embedid={course.related.data.embed_id}
                   reset={resetDrag}
                 />
               </motion.div>
