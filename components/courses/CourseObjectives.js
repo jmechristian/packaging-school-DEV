@@ -61,7 +61,7 @@ const CourseObjectives = ({ what, items }) => {
           } flex justify-center items-end`}
         >
           <button
-            className='bg-base-brand text-sm text-white font-medium px-5 py-3 rounded mb-8 uppercase flex items-center gap-2 mt-8'
+            className='bg-base-brand text-sm text-white font-medium px-5 py-3 rounded mb-12 uppercase flex items-center gap-2 mt-8'
             onClick={() => setShowObjectives(!showObjectives)}
           >
             <RotatingCaret open={showObjectives} styling='h-6 w-6 fill-white' />
