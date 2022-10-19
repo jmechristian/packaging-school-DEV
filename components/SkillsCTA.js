@@ -1,8 +1,36 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 
 const SkillsCTA = () => {
+  const skillsRef = useRef();
+  const inView = useInView(skillsRef);
+
+  const variants = {
+    enter: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: 'spring',
+        stiffness: 400,
+        damping: 85,
+        mass: 1,
+        delay: 0.1,
+      },
+    },
+    hidden: {
+      opacity: 0,
+      y: 100,
+    },
+  };
+
   return (
-    <div className='w-full px-8 py-10 bg-gradient-to-b from-base-dark to-clemson md:bg-gradient-to-r rounded-md'>
+    <motion.div
+      className='w-full px-8 py-10 bg-gradient-to-b from-base-dark to-clemson md:bg-gradient-to-r rounded-md'
+      ref={skillsRef}
+      variants={variants}
+      initial='hidden'
+      animate={inView ? 'enter' : 'hidden'}
+    >
       <div className='flex flex-col lg:flex-row lg:justify-between gap-6'>
         <div className='flex flex-col gap-3'>
           <div className='font-bold text-3xl  text-white'>
@@ -18,7 +46,7 @@ const SkillsCTA = () => {
           </div>
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

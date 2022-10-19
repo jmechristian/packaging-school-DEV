@@ -26,18 +26,10 @@ const CertificateDetails = ({ slice }) => {
     >
       <div className='flex flex-col gap-6 lg:gap-8 w-full lg:w-7/12'>
         <div className='subheadline'>
-          {slice.primary.headline ? (
-            <PrismicRichText field={slice.primary.headline} />
-          ) : (
-            <h2>Template slice, update me!</h2>
-          )}
+          <PrismicRichText field={slice.primary.headline} />
         </div>
         <div className='body__text'>
-          {slice.primary.description ? (
-            <PrismicRichText field={slice.primary.description} />
-          ) : (
-            <p>start by editing this slice from inside Slice Machine!</p>
-          )}
+          <PrismicRichText field={slice.primary.description} />
         </div>
       </div>
       <div className='flex flex-col border-t border-gray-500 w-full lg:w-4/12'>

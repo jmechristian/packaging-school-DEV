@@ -3,6 +3,7 @@ import CourseIntro from './CourseIntro';
 import CourseInfo from './CourseInfo';
 import CourseObjectives from './CourseObjectives';
 import { useSelector } from 'react-redux';
+import { motion } from 'framer-motion';
 
 const CourseMain = ({ data }) => {
   const { darkMode } = useSelector((state) => state.layout);
@@ -20,7 +21,19 @@ const CourseMain = ({ data }) => {
         backgroundPosition: 'center center',
       }}
     >
-      <div className='container__inner course__hero-padding'>
+      <motion.div
+        className='container__inner course__hero-padding'
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{
+          type: 'spring',
+          stiffness: 400,
+          damping: 85,
+          mass: 1,
+          delay: 0.8,
+        }}
+        key={data.course_id}
+      >
         <div className='grid grid-cols-1 lg:grid-cols-5 '>
           <div className='flex flex-col gap-16 lg:col-span-3'>
             <CourseIntro
@@ -57,7 +70,7 @@ const CourseMain = ({ data }) => {
             />
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

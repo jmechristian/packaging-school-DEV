@@ -1,8 +1,36 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 
 const StudentSuccess = () => {
+  const studentRef = useRef();
+  const inView = useInView(studentRef);
+
+  const variants = {
+    enter: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: 'spring',
+        stiffness: 400,
+        damping: 85,
+        mass: 1,
+        delay: 0.2,
+      },
+    },
+    hidden: {
+      opacity: 0,
+      y: 100,
+    },
+  };
+
   return (
-    <section className='flex dark:border dark:border-black dark:bg-white bg-base-dark drop-shadow-lg p-8 lg:p-12'>
+    <motion.section
+      className='flex dark:border dark:border-black dark:bg-white bg-base-dark drop-shadow-lg p-8 lg:p-12'
+      ref={studentRef}
+      variants={variants}
+      initial='hidden'
+      animate={inView ? 'enter' : 'hidden'}
+    >
       <div className='grid grid-cols-1 gap-3'>
         <div className='col-span-1 uppercase font-extrabold lg:text-2xl text-base-light dark:text-base-brand'>
           Student Success Stories
@@ -37,7 +65,7 @@ const StudentSuccess = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

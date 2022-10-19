@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import {
   ClockIcon,
   AcademicCapIcon,
@@ -6,6 +6,7 @@ import {
   ArrowSmallRightIcon,
 } from '@heroicons/react/24/outline';
 import { useRouter } from 'next/router';
+import { motion, useInView } from 'framer-motion';
 import YouTubeEmbed from '../YouTubeEmbed';
 
 const RelatedCourse = ({
@@ -20,6 +21,26 @@ const RelatedCourse = ({
   embedid,
 }) => {
   const router = useRouter();
+  const relatedRef = useRef();
+  const inView = useInView(relatedRef);
+
+  const variants = {
+    enter: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: 'spring',
+        stiffness: 400,
+        damping: 85,
+        mass: 1,
+        delay: 0.2,
+      },
+    },
+    hidden: {
+      opacity: 0,
+      y: 100,
+    },
+  };
 
   const backgroundColor = () => {
     switch (categories[0].category) {
@@ -44,7 +65,13 @@ const RelatedCourse = ({
   };
 
   return (
-    <div className='w-80 bg-gray-300 rounded-md min-h-full relative'>
+    <motion.div
+      className='w-80 bg-gray-300 rounded-md min-h-full relative'
+      ref={relatedRef}
+      variants={variants}
+      initial='hidden'
+      animate={inView ? 'enter' : 'hidden'}
+    >
       <div className='flex flex-col w-full'>
         <div className='aspect-video bg-black relative cursor-scroll-all'>
           <YouTubeEmbed embedid={embedid} />
@@ -78,7 +105,7 @@ const RelatedCourse = ({
           <ArrowSmallRightIcon className='w-4 h-4 stroke-black' />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
