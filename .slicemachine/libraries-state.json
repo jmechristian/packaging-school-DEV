@@ -357,6 +357,13 @@
                     "label": "CTA Headline",
                     "placeholder": ""
                   }
+                },
+                "youtube_id": {
+                  "type": "Text",
+                  "config": {
+                    "label": "youtube id",
+                    "placeholder": ""
+                  }
                 }
               },
               "items": {},
@@ -375,14 +382,14 @@
               "headline": [
                 {
                   "type": "heading1",
-                  "text": "Visitor",
+                  "text": "Teach",
                   "spans": []
                 }
               ],
               "subheadline": [
                 {
                   "type": "paragraph",
-                  "text": "Sint ad esse proident ex cillum consequat magna labore ea anim magna deserunt.",
+                  "text": "Cillum dolor in reprehenderit mollit sit commodo reprehenderit exercitation laboris ullamco reprehenderit ea cupidatat. Laborum occaecat tempor occaecat in enim in commodo.",
                   "spans": []
                 }
               ],
@@ -393,9 +400,10 @@
                 },
                 "alt": null,
                 "copyright": null,
-                "url": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853"
+                "url": "https://images.unsplash.com/photo-1587840171670-8b850147754e"
               },
-              "cta_headline": "adult"
+              "cta_headline": "eleven",
+              "youtube_id": "glad"
             },
             "slice_type": "certificate_hero"
           }
