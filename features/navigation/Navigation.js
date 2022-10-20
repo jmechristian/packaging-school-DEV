@@ -82,7 +82,9 @@ const Navigation = () => {
           <div className='flex gap-6 text-sm font-medium xl:text-base cursor-pointer'>
             <div>About</div>
             <div>Certifications</div>
-            <div>Courses</div>
+            <div>
+              <a href='/all_courses'>Courses</a>
+            </div>
             <div>For Teams</div>
             <div>Library</div>
             <div>Campus Store</div>

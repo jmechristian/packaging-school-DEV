@@ -25,23 +25,23 @@ const SkillsCTA = () => {
 
   return (
     <motion.div
-      className='w-full px-8 py-10 bg-gradient-to-b from-base-dark to-clemson md:bg-gradient-to-r rounded-md'
+      className='w-full px-4 py-5 md:px-8 md:py-10 xl:px-10 bg-gradient-to-b from-base-dark to-clemson md:bg-gradient-to-r rounded-md'
       ref={skillsRef}
       variants={variants}
       initial='hidden'
       animate={inView ? 'enter' : 'hidden'}
     >
-      <div className='flex flex-col lg:flex-row lg:justify-between gap-6'>
+      <div className='flex flex-col lg:flex-row lg:justify-between gap-4 md:gap-6'>
         <div className='flex flex-col gap-3'>
-          <div className='font-bold text-3xl  text-white'>
+          <div className='font-bold text-2xl md:text-3xl  text-white'>
             Not Sure Where to Start?
           </div>
-          <div className='text-xl text-white lg:w-4/5'>
+          <div className='md:text-xl text-white lg:w-4/5'>
             Know exactly where your team stands with our curated skills test.
           </div>
         </div>
         <button className='bg-dark py-5 px-6 rounded-md shadow-xl'>
-          <div className='font-bold xl:text-lg  text-white uppercase'>
+          <div className='font-bold text-sm lg:text-lg text-white uppercase'>
             Start YOUR Skills Assesment
           </div>
         </button>
