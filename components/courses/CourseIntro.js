@@ -44,7 +44,7 @@ const CourseIntro = ({
         <PrismicRichText field={title} />
       </div>
       <Instructor instructor={instructor} />
-      <div className='gray__white text-lg font-light'>
+      <div className='gray__white text-lg'>
         <PrismicRichText field={subtitle} />
       </div>
       <CourseItems infoSheet={infoSheet} />
