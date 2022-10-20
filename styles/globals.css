@@ -64,6 +64,10 @@
   .gray__white {
     @apply text-slate-700 dark:text-white;
   }
+
+  .button__subtle {
+    @apply dark:border-2 dark:border-slate-700 bg-slate-300 dark:bg-slate-900 rounded text-slate-700 dark:text-base-brand font-medium uppercase text-sm;
+  }
 }
 
 @tailwind components;
