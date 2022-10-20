@@ -1,15 +1,17 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { setSelectedFilter } from './courseFilterSlice';
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
 import { categoryMenu } from '../../data/CategoryMenu';
 import { certMenu } from '../../data/CertMenu';
 
 const AllCourseMenu = () => {
+  const dispatch = useDispatch();
   const { selectedFilter } = useSelector((state) => state.course_filter);
   return (
     <section className='flex flex-col justify-between h-full'>
-      <div className='flex flex-col gap-8'>
-        <div className='flex flex-col gap-4'>
+      <div className='flex flex-col gap-6'>
+        <div className='flex flex-col gap-2'>
           <div className='text-slate-900 font-bold text-xl'>
             What Do You Want to Learn?
           </div>
@@ -22,19 +24,28 @@ const AllCourseMenu = () => {
                     : 'text-slate-700'
                 } pl-2 py-2`}
                 key={item.value}
+                onClick={() => dispatch(setSelectedFilter(item.value))}
               >
                 {item.name}
               </div>
             ))}
           </div>
         </div>
-        <div className='flex flex-col gap-4'>
+        <div className='flex flex-col gap-2'>
           <div className='text-slate-900 font-bold text-xl'>
             Courses By Certificate
           </div>
-          <div className='flex flex-col gap-3'>
+          <div className='flex flex-col'>
             {certMenu.map((item, i) => (
-              <div className='text-slate-700' key={item.value}>
+              <div
+                className={`${
+                  selectedFilter === item.value
+                    ? 'bg-slate-400 text-slate-200 font-medium rounded'
+                    : 'text-slate-700'
+                } pl-2 py-2`}
+                key={item.value}
+                onClick={() => dispatch(setSelectedFilter(item.value))}
+              >
                 {item.name}
               </div>
             ))}
