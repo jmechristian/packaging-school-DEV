@@ -2,7 +2,10 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   mobileCourseFilter: false,
-  selectedFilter: 'all',
+  selectedFilter: {
+    name: 'All',
+    value: 'all',
+  },
 };
 
 export const courseFilterSlice = createSlice({

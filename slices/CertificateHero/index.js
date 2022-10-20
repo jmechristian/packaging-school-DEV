@@ -26,10 +26,10 @@ const CertificateHero = ({ slice }) => {
       }}
     >
       <div className='container__inner hero__padding flex flex-col gap-6'>
-        <div className='flex flex-col lg:flex-row gap-6 w-full justify-between items-center'>
-          <div className='flex flex-col gap-8 lg:w-6/12 lg:pr-4'>
+        <div className='flex flex-col lg:flex-row gap-10 w-full justify-between items-center'>
+          <div className='flex flex-col gap-6 lg:w-6/12 lg:pr-4'>
             <motion.div
-              className='hero__headline'
+              className='hero__headline text-white'
               variants={variants}
               initial='hidden'
               animate='enter'
@@ -44,7 +44,7 @@ const CertificateHero = ({ slice }) => {
               <PrismicRichText field={slice.primary.headline} />
             </motion.div>
             <motion.div
-              className='text-slate-300 text-lg xl:text-xl leading-loose max-w-prose'
+              className='text-slate-300 text-lg xl:text-xl leading-relaxed max-w-prose'
               variants={variants}
               initial='hidden'
               animate='enter'

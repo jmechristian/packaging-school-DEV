@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setSelectedFilter } from './courseFilterSlice';
+import { setSelectedFilter, setMobileFilterClosed } from './courseFilterSlice';
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
 import { categoryMenu } from '../../data/CategoryMenu';
 import { certMenu } from '../../data/CertMenu';
@@ -8,6 +8,12 @@ import { certMenu } from '../../data/CertMenu';
 const AllCourseMenu = () => {
   const dispatch = useDispatch();
   const { selectedFilter } = useSelector((state) => state.course_filter);
+
+  const filterClickHandler = (name, value) => {
+    dispatch(setSelectedFilter({ name, value }));
+    dispatch(setMobileFilterClosed());
+  };
+
   return (
     <section className='flex flex-col justify-between h-full'>
       <div className='flex flex-col gap-6'>
@@ -19,12 +25,12 @@ const AllCourseMenu = () => {
             {categoryMenu.map((item, i) => (
               <div
                 className={`${
-                  selectedFilter === item.value
-                    ? 'bg-slate-400 text-slate-200 font-medium rounded'
+                  selectedFilter.value === item.value
+                    ? 'bg-base-brand text-slate-200 font-medium rounded'
                     : 'text-slate-700'
                 } pl-2 py-2`}
                 key={item.value}
-                onClick={() => dispatch(setSelectedFilter(item.value))}
+                onClick={() => filterClickHandler(item.name, item.value)}
               >
                 {item.name}
               </div>
@@ -39,12 +45,12 @@ const AllCourseMenu = () => {
             {certMenu.map((item, i) => (
               <div
                 className={`${
-                  selectedFilter === item.value
-                    ? 'bg-slate-400 text-slate-200 font-medium rounded'
+                  selectedFilter.value === item.value
+                    ? 'bg-base-brand text-slate-200 font-medium rounded'
                     : 'text-slate-700'
                 } pl-2 py-2`}
                 key={item.value}
-                onClick={() => dispatch(setSelectedFilter(item.value))}
+                onClick={() => filterClickHandler(item.name, item.value)}
               >
                 {item.name}
               </div>

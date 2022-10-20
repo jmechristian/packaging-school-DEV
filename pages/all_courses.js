@@ -1,17 +1,24 @@
 import React from 'react';
+import { createClient } from '../prismicio';
 import Layout from '../features/layout/Layout';
 import AllCoursesMain from '../features/all_courses/AllCoursesMain';
 
-const all_courses = () => {
+const all_courses = ({ courses }) => {
+  console.log(courses);
   return (
     <Layout>
-      <section className='bg-slate-200 dark:bg-slate-900'>
-        <div className='container__inner course__hero-padding'>
-          <AllCoursesMain />
-        </div>
-      </section>
+      <AllCoursesMain courses={courses} />
     </Layout>
   );
 };
+
+export async function getServerSideProps() {
+  const client = createClient();
+  const courses = await client.getAllByType('course');
+
+  return {
+    props: { courses },
+  };
+}
 
 export default all_courses;

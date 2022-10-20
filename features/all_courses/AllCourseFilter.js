@@ -14,7 +14,6 @@ const AllCourseFilter = () => {
         onClick={() => dispatch(setMobileFilterOpen())}
       >
         <div>Course Menu</div>
-        <ArrowLongRightIcon className='w-6 h-6 stroke-slate-700 dark:stroke-base-brand' />
       </button>
       <AllCourseMobileMenu />
     </div>

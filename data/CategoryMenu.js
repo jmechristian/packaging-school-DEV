@@ -1,6 +1,6 @@
 export const categoryMenu = [
   {
-    name: 'All Courses',
+    name: 'All',
     value: 'all',
   },
   {
