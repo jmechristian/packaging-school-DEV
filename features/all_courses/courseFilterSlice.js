@@ -1,4 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
+import filter from 'lodash/filter';
+import _ from 'lodash';
 
 const initialState = {
   mobileCourseFilter: false,
@@ -6,6 +8,7 @@ const initialState = {
     name: 'All',
     value: 'all',
   },
+  allCourses: null,
 };
 
 export const courseFilterSlice = createSlice({
@@ -21,10 +24,17 @@ export const courseFilterSlice = createSlice({
     setSelectedFilter: (state, action) => {
       state.selectedFilter = action.payload;
     },
+    setAllCourses: (state, action) => {
+      state.allCourses = action.payload;
+    },
   },
 });
 
-export const { setMobileFilterOpen, setMobileFilterClosed, setSelectedFilter } =
-  courseFilterSlice.actions;
+export const {
+  setMobileFilterOpen,
+  setMobileFilterClosed,
+  setSelectedFilter,
+  setAllCourses,
+} = courseFilterSlice.actions;
 
 export default courseFilterSlice.reducer;

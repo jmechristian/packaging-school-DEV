@@ -16,8 +16,8 @@ const AllCourseMenu = () => {
 
   return (
     <section className='flex flex-col justify-between h-full'>
-      <div className='flex flex-col gap-6'>
-        <div className='flex flex-col gap-2'>
+      <div className='flex flex-col gap-8'>
+        <div className='flex flex-col gap-1'>
           <div className='text-slate-900 font-bold text-xl'>
             What Do You Want to Learn?
           </div>
@@ -37,7 +37,7 @@ const AllCourseMenu = () => {
             ))}
           </div>
         </div>
-        <div className='flex flex-col gap-2'>
+        <div className='flex flex-col gap-1'>
           <div className='text-slate-900 font-bold text-xl'>
             Courses By Certificate
           </div>

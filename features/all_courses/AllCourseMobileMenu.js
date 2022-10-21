@@ -32,7 +32,7 @@ const AllCourseMobileMenu = () => {
 
   const backdropVariants = {
     show: {
-      opacity: 0.8,
+      opacity: 0.9,
       display: 'block',
     },
     hide: {

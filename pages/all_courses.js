@@ -1,10 +1,10 @@
 import React from 'react';
-import { createClient } from '../prismicio';
+import { client } from '../helpers/apollo-client';
 import Layout from '../features/layout/Layout';
 import AllCoursesMain from '../features/all_courses/AllCoursesMain';
+import { gql } from '@apollo/client';
 
-const all_courses = ({ courses }) => {
-  console.log(courses);
+const AllCourses = ({ courses }) => {
   return (
     <Layout>
       <AllCoursesMain courses={courses} />
@@ -13,12 +13,41 @@ const all_courses = ({ courses }) => {
 };
 
 export async function getServerSideProps() {
-  const client = createClient();
-  const courses = await client.getAllByType('course');
+  const courses = await client.query({
+    query: gql`
+      query AllCourses {
+        allCourses {
+          edges {
+            node {
+              course_id
+              categories {
+                category
+              }
+              course_title
+              embed_id
+              course_hours
+              course_videos
+              course_lessons
+              course_price
+              certificate {
+                certificate_link {
+                  ... on Certification {
+                    _meta {
+                      uid
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    `,
+  });
 
   return {
     props: { courses },
   };
 }
 
-export default all_courses;
+export default AllCourses;
