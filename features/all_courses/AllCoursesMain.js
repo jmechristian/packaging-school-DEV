@@ -18,7 +18,7 @@ const AllCoursesMain = ({ courses }) => {
         <BootcampCTA />
         <AllCourseFilter />
       </section>
-      <section className='container__inner'>
+      <section className='container__inner pb-12'>
         <AllCourseBody />
       </section>
     </div>

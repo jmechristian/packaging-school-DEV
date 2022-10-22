@@ -16,7 +16,7 @@ const AllCourseMenu = () => {
 
   return (
     <section className='flex flex-col justify-between h-full'>
-      <div className='flex flex-col gap-8'>
+      <div className='flex flex-col gap-12'>
         <div className='flex flex-col gap-1'>
           <div className='text-slate-900 font-bold text-xl'>
             What Do You Want to Learn?
@@ -28,7 +28,7 @@ const AllCourseMenu = () => {
                   selectedFilter.value === item.value
                     ? 'bg-base-brand text-slate-200 font-medium rounded'
                     : 'text-slate-700'
-                } pl-2 py-2`}
+                } pl-2 py-1.5`}
                 key={item.value}
                 onClick={() => filterClickHandler(item.name, item.value)}
               >
@@ -48,7 +48,7 @@ const AllCourseMenu = () => {
                   selectedFilter.value === item.value
                     ? 'bg-base-brand text-slate-200 font-medium rounded'
                     : 'text-slate-700'
-                } pl-2 py-2`}
+                } pl-2 py-1.5`}
                 key={item.value}
                 onClick={() => filterClickHandler(item.name, item.value)}
               >

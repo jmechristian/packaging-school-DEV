@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setFilteredCourses } from './courseFilterSlice';
+import RelatedCourse from '../../components/courses/RelatedCourse';
 import filter from 'lodash/filter';
 import _ from 'lodash';
 
@@ -18,11 +18,11 @@ const AllCourseBody = () => {
         node: { categories: [{ category: selectedFilter.name }] },
       });
     }
-  }, [selectedFilter]);
+  }, [selectedFilter, allCourses]);
 
   return (
     <div className='flex flex-col gap-6 w-full'>
-      <div className='flex flex-col gap-6'>
+      <div className='flex flex-col gap-3'>
         <div className='subheadline'>
           <h2>Explore the Catalog</h2>
         </div>
@@ -30,11 +30,20 @@ const AllCourseBody = () => {
           Browse {selectedFilter.name} Courses
         </div>
       </div>
-      <div>
+      <div className='flex flex-col gap-12'>
         {coursesToShow &&
           coursesToShow.map((course, i) => (
             <div key={course.node.course_id}>
-              {course.node.course_title[0].text}
+              <RelatedCourse
+                categories={course.node.categories}
+                title={course.node.course_title[0].text}
+                hours={course.node.course_hours}
+                lessons={course.node.course_lessons}
+                videos={course.node.course_videos}
+                embedid={course.node.embed_id}
+                slug={course.node._meta.uid}
+                reset={() => null}
+              />
             </div>
           ))}
       </div>

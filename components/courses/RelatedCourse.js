@@ -14,7 +14,6 @@ const RelatedCourse = ({
   hours,
   lessons,
   videos,
-  price,
   categories,
   slug,
   reset,
@@ -22,7 +21,7 @@ const RelatedCourse = ({
 }) => {
   const router = useRouter();
   const relatedRef = useRef();
-  const inView = useInView(relatedRef);
+  const inView = useInView(relatedRef, { once: 'true' });
 
   const variants = {
     enter: {

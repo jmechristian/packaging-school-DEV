@@ -20,6 +20,9 @@ export async function getServerSideProps() {
           edges {
             node {
               course_id
+              _meta {
+                uid
+              }
               categories {
                 category
               }
