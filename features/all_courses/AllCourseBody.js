@@ -1,8 +1,6 @@
 import React, { useMemo } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import RelatedCourse from '../../components/courses/RelatedCourse';
-import filter from 'lodash/filter';
-import _ from 'lodash';
 
 const AllCourseBody = () => {
   const dispatch = useDispatch();
@@ -14,19 +12,23 @@ const AllCourseBody = () => {
     if (selectedFilter.name === 'All') {
       return allCourses;
     } else {
-      return _.filter(allCourses, {
-        node: { categories: [{ category: selectedFilter.name }] },
-      });
+      return allCourses.filter(
+        (o) =>
+          o.node.categories.some((c) => c.category === selectedFilter.name) ||
+          o.node.certificate.some(
+            (cl) => cl.certificate_link._meta.uid === selectedFilter.value
+          )
+      );
     }
   }, [selectedFilter, allCourses]);
 
   return (
     <div className='flex flex-col gap-6 w-full'>
-      <div className='flex flex-col gap-3'>
+      <div className='flex flex-col gap-6'>
         <div className='subheadline'>
           <h2>Explore the Catalog</h2>
         </div>
-        <div className='font-bold text-lg'>
+        <div className='font-bold text-lg leading-tight'>
           Browse {selectedFilter.name} Courses
         </div>
       </div>

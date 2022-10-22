@@ -11,10 +11,10 @@
   "lang": "en-us",
   "alternate_languages": [],
   "data": {
-    "course_id": "valuable",
+    "course_id": "upward",
     "categories": [
       {
-        "category": "Business"
+        "category": "Industry"
       }
     ],
     "course_hero": {
@@ -24,12 +24,12 @@
       },
       "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db"
+      "url": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef"
     },
     "course_title": [
       {
         "type": "heading1",
-        "text": "Green",
+        "text": "Speed",
         "spans": []
       }
     ],
@@ -42,25 +42,25 @@
           },
           "alt": null,
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1593642633279-1796119d5482"
+          "url": "https://images.unsplash.com/photo-1607582278038-6bebbd4d7b72"
         },
-        "instructor_name": "rice",
+        "instructor_name": "declared",
         "instructor_social": {
           "link_type": "Web",
-          "url": "http://google.com"
+          "url": "https://prismic.io"
         }
       }
     ],
     "course_subtitle": [
       {
         "type": "paragraph",
-        "text": "Mollit adipisicing cillum esse irure culpa mollit reprehenderit incididunt aute excepteur officia ipsum. Ullamco laborum dolore fugiat. Do sit magna cillum elit officia consectetur officia anim magna ad in velit est aliquip.",
+        "text": "Magna enim exercitation occaecat labore reprehenderit culpa irure laborum consectetur cillum deserunt mollit nulla. Reprehenderit ad minim elit elit qui commodo incididunt.",
         "spans": []
       }
     ],
     "course_preview": {
       "link_type": "Web",
-      "url": "https://slicemachine.dev"
+      "url": "https://prismic.io"
     },
     "course_info_sheet": {
       "link_type": "Web",
@@ -69,20 +69,20 @@
     "what_learned": [
       {
         "type": "paragraph",
-        "text": "Sunt eu nulla tempor veniam sint voluptate et.",
+        "text": "Dolore fugiat et consectetur do proident amet esse culpa laborum voluptate ex mollit tempor ea. Cupidatat ut adipisicing enim sint cupidatat officia esse anim proident ea.",
         "spans": []
       }
     ],
     "what_learned_items": [
       {
-        "overview_items": "remarkable"
+        "overview_items": "today"
       }
     ],
-    "embed_id": "music",
-    "course_price": "friendly",
-    "course_hours": "pink",
-    "course_lessons": "manufacturing",
-    "course_videos": "nothing",
+    "embed_id": "do",
+    "course_price": "hit",
+    "course_hours": "hay",
+    "course_lessons": "mood",
+    "course_videos": "doing",
     "related_courses": [
       {
         "related": {
