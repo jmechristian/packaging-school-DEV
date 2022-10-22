@@ -4,8 +4,8 @@ export const categoryMenu = [
     value: 'all',
   },
   {
-    name: 'Materials',
-    value: 'materials',
+    name: 'Material',
+    value: 'material',
   },
   {
     name: 'Industry',
