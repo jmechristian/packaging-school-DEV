@@ -33,7 +33,7 @@ const CourseIntro = ({
   };
 
   return (
-    <div className='flex flex-col gap-5 lg:max-w-prose'>
+    <div className='flex flex-col gap-4 md:gap-5 lg:max-w-prose'>
       <div className='flex flex-row gap-3'>
         <div className='bg-base-dark max-w-fit rounded-md'>
           <div className=' text-white text-xs lg:text-sm flex py-1 px-3'>
