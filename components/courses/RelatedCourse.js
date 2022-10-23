@@ -3,8 +3,8 @@ import {
   ClockIcon,
   AcademicCapIcon,
   FilmIcon,
-  ArrowSmallRightIcon,
 } from '@heroicons/react/24/outline';
+import { ArrowSmallRightIcon } from '@heroicons/react/24/solid';
 import { useRouter } from 'next/router';
 import { motion, useInView } from 'framer-motion';
 import YouTubeEmbed from '../YouTubeEmbed';
@@ -26,7 +26,6 @@ const RelatedCourse = ({
   const variants = {
     enter: {
       opacity: 1,
-      y: 0,
       transition: {
         type: 'spring',
         stiffness: 400,
@@ -37,7 +36,6 @@ const RelatedCourse = ({
     },
     hidden: {
       opacity: 0,
-      y: 100,
     },
   };
 
@@ -65,7 +63,7 @@ const RelatedCourse = ({
 
   return (
     <motion.div
-      className='w-80 bg-gray-300 rounded-md min-h-full relative'
+      className='w-60 md:w-80 lg:w-96 rounded-md min-h-full relative'
       ref={relatedRef}
       variants={variants}
       initial='hidden'
@@ -75,35 +73,43 @@ const RelatedCourse = ({
         <div className='aspect-video bg-black relative cursor-scroll-all'>
           <YouTubeEmbed embedid={embedid} />
         </div>
-        <div className='px-3 pt-5 pb-16 flex flex-col gap-1 w-full relative'>
-          <div className='flex flex-col gap-1'>
-            <div className='font-bold text-lg'>{title}</div>
-            <div className='flex flex-row gap-3 items-center'>
+        <div className='pt-8 pb-8 flex flex-col gap-1 w-full relative'>
+          <div className='flex flex-col gap-2'>
+            <div className='font-bold leading-tight'>{title}</div>
+            <div className='flex flex-row flex-wrap gap-x-2 md:gap-x-3 md:gap-y-1 items-start'>
               <div className='flex gap-1 items-center'>
-                <ClockIcon className='w-4 h-4 stroke-base-brand' />
-                <div className='text-gray-600 text-sm'>{hours} Hours</div>
+                <ClockIcon className='w-4 h-4 stroke-slate-600' />
+                <div className='text-slate-600 text-sm'>{hours} Hours</div>
               </div>
               <div className='flex gap-1 items-center'>
-                <AcademicCapIcon className='w-4 h-4 stroke-base-brand' />
-                <div className='text-gray-600 text-sm'>{lessons} Lessons</div>
+                <AcademicCapIcon className='w-4 h-4 stroke-slate-600' />
+                <div className='text-slate-600 text-sm'>{lessons} Lessons</div>
               </div>
               <div className='flex gap-1 items-center'>
-                <FilmIcon className='w-4 h-4 stroke-base-brand' />
-                <div className='text-gray-600 text-sm'>{videos} Videos</div>
+                <FilmIcon className='w-4 h-4 stroke-slate-600' />
+                <div className='text-slate-600 text-sm'>{videos} Videos</div>
               </div>
             </div>
           </div>
+          <div
+            className='w-10 h-10 cursor-pointer rounded-full bg-base-light dark:bg-slate-100 absolute right-3 -top-5 shadow flex justify-center items-center'
+            onClick={courseClickHandler}
+          >
+            <ArrowSmallRightIcon className='w-6 h-6 fill-slate-900' />
+          </div>
         </div>
       </div>
-      <div
-        className='flex w-full justify-start absolute bottom-3 left-3 cursor-pointer'
+      {/* <div
+        className='flex w-full justify-start absolute bottom-0 left-0 cursor-pointer'
         onClick={courseClickHandler}
       >
-        <div className='bg-white hover:border hover:border-black rounded flex gap-1 py-1 px-3 items-center'>
-          <div className='uppercase font-semibold text-xs'>View Course</div>
-          <ArrowSmallRightIcon className='w-4 h-4 stroke-black' />
+        <div className='dark:bg-white bg-base-dark hover:border hover:border-black rounded flex gap-1 py-1 px-3 items-center'>
+          <div className='uppercase font-semibold text-white dark:text-slate-900 text-xs'>
+            View Course
+          </div>
+          <ArrowSmallRightIcon className='w-4 h-4 dark:stroke-slate-900 stroke-white' />
         </div>
-      </div>
+      </div> */}
     </motion.div>
   );
 };

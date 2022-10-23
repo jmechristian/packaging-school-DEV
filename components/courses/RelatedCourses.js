@@ -18,7 +18,7 @@ const RelatedCourses = ({ related }) => {
 
   return (
     <div className='flex flex-col'>
-      <div className='flex flex-col gap-8'>
+      <div className='flex flex-col gap-3 md:gap-4 lg:gap-6'>
         <motion.div
           className='mt-8 px-2 flex flex-col gap-8 overflow-hidden relative'
           ref={relatedRef}

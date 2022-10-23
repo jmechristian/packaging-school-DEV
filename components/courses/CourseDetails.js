@@ -7,18 +7,22 @@ import {
 
 const CourseDetails = ({ hours, lessons, videos }) => {
   return (
-    <div className='flex flex-col gap-5'>
+    <div className='flex flex-col md:flex-row gap-3'>
       <div className='flex gap-2'>
-        <ClockIcon className='w-7 h-7 stroke-base-dark dark:stroke-base-brand' />
-        <div className='black__white text-lg'>{hours} Hours</div>
+        <ClockIcon className='w-6 h-6 stroke-base-dark dark:stroke-base-brand' />
+        <div className='dark:text-base-brand text-base-dark'>{hours} Hours</div>
       </div>
       <div className='flex gap-2'>
-        <AcademicCapIcon className='w-7 h-7 stroke-base-dark dark:stroke-base-brand' />
-        <div className='black__white text-lg'>{lessons} Lessons</div>
+        <AcademicCapIcon className='w-6 h-6 stroke-base-dark dark:stroke-base-brand' />
+        <div className='dark:text-base-brand text-base-dark'>
+          {lessons} Lessons
+        </div>
       </div>
       <div className='flex gap-2'>
-        <FilmIcon className='w-7 h-7 stroke-base-dark dark:stroke-base-brand' />
-        <div className='black__white text-lg'>{videos} Videos</div>
+        <FilmIcon className='w-6 h-6 stroke-base-dark dark:stroke-base-brand' />
+        <div className='dark:text-base-brand text-base-dark'>
+          {videos} Videos
+        </div>
       </div>
     </div>
   );

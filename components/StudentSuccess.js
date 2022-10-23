@@ -25,7 +25,7 @@ const StudentSuccess = () => {
 
   return (
     <motion.section
-      className='flex dark:border dark:border-black dark:bg-white bg-base-dark drop-shadow-lg p-8 lg:p-12'
+      className='flex dark:border rounded dark:border-black dark:bg-white bg-base-dark drop-shadow-lg p-8 lg:p-12'
       ref={studentRef}
       variants={variants}
       initial='hidden'

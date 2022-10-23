@@ -2,27 +2,17 @@ import React from 'react';
 import CourseIntro from './CourseIntro';
 import CourseInfo from './CourseInfo';
 import CourseObjectives from './CourseObjectives';
-import { useSelector } from 'react-redux';
 import { motion } from 'framer-motion';
+import YouTubeEmbed from '../YouTubeEmbed';
 
 const CourseMain = ({ data }) => {
-  const { darkMode } = useSelector((state) => state.layout);
-
   return (
-    <section
-      className='w-full bg-slate-100'
-      style={{
-        backgroundImage: `url(${
-          darkMode
-            ? 'https://res.cloudinary.com/dno7xxmmy/image/upload/v1666045015/pschool/gradient-bg4_rrmnwf.webp'
-            : ''
-        })`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center center',
-      }}
-    >
+    <section className='w-full bg-slate-200 dark:bg-slate-900  lg:course__hero-padding'>
+      <div className='pt-24 pb-12 md:px-10 lg:hidden'>
+        <YouTubeEmbed embedid={data.embed_id} />
+      </div>
       <motion.div
-        className='container__inner course__hero-padding'
+        className='container__inner'
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{
@@ -43,14 +33,14 @@ const CourseMain = ({ data }) => {
               instructor={data.instructor}
               subtitle={data.course_subtitle}
               infoSheet={data.course_info_sheet}
+              hours={data.course_hours}
+              lessons={data.course_lessons}
+              videos={data.course_videos}
             />
             <div className='lg:hidden'>
               <CourseInfo
                 embedid={data.embed_id}
                 price={data.course_price}
-                hours={data.course_hours}
-                lessons={data.course_lessons}
-                videos={data.course_videos}
                 certification={data.certificate}
               />
             </div>

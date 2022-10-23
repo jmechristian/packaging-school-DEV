@@ -2,6 +2,7 @@ import React from 'react';
 import { PrismicRichText } from '@prismicio/react';
 import Instructor from './Instructor';
 import CourseItems from './CourseItems';
+import CourseDetails from './CourseDetails';
 
 const CourseIntro = ({
   id,
@@ -10,6 +11,9 @@ const CourseIntro = ({
   instructor,
   subtitle,
   infoSheet,
+  hours,
+  lessons,
+  videos,
 }) => {
   const backgroundColor = () => {
     switch (categories[0].category) {
@@ -29,24 +33,29 @@ const CourseIntro = ({
   };
 
   return (
-    <div className='flex flex-col gap-6 lg:max-w-prose'>
+    <div className='flex flex-col gap-5 lg:max-w-prose'>
       <div className='flex flex-row gap-3'>
         <div className='bg-base-dark max-w-fit rounded-md'>
-          <div className=' text-white text-sm flex py-1 px-3'>{id}</div>
+          <div className=' text-white text-xs lg:text-sm flex py-1 px-3'>
+            {id}
+          </div>
         </div>
         <div className={` ${backgroundColor()} max-w-fit rounded-md`}>
-          <div className=' text-white text-sm flex py-1 px-3'>
+          <div className=' text-white text-xs lg:text-sm flex py-1 px-3'>
             {categories[0].category}
           </div>
         </div>
       </div>
-      <div className='hero__headline black__white'>
-        <PrismicRichText field={title} />
+      <div className='flex flex-col gap-2'>
+        <div className='hero__headline black__white'>
+          <PrismicRichText field={title} />
+        </div>
+        <div className='gray__white text-lg'>
+          <PrismicRichText field={subtitle} />
+        </div>
       </div>
       <Instructor instructor={instructor} />
-      <div className='gray__white text-lg'>
-        <PrismicRichText field={subtitle} />
-      </div>
+      <CourseDetails hours={hours} lessons={lessons} videos={videos} />
       <CourseItems infoSheet={infoSheet} />
     </div>
   );
