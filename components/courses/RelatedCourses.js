@@ -18,16 +18,17 @@ const RelatedCourses = ({ related }) => {
 
   return (
     <div className='flex flex-col'>
-      <div className='flex flex-col gap-3 md:gap-4 lg:gap-6'>
+      <div className='flex flex-col gap-3 md:gap-4'>
         <motion.div
           className='mt-8 px-2 flex flex-col gap-8 overflow-hidden relative'
           ref={relatedRef}
         >
           <motion.div
-            className='grid grid-flow-col gap-8 cursor-all-scroll'
+            className='grid grid-flow-col gap-8 cursor-all-scroll pb-6'
             drag='x'
             dragConstraints={{ right: 0, left: width, top: 0, bottom: 0 }}
-            dragTransition={{ power: 0.5 }}
+            dragDirectionLock
+            onDrag={() => console.log(indicatorWidth)}
             style={{ x: dragX }}
           >
             {related.map((course, i) => (
@@ -38,7 +39,6 @@ const RelatedCourses = ({ related }) => {
                   lessons={course.related.data.course_lessons}
                   videos={course.related.data.course_videos}
                   price={course.related.data.course_price}
-                  categories={course.related.data.categories}
                   slug={course.related.uid}
                   embedid={course.related.data.embed_id}
                   reset={resetDrag}

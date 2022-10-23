@@ -21,7 +21,7 @@ const RelatedCourse = ({
 }) => {
   const router = useRouter();
   const relatedRef = useRef();
-  const inView = useInView(relatedRef, { once: 'true' });
+  const inView = useInView(relatedRef);
 
   const variants = {
     enter: {
@@ -30,7 +30,7 @@ const RelatedCourse = ({
         type: 'spring',
         stiffness: 400,
         damping: 85,
-        mass: 1,
+        mass: 0.5,
         delay: 0.2,
       },
     },
