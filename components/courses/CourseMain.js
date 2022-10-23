@@ -7,8 +7,8 @@ import YouTubeEmbed from '../YouTubeEmbed';
 
 const CourseMain = ({ data }) => {
   return (
-    <section className='w-full bg-slate-200 dark:bg-slate-900  lg:course__hero-padding'>
-      <div className='pt-24 pb-12 md:px-10 lg:hidden'>
+    <section className='w-full bg-slate-200 dark:bg-dark-mobile bg-cover lg:dark:bg-dark-lg  lg:course__hero-padding'>
+      <div className='pt-24 pb-12 md:container__inner lg:hidden'>
         <YouTubeEmbed embedid={data.embed_id} />
       </div>
       <motion.div

@@ -70,7 +70,7 @@ const CertificateResources = ({ slice }) => {
         </div>
         <div className='flex flex-col lg:flex-row justify-between lg:items-center bg-base-light rounded px-6 py-6 gap-4 lg:gap-6 lg:px-8'>
           <div className='flex flex-col gap-2 lg:w-3/5 lg:pr-6'>
-            <div className='font-bold text-clemson-dark text-2xl'>
+            <div className='font-bold font-plex text-clemson-dark text-2xl'>
               <PrismicRichText
                 field={slice.primary.resource_salesbar_headline}
               />

@@ -16,7 +16,7 @@ const Instructor = ({ instructor }) => {
         ></div>
         <div className='flex gap-2'>
           <div className='black__white'>Instructed by </div>
-          <div className='underline text-base-brand'>
+          <div className='underline text-slate-600 dark:text-base-brand'>
             <PrismicLink field={item.instructor_social}>
               {item.instructor_name}
             </PrismicLink>

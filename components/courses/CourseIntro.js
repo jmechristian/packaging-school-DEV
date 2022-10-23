@@ -46,7 +46,7 @@ const CourseIntro = ({
           </div>
         </div>
       </div>
-      <div className='flex flex-col gap-2'>
+      <div className='flex flex-col gap-4'>
         <div className='hero__headline black__white'>
           <PrismicRichText field={title} />
         </div>

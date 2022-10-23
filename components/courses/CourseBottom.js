@@ -11,7 +11,7 @@ const CourseBottom = ({ related }) => {
         {related[0].related.data && (
           <div>
             <div className='border-b border-b-gray-400 pb-4'>
-              <div className='font-bold text-2xl lg:text-3xl'>
+              <div className='font-bold font-plex text-2xl lg:text-3xl'>
                 Related Certificate Courses
               </div>
             </div>

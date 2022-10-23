@@ -26,6 +26,12 @@ module.exports = {
         'clemson-dark': '#ca6800',
         dark: '#120E17',
       },
+      backgroundImage: {
+        'dark-mobile':
+          "url('https://res.cloudinary.com/dno7xxmmy/image/upload/v1666493878/pschool/gradient-bg3_mobile_hd9t2i.png')",
+        'dark-lg':
+          "url('https://res.cloudinary.com/dno7xxmmy/image/upload/v1666045015/pschool/gradient-bg4_rrmnwf.webp')",
+      },
     },
   },
   variants: {

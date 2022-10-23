@@ -32,7 +32,7 @@ const StudentSuccess = () => {
       animate={inView ? 'enter' : 'hidden'}
     >
       <div className='grid grid-cols-1 gap-3'>
-        <div className='col-span-1 uppercase font-extrabold lg:text-2xl text-base-light dark:text-base-brand'>
+        <div className='col-span-1 font-plex uppercase font-extrabold lg:text-2xl text-base-light dark:text-base-brand'>
           Student Success Stories
         </div>
         <div className='w-full flex justify-start text-clemson font-plex text-9xl max-h-min'>

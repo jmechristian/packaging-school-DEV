@@ -33,7 +33,7 @@ const SkillsCTA = () => {
     >
       <div className='flex flex-col lg:flex-row lg:justify-between gap-4 md:gap-6'>
         <div className='flex flex-col gap-3'>
-          <div className='font-bold text-2xl md:text-3xl  text-white'>
+          <div className='font-bold text-2xl md:text-3xl font-plex  text-white'>
             Not Sure Where to Start?
           </div>
           <div className='md:text-xl text-white lg:w-4/5'>

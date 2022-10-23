@@ -85,10 +85,6 @@ const RelatedCourse = ({
                 <AcademicCapIcon className='w-4 h-4 stroke-slate-600' />
                 <div className='text-slate-600 text-sm'>{lessons} Lessons</div>
               </div>
-              <div className='flex gap-1 items-center'>
-                <FilmIcon className='w-4 h-4 stroke-slate-600' />
-                <div className='text-slate-600 text-sm'>{videos} Videos</div>
-              </div>
             </div>
           </div>
           <div
