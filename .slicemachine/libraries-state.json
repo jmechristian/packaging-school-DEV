@@ -160,6 +160,13 @@
                     "label": "Description",
                     "placeholder": "A nice description of your feature"
                   }
+                },
+                "embed_id": {
+                  "type": "Text",
+                  "config": {
+                    "label": "embed id",
+                    "placeholder": ""
+                  }
                 }
               },
               "items": {
@@ -186,7 +193,7 @@
                 "icon_text": [
                   {
                     "type": "paragraph",
-                    "text": "Ea duis anim elit cillum sunt mollit. Irure quis sunt tempor sunt sit enim esse. Lorem Lorem in amet sint sit occaecat deserunt Lorem sunt sunt anim.",
+                    "text": "Ea mollit et proident mollit ex Lorem voluptate eu voluptate anim velit aliqua voluptate reprehenderit mollit. Enim ullamco irure eu tempor cillum laboris excepteur. Do minim ipsum laborum ullamco sit.",
                     "spans": []
                   }
                 ]
@@ -196,17 +203,18 @@
               "headline": [
                 {
                   "type": "heading1",
-                  "text": "Harder",
+                  "text": "Pleasure",
                   "spans": []
                 }
               ],
               "description": [
                 {
                   "type": "paragraph",
-                  "text": "Exercitation fugiat veniam sunt fugiat. Ad nulla aute sunt sint. Cupidatat officia ex proident proident ad qui deserunt excepteur quis id voluptate deserunt proident enim.",
+                  "text": "Excepteur ex cillum exercitation ad.",
                   "spans": []
                 }
-              ]
+              ],
+              "embed_id": "upon"
             },
             "slice_type": "certificate_details"
           }
@@ -357,13 +365,6 @@
                     "label": "CTA Headline",
                     "placeholder": ""
                   }
-                },
-                "youtube_id": {
-                  "type": "Text",
-                  "config": {
-                    "label": "youtube id",
-                    "placeholder": ""
-                  }
                 }
               },
               "items": {},
@@ -382,14 +383,14 @@
               "headline": [
                 {
                   "type": "heading1",
-                  "text": "Teach",
+                  "text": "Raise",
                   "spans": []
                 }
               ],
               "subheadline": [
                 {
                   "type": "paragraph",
-                  "text": "Cillum dolor in reprehenderit mollit sit commodo reprehenderit exercitation laboris ullamco reprehenderit ea cupidatat. Laborum occaecat tempor occaecat in enim in commodo.",
+                  "text": "Cillum ut amet exercitation exercitation officia est ea.",
                   "spans": []
                 }
               ],
@@ -400,10 +401,9 @@
                 },
                 "alt": null,
                 "copyright": null,
-                "url": "https://images.unsplash.com/photo-1587840171670-8b850147754e"
+                "url": "https://images.unsplash.com/photo-1494173853739-c21f58b16055"
               },
-              "cta_headline": "eleven",
-              "youtube_id": "glad"
+              "cta_headline": "grass"
             },
             "slice_type": "certificate_hero"
           }

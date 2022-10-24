@@ -4,7 +4,7 @@ import LogoScroller from './components/LogoScroller';
 const TopCompanies = ({ slice }) => {
   return (
     <section className='lg:container__inner relative'>
-      <div className='bg-base-dark lg:rounded-lg py-12 w-full'>
+      <div className='bg-base-dark lg:rounded-lg py-12 lg:py-8 w-full'>
         <div className='flex flex-col md:w-10/12 mx-auto'>
           <div className='text-center text-white text-xl font-semibold'>
             Top Companies Trust{' '}

@@ -22,7 +22,7 @@ const CertificateEnrollment = ({ slice }) => {
 
   return (
     <section
-      className='inner__section-margin container__inner scroll-mt-28 lg:scroll-mt-44 flex flex-col gap-10 lg:gap-16'
+      className='inner__section-margin container__inner scroll-mt-40 lg:scroll-mt-44 flex flex-col gap-10 lg:gap-16'
       id='enrollment'
       ref={sectionRef}
     >

@@ -27,6 +27,13 @@
             "label": "Description",
             "placeholder": "A nice description of your feature"
           }
+        },
+        "embed_id": {
+          "type": "Text",
+          "config": {
+            "label": "embed id",
+            "placeholder": ""
+          }
         }
       },
       "items": {

@@ -43,13 +43,6 @@
             "label": "CTA Headline",
             "placeholder": ""
           }
-        },
-        "youtube_id": {
-          "type": "Text",
-          "config": {
-            "label": "youtube id",
-            "placeholder": ""
-          }
         }
       },
       "items": {},

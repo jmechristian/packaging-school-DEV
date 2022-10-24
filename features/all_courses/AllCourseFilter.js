@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { setMobileFilterOpen } from './courseFilterSlice';
-import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
+import { Bars3Icon } from '@heroicons/react/24/outline';
 import AllCourseMobileMenu from './AllCourseMobileMenu';
 
 const AllCourseFilter = () => {
@@ -10,10 +10,11 @@ const AllCourseFilter = () => {
   return (
     <div className='w-full'>
       <button
-        className='flex gap-2 items-center justify-center w-full button__subtle py-3 rounded-md'
+        className='flex flex-row gap-2 items-center justify-center w-full  border border-white py-3 rounded-md'
         onClick={() => dispatch(setMobileFilterOpen())}
       >
-        <div>Course Menu</div>
+        <Bars3Icon className='w-6 h-6 stroke-white' />
+        <div className='text-white text-lg'>Course Menu</div>
       </button>
       <AllCourseMobileMenu />
     </div>

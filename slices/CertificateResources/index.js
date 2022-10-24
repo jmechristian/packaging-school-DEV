@@ -20,7 +20,7 @@ const CertificateResources = ({ slice }) => {
 
   return (
     <section
-      className='bg-base-dark scroll-mt-16 lg:scroll-mt-24'
+      className='bg-base-dark scroll-mt-24 lg:scroll-mt-28'
       id='resources'
       ref={sectionRef}
     >
@@ -56,7 +56,9 @@ const CertificateResources = ({ slice }) => {
                   className='flex gap-2 items-center border-b border-b-base-brand pb-4'
                   key={i}
                 >
-                  <ArrowTopRightOnSquareIcon className='w-4 h-4 lg:w-5 lg:h-5 stroke-clemson' />
+                  <div>
+                    <ArrowTopRightOnSquareIcon className='w-4 h-4 lg:w-5 lg:h-5 stroke-clemson' />
+                  </div>
                   <PrismicLink
                     field={item.resource_src}
                     className='text-base text-white font-semibold lg:text-lg'
