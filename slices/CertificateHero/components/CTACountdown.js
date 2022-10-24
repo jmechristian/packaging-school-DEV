@@ -3,7 +3,7 @@ import CTAButtonLarge from '../../../components/CTAButtonLarge';
 
 const CTACountdown = ({ headline }) => {
   return (
-    <div className='bg-base-dark flex flex-col lg:flex-row mt-12 lg:mt-16 pt-5 pb-6 px-4 lg:px-8 gap-6 rounded'>
+    <div className='bg-base-dark flex flex-col lg:flex-row pt-5 pb-6 px-4 lg:px-8 gap-6 rounded'>
       <div className='text-white font-plex font-semibold text-2xl lg:text-3xl leading-tight w-full lg:w-5/12 flex justify-center items-center'>
         {headline}
       </div>

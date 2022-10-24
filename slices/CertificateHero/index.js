@@ -1,21 +1,11 @@
 import React from 'react';
-import { PrismicRichText } from '@prismicio/react';
 import { motion } from 'framer-motion';
+import CertHeroHeadline from './components/CertHeroHeadline';
+import CertHeroImage from './components/CertHeroImage';
 import CTACountdown from './components/CTACountdown';
 import YouTubeEmbed from '../../components/YouTubeEmbed';
 
 const CertificateHero = ({ slice }) => {
-  const variants = {
-    enter: {
-      opacity: 1,
-      y: 0,
-    },
-    hidden: {
-      opacity: 0,
-      y: -100,
-    },
-  };
-
   return (
     <section
       style={{
@@ -25,55 +15,10 @@ const CertificateHero = ({ slice }) => {
         backgroundPosition: 'center center',
       }}
     >
-      <div className='container__inner hero__padding flex flex-col gap-6'>
-        <div className='flex flex-col lg:flex-row gap-10 w-full justify-between items-center'>
-          <div className='flex flex-col gap-6 lg:w-6/12 lg:pr-4'>
-            <motion.div
-              className='hero__headline text-white'
-              variants={variants}
-              initial='hidden'
-              animate='enter'
-              transition={{
-                type: 'spring',
-                stiffness: 400,
-                damping: 85,
-                mass: 1,
-                delay: 0.5,
-              }}
-            >
-              <PrismicRichText field={slice.primary.headline} />
-            </motion.div>
-            <motion.div
-              className='text-slate-300 text-lg xl:text-xl leading-relaxed max-w-prose'
-              variants={variants}
-              initial='hidden'
-              animate='enter'
-              transition={{
-                type: 'spring',
-                stiffness: 400,
-                damping: 85,
-                mass: 1,
-                delay: 0.7,
-              }}
-            >
-              <PrismicRichText field={slice.primary.subheadline} />
-            </motion.div>
-          </div>
-          <motion.div
-            className='flex lg:justify-end w-full lg:w-6/12 xl:w-5/12'
-            variants={variants}
-            initial='hidden'
-            animate='enter'
-            transition={{
-              type: 'spring',
-              stiffness: 400,
-              damping: 95,
-              mass: 1,
-              delay: 0.9,
-            }}
-          >
-            <YouTubeEmbed embedid={slice.primary.youtube_id} />
-          </motion.div>
+      <div className='container__inner hero__padding flex flex-col gap-10'>
+        <div className='flex flex-col lg:flex-row gap-3 md:gap-6'>
+          <CertHeroHeadline slice={slice} />
+          <CertHeroImage />
         </div>
         <motion.div
           initial={{ opacity: 0 }}
