@@ -19,7 +19,7 @@ const AllCourseSearch = () => {
         <input
           type='text'
           name='course_search'
-          className='w-full border-none placeholder:text-sm text-slate-500 col-span-6'
+          className='w-full border-none placeholder:text-sm placeholder:text-slate-400 text-slate-500 col-span-6'
           placeholder='What do you want to learn?'
           value={courseSearchText}
           onChange={(e) => setCourseSearchText(e.target.value)}

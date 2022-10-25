@@ -28,7 +28,7 @@ const AllCourseMenu = () => {
                   selectedFilter.value === item.value
                     ? 'bg-base-brand text-slate-200 font-medium rounded'
                     : 'text-slate-700'
-                } pl-2 py-1`}
+                } pl-2 py-1.5`}
                 key={item.value}
                 onClick={() => filterClickHandler(item.name, item.value)}
               >
@@ -48,7 +48,7 @@ const AllCourseMenu = () => {
                   selectedFilter.value === item.value
                     ? 'bg-base-brand text-slate-200 font-medium rounded'
                     : 'text-slate-700'
-                } pl-2 py-1`}
+                } pl-2 py-1.5`}
                 key={item.value}
                 onClick={() => filterClickHandler(item.name, item.value)}
               >
