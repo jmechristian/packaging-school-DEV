@@ -31,6 +31,8 @@ module.exports = {
           "url('https://res.cloudinary.com/dno7xxmmy/image/upload/v1666493878/pschool/gradient-bg3_mobile_hd9t2i.png')",
         'dark-lg':
           "url('https://res.cloudinary.com/dno7xxmmy/image/upload/v1666045015/pschool/gradient-bg4_rrmnwf.webp')",
+        'bootcamp-mobile':
+          "url('https://res.cloudinary.com/dno7xxmmy/image/upload/v1666706513/pschool/bootcamp_bg_im0gtc.png')",
       },
     },
   },

@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { setAllCourses } from './courseFilterSlice';
 import AllCourseFilter from './AllCourseFilter';
 import AllCourseBody from './AllCourseBody';
+import AllCourseHeader from './AllCourseHeader';
 
 const AllCoursesMain = ({ courses }) => {
   const dispatch = useDispatch();
@@ -13,9 +14,7 @@ const AllCoursesMain = ({ courses }) => {
 
   return (
     <div className='flex flex-col'>
-      <section className='bg-slate-300 dark:bg-slate-900 course__filter-padding'>
-        <AllCourseFilter />
-      </section>
+      <AllCourseHeader />
       <AllCourseBody />
     </div>
   );

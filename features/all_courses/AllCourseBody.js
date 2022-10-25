@@ -26,7 +26,6 @@ const AllCourseBody = () => {
   return (
     <div className='flex flex-col gap-8 py-8 relative container__inner bg-slate-300'>
       <div className='flex flex-col gap-6'>
-        <BootcampCTA />
         <div className='flex flex-col gap-4'>
           <div className='text-4xl font-bold font-plex'>
             <h2>Strengthen Your Skillset</h2>
