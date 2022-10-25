@@ -50,7 +50,7 @@ const AllCourseBody = () => {
             coursesToShow.map((course, i) => (
               <div
                 key={course[0].node.course_id}
-                className='overflow-hidden relative'
+                className='flex flex-col gap-8'
               >
                 <CourseCard
                   title={course[0].node.course_title[0].text}
@@ -61,6 +61,17 @@ const AllCourseBody = () => {
                   price={course[0].node.course_price}
                   slug={course[0].node._meta.uid}
                 />
+                {course[1] && (
+                  <CourseCard
+                    title={course[1].node.course_title[0].text}
+                    desc={course[1].node.course_subtitle[0].text}
+                    video={course[1].node.embed_id}
+                    hours={course[1].node.course_hours}
+                    lessons={course[1].node.course_lessons}
+                    price={course[1].node.course_price}
+                    slug={course[1].node._meta.uid}
+                  />
+                )}
               </div>
             ))}
         </div>
