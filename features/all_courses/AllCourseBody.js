@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import CourseCard from '../../components/course-card/CourseCard';
 import AllCourseSearch from './AllCourseSearch';
 import AllCourseFilter from './AllCourseFilter';
+import Paging from './Paging';
 
 const AllCourseBody = () => {
   const dispatch = useDispatch();
@@ -54,6 +55,7 @@ const AllCourseBody = () => {
             ))}
         </div>
       </div>
+      <Paging />
     </div>
   );
 };
