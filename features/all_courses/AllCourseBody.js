@@ -38,7 +38,7 @@ const AllCourseBody = () => {
         </div>
       </div>
       <div className='flex flex-col gap-8 md:grid md:grid-cols-2 max-h-full'>
-        {coursesToShow &&
+        {/* {coursesToShow &&
           coursesToShow.map((course, i) => (
             <div key={course.node.course_id}>
               <CourseCard
@@ -51,7 +51,13 @@ const AllCourseBody = () => {
                 slug={course.node._meta.uid}
               />
             </div>
-          ))}
+          ))} */}
+        Works now! The body will not respond when the screen is touched.
+        However, there’s still a “small” problem here. Let’s say the modal
+        trigger is lower down the page and we click to open it up. Great! But
+        now we’re automatically scrolled back up to the top of the screen, which
+        is just as disorientating as the scrolling behavior we’re trying to
+        resolve.
       </div>
     </div>
   );
