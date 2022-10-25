@@ -60,7 +60,7 @@ const AllCourseMenu = () => {
       </div>
       <div className='bg-gradient-to-r from-base-dark to-clemson rounded px-4 py-5'>
         <div className='flex flex-col gap-2'>
-          <div className='font-bold text-xl text-white'>
+          <div className='font-bold text-lg text-white'>
             Not Sure Where to Begin?
           </div>
           <div className='flex gap-2 justify-start items-center'>
