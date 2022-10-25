@@ -37,7 +37,7 @@ const AllCourseBody = () => {
           </div>
         </div>
       </div>
-      {/* <div className='flex flex-col gap-8 md:grid md:grid-cols-2'>
+      <div className='flex flex-col gap-8 md:grid md:grid-cols-2'>
         {coursesToShow &&
           coursesToShow.map((course, i) => (
             <div key={course.node.course_id}>
@@ -52,7 +52,7 @@ const AllCourseBody = () => {
               />
             </div>
           ))}
-      </div> */}
+      </div>
     </div>
   );
 };
