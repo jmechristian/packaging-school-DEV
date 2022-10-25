@@ -45,7 +45,7 @@ const AllCourseBody = () => {
       </div>
       <div className='flex flex-col gap-4'>
         <AllCourseFilter />
-        <div className='flex flex-col gap-8 md:grid md:grid-cols-2 max-h-full'>
+        <div className='flex flex-col gap-8 md:grid md:grid-cols-2 overflow-hidden'>
           {coursesToShow &&
             coursesToShow.map((course, i) => (
               <div
