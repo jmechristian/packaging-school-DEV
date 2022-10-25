@@ -52,7 +52,7 @@ const AllCourseMobileMenu = () => {
         onClick={() => dispatch(setMobileFilterClosed())}
       ></motion.div>
       <motion.div
-        className='w-3/4 bg-slate-200 fixed top-0 left-0 z-50 h-screen drop-shadow-md'
+        className='w-3/4 md:w-1/2 bg-slate-200 fixed top-0 left-0 z-50 h-screen drop-shadow-md'
         variants={menuVariants}
         initial='closed'
         animate={mobileCourseFilter ? 'open' : 'closed'}

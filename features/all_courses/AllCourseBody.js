@@ -24,18 +24,20 @@ const AllCourseBody = () => {
   }, [selectedFilter, allCourses]);
 
   return (
-    <div className='flex flex-col gap-10 w-full py-8 relative'>
-      <div className='flex flex-col gap-8'>
+    <div className='flex flex-col gap-8 py-8 relative container__inner'>
+      <div className='flex flex-col gap-6'>
         <BootcampCTA />
-        <div className='text-4xl font-bold font-plex'>
-          <h2>Strengthen Your Skillset</h2>
-        </div>
-        <div className='font-medium text-lg leading-tight'>
-          Browse <span className='font-bold'>{selectedFilter.name}</span>{' '}
-          Courses
+        <div className='flex flex-col gap-4'>
+          <div className='text-4xl font-bold font-plex'>
+            <h2>Strengthen Your Skillset</h2>
+          </div>
+          <div className='font-medium text-lg leading-tight'>
+            Browse <span className='font-bold'>{selectedFilter.name}</span>{' '}
+            Courses
+          </div>
         </div>
       </div>
-      <div className='flex flex-col gap-8'>
+      <div className='flex flex-col gap-8 md:grid md:grid-cols-2'>
         {coursesToShow &&
           coursesToShow.map((course, i) => (
             <div key={course.node.course_id}>

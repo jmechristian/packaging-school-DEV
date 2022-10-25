@@ -9,13 +9,13 @@ const AllCourseFilter = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className='w-full'>
+    <div className='container__inner'>
       <button
         className='flex flex-row gap-2 items-center justify-center w-full  border border-white py-3 rounded-md'
         onClick={() => dispatch(setMobileFilterOpen())}
       >
         <Bars3Icon className='w-6 h-6 stroke-white' />
-        <div className='text-white text-lg'>Course Menu</div>
+        <div className='text-white text-lg'>Filter Courses</div>
       </button>
       <AllCourseMobileMenu />
     </div>
