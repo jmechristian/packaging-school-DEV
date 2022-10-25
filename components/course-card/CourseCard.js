@@ -24,7 +24,7 @@ const CourseCard = ({ title, desc, video, hours, lessons, price, slug }) => {
           price={price}
         />
       </div>
-      <div className='grid grid-cols-6 pb-1 h-full items-end'>
+      <div className='grid grid-cols-6 pb-1 h-full'>
         <CourseDesc desc={desc} slug={slug} data={data} />
       </div>
     </div>
