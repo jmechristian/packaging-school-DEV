@@ -5,7 +5,7 @@ import YouTubeEmbed from '../YouTubeEmbed';
 const CoursePreview = ({ close, video }) => {
   return (
     <>
-      <div className='fixed z-[650] top-0 right-0'>
+      <div className='fixed z-[65] top-0 right-0'>
         <button onClick={() => close()}>
           <XCircleIcon className='w-8 h-8 fill-slate-300' />
         </button>

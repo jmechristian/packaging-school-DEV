@@ -1,13 +1,18 @@
 import React from 'react';
 import { client } from '../helpers/apollo-client';
+import { useSelector, useDispatch } from 'react-redux';
+import { setPreviewClosed } from '../features/all_courses/courseFilterSlice';
 import Layout from '../features/layout/Layout';
 import AllCoursesMain from '../features/all_courses/AllCoursesMain';
-import AllCourseFilter from '../features/all_courses/AllCourseFilter';
+import CoursePreview from '../components/course-card/CoursePreview';
 import { gql } from '@apollo/client';
 
 const AllCourses = ({ courses }) => {
+  const dispatch = useDispatch();
+  const { preview } = useSelector((state) => state.course_filter);
   return (
     <Layout>
+      {preview && <CoursePreview close={() => dispatch(setPreviewClosed())} />}
       <AllCoursesMain courses={courses} />
     </Layout>
   );

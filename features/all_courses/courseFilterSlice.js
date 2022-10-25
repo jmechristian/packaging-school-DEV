@@ -9,6 +9,7 @@ const initialState = {
     value: 'all',
   },
   allCourses: null,
+  preview: false,
 };
 
 export const courseFilterSlice = createSlice({
@@ -27,6 +28,12 @@ export const courseFilterSlice = createSlice({
     setAllCourses: (state, action) => {
       state.allCourses = action.payload;
     },
+    setPreviewOpen: (state, action) => {
+      state.preview = true;
+    },
+    setPreviewClosed: (state, action) => {
+      state.preview = false;
+    },
   },
 });
 
@@ -35,6 +42,8 @@ export const {
   setMobileFilterClosed,
   setSelectedFilter,
   setAllCourses,
+  setPreviewOpen,
+  setPreviewClosed,
 } = courseFilterSlice.actions;
 
 export default courseFilterSlice.reducer;
