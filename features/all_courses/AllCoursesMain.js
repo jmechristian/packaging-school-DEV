@@ -16,7 +16,7 @@ const AllCoursesMain = ({ courses }) => {
       <section className='bg-slate-300 dark:bg-slate-900 course__filter-padding flex flex-col gap-6'>
         <AllCourseFilter />
       </section>
-      <section className='pb-12 bg-slate-300'>
+      <section className='bg-slate-300'>
         <AllCourseBody />
       </section>
     </div>
