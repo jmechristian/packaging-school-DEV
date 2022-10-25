@@ -24,7 +24,7 @@ const AllCourseBody = () => {
   }, [selectedFilter, allCourses]);
 
   return (
-    <div className='flex flex-col gap-8 py-8 relative container__inner'>
+    <div className='flex flex-col gap-8 py-8 relative container__inner bg-slate-300'>
       <div className='flex flex-col gap-6'>
         <BootcampCTA />
         <div className='flex flex-col gap-4'>
@@ -37,7 +37,7 @@ const AllCourseBody = () => {
           </div>
         </div>
       </div>
-      <div className='flex flex-col gap-8 md:grid md:grid-cols-2'>
+      {/* <div className='flex flex-col gap-8 md:grid md:grid-cols-2'>
         {coursesToShow &&
           coursesToShow.map((course, i) => (
             <div key={course.node.course_id}>
@@ -52,7 +52,7 @@ const AllCourseBody = () => {
               />
             </div>
           ))}
-      </div>
+      </div> */}
     </div>
   );
 };

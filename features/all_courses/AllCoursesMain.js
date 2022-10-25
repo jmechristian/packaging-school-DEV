@@ -16,9 +16,7 @@ const AllCoursesMain = ({ courses }) => {
       <section className='bg-slate-300 dark:bg-slate-900 course__filter-padding'>
         <AllCourseFilter />
       </section>
-      <section className='bg-slate-300'>
-        <AllCourseBody />
-      </section>
+      <AllCourseBody />
     </div>
   );
 };
