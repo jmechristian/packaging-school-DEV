@@ -12,7 +12,7 @@ const AllCourses = ({ courses }) => {
   const { preview } = useSelector((state) => state.course_filter);
   return (
     <Layout>
-      {/* {preview && <CoursePreview close={() => dispatch(setPreviewClosed())} />} */}
+      {preview && <CoursePreview close={() => dispatch(setPreviewClosed())} />}
       <AllCoursesMain courses={courses} />
     </Layout>
   );
