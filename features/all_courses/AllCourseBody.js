@@ -1,9 +1,8 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import CourseCard from '../../components/course-card/CourseCard';
 import AllCourseSearch from './AllCourseSearch';
 import AllCourseFilter from './AllCourseFilter';
-import Paging from './Paging';
 
 const AllCourseBody = () => {
   const dispatch = useDispatch();
@@ -11,17 +10,28 @@ const AllCourseBody = () => {
     (state) => state.course_filter
   );
 
+  const createGroups = (arr, numOfGroups) => {
+    if (arr) {
+      const totalGroups = Math.ceil(arr.length / numOfGroups);
+      return new Array(totalGroups)
+        .fill('')
+        .map((_, i) => arr.slice(i * 2, (i + 1) * 2));
+    } else return;
+  };
+
   const coursesToShow = useMemo(() => {
     if (selectedFilter.name === 'All') {
-      return allCourses;
+      return createGroups(allCourses, 2);
     } else {
-      return allCourses.filter(
+      const filtered = allCourses.filter(
         (o) =>
           o.node.categories.some((c) => c.category === selectedFilter.name) ||
           o.node.certificate.some(
             (cl) => cl.certificate_link._meta.uid === selectedFilter.value
           )
       );
+
+      return createGroups(filtered, 2);
     }
   }, [selectedFilter, allCourses]);
 
@@ -39,23 +49,22 @@ const AllCourseBody = () => {
           {coursesToShow &&
             coursesToShow.map((course, i) => (
               <div
-                key={course.node.course_id}
+                key={course[0].node.course_id}
                 className='overflow-hidden relative'
               >
                 <CourseCard
-                  title={course.node.course_title[0].text}
-                  desc={course.node.course_subtitle[0].text}
-                  video={course.node.embed_id}
-                  hours={course.node.course_hours}
-                  lessons={course.node.course_lessons}
-                  price={course.node.course_price}
-                  slug={course.node._meta.uid}
+                  title={course[0].node.course_title[0].text}
+                  desc={course[0].node.course_subtitle[0].text}
+                  video={course[0].node.embed_id}
+                  hours={course[0].node.course_hours}
+                  lessons={course[0].node.course_lessons}
+                  price={course[0].node.course_price}
+                  slug={course[0].node._meta.uid}
                 />
               </div>
             ))}
         </div>
       </div>
-      <Paging />
     </div>
   );
 };

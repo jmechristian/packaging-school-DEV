@@ -14,7 +14,7 @@ const CourseCard = ({ title, desc, video, hours, lessons, price, slug }) => {
   };
 
   return (
-    <div className='flex flex-col bg-white rounded-md p-3 drop-shadow-lg gap-4 h-full relative'>
+    <div className='flex flex-col bg-white rounded-md p-3 drop-shadow-lg gap-4 h-full'>
       <div className='grid grid-cols-6 gap-3 border-b border-b-slate-300 pb-3'>
         <CourseHero video={video} />
         <CourseTitle
