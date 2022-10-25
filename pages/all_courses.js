@@ -2,6 +2,7 @@ import React from 'react';
 import { client } from '../helpers/apollo-client';
 import Layout from '../features/layout/Layout';
 import AllCoursesMain from '../features/all_courses/AllCoursesMain';
+import AllCourseFilter from '../features/all_courses/AllCourseFilter';
 import { gql } from '@apollo/client';
 
 const AllCourses = ({ courses }) => {
@@ -27,6 +28,7 @@ export async function getServerSideProps() {
                 category
               }
               course_title
+              course_subtitle
               embed_id
               course_hours
               course_videos

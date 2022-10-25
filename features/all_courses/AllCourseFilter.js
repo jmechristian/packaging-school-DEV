@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { setMobileFilterOpen } from './courseFilterSlice';
 import { Bars3Icon } from '@heroicons/react/24/outline';
+
 import AllCourseMobileMenu from './AllCourseMobileMenu';
 
 const AllCourseFilter = () => {

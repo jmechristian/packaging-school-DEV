@@ -20,7 +20,7 @@ const Navigation = () => {
   });
 
   const updateY = () => {
-    if (scrollY.current > 75) {
+    if (scrollY.current > 0) {
       setShowMenu(true);
     } else {
       setShowMenu(false);

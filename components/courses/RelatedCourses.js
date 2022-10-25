@@ -24,7 +24,7 @@ const RelatedCourses = ({ related }) => {
           ref={relatedRef}
         >
           <motion.div
-            className='grid grid-flow-col gap-8 cursor-all-scroll pb-6'
+            className='grid grid-flow-col gap-6 cursor-all-scroll pb-2'
             drag='x'
             dragConstraints={{ right: 0, left: width, top: 0, bottom: 0 }}
             dragDirectionLock

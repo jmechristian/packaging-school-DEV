@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { VideoCameraIcon } from '@heroicons/react/24/solid';
 import CoursePreview from './CoursePreview';
 
-const CourseHero = () => {
+const CourseHero = ({ video }) => {
   const [openPreview, setOpenPreview] = useState(false);
 
   const closePreview = () => {
@@ -19,7 +19,7 @@ const CourseHero = () => {
           <VideoCameraIcon className='w-6 h-6 fill-slate-700' />
         </div>
       </div>
-      {openPreview && <CoursePreview close={closePreview} />}
+      {openPreview && <CoursePreview close={closePreview} video={video} />}
     </>
   );
 };

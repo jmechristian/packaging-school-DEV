@@ -2,12 +2,8 @@ import React from 'react';
 import CourseHero from './CourseHero';
 import CourseTitle from './CourseTitle';
 import CourseDesc from './CourseDesc';
-import { Doughnut } from 'react-chartjs-2';
-import { Chart as ChartJS, ArcElement } from 'chart.js';
 
-ChartJS.register(ArcElement);
-
-const CourseCard = () => {
+const CourseCard = ({ title, desc, video, hours, lessons, price, slug }) => {
   const data = {
     datasets: [
       {
@@ -20,14 +16,16 @@ const CourseCard = () => {
   return (
     <div className='flex flex-col bg-white rounded-md p-3 drop-shadow-lg gap-4'>
       <div className='grid grid-cols-6 gap-3 border-b border-b-slate-300 pb-3'>
-        <CourseHero />
-        <CourseTitle />
+        <CourseHero video={video} />
+        <CourseTitle
+          title={title}
+          hours={hours}
+          lessons={lessons}
+          price={price}
+        />
       </div>
       <div className='grid grid-cols-6 pb-1'>
-        <CourseDesc />
-        <div className='col-span-1'>
-          <Doughnut data={data} />
-        </div>
+        <CourseDesc desc={desc} slug={slug} data={data} />
       </div>
     </div>
   );
