@@ -58,7 +58,7 @@ const AllCourseMobileMenu = () => {
         animate={mobileCourseFilter ? 'open' : 'closed'}
         ref={menuRef}
       >
-        <div className='pt-6 pb-8 px-5 flex flex-col gap-10 h-full'>
+        <div className='pt-6 pb-8 px-5 flex flex-col gap-8 h-full'>
           <div className='flex justify-between items-start'>
             <div className='w-3/5'>
               <Image

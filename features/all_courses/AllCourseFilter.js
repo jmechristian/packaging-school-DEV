@@ -9,7 +9,7 @@ const AllCourseFilter = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className='container__inner'>
+    <div className='w-full container__inner'>
       <button
         className='flex flex-row gap-2 items-center justify-center w-full  border border-white py-3 rounded-md'
         onClick={() => dispatch(setMobileFilterOpen())}

@@ -24,7 +24,7 @@ const AllCourseBody = () => {
   }, [selectedFilter, allCourses]);
 
   return (
-    <div className='flex flex-col gap-8 relative container__inner'>
+    <div className='flex flex-col gap-8 py-8 relative container__inner'>
       <div className='flex flex-col gap-6'>
         <BootcampCTA />
         <div className='flex flex-col gap-4'>
