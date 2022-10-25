@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { setAllCourses } from './courseFilterSlice';
-import AllCourseFilter from './AllCourseFilter';
 import AllCourseBody from './AllCourseBody';
 import AllCourseHeader from './AllCourseHeader';
 

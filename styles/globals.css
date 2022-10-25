@@ -2,12 +2,8 @@
 
 @layer base {
   html {
-    @apply text-slate-900 dark:text-white;
+    @apply text-slate-900;
   }
-
-  /* body {
-    @apply bg-dark;
-  } */
 
   .container__inner {
     @apply w-full max-w-7xl mx-auto px-6 md:px-10 lg:px-16 xl:px-0 md:w-5/6 lg:w-full;
@@ -79,8 +75,4 @@
 
 * {
   box-sizing: border-box;
-}
-
-body {
-  max-height: 100%;
 }
