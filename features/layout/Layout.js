@@ -9,7 +9,7 @@ import DarkToggle from './DarkToggle';
 import { useSelector } from 'react-redux';
 
 const Layout = ({ children }) => {
-  const { darkMode } = useSelector((state) => state.layout);
+  const { darkMode, fixed } = useSelector((state) => state.layout);
   return (
     <>
       <Head>
@@ -23,8 +23,12 @@ const Layout = ({ children }) => {
         <meta name='keywords' content='packaging, sustainability' />
         <meta name='robots' content='index, follow' />
       </Head>
-      <div className={`${darkMode ? 'dark' : ''}`}>
-        {/* <DarkToggle /> */}
+      <div
+        className={`${darkMode ? 'dark' : ''} ${
+          fixed ? 'overflow-hidden' : ''
+        }`}
+      >
+        <DarkToggle />
         <Header />
         <MobileHeader />
         <SearchMenu />

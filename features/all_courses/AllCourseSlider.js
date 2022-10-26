@@ -1,10 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
 import CourseCard from '../../components/course-card/CourseCard';
 import { motion } from 'framer-motion';
+import { useDispatch } from 'react-redux';
+import { setFixed, setUnfixed } from '../layout/layoutSlice';
 
 const AllCourseSlider = ({ coursesToShow }) => {
   const cardRef = useRef();
   const [width, setWidth] = useState(0);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     setWidth(cardRef.current.offsetWidth - cardRef.current.scrollWidth);
@@ -20,6 +23,8 @@ const AllCourseSlider = ({ coursesToShow }) => {
         drag='x'
         dragConstraints={{ right: 0, left: width, top: 0, bottom: 0 }}
         dragPropagation
+        onDragStart={() => dispatch(setFixed())}
+        onDragEnd={() => dispatch(setUnfixed())}
       >
         {coursesToShow &&
           coursesToShow.map((course, i) => (
