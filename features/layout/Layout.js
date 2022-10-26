@@ -24,7 +24,7 @@ const Layout = ({ children }) => {
         <meta name='robots' content='index, follow' />
       </Head>
       <div className={`${darkMode ? 'dark' : ''}`}>
-        <DarkToggle />
+        {/* <DarkToggle /> */}
         <Header />
         <MobileHeader />
         <SearchMenu />
