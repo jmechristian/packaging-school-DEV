@@ -1,6 +1,6 @@
-import React, { useMemo, useEffect } from 'react';
+import React, { useMemo } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import CourseCard from '../../components/course-card/CourseCard';
+import AllCourseSlider from './AllCourseSlider';
 import AllCourseSearch from './AllCourseSearch';
 import AllCourseFilter from './AllCourseFilter';
 
@@ -36,8 +36,8 @@ const AllCourseBody = () => {
   }, [selectedFilter, allCourses]);
 
   return (
-    <div className='flex flex-col gap-10 py-8 relative container__inner bg-slate-300'>
-      <div className='flex flex-col text-center gap-4'>
+    <div className='flex flex-col gap-10 py-8 relative bg-slate-300'>
+      <div className='flex flex-col text-center gap-4 container__inner'>
         <div className='text-3xl font-bold font-plex'>
           <h2>Level Up Your Skills</h2>
         </div>
@@ -45,36 +45,7 @@ const AllCourseBody = () => {
       </div>
       <div className='flex flex-col gap-4'>
         <AllCourseFilter />
-        <div className='flex flex-col gap-8 md:grid md:grid-cols-2 overflow-hidden'>
-          {coursesToShow &&
-            coursesToShow.map((course, i) => (
-              <div
-                key={course[0].node.course_id}
-                className='flex flex-col gap-8'
-              >
-                <CourseCard
-                  title={course[0].node.course_title[0].text}
-                  desc={course[0].node.course_subtitle[0].text}
-                  video={course[0].node.embed_id}
-                  hours={course[0].node.course_hours}
-                  lessons={course[0].node.course_lessons}
-                  price={course[0].node.course_price}
-                  slug={course[0].node._meta.uid}
-                />
-                {course[1] && (
-                  <CourseCard
-                    title={course[1].node.course_title[0].text}
-                    desc={course[1].node.course_subtitle[0].text}
-                    video={course[1].node.embed_id}
-                    hours={course[1].node.course_hours}
-                    lessons={course[1].node.course_lessons}
-                    price={course[1].node.course_price}
-                    slug={course[1].node._meta.uid}
-                  />
-                )}
-              </div>
-            ))}
-        </div>
+        <AllCourseSlider coursesToShow={coursesToShow} />
       </div>
     </div>
   );

@@ -15,14 +15,14 @@ const AllCourseMenu = () => {
   };
 
   return (
-    <section className='flex flex-col gap-6 h-full'>
+    <section className='flex flex-col gap-8 h-full'>
       <div className='flex flex-col gap-6'>
         <div className='flex flex-col gap-1'>
           <div className='text-slate-900 font-bold text-xl'>
-            What Do You Want to Learn?
+            Courses By Certificate
           </div>
           <div className='flex flex-col'>
-            {categoryMenu.map((item, i) => (
+            {certMenu.map((item, i) => (
               <div
                 className={`${
                   selectedFilter.value === item.value
@@ -39,10 +39,10 @@ const AllCourseMenu = () => {
         </div>
         <div className='flex flex-col gap-1'>
           <div className='text-slate-900 font-bold text-xl'>
-            Courses By Certificate
+            What Do You Want to Learn?
           </div>
           <div className='flex flex-col'>
-            {certMenu.map((item, i) => (
+            {categoryMenu.map((item, i) => (
               <div
                 className={`${
                   selectedFilter.value === item.value
