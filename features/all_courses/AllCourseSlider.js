@@ -11,9 +11,12 @@ const AllCourseSlider = ({ coursesToShow }) => {
   }, []);
 
   return (
-    <motion.div className='flex overflow-y-hidden' ref={cardRef}>
+    <motion.div
+      className='flex overflow-y-hidden container__inner'
+      ref={cardRef}
+    >
       <motion.div
-        className='grid grid-flow-col grid-rows-2 gap-6 px-6'
+        className='grid grid-flow-col grid-rows-2 gap-6'
         drag='x'
         dragConstraints={{ right: 0, left: width, top: 0, bottom: 0 }}
         dragPropagation
