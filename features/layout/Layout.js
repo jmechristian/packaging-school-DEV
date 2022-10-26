@@ -23,7 +23,7 @@ const Layout = ({ children }) => {
         <meta name='keywords' content='packaging, sustainability' />
         <meta name='robots' content='index, follow' />
       </Head>
-      <div className='dark'>
+      <div className={`${darkMode ? 'dark' : ''}`}>
         <DarkToggle />
         <Header />
         <MobileHeader />

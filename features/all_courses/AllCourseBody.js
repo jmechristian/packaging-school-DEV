@@ -41,13 +41,9 @@ const AllCourseBody = () => {
         </div>
         <AllCourseSearch />
       </div>
-      <div className='flex flex-col gap-4'>
+      <div className='flex flex-col gap-4 w-full'>
         <AllCourseFilter />
-        {coursesToShow && (
-          <div>
-            <AllCourseSlider coursesToShow={coursesToShow} />
-          </div>
-        )}
+        {coursesToShow && <AllCourseSlider coursesToShow={coursesToShow} />}
       </div>
     </div>
   );

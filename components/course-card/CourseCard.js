@@ -2,6 +2,7 @@ import React from 'react';
 import CourseHero from './CourseHero';
 import CourseTitle from './CourseTitle';
 import CourseDesc from './CourseDesc';
+import { motion } from 'framer-motion';
 
 const CourseCard = ({ title, desc, video, hours, lessons, price, slug }) => {
   const data = {
@@ -14,8 +15,8 @@ const CourseCard = ({ title, desc, video, hours, lessons, price, slug }) => {
   };
 
   return (
-    <div className='flex flex-col bg-white rounded-md p-3 drop-shadow-lg gap-4 w-72 snap-start'>
-      <div className='grid grid-cols-6 gap-3 border-b border-b-slate-300 pb-3'>
+    <motion.div className='flex flex-col bg-white rounded-md p-3 drop-shadow-lg gap-4 w-72 h-full'>
+      <motion.div className='grid grid-cols-6 gap-3 border-b border-b-slate-300 pb-3'>
         <CourseHero video={video} />
         <CourseTitle
           title={title}
@@ -23,11 +24,11 @@ const CourseCard = ({ title, desc, video, hours, lessons, price, slug }) => {
           lessons={lessons}
           price={price}
         />
-      </div>
+      </motion.div>
       <div className='grid grid-cols-6 pb-1 h-full items-stretch'>
         <CourseDesc desc={desc} slug={slug} data={data} />
       </div>
-    </div>
+    </motion.div>
   );
 };
 
