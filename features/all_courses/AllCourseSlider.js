@@ -16,6 +16,7 @@ const AllCourseSlider = ({ coursesToShow }) => {
         className='grid grid-flow-col grid-rows-2 gap-6 px-6'
         drag='x'
         dragConstraints={{ right: 0, left: width, top: 0, bottom: 0 }}
+        dragPropagation
       >
         {coursesToShow &&
           coursesToShow.map((course, i) => (

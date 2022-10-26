@@ -9,7 +9,7 @@ ChartJS.register(ArcElement);
 const CourseDesc = ({ desc, slug, data }) => {
   return (
     <div className='flex flex-col gap-2 w-full col-span-6 justify-between'>
-      <div className='text-slate-600 text-sm'>{desc}</div>
+      <div className='text-slate-600 text-sm line-clamp-3'>{desc}</div>
       <div className='grid grid-cols-6 items-center h-auto'>
         <div className='flex gap-1 col-span-5'>
           <div className='font-bold text-sm text-slate-900'>
