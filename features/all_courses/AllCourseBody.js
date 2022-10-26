@@ -10,28 +10,26 @@ const AllCourseBody = () => {
     (state) => state.course_filter
   );
 
-  const createGroups = (arr, numOfGroups) => {
-    if (arr) {
-      const totalGroups = Math.ceil(arr.length / numOfGroups);
-      return new Array(totalGroups)
-        .fill('')
-        .map((_, i) => arr.slice(i * 2, (i + 1) * 2));
-    } else return;
-  };
+  // const createGroups = (arr, numOfGroups) => {
+  //   if (arr) {
+  //     const totalGroups = Math.ceil(arr.length / numOfGroups);
+  //     return new Array(totalGroups)
+  //       .fill('')
+  //       .map((_, i) => arr.slice(i * 2, (i + 1) * 2));
+  //   } else return;
+  // };
 
   const coursesToShow = useMemo(() => {
     if (selectedFilter.name === 'All') {
-      return createGroups(allCourses, 2);
+      return allCourses;
     } else {
-      const filtered = allCourses.filter(
+      return allCourses.filter(
         (o) =>
           o.node.categories.some((c) => c.category === selectedFilter.name) ||
           o.node.certificate.some(
             (cl) => cl.certificate_link._meta.uid === selectedFilter.value
           )
       );
-
-      return createGroups(filtered, 2);
     }
   }, [selectedFilter, allCourses]);
 

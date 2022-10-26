@@ -19,10 +19,12 @@ const CourseTitle = ({ title, hours, lessons, price }) => {
           />
         </button>
       </div>
-      <div className='font-bold text-slate-900 text-lg md:text-base leading-snug md:leading-tight'>
+      <div className='font-bold text-slate-900 md:text-base leading-snug md:leading-tight'>
         {title}
       </div>
-      <div className='font-medium text-slate-900 leading-snug'>${price}</div>
+      <div className='font-medium text-slate-900 text-sm leading-snug'>
+        ${price}
+      </div>
     </div>
   );
 };
