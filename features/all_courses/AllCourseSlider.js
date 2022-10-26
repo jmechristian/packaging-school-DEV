@@ -11,7 +11,7 @@ const AllCourseSlider = ({ coursesToShow }) => {
   }, []);
 
   return (
-    <div className='touch-manipulation relative' ref={cardRef}>
+    <div className='touch-manipulation overflow-scroll relative' ref={cardRef}>
       <div
         className='gap-6 grid grid-flow-col grid-rows-2 container__inner'
         // drag='x'
