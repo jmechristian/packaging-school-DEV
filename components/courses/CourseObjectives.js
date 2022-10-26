@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import { PrismicRichText } from '@prismicio/react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { CheckBadgeIcon } from '@heroicons/react/24/solid';
-import RotatingCaret from '../RotatingCaret';
-import CourseDetails from './CourseDetails';
-import { delay } from 'lodash';
+import CourseObjectiveTeaser from './CourseObjectiveTeaser';
+import CourseObjectivesFull from './CourseObjectivesFull';
 
 const CourseObjectives = ({ what, items }) => {
   const [showObjectives, setShowObjectives] = useState(false);
@@ -25,16 +23,27 @@ const CourseObjectives = ({ what, items }) => {
       </div>
       {items.length > 1 && (
         <div className='flex flex-col gap-6'>
-          <div className='font-semibold font-plex text-2xl black__white border-b border-b-slate-900 dark:border-b-slate-500 pb-3 flex justify-between items-end'>
-            <div>View Course Objectives</div>
-            <button onClick={() => setShowObjectives(!showObjectives)}>
+          <div className='font-semibold font-plex text-2xl black__white pb-3 flex justify-between items-end'>
+            <div>Course Objectives</div>
+            {/* <button onClick={() => setShowObjectives(!showObjectives)}>
               <RotatingCaret
                 open={showObjectives}
                 styling='h-6 w-6 fill-slate-900 dark:fill-white'
               />
-            </button>
+            </button> */}
           </div>
-          <AnimatePresence>
+          {showObjectives ? (
+            <CourseObjectivesFull first={firstHalf} second={secondHalf} />
+          ) : (
+            <CourseObjectiveTeaser first={firstHalf} second={secondHalf} />
+          )}
+          <button
+            className='bg-base-mid py-3 px-5 mt-3 rounded-md text-white w-fit'
+            onClick={() => setShowObjectives(!showObjectives)}
+          >
+            {showObjectives ? 'Hide All Objectives' : 'View All Objectives'}
+          </button>
+          {/* <AnimatePresence>
             {showObjectives && (
               <motion.div
                 animate={{
@@ -76,7 +85,7 @@ const CourseObjectives = ({ what, items }) => {
                 </div>
               </motion.div>
             )}
-          </AnimatePresence>
+          </AnimatePresence> */}
         </div>
       )}
     </div>
