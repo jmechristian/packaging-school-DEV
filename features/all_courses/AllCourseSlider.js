@@ -8,7 +8,7 @@ const AllCourseSlider = ({ coursesToShow }) => {
 
   return (
     <div
-      className='gap-6 grid grid-flow-col grid-rows-2 container__inner overflow-x-scroll touch-manipulation relative w-full'
+      className='gap-6 grid grid-flow-col grid-rows-2 container__inner overflow-auto touch-manipulation relative w-full'
       // drag='x'
       // dragConstraints={{ right: 0, left: width, top: 0, bottom: 0 }}
     >
