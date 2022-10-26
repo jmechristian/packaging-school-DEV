@@ -11,7 +11,10 @@ const AllCourseSlider = ({ coursesToShow }) => {
   }, []);
 
   return (
-    <div className='overflow-auto overflow-y-hidden' ref={cardRef}>
+    <div
+      className='overflow-auto overflow-y-hidden touch-manipulation relative'
+      ref={cardRef}
+    >
       <div
         className='gap-6 grid grid-flow-col grid-rows-2 container__inner'
         // drag='x'
