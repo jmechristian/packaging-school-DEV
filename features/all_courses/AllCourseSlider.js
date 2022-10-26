@@ -12,7 +12,7 @@ const AllCourseSlider = ({ coursesToShow }) => {
 
   return (
     <div
-      className='touch-manipulation overflow-scroll relative'
+      className='touch-pan-x overflow-scroll relative'
       ref={cardRef}
       style={{ '-webkit-overflow-scrolling': 'touch' }}
     >
