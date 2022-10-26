@@ -11,14 +11,14 @@ const AllCourseSlider = ({ coursesToShow }) => {
   }, []);
 
   return (
-    <motion.div className='overflow-hidden' ref={cardRef}>
-      <motion.div
+    <div className='overflow-auto overflow-y-hidden' ref={cardRef}>
+      <div
         className='gap-6 grid grid-flow-col grid-rows-2 container__inner'
-        drag='x'
-        dragConstraints={{ right: 0, left: width, top: 0, bottom: 0 }}
+        // drag='x'
+        // dragConstraints={{ right: 0, left: width, top: 0, bottom: 0 }}
       >
         {coursesToShow.map((course, i) => (
-          <motion.div key={i} className='h-full'>
+          <div key={i} className='h-full'>
             <CourseCard
               title={course.node.course_title[0].text}
               desc={course.node.course_subtitle[0].text}
@@ -28,10 +28,10 @@ const AllCourseSlider = ({ coursesToShow }) => {
               price={course.node.course_price}
               slug={course.node._meta.uid}
             />
-          </motion.div>
+          </div>
         ))}
-      </motion.div>
-    </motion.div>
+      </div>
+    </div>
   );
 };
 
