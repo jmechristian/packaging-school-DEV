@@ -12,13 +12,13 @@ const AllCourseSlider = ({ coursesToShow }) => {
 
   return (
     <div
-      className='touch-pan-x overflow-auto webkit-touch w-full'
+      className='touch-pan-x overflow-auto webkit-touch w-full relative'
       ref={cardRef}
     >
       <div
-        className='gap-6 grid grid-flow-col grid-rows-2 container__inner'
-        // drag='x'
-        // dragConstraints={{ right: 0, left: width, top: 0, bottom: 0 }}
+        className='gap-6 grid grid-flow-col grid-rows-2 container__inner relative'
+        drag='x'
+        dragConstraints={{ right: 0, left: width, top: 0, bottom: 0 }}
       >
         {coursesToShow.map((course, i) => (
           <div key={i} className='h-full'>

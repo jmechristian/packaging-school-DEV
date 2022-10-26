@@ -12,7 +12,7 @@ const AllCoursesMain = ({ courses }) => {
   }, [courses, dispatch]);
 
   return (
-    <div className='flex flex-col'>
+    <div className='flex flex-col w-full'>
       <AllCourseHeader />
       <AllCourseBody />
     </div>

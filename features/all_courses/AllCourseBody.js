@@ -34,7 +34,7 @@ const AllCourseBody = () => {
   }, [selectedFilter, allCourses]);
 
   return (
-    <div className='flex flex-col gap-10 py-8 relative bg-slate-300'>
+    <div className='flex flex-col gap-10 py-8 relative bg-slate-300 w-full'>
       <div className='flex flex-col text-center gap-4 container__inner'>
         <div className='text-3xl font-bold font-plex'>
           <h2>Level Up Your Skills</h2>
