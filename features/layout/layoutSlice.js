@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   darkMode: true,
-  fixed: false,
+  isFixed: false,
 };
 
 export const layoutSlice = createSlice({
@@ -16,10 +16,10 @@ export const layoutSlice = createSlice({
       state.darkMode = false;
     },
     setFixed: (state) => {
-      state.fixed = true;
+      state.isFixed = true;
     },
     setUnfixed: (state) => {
-      state.fixed = false;
+      state.isFixed = false;
     },
   },
 });
