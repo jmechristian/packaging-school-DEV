@@ -76,3 +76,7 @@
 * {
   box-sizing: border-box;
 }
+
+.webkit-touch {
+  -webkit-overflow-scrolling: touch;
+}
