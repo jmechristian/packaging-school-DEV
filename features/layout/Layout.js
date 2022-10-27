@@ -25,7 +25,6 @@ const Layout = ({ children }) => {
       </Head>
       <div className={`${darkMode ? 'dark' : ''}`}>
         <div className='relative'>
-          <DarkToggle />
           <Header />
           <MobileHeader />
           {/* <SearchMenu /> */}
