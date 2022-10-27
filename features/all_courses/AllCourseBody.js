@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import AllCourseSlider from './AllCourseSlider';
 import AllCourseSearch from './AllCourseSearch';
 import AllCourseFilter from './AllCourseFilter';
 import Scroller from '../../components/Scroller';
