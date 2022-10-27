@@ -46,25 +46,25 @@ const AllCourseBody = () => {
       <div className='flex flex-col gap-4 container__inner'>
         <AllCourseFilter />
         {/* {coursesToShow && <AllCourseSlider coursesToShow={coursesToShow} />} */}
-      </div>
-      <Scroller>
-        {coursesToShow &&
-          coursesToShow.map((course, i) => (
-            <div key={i}>
-              <div className='relative'>
-                <CourseCard
-                  title={course.node.course_title[0].text}
-                  desc={course.node.course_subtitle[0].text}
-                  video={course.node.embed_id}
-                  hours={course.node.course_hours}
-                  lessons={course.node.course_lessons}
-                  price={course.node.course_price}
-                  slug={course.node._meta.uid}
-                />
+        <Scroller>
+          {coursesToShow &&
+            coursesToShow.map((course, i) => (
+              <div key={i}>
+                <div className='relative h-full'>
+                  <CourseCard
+                    title={course.node.course_title[0].text}
+                    desc={course.node.course_subtitle[0].text}
+                    video={course.node.embed_id}
+                    hours={course.node.course_hours}
+                    lessons={course.node.course_lessons}
+                    price={course.node.course_price}
+                    slug={course.node._meta.uid}
+                  />
+                </div>
               </div>
-            </div>
-          ))}
-      </Scroller>
+            ))}
+        </Scroller>
+      </div>
     </div>
   );
 };

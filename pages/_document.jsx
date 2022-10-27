@@ -15,7 +15,7 @@ export default function Document() {
           rel='stylesheet'
         />
       </Head>
-      <body className='bg-slate-300 flex flex-col min-h-screen'>
+      <body className='flex flex-col min-h-screen'>
         <Main />
         <NextScript />
       </body>
