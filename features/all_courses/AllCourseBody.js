@@ -11,15 +11,6 @@ const AllCourseBody = () => {
     (state) => state.course_filter
   );
 
-  // const createGroups = (arr, numOfGroups) => {
-  //   if (arr) {
-  //     const totalGroups = Math.ceil(arr.length / numOfGroups);
-  //     return new Array(totalGroups)
-  //       .fill('')
-  //       .map((_, i) => arr.slice(i * 2, (i + 1) * 2));
-  //   } else return;
-  // };
-
   const coursesToShow = useMemo(() => {
     if (selectedFilter.name === 'All') {
       return allCourses;
@@ -44,11 +35,10 @@ const AllCourseBody = () => {
       </div>
       <div className='flex flex-col gap-4 container__inner'>
         <AllCourseFilter />
-        {/* {coursesToShow && <AllCourseSlider coursesToShow={coursesToShow} />} */}
-        <Scroller>
+        <Scroller rows='2'>
           {coursesToShow &&
             coursesToShow.map((course, i) => (
-              <div key={i}>
+              <div key={course.node.course_title[0].text}>
                 <div className='relative h-full'>
                   <CourseCard
                     title={course.node.course_title[0].text}

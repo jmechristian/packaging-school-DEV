@@ -47,14 +47,14 @@ const RelatedCourses = ({ related }) => {
             ))}
           </motion.div>
         </motion.div>
-        <div className='flex justify-center'>
+        {/* <div className='flex justify-center'>
           <motion.div className='h-1.5 bg-gray-200 relative w-1/2 rounded-sm'>
             <motion.div
               className='absolute  bg-gradient-to-r from-base-light via-base-mid to-base-dark h-1.5 z-20 rounded-sm'
               style={{ width: indicatorWidth }}
             ></motion.div>
           </motion.div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
