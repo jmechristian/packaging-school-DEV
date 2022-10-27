@@ -5,21 +5,6 @@ import Scroller from '../Scroller';
 import CourseCard from '../course-card/CourseCard';
 
 const RelatedCourses = ({ related }) => {
-  // const [width, setWidth] = useState(0);
-  // const relatedRef = useRef(null);
-  // const dragX = useMotionValue(0);
-  // const indicatorWidth = useTransform(dragX, [0, width], ['0%', '100%']);
-
-  // useEffect(() => {
-  //   setWidth(relatedRef.current.offsetWidth - relatedRef.current.scrollWidth);
-  // }, []);
-
-  // const resetDrag = () => {
-  //   animate(dragX, 0);
-  // };
-
-  console.log(related);
-
   return (
     <div className='flex flex-col mt-6'>
       <Scroller rows='1'>
