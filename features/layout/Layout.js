@@ -28,7 +28,7 @@ const Layout = ({ children }) => {
           {/* <DarkToggle />
           <Header /> */}
           {/* <MobileHeader /> */}
-          <SearchMenu />
+          {/* <SearchMenu /> */}
           <MobileMenu />
           {children}
           {/* <Footer /> */}
