@@ -12,9 +12,11 @@ const AllCoursesMain = ({ courses }) => {
   }, [courses, dispatch]);
 
   return (
-    <div className='flex flex-col w-full'>
-      <AllCourseHeader />
-      <AllCourseBody />
+    <div className='w-full flex grow shrink-0 basis-auto m-0'>
+      <div className='w-full mx-auto'>
+        <AllCourseHeader />
+        <AllCourseBody />
+      </div>
     </div>
   );
 };
