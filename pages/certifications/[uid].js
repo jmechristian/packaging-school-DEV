@@ -12,10 +12,10 @@ const Page = ({ page, menu }) => {
   const trialLink = menu?.data.slices[0].primary.trial_link;
 
   return (
-    <Layout>
+    <>
       <ContentMenu items={menuItems} enroll={enrollLink} trial={trialLink} />
       <SliceZone slices={page.data.slices} components={components} />
-    </Layout>
+    </>
   );
 };
 

@@ -1,5 +1,5 @@
 import '../styles/globals.css';
-
+import Layout from '../features/layout/Layout';
 import Link from 'next/link';
 import { PrismicProvider } from '@prismicio/react';
 import { PrismicPreview } from '@prismicio/next';
@@ -19,7 +19,9 @@ export default function App({ Component, pageProps }) {
     >
       <PrismicPreview repositoryName={repositoryName}>
         <Provider store={store}>
-          <Component {...pageProps} />
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
         </Provider>
       </PrismicPreview>
     </PrismicProvider>
