@@ -4,8 +4,7 @@ import CourseCard from './course-card/CourseCard';
 const Scroller = ({ children, rows }) => {
   return (
     <div
-      className={`w-screen relative left-1/2 right-1/2 px-6 scroll-p-10 grid grid-flow-col grid-rows-${rows} auto-cols-max gap-4 overflow-auto overflow-y-hidden snap-x snap-mandatory snap-always touch-manipulation overscroll-contain`}
-      style={{ marginLeft: '-50vw', right: '-50vw' }}
+      className={`grid grid-flow-col gap-4 auto-cols-max overflow-y-hidden overflow-auto snap-x snap-mandatory overscroll-contain grid-rows-${rows} touch-manipulation px-6 scroll-p-6 md:px-24 md:scroll-p-24`}
       id='scrollers'
     >
       {children}

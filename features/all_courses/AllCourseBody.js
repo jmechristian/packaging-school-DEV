@@ -33,7 +33,7 @@ const AllCourseBody = () => {
         </div>
         <AllCourseSearch />
       </div>
-      <div className='flex flex-col gap-4 container__inner'>
+      <div className='flex flex-col gap-4'>
         <AllCourseFilter />
         <Scroller rows='2'>
           {coursesToShow &&

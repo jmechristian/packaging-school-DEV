@@ -36,7 +36,7 @@ const RelatedCourses = ({ related }) => {
                 hours={course.related.data.course_hours}
                 lessons={course.related.data.course_lessons}
                 price={course.related.data.course_price}
-                slug={course.related.data.uid}
+                slug={course.related.uid}
               />
             </div>
           ))}
