@@ -11,10 +11,10 @@ const AllCourses = ({ courses }) => {
   const dispatch = useDispatch();
   const { preview } = useSelector((state) => state.course_filter);
   return (
-    // <Layout>
-    //   {preview && <CoursePreview close={() => dispatch(setPreviewClosed())} />}
-    <AllCoursesMain courses={courses} />
-    // </Layout>
+    <Layout>
+      {/* {preview && <CoursePreview close={() => dispatch(setPreviewClosed())} />} */}
+      <AllCoursesMain courses={courses} />
+    </Layout>
   );
 };
 
