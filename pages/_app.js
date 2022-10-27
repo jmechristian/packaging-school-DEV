@@ -19,7 +19,9 @@ export default function App({ Component, pageProps }) {
     >
       <PrismicPreview repositoryName={repositoryName}>
         <Provider store={store}>
-          <Component {...pageProps} />
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
         </Provider>
       </PrismicPreview>
     </PrismicProvider>
