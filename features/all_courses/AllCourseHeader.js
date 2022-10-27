@@ -3,7 +3,7 @@ import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
 
 const AllCourseHeader = () => {
   return (
-    <div className='bg-slate-900 pt-20'>
+    <div className='bg-slate-900 pt-20 relative'>
       <div className='flex justify-center item-center w-full bg-bootcamp-mobile bg-cover bg-center'>
         <div className='flex flex-col gap-4 justify-center items-center text-center py-8 px-8'>
           <div className='text-white font-plex font-bold text-3xl'>
