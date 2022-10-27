@@ -25,13 +25,13 @@ const Layout = ({ children }) => {
       </Head>
       <div className={`${darkMode ? 'dark' : ''}`}>
         <div className='relative'>
-          <DarkToggle />
+          {/* <DarkToggle />
           <Header />
           <MobileHeader />
           <SearchMenu />
-          <MobileMenu />
+          <MobileMenu /> */}
           {children}
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </div>
     </>
