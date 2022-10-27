@@ -38,18 +38,19 @@ const AllCourseBody = () => {
         <Scroller rows='2'>
           {coursesToShow &&
             coursesToShow.map((course, i) => (
-              <div key={course.node.course_title[0].text}>
-                <div className='relative h-full'>
-                  <CourseCard
-                    title={course.node.course_title[0].text}
-                    desc={course.node.course_subtitle[0].text}
-                    video={course.node.embed_id}
-                    hours={course.node.course_hours}
-                    lessons={course.node.course_lessons}
-                    price={course.node.course_price}
-                    slug={course.node._meta.uid}
-                  />
-                </div>
+              <div
+                key={course.node.course_title[0].text}
+                className='inline-block'
+              >
+                <CourseCard
+                  title={course.node.course_title[0].text}
+                  desc={course.node.course_subtitle[0].text}
+                  video={course.node.embed_id}
+                  hours={course.node.course_hours}
+                  lessons={course.node.course_lessons}
+                  price={course.node.course_price}
+                  slug={course.node._meta.uid}
+                />
               </div>
             ))}
         </Scroller>
