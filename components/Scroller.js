@@ -1,7 +1,7 @@
 import React from 'react';
-import CourseCard from '../components/course-card/CourseCard';
+import CourseCard from './course-card/CourseCard';
 
-const Sandbox = () => {
+const Scroller = () => {
   return (
     <div className='w-full flex grow shrink-0 basis-auto m-0'>
       <div className='w-full mx-auto pl-8 pr-8'>
@@ -63,4 +63,4 @@ const Sandbox = () => {
   );
 };
 
-export default Sandbox;
+export default Scroller;
