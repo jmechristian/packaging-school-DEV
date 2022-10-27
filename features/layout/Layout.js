@@ -30,7 +30,7 @@ const Layout = ({ children }) => {
           <MobileHeader />
           {/* <SearchMenu /> */}
           <MobileMenu />
-          {children}
+          <main>{children}</main>
           <Footer />
         </div>
       </div>
