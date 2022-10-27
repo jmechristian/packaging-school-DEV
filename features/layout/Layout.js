@@ -24,13 +24,15 @@ const Layout = ({ children }) => {
         <meta name='robots' content='index, follow' />
       </Head>
       <div className={`${darkMode ? 'dark' : ''}`}>
-        {/* <DarkToggle /> */}
-        <Header />
-        <MobileHeader />
-        <SearchMenu />
-        <MobileMenu />
-        {children}
-        <Footer />
+        <div className='relative'>
+          <DarkToggle />
+          <Header />
+          <MobileHeader />
+          <SearchMenu />
+          <MobileMenu />
+          {children}
+          <Footer />
+        </div>
       </div>
     </>
   );
