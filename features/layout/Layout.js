@@ -27,6 +27,7 @@ const Layout = ({ children }) => {
         <div className='relative'>
           <Header />
           <MobileHeader />
+          <DarkToggle />
           {/* <SearchMenu /> */}
           <MobileMenu />
           <main>{children}</main>
