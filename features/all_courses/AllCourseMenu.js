@@ -4,6 +4,7 @@ import { setSelectedFilter, setMobileFilterClosed } from './courseFilterSlice';
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
 import { categoryMenu } from '../../data/CategoryMenu';
 import { certMenu } from '../../data/CertMenu';
+import AllCourseSearch from './AllCourseSearch';
 
 const AllCourseMenu = () => {
   const dispatch = useDispatch();
@@ -15,8 +16,11 @@ const AllCourseMenu = () => {
   };
 
   return (
-    <section className='flex flex-col gap-8 h-full lg:sticky'>
-      <div className='flex flex-col gap-6'>
+    <section className='flex flex-col gap-8 h-full'>
+      <div className='flex flex-col gap-6 lg:gap-8'>
+        <div className='hidden lg:block w-full'>
+          <AllCourseSearch />
+        </div>
         <div className='flex flex-col gap-1'>
           <div className='text-slate-900 font-bold text-xl lg:text-lg'>
             Courses By Certificate
