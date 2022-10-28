@@ -18,7 +18,7 @@ const AllCourseMenu = () => {
     <section className='flex flex-col gap-8 h-full'>
       <div className='flex flex-col gap-6'>
         <div className='flex flex-col gap-1'>
-          <div className='text-slate-900 font-bold text-xl'>
+          <div className='text-slate-900 font-bold text-xl lg:text-lg'>
             Courses By Certificate
           </div>
           <div className='flex flex-col'>
@@ -38,7 +38,7 @@ const AllCourseMenu = () => {
           </div>
         </div>
         <div className='flex flex-col gap-1'>
-          <div className='text-slate-900 font-bold text-xl'>
+          <div className='text-slate-900 font-bold text-xl lg:text-lg'>
             What Do You Want to Learn?
           </div>
           <div className='flex flex-col'>

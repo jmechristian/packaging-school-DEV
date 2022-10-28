@@ -25,8 +25,12 @@ const AllCourseBody = () => {
 
   return (
     <div className='bg-slate-300'>
-      <AllCourseBodyMobile coursesToShow={coursesToShow} />
-      <AllCourseBodyDesktop coursesToShow={coursesToShow} />
+      {coursesToShow && (
+        <>
+          <AllCourseBodyMobile coursesToShow={coursesToShow} />
+          <AllCourseBodyDesktop coursesToShow={coursesToShow} />
+        </>
+      )}
     </div>
   );
 };
