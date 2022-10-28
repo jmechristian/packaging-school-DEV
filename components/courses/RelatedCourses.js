@@ -47,7 +47,7 @@ const RelatedCourses = ({ related }) => {
         </Scroller>
       </div>
       <motion.div
-        className='hidden lg:grid grid-flow-col auto-cols-max gap-6 px-16 mt-6'
+        className='hidden lg:grid grid-flow-col auto-cols-max gap-6 px-16 2xl:px-56 mt-4'
         drag='x'
         dragConstraints={{ right: 0, left: width, top: 0, bottom: 0 }}
         style={{ x: dragX }}
