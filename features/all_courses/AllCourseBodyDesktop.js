@@ -15,7 +15,7 @@ const AllCourseBodyDesktop = ({ coursesToShow }) => {
         </div>
       </div>
       <div className='w-2/3 xl:w-3/4 flex flex-col gap-8'>
-        <div className='mb-6 flex flex-col gap-8'>
+        <div className='mb-8 flex flex-col gap-8'>
           <div className='lg:text-4xl xl:text-5xl  font-plex font-bold xl:leading-tight '>
             Accelerate your career. Stand out amongst your peers.
           </div>
