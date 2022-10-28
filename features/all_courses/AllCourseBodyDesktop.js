@@ -11,7 +11,7 @@ const AllCourseBodyDesktop = ({ coursesToShow }) => {
         </div>
       </div>
       <div className='w-2/3'>
-        <div className='relative flex flex-col gap-6'>
+        <div className='relative flex flex-col gap-6 xl:grid xl:grid-cols-2'>
           {coursesToShow.map((course, i) => (
             <div className='block' key={course.node.course_title[0].text}>
               <CourseCard

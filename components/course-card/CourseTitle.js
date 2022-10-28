@@ -29,10 +29,10 @@ const CourseTitle = ({ title, hours, lessons, price, desc, data, slug }) => {
       <div className='font-medium text-slate-900 text-sm leading-snug'>
         ${price}
       </div>
-      <div className='text-slate-600 text-sm lg:line-clamp-3 hidden max-w-prose pr-8'>
+      <div className='text-slate-600 text-sm hidden lg:line-clamp-3 max-w-prose pr-8'>
         {desc}
       </div>
-      <div className=' hidden lg:grid grid-cols-6 items-center h-auto'>
+      <div className=' hidden lg:grid xl:hidden grid-cols-6 items-center h-auto'>
         <div className='flex gap-1 col-span-5'>
           <div className='font-bold text-sm text-slate-900'>
             <Link href={`/courses/${slug}`}>View Course</Link>
