@@ -4,7 +4,16 @@ import CourseTitle from './CourseTitle';
 import CourseDesc from './CourseDesc';
 import { motion } from 'framer-motion';
 
-const CourseCard = ({ title, desc, video, hours, lessons, price, slug }) => {
+const CourseCard = ({
+  title,
+  desc,
+  video,
+  hours,
+  lessons,
+  price,
+  slug,
+  reset,
+}) => {
   const data = {
     datasets: [
       {
@@ -29,7 +38,7 @@ const CourseCard = ({ title, desc, video, hours, lessons, price, slug }) => {
         />
       </motion.div>
       <div className='grid grid-cols-6 pb-1 h-full items-stretch lg:grid'>
-        <CourseDesc desc={desc} slug={slug} data={data} />
+        <CourseDesc desc={desc} slug={slug} data={data} reset={reset} />
       </div>
     </motion.div>
   );
