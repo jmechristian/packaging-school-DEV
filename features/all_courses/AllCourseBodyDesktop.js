@@ -14,10 +14,10 @@ const AllCourseBodyDesktop = ({ coursesToShow }) => {
           <AllCourseMenu />
         </div>
       </div>
-      <div className='w-2/3 xl:w-3/4 flex flex-col gap-8'>
-        <div className='mb-8 flex flex-col gap-8'>
-          <div className='lg:text-4xl xl:text-5xl  font-plex font-bold xl:leading-tight '>
-            Accelerate your career. Stand out amongst your peers.
+      <div className='w-2/3 xl:w-3/4 flex flex-col gap-10'>
+        <div className='flex flex-col gap-8'>
+          <div className='lg:text-4xl font-plex font-bold xl:leading-tight '>
+            <h1>Accelerate your career. Stand out from your peers.</h1>
           </div>
           <div className='w-full'>
             <AllCourseSearch />

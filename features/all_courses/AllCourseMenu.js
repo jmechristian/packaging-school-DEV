@@ -15,7 +15,7 @@ const AllCourseMenu = () => {
   };
 
   return (
-    <section className='flex flex-col gap-8 h-full lg:mt-4'>
+    <section className='flex flex-col gap-8 h-full'>
       <div className='flex flex-col gap-6 lg:gap-8'>
         <div className='flex flex-col gap-1'>
           <div className='text-slate-900 font-bold text-xl lg:text-lg'>
