@@ -11,7 +11,7 @@ const CertificateCardTitle = () => {
           Deadline to Register: Nov 21
         </div>
       </div>
-      <div className='font-plex font-bold text-3xl text-white'>
+      <div className='font-plex font-extrabold text-3xl text-white'>
         Certificate of Mastery in Packaging Management
       </div>
     </div>

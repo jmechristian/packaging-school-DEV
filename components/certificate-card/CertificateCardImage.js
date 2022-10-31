@@ -5,9 +5,9 @@ const CertificateCardImage = () => {
   return (
     <div>
       <Image
-        src='https://res.cloudinary.com/dno7xxmmy/image/upload/v1667246756/pschool/cmpm_fw32jf.png'
-        width='848'
-        height='909'
+        src='https://res.cloudinary.com/dno7xxmmy/image/upload/v1667248539/pschool/cmpm_yfc0za.png'
+        width='806'
+        height='886'
         layout='responsive'
         alt='Certificate of Mastery in Packaging Management'
       />

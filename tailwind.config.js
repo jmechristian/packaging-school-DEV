@@ -33,6 +33,8 @@ module.exports = {
           "url('https://res.cloudinary.com/dno7xxmmy/image/upload/v1666045015/pschool/gradient-bg4_rrmnwf.webp')",
         'bootcamp-mobile':
           "url('https://res.cloudinary.com/dno7xxmmy/image/upload/v1666706513/pschool/bootcamp_bg_im0gtc.png')",
+        'cmpm-cert':
+          "url('https://res.cloudinary.com/dno7xxmmy/image/upload/v1667249653/pschool/cmpm_bg_ocygnr.png')",
       },
     },
   },

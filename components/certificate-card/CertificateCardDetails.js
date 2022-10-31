@@ -27,7 +27,7 @@ const CertificateCardDetails = () => {
           <div className='text-sm text-slate-200'>8 CEUs</div>
         </div>
       </div>
-      <div className='flex gap-4 mt-4'>
+      <div className='flex gap-4 mt-1'>
         <button className='flex gap-1 bg-clemson rounded-md py-3 px-4 items-center'>
           <div className='text-white text-sm font-semibold'>
             View Certificate
