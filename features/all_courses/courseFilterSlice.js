@@ -10,6 +10,7 @@ const initialState = {
   },
   allCourses: null,
   preview: false,
+  embedId: '',
 };
 
 export const courseFilterSlice = createSlice({
@@ -30,9 +31,11 @@ export const courseFilterSlice = createSlice({
     },
     setPreviewOpen: (state, action) => {
       state.preview = true;
+      state.embedId = action.payload;
     },
     setPreviewClosed: (state, action) => {
       state.preview = false;
+      state.embedId = '';
     },
   },
 });
