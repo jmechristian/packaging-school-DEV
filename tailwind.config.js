@@ -34,7 +34,7 @@ module.exports = {
         'bootcamp-mobile':
           "url('https://res.cloudinary.com/dno7xxmmy/image/upload/v1666706513/pschool/bootcamp_bg_im0gtc.png')",
         'cmpm-cert':
-          "url('https://res.cloudinary.com/dno7xxmmy/image/upload/v1667249653/pschool/cmpm_bg_ocygnr.png')",
+          "url('https://res.cloudinary.com/dno7xxmmy/image/upload/v1667313142/pschool/cmpm_bg_mbncgs.png')",
       },
     },
   },
