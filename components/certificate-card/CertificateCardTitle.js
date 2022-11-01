@@ -7,11 +7,8 @@ const CertificateCardTitle = () => {
         <div className='bg-base-brand rounded py-1 px-2 text-xs font-semibold text-white'>
           PhD-Led
         </div>
-        <div className='bg-blue-600 rounded py-1 px-2 text-xs font-semibold text-white'>
-          Deadline to Register: Nov 21
-        </div>
       </div>
-      <div className='font-plex font-extrabold text-xl lg:text-3xl text-white'>
+      <div className='font-plex font-extrabold text-xl md:text-2xl lg:text-3xl text-white'>
         Certificate of Mastery in Packaging Management
       </div>
     </div>
