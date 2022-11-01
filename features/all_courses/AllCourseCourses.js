@@ -1,12 +1,16 @@
 import React from 'react';
 import CourseCard from '../../components/course-card/CourseCard';
+import ScrollButtons from '../../components/ScrollButtons';
 
 const AllCourseCourses = ({ selectedFilter, coursesToShow }) => {
   return (
     <div className=' flex flex-col gap-6'>
-      <div className='font-medium text-xl leading-tight col-span-4'>
-        Browse <span className='font-bold'>{selectedFilter.name}&nbsp;</span>
-        Courses
+      <div className='flex justify-between items-end'>
+        <div className='font-medium text-xl leading-tight '>
+          Browse <span className='font-bold'>{selectedFilter.name}&nbsp;</span>
+          Courses
+        </div>
+        <ScrollButtons />
       </div>
       <div className='relative flex flex-col gap-6 lg:grid lg:grid-cols-2 xl:grid-cols-3'>
         {coursesToShow.map((course, i) => (

@@ -5,12 +5,12 @@ import CertificateCardTitle from '../../components/certificate-card/CertificateC
 
 const CertificateCard = () => {
   return (
-    <div className='bg-cmpm-cert bg-cover w-full rounded-md drop-shadow-lg'>
-      <div className='grid grid-cols-12 w-full py-4 px-6 xl:py-8 xl:px-10 gap-8 items-start'>
-        <div className='col-span-3 xl:col-span-4'>
+    <div className='bg-cmpm-cert bg-cover rounded-md drop-shadow-lg w-72 lg:w-full snap-start cursor-grab'>
+      <div className='grid grid-cols-12 w-full py-6 px-4 lg:px-6 xl:py-8 xl:px-10 gap-5 xl:gap-8 items-center'>
+        <div className='col-span-4 hidden lg:block'>
           <CertificateCardImage />
         </div>
-        <div className='col-span-9 xl:col-span-8'>
+        <div className=' col-span-12 lg:col-span-8'>
           <div className='flex flex-col gap-4'>
             <CertificateCardTitle />
             <div className='hidden xl:block'>

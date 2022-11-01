@@ -1,6 +1,6 @@
 import React from 'react';
 import AllCourseMenu from './AllCourseMenu';
-import AllCoursesCert from './AllCoursesCert';
+import AllCourseCert from './AllCourseCert';
 import { useSelector } from 'react-redux';
 import AllCourseCourses from './AllCourseCourses';
 import AllCourseSearch from './AllCourseSearch';
@@ -23,7 +23,7 @@ const AllCourseBodyDesktop = ({ coursesToShow }) => {
             <AllCourseSearch />
           </div>
         </div>
-        <AllCoursesCert />
+        <AllCourseCert />
         <AllCourseCourses
           coursesToShow={coursesToShow}
           selectedFilter={selectedFilter}
