@@ -3,13 +3,15 @@ import React from 'react';
 const CertificateCardTitle = () => {
   return (
     <div className='flex flex-col gap-3'>
-      <div className='flex gap-2'>
-        <div className='bg-base-brand rounded py-1 px-2 text-xs font-semibold text-white'>
-          PhD-Led
-        </div>
-      </div>
-      <div className='font-plex font-extrabold text-xl md:text-2xl lg:text-3xl text-white'>
+      <div className='font-plex font-extrabold text-xl md:text-2xl xl:text-3xl text-white'>
         Certificate of Mastery in Packaging Management
+      </div>
+      <div className='hidden lg:block xl:hidden'>
+        <div className='text-sm text-slate-200'>
+          An online education program that provides proactive learning in the
+          space of packaging development, material procurement, and
+          organizational management.
+        </div>
       </div>
     </div>
   );

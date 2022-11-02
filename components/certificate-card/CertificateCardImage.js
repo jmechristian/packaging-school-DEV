@@ -5,7 +5,7 @@ const CertificateCardImage = () => {
   return (
     <div>
       <Image
-        src='https://res.cloudinary.com/dno7xxmmy/image/upload/v1667311472/pschool/cmpm_uhx6iz.png'
+        src='https://res.cloudinary.com/dno7xxmmy/image/upload/v1667405788/pschool/cmpm_uhx6iz_581656.png'
         width='855'
         height='963'
         layout='responsive'
