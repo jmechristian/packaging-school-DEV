@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Header from '../navigation/Header';
-import Footer from '../navigation/Footer';
+import Footer from '../navigation/Footer/Footer';
 import MobileHeader from '../navigation/MobileHeader';
 import MobileMenu from '../navigation/MobileMenu';
 import SearchMenu from '../navigation/SearchMenu';
@@ -23,11 +23,12 @@ const Layout = ({ children }) => {
         <meta name='keywords' content='packaging, sustainability' />
         <meta name='robots' content='index, follow' />
       </Head>
-      <div className={`${darkMode ? 'dark' : ''}`}>
-        <div className='relative'>
+      {/* <div className={`${darkMode ? 'dark' : ''}`}> */}
+      <div className='dark'>
+        <div className='relative flex flex-col min-h-screen justify-between'>
           <Header />
           <MobileHeader />
-          <DarkToggle />
+          {/* <DarkToggle /> */}
           {/* <SearchMenu /> */}
           <MobileMenu />
           <main>{children}</main>
