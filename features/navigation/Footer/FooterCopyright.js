@@ -3,9 +3,9 @@ import Image from 'next/image';
 
 const FooterCopyright = () => {
   return (
-    <div className='flex flex-col gap-8'>
-      <div className='grid grid-cols-12 gap-4 overflow-hidden'>
-        <div className='col-span-3'>
+    <div className='flex flex-col gap-8 lg:grid lg:grid-cols-12 lg:col-span-2 lg:items-center'>
+      <div className='grid grid-cols-12 gap-4 overflow-hidden lg:col-span-8 md:items-center'>
+        <div className='col-span-3 md:col-span-2 lg:col-span-1'>
           <Image
             src='https://res.cloudinary.com/dno7xxmmy/image/upload/v1667941998/pschool/packagingschool_logo_square-orange_d7dbzg.svg'
             alt='The Packaging School Logo'
@@ -14,7 +14,7 @@ const FooterCopyright = () => {
             layout='responsive'
           />
         </div>
-        <div className='flex flex-col gap-2 col-span-9'>
+        <div className='flex flex-col gap-2 lg:gap-1 col-span-9'>
           <div className='text-slate-300 text-xs'>
             South Carolina Commission on Higher Education License #5400
           </div>
@@ -24,7 +24,7 @@ const FooterCopyright = () => {
           </div>
         </div>
       </div>
-      <div className='flex gap-3 text-xs text-slate-500'>
+      <div className='flex gap-3 text-xs text-slate-500 lg:col-span-4 lg:justify-end'>
         <div>Privacy Policy</div>
         <div>Terms of Service</div>
       </div>

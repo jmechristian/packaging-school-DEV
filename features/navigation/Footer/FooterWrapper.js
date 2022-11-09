@@ -6,11 +6,10 @@ import FooterMenu from './FooterMenu';
 const FooterWrapper = () => {
   return (
     <div className='container__inner py-12'>
-      <div className='flex flex-col gap-8'>
+      <div className='flex flex-col gap-8 lg:grid lg:grid-cols-2 lg:gap-x-24'>
         <FooterAbout />
-        <div className='border-b border-b-slate-500 w-full'></div>
         <FooterMenu />
-        <div className='border-b border-b-slate-500 w-full'></div>
+        <div className='hidden lg:inline-grid col-span-2 border-b border-b-slate-500'></div>
         <FooterCopyright />
       </div>
     </div>
