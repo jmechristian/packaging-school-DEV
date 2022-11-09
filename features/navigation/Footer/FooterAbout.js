@@ -4,7 +4,7 @@ import FooterAboutDetail from './FooterAboutDetail';
 
 const FooterAbout = () => {
   return (
-    <div className='flex flex-col gap-8 lg:gap-10'>
+    <div className='flex flex-col gap-8 lg:gap-10 xl:pr-8'>
       <FooterAboutDetail />
       <FooterEmailSignup />
       <div className='border-b border-b-slate-500 w-full lg:hidden'></div>

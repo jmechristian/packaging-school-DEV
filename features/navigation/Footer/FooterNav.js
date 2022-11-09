@@ -9,11 +9,11 @@ const FooterNav = () => {
       <div className='grid grid-cols-2 gap-y-1 gap-x-8 lg:gap-x-4 justify-between'>
         <div className='flex flex-col gap-1'>
           <p className='text-slate-500 w-fit'>About Us</p>
-          <p className='text-slate-500 w-fit'>Collaborate</p>
+          <p className='text-slate-500 w-fit'>Team Learning</p>
         </div>
         <div className='flex flex-col gap-1'>
-          <p className='text-slate-500 w-fit'>Team Learning</p>
           <p className='text-slate-500 w-fit'>Campus Store</p>
+          <p className='text-slate-500 w-fit'>Collaborate</p>
         </div>
       </div>
     </div>
