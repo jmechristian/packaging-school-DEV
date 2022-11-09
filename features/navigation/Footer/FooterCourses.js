@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const FooterCourses = () => {
   return (
@@ -8,7 +9,9 @@ const FooterCourses = () => {
       </div>
       <div className='grid grid-cols-2 gap-y-1 gap-x-8 lg:gap-x-4 justify-between'>
         <div className='flex flex-col gap-1'>
-          <p className='text-slate-500 w-fit'>All Courses</p>
+          <Link className='w-fit' href='/all_courses'>
+            <div className='text-slate-500 '>All Courses</div>
+          </Link>
           <p className='text-slate-500 w-fit'>Materials</p>
           <p className='text-slate-500 w-fit'>Industry</p>
           <p className='text-slate-500 w-fit'>Food & Beverage</p>

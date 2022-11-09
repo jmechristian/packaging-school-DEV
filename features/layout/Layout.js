@@ -7,6 +7,7 @@ import MobileMenu from '../navigation/MobileMenu';
 import SearchMenu from '../navigation/SearchMenu';
 import DarkToggle from './DarkToggle';
 import { useSelector } from 'react-redux';
+import ScrollTop from './ScrollTop';
 
 const Layout = ({ children }) => {
   const { darkMode } = useSelector((state) => state.layout);
@@ -28,8 +29,9 @@ const Layout = ({ children }) => {
         <div className='relative flex flex-col min-h-screen justify-between'>
           <Header />
           <MobileHeader />
+          <ScrollTop />
           {/* <DarkToggle /> */}
-          {/* <SearchMenu /> */}
+          <SearchMenu />
           <MobileMenu />
           <main>{children}</main>
           <Footer />
