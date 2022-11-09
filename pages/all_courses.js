@@ -21,7 +21,7 @@ export async function getServerSideProps() {
   const courses = await client.query({
     query: gql`
       query AllCourses {
-        allCourses {
+        allCourses(sortBy: course_title_ASC) {
           edges {
             node {
               course_id

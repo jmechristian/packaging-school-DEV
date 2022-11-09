@@ -5,7 +5,7 @@ const FooterAboutDetail = () => {
   return (
     <div className='flex flex-col gap-4'>
       <div className='flex flex-col gap-1 text-sm'>
-        <div className='font-extrabold uppercase tracking-widest text-slate-200'>
+        <div className='font-extrabold font-plex uppercase tracking-widest text-slate-200'>
           Who We Are
         </div>
         <p className='text-sm text-slate-500'>

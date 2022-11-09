@@ -24,7 +24,7 @@ module.exports = {
         'base-mid': '#0585b0',
         clemson: '#ff9321',
         'clemson-dark': '#ca6800',
-        dark: '#120E17',
+        dark: '#0e1424',
       },
       backgroundImage: {
         'dark-mobile':
