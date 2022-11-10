@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { showSearch } from '../navigation/navigationSlice';
 import { motion, useScroll } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 import {
   MagnifyingGlassIcon,
   UserCircleIcon,
@@ -83,7 +84,7 @@ const Navigation = () => {
             <div>About</div>
             <div>Certifications</div>
             <div>
-              <a href='/all_courses'>Courses</a>
+              <Link href='/all_courses'>Courses</Link>
             </div>
             <div>For Teams</div>
             <div>Library</div>

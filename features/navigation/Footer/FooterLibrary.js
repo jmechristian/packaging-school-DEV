@@ -12,7 +12,7 @@ const FooterLibrary = () => {
           <p className='text-slate-500 w-fit'>Videos</p>
         </div>
         <div className='flex flex-col gap-1'>
-          <p className='text-slate-500 w-fit'>Box Lab</p>
+          <p className='text-slate-500 w-fit'>Free Tools</p>
           <p className='text-slate-500 w-fit'>Glossary</p>
         </div>
       </div>

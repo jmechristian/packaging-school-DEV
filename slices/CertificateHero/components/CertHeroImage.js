@@ -36,7 +36,7 @@ const CertHeroImage = () => {
 
   return (
     <motion.div
-      className='relative w-full h-full lg:w-10/12'
+      className='relative w-full h-full lg:w-10/12 xl:w-9/12'
       variants={variants}
       initial='hidden'
       animate='enter'

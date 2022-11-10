@@ -1,10 +1,10 @@
 import React from 'react';
 import Navigation from './Navigation';
 
-const Header = ({ darkHeader }) => {
+const Header = () => {
   return (
     <>
-      <Navigation darkHeader={darkHeader} />
+      <Navigation />
     </>
   );
 };

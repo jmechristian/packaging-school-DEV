@@ -10,7 +10,7 @@ const FooterCourses = () => {
       <div className='grid grid-cols-2 gap-y-1 gap-x-8 lg:gap-x-4 justify-between'>
         <div className='flex flex-col gap-1'>
           <Link className='w-fit' href='/all_courses'>
-            <div className='text-slate-500 '>All Courses</div>
+            <div className='text-slate-500 cursor-pointer'>All Courses</div>
           </Link>
           <p className='text-slate-500 w-fit'>Materials</p>
           <p className='text-slate-500 w-fit'>Industry</p>
