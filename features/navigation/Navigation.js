@@ -59,7 +59,7 @@ const Navigation = () => {
       initial={false}
       animate={showMenu ? 'show' : 'hidden'}
     >
-      <div className='w-full max-w-7xl h-20 text-slate-900 dark:text-white flex justify-between items-center container__inner'>
+      <div className='w-full max-w-7xl h-20 text-white flex justify-between items-center container__inner'>
         <div className='flex items-center'>
           <div className='w-44 mr-6'>
             {darkMode ? (

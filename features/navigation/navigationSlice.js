@@ -4,7 +4,7 @@ const initialState = {
   mobileMenuOpen: false,
   searchOpen: false,
   sectionInView: '',
-  darkHeader: false,
+  darkHeader: true,
 };
 
 export const navSlice = createSlice({
