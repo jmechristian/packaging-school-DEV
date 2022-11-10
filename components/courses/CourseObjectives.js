@@ -47,9 +47,9 @@ const CourseObjectives = ({ what, items }) => {
                   ? {
                       height: '100%',
                     }
-                  : { height: '350px' }
+                  : { height: '300px' }
               }
-              initial={{ height: '350px' }}
+              initial={{ height: '300px' }}
               className='overflow-hidden relative'
             >
               <motion.div className='flex flex-col gap-4 xl:grid xl:grid-cols-2 w-full relative overflow-hidden'>
