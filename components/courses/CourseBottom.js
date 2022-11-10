@@ -6,7 +6,7 @@ import StudentSuccess from '../StudentSuccess';
 const CourseBottom = ({ related }) => {
   return (
     <section className='bg-white dark:bg-slate-300'>
-      <div className='py-20 flex flex-col gap-16'>
+      <div className='py-16 flex flex-col gap-16'>
         <div className='container__inner'>
           <StudentSuccess />
         </div>

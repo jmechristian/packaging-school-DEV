@@ -14,7 +14,7 @@
   }
 
   .course__hero-padding {
-    @apply pt-36 pb-20 xl:pb-24;
+    @apply pt-36 pb-10;
   }
 
   .course__filter-padding {

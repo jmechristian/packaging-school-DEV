@@ -23,7 +23,7 @@ const CourseObjectives = ({ what, items }) => {
       </div>
       {items.length > 1 && (
         <div className='flex flex-col gap-6'>
-          <div className='pb-3 flex justify-between items-end'>
+          <div className='pb-3 flex gap-y-1 justify-between items-end flex-wrap'>
             <div className='font-semibold font-plex text-2xl black__white '>
               Course Objectives
             </div>
@@ -45,9 +45,9 @@ const CourseObjectives = ({ what, items }) => {
                   ? {
                       height: '100%',
                     }
-                  : { height: '300px' }
+                  : { height: '350px' }
               }
-              initial={{ height: '300px' }}
+              initial={{ height: '350px' }}
               className='overflow-hidden relative'
             >
               <motion.div className='flex flex-col gap-4 xl:grid xl:grid-cols-2 w-full relative overflow-hidden'>
