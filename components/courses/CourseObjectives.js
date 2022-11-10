@@ -23,7 +23,7 @@ const CourseObjectives = ({ what, items }) => {
       </div>
       {items.length > 1 && (
         <div className='flex flex-col gap-6'>
-          <div className='pb-3 flex gap-y-1 justify-between items-end flex-wrap'>
+          <div className='pb-3 flex gap-y-1 justify-between items-end flex-wrap cursor-pointer'>
             <div className='font-semibold font-plex text-2xl black__white '>
               Course Objectives
             </div>

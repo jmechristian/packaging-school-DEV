@@ -11,7 +11,7 @@ import {
 
 const Navigation = () => {
   const dispatch = useDispatch();
-  const { darkMode } = useSelector((state) => state.layout);
+  const { darkHeader } = useSelector((state) => state.nav);
   const [showMenu, setShowMenu] = useState(false);
   const mainMenuRef = useRef();
   const { scrollY } = useScroll();
@@ -30,9 +30,9 @@ const Navigation = () => {
 
   const variants = {
     show: {
-      backgroundColor: darkMode
+      backgroundColor: darkHeader
         ? 'rgba(15, 23, 42, 1)'
-        : 'rgba(255,255,255, 1)',
+        : 'rgba(15, 23, 42, 0)',
       boxShadow:
         '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
       transition: {
@@ -41,9 +41,7 @@ const Navigation = () => {
       },
     },
     hidden: {
-      backgroundColor: darkMode
-        ? 'rgba(15, 23, 42, 0)'
-        : 'rgba(255,255,255, 0)',
+      backgroundColor: 'rgba(15, 23, 42, 0)',
       transition: {
         duration: 0.2,
         ease: 'easeInOut',
@@ -62,23 +60,13 @@ const Navigation = () => {
       <div className='w-full max-w-7xl h-20 text-white flex justify-between items-center container__inner'>
         <div className='flex items-center'>
           <div className='w-44 mr-6'>
-            {darkMode ? (
-              <Image
-                src='https://res.cloudinary.com/dno7xxmmy/image/upload/v1664295580/pschool/logo_white_krqpbc.svg'
-                alt='Packaging School'
-                layout='responsive'
-                width={1163}
-                height={267}
-              />
-            ) : (
-              <Image
-                src='https://res.cloudinary.com/dno7xxmmy/image/upload/v1664295580/pschool/logo_dark_craqzu.svg'
-                alt='Packaging School'
-                layout='responsive'
-                width={1163}
-                height={267}
-              />
-            )}
+            <Image
+              src='https://res.cloudinary.com/dno7xxmmy/image/upload/v1664295580/pschool/logo_white_krqpbc.svg'
+              alt='Packaging School'
+              layout='responsive'
+              width={1163}
+              height={267}
+            />
           </div>
           <div className='flex gap-6 text-sm font-medium xl:text-base cursor-pointer'>
             <div>About</div>
