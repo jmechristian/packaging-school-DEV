@@ -31,7 +31,9 @@ const CourseObjectives = ({ what, items }) => {
               className='flex gap-1 items-center'
               onClick={() => setShowObjectives(!showObjectives)}
             >
-              <div className='text-base-brand'>View All Objectives</div>
+              <div className='text-base-brand'>
+                {showObjectives ? 'Hide' : 'View'} All Objectives
+              </div>
               <RotatingCaret
                 styling='h-7 w-7 fill-base-brand'
                 open={showObjectives}
