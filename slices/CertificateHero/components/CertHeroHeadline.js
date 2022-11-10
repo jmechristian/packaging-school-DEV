@@ -33,7 +33,7 @@ const CertHeroHeadline = ({ slice }) => {
           <PrismicRichText field={slice.primary.headline} />
         </motion.div>
         <motion.div
-          className='text-slate-300 text-lg xl:text-xl leading-relaxed max-w-prose'
+          className='text-slate-400 text-lg lg:text-xl xl:text-2xl leading-relaxed max-w-prose'
           variants={variants}
           initial='hidden'
           animate='enter'
