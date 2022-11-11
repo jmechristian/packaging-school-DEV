@@ -70,7 +70,7 @@ const ContentMenu = ({ items, enroll, trial }) => {
 
   return (
     <motion.div
-      className='fixed flex-col top-20 left-0 right-0 z-30 bg-white shadow-md'
+      className='fixed flex-col top-20 lg:top-24 left-0 right-0 z-30 bg-white shadow-md'
       ref={menuRef}
       variants={variants}
       initial={false}

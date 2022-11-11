@@ -1,16 +1,17 @@
 import React from 'react';
 import Head from 'next/head';
-import Header from '../navigation/Header';
+import Header from '../navigation/Header/Header';
 import Footer from '../navigation/Footer/Footer';
-import MobileHeader from '../navigation/MobileHeader';
-import MobileMenu from '../navigation/MobileMenu';
-import SearchMenu from '../navigation/SearchMenu';
-import DarkToggle from './DarkToggle';
-import { useSelector } from 'react-redux';
+import MobileHeader from '../navigation//Header/MobileHeader';
+import MobileMenu from '../navigation/Header/MobileMenu';
+import SearchMenu from '../navigation/Header/SearchMenu';
+import { useSelector, useDispatch } from 'react-redux';
+import { setMenuItem } from '../navigation/navigationSlice';
 import ScrollTop from './ScrollTop';
 
 const Layout = ({ children }) => {
-  const { darkMode } = useSelector((state) => state.layout);
+  const dispatch = useDispatch();
+  const { menuItemOpen } = useSelector((state) => state.nav);
   return (
     <>
       <Head>
@@ -33,7 +34,15 @@ const Layout = ({ children }) => {
           {/* <DarkToggle /> */}
           <SearchMenu />
           <MobileMenu />
-          <main>{children}</main>
+          <main className='relative'>
+            {children}
+            {menuItemOpen && (
+              <div
+                className='fixed left-0 right-0 top-0 bottom-0 bg-slate-800/80 z-10 backdrop-blur-sm'
+                onClick={() => dispatch(setMenuItem())}
+              ></div>
+            )}
+          </main>
           <Footer />
         </div>
       </div>

@@ -1,10 +1,9 @@
 import Layout from '../features/layout/Layout';
-import HeaderPadding from '../features/layout/HeaderPadding';
 
 export default function Home() {
   return (
     <div className='bg-slate-300'>
-      <div className='bg-slate-900 h-20'></div>
+      <div className='bg-slate-900 h-24'></div>
       <div className='container__inner mx-auto px-6 md:px-8 lg:px-0 py-20'>
         <div className='flex flex-col w-full lg:w-1/2 gap-12'>
           <div className='text-white text-5xl lg:text-6xl font-bold'>

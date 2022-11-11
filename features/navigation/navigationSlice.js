@@ -5,6 +5,7 @@ const initialState = {
   searchOpen: false,
   sectionInView: '',
   darkHeader: true,
+  menuItemOpen: true,
 };
 
 export const navSlice = createSlice({
@@ -29,6 +30,9 @@ export const navSlice = createSlice({
     setDarkHeader: (state, action) => {
       state.darkHeader = action.payload;
     },
+    setMenuItem: (state) => {
+      state.menuItemOpen = !state.menuItemOpen;
+    },
   },
 });
 
@@ -39,6 +43,7 @@ export const {
   closeSearch,
   setSectionInView,
   setDarkHeader,
+  setMenuItem,
 } = navSlice.actions;
 
 export default navSlice.reducer;
