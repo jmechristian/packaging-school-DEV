@@ -10,7 +10,7 @@ import { ArrowLongRightIcon } from '@heroicons/react/24/solid';
 
 const CourseDropDownCourses = () => {
   return (
-    <div className='col-span-2 grid grid-cols-2 px-10 py-12 gap-10'>
+    <div className='col-span-2 grid grid-cols-2 px-10 py-10 gap-10'>
       <DropDownIconBlock
         icon={<BusinessIcon style='h-6 w-6 stroke-slate-700 fill-slate-700' />}
         category='Business'
@@ -44,7 +44,7 @@ const CourseDropDownCourses = () => {
       />
       <div className='col-span-2 bg-slate-300 rounded-md'>
         <div className='flex justify-center gap-2 items-center py-3 px-8'>
-          <div className='font-bold'>Explore All Courses</div>
+          <div className='font-semibold'>Explore All Courses</div>
           <div>
             <ArrowLongRightIcon className='h-5 w-5 fill-slate-900 stroke-slate-900' />
           </div>
