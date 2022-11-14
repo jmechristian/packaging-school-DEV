@@ -11,10 +11,10 @@
   "lang": "en-us",
   "alternate_languages": [],
   "data": {
-    "course_id": "upward",
+    "course_id": "obtain",
     "categories": [
       {
-        "category": "Industry"
+        "category": "Design"
       }
     ],
     "course_hero": {
@@ -24,12 +24,12 @@
       },
       "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef"
+      "url": "https://images.unsplash.com/photo-1494173853739-c21f58b16055"
     },
     "course_title": [
       {
         "type": "heading1",
-        "text": "Speed",
+        "text": "Curious",
         "spans": []
       }
     ],
@@ -42,25 +42,25 @@
           },
           "alt": null,
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1607582278038-6bebbd4d7b72"
+          "url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89"
         },
-        "instructor_name": "declared",
+        "instructor_name": "simplest",
         "instructor_social": {
           "link_type": "Web",
-          "url": "https://prismic.io"
+          "url": "https://slicemachine.dev"
         }
       }
     ],
     "course_subtitle": [
       {
         "type": "paragraph",
-        "text": "Magna enim exercitation occaecat labore reprehenderit culpa irure laborum consectetur cillum deserunt mollit nulla. Reprehenderit ad minim elit elit qui commodo incididunt.",
+        "text": "Deserunt aliqua commodo occaecat aliquip occaecat tempor occaecat cillum quis aliqua non eiusmod cillum. Officia exercitation cupidatat labore consectetur irure officia laborum amet deserunt magna.",
         "spans": []
       }
     ],
     "course_preview": {
       "link_type": "Web",
-      "url": "https://prismic.io"
+      "url": "http://twitter.com"
     },
     "course_info_sheet": {
       "link_type": "Web",
@@ -69,20 +69,20 @@
     "what_learned": [
       {
         "type": "paragraph",
-        "text": "Dolore fugiat et consectetur do proident amet esse culpa laborum voluptate ex mollit tempor ea. Cupidatat ut adipisicing enim sint cupidatat officia esse anim proident ea.",
+        "text": "Sunt et magna ullamco ut ut quis nostrud tempor ea. Tempor enim minim do ad ut eiusmod ad.",
         "spans": []
       }
     ],
     "what_learned_items": [
       {
-        "overview_items": "today"
+        "overview_items": "wait"
       }
     ],
-    "embed_id": "do",
-    "course_price": "hit",
-    "course_hours": "hay",
-    "course_lessons": "mood",
-    "course_videos": "doing",
+    "embed_id": "nose",
+    "course_price": "fallen",
+    "course_hours": "look",
+    "course_lessons": "fruit",
+    "course_videos": "thing",
     "related_courses": [
       {
         "related": {
