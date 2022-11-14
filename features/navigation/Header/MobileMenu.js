@@ -1,11 +1,9 @@
 import React from 'react';
-import { XMarkIcon, ArrowRightCircleIcon } from '@heroicons/react/24/outline';
 import { motion } from 'framer-motion';
-import { useDispatch, useSelector } from 'react-redux';
-import { closeMobileMenu } from '../navigationSlice';
+import { useSelector } from 'react-redux';
+import MobileMenuContent from '../MobileMenuItems/MobileMenuContent';
 
 const MobileMenu = () => {
-  const dispatch = useDispatch();
   const { mobileMenuOpen } = useSelector((state) => state.nav);
 
   const variants = {
@@ -41,16 +39,12 @@ const MobileMenu = () => {
 
   return (
     <motion.div
-      className='w-full h-screen fixed z-50 bg-white top-0 left-0'
+      className='w-full h-screen fixed z-50 bg-slate-200 top-0 left-0'
       variants={variants}
       initial={false}
       animate={mobileMenuOpen ? 'open' : 'closed'}
     >
-      <div className='pt-6 px-6 font-bold text-3xl'>Mobile Menu</div>
-      <XMarkIcon
-        className='w-7 h-7 stroke-zinc-900 absolute right-4 top-6'
-        onClick={() => dispatch(closeMobileMenu())}
-      />
+      <MobileMenuContent />
     </motion.div>
   );
 };

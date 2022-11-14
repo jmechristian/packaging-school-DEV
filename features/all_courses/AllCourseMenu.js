@@ -4,6 +4,7 @@ import { setSelectedFilter, setMobileFilterClosed } from './courseFilterSlice';
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
 import { categoryMenu } from '../../data/CategoryMenu';
 import { certMenu } from '../../data/CertMenu';
+import AssessmentCTA from '../../components/AssessmentCTA';
 
 const AllCourseMenu = () => {
   const dispatch = useDispatch();
@@ -58,17 +59,7 @@ const AllCourseMenu = () => {
           </div>
         </div>
       </div>
-      <div className='bg-gradient-to-r from-base-dark to-clemson rounded px-4 py-5'>
-        <div className='flex flex-col gap-2'>
-          <div className='font-bold text-lg text-white'>
-            Not Sure Where to Begin?
-          </div>
-          <div className='flex gap-2 justify-start items-center'>
-            <div className='text-white'>Take our assesment</div>
-            <ArrowLongRightIcon className='w-5 h-5 stroke-white' />
-          </div>
-        </div>
-      </div>
+      <AssessmentCTA />
     </section>
   );
 };
