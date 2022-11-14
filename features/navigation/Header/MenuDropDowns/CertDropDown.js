@@ -1,24 +1,23 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import MenuDropDownWrapper from '../MenuDropDownWrapper';
-import CourseDropDownCallout from './CourseDropDownCallout';
-import CourseDropDownCourses from './CourseDropDownCourses';
 import { setMenuItem } from '../../navigationSlice';
 
-const CourseDropDown = () => {
+const CertDropDown = () => {
   const { menuItemOpen, menuItem } = useSelector((state) => state.nav);
   const dispatch = useDispatch();
   return (
     <>
-      {menuItemOpen && menuItem === 'courses' && (
+      {menuItemOpen && menuItem === 'certs' && (
         <MenuDropDownWrapper>
           <div className='grid grid-cols-3 h-full overflow-hidden gap-10'>
-            <CourseDropDownCourses />
-            <CourseDropDownCallout />
+            <div>Cert Menu</div>
+            <div>Cert Menu</div>
+            <div>Cert Menu</div>
           </div>
         </MenuDropDownWrapper>
       )}
-      {menuItemOpen && menuItem === 'courses' && (
+      {menuItemOpen && menuItem === 'certs' && (
         <div
           className='fixed left-0 right-0 top-0 bottom-0 bg-slate-800/80 z-10 backdrop-blur-sm'
           onClick={() => dispatch(setMenuItem())}
@@ -28,4 +27,4 @@ const CourseDropDown = () => {
   );
 };
 
-export default CourseDropDown;
+export default CertDropDown;

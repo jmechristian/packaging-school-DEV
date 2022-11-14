@@ -1,17 +1,14 @@
 import React from 'react';
 import Navigation from './Navigation';
-import MenuDropDownWrapper from './MenuDropDownWrapper';
 import CourseDropDown from './MenuDropDowns/CourseDropDown';
+import CertDropDown from './MenuDropDowns/CertDropDown';
 
 const Header = () => {
   return (
     <>
       <Navigation />
-      <div className='fixed z-50 w-full top-24'>
-        <MenuDropDownWrapper>
-          <CourseDropDown />
-        </MenuDropDownWrapper>
-      </div>
+      <CourseDropDown />
+      <CertDropDown />
     </>
   );
 };

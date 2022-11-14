@@ -1,14 +1,10 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 
 const MenuDropDownWrapper = ({ children }) => {
-  const { menuItemOpen } = useSelector((state) => state.nav);
   return (
-    menuItemOpen && (
-      <div className='bg-white mx-auto max-w-5xl min-h-fit rounded-b-xl drop-shadow-md'>
-        {children}
-      </div>
-    )
+    <div className='bg-white w-full max-w-5xl min-h-fit rounded-b-xl drop-shadow-md fixed z-50 top-24 left-1/2 -ml-[512px]'>
+      {children}
+    </div>
   );
 };
 
