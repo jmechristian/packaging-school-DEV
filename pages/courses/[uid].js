@@ -5,16 +5,18 @@ import CoursePreview from '../../components/course-card/CoursePreview';
 import { createClient, linkResolver } from '../../prismicio';
 import { useSelector, useDispatch } from 'react-redux';
 import { setPreviewClosed } from '../../features/all_courses/courseFilterSlice';
+import CourseContentMenu from '../../components/courses/CourseContentMenu';
 
 const Page = ({ page }) => {
   const dispatch = useDispatch();
   const { preview } = useSelector((state) => state.course_filter);
   return (
-    <>
+    <div className='relative'>
       <CourseMain data={page.data} />
       <CourseBottom related={page.data.related_courses} />
       {preview && <CoursePreview close={() => dispatch(setPreviewClosed())} />}
-    </>
+      <CourseContentMenu />
+    </div>
   );
 };
 
