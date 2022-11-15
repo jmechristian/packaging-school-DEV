@@ -43,6 +43,7 @@ const MobileMenuItemWrapper = ({ component, title, dropdown }) => {
                 type: 'easeIn',
                 duration: 0.2,
               }}
+              onClick={() => setMobileDropdownOpen(false)}
             >
               {component}
             </motion.div>

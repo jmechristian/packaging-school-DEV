@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useSelector } from 'react-redux';
 import MobileMenuContent from '../MobileMenu/MobileMenuContent';
-import StickySignup from '../MobileMenu/StickySignup';
 
 const MobileMenu = () => {
   const { mobileMenuOpen } = useSelector((state) => state.nav);
