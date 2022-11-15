@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useSelector } from 'react-redux';
 import MobileMenuContent from '../MobileMenu/MobileMenuContent';
+import StickySignup from '../MobileMenu/StickySignup';
 
 const MobileMenu = () => {
   const { mobileMenuOpen } = useSelector((state) => state.nav);
@@ -39,12 +40,14 @@ const MobileMenu = () => {
 
   return (
     <motion.div
-      className='w-full h-screen overflow-auto fixed z-50 bg-slate-200 top-0 left-0'
+      className='w-full h-full min-h-screen overflow-auto fixed z-50 bg-slate-200 top-0 left-0'
       variants={variants}
       initial={false}
       animate={mobileMenuOpen ? 'open' : 'closed'}
     >
-      <MobileMenuContent />
+      <div className='relative'>
+        <MobileMenuContent />
+      </div>
     </motion.div>
   );
 };
