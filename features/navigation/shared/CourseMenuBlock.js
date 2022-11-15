@@ -2,7 +2,11 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import { useDispatch } from 'react-redux';
 import { setSelectedFilter } from '../../all_courses/courseFilterSlice';
-import { setMenuItem, setSelectedNav } from '../navigationSlice';
+import {
+  setMenuItem,
+  setSelectedNav,
+  closeMobileMenu,
+} from '../navigationSlice';
 import { ArrowLongRightIcon } from '@heroicons/react/24/solid';
 import DropDownIconBlock from '../Header/MenuDropDowns/DropDownIconBlock';
 import BusinessIcon from '../../../components/icons/BusinessIcon';
@@ -18,6 +22,7 @@ const CourseMenuBlock = () => {
 
   const categoryClickHandler = (name, value) => {
     dispatch(setSelectedFilter({ name: name, value: value }));
+    dispatch(closeMobileMenu());
     dispatch(setMenuItem());
     dispatch(setSelectedNav(null));
     router.push('/all_courses');
