@@ -12,7 +12,7 @@ const MobileMenuContent = () => {
 
   return (
     <div className='h-full relative'>
-      <div className='flex justify-between items-center h-20 md:h-24 bg-slate-900 p-6 md:p-9'>
+      <div className='flex justify-between items-center h-20 md:h-24 bg-slate-900 p-6 md:p-9 sticky left-0 right-0 top-0 drop-shadow-md'>
         <div className='w-1/2 md:w-1/4'>
           <Image
             src='https://res.cloudinary.com/dno7xxmmy/image/upload/v1664295580/pschool/logo_white_krqpbc.svg'

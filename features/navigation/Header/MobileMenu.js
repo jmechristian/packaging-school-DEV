@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useSelector } from 'react-redux';
-import MobileMenuContent from '../MobileMenuItems/MobileMenuContent';
+import MobileMenuContent from '../MobileMenu/MobileMenuContent';
 
 const MobileMenu = () => {
   const { mobileMenuOpen } = useSelector((state) => state.nav);
@@ -39,7 +39,7 @@ const MobileMenu = () => {
 
   return (
     <motion.div
-      className='w-full h-screen fixed z-50 bg-slate-200 top-0 left-0'
+      className='w-full h-screen overflow-auto fixed z-50 bg-slate-200 top-0 left-0'
       variants={variants}
       initial={false}
       animate={mobileMenuOpen ? 'open' : 'closed'}

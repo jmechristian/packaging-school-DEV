@@ -1,11 +1,16 @@
 import React from 'react';
 import MobileMenuItemWrapper from './MobileMenuItemWrapper';
+import MobileMenuCourseComponent from './MobileMenuComponents/MobileMenuCourseComponent';
 
 const MobileMenuMenu = () => {
   return (
-    <div className='p-6 md:p-9'>
+    <div>
       <MobileMenuItemWrapper title='Certifications' dropdown />
-      <MobileMenuItemWrapper title='Courses' dropdown />
+      <MobileMenuItemWrapper
+        title='Courses'
+        dropdown
+        component={<MobileMenuCourseComponent />}
+      />
       <MobileMenuItemWrapper title='Library' dropdown />
       <MobileMenuItemWrapper title='For Teams' />
       <MobileMenuItemWrapper title='About' />
