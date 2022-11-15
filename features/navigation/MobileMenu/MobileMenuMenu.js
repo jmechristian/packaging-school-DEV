@@ -4,7 +4,7 @@ import MobileMenuCourseComponent from './MobileMenuComponents/MobileMenuCourseCo
 
 const MobileMenuMenu = () => {
   return (
-    <div>
+    <div className='py-6'>
       <MobileMenuItemWrapper title='Certifications' dropdown />
       <MobileMenuItemWrapper
         title='Courses'
