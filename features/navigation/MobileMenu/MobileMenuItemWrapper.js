@@ -9,7 +9,6 @@ const MobileMenuItemWrapper = ({ component, title, dropdown }) => {
     enter: {
       scaleY: '100%',
       opacity: 1,
-      transformOrigin: 'top',
     },
     exit: {
       opacity: 0,
@@ -44,6 +43,7 @@ const MobileMenuItemWrapper = ({ component, title, dropdown }) => {
                 duration: 0.2,
               }}
               onClick={() => setMobileDropdownOpen(false)}
+              style={{ transformOrigin: 'top' }}
             >
               {component}
             </motion.div>
