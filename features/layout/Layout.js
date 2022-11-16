@@ -32,7 +32,7 @@ const Layout = ({ children }) => {
           <MobileHeader />
           <ScrollTop />
           {/* <DarkToggle /> */}
-          <SearchMenu />
+          {/* <SearchMenu /> */}
           <MobileMenu />
           <main className='relative'>{children}</main>
           <Footer />
