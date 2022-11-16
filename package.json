@@ -19,6 +19,7 @@
     "@prismicio/react": "^2.5.0",
     "@prismicio/slice-simulator-react": "^0.2.2",
     "@reduxjs/toolkit": "^1.8.5",
+    "algoliasearch": "^4.14.2",
     "apollo-link-prismic": "^1.1.1",
     "axios": "^0.27.2",
     "chart.js": "^3.9.1",
@@ -30,6 +31,7 @@
     "react": "18.2.0",
     "react-chartjs-2": "^4.3.1",
     "react-dom": "18.2.0",
+    "react-instantsearch-hooks-web": "^6.38.1",
     "react-redux": "^8.0.4",
     "react-social-icons": "^5.15.0"
   },
