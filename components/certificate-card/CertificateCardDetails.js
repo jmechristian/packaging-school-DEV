@@ -1,4 +1,5 @@
 import React from 'react';
+import { Router, useRouter } from 'next/router';
 import {
   ArrowRightCircleIcon,
   VideoCameraIcon,
@@ -9,7 +10,7 @@ import { setPreviewOpen } from '../../features/all_courses/courseFilterSlice';
 
 const CertificateCardDetails = () => {
   const dispatch = useDispatch();
-
+  const router = useRouter();
   return (
     <div className='bg-slate-500/30 p-4 rounded-md backdrop-blur-lg shadow-xl flex flex-col gap-4 max-w-prose'>
       <div className='block lg:hidden xl:block'>
@@ -21,7 +22,10 @@ const CertificateCardDetails = () => {
       </div>
       <CertificateCardBullets />
       <div className='flex flex-col lg:flex-row gap-4 mt-1'>
-        <button className='flex gap-1 bg-clemson rounded-md py-3 px-4 items-center justify-center'>
+        <button
+          className='flex gap-1 bg-clemson rounded-md py-3 px-4 items-center justify-center'
+          onClick={() => router.push('/certifications/cmpm')}
+        >
           <div className='text-white text-sm font-semibold'>
             View Certificate
           </div>
