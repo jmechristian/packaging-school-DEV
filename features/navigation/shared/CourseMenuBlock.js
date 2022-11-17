@@ -21,11 +21,11 @@ const CourseMenuBlock = () => {
   const dispatch = useDispatch();
 
   const categoryClickHandler = (name, value) => {
+    router.push('/all_courses');
     dispatch(setSelectedFilter({ name: name, value: value }));
     dispatch(closeMobileMenu());
     dispatch(setMenuItem());
     dispatch(setSelectedNav(null));
-    router.push('/all_courses');
   };
   return (
     <>
