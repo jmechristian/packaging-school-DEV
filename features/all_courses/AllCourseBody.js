@@ -10,7 +10,7 @@ const AllCourseBody = () => {
   );
 
   const coursesToShow = useMemo(() => {
-    if (selectedFilter.name === 'All') {
+    if (allCourses && selectedFilter.name === 'All') {
       return allCourses;
     } else {
       return allCourses.filter(

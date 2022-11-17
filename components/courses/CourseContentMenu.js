@@ -44,7 +44,7 @@ const CourseContentMenu = () => {
 
   return (
     <motion.div
-      className='fixed z-50 left-0 bottom-6 py-2 md:py-3 bg-slate-200/40 backdrop-blur-sm rounded-r-lg shadow-lg'
+      className='fixed z-50 left-0 bottom-9 py-2 md:py-3 bg-slate-200/40 backdrop-blur-sm rounded-r-lg shadow-lg'
       ref={wrapperRef}
       variants={variants}
       initial='hidden'
