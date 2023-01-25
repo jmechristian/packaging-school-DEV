@@ -13,7 +13,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        plex: 'IBM Plex Sans, sans-serif',
+        plex: 'Inter, sans-serif',
         inter: 'Inter, sans-serif',
       },
       colors: {

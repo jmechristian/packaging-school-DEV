@@ -22,7 +22,7 @@
   }
 
   .hero__headline {
-    @apply text-4xl md:text-5xl xl:text-6xl font-semibold font-plex w-full;
+    @apply text-4xl md:text-5xl xl:text-6xl font-semibold font-inter w-full;
   }
 
   .inner__section-margin {
@@ -34,7 +34,7 @@
   }
 
   .subheadline {
-    @apply font-bold text-3xl lg:text-4xl font-plex;
+    @apply font-bold text-3xl lg:text-4xl font-inter;
   }
 
   .body__text {
