@@ -215,6 +215,20 @@
           }
         }
       },
+      "lms_link": {
+        "type": "Text",
+        "config": {
+          "label": "lms link",
+          "placeholder": ""
+        }
+      },
+      "lms_trial_link": {
+        "type": "Text",
+        "config": {
+          "label": "lms trial link",
+          "placeholder": ""
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

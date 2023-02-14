@@ -11,10 +11,10 @@
   "lang": "en-us",
   "alternate_languages": [],
   "data": {
-    "course_id": "obtain",
+    "course_id": "eight",
     "categories": [
       {
-        "category": "Design"
+        "category": "cmpm"
       }
     ],
     "course_hero": {
@@ -24,12 +24,12 @@
       },
       "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1494173853739-c21f58b16055"
+      "url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89"
     },
     "course_title": [
       {
         "type": "heading1",
-        "text": "Curious",
+        "text": "Throat",
         "spans": []
       }
     ],
@@ -42,47 +42,47 @@
           },
           "alt": null,
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89"
+          "url": "https://images.unsplash.com/photo-1586952518485-11b180e92764"
         },
-        "instructor_name": "simplest",
+        "instructor_name": "out",
         "instructor_social": {
           "link_type": "Web",
-          "url": "https://slicemachine.dev"
+          "url": "http://twitter.com"
         }
       }
     ],
     "course_subtitle": [
       {
         "type": "paragraph",
-        "text": "Deserunt aliqua commodo occaecat aliquip occaecat tempor occaecat cillum quis aliqua non eiusmod cillum. Officia exercitation cupidatat labore consectetur irure officia laborum amet deserunt magna.",
+        "text": "Aliqua sunt ut nulla cupidatat culpa. Eu culpa qui Lorem elit officia occaecat ad consectetur aliqua consectetur velit.",
         "spans": []
       }
     ],
     "course_preview": {
       "link_type": "Web",
-      "url": "http://twitter.com"
+      "url": "http://google.com"
     },
     "course_info_sheet": {
       "link_type": "Web",
-      "url": "https://slicemachine.dev"
+      "url": "http://google.com"
     },
     "what_learned": [
       {
         "type": "paragraph",
-        "text": "Sunt et magna ullamco ut ut quis nostrud tempor ea. Tempor enim minim do ad ut eiusmod ad.",
+        "text": "Do ad ad duis ex aute pariatur. Incididunt reprehenderit laborum id officia exercitation commodo excepteur dolore ut proident est quis mollit Lorem ea. Exercitation ex esse in est minim amet cupidatat laborum.",
         "spans": []
       }
     ],
     "what_learned_items": [
       {
-        "overview_items": "wait"
+        "overview_items": "machinery"
       }
     ],
-    "embed_id": "nose",
-    "course_price": "fallen",
-    "course_hours": "look",
-    "course_lessons": "fruit",
-    "course_videos": "thing",
+    "embed_id": "cutting",
+    "course_price": "flight",
+    "course_hours": "pony",
+    "course_lessons": "negative",
+    "course_videos": "ground",
     "related_courses": [
       {
         "related": {
@@ -111,6 +111,8 @@
         }
       }
     ],
+    "lms_link": "proper",
+    "lms_trial_link": "produce",
     "slices": []
   }
 }
