@@ -5,7 +5,7 @@ const AllCourseHeaderMobile = () => {
   return (
     <div className='flex justify-center item-center w-full bg-bootcamp-mobile bg-cover bg-center lg:hidden'>
       <div className='flex flex-col gap-4 justify-center items-center text-center py-8 px-8'>
-        <div className='text-white font-plex font-bold text-2xl'>
+        <div className='text-white font-greycliff font-bold text-2xl'>
           New to Packaging?
           <br /> Start Here!
         </div>

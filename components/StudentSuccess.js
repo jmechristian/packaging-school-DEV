@@ -32,10 +32,10 @@ const StudentSuccess = () => {
       animate={inView ? 'enter' : 'hidden'}
     >
       <div className='grid grid-cols-1 gap-3'>
-        <div className='col-span-1 font-plex uppercase font-extrabold lg:text-2xl text-base-light dark:text-base-brand'>
+        <div className='col-span-1 font-greycliff uppercase font-extrabold lg:text-2xl text-base-light dark:text-base-brand'>
           Student Success Stories
         </div>
-        <div className='w-full flex justify-start text-clemson font-plex text-9xl max-h-min'>
+        <div className='w-full flex justify-start text-clemson font-greycliff text-9xl max-h-min'>
           &ldquo;
         </div>
         <div className='text-white dark:text-slate-700 font-light text-xl lg:text-2xl -mt-16'>
@@ -43,7 +43,7 @@ const StudentSuccess = () => {
           systems, sustainability, and point of purchase strategies, through a
           complete and holistic approach to the different aspects of packaging.
         </div>
-        <div className='w-full flex justify-end text-clemson font-plex text-9xl -mt-4 max-h-min'>
+        <div className='w-full flex justify-end text-clemson font-greycliff text-9xl -mt-4 max-h-min'>
           &rdquo;
         </div>
         <div className='flex flex-col md:flex-row md:items-center lg:justify-end -mt-16 text-white dark:text-slate-700 gap-2'>

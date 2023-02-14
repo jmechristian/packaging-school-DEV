@@ -22,7 +22,7 @@ const CourseInfo = ({
             </div>
             <div className='flex flex-col gap-6'>
               <div className='flex flex-col gap-2'>
-                <div className='font-medium black__white font-plex text-lg'>
+                <div className='font-medium black__white font-greycliff text-lg'>
                   Future Proof Your Skills
                 </div>
                 <div className='font-bold black__white text-5xl'>${price}</div>

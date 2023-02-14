@@ -6,7 +6,7 @@ const EnrollmentDetails = ({ items, price }) => {
   return (
     <div className='flex flex-col w-full gap-5 justify-between h-full'>
       <div className='flex flex-col gap-5'>
-        <div className='font-extrabold font-plex text-lg border-b w-full border-b-gray-800 pb-2'>
+        <div className='font-extrabold font-greycliff text-lg border-b w-full border-b-gray-800 pb-2'>
           Future Proof Your Skills
         </div>
         <div className='flex flex-col md:flex-row md:items-center lg:flex-col lg:items-start gap-3'>

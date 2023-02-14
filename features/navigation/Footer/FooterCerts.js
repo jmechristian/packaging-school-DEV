@@ -4,7 +4,7 @@ import Link from 'next/link';
 const FooterCerts = () => {
   return (
     <div className='flex flex-col gap-1.5 lg:gap-2 text-sm'>
-      <div className='font-extrabold text-sm uppercase tracking-widest text-slate-200 font-plex'>
+      <div className='font-extrabold text-sm uppercase tracking-widest text-slate-200 font-greycliff'>
         Certifications
       </div>
       <Link href={'/certifications/cmpm'}>

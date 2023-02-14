@@ -14,7 +14,7 @@ const CourseObjectives = ({ what, items }) => {
   return (
     <div className='flex flex-col gap-12 lg:max-w-prose pb-16'>
       <div className='flex flex-col gap-4'>
-        <div className='font-semibold font-plex text-2xl black__white '>
+        <div className='font-semibold font-greycliff text-2xl black__white '>
           What You Will Learn
         </div>
         <div className='gray__white text-lg'>
@@ -24,7 +24,7 @@ const CourseObjectives = ({ what, items }) => {
       {items.length > 1 && (
         <div className='flex flex-col gap-6'>
           <div className='pb-3 flex gap-y-1 justify-between items-end flex-wrap cursor-pointer'>
-            <div className='font-semibold font-plex text-2xl black__white '>
+            <div className='font-semibold font-greycliff text-2xl black__white '>
               Course Objectives
             </div>
             <div

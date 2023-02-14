@@ -3,7 +3,7 @@ import React from 'react';
 const FooterLibrary = () => {
   return (
     <div className='flex flex-col gap-1 lg:gap-2 text-sm w-full'>
-      <div className='font-extrabold text-sm uppercase tracking-widest text-slate-200 font-plex'>
+      <div className='font-extrabold text-sm uppercase tracking-widest text-slate-200 font-greycliff'>
         Library
       </div>
       <div className='grid grid-cols-2 gap-y-1 gap-x-8 lg:gap-x-4 justify-between'>

@@ -6,7 +6,7 @@ const AllCourseHeaderDesktop = () => {
     <div className='hidden lg:flex justify-between item-center w-full bg-bootcamp-mobile bg-cover bg-center'>
       <div className='container__inner w-full flex justify-center gap-24'>
         <div className='flex flex-col gap-2 py-8'>
-          <div className='text-white font-plex font-bold text-3xl'>
+          <div className='text-white font-greycliff font-bold text-3xl'>
             New to Packaging? Start Here!
           </div>
           <div className='text-white'>

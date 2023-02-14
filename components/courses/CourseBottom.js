@@ -14,7 +14,7 @@ const CourseBottom = ({ related }) => {
           <div>
             <div className='container__inner'>
               <div className='border-b border-b-gray-400 pb-4'>
-                <div className='font-bold font-plex text-2xl lg:text-3xl'>
+                <div className='font-bold font-greycliff text-2xl lg:text-3xl'>
                   Related Certificate Courses
                 </div>
               </div>

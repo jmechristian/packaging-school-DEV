@@ -15,7 +15,7 @@ const DropDownIconBlock = ({ icon, category, value, desc, setFilter }) => {
           </div>
         </div>
         <div className='flex flex-col gap-1'>
-          <div className='font-bold text-slate-900 leading-none font-plex'>
+          <div className='font-bold text-slate-900 leading-none font-greycliff'>
             {category}
           </div>
           <div className='text-slate-600 text-sm'>{desc}</div>

@@ -5,7 +5,7 @@ const FooterEmailSignup = () => {
   return (
     <div className='flex flex-col gap-4'>
       <div className='flex flex-col gap-1 text-sm'>
-        <div className='font-extrabold text-sm uppercase tracking-widest text-slate-200 font-plex'>
+        <div className='font-extrabold text-sm uppercase tracking-widest text-slate-200 font-greycliff'>
           Stay Up To Date
         </div>
         <p className='text-slate-500'>

@@ -8,13 +8,10 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    fontFamily: {
-      sans: 'Inter, sans-serif',
-    },
     extend: {
       fontFamily: {
-        plex: 'Inter, sans-serif',
-        inter: 'Inter, sans-serif',
+        roboto: 'roboto, sans-serif',
+        greycliff: 'greycliff-cf, sans-serif',
       },
       colors: {
         'base-brand': '#1f97bf',
