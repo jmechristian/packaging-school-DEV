@@ -52,11 +52,11 @@ const CourseMain = ({ data }) => {
           <div className='hidden lg:inline-grid lg:col-span-2 pl-8'>
             <CourseInfo
               embedid={data.embed_id}
-              price={data.course_price}
-              hours={data.course_hours}
-              lessons={data.course_lessons}
               videos={data.course_videos}
+              price={data.course_price}
               certification={data.certificate}
+              link={data.lms_link}
+              trialLink={data.lms_trial_link}
             />
           </div>
         </div>

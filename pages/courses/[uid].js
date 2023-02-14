@@ -15,7 +15,10 @@ const Page = ({ page }) => {
       <CourseMain data={page.data} />
       <CourseBottom related={page.data.related_courses} />
       {preview && <CoursePreview close={() => dispatch(setPreviewClosed())} />}
-      <CourseContentMenu />
+      <CourseContentMenu
+        link={page.data.lms_link}
+        trialLink={page.data.lms_trial_link}
+      />
     </div>
   );
 };

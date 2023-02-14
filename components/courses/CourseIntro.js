@@ -17,8 +17,8 @@ const CourseIntro = ({
 }) => {
   const backgroundColor = () => {
     switch (categories[0].category) {
-      case 'Material':
-        return 'bg-blue-700';
+      case 'Materials':
+        return 'bg-blue-900';
       case 'Industry':
         return 'bg-red-800';
       case 'Design':

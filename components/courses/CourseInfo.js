@@ -4,14 +4,7 @@ import CTAButtonTrial from '../CTAButtonTrial';
 import CourseCertificate from './CourseCertificate';
 import YouTubeEmbed from '../YouTubeEmbed';
 
-const CourseInfo = ({
-  price,
-  hours,
-  lessons,
-  videos,
-  certification,
-  embedid,
-}) => {
+const CourseInfo = ({ price, link, trialLink, certification, embedid }) => {
   return (
     <section>
       <div className='dark:bg-slate-800 bg-white shadow-lg rounded-md'>
@@ -25,11 +18,11 @@ const CourseInfo = ({
                 <div className='font-medium black__white font-greycliff text-lg'>
                   Future Proof Your Skills
                 </div>
-                <div className='font-bold black__white text-5xl'>${price}</div>
+                <div className='font-bold black__white text-6xl'>${price}</div>
               </div>
               <div className='flex flex-col gap-4'>
-                <CTAButtonLarge />
-                <CTAButtonTrial />
+                <CTAButtonLarge link={link} />
+                <CTAButtonTrial link={trialLink} />
               </div>
             </div>
           </div>
