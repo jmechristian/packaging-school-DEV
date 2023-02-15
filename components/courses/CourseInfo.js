@@ -3,6 +3,7 @@ import CTAButtonLarge from '../CTAButtonLarge';
 import CTAButtonTrial from '../CTAButtonTrial';
 import CourseCertificate from './CourseCertificate';
 import YouTubeEmbed from '../YouTubeEmbed';
+import VideoPlayer from '../VideoPlayer';
 
 const CourseInfo = ({ price, link, trialLink, certification, embedid }) => {
   return (
@@ -11,7 +12,7 @@ const CourseInfo = ({ price, link, trialLink, certification, embedid }) => {
         <div className='flex flex-col gap-4 border-b border-b-slate-200 dark:border-b-slate-700 p-6 pt-8 lg:pt-8 lg:p-8'>
           <div className='flex flex-col gap-10'>
             <div className='hidden lg:block'>
-              {embedid && <YouTubeEmbed embedid={embedid} />}
+              {embedid && <VideoPlayer videoEmbedLink={embedid} />}
             </div>
             <div className='flex flex-col gap-6'>
               <div className='flex flex-col gap-2'>

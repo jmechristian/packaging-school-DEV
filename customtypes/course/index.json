@@ -147,7 +147,7 @@
       "embed_id": {
         "type": "Text",
         "config": {
-          "label": "embed_Id",
+          "label": "Video Embed URL",
           "placeholder": ""
         }
       },

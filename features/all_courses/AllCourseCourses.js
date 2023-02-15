@@ -3,6 +3,7 @@ import CourseCard from '../../components/course-card/CourseCard';
 import ScrollButtons from '../../components/ScrollButtons';
 
 const AllCourseCourses = ({ selectedFilter, coursesToShow }) => {
+  // console.log(coursesToShow);
   return (
     <div className=' flex flex-col gap-6'>
       <div className='flex justify-between items-end'>
@@ -23,6 +24,7 @@ const AllCourseCourses = ({ selectedFilter, coursesToShow }) => {
               lessons={course.node.course_lessons}
               price={course.node.course_price}
               slug={course.node._meta.uid}
+              category={course.node.categories[0].category}
             />
           </div>
         ))}

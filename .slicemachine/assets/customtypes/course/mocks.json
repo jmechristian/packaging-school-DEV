@@ -11,10 +11,10 @@
   "lang": "en-us",
   "alternate_languages": [],
   "data": {
-    "course_id": "eight",
+    "course_id": "reach",
     "categories": [
       {
-        "category": "cmpm"
+        "category": "aps"
       }
     ],
     "course_hero": {
@@ -24,12 +24,12 @@
       },
       "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89"
+      "url": "https://images.unsplash.com/photo-1491975474562-1f4e30bc9468"
     },
     "course_title": [
       {
         "type": "heading1",
-        "text": "Throat",
+        "text": "Elephant",
         "spans": []
       }
     ],
@@ -42,9 +42,9 @@
           },
           "alt": null,
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1586952518485-11b180e92764"
+          "url": "https://images.unsplash.com/photo-1587905069134-008460d7a636"
         },
-        "instructor_name": "out",
+        "instructor_name": "but",
         "instructor_social": {
           "link_type": "Web",
           "url": "http://twitter.com"
@@ -54,35 +54,35 @@
     "course_subtitle": [
       {
         "type": "paragraph",
-        "text": "Aliqua sunt ut nulla cupidatat culpa. Eu culpa qui Lorem elit officia occaecat ad consectetur aliqua consectetur velit.",
+        "text": "Ut eiusmod consequat excepteur enim veniam.",
         "spans": []
       }
     ],
     "course_preview": {
       "link_type": "Web",
-      "url": "http://google.com"
+      "url": "https://prismic.io"
     },
     "course_info_sheet": {
       "link_type": "Web",
-      "url": "http://google.com"
+      "url": "http://twitter.com"
     },
     "what_learned": [
       {
         "type": "paragraph",
-        "text": "Do ad ad duis ex aute pariatur. Incididunt reprehenderit laborum id officia exercitation commodo excepteur dolore ut proident est quis mollit Lorem ea. Exercitation ex esse in est minim amet cupidatat laborum.",
+        "text": "Ea proident adipisicing velit labore quis.",
         "spans": []
       }
     ],
     "what_learned_items": [
       {
-        "overview_items": "machinery"
+        "overview_items": "around"
       }
     ],
-    "embed_id": "cutting",
-    "course_price": "flight",
-    "course_hours": "pony",
-    "course_lessons": "negative",
-    "course_videos": "ground",
+    "embed_id": "enemy",
+    "course_price": "word",
+    "course_hours": "below",
+    "course_lessons": "sign",
+    "course_videos": "its",
     "related_courses": [
       {
         "related": {
@@ -111,8 +111,8 @@
         }
       }
     ],
-    "lms_link": "proper",
-    "lms_trial_link": "produce",
+    "lms_link": "give",
+    "lms_trial_link": "very",
     "slices": []
   }
 }

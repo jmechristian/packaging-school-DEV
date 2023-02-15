@@ -2,9 +2,11 @@ import React from 'react';
 import { LightBulbIcon } from '@heroicons/react/24/solid';
 
 const CourseCertificate = ({ certification }) => {
+  console.log(certification);
+
   return (
     <div className='flex flex-col gap-8'>
-      {certification[0].certificate_link.data ? (
+      {certification.length > 0 && certification[0].certificate_link.data ? (
         <>
           <div className='flex gap-2 items-center'>
             <div>

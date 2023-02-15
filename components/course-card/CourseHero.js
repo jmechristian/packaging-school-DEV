@@ -6,7 +6,7 @@ import {
   setPreviewOpen,
 } from '../../features/all_courses/courseFilterSlice';
 
-const CourseHero = ({ video }) => {
+const CourseHero = ({ video, bgcolor }) => {
   const [openPreview, setOpenPreview] = useState(false);
   const dispatch = useDispatch();
 
@@ -16,9 +16,11 @@ const CourseHero = ({ video }) => {
 
   return (
     <>
-      <div className='bg-slate-700 aspect-square w-full flex justify-center items-center col-span-2 cursor-pointer'>
+      <div
+        className={`bg-${bgcolor} aspect-square w-full flex justify-center items-center col-span-2 cursor-pointer`}
+      >
         <div
-          className='bg-slate-200 w-12 h-12 shadow-xl rounded-full flex justify-center items-center opacity-60'
+          className='bg-slate-100 w-10 h-10 shadow-2xl rounded-full flex justify-center items-center opacity-60'
           onClick={() => dispatch(setPreviewOpen(video))}
         >
           <VideoCameraIcon className='w-6 h-6 fill-slate-700' />

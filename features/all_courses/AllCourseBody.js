@@ -17,7 +17,9 @@ const AllCourseBody = () => {
         (o) =>
           o.node.categories.some((c) => c.category === selectedFilter.name) ||
           o.node.certificate.some(
-            (cl) => cl.certificate_link._meta.uid === selectedFilter.value
+            (cl) =>
+              cl.certificate_link &&
+              cl.certificate_link._meta.uid === selectedFilter.value
           )
       );
     }
