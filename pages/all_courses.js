@@ -31,6 +31,13 @@ export async function getServerSideProps() {
               categories {
                 category
               }
+              collections {
+                ... on Collection {
+                  collection_title
+                  collection
+                  collection_descriptions
+                }
+              }
               course_title
               course_subtitle
               embed_id
