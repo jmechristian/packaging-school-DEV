@@ -1,0 +1,17 @@
+{
+  "id": "collection",
+  "label": "Collection",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "collection": {
+        "type": "Text",
+        "config": {
+          "label": "collection",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}
