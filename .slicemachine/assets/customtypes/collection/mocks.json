@@ -11,6 +11,8 @@
   "lang": "en-us",
   "alternate_languages": [],
   "data": {
-    "collection": "exist"
+    "collection": "step",
+    "collection_title": "pass",
+    "collection_descriptions": "afraid"
   }
 }

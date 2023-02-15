@@ -1,6 +1,6 @@
 {
   "id": "collection",
-  "label": "Collection",
+  "label": "collection",
   "repeatable": true,
   "status": true,
   "json": {
@@ -9,6 +9,20 @@
         "type": "Text",
         "config": {
           "label": "collection",
+          "placeholder": ""
+        }
+      },
+      "collection_title": {
+        "type": "Text",
+        "config": {
+          "label": "collection title",
+          "placeholder": ""
+        }
+      },
+      "collection_descriptions": {
+        "type": "Text",
+        "config": {
+          "label": "collection descriptions",
           "placeholder": ""
         }
       }

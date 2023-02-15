@@ -229,6 +229,16 @@
           "placeholder": ""
         }
       },
+      "collections": {
+        "type": "Link",
+        "config": {
+          "label": "collections",
+          "select": "document",
+          "customtypes": [
+            "collection"
+          ]
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

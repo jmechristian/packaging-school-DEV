@@ -11,7 +11,7 @@
   "lang": "en-us",
   "alternate_languages": [],
   "data": {
-    "course_id": "reach",
+    "course_id": "though",
     "categories": [
       {
         "category": "aps"
@@ -24,12 +24,12 @@
       },
       "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1491975474562-1f4e30bc9468"
+      "url": "https://images.unsplash.com/photo-1596195689404-24d8a8d1c6ea"
     },
     "course_title": [
       {
         "type": "heading1",
-        "text": "Elephant",
+        "text": "Excellent",
         "spans": []
       }
     ],
@@ -42,9 +42,9 @@
           },
           "alt": null,
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1587905069134-008460d7a636"
+          "url": "https://images.unsplash.com/photo-1493119508027-2b584f234d6c"
         },
-        "instructor_name": "but",
+        "instructor_name": "cap",
         "instructor_social": {
           "link_type": "Web",
           "url": "http://twitter.com"
@@ -54,35 +54,35 @@
     "course_subtitle": [
       {
         "type": "paragraph",
-        "text": "Ut eiusmod consequat excepteur enim veniam.",
+        "text": "Ullamco reprehenderit magna mollit officia. Ut dolore non occaecat velit dolore amet veniam cillum eiusmod nisi ullamco.",
         "spans": []
       }
     ],
     "course_preview": {
       "link_type": "Web",
-      "url": "https://prismic.io"
+      "url": "http://twitter.com"
     },
     "course_info_sheet": {
       "link_type": "Web",
-      "url": "http://twitter.com"
+      "url": "https://slicemachine.dev"
     },
     "what_learned": [
       {
         "type": "paragraph",
-        "text": "Ea proident adipisicing velit labore quis.",
+        "text": "Consequat reprehenderit in consectetur pariatur qui id exercitation laboris dolore aute sunt. Nostrud cillum exercitation eiusmod qui nisi Lorem dolore nisi exercitation enim consectetur ut ad mollit deserunt. Aute fugiat aute elit irure est amet elit do aute nostrud Lorem.",
         "spans": []
       }
     ],
     "what_learned_items": [
       {
-        "overview_items": "around"
+        "overview_items": "original"
       }
     ],
-    "embed_id": "enemy",
-    "course_price": "word",
-    "course_hours": "below",
-    "course_lessons": "sign",
-    "course_videos": "its",
+    "embed_id": "hill",
+    "course_price": "tongue",
+    "course_hours": "log",
+    "course_lessons": "gift",
+    "course_videos": "away",
     "related_courses": [
       {
         "related": {
@@ -111,8 +111,18 @@
         }
       }
     ],
-    "lms_link": "give",
-    "lms_trial_link": "very",
+    "lms_link": "someone",
+    "lms_trial_link": "warm",
+    "collections": {
+      "id": "mock_document_id",
+      "link_type": "Document",
+      "type": "collection",
+      "tags": [],
+      "lang": "en-us",
+      "slug": null,
+      "first_publication_date": "1970-01-01T00:00:01+0000",
+      "last_publication_date": "1970-01-01T01:00:00+0000"
+    },
     "slices": []
   }
 }
