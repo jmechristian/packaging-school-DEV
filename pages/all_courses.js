@@ -22,7 +22,7 @@ export async function getServerSideProps() {
   const courses = await client.query({
     query: gql`
       query AllCourses {
-        allCourses(sortBy: course_title_ASC, first: 30) {
+        allCourses(sortBy: course_title_ASC, first: 50) {
           pageInfo {
             hasNextPage
             hasPreviousPage
