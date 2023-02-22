@@ -18,7 +18,10 @@ const AllCourseCoursesMobile = ({ coursesToShow }) => {
             >
               <CourseCard
                 title={course.node.course_title[0].text}
-                desc={course.node.course_subtitle[0].text}
+                desc={
+                  course.node.course_subtitle &&
+                  course.node.course_subtitle[0].text
+                }
                 video={course.node.embed_id}
                 hours={course.node.course_hours}
                 lessons={course.node.course_lessons}

@@ -11,10 +11,10 @@
   "lang": "en-us",
   "alternate_languages": [],
   "data": {
-    "course_id": "though",
+    "course_id": "gold",
     "categories": [
       {
-        "category": "aps"
+        "category": "Design"
       }
     ],
     "course_hero": {
@@ -24,12 +24,12 @@
       },
       "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1596195689404-24d8a8d1c6ea"
+      "url": "https://images.unsplash.com/photo-1494173853739-c21f58b16055"
     },
     "course_title": [
       {
         "type": "heading1",
-        "text": "Excellent",
+        "text": "Particular",
         "spans": []
       }
     ],
@@ -42,47 +42,47 @@
           },
           "alt": null,
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1493119508027-2b584f234d6c"
+          "url": "https://images.unsplash.com/photo-1589652717521-10c0d092dea9"
         },
-        "instructor_name": "cap",
+        "instructor_name": "certainly",
         "instructor_social": {
           "link_type": "Web",
-          "url": "http://twitter.com"
+          "url": "https://slicemachine.dev"
         }
       }
     ],
     "course_subtitle": [
       {
         "type": "paragraph",
-        "text": "Ullamco reprehenderit magna mollit officia. Ut dolore non occaecat velit dolore amet veniam cillum eiusmod nisi ullamco.",
+        "text": "Nulla do laborum nisi ex sit excepteur exercitation ipsum laboris. Officia mollit eiusmod pariatur ut nulla ad anim aliqua dolor non et.",
         "spans": []
       }
     ],
     "course_preview": {
       "link_type": "Web",
-      "url": "http://twitter.com"
+      "url": "https://prismic.io"
     },
     "course_info_sheet": {
       "link_type": "Web",
-      "url": "https://slicemachine.dev"
+      "url": "http://twitter.com"
     },
     "what_learned": [
       {
         "type": "paragraph",
-        "text": "Consequat reprehenderit in consectetur pariatur qui id exercitation laboris dolore aute sunt. Nostrud cillum exercitation eiusmod qui nisi Lorem dolore nisi exercitation enim consectetur ut ad mollit deserunt. Aute fugiat aute elit irure est amet elit do aute nostrud Lorem.",
+        "text": "Proident nisi cillum aliquip dolore elit tempor fugiat minim nisi voluptate. Velit duis sit do nulla dolor elit do laborum Lorem qui adipisicing.",
         "spans": []
       }
     ],
     "what_learned_items": [
       {
-        "overview_items": "original"
+        "overview_items": "species"
       }
     ],
-    "embed_id": "hill",
-    "course_price": "tongue",
-    "course_hours": "log",
-    "course_lessons": "gift",
-    "course_videos": "away",
+    "embed_id": "lack",
+    "course_price": "believed",
+    "course_hours": "group",
+    "course_lessons": "especially",
+    "course_videos": "white",
     "related_courses": [
       {
         "related": {
@@ -111,8 +111,8 @@
         }
       }
     ],
-    "lms_link": "someone",
-    "lms_trial_link": "warm",
+    "lms_link": "his",
+    "lms_trial_link": "widely",
     "collections": {
       "id": "mock_document_id",
       "link_type": "Document",

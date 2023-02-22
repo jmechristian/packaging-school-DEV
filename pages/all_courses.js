@@ -7,6 +7,7 @@ import CoursePreview from '../components/course-card/CoursePreview';
 import { gql } from '@apollo/client';
 
 const AllCourses = ({ courses }) => {
+  console.log(courses);
   const dispatch = useDispatch();
   const { preview } = useSelector((state) => state.course_filter);
   return (
