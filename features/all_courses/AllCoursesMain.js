@@ -9,7 +9,7 @@ const AllCoursesMain = ({ courses }) => {
 
   useEffect(() => {
     courses && dispatch(setAllCourses(courses.data.allCourses.edges));
-  }, [courses]);
+  });
 
   return (
     <div className='w-full flex grow shrink-0 basis-auto m-0'>
