@@ -15,14 +15,14 @@ const CourseDesc = ({ desc, slug, data, reset }) => {
   };
 
   return (
-    <div className='flex flex-col gap-2 w-full col-span-6 justify-between'>
+    <div
+      className='flex flex-col gap-2 w-full col-span-6 justify-between'
+      onClick={courseClickHandler}
+    >
       <div className='text-slate-600 text-sm line-clamp-3'>{desc}</div>
       <div className='grid grid-cols-6 items-center h-auto'>
         <div className='flex gap-1 col-span-5'>
-          <div
-            className='font-bold text-sm text-slate-900'
-            onClick={courseClickHandler}
-          >
+          <div className='font-bold text-sm text-slate-900'>
             <div>View Course</div>
           </div>
           <ArrowLongRightIcon className='w-5 h-5 stoke-slate-900' />
