@@ -1,0 +1,102 @@
+type LessonSource @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  name: String
+  link: String
+  position: Int!
+}
+
+type LessonLink @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  name: String
+  link: String
+}
+
+type Tags @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  tag: String!
+}
+
+enum ModuleType {
+  LESSON
+  LOTM
+  MICROLESSON
+}
+
+type Lesson @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  slug: String! @index(name: "lessonsByTitle")
+  title: String!
+  subhead: String
+  type: ModuleType
+  media: String
+  seoImage: String
+  content: String
+  sources: [LessonSource] @hasMany
+  links: [LessonLink] @hasMany
+  tags: [Tags] @hasMany
+  objectives: [String]
+  actionCTA: String
+  actionSubhead: String
+  actionLink: String
+  actionLinkTitle: String
+  actionExample: String
+}
+
+# Autopack Summit
+
+type APS @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  Registrants: [User] @manyToMany(relationName: "APSUser")
+  Sponsors: [Company] @manyToMany(relationName: "APSSponsor")
+  Speakers: [APSSpeaker] @hasMany
+  year: Int!
+  codes: [RegistrationCode]
+}
+
+type Company @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  name: String!
+  Employees: [User] @hasMany(indexName: "userByCompany", fields: ["id"])
+  website: String
+  email: String
+  phone: String
+  street_1: String
+  street_2: String
+  city: String
+  state: String
+  zip: String
+  apsID: [APS] @manyToMany(relationName: "APSSponsor")
+}
+
+type User @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  name: String! @index(name: "userByName")
+  title: String!
+  company: String
+  email: String @index(name: "userByEmail")
+  office: String
+  cell: String
+  companyID: ID @index(name: "userByCompany")
+  apss: [APS] @manyToMany(relationName: "APSUser")
+}
+
+type APSSpeaker @model @auth(rules: [{ allow: public }]) {
+  firstName: String!
+  lastName: String!
+  email: String!
+  company: String!
+  title: String!
+  phone: String
+  linkedin: String
+  bio: String!
+  presentationTitle: String
+  presentationSummary: String
+  headshot: String!
+  mediaConsent: Boolean
+  privacyConsent: Boolean
+  apsHistory: APS @belongsTo
+}
+
+type RegistrationCode {
+  code: String
+}
