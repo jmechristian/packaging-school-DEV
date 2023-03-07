@@ -75,6 +75,30 @@ type Article @model @auth(rules: [{ allow: public }]) {
   relatedCourses: [Course] @manyToMany(relationName: "ArticleRelatedCourses")
 }
 
+type DayInLifeItem @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  name: String!
+  desc: String!
+  icon: String
+}
+
+type Career @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  slug: String! @index(name: "careerByTitle")
+  title: String!
+  altName: String
+  subhead: String
+  media: String
+  dayInLife: [DayInLifeItem] @hasMany
+  cmpmCopy: String
+  cpsCopy: String
+  apcCopy: String
+  coreCopy: String
+  electiveCopy: String
+  freeCopy: String
+  beverageCopy: String
+}
+
 # Autopack Summit
 
 type APS @model @auth(rules: [{ allow: public }]) {

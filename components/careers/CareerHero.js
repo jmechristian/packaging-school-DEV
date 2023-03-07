@@ -1,7 +1,8 @@
 import React from 'react';
+import Image from 'next/image';
 import { ChevronRightIcon } from '@heroicons/react/20/solid';
 
-const CareerHero = () => {
+const CareerHero = ({ title, subhead, altName, media }) => {
   return (
     <div className='relative pt-10'>
       <div className='py-12 sm:py-32'>
@@ -33,11 +34,10 @@ const CareerHero = () => {
         <div className='mx-auto max-w-7xl px-6 lg:px-8'>
           <div className='mx-auto max-w-2xl text-left md:text-center'>
             <h1 className='text-4xl font-bold tracking-tight text-slate-900 sm:text-6xl font-greycliff'>
-              Account Manager
+              {title}
             </h1>
             <p className='mt-4 md:mt-8 text-base md:text-xl leading-8 text-slate-900/60'>
-              Organized. Dependable. Always Delivering. Take your role as an
-              Account Manager up a notch!
+              {subhead}
             </p>
             <div className='mt-10 flex flex-col md:flex-row gap-3 items-start md:items-center justify-center gap-x-6'>
               <a
@@ -57,8 +57,8 @@ const CareerHero = () => {
           </div>
           <div className='mt-16 flow-root sm:mt-24'>
             <div className='-m-2 rounded-xl bg-slate-900/5 p-2 ring-1 ring-inset ring-slate-900/10 lg:-m-4 lg:rounded-2xl lg:p-4'>
-              <img
-                src='https://tailwindui.com/img/component-images/project-app-screenshot.png'
+              <Image
+                src={media}
                 alt='App screenshot'
                 width={2432}
                 height={1442}

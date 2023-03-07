@@ -2,7 +2,6 @@ import '../styles/globals.css';
 import Layout from '../features/layout/Layout';
 import Link from 'next/link';
 import algoliasearch from 'algoliasearch/lite';
-import { InstantSearch } from 'react-instantsearch-hooks-web';
 import { PrismicProvider } from '@prismicio/react';
 import { PrismicPreview } from '@prismicio/next';
 import { linkResolver, repositoryName } from '../prismicio';
