@@ -167,128 +167,130 @@ const CareerAction = ({
 
           {/* Second Box */}
           <div className='bg-white/5 ring-1 ring-white/10 rounded-3xl p-8 xl:p-10 flex flex-col justify-between'>
-            <div className='flex items-center justify-between gap-x-4'>
-              <h3 className='text-xl md:text-2xl font-greycliff font-semibold leading-8 text-white'>
-                Courses
-              </h3>
-            </div>
-
-            <div
-              role='list'
-              className='mt-8 space-y-3 text-sm leading-6 text-gray-300 xl:mt-10'
-            >
-              {/* {tier.features.map((feature) => ( */}
-              <div className='flex flex-col gap-4'>
-                <Disclosure>
-                  <Disclosure.Button>
-                    <div className='flex gap-2'>
-                      <div>
-                        <PlusIcon className='w-7 h-7 text-clemson' />
-                      </div>
-                      <div className='text-base md:text-lg text-left'>
-                        Core Courses
-                      </div>
-                    </div>
-                  </Disclosure.Button>
-
-                  <Transition
-                    enter='transition duration-100 ease-out'
-                    enterFrom='transform scale-95 opacity-0'
-                    enterTo='transform scale-100 opacity-100'
-                    leave='transition duration-75 ease-out'
-                    leaveFrom='transform scale-100 opacity-100'
-                    leaveTo='transform scale-95 opacity-0'
-                  >
-                    <Disclosure.Panel>
-                      <div className='w-full h-full bg-gray-700 text-base md:text-lg py-6 px-6 rounded-lg my-2'>
-                        {coreCopy}
-                      </div>
-                    </Disclosure.Panel>
-                  </Transition>
-                </Disclosure>
-                <Disclosure>
-                  <Disclosure.Button>
-                    <div className='flex gap-2'>
-                      <div>
-                        <PlusIcon className='w-7 h-7 text-clemson' />
-                      </div>
-                      <div className='text-base md:text-lg text-left'>
-                        Elective Courses
-                      </div>
-                    </div>
-                  </Disclosure.Button>
-
-                  <Transition
-                    enter='transition duration-100 ease-out'
-                    enterFrom='transform scale-95 opacity-0'
-                    enterTo='transform scale-100 opacity-100'
-                    leave='transition duration-75 ease-out'
-                    leaveFrom='transform scale-100 opacity-100'
-                    leaveTo='transform scale-95 opacity-0'
-                  >
-                    <Disclosure.Panel>
-                      <div className='w-full h-full bg-gray-700 text-base md:text-lg py-6 px-6 rounded-lg my-2'>
-                        {electiveCopy}
-                      </div>
-                    </Disclosure.Panel>
-                  </Transition>
-                </Disclosure>
-                <Disclosure>
-                  <Disclosure.Button>
-                    <div className='flex gap-2'>
-                      <div>
-                        <PlusIcon className='w-7 h-7 text-clemson' />
-                      </div>
-                      <div className='text-base md:text-lg text-left'>
-                        Free Courses
-                      </div>
-                    </div>
-                  </Disclosure.Button>
-
-                  <Transition
-                    enter='transition duration-100 ease-out'
-                    enterFrom='transform scale-95 opacity-0'
-                    enterTo='transform scale-100 opacity-100'
-                    leave='transition duration-75 ease-out'
-                    leaveFrom='transform scale-100 opacity-100'
-                    leaveTo='transform scale-95 opacity-0'
-                  >
-                    <Disclosure.Panel>
-                      <div className='w-full h-full bg-gray-700 text-base md:text-lg py-6 px-6 rounded-lg my-2'>
-                        {freeCopy}
-                      </div>
-                    </Disclosure.Panel>
-                  </Transition>
-                </Disclosure>
-                <Disclosure>
-                  <Disclosure.Button>
-                    <div className='flex gap-2'>
-                      <div>
-                        <PlusIcon className='w-7 h-7 text-clemson' />
-                      </div>
-                      <div className='text-base md:text-lg text-left'>
-                        Beverage Courses
-                      </div>
-                    </div>
-                  </Disclosure.Button>
-
-                  <Transition
-                    enter='transition duration-100 ease-out'
-                    enterFrom='transform scale-95 opacity-0'
-                    enterTo='transform scale-100 opacity-100'
-                    leave='transition duration-75 ease-out'
-                    leaveFrom='transform scale-100 opacity-100'
-                    leaveTo='transform scale-95 opacity-0'
-                  >
-                    <Disclosure.Panel>
-                      <div className='w-full h-full bg-gray-700 text-base md:text-lg py-6 px-6 rounded-lg my-2'>
-                        {beverageCopy}
-                      </div>
-                    </Disclosure.Panel>
-                  </Transition>
-                </Disclosure>
+            <div className='flex flex-col'>
+              <div className='flex items-center justify-between gap-x-4'>
+                <h3 className='text-xl md:text-2xl font-greycliff font-semibold leading-8 text-white'>
+                  Courses
+                </h3>
               </div>
-              {/* ))} */}
+
+              <div
+                role='list'
+                className='mt-8 space-y-3 text-sm leading-6 text-gray-300 xl:mt-10'
+              >
+                {/* {tier.features.map((feature) => ( */}
+                <div className='flex flex-col gap-4'>
+                  <Disclosure>
+                    <Disclosure.Button>
+                      <div className='flex gap-2'>
+                        <div>
+                          <PlusIcon className='w-7 h-7 text-clemson' />
+                        </div>
+                        <div className='text-base md:text-lg text-left'>
+                          Core Courses
+                        </div>
+                      </div>
+                    </Disclosure.Button>
+
+                    <Transition
+                      enter='transition duration-100 ease-out'
+                      enterFrom='transform scale-95 opacity-0'
+                      enterTo='transform scale-100 opacity-100'
+                      leave='transition duration-75 ease-out'
+                      leaveFrom='transform scale-100 opacity-100'
+                      leaveTo='transform scale-95 opacity-0'
+                    >
+                      <Disclosure.Panel>
+                        <div className='w-full h-full bg-gray-700 text-base md:text-lg py-6 px-6 rounded-lg my-2'>
+                          {coreCopy}
+                        </div>
+                      </Disclosure.Panel>
+                    </Transition>
+                  </Disclosure>
+                  <Disclosure>
+                    <Disclosure.Button>
+                      <div className='flex gap-2'>
+                        <div>
+                          <PlusIcon className='w-7 h-7 text-clemson' />
+                        </div>
+                        <div className='text-base md:text-lg text-left'>
+                          Elective Courses
+                        </div>
+                      </div>
+                    </Disclosure.Button>
+
+                    <Transition
+                      enter='transition duration-100 ease-out'
+                      enterFrom='transform scale-95 opacity-0'
+                      enterTo='transform scale-100 opacity-100'
+                      leave='transition duration-75 ease-out'
+                      leaveFrom='transform scale-100 opacity-100'
+                      leaveTo='transform scale-95 opacity-0'
+                    >
+                      <Disclosure.Panel>
+                        <div className='w-full h-full bg-gray-700 text-base md:text-lg py-6 px-6 rounded-lg my-2'>
+                          {electiveCopy}
+                        </div>
+                      </Disclosure.Panel>
+                    </Transition>
+                  </Disclosure>
+                  <Disclosure>
+                    <Disclosure.Button>
+                      <div className='flex gap-2'>
+                        <div>
+                          <PlusIcon className='w-7 h-7 text-clemson' />
+                        </div>
+                        <div className='text-base md:text-lg text-left'>
+                          Free Courses
+                        </div>
+                      </div>
+                    </Disclosure.Button>
+
+                    <Transition
+                      enter='transition duration-100 ease-out'
+                      enterFrom='transform scale-95 opacity-0'
+                      enterTo='transform scale-100 opacity-100'
+                      leave='transition duration-75 ease-out'
+                      leaveFrom='transform scale-100 opacity-100'
+                      leaveTo='transform scale-95 opacity-0'
+                    >
+                      <Disclosure.Panel>
+                        <div className='w-full h-full bg-gray-700 text-base md:text-lg py-6 px-6 rounded-lg my-2'>
+                          {freeCopy}
+                        </div>
+                      </Disclosure.Panel>
+                    </Transition>
+                  </Disclosure>
+                  <Disclosure>
+                    <Disclosure.Button>
+                      <div className='flex gap-2'>
+                        <div>
+                          <PlusIcon className='w-7 h-7 text-clemson' />
+                        </div>
+                        <div className='text-base md:text-lg text-left'>
+                          Beverage Courses
+                        </div>
+                      </div>
+                    </Disclosure.Button>
+
+                    <Transition
+                      enter='transition duration-100 ease-out'
+                      enterFrom='transform scale-95 opacity-0'
+                      enterTo='transform scale-100 opacity-100'
+                      leave='transition duration-75 ease-out'
+                      leaveFrom='transform scale-100 opacity-100'
+                      leaveTo='transform scale-95 opacity-0'
+                    >
+                      <Disclosure.Panel>
+                        <div className='w-full h-full bg-gray-700 text-base md:text-lg py-6 px-6 rounded-lg my-2'>
+                          {beverageCopy}
+                        </div>
+                      </Disclosure.Panel>
+                    </Transition>
+                  </Disclosure>
+                </div>
+                {/* ))} */}
+              </div>
             </div>
             <a
               href='/all_courses'
