@@ -55,7 +55,7 @@ export async function getStaticPaths() {
     const paths = career.map((less) => ({
       params: { cid: `${less.slug}` },
     }));
-
+    console.log(paths);
     return { paths, fallback: false };
   } catch (error) {
     console.log(error);
