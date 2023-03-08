@@ -46,8 +46,8 @@ export async function getStaticProps({ params, previewData }) {
   return {
     props: {
       page,
-      revalidate: 10,
     },
+    revalidate: 10,
   };
 }
 
@@ -58,6 +58,6 @@ export async function getStaticPaths() {
 
   return {
     paths: pages.map((page) => prismicH.asLink(page, linkResolver)),
-    fallback: false,
+    fallback: blocking,
   };
 }
