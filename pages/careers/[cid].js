@@ -3,8 +3,8 @@ import CareerHero from '../../components/careers/CareerHero';
 import CareerAction from '../../components/careers/CareerAction';
 import CareerCTA from '../../components/careers/CareerCTA';
 import { Amplify, API, graphqlOperation } from 'aws-amplify';
-// import awsExports from '../../src/aws-exports';
-// Amplify.configure(awsExports);
+import awsExports from '../../src/aws-exports';
+Amplify.configure(awsExports);
 
 const GRAPHQL_ENDPOINT = process.env.GRAPHQL_ENDPOINT;
 const GRAPHQL_API_KEY = process.env.GRAPHQL_API_KEY;
