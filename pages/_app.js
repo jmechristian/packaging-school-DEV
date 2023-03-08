@@ -7,10 +7,6 @@ import { PrismicPreview } from '@prismicio/next';
 import { linkResolver, repositoryName } from '../prismicio';
 import { store } from '../features/store';
 import { Provider } from 'react-redux';
-import { Amplify, Analytics } from 'aws-amplify';
-
-import awsExports from '../src/aws-exports';
-Amplify.configure(awsExports);
 
 export default function App({ Component, pageProps }) {
   const searchClient = algoliasearch(
