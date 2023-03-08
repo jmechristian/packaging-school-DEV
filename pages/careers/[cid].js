@@ -9,7 +9,7 @@ import { Amplify, API, graphqlOperation } from 'aws-amplify';
 const GRAPHQL_ENDPOINT = process.env.GRAPHQL_ENDPOINT;
 const GRAPHQL_API_KEY = process.env.GRAPHQL_API_KEY;
 
-const Index = ({ career }) => {
+const Page = ({ career }) => {
   return (
     <div className='w-full h-full relative flex flex-col mt-8'>
       <CareerHero
@@ -103,4 +103,4 @@ export async function getStaticProps({ params }) {
   return { props: { career }, revalidate: 10 };
 }
 
-export default Index;
+export default Page;
