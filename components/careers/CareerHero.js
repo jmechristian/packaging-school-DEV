@@ -50,7 +50,7 @@ const CareerHero = ({ title, subhead, altName, media }) => {
                 href='#'
                 className='text-sm lg:text-base font-semibold leading-6 text-slate-900'
               >
-                Learn more about Account Management
+                Learn more about {altName}
                 <span aria-hidden='true'>→</span>
               </a>
             </div>
