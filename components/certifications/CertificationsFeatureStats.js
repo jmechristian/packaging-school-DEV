@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 import Modal from '../Modal';
+import CPSCourses from './CPSCourses';
 
-const CertificationsFeatureStats = ({ stats }) => {
+const CertificationsFeatureStats = ({ stats, courses }) => {
   const [isOpen, setOpen] = useState(true);
-
+  console.log(courses);
   return (
     <div className='relative'>
-      <Modal isOpen={isOpen} close={() => setOpen(false)} />
+      <Modal isOpen={isOpen} close={() => setOpen(false)}>
+        <CPSCourses courses={courses} />
+      </Modal>
       <div className='mx-auto max-w-7xl px-6 lg:px-8'>
         <div className='mx-auto max-w-2xl sm:text-center'>
           <h2 className='text-lg font-bold leading-7 text-base-brand font-greycliff'>

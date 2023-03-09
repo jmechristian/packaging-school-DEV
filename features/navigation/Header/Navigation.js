@@ -58,7 +58,7 @@ const Navigation = () => {
 
   return (
     <motion.header
-      className={`w-full z-50 hidden fixed lg:flex justify-center top-0 left-0 right-0`}
+      className={`w-full z-[120] hidden fixed lg:flex justify-center top-0 left-0 right-0`}
       ref={mainMenuRef}
       variants={variants}
       initial={false}
