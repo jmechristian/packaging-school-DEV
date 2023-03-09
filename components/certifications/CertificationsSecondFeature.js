@@ -17,7 +17,7 @@ const CertificationsSecondFeature = ({ darkMode, features }) => {
         </p>
       </div>
       <div className='mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none'>
-        <dl className='grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3'>
+        <dl className='grid max-w-xl grid-cols-1 gap-16 lg:max-w-none lg:grid-cols-3'>
           {features.map((feature) => (
             <div key={feature.name} className='flex flex-col'>
               <dt className='text-base md:text-lg font-bold leading-7 dark:text-white'>
@@ -31,14 +31,6 @@ const CertificationsSecondFeature = ({ darkMode, features }) => {
               </dt>
               <dd className='mt-1 flex flex-auto flex-col text-base md:text-lg md:leading-8 leading-7 text-slate-500 dark:text-gray-300'>
                 <p className='flex-auto'>{feature.description}</p>
-                <p className='mt-6'>
-                  <a
-                    href={feature.href}
-                    className='text-lg font-bold leading-6 text-base-brand'
-                  >
-                    Learn more <span aria-hidden='true'>→</span>
-                  </a>
-                </p>
               </dd>
             </div>
           ))}

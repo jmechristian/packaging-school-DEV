@@ -1,6 +1,6 @@
 import React from 'react';
-
-const CertificationsFeatureStats = ({ darkMode, stats }) => {
+import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
+const CertificationsFeatureStats = ({ stats }) => {
   return (
     <div>
       <div className='mx-auto max-w-7xl px-6 lg:px-8'>
@@ -18,6 +18,7 @@ const CertificationsFeatureStats = ({ darkMode, stats }) => {
             program will raise your packaging IQ.{' '}
             <i>Admission is by application only.</i>
           </p>
+
           <p>
             <a
               href='#'
@@ -27,6 +28,32 @@ const CertificationsFeatureStats = ({ darkMode, stats }) => {
               <span aria-hidden='true'>→</span>
             </a>
           </p>
+        </div>
+        <div className='mx-auto mt-16 max-w-7xl px-6 sm:mt-20 md:mt-24 lg:px-8'>
+          <dl className='mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-10 dark:text-white sm:mt-20 sm:grid-cols-2 sm:gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-4'>
+            {stats.map((stat) => (
+              <div
+                key={stat.id}
+                className='flex flex-col gap-y-3 border-l border-slate-900 dark:border-white/10 pl-6'
+              >
+                <dt className='text-sm leading-6'>
+                  {stat.link ? (
+                    <button className='text-base-brand font-semibold flex items-center gap-2'>
+                      <div>
+                        <ArrowTopRightOnSquareIcon className='w-4 h-4' />
+                      </div>
+                      {stat.name}
+                    </button>
+                  ) : (
+                    stat.name
+                  )}
+                </dt>
+                <dd className='order-first text-5xl font-greycliff font-bold tracking-tight'>
+                  {stat.value}
+                </dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </div>
       <div className='relative overflow-hidden pt-16'>
@@ -42,21 +69,6 @@ const CertificationsFeatureStats = ({ darkMode, stats }) => {
             <div className='absolute -inset-x-20 bottom-0 bg-gradient-to-t from-white dark:from-gray-900 pt-[7%]' />
           </div>
         </div>
-      </div>
-      <div className='mx-auto mt-16 max-w-7xl px-6 sm:mt-20 md:mt-24 lg:px-8'>
-        <dl className='mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-10 dark:text-white sm:mt-20 sm:grid-cols-2 sm:gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-4'>
-          {stats.map((stat) => (
-            <div
-              key={stat.id}
-              className='flex flex-col gap-y-3 border-l border-slate-900 dark:border-white/10 pl-6'
-            >
-              <dt className='text-sm leading-6'>{stat.name}</dt>
-              <dd className='order-first text-5xl font-greycliff font-bold tracking-tight'>
-                {stat.value}
-              </dd>
-            </div>
-          ))}
-        </dl>
       </div>
     </div>
   );
