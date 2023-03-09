@@ -33,7 +33,7 @@ enum CategoryType {
 
 type Certificate @model @auth(rules: [{ allow: public }]) {
   id: ID!
-  slug: String! @index(name: "lessonsByTitle")
+  slug: String! @index(name: "certificateByTitle")
   title: String!
   courses: [Course] @hasMany
 }
