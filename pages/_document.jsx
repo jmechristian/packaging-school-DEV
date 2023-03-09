@@ -2,7 +2,13 @@ import { Html, Head, Main, NextScript } from 'next/document';
 
 export default function Document() {
   return (
-    <Html style={{ scrollBehavior: 'smooth' }}>
+    <Html
+      style={{
+        scrollBehavior: 'smooth',
+        paddingRight: '0px',
+        maxWidth: '100vw',
+      }}
+    >
       <Head>
         <link rel='stylesheet' href='https://use.typekit.net/qtr6hem.css' />
       </Head>

@@ -58,13 +58,13 @@ const Navigation = () => {
 
   return (
     <motion.header
-      className='w-full z-50 hidden fixed lg:flex justify-center top-0 left-0'
+      className={`w-full z-50 hidden fixed lg:flex justify-center top-0 left-0 right-0`}
       ref={mainMenuRef}
       variants={variants}
       initial={false}
       animate={showMenu ? 'show' : 'hidden'}
     >
-      <div className='w-full max-w-7xl h-24 text-white flex justify-between items-center container__inner'>
+      <div className='w-full max-w-7xl h-24 mx-auto text-white flex justify-between items-center container__inner'>
         <div className='flex items-center h-full'>
           <div className='w-44 mr-6' onClick={() => router.push('/')}>
             <Image

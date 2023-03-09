@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
+import Modal from '../Modal';
+
 const CertificationsFeatureStats = ({ stats }) => {
+  const [isOpen, setOpen] = useState(true);
+
   return (
-    <div>
+    <div className='relative'>
+      <Modal isOpen={isOpen} close={() => setOpen(false)} />
       <div className='mx-auto max-w-7xl px-6 lg:px-8'>
         <div className='mx-auto max-w-2xl sm:text-center'>
           <h2 className='text-lg font-bold leading-7 text-base-brand font-greycliff'>
@@ -36,9 +41,12 @@ const CertificationsFeatureStats = ({ stats }) => {
                 key={stat.id}
                 className='flex flex-col gap-y-3 border-l border-slate-900 dark:border-white/10 pl-6'
               >
-                <dt className='text-sm leading-6'>
+                <dt className='text-sm font-semibold leading-6'>
                   {stat.link ? (
-                    <button className='text-base-brand font-semibold flex items-center gap-2'>
+                    <button
+                      className='text-base-brand font-semibold flex items-center gap-2'
+                      onClick={() => setOpen(true)}
+                    >
                       <div>
                         <ArrowTopRightOnSquareIcon className='w-4 h-4' />
                       </div>

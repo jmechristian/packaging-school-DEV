@@ -35,7 +35,7 @@ type Certificate @model @auth(rules: [{ allow: public }]) {
   id: ID!
   slug: String! @index(name: "certificateByTitle")
   title: String!
-  courses: [Course] @hasMany
+  courses: [Course] @manyToMany(relationName: "CertificateCourses")
 }
 
 type Course @model @auth(rules: [{ allow: public }]) {
@@ -51,7 +51,7 @@ type Course @model @auth(rules: [{ allow: public }]) {
   videos: Int
   price: Int
   articles: [Article] @manyToMany(relationName: "ArticleRelatedCourses")
-  certificate: Certificate @belongsTo
+  certificate: [Certificate] @manyToMany(relationName: "CertificateCourses")
 }
 
 type Lesson @model @auth(rules: [{ allow: public }]) {

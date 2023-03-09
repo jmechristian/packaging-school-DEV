@@ -68,7 +68,7 @@ const primaryFeatures = [
 
 const stats = [
   { id: 1, name: 'Course Hours', value: '60' },
-  { id: 2, name: 'View Courses Included', value: '12', link: true },
+  { id: 2, name: 'View Included Courses', value: '12', link: true },
   { id: 3, name: 'CEUs Earned', value: '6' },
   { id: 4, name: 'Flexibility to Complete', value: '12 months' },
 ];
