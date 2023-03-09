@@ -23,23 +23,44 @@ import GradientCTA from '../../components/GradientCTA';
 
 const primaryFeatures = [
   {
-    name: 'Server monitoring',
+    name: 'Advance Your Career',
     description:
-      'Non quo aperiam repellendus quas est est. Eos aut dolore aut ut sit nesciunt. Ex tempora quia. Sit nobis consequatur dolores incidunt.',
+      "This Certificate will show your employers that you're dedicated and possess a hard work ethic.",
     href: '#',
     icon: BoltIcon,
   },
   {
-    name: 'Collaborate',
+    name: 'Keep Up With Innovation',
     description:
-      'Vero eum voluptatem aliquid nostrum voluptatem. Vitae esse natus. Earum nihil deserunt eos quasi cupiditate. A inventore et molestiae natus.',
+      "Packaging is a field of science, which means materials, processes, and technologies are constantly evolving. We'll keep you informed.",
     href: '#',
     icon: UsersIcon,
   },
   {
-    name: 'Task scheduling',
+    name: 'Find Insights & Inspiration',
     description:
-      'Et quod quaerat dolorem quaerat architecto aliquam accusantium. Ex adipisci et doloremque autem quia quam. Quis eos molestiae at iure impedit.',
+      'Expanding your knowledge base is an excellent way to discover new ideas in packaging and make yourself stand out.',
+    href: '#',
+    icon: CalendarDaysIcon,
+  },
+  {
+    name: 'Learn The Market',
+    description:
+      'We exist in a rapidly-changing marketplace where company ownership, business cultures, and packaging responsibilities vary.',
+    href: '#',
+    icon: BoltIcon,
+  },
+  {
+    name: 'Differentiate Yourself',
+    description:
+      'Apply your learning right away while you enhance your resume with a specialization in packaging.',
+    href: '#',
+    icon: UsersIcon,
+  },
+  {
+    name: 'Find Insights & Inspiration',
+    description:
+      'Ask questions, share experiences, and learn from people who have the experience and expertise to help your business flourish.',
     href: '#',
     icon: CalendarDaysIcon,
   },

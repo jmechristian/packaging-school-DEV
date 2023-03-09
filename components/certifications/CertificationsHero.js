@@ -126,7 +126,7 @@ const CertificationsHero = ({ darkMode }) => {
               href='#'
               className='rounded-md bg-clemson font-greycliff px-3.5 py-2.5 text-base md:text-lg font-bold text-white shadow-sm hover:bg-clemson-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400'
             >
-              Get started
+              Apply Today
             </a>
             <a
               href='#'

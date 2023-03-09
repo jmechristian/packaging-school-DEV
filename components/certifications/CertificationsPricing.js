@@ -91,7 +91,7 @@ const CertificationsPricing = () => {
                   className='mt-10 space-y-4 leading-6 text-gray-500 dark:text-white/60'
                 >
                   {tier.features.map((feature) => (
-                    <li key={feature} className='flex gap-x-3'>
+                    <li key={feature} className='flex gap-x-3 font-bold'>
                       <CheckIcon
                         className='h-6 w-5 flex-none text-clemson'
                         aria-hidden='true'
@@ -104,7 +104,7 @@ const CertificationsPricing = () => {
               <a
                 href={tier.href}
                 aria-describedby={tier.id}
-                className='mt-8 block rounded-md bg-clemson-dark px-3.5 py-3.5 text-center text-lg font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-clemson-dark'
+                className='mt-8 block rounded-md font-greycliff font-bold bg-clemson px-3.5 py-3.5 text-center text-lg leading-6 text-white shadow-sm hover:bg-clemson-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-clemson-dark'
               >
                 Apply Today
               </a>

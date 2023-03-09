@@ -5,18 +5,27 @@ const CertificationsFeatureStats = ({ darkMode, stats }) => {
     <div>
       <div className='mx-auto max-w-7xl px-6 lg:px-8'>
         <div className='mx-auto max-w-2xl sm:text-center'>
-          <h2 className='text-base font-bold leading-7 text-base-brand font-greycliff'>
+          <h2 className='text-lg font-bold leading-7 text-base-brand font-greycliff'>
             Elevate Your Career
           </h2>
           <p className='mt-2 text-3xl font-bold tracking-tight dark:text-white md:text-5xl font-greycliff'>
             Who Enrolls?
           </p>
-          <p className='mt-6 text-lg lg:text-xl leading-8 lg:leading-9 text-slate-500 dark:text-gray-300'>
+          <p className='my-6 text-lg lg:text-xl leading-8 lg:leading-9 text-slate-500 dark:text-gray-300'>
             Brand Managers, Graphic Designers… CPGs, Packaging Suppliers,
             Retailers… with less than one year experience up to 40+ years in the
             business… if you have any contact with the packaging process, our
             program will raise your packaging IQ.{' '}
             <i>Admission is by application only.</i>
+          </p>
+          <p>
+            <a
+              href='#'
+              className='text-base md:text-lg font-bold leading-6 font-greycliff text-clemson'
+            >
+              Download The Certificate Brochure{' '}
+              <span aria-hidden='true'>→</span>
+            </a>
           </p>
         </div>
       </div>
