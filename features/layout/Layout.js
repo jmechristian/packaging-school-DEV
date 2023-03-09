@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { gql } from '@apollo/client';
 import { client } from '../../helpers/apollo-client';
+import DarkToggle from '../layout/DarkToggle';
 import Head from 'next/head';
 import Header from '../navigation/Header/Header';
 import Footer from '../navigation/Footer/Footer';
@@ -15,6 +16,7 @@ import ScrollTop from './ScrollTop';
 const Layout = ({ children }) => {
   const dispatch = useDispatch();
   const { menuItemOpen } = useSelector((state) => state.nav);
+  const { darkMode } = useSelector((state) => state.layout);
 
   useEffect(() => {
     const getCourses = async () => {
@@ -73,13 +75,12 @@ const Layout = ({ children }) => {
         <meta name='keywords' content='packaging, sustainability' />
         <meta name='robots' content='index, follow' />
       </Head>
-      {/* <div className={`${darkMode ? 'dark' : ''}`}> */}
-      <div className='dark'>
+      <div className={`${darkMode ? 'dark' : ''}`}>
         <div className='relative flex flex-col min-h-screen justify-between'>
           <Header />
           <MobileHeader />
           <ScrollTop />
-          {/* <DarkToggle /> */}
+          <DarkToggle />
           {/* <SearchMenu /> */}
           <MobileMenu />
           <main className='relative'>{children}</main>

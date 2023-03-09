@@ -7,17 +7,17 @@ const DarkToggle = () => {
   const dispatch = useDispatch();
   const { darkMode } = useSelector((state) => state.layout);
   return (
-    <div className={`${darkMode ? 'dark' : ''} fixed z-50 right-5 bottom-5`}>
+    <div className={`${darkMode ? 'dark' : ''} fixed z-50 left-5 bottom-5`}>
       <div
-        className='bg-gray-300 dark:bg-dark rounded-full w-12 h-12 flex justify-center items-center shadow-xl'
+        className='bg-gray-300 dark:bg-slate-800 rounded-full w-12 h-12 flex justify-center items-center shadow-xl'
         onClick={() => {
           darkMode ? dispatch(setLight()) : dispatch(setDark());
         }}
       >
         {darkMode ? (
-          <MoonIcon className='w-8 h-8 stroke-white' />
+          <MoonIcon className='w-7 h-7 stroke-white' />
         ) : (
-          <SunIcon className='w-8 h-8 stroke-dark' />
+          <SunIcon className='w-7 h-7 stroke-dark' />
         )}
       </div>
     </div>
