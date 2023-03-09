@@ -88,7 +88,7 @@ const CertificationsPricing = () => {
                 </p>
                 <ul
                   role='list'
-                  className='mt-10 space-y-4 text-sm leading-6 text-gray-500 dark:text-white/60'
+                  className='mt-10 space-y-4 leading-6 text-gray-500 dark:text-white/60'
                 >
                   {tier.features.map((feature) => (
                     <li key={feature} className='flex gap-x-3'>
@@ -108,6 +108,12 @@ const CertificationsPricing = () => {
               >
                 Apply Today
               </a>
+              <p className='text-center text-sm text-slate-500 dark:text-white/60 mt-6'>
+                Not ready to commit? Try a{' '}
+                <a href='#' className='font-bold'>
+                  risk-free demo!
+                </a>
+              </p>
             </div>
           ))}
         </div>
