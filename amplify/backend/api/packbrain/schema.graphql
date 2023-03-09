@@ -22,6 +22,34 @@ enum ModuleType {
   MICROLESSON
 }
 
+enum CategoryType {
+  MATERIALS
+  INDUSTRY
+  FOODANDBEVERAGE
+  BUSINESS
+  SUPPLYCHAIN
+  DESIGN
+}
+
+type Certificate @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  slug: String! @index(name: "lessonsByTitle")
+  title: String!
+  courses: [Courses] @hasMany
+}
+
+type Course @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  slug: String! @index(name: "courseBySlug")
+  category: CategoryType!
+  title: String!
+  subhead: String
+  media: String
+  video: String
+  articles: [Article] @manyToMany(relationName: "ArticleRelatedCourses")
+  certificate: Certificate @belongsTo
+}
+
 type Lesson @model @auth(rules: [{ allow: public }]) {
   id: ID!
   slug: String! @index(name: "lessonsByTitle")
@@ -51,16 +79,6 @@ type Blog @model @auth(rules: [{ allow: public }]) {
   author: String
   tags: [Tags] @hasMany
   date: String
-}
-
-type Course @model @auth(rules: [{ allow: public }]) {
-  id: ID!
-  slug: String! @index(name: "courseBySlug")
-  title: String!
-  subhead: String
-  media: String
-  video: String
-  articles: [Article] @manyToMany(relationName: "ArticleRelatedCourses")
 }
 
 type Article @model @auth(rules: [{ allow: public }]) {

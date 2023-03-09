@@ -143,6 +143,47 @@ export declare class Article {
   static copyOf(source: Article, mutator: (draft: MutableModel<Article>) => MutableModel<Article> | void): Article;
 }
 
+export declare class DayInLifeItem {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<DayInLifeItem, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly name: string;
+  readonly desc: string;
+  readonly icon?: string | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+  readonly careerDayInLifeId?: string | null;
+  constructor(init: ModelInit<DayInLifeItem>);
+  static copyOf(source: DayInLifeItem, mutator: (draft: MutableModel<DayInLifeItem>) => MutableModel<DayInLifeItem> | void): DayInLifeItem;
+}
+
+export declare class Career {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<Career, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly slug: string;
+  readonly title: string;
+  readonly altName?: string | null;
+  readonly subhead?: string | null;
+  readonly media?: string | null;
+  readonly dayInLife?: (DayInLifeItem | null)[] | null;
+  readonly cmpmCopy?: string | null;
+  readonly cpsCopy?: string | null;
+  readonly apcCopy?: string | null;
+  readonly coreCopy?: string | null;
+  readonly electiveCopy?: string | null;
+  readonly freeCopy?: string | null;
+  readonly beverageCopy?: string | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+  constructor(init: ModelInit<Career>);
+  static copyOf(source: Career, mutator: (draft: MutableModel<Career>) => MutableModel<Career> | void): Career;
+}
+
 export declare class APS {
   readonly [__modelMeta__]: {
     identifier: ManagedIdentifier<APS, 'id'>;
