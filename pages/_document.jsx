@@ -5,8 +5,6 @@ export default function Document() {
     <Html
       style={{
         scrollBehavior: 'smooth',
-        paddingRight: '0px',
-        maxWidth: '100vw',
       }}
     >
       <Head>

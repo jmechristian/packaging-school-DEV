@@ -1,10 +1,10 @@
 import React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import {
-  XCircleIcon,
-  ArrowRightCircleIcon,
-  ArrowLeftCircleIcon,
-} from '@heroicons/react/24/solid';
+  ChevronRightIcon,
+  ChevronLeftIcon,
+  XMarkIcon,
+} from '@heroicons/react/24/outline';
 import SnapScroller from './SnapScroller';
 
 const links = [
@@ -63,16 +63,22 @@ const SlideUp = ({ open, cycle, title }) => {
             variants={sideVariants}
           >
             <motion.div
-              className='relative max-w-7xl mx-auto pl-0 md:pl-0'
+              className='relative max-w-7xl w-full mx-auto px-8'
               initial='closed'
               animate='open'
               exit='closed'
               variants={itemVariants}
             >
+              <motion.div className='hidden lg:flex w-12 h-12 rounded-full bg-white/40 shadow-lg backdrop-blur-sm absolute top-1/2 -translate-y-1/2 right-4 justify-center items-center'>
+                <ChevronRightIcon className='w-8 h-8 stroke-white ml-1' />
+              </motion.div>
+              <motion.div className='hidden lg:flex w-12 h-12 rounded-full bg-white/40 shadow-lg backdrop-blur-sm absolute top-1/2 -translate-y-1/2 left-4 justify-center items-center'>
+                <ChevronLeftIcon className='w-8 h-8 stroke-white mr-1' />
+              </motion.div>
               <SnapScroller title={title}>
                 {links.map(({ name, to, id }) => (
                   <motion.div
-                    className='bg-slate-700 shadow-md w-[250px] h-[225px] snap-start snap-always'
+                    className='bg-slate-700 shadow-md w-[250px] h-[225px] snap-start'
                     key={id}
                   >
                     <motion.a
@@ -93,7 +99,7 @@ const SlideUp = ({ open, cycle, title }) => {
               exit='closed'
               variants={itemVariants}
             >
-              <XCircleIcon className='fill-slate-700 bg-white/60 h-7 w-7 rounded-full absolute right-2 md:-right-3 -top-3' />
+              <XMarkIcon className='stroke-slate-600 h-5 w-5 rounded-full absolute right-2 top-2' />
             </motion.button>
           </motion.div>
         </motion.aside>
