@@ -31,7 +31,7 @@ const sideVariants = {
   },
   open: {
     transition: {
-      staggerChildren: 0.8,
+      staggerChildren: 0.2,
       staggerDirection: 1,
     },
   },
