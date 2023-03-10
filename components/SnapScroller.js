@@ -28,29 +28,28 @@ const SnapScroller = ({ children, title }) => {
 
   return (
     <motion.div
-      className='overflow-x-scroll snap-x mx-0 lg:mx-6 flex scroll-ml-16 flex-col scroll-smooth'
+      className='overflow-x-scroll snap-x mx-6 flex scroll-ml-16 flex-col scroll-smooth'
       ref={scrollerRef}
       id='scrollers'
     >
-      <motion.div className='grid grid-flow-col gap-6 md:gap-8'>
-        {children}
-      </motion.div>
+      <motion.div className='grid grid-flow-col gap-5'>{children}</motion.div>
       {scrollPercent != 1 && (
         <motion.div
-          className='hidden lg:flex w-12 h-12 rounded-full bg-base-mid/80 dark:bg-white/40 shadow-lg backdrop-blur-sm absolute top-1/2 -translate-y-1/2 right-5 justify-center items-center z-40'
+          className='hidden lg:flex w-16 h-16 rounded-full bg-base-mid/80 cursor-pointer dark:bg-clemson-dark/80 shadow-lg backdrop-blur-sm absolute top-1/2 -translate-y-1/2 right-4 justify-center items-center z-40'
           onClick={scrollRight}
         >
-          <ChevronRightIcon className='w-8 h-8 stroke-white ml-1' />
+          <ChevronRightIcon className='w-8 h-8 stroke-white stroke-2 ml-1' />
         </motion.div>
       )}
       {scrollPercent != 0 && (
         <motion.div
-          className='hidden lg:flex w-12 h-12 rounded-full bg-base-mid/60 dark:bg-white/40 shadow-lg backdrop-blur-sm absolute top-1/2 -translate-y-1/2 left-5 justify-center items-center z-40'
+          className='hidden lg:flex w-16 h-16 rounded-full cursor-pointer bg-base-mid/80 dark:bg-clemson-dark/80 shadow-lg backdrop-blur-sm absolute top-1/2 -translate-y-1/2 left-4 justify-center items-center z-40'
           onClick={scrollLeft}
         >
-          <ChevronLeftIcon className='w-8 h-8 stroke-white mr-1' />
+          <ChevronLeftIcon className='w-8 h-8 stroke-white stroke-2 mr-1' />
         </motion.div>
       )}
+      <motion.div className='absolute z-30 top-0 right-0 bg-gradient-to-l from-slate-900 w-40'></motion.div>
     </motion.div>
   );
 };

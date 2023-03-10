@@ -32,6 +32,7 @@ module.exports = {
           "url('https://res.cloudinary.com/dno7xxmmy/image/upload/v1666706513/pschool/bootcamp_bg_im0gtc.png')",
         'cmpm-cert':
           "url('https://res.cloudinary.com/dno7xxmmy/image/upload/v1667313142/pschool/cmpm_bg_mbncgs.png')",
+        demo: "url('https://images.unsplash.com/photo-1678449463288-95465b27e73d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80')",
       },
     },
   },

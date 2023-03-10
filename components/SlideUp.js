@@ -1,11 +1,8 @@
 import React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import {
-  ChevronRightIcon,
-  ChevronLeftIcon,
-  XMarkIcon,
-} from '@heroicons/react/24/outline';
+import { XMarkIcon } from '@heroicons/react/24/outline';
 import SnapScroller from './SnapScroller';
+import CourseCard from './course-card/CourseCard';
 
 const links = [
   { name: 'Home', to: '#', id: 1 },
@@ -34,7 +31,7 @@ const sideVariants = {
   },
   open: {
     transition: {
-      staggerChildren: 0.3,
+      staggerChildren: 0.8,
       staggerDirection: 1,
     },
   },
@@ -45,10 +42,11 @@ const SlideUp = ({ open, cycle, title }) => {
     <AnimatePresence>
       {open && (
         <motion.aside
-          className='fixed z-[100] w-full bottom-0 text-slate-900 flex justify-center items-center'
+          className='fixed z-[100] w-full bottom-0 text-slate-900 flex justify-center items-center drop-shadow-2xl backdrop-blur-md'
           initial={{ height: 0 }}
           animate={{
-            height: 330,
+            height: 340,
+            transition: { delayChildren: 0.5 },
           }}
           exit={{
             height: 0,
@@ -56,14 +54,14 @@ const SlideUp = ({ open, cycle, title }) => {
           }}
         >
           <motion.div
-            className='relative max-w-7xl w-full h-full rounded-t-xl max-auto bg-slate-400/60 shadow-md dark:bg-black/70 backdrop-blur-md flex items-center'
+            className='relative max-w-[1480px] w-full h-full rounded-t-2xl max-auto bg-slate-800/60 drop-shadow-xl dark:bg-slate-800/50 flex flex-col md:items-center justify-center dark:ring-1 dark:ring-inset dark:ring-white/10 gap-2'
             initial='closed'
             animate='open'
             exit='closed'
             variants={sideVariants}
           >
             <motion.div
-              className='relative max-w-7xl w-full mx-auto px-6 py-3'
+              className='relative max-w-[1440px] w-full mx-auto lg:px-6 py-3'
               initial='closed'
               animate='open'
               exit='closed'
@@ -72,16 +70,20 @@ const SlideUp = ({ open, cycle, title }) => {
               <SnapScroller title={title}>
                 {links.map(({ name, to, id }) => (
                   <motion.div
-                    className='bg-slate-700 shadow-md w-[225px] h-[275px] snap-start'
+                    className='bg-slate-200 dark:bg-slate-900 shadow-md snap-start rounded-xl'
                     key={id}
                   >
-                    <motion.a
-                      href={to}
-                      whileHover={{ scale: 1.1 }}
-                      variants={itemVariants}
-                    >
-                      {name}
-                    </motion.a>
+                    <CourseCard
+                      title='Glass and Metal Packaging'
+                      desc='2 for the price of one – this course includes lessons, quizzes, and exams in both glass and metal packaging. This eLearning course goes into detail on'
+                      video=''
+                      hours={6}
+                      lessons={52}
+                      price='399'
+                      slug='local/all_courses'
+                      reset=''
+                      category='Materials'
+                    />
                   </motion.div>
                 ))}
               </SnapScroller>
@@ -93,7 +95,7 @@ const SlideUp = ({ open, cycle, title }) => {
               exit='closed'
               variants={itemVariants}
             >
-              <XMarkIcon className='stroke-slate-600 h-5 w-5 rounded-full absolute right-2 top-2' />
+              <XMarkIcon className='stroke-slate-200 h-6 w-6 rounded-full absolute right-3 top-3' />
             </motion.button>
           </motion.div>
         </motion.aside>
