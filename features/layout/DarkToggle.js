@@ -7,9 +7,9 @@ const DarkToggle = () => {
   const dispatch = useDispatch();
   const { darkMode } = useSelector((state) => state.layout);
   return (
-    <div className={`${darkMode ? 'dark' : ''} fixed z-50 left-5 bottom-5`}>
+    <div className={`${darkMode ? 'dark' : ''} fixed z-50 left-5 top-32`}>
       <div
-        className='bg-gray-300 dark:bg-slate-800 rounded-full w-12 h-12 flex justify-center items-center shadow-xl'
+        className='bg-slate-300 dark:bg-slate-800 rounded-full w-12 h-12 flex justify-center items-center shadow-xl'
         onClick={() => {
           darkMode ? dispatch(setLight()) : dispatch(setDark());
         }}

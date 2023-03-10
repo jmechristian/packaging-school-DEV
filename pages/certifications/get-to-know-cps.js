@@ -72,10 +72,9 @@ const stats = [
 
 export const Page = ({ cert }) => {
   const { darkMode } = useSelector((state) => state.layout);
-  console.log(cert);
   return (
     <div className='bg-white dark:bg-slate-900'>
-      <main className='flex flex-col gap-32 md:gap-56'>
+      <div className='flex flex-col gap-32 md:gap-56'>
         <CertificationsHero darkMode={darkMode} />
         <CertificationsLogos darkMode={darkMode} />
         <CertificationsFeatureStats
@@ -94,7 +93,7 @@ export const Page = ({ cert }) => {
           buttonText='Get Started For Free'
           secondaryButtonText='Need More Info?'
         />
-      </main>
+      </div>
     </div>
   );
 };

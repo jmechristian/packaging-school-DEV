@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
-import Modal from '../Modal';
+import { useCycle } from 'framer-motion';
 import CPSCourses from './CPSCourses';
+import SlideUp from '../SlideUp';
 
 const CertificationsFeatureStats = ({ stats, courses }) => {
-  const [isOpen, setOpen] = useState(true);
-  console.log(courses);
+  const [open, cycleOpen] = useCycle(false, true);
   return (
     <div className='relative'>
-      <Modal isOpen={isOpen} close={() => setOpen(false)}>
-        <CPSCourses courses={courses} />
-      </Modal>
+      <SlideUp open={open} cycle={cycleOpen} />
       <div className='mx-auto max-w-7xl px-6 lg:px-8'>
         <div className='mx-auto max-w-2xl sm:text-center'>
           <h2 className='text-lg font-bold leading-7 text-base-brand font-greycliff'>
@@ -48,7 +46,7 @@ const CertificationsFeatureStats = ({ stats, courses }) => {
                   {stat.link ? (
                     <button
                       className='text-base-brand font-semibold flex items-center gap-2'
-                      onClick={() => setOpen(true)}
+                      onClick={cycleOpen}
                     >
                       <div>
                         <ArrowTopRightOnSquareIcon className='w-4 h-4' />
