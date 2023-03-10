@@ -13,7 +13,6 @@ const SnapScroller = ({ children, title }) => {
   }, [scrollXProgress]);
 
   const updateXProgress = () => {
-    console.log(scrollXProgress.current);
     setScrollPercent(scrollXProgress.current);
   };
 

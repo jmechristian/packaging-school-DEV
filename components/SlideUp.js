@@ -28,13 +28,13 @@ const itemVariants = {
 const sideVariants = {
   closed: {
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.1,
       staggerDirection: -1,
     },
   },
   open: {
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.3,
       staggerDirection: 1,
     },
   },
@@ -48,22 +48,22 @@ const SlideUp = ({ open, cycle, title }) => {
           className='fixed z-[100] w-full bottom-0 text-slate-900 flex justify-center items-center'
           initial={{ height: 0 }}
           animate={{
-            height: 300,
+            height: 330,
           }}
           exit={{
             height: 0,
-            transition: { delay: 0.7, duration: 0.3 },
+            transition: { delay: 0.4, duration: 0.3 },
           }}
         >
           <motion.div
-            className='relative max-w-7xl w-full h-full outline outline-1 outline-slate-400 dark:outline-slate-700/60 rounded-t-xl max-auto bg-slate-400/60 drop-shadow-xl dark:bg-black/70 backdrop-blur-sm flex items-center'
+            className='relative max-w-7xl w-full h-full rounded-t-xl max-auto bg-slate-400/60 shadow-md dark:bg-black/70 backdrop-blur-md flex items-center'
             initial='closed'
             animate='open'
             exit='closed'
             variants={sideVariants}
           >
             <motion.div
-              className='relative max-w-7xl w-full mx-auto px-8'
+              className='relative max-w-7xl w-full mx-auto px-6 py-3'
               initial='closed'
               animate='open'
               exit='closed'
@@ -72,7 +72,7 @@ const SlideUp = ({ open, cycle, title }) => {
               <SnapScroller title={title}>
                 {links.map(({ name, to, id }) => (
                   <motion.div
-                    className='bg-slate-700 shadow-md w-[250px] h-[225px] snap-start'
+                    className='bg-slate-700 shadow-md w-[225px] h-[275px] snap-start'
                     key={id}
                   >
                     <motion.a
