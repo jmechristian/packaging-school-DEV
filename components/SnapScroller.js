@@ -1,13 +1,14 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const SnapScroller = ({ children, title }) => {
   return (
-    <div
+    <motion.div
       className='flex overflow-x-scroll ml-8 snap-x snap-mandatory '
       id='scrollers'
     >
-      <div className='flex gap-8'>{children}</div>
-    </div>
+      <motion.div className='flex gap-8'>{children}</motion.div>
+    </motion.div>
   );
 };
 

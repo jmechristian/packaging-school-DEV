@@ -62,10 +62,13 @@ const SlideUp = ({ open, cycle, title }) => {
             exit='closed'
             variants={sideVariants}
           >
-            <motion.button onClick={cycle}>
-              <XCircleIcon className='fill-slate-700 bg-white/60 h-7 w-7 rounded-full absolute right-2 md:-right-3 -top-3' />
-            </motion.button>
-            <motion.div className='relative max-w-7xl mx-auto pl-0 md:pl-0'>
+            <motion.div
+              className='relative max-w-7xl mx-auto pl-0 md:pl-0'
+              initial='closed'
+              animate='open'
+              exit='closed'
+              variants={itemVariants}
+            >
               <SnapScroller title={title}>
                 {links.map(({ name, to, id }) => (
                   <motion.div
@@ -83,6 +86,15 @@ const SlideUp = ({ open, cycle, title }) => {
                 ))}
               </SnapScroller>
             </motion.div>
+            <motion.button
+              onClick={cycle}
+              initial='closed'
+              animate='open'
+              exit='closed'
+              variants={itemVariants}
+            >
+              <XCircleIcon className='fill-slate-700 bg-white/60 h-7 w-7 rounded-full absolute right-2 md:-right-3 -top-3' />
+            </motion.button>
           </motion.div>
         </motion.aside>
       )}

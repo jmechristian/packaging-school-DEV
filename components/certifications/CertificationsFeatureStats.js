@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
-import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
+import React, { useRef } from 'react';
+import { EyeIcon } from '@heroicons/react/24/outline';
 import { useCycle } from 'framer-motion';
 import CPSCourses from './CPSCourses';
 import SlideUp from '../SlideUp';
 
 const CertificationsFeatureStats = ({ stats, courses }) => {
   const [open, cycleOpen] = useCycle(false, true);
+  const scrollRef = useRef();
   return (
     <div className='relative'>
       <SlideUp open={open} cycle={cycleOpen} />
@@ -42,14 +43,14 @@ const CertificationsFeatureStats = ({ stats, courses }) => {
                 key={stat.id}
                 className='flex flex-col gap-y-3 border-l border-slate-900 dark:border-white/10 pl-6'
               >
-                <dt className='text-sm font-semibold leading-6'>
+                <dt className='leading-6'>
                   {stat.link ? (
                     <button
-                      className='text-base-brand font-semibold flex items-center gap-2'
+                      className='text-base-brand flex items-center gap-2'
                       onClick={cycleOpen}
                     >
                       <div>
-                        <ArrowTopRightOnSquareIcon className='w-4 h-4' />
+                        <EyeIcon className='w-5 h-5' />
                       </div>
                       {stat.name}
                     </button>
