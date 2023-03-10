@@ -43,7 +43,7 @@ const CertificationsFeatureStats = ({ stats, courses }) => {
                 key={stat.id}
                 className='flex flex-col gap-y-3 border-l border-slate-900 dark:border-white/10 pl-6'
               >
-                <dt className='leading-6'>
+                <dt className='leading-6 font-semibold'>
                   {stat.link ? (
                     <button
                       className='text-base-brand flex items-center gap-2'

@@ -69,12 +69,6 @@ const SlideUp = ({ open, cycle, title }) => {
               exit='closed'
               variants={itemVariants}
             >
-              <motion.div className='hidden lg:flex w-12 h-12 rounded-full bg-white/40 shadow-lg backdrop-blur-sm absolute top-1/2 -translate-y-1/2 right-4 justify-center items-center'>
-                <ChevronRightIcon className='w-8 h-8 stroke-white ml-1' />
-              </motion.div>
-              <motion.div className='hidden lg:flex w-12 h-12 rounded-full bg-white/40 shadow-lg backdrop-blur-sm absolute top-1/2 -translate-y-1/2 left-4 justify-center items-center'>
-                <ChevronLeftIcon className='w-8 h-8 stroke-white mr-1' />
-              </motion.div>
               <SnapScroller title={title}>
                 {links.map(({ name, to, id }) => (
                   <motion.div
