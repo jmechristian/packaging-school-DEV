@@ -37,6 +37,13 @@ const sideVariants = {
   },
 };
 
+const courseVariants = {
+  closed: {
+    opacity: 0,
+  },
+  open: { opacity: 1, transition: { delay: 0.2 } },
+};
+
 const SlideUp = ({ open, cycle, title }) => {
   return (
     <AnimatePresence>
@@ -65,7 +72,7 @@ const SlideUp = ({ open, cycle, title }) => {
               initial='closed'
               animate='open'
               exit='closed'
-              variants={itemVariants}
+              variants={courseVariants}
             >
               <SnapScroller title={title}>
                 {links.map(({ name, to, id }) => (
