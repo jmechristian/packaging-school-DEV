@@ -67,7 +67,7 @@ const SlideUp = ({ open, cycle, title }) => {
             exit='closed'
             variants={sideVariants}
           >
-            <motion.div
+            {/* <motion.div
               className='relative max-w-[1440px] w-full mx-auto lg:px-6 py-3'
               initial='open'
               animate='open'
@@ -94,7 +94,7 @@ const SlideUp = ({ open, cycle, title }) => {
                   </motion.div>
                 ))}
               </SnapScroller>
-            </motion.div>
+            </motion.div> */}
             <motion.button
               onClick={cycle}
               initial='closed'
