@@ -19,7 +19,9 @@ const CourseInfo = ({ price, link, trialLink, certification, embedid }) => {
                 <div className='font-medium black__white font-greycliff text-lg'>
                   Future Proof Your Skills
                 </div>
-                <div className='font-bold black__white text-6xl'>${price}</div>
+                <div className='font-bold black__white text-6xl'>
+                  {price === 'FREE' ? 'Free!' : `$${price}`}
+                </div>
               </div>
               <div className='flex flex-col gap-4'>
                 <CTAButtonLarge link={link} />
