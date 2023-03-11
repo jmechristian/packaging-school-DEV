@@ -23,7 +23,7 @@ const CourseTitle = ({ title, hours, lessons, price, desc, data, slug }) => {
         {title}
       </div>
       <div className='font-medium text-slate-900 text-sm leading-snug'>
-        ${price}
+        {price === 'FREE' ? 'Free!' : `$${price}`}
       </div>
     </div>
   );
