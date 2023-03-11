@@ -69,7 +69,7 @@ const SlideUp = ({ open, cycle, title }) => {
           >
             <motion.div
               className='relative max-w-[1440px] w-full mx-auto lg:px-6 py-3'
-              initial='closed'
+              initial='open'
               animate='open'
               exit='closed'
               variants={courseVariants}
