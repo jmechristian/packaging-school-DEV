@@ -41,7 +41,7 @@ const courseVariants = {
   closed: {
     opacity: 0,
   },
-  open: { opacity: 1, transition: { delay: 0.5 } },
+  open: { opacity: 1, transition: { delay: 0.3 } },
 };
 
 const SlideUp = ({ open, cycle, title }) => {
@@ -55,9 +55,9 @@ const SlideUp = ({ open, cycle, title }) => {
           animate={{
             height: 340,
             transition: {
-              delayChildren: 0.5,
-              height: { ease: 'linear' },
-              layout: { duration: 0.3 },
+              delayChildren: 0.3,
+              height: { ease: 'easeInOut' },
+              layout: { duration: 0.2 },
             },
           }}
           exit={{
@@ -66,6 +66,7 @@ const SlideUp = ({ open, cycle, title }) => {
           }}
         >
           <motion.div
+            layout
             className='relative max-w-[1480px] w-full h-full rounded-t-2xl max-auto bg-slate-800/70 drop-shadow-xl  flex flex-col md:items-center justify-center dark:ring-1 dark:ring-inset dark:ring-white/10 gap-2'
             initial='closed'
             animate='open'
