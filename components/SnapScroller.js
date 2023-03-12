@@ -35,7 +35,7 @@ const SnapScroller = ({ children, title }) => {
       <motion.div className='grid grid-flow-col gap-5'>{children}</motion.div>
       {scrollPercent != 1 && (
         <motion.div
-          className='hidden lg:flex w-16 h-16 rounded-full bg-base-mid/80 cursor-pointer dark:bg-clemson-dark/80 shadow-lg backdrop-blur-sm absolute top-1/2 -translate-y-1/2 right-4 justify-center items-center z-40'
+          className='hidden lg:flex w-16 h-16 rounded-full bg-base-mid cursor-pointer dark:bg-clemson-dark shadow-lg backdrop-blur-sm absolute top-1/2 -translate-y-1/2 right-4 justify-center items-center z-40'
           onClick={scrollRight}
         >
           <ChevronRightIcon className='w-8 h-8 stroke-white stroke-2 ml-1' />
@@ -43,7 +43,7 @@ const SnapScroller = ({ children, title }) => {
       )}
       {scrollPercent != 0 && (
         <motion.div
-          className='hidden lg:flex w-16 h-16 rounded-full cursor-pointer bg-base-mid/80 dark:bg-clemson-dark/80 shadow-lg backdrop-blur-sm absolute top-1/2 -translate-y-1/2 left-4 justify-center items-center z-40'
+          className='hidden lg:flex w-16 h-16 rounded-full cursor-pointer bg-base-mid dark:bg-clemson-dark shadow-lg backdrop-blur-sm absolute top-1/2 -translate-y-1/2 left-4 justify-center items-center z-40'
           onClick={scrollLeft}
         >
           <ChevronLeftIcon className='w-8 h-8 stroke-white stroke-2 mr-1' />

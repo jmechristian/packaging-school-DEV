@@ -61,7 +61,7 @@ const SlideUp = ({ open, cycle, title }) => {
           }}
         >
           <motion.div
-            className='relative max-w-[1480px] w-full h-full rounded-t-2xl max-auto bg-slate-800/60 drop-shadow-xl dark:bg-slate-800/50 flex flex-col md:items-center justify-center dark:ring-1 dark:ring-inset dark:ring-white/10 gap-2'
+            className='relative max-w-[1480px] w-full h-full rounded-t-2xl max-auto bg-slate-800 drop-shadow-xl dark:bg-slate-800 flex flex-col md:items-center justify-center dark:ring-1 dark:ring-inset dark:ring-white/10 gap-2'
             initial='closed'
             animate='open'
             exit='closed'
