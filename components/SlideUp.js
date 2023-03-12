@@ -41,7 +41,7 @@ const courseVariants = {
   closed: {
     opacity: 0,
   },
-  open: { opacity: 1, transition: { delay: 0.2 } },
+  open: { opacity: 1, transition: { delay: 0.5 } },
 };
 
 const SlideUp = ({ open, cycle, title }) => {
@@ -54,15 +54,19 @@ const SlideUp = ({ open, cycle, title }) => {
           initial={{ height: 0 }}
           animate={{
             height: 340,
-            transition: { delayChildren: 0.5 },
+            transition: {
+              delayChildren: 0.5,
+              height: { ease: 'linear' },
+              layout: { duration: 0.3 },
+            },
           }}
           exit={{
             height: 0,
-            transition: { delay: 0.4, duration: 0.3 },
+            transition: { delay: 0.4, duration: 0.2 },
           }}
         >
           <motion.div
-            className='relative max-w-[1480px] w-full h-full rounded-t-2xl max-auto bg-slate-800 drop-shadow-xl dark:bg-slate-800 flex flex-col md:items-center justify-center dark:ring-1 dark:ring-inset dark:ring-white/10 gap-2'
+            className='relative max-w-[1480px] w-full h-full rounded-t-2xl max-auto bg-slate-800/70 drop-shadow-xl  flex flex-col md:items-center justify-center dark:ring-1 dark:ring-inset dark:ring-white/10 gap-2'
             initial='closed'
             animate='open'
             exit='closed'
@@ -78,7 +82,7 @@ const SlideUp = ({ open, cycle, title }) => {
               <SnapScroller title={title}>
                 {links.map(({ name, to, id }) => (
                   <motion.div
-                    className='bg-slate-200 dark:bg-slate-900 shadow-md snap-start rounded-xl'
+                    className='bg-slate-200 dark:bg-slate-900 shadow-md snap-center rounded-xl'
                     key={id}
                   >
                     <CourseCard
