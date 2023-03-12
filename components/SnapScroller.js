@@ -31,6 +31,7 @@ const SnapScroller = ({ children, title }) => {
       className='overflow-x-scroll snap-x mx-6 flex scroll-ml-16 flex-col scroll-smooth'
       ref={scrollerRef}
       id='scrollers'
+      layoutScroll
     >
       <motion.div className='grid grid-flow-col gap-5'>{children}</motion.div>
       {scrollPercent != 1 && (

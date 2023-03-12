@@ -31,6 +31,7 @@ const sideVariants = {
   },
   open: {
     transition: {
+      delayChildren: 0.5,
       staggerChildren: 0.2,
       staggerDirection: 1,
     },
@@ -41,7 +42,7 @@ const courseVariants = {
   closed: {
     opacity: 0,
   },
-  open: { opacity: 1, transition: { delay: 0.3 } },
+  open: { opacity: 1 },
 };
 
 const SlideUp = ({ open, cycle, title }) => {
@@ -51,23 +52,21 @@ const SlideUp = ({ open, cycle, title }) => {
         <motion.aside
           layout
           className='fixed z-[100] w-full bottom-0 text-slate-900 flex justify-center items-center drop-shadow-2xl backdrop-blur-md'
-          initial={{ height: 0 }}
+          initial={{ y: 340 }}
           animate={{
-            height: 340,
+            y: 0,
             transition: {
               delayChildren: 0.3,
-              height: { ease: 'easeInOut' },
-              layout: { duration: 0.2 },
             },
           }}
           exit={{
-            height: 0,
+            y: 340,
             transition: { delay: 0.4, duration: 0.2 },
           }}
         >
           <motion.div
             layout
-            className='relative max-w-[1480px] w-full h-full rounded-t-2xl max-auto bg-slate-800/70 drop-shadow-xl  flex flex-col md:items-center justify-center dark:ring-1 dark:ring-inset dark:ring-white/10 gap-2'
+            className='relative max-w-[1480px] w-full h-[340px] rounded-t-2xl max-auto bg-slate-800/70 drop-shadow-xl  flex flex-col md:items-center justify-center dark:ring-1 dark:ring-inset dark:ring-white/10 gap-2'
             initial='closed'
             animate='open'
             exit='closed'
