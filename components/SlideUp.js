@@ -49,6 +49,7 @@ const SlideUp = ({ open, cycle, title }) => {
     <AnimatePresence>
       {open && (
         <motion.aside
+          layout
           className='fixed z-[100] w-full bottom-0 text-slate-900 flex justify-center items-center drop-shadow-2xl backdrop-blur-md'
           initial={{ height: 0 }}
           animate={{
