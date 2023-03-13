@@ -40,6 +40,7 @@ const RelatedCourses = ({ related }) => {
                   lessons={course.related.data.course_lessons}
                   price={course.related.data.course_price}
                   slug={course.related.uid}
+                  category={course.related.data.categories[0].category}
                   reset={resetScroll}
                 />
               </div>
@@ -66,6 +67,7 @@ const RelatedCourses = ({ related }) => {
                 lessons={course.related.data.course_lessons}
                 price={course.related.data.course_price}
                 slug={course.related.uid}
+                category={course.related.data.categories[0].category}
                 reset={resetDrag}
               />
             </motion.div>
