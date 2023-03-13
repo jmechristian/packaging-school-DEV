@@ -4,17 +4,6 @@ import { XMarkIcon } from '@heroicons/react/24/outline';
 import SnapScroller from './SnapScroller';
 import CourseCard from './course-card/CourseCard';
 
-const links = [
-  { name: 'Home', to: '#', id: 1 },
-  { name: 'About', to: '#', id: 2 },
-  { name: 'Blog', to: '#', id: 3 },
-  { name: 'Contact', to: '#', id: 4 },
-  { name: 'Home', to: '#', id: 5 },
-  { name: 'About', to: '#', id: 6 },
-  { name: 'Blog', to: '#', id: 7 },
-  { name: 'Contact', to: '#', id: 8 },
-];
-
 const itemVariants = {
   closed: {
     opacity: 0,
@@ -45,7 +34,7 @@ const courseVariants = {
   open: { opacity: 1 },
 };
 
-const SlideUp = ({ open, cycle, title }) => {
+const SlideUp = ({ open, cycle, title, items }) => {
   return (
     <AnimatePresence>
       {open && (
@@ -84,21 +73,25 @@ const SlideUp = ({ open, cycle, title }) => {
               variants={courseVariants}
             >
               <SnapScroller title={title}>
-                {links.map(({ name, to, id }) => (
+                {items.map((course, i) => (
                   <motion.div
                     className='bg-slate-200 dark:bg-slate-900 shadow-md snap-center rounded-xl'
-                    key={id}
+                    key={course.course.id}
+                    variants={courseVariants}
+                    initial='closed'
+                    animate='open'
+                    exit='closed'
                   >
                     <CourseCard
-                      title='Glass and Metal Packaging'
-                      desc='2 for the price of one – this course includes lessons, quizzes, and exams in both glass and metal packaging. This eLearning course goes into detail on'
-                      video=''
-                      hours={6}
-                      lessons={52}
-                      price='399'
-                      slug='local/all_courses'
+                      title={course.course.title}
+                      desc={course.course.subhead}
+                      video={course.course.video}
+                      hours={course.course.hour}
+                      lessons={course.course.lessons}
+                      price={course.course.price}
+                      slug={course.course.slug}
                       reset=''
-                      category='Materials'
+                      category={course.course.category}
                     />
                   </motion.div>
                 ))}

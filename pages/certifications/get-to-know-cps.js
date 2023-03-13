@@ -55,9 +55,9 @@ const primaryFeatures = [
     icon: UsersIcon,
   },
   {
-    name: 'Find Insights & Inspiration',
+    name: 'Grow Your Network',
     description:
-      'Ask questions, share experiences, and learn from people who have the experience and expertise to help your business flourish.',
+      'Throughout the program, you will have the opportunity to ask questions, share experiences, and learn from people who have the experience and expertise to help your business flourish.',
     href: '#',
     icon: CalendarDaysIcon,
   },
@@ -80,7 +80,7 @@ export const Page = ({ cert }) => {
         <CertificationsFeatureStats
           darkMode={darkMode}
           stats={stats}
-          courses={cert.courses && cert.courses.items}
+          courses={cert.courses?.items}
         />
         <CertificationsPricing />
         <CertificationsSecondFeature
@@ -107,6 +107,7 @@ export async function getStaticProps() {
             items {
               course {
                 id
+                category
                 hour
                 lessons
                 price

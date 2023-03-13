@@ -7,9 +7,10 @@ import SlideUp from '../SlideUp';
 const CertificationsFeatureStats = ({ stats, courses }) => {
   const [open, cycleOpen] = useCycle(false, true);
   const scrollRef = useRef();
+
   return (
     <div className='relative'>
-      <SlideUp open={open} cycle={cycleOpen} />
+      <SlideUp open={open} cycle={cycleOpen} items={courses} />
       <div className='mx-auto max-w-7xl px-6 lg:px-8'>
         <div className='mx-auto max-w-2xl sm:text-center'>
           <h2 className='text-lg font-bold leading-7 text-base-brand font-greycliff'>
