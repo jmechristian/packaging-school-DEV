@@ -62,10 +62,10 @@ const CertificationsPricing = () => {
               key={tier.id}
               className={`flex flex-col justify-between rounded-3xl ${
                 tier.background
-              } p-8 shadow-xl ring-1 ${
+              } p-8 shadow-xl  ${
                 !tier.monthly
-                  ? 'ring-clemson'
-                  : 'ring-gray-900/10 dark:ring-white/20'
+                  ? 'ring-clemson ring-2'
+                  : 'ring-gray-900/10 dark:ring-white/20 ring-1'
               } sm:p-10`}
             >
               <div>
