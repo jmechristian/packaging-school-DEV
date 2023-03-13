@@ -115,6 +115,7 @@ export async function getStaticProps() {
                 title
                 video
                 videos
+                subhead
               }
             }
           }
