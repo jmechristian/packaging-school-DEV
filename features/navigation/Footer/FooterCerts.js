@@ -12,7 +12,9 @@ const FooterCerts = () => {
           Certificate of Mastery in Packaging Management
         </p>
       </Link>
-      <p className='text-slate-500'>Certificate of Packaging Science</p>
+      <Link href={'/certifications/get-to-know-cps'}>
+        <p className='text-slate-500'>Certificate of Packaging Science</p>
+      </Link>
       <p className='text-slate-500'>Automotive Packaging Certificate</p>
     </div>
   );

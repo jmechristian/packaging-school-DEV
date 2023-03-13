@@ -49,7 +49,7 @@ const CertificationsFeatureStats = ({ stats, courses }) => {
                       className='text-base-brand flex items-center gap-2'
                       onClick={cycleOpen}
                     >
-                      <div>
+                      <div className='bg-clemson h-8 w-8 rounded-full flex items-center justify-center text-white'>
                         <EyeIcon className='w-5 h-5' />
                       </div>
                       {stat.name}

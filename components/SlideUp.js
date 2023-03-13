@@ -57,6 +57,10 @@ const SlideUp = ({ open, cycle, title }) => {
             y: 0,
             transition: {
               delayChildren: 0.3,
+              type: 'spring',
+              damping: 60,
+              mass: 0.5,
+              stiffness: 450,
             },
           }}
           exit={{
