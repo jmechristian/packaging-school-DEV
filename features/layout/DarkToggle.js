@@ -9,15 +9,15 @@ const DarkToggle = () => {
   return (
     <div className={`${darkMode ? 'dark' : ''} fixed z-[120] right-3 top-6`}>
       <div
-        className='bg-slate-300 dark:bg-slate-800 rounded-full w-12 h-12 flex justify-center items-center shadow-xl'
+        className='bg-slate-300 dark:bg-slate-800 rounded-full w-10 h-10 flex justify-center items-center shadow-xl'
         onClick={() => {
           darkMode ? dispatch(setLight()) : dispatch(setDark());
         }}
       >
         {darkMode ? (
-          <MoonIcon className='w-7 h-7 stroke-white' />
+          <MoonIcon className='w-6 h-6 stroke-white' />
         ) : (
-          <SunIcon className='w-7 h-7 stroke-dark' />
+          <SunIcon className='w-6 h-6 stroke-dark' />
         )}
       </div>
     </div>

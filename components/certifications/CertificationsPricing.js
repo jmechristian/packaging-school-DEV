@@ -23,6 +23,7 @@ const tiers = [
     ],
     callout: 'Most Savings!',
     monthly: false,
+    background: 'bg-white dark:bg-slate-800',
   },
   {
     name: 'Flex Payments',
@@ -38,6 +39,7 @@ const tiers = [
       'Instructor Email Access',
     ],
     monthly: true,
+    background: 'bg-slate-100 dark:bg-slate-900',
   },
 ];
 
@@ -58,7 +60,13 @@ const CertificationsPricing = () => {
           {tiers.map((tier) => (
             <div
               key={tier.id}
-              className='flex flex-col justify-between rounded-3xl bg-white dark:bg-slate-800 p-8 shadow-xl ring-1 ring-gray-900/10 sm:p-10'
+              className={`flex flex-col justify-between rounded-3xl ${
+                tier.background
+              } p-8 shadow-xl ring-1 ${
+                !tier.monthly
+                  ? 'ring-clemson'
+                  : 'ring-gray-900/10 dark:ring-white/20'
+              } sm:p-10`}
             >
               <div>
                 <div className='flex items-center justify-between gap-x-4'>
