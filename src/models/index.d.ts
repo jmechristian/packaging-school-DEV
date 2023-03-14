@@ -6,6 +6,15 @@ export enum ModuleType {
   MICROLESSON = "MICROLESSON"
 }
 
+export enum CategoryType {
+  MATERIALS = "MATERIALS",
+  INDUSTRY = "INDUSTRY",
+  FOODANDBEVERAGE = "FOODANDBEVERAGE",
+  BUSINESS = "BUSINESS",
+  SUPPLYCHAIN = "SUPPLYCHAIN",
+  DESIGN = "DESIGN"
+}
+
 export declare class RegistrationCode {
   readonly code?: string | null;
   constructor(init: ModelInit<RegistrationCode>);
@@ -51,11 +60,70 @@ export declare class Tags {
   readonly tag: string;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
+  readonly articleTagsId?: string | null;
   readonly lessonTagsId?: string | null;
   readonly blogTagsId?: string | null;
-  readonly articleTagsId?: string | null;
   constructor(init: ModelInit<Tags>);
   static copyOf(source: Tags, mutator: (draft: MutableModel<Tags>) => MutableModel<Tags> | void): Tags;
+}
+
+export declare class Certificate {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<Certificate, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly slug: string;
+  readonly title: string;
+  readonly courses?: (CertificateCourses | null)[] | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+  constructor(init: ModelInit<Certificate>);
+  static copyOf(source: Certificate, mutator: (draft: MutableModel<Certificate>) => MutableModel<Certificate> | void): Certificate;
+}
+
+export declare class Course {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<Course, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly slug: string;
+  readonly category: CategoryType | keyof typeof CategoryType;
+  readonly title: string;
+  readonly subhead?: string | null;
+  readonly media?: string | null;
+  readonly video?: string | null;
+  readonly hour?: number | null;
+  readonly lessons?: number | null;
+  readonly videos?: number | null;
+  readonly price?: number | null;
+  readonly articles?: (ArticleRelatedCourses | null)[] | null;
+  readonly certificate?: (CertificateCourses | null)[] | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+  constructor(init: ModelInit<Course>);
+  static copyOf(source: Course, mutator: (draft: MutableModel<Course>) => MutableModel<Course> | void): Course;
+}
+
+export declare class Article {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<Article, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly slug: string;
+  readonly title: string;
+  readonly subhead?: string | null;
+  readonly media?: string | null;
+  readonly seoImage?: string | null;
+  readonly content?: string | null;
+  readonly tags?: (Tags | null)[] | null;
+  readonly relatedCourses?: (ArticleRelatedCourses | null)[] | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+  constructor(init: ModelInit<Article>);
+  static copyOf(source: Article, mutator: (draft: MutableModel<Article>) => MutableModel<Article> | void): Article;
 }
 
 export declare class Lesson {
@@ -103,44 +171,6 @@ export declare class Blog {
   readonly updatedAt?: string | null;
   constructor(init: ModelInit<Blog>);
   static copyOf(source: Blog, mutator: (draft: MutableModel<Blog>) => MutableModel<Blog> | void): Blog;
-}
-
-export declare class Course {
-  readonly [__modelMeta__]: {
-    identifier: ManagedIdentifier<Course, 'id'>;
-    readOnlyFields: 'createdAt' | 'updatedAt';
-  };
-  readonly id: string;
-  readonly slug: string;
-  readonly title: string;
-  readonly subhead?: string | null;
-  readonly media?: string | null;
-  readonly video?: string | null;
-  readonly articles?: (ArticleRelatedCourses | null)[] | null;
-  readonly createdAt?: string | null;
-  readonly updatedAt?: string | null;
-  constructor(init: ModelInit<Course>);
-  static copyOf(source: Course, mutator: (draft: MutableModel<Course>) => MutableModel<Course> | void): Course;
-}
-
-export declare class Article {
-  readonly [__modelMeta__]: {
-    identifier: ManagedIdentifier<Article, 'id'>;
-    readOnlyFields: 'createdAt' | 'updatedAt';
-  };
-  readonly id: string;
-  readonly slug: string;
-  readonly title: string;
-  readonly subhead?: string | null;
-  readonly media?: string | null;
-  readonly seoImage?: string | null;
-  readonly content?: string | null;
-  readonly tags?: (Tags | null)[] | null;
-  readonly relatedCourses?: (ArticleRelatedCourses | null)[] | null;
-  readonly createdAt?: string | null;
-  readonly updatedAt?: string | null;
-  constructor(init: ModelInit<Article>);
-  static copyOf(source: Article, mutator: (draft: MutableModel<Article>) => MutableModel<Article> | void): Article;
 }
 
 export declare class DayInLifeItem {
@@ -269,6 +299,22 @@ export declare class APSSpeaker {
   readonly aPSSpeakersId?: string | null;
   constructor(init: ModelInit<APSSpeaker>);
   static copyOf(source: APSSpeaker, mutator: (draft: MutableModel<APSSpeaker>) => MutableModel<APSSpeaker> | void): APSSpeaker;
+}
+
+export declare class CertificateCourses {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<CertificateCourses, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly certificateId?: string | null;
+  readonly courseId?: string | null;
+  readonly certificate: Certificate;
+  readonly course: Course;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+  constructor(init: ModelInit<CertificateCourses>);
+  static copyOf(source: CertificateCourses, mutator: (draft: MutableModel<CertificateCourses>) => MutableModel<CertificateCourses> | void): CertificateCourses;
 }
 
 export declare class ArticleRelatedCourses {

@@ -1,7 +1,18 @@
 import React from 'react';
 import { ChevronRightIcon } from '@heroicons/react/20/solid';
 
-const CertificationsHero = ({ darkMode }) => {
+const CertificationsHero = ({
+  darkMode,
+  title_button_1_link,
+  title_button_1_text,
+  title_button_2_link,
+  title_button_2_text,
+  title_callout_1,
+  title_callout_2,
+  title_image,
+  title_text,
+  title,
+}) => {
   return (
     <div className='relative isolate overflow-hidden'>
       {darkMode ? (
@@ -100,10 +111,10 @@ const CertificationsHero = ({ darkMode }) => {
           <div className='mt-24 sm:mt-32 lg:mt-16'>
             <a href='#' className='inline-flex space-x-6'>
               <span className='rounded-full bg-base-brand/10 px-3 py-1 text-sm font-bold leading-6 text-base-brand ring-1 ring-inset ring-indigo-500/20'>
-                Open Enrollment
+                {title_callout_1}
               </span>
               <span className='inline-flex items-center space-x-2 text-sm font-medium leading-6 text-slate-500 dark:text-gray-300'>
-                <span>Apply Anytime</span>
+                <span>{title_callout_2}</span>
                 <ChevronRightIcon
                   className='h-5 w-5 text-gray-500'
                   aria-hidden='true'
@@ -112,35 +123,31 @@ const CertificationsHero = ({ darkMode }) => {
             </a>
           </div>
           <h1 className='mt-10 text-4xl font-bold tracking-tight dark:text-white sm:text-6xl font-greycliff'>
-            Certificate of Packaging Science
+            {title}
           </h1>
           <p className='mt-6 text-lg lg:text-xl lg:leading-9 leading-8 text-slate-500 dark:text-gray-300'>
-            The Certificate of Packaging Science is a one-year online program
-            that teaches the materials, processes, and influences shaping the
-            advancement of the industry. From design conception to production to
-            end-of-life, learn how to speak the language of packaging and
-            utilize it as a key differentiator for you and your company.
+            {title_text}
           </p>
           <div className='mt-10 flex items-center gap-x-6'>
             <a
-              href='#'
+              href={title_button_1_link}
               className='rounded-md bg-clemson font-greycliff px-3.5 py-2.5 text-base md:text-lg font-bold text-white shadow-sm hover:bg-clemson-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400'
             >
-              Apply Today
+              {title_button_1_text}
             </a>
             <a
-              href='#'
+              href={title_button_2_link}
               className='text-base md:text-lg font-bold leading-6 font-greycliff dark:text-white'
             >
-              Compare to CMPM <span aria-hidden='true'>→</span>
+              {title_button_2_text} <span aria-hidden='true'>→</span>
             </a>
           </div>
         </div>
         <div className='mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mt-0 lg:mr-0 lg:max-w-none lg:flex-none xl:ml-32'>
           <div className='max-w-3xl flex-none sm:max-w-5xl lg:max-w-none'>
             <img
-              src='https://tailwindui.com/img/component-images/dark-project-app-screenshot.png'
-              alt='App screenshot'
+              src={title_image}
+              alt={title}
               width={2432}
               height={1442}
               className='w-[76rem] rounded-md bg-white/5 shadow-2xl ring-1 ring-white/10'

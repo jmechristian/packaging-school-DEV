@@ -76,7 +76,18 @@ export const Page = ({ cert }) => {
   return (
     <div className='bg-white dark:bg-slate-900'>
       <div className='flex flex-col gap-32 md:gap-48'>
-        <CertificationsHero darkMode={darkMode} />
+        <CertificationsHero
+          darkMode={darkMode}
+          title_button_1_link={cert.title_button_1_link}
+          title_button_1_text={cert.title_button_1_text}
+          title_button_2_link={cert.title_button_2_link}
+          title_button_2_text={cert.title_button_2_text}
+          title_callout_1={cert.title_callout_1}
+          title_callout_2={cert.title_callout_2}
+          title_image={cert.title_image}
+          title_text={cert.title_text}
+          title={cert.title}
+        />
         <CertificationsLogos darkMode={darkMode} />
         <CertificationsFeatureStats
           darkMode={darkMode}
@@ -122,6 +133,14 @@ export async function getStaticProps() {
             }
           }
           title
+          title_button_1_link
+          title_button_1_text
+          title_button_2_link
+          title_button_2_text
+          title_callout_1
+          title_callout_2
+          title_image
+          title_text
           slug
           id
         }

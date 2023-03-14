@@ -35,6 +35,14 @@ type Certificate @model @auth(rules: [{ allow: public }]) {
   id: ID!
   slug: String! @index(name: "certificateByTitle")
   title: String!
+  title_callout_1: String
+  title_callout_2: String
+  title_text: String
+  title_button_1_text: String
+  title_button_1_link: String
+  title_button_2_text: String
+  title_button_2_link: String
+  title_image: String
   courses: [Course] @manyToMany(relationName: "CertificateCourses")
 }
 
