@@ -13,6 +13,7 @@ import CertificationsSecondFeature from '../../components/certifications/Certifi
 import GradientCTA from '../../components/GradientCTA';
 import { Amplify, API, graphqlOperation } from 'aws-amplify';
 import awsExports from '../../src/aws-exports';
+import DoubleTestimonial from '../../components/DoubleTestimonial';
 Amplify.configure(awsExports);
 
 const GRAPHQL_ENDPOINT = process.env.GRAPHQL_ENDPOINT;
@@ -74,7 +75,7 @@ export const Page = ({ cert }) => {
   const { darkMode } = useSelector((state) => state.layout);
   return (
     <div className='bg-white dark:bg-slate-900'>
-      <div className='flex flex-col gap-32 md:gap-56'>
+      <div className='flex flex-col gap-32 md:gap-48'>
         <CertificationsHero darkMode={darkMode} />
         <CertificationsLogos darkMode={darkMode} />
         <CertificationsFeatureStats
@@ -87,6 +88,7 @@ export const Page = ({ cert }) => {
           darkMode={darkMode}
           features={primaryFeatures}
         />
+        <DoubleTestimonial />
         <GradientCTA
           headline='Ready to Elevate Your Career?'
           subheadline='Try a demo, risk-free.'
