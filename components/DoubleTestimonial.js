@@ -69,7 +69,7 @@ const DoubleTestimonial = () => {
               From Your Peers
             </h2>
             <p className='mt-2 text-3xl font-bold tracking-tight dark:text-white sm:text-5xl font-greycliff'>
-              We have worked with thousands of amazing people
+              Invest in Your Future
             </p>
           </div>
           <div className='mx-auto grid max-w-2xl grid-cols-1 lg:mx-0 lg:max-w-none lg:grid-cols-2'>
