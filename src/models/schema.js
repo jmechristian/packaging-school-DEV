@@ -257,6 +257,62 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
+                "title_callout_1": {
+                    "name": "title_callout_1",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "title_callout_2": {
+                    "name": "title_callout_2",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "title_text": {
+                    "name": "title_text",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "title_button_1_text": {
+                    "name": "title_button_1_text",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "title_button_1_link": {
+                    "name": "title_button_1_link",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "title_button_2_text": {
+                    "name": "title_button_2_text",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "title_button_2_link": {
+                    "name": "title_button_2_link",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "title_image": {
+                    "name": "title_image",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
                 "courses": {
                     "name": "courses",
                     "isArray": true,
@@ -295,6 +351,10 @@ export const schema = {
             "attributes": [
                 {
                     "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "searchable",
                     "properties": {}
                 },
                 {
@@ -463,6 +523,10 @@ export const schema = {
                     "properties": {}
                 },
                 {
+                    "type": "searchable",
+                    "properties": {}
+                },
+                {
                     "type": "key",
                     "properties": {
                         "name": "courseBySlug",
@@ -595,6 +659,10 @@ export const schema = {
             "attributes": [
                 {
                     "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "searchable",
                     "properties": {}
                 },
                 {
@@ -801,6 +869,10 @@ export const schema = {
                     "properties": {}
                 },
                 {
+                    "type": "searchable",
+                    "properties": {}
+                },
+                {
                     "type": "key",
                     "properties": {
                         "name": "lessonsByTitle",
@@ -917,6 +989,10 @@ export const schema = {
             "attributes": [
                 {
                     "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "searchable",
                     "properties": {}
                 },
                 {
@@ -2188,5 +2264,5 @@ export const schema = {
             }
         }
     },
-    "version": "e9ebb8ccd6959d310c8f0e81399cd8e6"
+    "version": "bcb5e742322cfe113f0dd12ebc191cfa"
 };

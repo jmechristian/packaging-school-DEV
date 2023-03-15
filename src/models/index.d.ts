@@ -75,6 +75,14 @@ export declare class Certificate {
   readonly id: string;
   readonly slug: string;
   readonly title: string;
+  readonly title_callout_1?: string | null;
+  readonly title_callout_2?: string | null;
+  readonly title_text?: string | null;
+  readonly title_button_1_text?: string | null;
+  readonly title_button_1_link?: string | null;
+  readonly title_button_2_text?: string | null;
+  readonly title_button_2_link?: string | null;
+  readonly title_image?: string | null;
   readonly courses?: (CertificateCourses | null)[] | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
