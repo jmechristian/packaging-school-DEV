@@ -143,7 +143,15 @@ const PartnerBottom = () => {
                     packaging and can work with your teams to develop courses
                     that educate your market, raise awareness, and provide a
                     pathway to sales.{' '}
-                    <div className='inline-flex items-center gap-1 ml-1'>
+                    <div
+                      className='inline-flex items-center gap-1 ml-1 cursor-pointer'
+                      onClick={() =>
+                        window.open(
+                          'https://packschool.s3.amazonaws.com/Docs/Packaging-School-CUSTOM-COURSES.pdf',
+                          '_blank'
+                        )
+                      }
+                    >
                       <div className='underline'>Download Info Sheet</div>
                       <div>
                         <ArrowLongRightIcon className='text-slate-900 w-5 h-5' />
@@ -163,7 +171,15 @@ const PartnerBottom = () => {
                     Statistics show that an overwhelmingly high percentage of
                     employees would stay at their current job if their company
                     were to invest in their growth and development.{' '}
-                    <div className='inline-flex items-center gap-1 ml-1'>
+                    <div
+                      className='inline-flex items-center gap-1 ml-1 cursor-pointer'
+                      onClick={() =>
+                        window.open(
+                          'https://packschool.s3.amazonaws.com/Docs/Packaging-School-CONTINUING-EDUCATION.pdf',
+                          '_blank'
+                        )
+                      }
+                    >
                       <div className='underline'>Download Info Sheet</div>
                       <div>
                         <ArrowLongRightIcon className='text-slate-900 w-5 h-5' />
@@ -183,7 +199,15 @@ const PartnerBottom = () => {
                     We want to hear how you are improving our industry. There
                     may be opportunities for collaboration on sponsored
                     educational marketing of your brand in our existing courses.{' '}
-                    <div className='inline-flex items-center gap-1 ml-1'>
+                    <div
+                      className='inline-flex items-center gap-1 ml-1 cursor-pointer'
+                      onClick={() =>
+                        window.open(
+                          'https://packschool.s3.amazonaws.com/Docs/Packaging-School-THOUGHT-LEADERS.pdf',
+                          '_blank'
+                        )
+                      }
+                    >
                       <div className='underline'>Download Info Sheet</div>
                       <div>
                         <ArrowLongRightIcon className='text-slate-900 w-5 h-5' />
@@ -204,7 +228,15 @@ const PartnerBottom = () => {
                     academia and industry, the Packaging School selects market
                     leaders in each area of instruction to provide their
                     expertise and make known their unique positioning.{' '}
-                    <div className='inline-flex items-center gap-1 ml-1'>
+                    <div
+                      className='inline-flex items-center gap-1 ml-1 cursor-pointer'
+                      onClick={() =>
+                        window.open(
+                          'https://packschool.s3.amazonaws.com/Docs/Packaging-School-SPONSORSHIPS-vv2.pdf',
+                          '_blank'
+                        )
+                      }
+                    >
                       <div className='underline'>Download Info Sheet</div>
                       <div>
                         <ArrowLongRightIcon className='text-slate-900 w-5 h-5' />
@@ -226,7 +258,15 @@ const PartnerBottom = () => {
                     internationally and consults with many Fortune 100 firms. He
                     might be what you need at your next conference or training
                     event.{' '}
-                    <div className='inline-flex items-center gap-1 ml-1'>
+                    <div
+                      className='inline-flex items-center gap-1 ml-1 cursor-pointer'
+                      onClick={() =>
+                        window.open(
+                          'https://packschool.s3.amazonaws.com/Docs/Packaging-School-IN-PERSON-TRAINING.pdf',
+                          '_blank'
+                        )
+                      }
+                    >
                       <div className='underline'>Download Info Sheet</div>
                       <div>
                         <ArrowLongRightIcon className='text-slate-900 w-5 h-5' />
