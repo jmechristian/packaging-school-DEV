@@ -1,9 +1,11 @@
 import React from 'react';
 import {
+  HandThumbUpIcon,
   CloudArrowUpIcon,
-  LockClosedIcon,
-  ServerIcon,
+  AcademicCapIcon,
+  LightBulbIcon,
   ArrowLongRightIcon,
+  CubeTransparentIcon,
 } from '@heroicons/react/20/solid';
 import { useForm } from 'react-hook-form';
 
@@ -37,7 +39,7 @@ const PartnerBottom = () => {
           </div>
         </div>
         <div className='md:-mt-12 md:-ml-12 md:p-12 scroll-pt-24 lg:sticky lg:top-24 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden'>
-          <div className='w-full p-0 md:p-3 max-w-none rounded-xl bg-slate-900 shadow-xl ring-1 ring-slate-400/10 sm:w-[57rem] flex justify-start items-center'>
+          <div className='w-full max-w-none rounded-xl bg-slate-900 shadow-xl ring-1 ring-slate-400/10 sm:w-[57rem] flex justify-start items-center'>
             <form
               className='flex flex-col gap-6 p-6 w-full md:w-[65%]'
               onSubmit={handleSubmit(onSubmit)}
@@ -54,6 +56,11 @@ const PartnerBottom = () => {
                   className='bg-slate-400 block w-full rounded-md border-0 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-slate-600 placeholder:text-lg focus:ring-2 focus:ring-inset focus:ring-slate-600 sm:text-sm sm:leading-6'
                   placeholder='First Name*'
                 />
+                {errors.firstName?.type === 'required' && (
+                  <p role='alert' className='text-red-500 text-sm mt-2'>
+                    <sup>*</sup>Field Required
+                  </p>
+                )}
               </div>
               <div>
                 <label htmlFor='lastName' className='sr-only'>
@@ -67,6 +74,11 @@ const PartnerBottom = () => {
                   className='bg-slate-400 block w-full rounded-md border-0 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-slate-600 placeholder:text-lg focus:ring-2 focus:ring-inset focus:ring-slate-600 sm:text-sm sm:leading-6'
                   placeholder='Last Name*'
                 />
+                {errors.lastName?.type === 'required' && (
+                  <p role='alert' className='text-red-500 text-sm mt-2'>
+                    <sup>*</sup>Field Required
+                  </p>
+                )}
               </div>
               <div>
                 <label htmlFor='email' className='sr-only'>
@@ -80,6 +92,11 @@ const PartnerBottom = () => {
                   className='bg-slate-400 block w-full rounded-md border-0 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-slate-600 placeholder:text-lg focus:ring-2 focus:ring-inset focus:ring-slate-600 sm:text-sm sm:leading-6'
                   placeholder='you@email.com*'
                 />
+                {errors.email?.type === 'required' && (
+                  <p role='alert' className='text-red-500 text-sm mt-2'>
+                    <sup>*</sup>Field Required
+                  </p>
+                )}
               </div>
               <div>
                 <label htmlFor='message' className='sr-only'>
@@ -87,15 +104,21 @@ const PartnerBottom = () => {
                 </label>
                 <textarea
                   {...register('message', { required: true })}
+                  aria-invalid={errors.message ? 'true' : 'false'}
                   name='message'
                   id='message'
                   className='bg-slate-400 block w-full rounded-md border-0 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-slate-600 placeholder:text-lg focus:ring-2 focus:ring-inset focus:ring-slate-600 sm:text-sm sm:leading-6'
                   placeholder='How Can We Work Together?*'
                   rows={3}
                 />
+                {errors.message?.type === 'required' && (
+                  <p role='alert' className='text-red-500 text-sm mt-2'>
+                    <sup>*</sup>Field Required
+                  </p>
+                )}
               </div>
               <button
-                className='bg-clemson hover:bg-clemson-dark text-lg py-3 px-5 rounded-lg font-bold text-white'
+                className='bg-clemson hover:bg-clemson-dark text-lg md:text-xl py-4 px-5 rounded-lg font-bold text-white'
                 type='submit'
               >
                 Let&apos;s Talk
@@ -108,7 +131,7 @@ const PartnerBottom = () => {
             <div className='max-w-xl text-base leading-7 text-gray-700 lg:max-w-lg'>
               <ul role='list' className='space-y-8 text-gray-600'>
                 <li className='flex gap-x-3'>
-                  <CloudArrowUpIcon
+                  <CubeTransparentIcon
                     className='mt-1 h-5 w-5 flex-none text-clemson'
                     aria-hidden='true'
                   />
@@ -129,7 +152,7 @@ const PartnerBottom = () => {
                   </span>
                 </li>
                 <li className='flex gap-x-3'>
-                  <CloudArrowUpIcon
+                  <AcademicCapIcon
                     className='mt-1 h-5 w-5 flex-none text-clemson'
                     aria-hidden='true'
                   />
@@ -169,7 +192,7 @@ const PartnerBottom = () => {
                   </span>
                 </li>
                 <li className='flex gap-x-3'>
-                  <CloudArrowUpIcon
+                  <LightBulbIcon
                     className='mt-1 h-5 w-5 flex-none text-clemson'
                     aria-hidden='true'
                   />
@@ -190,7 +213,7 @@ const PartnerBottom = () => {
                   </span>
                 </li>
                 <li className='flex gap-x-3'>
-                  <CloudArrowUpIcon
+                  <HandThumbUpIcon
                     className='mt-1 h-5 w-5 flex-none text-clemson'
                     aria-hidden='true'
                   />

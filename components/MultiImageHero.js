@@ -39,7 +39,7 @@ const MultiImageHero = () => {
           className='w-[50.0625rem]'
         >
           <path
-            fill='url(#70656b7e-db44-4b9b-b7d2-1f06791bed52)'
+            fill='#1f97bf'
             fillOpacity='.3'
             d='m282.279 843.371 32.285 192.609-313.61-25.32 281.325-167.289-58.145-346.888c94.5 92.652 277.002 213.246 251.009-45.597C442.651 127.331 248.072 10.369 449.268.891c160.956-7.583 301.235 116.434 351.256 179.39L507.001 307.557l270.983 241.04-495.705 294.774Z'
           />
@@ -52,8 +52,8 @@ const MultiImageHero = () => {
               y2='1091.63'
               gradientUnits='userSpaceOnUse'
             >
-              <stop stopColor='#9089FC' />
-              <stop offset={1} stopColor='#FF80B5' />
+              <stop stopColor='#1f97bf' />
+              <stop offset={1} stopColor='#bee1ec' />
             </linearGradient>
           </defs>
         </svg>
@@ -75,7 +75,7 @@ const MultiImageHero = () => {
               <div className='ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80'>
                 <div className='relative'>
                   <img
-                    src='https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80'
+                    src='https://packschool.s3.amazonaws.com/partner-1.webp'
                     alt=''
                     className='aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg'
                   />
@@ -85,7 +85,7 @@ const MultiImageHero = () => {
               <div className='mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36'>
                 <div className='relative'>
                   <img
-                    src='https://images.unsplash.com/photo-1485217988980-11786ced9454?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80'
+                    src='https://packschool.s3.amazonaws.com/partner-2.webp'
                     alt=''
                     className='aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg'
                   />
@@ -93,7 +93,7 @@ const MultiImageHero = () => {
                 </div>
                 <div className='relative'>
                   <img
-                    src='https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-x=.4&w=396&h=528&q=80'
+                    src='https://packschool.s3.amazonaws.com/partner-3.webp'
                     alt=''
                     className='aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg'
                   />
@@ -103,7 +103,7 @@ const MultiImageHero = () => {
               <div className='w-44 flex-none space-y-8 pt-32 sm:pt-0'>
                 <div className='relative'>
                   <img
-                    src='https://images.unsplash.com/photo-1670272504528-790c24957dda?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=left&w=400&h=528&q=80'
+                    src='https://packschool.s3.amazonaws.com/partner-4.webp'
                     alt=''
                     className='aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg'
                   />
@@ -111,7 +111,7 @@ const MultiImageHero = () => {
                 </div>
                 <div className='relative'>
                   <img
-                    src='https://images.unsplash.com/photo-1670272505284-8faba1c31f7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80'
+                    src='https://packschool.s3.amazonaws.com/partner-5.webp'
                     alt=''
                     className='aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg'
                   />

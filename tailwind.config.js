@@ -45,5 +45,6 @@ module.exports = {
     require('@tailwindcss/forms'),
     require('@tailwindcss/line-clamp'),
     require('autoprefixer'),
+    require('@tailwindcss/aspect-ratio'),
   ],
 };
