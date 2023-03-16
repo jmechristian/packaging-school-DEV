@@ -5,10 +5,19 @@ import {
   ServerIcon,
   ArrowLongRightIcon,
 } from '@heroicons/react/20/solid';
+import { useForm } from 'react-hook-form';
 
 const PartnerBottom = () => {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => console.log(data);
+
   return (
-    <div className='relative overflow-hidden bg-white px-6 sm:py-16 lg:overflow-visible lg:px-0'>
+    <div className='relative overflow-hidden bg-white px-6 sm:py-16 mb-8 lg:overflow-visible lg:px-0'>
       <div className='mx-auto grid max-w-2xl grid-cols-1 gap-y-8 gap-x-8 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10'>
         <div className='lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8'>
           <div className='lg:pr-4'>
@@ -20,18 +29,79 @@ const PartnerBottom = () => {
                 Better Together.
               </h1>
               <p className='mt-6 text-xl leading-8 text-slate-700'>
-                Fill out the form to start brainstorming what the Packaging
-                School can build with your team.
+                Is there something on this page that intrigues you? Do you want
+                to be contacted by one of our Packaging School educational
+                specialists? Please fill out the form, and we&apos;ll reach out.
               </p>
             </div>
           </div>
         </div>
-        <div className='-mt-12 -ml-12 p-12 scroll-pt-24 lg:sticky lg:top-24 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden'>
-          <img
-            className='w-[48rem] max-w-none rounded-xl bg-slate-900 shadow-xl ring-1 ring-slate-400/10 sm:w-[57rem]'
-            src='https://tailwindui.com/img/component-images/dark-project-app-screenshot.png'
-            alt=''
-          />
+        <div className='md:-mt-12 md:-ml-12 md:p-12 scroll-pt-24 lg:sticky lg:top-24 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden'>
+          <div className='w-full p-0 md:p-3 max-w-none rounded-xl bg-slate-900 shadow-xl ring-1 ring-slate-400/10 sm:w-[57rem] flex justify-start items-center'>
+            <form
+              className='flex flex-col gap-6 p-6 w-full md:w-[65%]'
+              onSubmit={handleSubmit(onSubmit)}
+            >
+              <div>
+                <label htmlFor='firstName' className='sr-only'>
+                  First Name
+                </label>
+                <input
+                  {...register('firstName', { required: true })}
+                  type='text'
+                  name='firstName'
+                  id='firstName'
+                  className='bg-slate-400 block w-full rounded-md border-0 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-slate-600 placeholder:text-lg focus:ring-2 focus:ring-inset focus:ring-slate-600 sm:text-sm sm:leading-6'
+                  placeholder='First Name*'
+                />
+              </div>
+              <div>
+                <label htmlFor='lastName' className='sr-only'>
+                  Last Name
+                </label>
+                <input
+                  {...register('lastName', { required: true })}
+                  type='text'
+                  name='lastName'
+                  id='lastName'
+                  className='bg-slate-400 block w-full rounded-md border-0 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-slate-600 placeholder:text-lg focus:ring-2 focus:ring-inset focus:ring-slate-600 sm:text-sm sm:leading-6'
+                  placeholder='Last Name*'
+                />
+              </div>
+              <div>
+                <label htmlFor='email' className='sr-only'>
+                  Email
+                </label>
+                <input
+                  {...register('email', { required: true })}
+                  type='email'
+                  name='email'
+                  id='email'
+                  className='bg-slate-400 block w-full rounded-md border-0 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-slate-600 placeholder:text-lg focus:ring-2 focus:ring-inset focus:ring-slate-600 sm:text-sm sm:leading-6'
+                  placeholder='you@email.com*'
+                />
+              </div>
+              <div>
+                <label htmlFor='message' className='sr-only'>
+                  Message
+                </label>
+                <textarea
+                  {...register('message', { required: true })}
+                  name='message'
+                  id='message'
+                  className='bg-slate-400 block w-full rounded-md border-0 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-slate-600 placeholder:text-lg focus:ring-2 focus:ring-inset focus:ring-slate-600 sm:text-sm sm:leading-6'
+                  placeholder='How Can We Work Together?*'
+                  rows={3}
+                />
+              </div>
+              <button
+                className='bg-clemson hover:bg-clemson-dark text-lg py-3 px-5 rounded-lg font-bold text-white'
+                type='submit'
+              >
+                Let&apos;s Talk
+              </button>
+            </form>
+          </div>
         </div>
         <div className='lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8'>
           <div className='lg:pr-4'>
