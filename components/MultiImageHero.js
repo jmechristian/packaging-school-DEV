@@ -32,7 +32,7 @@ const MultiImageHero = ({ headline, subheadline }) => {
                 <HeadlineMotion>{headline && headline}</HeadlineMotion>
               </h1>
               <motion.p
-                className='relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none'
+                className='relative mt-6 text-lg md:text-xl leading-8 text-gray-600 sm:max-w-md lg:max-w-none'
                 animate={isInView && { opacity: 1, transition: { delay: 0.4 } }}
                 initial={{ opacity: 0 }}
               >
