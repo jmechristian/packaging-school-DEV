@@ -39,7 +39,7 @@ const PartnerBottom = () => {
           </div>
         </div>
         <div className='md:-mt-12 md:-ml-12 md:p-12 scroll-pt-24 lg:sticky lg:top-24 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden'>
-          <div className='w-full max-w-none rounded-xl bg-slate-900 shadow-xl ring-1 ring-slate-400/10 sm:w-[57rem] flex justify-start items-center'>
+          <div className='w-full max-w-none rounded-xl py-3 bg-clemson shadow-lg ring-1 ring-slate-400/10 sm:w-[57rem] flex justify-start items-center'>
             <form
               className='flex flex-col gap-6 p-6 w-full md:w-[65%]'
               onSubmit={handleSubmit(onSubmit)}
@@ -53,7 +53,7 @@ const PartnerBottom = () => {
                   type='text'
                   name='firstName'
                   id='firstName'
-                  className='bg-slate-400 block w-full rounded-md border-0 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-slate-600 placeholder:text-lg focus:ring-2 focus:ring-inset focus:ring-slate-600 sm:text-sm sm:leading-6'
+                  className='bg-base-light block w-full rounded-md border-0 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-slate-400 placeholder:text-lg focus:ring-2 focus:ring-inset focus:ring-slate-600 sm:text-sm sm:leading-6'
                   placeholder='First Name*'
                 />
                 {errors.firstName?.type === 'required' && (
@@ -71,7 +71,7 @@ const PartnerBottom = () => {
                   type='text'
                   name='lastName'
                   id='lastName'
-                  className='bg-slate-400 block w-full rounded-md border-0 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-slate-600 placeholder:text-lg focus:ring-2 focus:ring-inset focus:ring-slate-600 sm:text-sm sm:leading-6'
+                  className='bg-base-light block w-full rounded-md border-0 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-slate-400 placeholder:text-lg focus:ring-2 focus:ring-inset focus:ring-slate-600 sm:text-sm sm:leading-6'
                   placeholder='Last Name*'
                 />
                 {errors.lastName?.type === 'required' && (
@@ -89,7 +89,7 @@ const PartnerBottom = () => {
                   type='email'
                   name='email'
                   id='email'
-                  className='bg-slate-400 block w-full rounded-md border-0 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-slate-600 placeholder:text-lg focus:ring-2 focus:ring-inset focus:ring-slate-600 sm:text-sm sm:leading-6'
+                  className='bg-base-light block w-full rounded-md border-0 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-slate-400 placeholder:text-lg focus:ring-2 focus:ring-inset focus:ring-slate-600 sm:text-sm sm:leading-6'
                   placeholder='you@email.com*'
                 />
                 {errors.email?.type === 'required' && (
@@ -107,7 +107,7 @@ const PartnerBottom = () => {
                   aria-invalid={errors.message ? 'true' : 'false'}
                   name='message'
                   id='message'
-                  className='bg-slate-400 block w-full rounded-md border-0 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-slate-600 placeholder:text-lg focus:ring-2 focus:ring-inset focus:ring-slate-600 sm:text-sm sm:leading-6'
+                  className='bg-base-light block w-full rounded-md border-0 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-slate-400 placeholder:text-lg focus:ring-2 focus:ring-inset focus:ring-slate-600 sm:text-sm sm:leading-6'
                   placeholder='How Can We Work Together?*'
                   rows={3}
                 />
@@ -118,7 +118,7 @@ const PartnerBottom = () => {
                 )}
               </div>
               <button
-                className='bg-clemson hover:bg-clemson-dark text-lg md:text-xl py-4 px-5 rounded-lg font-bold text-white'
+                className='bg-clemson-dark shadow-md hover:bg-clemson-dark text-lg md:text-xl py-4 px-5 rounded-lg font-bold font-greycliff text-white ring-1 ring-white/20 ring-inset'
                 type='submit'
               >
                 Let&apos;s Talk
