@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import HeadlineMotion from '../helpers/HeadlineMotion';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 
-const MultiImageHero = () => {
+const MultiImageHero = ({ headline, subheadline }) => {
   const imagesRef = useRef();
   const isInView = useInView(imagesRef);
 
@@ -29,16 +29,14 @@ const MultiImageHero = () => {
           <div className='mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center'>
             <div className='w-full max-w-xl lg:shrink-0 xl:max-w-2xl'>
               <h1 className='text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl font-greycliff'>
-                <HeadlineMotion>Are You Ready To Work Together?</HeadlineMotion>
+                <HeadlineMotion>{headline && headline}</HeadlineMotion>
               </h1>
               <motion.p
                 className='relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none'
                 animate={isInView && { opacity: 1, transition: { delay: 0.4 } }}
                 initial={{ opacity: 0 }}
               >
-                Empower Your Workforce: Collaborate with a Versatile Online
-                Education Partner for Tailored Learning Solutions, Professional
-                Development, and Hands-On Training Opportunities.
+                {subheadline}
               </motion.p>
             </div>
             <motion.div
