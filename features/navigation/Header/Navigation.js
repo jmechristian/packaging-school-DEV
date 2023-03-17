@@ -10,6 +10,7 @@ import {
   UserCircleIcon,
 } from '@heroicons/react/24/outline';
 import Menu from './Menu';
+import Logo from '../../../components/layout/Logo';
 
 const Navigation = () => {
   const dispatch = useDispatch();
@@ -71,14 +72,8 @@ const Navigation = () => {
         } dark:text-white flex justify-between items-center container__inner`}
       >
         <div className='flex items-center h-full'>
-          <div className='w-44 mr-6' onClick={() => router.push('/')}>
-            <Image
-              src='https://res.cloudinary.com/dno7xxmmy/image/upload/v1664295580/pschool/logo_white_krqpbc.svg'
-              alt='Packaging School'
-              layout='responsive'
-              width={1163}
-              height={267}
-            />
+          <div className='w-72' onClick={() => router.push('/')}>
+            <Logo showMenu={showMenu} />
           </div>
           <Menu />
         </div>
