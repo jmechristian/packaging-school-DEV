@@ -4,7 +4,7 @@ import CourseNav from './MenuItems/CourseNav';
 
 const Menu = () => {
   return (
-    <div className='flex gap-6 text-sm font-medium xl:text-base cursor-pointer h-full items-center'>
+    <div className='flex gap-6 text-sm font-semibold font-greycliff xl:text-base cursor-pointer h-full items-center'>
       <CertNav />
       <CourseNav />
       <div>For Teams</div>

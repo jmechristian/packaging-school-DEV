@@ -79,15 +79,33 @@ const Navigation = () => {
         </div>
         <div className='flex gap-4 items-center'>
           <MagnifyingGlassIcon
-            className='w-6 h-6 stroke-slate-900 dark:stroke-base-brand cursor-pointer'
+            className={`w-6 h-6 ${
+              showMenu
+                ? 'stroke-white dark:stroke-white'
+                : 'stroke-slate-900 dark:stroke-white'
+            } cursor-pointer`}
             onClick={() => dispatch(showSearch())}
           />
-          <UserCircleIcon className='w-6 h-6 stroke-base-brand hidden lg:block xl:hidden' />
-          <div className='dark:text-base-light text-slate-900 hidden xl:block text-sm font-medium xl:text-base'>
+          <UserCircleIcon
+            className={`w-6 h-6 ${
+              showMenu
+                ? 'stroke-white dark:stroke-white'
+                : 'stroke-slate-900 dark:stroke-white'
+            }stroke-base-brand hidden lg:block xl:hidden`}
+          />
+          <div
+            className={`dark:white font-greycliff  ${
+              showMenu
+                ? 'text-white dark:text-white'
+                : 'text-slate-900 dark:text-white'
+            } hidden xl:block text-sm font-semibold xl:text-base`}
+          >
             Log In
           </div>
-          <button className='text-sm font-medium xl:text-base bg-base-brand hover:bg-base-dark rounded hidden xl:block'>
-            <div className='px-4 py-2 text-white'>Join for Free</div>
+          <button className='text-sm font-bold xl:text-base bg-clemson hover:bg-clemson-dark rounded hidden xl:block'>
+            <div className='px-4 py-2 text-white font-greycliff'>
+              Join for Free
+            </div>
           </button>
         </div>
       </div>
