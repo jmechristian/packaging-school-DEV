@@ -11,7 +11,7 @@ const Page = ({ page }) => {
   const dispatch = useDispatch();
   const { preview } = useSelector((state) => state.course_filter);
   return (
-    <div className='relative py-12'>
+    <div className='relative'>
       <CourseMain data={page.data} />
       <CourseBottom related={page.data.related_courses} />
       {preview && <CoursePreview close={() => dispatch(setPreviewClosed())} />}

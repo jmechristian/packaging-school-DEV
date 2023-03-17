@@ -4,12 +4,13 @@ import CourseInfo from './CourseInfo';
 import CourseObjectives from './CourseObjectives';
 import { motion } from 'framer-motion';
 import YouTubeEmbed from '../YouTubeEmbed';
+import VideoPlayer from '../VideoPlayer';
 
 const CourseMain = ({ data }) => {
   return (
-    <section className='w-full bg-white dark:bg-dark bg-cover lg:dark:bg-dark  lg:course__hero-padding'>
-      <div className='pt-24 pb-12 md:container__inner lg:hidden'>
-        <YouTubeEmbed embedid={data.embed_id} />
+    <section className='w-full h-full bg-white dark:bg-dark bg-cover lg:dark:bg-dark  lg:course__hero-padding'>
+      <div className='pt-24 pb-12 md:container__inner lg:hidden h-full aspect-[16/9]'>
+        <VideoPlayer videoEmbedLink={data.embed_id} />
       </div>
       <motion.div
         className='container__inner'
