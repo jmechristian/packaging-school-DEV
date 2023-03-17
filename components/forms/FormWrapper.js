@@ -9,12 +9,13 @@ const FormWrapper = ({ children, submit }) => {
     formState: { errors },
   } = useForm();
   return (
-    <div className='flex max-w-6xl mx-auto justify-center w-full'>
+    <div className='flex max-w-4xl mx-auto justify-center w-full'>
       <form
         className='flex flex-col gap-6 p-6 w-full'
         onSubmit={handleSubmit(submit)}
       >
-        <div>
+        {children}
+        {/* <div>
           <label htmlFor='firstName' className='sr-only'>
             First Name
           </label>
@@ -86,7 +87,7 @@ const FormWrapper = ({ children, submit }) => {
               <sup>*</sup>Field Required
             </p>
           )}
-        </div>
+        </div> */}
         <button
           className='bg-clemson-dark shadow-md hover:bg-clemson-dark text-lg md:text-xl py-4 px-5 rounded-lg font-bold font-greycliff text-white ring-1 ring-white/20 ring-inset'
           type='submit'
