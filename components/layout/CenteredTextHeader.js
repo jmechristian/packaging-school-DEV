@@ -1,5 +1,6 @@
 import React from 'react';
 import PatternBackground from './PatternBackground';
+import Image from 'next/image';
 
 const CenteredTextHeader = ({
   subhead,
@@ -9,12 +10,19 @@ const CenteredTextHeader = ({
   buttonLink,
   secondaryText,
   secondaryLink,
+  logo,
 }) => {
   return (
     <div className='bg-white relative isolate'>
       <div className='px-6 lg:px-8 py-8'>
         <PatternBackground />
         <div className='mx-auto max-w-3xl pt-20 sm:pt-36 sm:pb-6'>
+          {logo && (
+            <div
+              className='relative w-60 h-40 mx-auto bg-contain bg-no-repeat'
+              style={{ backgroundImage: `url(${logo})` }}
+            ></div>
+          )}
           <div className='hidden sm:mb-8 sm:flex sm:justify-center'>
             {heading && (
               <div className='relative rounded-full py-1 px-3 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20'>
