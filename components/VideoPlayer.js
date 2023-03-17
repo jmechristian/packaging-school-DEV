@@ -4,7 +4,7 @@ const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false });
 
 const VideoPlayer = ({ videoEmbedLink }) => {
   return (
-    <div className='aspect-video w-full h-full overflow-hidden'>
+    <div className='w-full h-full overflow-hidden'>
       <ReactPlayer
         url={videoEmbedLink}
         width={'100%'}
