@@ -14,6 +14,7 @@ const CourseCard = ({
   slug,
   reset,
   category,
+  newWidth,
 }) => {
   const data = {
     datasets: [
@@ -54,9 +55,17 @@ const CourseCard = ({
   };
 
   return (
-    <motion.div className='flex flex-col bg-white rounded-md p-3 drop-shadow-lg gap-4 w-72 h-full snap-start cursor-grab'>
+    <motion.div
+      className={`flex flex-col bg-white rounded-md p-3 drop-shadow-lg gap-4 ${
+        newWidth ? newWidth : 'w-72'
+      } h-full snap-start cursor-grab`}
+    >
       <motion.div className='grid grid-cols-6 gap-3 lg:gap-5 border-b border-b-slate-300 pb-3'>
-        <CourseHero video={video} bgcolor={backgroundColor()} />
+        <CourseHero
+          video={video}
+          bgcolor={backgroundColor()}
+          newWidth={newWidth}
+        />
         <CourseTitle
           title={title}
           hours={hours}
@@ -65,10 +74,17 @@ const CourseCard = ({
           desc={desc}
           slug={slug}
           data={data}
+          newWidth={newWidth}
         />
       </motion.div>
       <div className='grid grid-cols-6 pb-1 h-full items-stretch lg:grid'>
-        <CourseDesc desc={desc} slug={slug} data={data} reset={reset} />
+        <CourseDesc
+          desc={desc}
+          slug={slug}
+          data={data}
+          reset={reset}
+          newWidth={newWidth}
+        />
       </div>
     </motion.div>
   );

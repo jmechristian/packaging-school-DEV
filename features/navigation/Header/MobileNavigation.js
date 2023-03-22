@@ -41,8 +41,8 @@ const MobileNavigation = () => {
     },
     hidden: {
       backgroundColor: darkMode
-        ? 'rgba(15, 23, 42, 0)'
-        : 'rgba(255,255,255, 0)',
+        ? 'rgba(15, 23, 42, 1)'
+        : 'rgba(255,255,255, 1)',
       transition: {
         duration: 0.2,
         ease: 'easeInOut',

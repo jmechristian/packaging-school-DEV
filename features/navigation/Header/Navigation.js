@@ -38,7 +38,7 @@ const Navigation = () => {
       backgroundColor:
         menuItemOpen || showMenu
           ? 'rgba(15, 23, 42, 1)'
-          : 'rgba(15, 23, 42, 0)',
+          : 'rgba(15, 23, 42, 1)',
       boxShadow:
         '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
       transition: {
@@ -50,7 +50,7 @@ const Navigation = () => {
       backgroundColor:
         menuItemOpen || showMenu
           ? 'rgba(15, 23, 42, 1)'
-          : 'rgba(15, 23, 42, 0)',
+          : 'rgba(15, 23, 42, 1)',
       transition: {
         duration: 0.2,
         ease: 'easeInOut',
@@ -67,9 +67,7 @@ const Navigation = () => {
       animate={showMenu ? 'show' : 'hidden'}
     >
       <div
-        className={`w-full max-w-7xl h-24 mx-auto ${
-          showMenu ? 'text-white' : 'text-slate-900'
-        } dark:text-white flex justify-between items-center container__inner`}
+        className={`w-full max-w-7xl h-24 mx-auto tedt-white flex justify-between items-center container__inner`}
       >
         <div className='flex items-center h-full'>
           <div className='w-72' onClick={() => router.push('/')}>
@@ -79,26 +77,14 @@ const Navigation = () => {
         </div>
         <div className='flex gap-4 items-center'>
           <MagnifyingGlassIcon
-            className={`w-6 h-6 ${
-              showMenu
-                ? 'stroke-white dark:stroke-white'
-                : 'stroke-slate-900 dark:stroke-white'
-            } cursor-pointer`}
+            className={`w-6 h-6 stroke-white cursor-pointer`}
             onClick={() => dispatch(showSearch())}
           />
           <UserCircleIcon
-            className={`w-6 h-6 ${
-              showMenu
-                ? 'stroke-white dark:stroke-white'
-                : 'stroke-slate-900 dark:stroke-white'
-            }stroke-base-brand hidden lg:block xl:hidden`}
+            className={`w-6 h-6 stroke-white hidden lg:block xl:hidden`}
           />
           <div
-            className={`dark:white font-greycliff  ${
-              showMenu
-                ? 'text-white dark:text-white'
-                : 'text-slate-900 dark:text-white'
-            } hidden xl:block text-sm font-semibold xl:text-base`}
+            className={`dark:white font-greycliff  text-white hidden xl:block text-sm font-semibold xl:text-base`}
           >
             Log In
           </div>
