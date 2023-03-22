@@ -44,6 +44,12 @@ type Certificate @model @searchable @auth(rules: [{ allow: public }]) {
   title_button_2_link: String
   title_image: String
   courses: [Course] @manyToMany(relationName: "CertificateCourses")
+  whoText: String
+  courses_total: Int
+  hours_total: Int
+  ceus_total: Int
+  brochure_link: String
+  video: String
 }
 
 type Course @model @searchable @auth(rules: [{ allow: public }]) {
@@ -62,7 +68,7 @@ type Course @model @searchable @auth(rules: [{ allow: public }]) {
   certificate: [Certificate] @manyToMany(relationName: "CertificateCourses")
 }
 
-type Lesson @model @searchable @auth(rules: [{ allow: public }]) {
+type Lesson @model @auth(rules: [{ allow: public }]) {
   id: ID!
   slug: String! @index(name: "lessonsByTitle")
   title: String!
@@ -93,7 +99,7 @@ type Blog @model @searchable @auth(rules: [{ allow: public }]) {
   date: String
 }
 
-type Article @model @searchable @auth(rules: [{ allow: public }]) {
+type Article @model @auth(rules: [{ allow: public }]) {
   id: ID!
   slug: String! @index(name: "aticlesByTitle")
   title: String!
