@@ -69,9 +69,9 @@ export default function ChooseCert() {
   return (
     <div className='bg-white py-24 sm:py-32'>
       <div className='mx-auto max-w-7xl px-6 lg:px-8'>
-        <div className='mx-auto max-w-4xl text-center'>
+        <div className='mx-auto max-w-3xl text-center'>
           <p className='mt-2 text-4xl font-bold tracking-tight font-greycliff text-gray-900 sm:text-5xl'>
-            The Right Subject Matter and Structure to Boost Your Knowledge.
+            Find the Right Style and Pace to Achieve Your Learning Goals
           </p>
         </div>
         <p className='mx-auto mt-6 max-w-3xl text-center text-lg leading-8 text-slate-600'>
