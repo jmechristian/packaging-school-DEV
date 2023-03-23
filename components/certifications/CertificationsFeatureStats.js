@@ -5,7 +5,13 @@ import CPSCourses from './CPSCourses';
 import SlideUp from '../SlideUp';
 import Image from 'next/image';
 
-const CertificationsFeatureStats = ({ stats, courses }) => {
+const CertificationsFeatureStats = ({
+  stats,
+  courses,
+  whoText,
+  brochureLink,
+  video,
+}) => {
   const [open, cycleOpen] = useCycle(false, true);
   const scrollRef = useRef();
 
@@ -21,11 +27,7 @@ const CertificationsFeatureStats = ({ stats, courses }) => {
             Who Enrolls?
           </p>
           <p className='my-6 text-lg lg:text-xl leading-8 lg:leading-9 text-slate-500 dark:text-gray-300'>
-            Brand Managers, Graphic Designers… CPGs, Packaging Suppliers,
-            Retailers… with less than one year experience up to 40+ years in the
-            business… if you have any contact with the packaging process, our
-            program will raise your packaging IQ.{' '}
-            <i>Admission is by application only.</i>
+            {whoText}
           </p>
 
           <p>

@@ -63,15 +63,21 @@ const primaryFeatures = [
   },
 ];
 
-const stats = [
-  { id: 1, name: 'Course Hours', value: '21' },
-  { id: 2, name: 'Courses Included', value: '9', link: true },
-  { id: 3, name: 'CEUs Earned', value: '2' },
-  { id: 4, name: 'Flexibility to Complete', value: '12 months' },
-];
-
 export const Page = ({ cert }) => {
   const { darkMode } = useSelector((state) => state.layout);
+
+  const stats = [
+    { id: 1, name: 'Course Hours', value: `${cert.hours_total}` },
+    {
+      id: 2,
+      name: 'Courses Included',
+      value: `${cert.courses_total}`,
+      link: true,
+    },
+    { id: 3, name: 'CEUs Earned', value: `${cert.ceus_total}` },
+    { id: 4, name: 'Flexibility to Complete', value: '12 months' },
+  ];
+
   return (
     <div className='bg-white dark:bg-slate-900'>
       <div className='flex flex-col gap-32 md:gap-48'>
@@ -89,15 +95,18 @@ export const Page = ({ cert }) => {
         />
         <CertificationsLogos darkMode={darkMode} />
         <CertificationsFeatureStats
+          brochureLink={cert.brochure_link}
+          whoText={cert.whoText}
           darkMode={darkMode}
+          video={cert.video}
           stats={stats}
           courses={cert.courses?.items}
         />
         <CertificationsPricing />
-        <CertificationsSecondFeature
+        {/* <CertificationsSecondFeature
           darkMode={darkMode}
           features={primaryFeatures}
-        />
+        /> */}
         <DoubleTestimonial />
         <GradientCTA
           headline='Ready to Elevate Your Career?'
@@ -142,6 +151,12 @@ export async function getStaticProps() {
           title_text
           slug
           id
+          brochure_link
+          ceus_total
+          courses_total
+          hours_total
+          whoText
+          video
         }
       }
     }

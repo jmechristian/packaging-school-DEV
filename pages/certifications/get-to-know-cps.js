@@ -89,7 +89,10 @@ export const Page = ({ cert }) => {
         />
         <CertificationsLogos darkMode={darkMode} />
         <CertificationsFeatureStats
+          brochureLink={cert.brochure_link}
+          whoText={cert.whoText}
           darkMode={darkMode}
+          video={cert.video}
           stats={stats}
           courses={cert.courses?.items}
         />
@@ -142,6 +145,12 @@ export async function getStaticProps() {
           title_text
           slug
           id
+          brochure_link
+          ceus_total
+          courses_total
+          hours_total
+          whoText
+          video
         }
       }
     }
