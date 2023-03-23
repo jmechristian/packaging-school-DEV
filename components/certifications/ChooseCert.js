@@ -10,7 +10,7 @@ const tiers = [
   {
     name: 'Certificate of Packaging Science',
     id: 'tier-freelancer',
-    href: '/certificates/get-to-know-cps',
+    href: '/certifications/get-to-know-cps',
     price: { monthly: '$349', full: '$3,999' },
     description:
       'The Certificate of Packaging Science is a one year online program that teaches the materials, processes, and influences shaping the advancement of the industry.',
@@ -27,23 +27,23 @@ const tiers = [
   {
     name: 'Certificate of Mastery in Packaging Management',
     id: 'tier-startup',
-    href: '/certificates/get-to-know-cmpm',
+    href: '/certifications/get-to-know-cmpm',
     price: { monthly: '$xx', full: '$7,000' },
     description:
-      'The Certificate of Mastery in Packaging Management is an online executive education program that can level up your career in the space of packaging development, material procurement, and organizational management.',
+      'An online executive education program that can level up your career in the space of packaging development, material procurement, and organizational management.',
     features: [
       '12-week structure',
       'Flexible lectures and 1:1 instructor coaching',
       'PhD Instructor-led project',
       'Practical knowledge and rigorous examination',
-      'No prerequisites',
     ],
     mostPopular: true,
+    bottom: 'Open enrollment. Apply anytime.',
   },
   {
     name: 'Automotive Packaging Certificate',
     id: 'tier-enterprise',
-    href: '/certificates/get-to-know-aps',
+    href: '/certifications/get-to-know-aps',
     price: { monthly: '$287', full: '$2,400' },
     description:
       'The first and only 100% online academic program that will enable you to develop the professional skill set you need to be successful in the automotive packaging field.',
@@ -55,6 +55,7 @@ const tiers = [
       'Hazmat packaging',
     ],
     mostPopular: false,
+    bottom: 'Open enrollment. Apply anytime.',
   },
 ];
 
@@ -143,7 +144,7 @@ export default function ChooseCert() {
                   tier.mostPopular
                     ? 'bg-base-mid text-white shadow-sm hover:bg-base-brand'
                     : 'text-base-mid ring-1 ring-inset ring-indigo-200 hover:ring-indigo-300',
-                  'mt-6 block rounded-md py-2 px-3 text-center font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
+                  ' font-greycliff mt-6 block rounded-md py-2 px-3 text-center font-bold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
                 )}
               >
                 Enroll Now
@@ -162,6 +163,9 @@ export default function ChooseCert() {
                   </li>
                 ))}
               </ul>
+              <div className='bg-slate-200 p-3 text-slate-600 mt-8'>
+                {tier.bottom && tier.bottom}
+              </div>
             </div>
           ))}
         </div>

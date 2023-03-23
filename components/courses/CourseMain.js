@@ -9,7 +9,7 @@ import VideoPlayer from '../VideoPlayer';
 const CourseMain = ({ data }) => {
   return (
     <section className='w-full h-full bg-white dark:bg-dark bg-cover lg:dark:bg-dark  lg:course__hero-padding'>
-      <div className='pt-24 pb-12 md:container__inner lg:hidden h-full aspect-[16/9]'>
+      <div className='pt-24 pb-12 md:container__inner lg:hidden h-full'>
         <VideoPlayer videoEmbedLink={data.embed_id} />
       </div>
       <motion.div
