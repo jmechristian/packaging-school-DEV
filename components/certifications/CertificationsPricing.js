@@ -1,49 +1,36 @@
 import { CheckIcon } from '@heroicons/react/20/solid';
 
-const includedFeatures = [
-  '12-Months Access',
-  'Choose Your Own Electives',
-  '12 Expert-led Courses',
-  'Instructor Email Access',
-];
+const CertificationsPricing = ({
+  pricing_features,
+  price_full,
+  price_monthly,
+}) => {
+  const tiers = [
+    {
+      name: 'Pay In Full',
+      id: 'tier-hobby',
+      href: '#',
+      priceMonthly: price_full.toLocaleString(),
+      description:
+        'Modi dolorem expedita deleniti. Corporis iste qui inventore pariatur adipisci vitae.',
+      features: pricing_features,
+      callout: 'Most Savings!',
+      monthly: false,
+      background: 'bg-white dark:bg-slate-800',
+    },
+    {
+      name: 'Flex Payments',
+      id: 'tier-team',
+      href: '#',
+      priceMonthly: price_monthly,
+      description:
+        'Explicabo quo fugit vel facere ullam corrupti non dolores. Expedita eius sit sequi.',
+      features: pricing_features,
+      monthly: true,
+      background: 'bg-slate-100 dark:bg-slate-900',
+    },
+  ];
 
-const tiers = [
-  {
-    name: 'Pay In Full',
-    id: 'tier-hobby',
-    href: '#',
-    priceMonthly: '$3,999',
-    description:
-      'Modi dolorem expedita deleniti. Corporis iste qui inventore pariatur adipisci vitae.',
-    features: [
-      '12-Months Access',
-      'Choose Your Own Electives',
-      '12 Expert-led Courses',
-      'Instructor Email Access',
-    ],
-    callout: 'Most Savings!',
-    monthly: false,
-    background: 'bg-white dark:bg-slate-800',
-  },
-  {
-    name: 'Flex Payments',
-    id: 'tier-team',
-    href: '#',
-    priceMonthly: '$349',
-    description:
-      'Explicabo quo fugit vel facere ullam corrupti non dolores. Expedita eius sit sequi.',
-    features: [
-      '12-Months Access',
-      'Choose Your Own Electives',
-      '12 Expert-led Courses',
-      'Instructor Email Access',
-    ],
-    monthly: true,
-    background: 'bg-slate-100 dark:bg-slate-900',
-  },
-];
-
-const CertificationsPricing = () => {
   return (
     <div>
       <div className='mx-auto max-w-7xl px-6 lg:px-8 flex flex-col gap-12'>
@@ -83,7 +70,7 @@ const CertificationsPricing = () => {
                 </div>
                 <div className='mt-4 flex items-baseline gap-x-2'>
                   <span className='text-5xl font-bold tracking-tight text-gray-900 dark:text-white'>
-                    {tier.priceMonthly}
+                    ${tier.priceMonthly}
                   </span>
                   {tier.monthly ? (
                     <span className='text-base font-semibold leading-7 text-gray-500 dark:text-white/60'>

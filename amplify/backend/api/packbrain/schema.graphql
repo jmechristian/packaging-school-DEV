@@ -50,6 +50,11 @@ type Certificate @model @searchable @auth(rules: [{ allow: public }]) {
   ceus_total: Int
   brochure_link: String
   video: String
+  price_full: Int
+  price_monthly: Int
+  price_features: [String]
+  lmsLink: String
+  demoLink: String
 }
 
 type Course @model @searchable @auth(rules: [{ allow: public }]) {

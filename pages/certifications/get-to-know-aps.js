@@ -13,6 +13,7 @@ import GradientCTA from '../../components/GradientCTA';
 import { Amplify, API, graphqlOperation } from 'aws-amplify';
 import awsExports from '../../src/aws-exports';
 import DoubleTestimonial from '../../components/DoubleTestimonial';
+import APSWorkbook from '../../components/certifications/APSWorkbook';
 Amplify.configure(awsExports);
 
 const GRAPHQL_ENDPOINT = process.env.GRAPHQL_ENDPOINT;
@@ -102,7 +103,12 @@ export const Page = ({ cert }) => {
           stats={stats}
           courses={cert.courses?.items}
         />
-        <CertificationsPricing />
+        <CertificationsPricing
+          price_full={cert.price_full}
+          price_monthly={cert.price_monthly}
+          pricing_features={cert.price_features}
+        />
+        <APSWorkbook />
         {/* <CertificationsSecondFeature
           darkMode={darkMode}
           features={primaryFeatures}
@@ -157,6 +163,9 @@ export async function getStaticProps() {
           hours_total
           whoText
           video
+          price_features
+          price_full
+          price_monthly
         }
       }
     }
