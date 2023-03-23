@@ -63,6 +63,13 @@ const primaryFeatures = [
   },
 ];
 
+const features = [
+  '12-Months Access',
+  'Choose Your Own Electives',
+  '12 Expert-led Courses',
+  'Instructor Email Access',
+];
+
 const stats = [
   { id: 1, name: 'Course Hours', value: '60' },
   { id: 2, name: 'Courses Included', value: '12', link: true },
@@ -96,7 +103,11 @@ export const Page = ({ cert }) => {
           stats={stats}
           courses={cert.courses?.items}
         />
-        <CertificationsPricing />
+        <CertificationsPricing
+          price_full={'3,999'}
+          price_monthly={'349'}
+          pricing_features={features}
+        />
         <CertificationsSecondFeature
           darkMode={darkMode}
           features={primaryFeatures}
