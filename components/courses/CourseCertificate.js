@@ -1,5 +1,6 @@
 import React from 'react';
 import { LightBulbIcon } from '@heroicons/react/24/solid';
+import Link from 'next/link';
 
 const CourseCertificate = ({ certification }) => {
   return (
@@ -38,9 +39,9 @@ const CourseCertificate = ({ certification }) => {
         <div className='black__white text-lg'>
           Differientiate yourself from your peers with the comprehensive
           knowledge of a full certificate program.{' '}
-          <a href='/certifications' className='cursor-pointer'>
-            <u>Enroll now!</u>
-          </a>
+          <Link href='/certifications'>
+            <u className='cursor-pointer'>Enroll now!</u>
+          </Link>
         </div>
       )}
     </div>
