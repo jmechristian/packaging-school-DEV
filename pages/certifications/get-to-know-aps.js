@@ -14,6 +14,7 @@ import { Amplify, API, graphqlOperation } from 'aws-amplify';
 import awsExports from '../../src/aws-exports';
 import DoubleTestimonial from '../../components/DoubleTestimonial';
 import APSWorkbook from '../../components/certifications/APSWorkbook';
+import APSExperts from '../../components/certifications/APSExperts';
 Amplify.configure(awsExports);
 
 const GRAPHQL_ENDPOINT = process.env.GRAPHQL_ENDPOINT;
@@ -109,6 +110,7 @@ export const Page = ({ cert }) => {
           pricing_features={cert.price_features}
         />
         <APSWorkbook />
+        <APSExperts />
         {/* <CertificationsSecondFeature
           darkMode={darkMode}
           features={primaryFeatures}

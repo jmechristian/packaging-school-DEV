@@ -38,10 +38,6 @@ const CertificationsPricing = ({
           <h2 className='font-greycliff text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl'>
             Flexible pricing
           </h2>
-          <p className='mt-6 text-lg leading-8 text-gray-500 dark:text-white/60'>
-            Distinctio et nulla eum soluta et neque labore quibusdam. Saepe et
-            quasi iusto modi velit ut non voluptas in. Explicabo id ut laborum.
-          </p>
         </div>
         <div className='mx-auto grid max-w-md grid-cols-1 gap-8 lg:max-w-4xl lg:grid-cols-2'>
           {tiers.map((tier) => (
@@ -78,12 +74,9 @@ const CertificationsPricing = ({
                     </span>
                   ) : null}
                 </div>
-                <p className='mt-6 text-base leading-7 text-gray-500 dark:text-white/60'>
-                  {tier.description}
-                </p>
                 <ul
                   role='list'
-                  className='mt-10 space-y-4 leading-6 text-gray-500 dark:text-white/60'
+                  className='mt-12 space-y-4 leading-6 text-gray-500 dark:text-white/60'
                 >
                   {tier.features.map((feature) => (
                     <li key={feature} className='flex gap-x-3 font-bold'>
