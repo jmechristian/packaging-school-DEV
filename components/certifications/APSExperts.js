@@ -74,10 +74,6 @@ const APSExperts = () => {
           <h2 className='text-3xl font-bold tracking-tight dark:text-white sm:text-5xl font-greycliff'>
             Meet The Experts
           </h2>
-          <p className='mt-4 text-lg leading-8 text-slate-500'>
-            We’re a dynamic group of individuals who are passionate about what
-            we do.
-          </p>
         </div>
         <ul
           role='list'
