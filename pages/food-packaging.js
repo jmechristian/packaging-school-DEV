@@ -188,18 +188,17 @@ const Index = () => {
               reach out to our Academic Director Dr. Julie Suggs
             </p>
             <div className='mt-10 flex items-center justify-center gap-x-6'>
-              <a
-                href='/forms/food-packaging-sponsor-form'
-                className='rounded-md bg-base-mid px-3.5 py-2.5 text-lg font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-base-mid'
-              >
-                Get started
-              </a>
-              <a
-                href='mailto:julie@packagingschool.com'
-                className='text-lg font-semibold leading-6 text-gray-900'
-              >
-                Contact Us <span aria-hidden='true'>→</span>
-              </a>
+              <div className='rounded-md bg-base-mid px-3.5 py-2.5 text-lg font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-base-mid'>
+                <Link href='/forms/food-packaging-sponsor-form'>
+                  Get started
+                </Link>
+              </div>
+              <div className='flex items-center gap-1 text-lg font-semibold leading-6 text-gray-900'>
+                <Link href='mailto:julie@packagingschool.com'>Contact Us</Link>
+                <span aria-hidden='true'>
+                  <Link href='mailto:julie@packagingschool.com'>→</Link>
+                </span>
+              </div>
             </div>
           </div>
         </div>
