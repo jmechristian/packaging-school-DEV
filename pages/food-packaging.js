@@ -180,7 +180,7 @@ const Index = () => {
       <div className='bg-white'>
         <div className='py-24 px-6 sm:px-6 sm:py-36 lg:px-8'>
           <div className='mx-auto max-w-2xl text-center'>
-            <h2 className='text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl'>
+            <h2 className='text-3xl font-greycliff font-bold tracking-tight text-gray-900 sm:text-5xl'>
               Interested In Sponsoring? Questions?
             </h2>
             <p className='mx-auto mt-6 max-w-xl text-xl leading-8 text-gray-600'>
@@ -188,12 +188,12 @@ const Index = () => {
               reach out to our Academic Director Dr. Julie Suggs
             </p>
             <div className='mt-10 flex items-center justify-center gap-x-6'>
-              <div className='rounded-md bg-base-mid px-3.5 py-2.5 text-lg font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-base-mid'>
+              <div className='rounded-md bg-base-mid px-3.5 py-2.5 text-lg font-greycliff font-bold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-base-mid'>
                 <Link href='/forms/food-packaging-sponsor-form'>
                   Get started
                 </Link>
               </div>
-              <div className='flex items-center gap-1 text-lg font-semibold leading-6 text-gray-900'>
+              <div className='flex items-center gap-1 text-lg font-bold font-greycliff leading-6 text-gray-900'>
                 <Link href='mailto:julie@packagingschool.com'>Contact Us</Link>
                 <span aria-hidden='true'>
                   <Link href='mailto:julie@packagingschool.com'>→</Link>
