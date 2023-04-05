@@ -8,12 +8,7 @@ const FormWrapper = ({ children }) => {
   return (
     <div className='max-w-4xl mx-auto w-full'>
       <FormProvider {...methods}>
-        <form
-          onSubmit={methods.handleSubmit(onSubmit)}
-          className='flex flex-col gap-8'
-        >
-          {children}
-        </form>
+        <form onSubmit={methods.handleSubmit(onSubmit)}>{children}</form>
       </FormProvider>
     </div>
   );

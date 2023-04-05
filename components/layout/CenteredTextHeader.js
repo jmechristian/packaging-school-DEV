@@ -16,7 +16,7 @@ const CenteredTextHeader = ({
     <div className='bg-white relative isolate'>
       <div className='px-6 lg:px-8 py-8'>
         <PatternBackground />
-        <div className='mx-auto max-w-3xl pt-20 sm:pt-36 sm:pb-6'>
+        <div className='mx-auto max-w-4xl pt-20 sm:pt-36 sm:pb-6'>
           {logo && (
             <div
               className='relative w-60 h-40 mx-auto bg-contain bg-no-repeat'

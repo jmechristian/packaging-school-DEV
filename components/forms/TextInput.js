@@ -9,11 +9,11 @@ const TextInput = ({ label, placeholder, name, type, required }) => {
       <div className='flex justify-between'>
         <label
           htmlFor={name}
-          className='block text-sm font-medium leading-6 text-slate-900'
+          className='block font-greycliff font-semibold leading-6 text-slate-900'
         >
           {label}
         </label>
-        <span className='text-sm leading-6 text-slate-500' id='email-optional'>
+        <span className='text-sm leading-6 text-red-500' id='email-optional'>
           {required ? 'Required' : ''}
         </span>
       </div>
