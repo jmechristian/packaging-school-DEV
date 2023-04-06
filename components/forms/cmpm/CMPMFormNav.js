@@ -7,7 +7,7 @@ import {
 } from '@heroicons/react/24/outline';
 import CMPMNavCard from './CMPMNavCard';
 
-const CMPMFormNav = () => {
+const CMPMFormNav = ({ setIndex }) => {
   const items = [
     {
       id: 'personal',
@@ -34,6 +34,7 @@ const CMPMFormNav = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const setActiveChild = (childIndex) => {
+    setIndex(childIndex);
     setActiveIndex(childIndex);
   };
 
