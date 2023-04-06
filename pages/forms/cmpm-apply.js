@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useState } from 'react';
 import FormWrapper from '../../components/forms/FormWrapper';
 import CenteredTextHeader from '../../components/layout/CenteredTextHeader';
 import CMPMFormNav from '../../components/forms/cmpm/CMPMFormNav';
@@ -14,18 +14,18 @@ const Index = () => {
     console.log(theActiveIndex);
   };
 
-  const formStateToDisplay = useMemo((theActiveIndex) => {
+  const formStateToDisplay = (theActiveIndex) => {
     switch (theActiveIndex) {
-      case '0':
+      case 0:
         return <CMPMPersonalInfo />;
-      case '1':
+      case 1:
         return <CMPMProfessionalInfo />;
-      case '2':
+      case 2:
         return;
       default:
         return <CMPMPersonalInfo />;
     }
-  }, []);
+  };
 
   return (
     <div className='flex flex-col pt-4 pb-24 gap-6'>
@@ -37,7 +37,7 @@ const Index = () => {
       <div className='flex flex-col max-w-4xl w-full mx-auto border border-slate-100 rounded-lg shadow-xl'>
         <CMPMFormNav setIndex={setIndexFromChild} />
         <FormWrapper>
-          {formStateToDisplay}
+          {formStateToDisplay(theActiveIndex)}
           <div className='mt-9 flex w-full items-center justify-end gap-x-9 col-span-2'>
             <button
               type='button'
