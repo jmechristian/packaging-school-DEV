@@ -1,29 +1,36 @@
 import React, { useState } from 'react';
 
-const CMPMNavCard = ({ item, itemIndex }) => {
-  const [active, setIsActive] = useState(false);
+const CMPMNavCard = ({ item, itemIndex, activeIndex, setActive, active }) => {
+  const cardClickHandler = (itIndex) => {
+    setActive(itIndex);
+  };
 
   return (
     <div
-      className='relative flex items-center justify-between'
-      onClick={() => setIsActive(!active)}
+      className={`relative flex items-center justify-between p-8 ${
+        activeIndex === itemIndex ? 'bg-base-light' : 'bg-white'
+      }`}
+      onClick={() => cardClickHandler(itemIndex)}
     >
-      <div
-        className={`flex flex-col gap-2 ml-9 mr-9 h-28 w-32 rounded-lg justify-center items-center text-center font-greycliff font-medium px-5 ${
-          active
-            ? ' bg-base-brand shadow-xl'
-            : 'bg-slate-400 shadow-sm border border-slate-300'
-        }`}
-      >
-        <div>
-          <item.icon className='w-6 h-6 stroke-slate-200' />
-        </div>
-        <div className='leading-tight text-slate-200'>{item.label}</div>
-      </div>
-      <div className='flex items-center absolute inset-0 -z-10'>
+      <div className='flex flex-col gap-2 w-full items-center justify-center'>
         <div
-          className={`w-full h-2 ${active ? 'bg-green-600' : 'bg-slate-200'}`}
-        ></div>
+          className={`flex flex-col gap-2 ml-10 mr-10 h-16 w-16 rounded-full justify-center items-center text-center font-greycliff font-medium px-5 ${
+            activeIndex === itemIndex
+              ? ' bg-clemson shadow-xl'
+              : 'bg-slate-400 shadow-sm border border-slate-300'
+          }`}
+        >
+          <div>
+            <item.icon className='w-8 h-8 stroke-slate-200' />
+          </div>
+        </div>
+        <div
+          className={`font-greycliff font-semibold ${
+            activeIndex === itemIndex ? 'text-slate-800' : 'text-slate-400'
+          }`}
+        >
+          {item.label}
+        </div>
       </div>
     </div>
   );

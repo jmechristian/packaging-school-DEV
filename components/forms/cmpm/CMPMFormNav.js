@@ -5,8 +5,6 @@ import {
   TrophyIcon,
   AcademicCapIcon,
 } from '@heroicons/react/24/outline';
-
-import { FlagIcon } from '@heroicons/react/24/solid';
 import CMPMNavCard from './CMPMNavCard';
 
 const CMPMFormNav = () => {
@@ -14,38 +12,46 @@ const CMPMFormNav = () => {
     {
       id: 'personal',
       icon: UserCircleIcon,
-      label: 'Personal Information',
+      label: 'Personal',
     },
     {
       id: 'company',
       icon: BuildingOfficeIcon,
-      label: 'Professional Information',
+      label: 'Professional',
     },
     {
       id: 'goals',
       icon: TrophyIcon,
-      label: 'Academic Goals',
+      label: 'Goals',
     },
     {
       id: 'session',
       icon: AcademicCapIcon,
-      label: 'Session Information',
+      label: 'Session',
     },
   ];
 
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const setActiveChild = (childIndex) => {
+    setActiveIndex(childIndex);
+  };
+
   return (
-    <div className='w-full max-w-4xl mx-auto flex justify-center items-center'>
-      <div className='w-8 h-8 bg-green-600 rounded-full' />
+    <div className='w-full grid grid-cols-4'>
       {items.map((item, index) => (
-        <div key={item.id}>
-          <CMPMNavCard item={item} itemIndex={index} />
+        <div
+          key={item.id}
+          className='first:rounded-tl-lg last:rounded-tr-lg border border-slate-100'
+        >
+          <CMPMNavCard
+            item={item}
+            setActive={setActiveChild}
+            activeIndex={activeIndex}
+            itemIndex={index}
+          />
         </div>
       ))}
-      <div className='w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center'>
-        <div>
-          <FlagIcon className='w-5 h-5 fill-white' />
-        </div>
-      </div>
     </div>
   );
 };

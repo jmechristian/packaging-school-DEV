@@ -6,7 +6,7 @@ const FormWrapper = ({ children }) => {
   const onSubmit = (data) => console.log(data);
 
   return (
-    <div className='max-w-4xl mx-auto w-full'>
+    <div className='mx-auto w-full px-16 pt-6 pb-12 bg-slate-100'>
       <FormProvider {...methods}>
         <form onSubmit={methods.handleSubmit(onSubmit)}>{children}</form>
       </FormProvider>
