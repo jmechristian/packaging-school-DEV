@@ -12,7 +12,6 @@ const Index = () => {
 
   const setIndexFromChild = (active) => {
     setTheActiveIndex(active);
-    console.log(theActiveIndex);
   };
 
   const formStateToDisplay = (theActiveIndex) => {
