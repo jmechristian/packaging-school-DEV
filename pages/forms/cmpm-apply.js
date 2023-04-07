@@ -46,15 +46,24 @@ const Index = () => {
             >
               Save
             </button>
-            <button
-              type='submit'
-              className='rounded-md bg-base-brand px-4 py-3 text-lg font-semibold text-white shadow-sm font-greycliff hover:bg-base-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600 flex gap-1 items-center'
-            >
-              <div className='leading-none'>Save and Continue</div>
-              <div>
-                <ArrowLongRightIcon className='w-5 h-5 stroke-white' />
-              </div>
-            </button>
+            {theActiveIndex === 3 ? (
+              <button
+                type='submit'
+                className='rounded-md bg-base-brand px-4 py-3 text-lg font-semibold text-white shadow-sm font-greycliff hover:bg-base-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600 flex gap-1 items-center'
+              >
+                <div className='leading-none'>Submit Payment and Apply</div>
+              </button>
+            ) : (
+              <button
+                type='submit'
+                className='rounded-md bg-base-brand px-4 py-3 text-lg font-semibold text-white shadow-sm font-greycliff hover:bg-base-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600 flex gap-1 items-center'
+              >
+                <div className='leading-none'>Save and Continue</div>
+                <div>
+                  <ArrowLongRightIcon className='w-5 h-5 stroke-white' />
+                </div>
+              </button>
+            )}
           </div>
         </FormWrapper>
       </div>
