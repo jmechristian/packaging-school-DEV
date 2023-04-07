@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import FormWrapper from '../../components/forms/FormWrapper';
 import CenteredTextHeader from '../../components/layout/CenteredTextHeader';
 import CMPMFormNav from '../../components/forms/cmpm/CMPMFormNav';
+import CMPMGoals from '../../components/forms/cmpm/CMPMGoals';
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
 import CMPMPersonalInfo from '../../components/forms/cmpm/CMPMPersonalInfo';
 import CMPMProfessionalInfo from '../../components/forms/cmpm/CMPMProfessionalInfo';
@@ -21,7 +22,7 @@ const Index = () => {
       case 1:
         return <CMPMProfessionalInfo />;
       case 2:
-        return;
+        return <CMPMGoals />;
       default:
         return <CMPMPersonalInfo />;
     }
@@ -41,7 +42,7 @@ const Index = () => {
           <div className='mt-9 flex w-full items-center justify-end gap-x-9 col-span-2'>
             <button
               type='button'
-              className='text-lg font-semibold font-greycliff text-gray-900'
+              className='text-lg font-semibold font-greycliff text-gray-600'
             >
               Save
             </button>

@@ -3,7 +3,7 @@ import TextInput from '../TextInput';
 
 const CMPMPersonalInfo = () => {
   return (
-    <div className='flex flex-col gap-3 pt-4'>
+    <div className='flex flex-col gap-4 pt-4'>
       <div className='grid grid-cols-2 gap-8'>
         <TextInput
           name={'firstName'}
