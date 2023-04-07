@@ -1,6 +1,7 @@
 import React from 'react';
 import { useFormContext } from 'react-hook-form';
 import TextInput from '../TextInput';
+import CMPMPricing from './CMPMPricing';
 
 const CMPMSessionInfo = () => {
   const { register } = useFormContext();
@@ -236,6 +237,7 @@ const CMPMSessionInfo = () => {
           </div>
         </div>
       </fieldset>
+      <CMPMPricing />
     </div>
   );
 };
