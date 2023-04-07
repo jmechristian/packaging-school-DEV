@@ -6,6 +6,7 @@ import CMPMGoals from '../../components/forms/cmpm/CMPMGoals';
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
 import CMPMPersonalInfo from '../../components/forms/cmpm/CMPMPersonalInfo';
 import CMPMProfessionalInfo from '../../components/forms/cmpm/CMPMProfessionalInfo';
+import CMPMSessionInfo from '../../components/forms/cmpm/CMPMSessionInfo';
 
 const Index = () => {
   const [theActiveIndex, setTheActiveIndex] = useState(0);
@@ -23,7 +24,7 @@ const Index = () => {
       case 2:
         return <CMPMGoals />;
       default:
-        return <CMPMPersonalInfo />;
+        return <CMPMSessionInfo />;
     }
   };
 

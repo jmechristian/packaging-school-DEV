@@ -9,7 +9,7 @@ const TextArea = ({ label, name, required }) => {
       <div className='flex justify-between'>
         <label
           htmlFor={name}
-          className='block font-greycliff font-semibold leading-6 text-slate-900 max-w-lg'
+          className='block font-greycliff font-semibold leading-6 text-slate-700 max-w-lg'
         >
           {label}
         </label>
@@ -23,7 +23,7 @@ const TextArea = ({ label, name, required }) => {
           name={name}
           rows={3}
           id={name}
-          className='block w-full rounded-md border-0 py-1.5 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
+          className='block w-full rounded-md border-0 py-1.5 text-slate-700 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
           aria-describedby={`${name} + ' ' + ${required}`}
         />
       </div>

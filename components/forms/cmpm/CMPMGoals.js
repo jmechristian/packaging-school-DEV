@@ -4,10 +4,10 @@ import TextArea from '../TextArea';
 
 const CMPMGoals = () => {
   return (
-    <div className='flex flex-col gap-4 pt-4'>
+    <div className='flex flex-col gap-6 pt-4'>
       <TextArea
         name={'yearGoals'}
-        label={'YWhat goals do you have for yourself in the next 12 months?'}
+        label={'What goals do you have for yourself in the next 12 months?'}
         required
       />
       <TextArea

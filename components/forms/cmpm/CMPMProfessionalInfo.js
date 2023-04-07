@@ -9,7 +9,7 @@ const CMPMProfessionalInfo = () => {
         <TextInput
           name={'companyName'}
           placeholder={''}
-          label={'Compnay Name'}
+          label={'Company Name'}
           required
         />
         <TextInput
