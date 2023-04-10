@@ -20,6 +20,8 @@
     "@prismicio/react": "^2.5.0",
     "@prismicio/slice-simulator-react": "^0.2.2",
     "@reduxjs/toolkit": "^1.8.5",
+    "@stripe/react-stripe-js": "^2.1.0",
+    "@stripe/stripe-js": "^1.52.0",
     "algoliasearch": "^4.14.2",
     "apollo-link-prismic": "^1.1.1",
     "aws-amplify": "^5.0.16",
@@ -28,7 +30,7 @@
     "framer-motion": "^7.4.0",
     "graphql": "^16.6.0",
     "graphql-tag": "^2.12.6",
-    "next": "12.3.1",
+    "next": "^12.3.1",
     "popmotion": "^11.0.5",
     "react": "18.2.0",
     "react-chartjs-2": "^4.3.1",
@@ -37,7 +39,8 @@
     "react-instantsearch-hooks-web": "^6.38.1",
     "react-player": "^2.11.2",
     "react-redux": "^8.0.4",
-    "react-social-icons": "^5.15.0"
+    "react-social-icons": "^5.15.0",
+    "stripe": "^12.0.0"
   },
   "devDependencies": {
     "@tailwindcss/aspect-ratio": "^0.4.2",
