@@ -51,7 +51,7 @@ const Index = () => {
                 type='submit'
                 className='rounded-md bg-base-brand px-4 py-3 text-lg font-semibold text-white shadow-sm font-greycliff hover:bg-base-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600 flex gap-1 items-center'
               >
-                <div className='leading-none'>Submit Payment and Apply</div>
+                <div className='leading-none'>Submit Application</div>
               </button>
             ) : (
               <button
