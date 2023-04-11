@@ -3,12 +3,15 @@ import { useFormContext } from 'react-hook-form';
 import TextInput from '../TextInput';
 import CMPMPricing from './CMPMPricing';
 
-const CMPMSessionInfo = () => {
+const CMPMSessionInfo = ({ activeIndex }) => {
   const { register } = useFormContext();
   return (
-    <div className='flex flex-col gap-6 divide-y divide-solid pt-4'>
+    <div
+      className='flex flex-col gap-6 divide-y divide-solid pt-4'
+      style={{ display: activeIndex === 3 ? 'flex' : 'none' }}
+    >
       <fieldset>
-        <div className='flex justify-between items-center'>
+        <div className='flex justify-between items-center py-3'>
           <legend className='font-semibold leading-6 text-slate-700 font-greycliff'>
             Which session are you applying for?
           </legend>

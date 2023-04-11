@@ -2,10 +2,15 @@ import React from 'react';
 import TextInput from '../TextInput';
 import { useFormContext } from 'react-hook-form';
 
-const CMPMPersonalInfo = () => {
-  const { register } = useFormContext();
+const CMPMPersonalInfo = ({ activeIndex }) => {
+  const { register, formState } = useFormContext();
+
+  console.log(formState.errors);
   return (
-    <div className='flex flex-col gap-4 pt-4'>
+    <div
+      className='flex flex-col pt-4 gap-6'
+      style={{ display: activeIndex === 0 ? 'flex' : 'none' }}
+    >
       <div className='grid grid-cols-2 gap-8'>
         <TextInput
           name={'firstName'}
@@ -78,7 +83,7 @@ const CMPMPersonalInfo = () => {
             name='country'
             {...register('country', { required: true })}
           >
-            <option>select country</option>
+            <option value=''>Select Country</option>
             <option value='AF'>Afghanistan</option>
             <option value='AX'>Aland Islands</option>
             <option value='AL'>Albania</option>
@@ -338,6 +343,11 @@ const CMPMPersonalInfo = () => {
             <option value='ZM'>Zambia</option>
             <option value='ZW'>Zimbabwe</option>
           </select>
+          {formState.errors.country && (
+            <div className='text-sm text-red-600 mt-1 mb-2'>
+              Please fill out field.
+            </div>
+          )}
         </div>
         <TextInput
           name={'birthYear'}

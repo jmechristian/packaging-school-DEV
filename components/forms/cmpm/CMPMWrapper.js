@@ -1,9 +1,9 @@
 import React, { useMemo, useContext, useState } from 'react';
+import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
 import FormWrapper from '../FormWrapper';
 import CenteredTextHeader from '../../layout/CenteredTextHeader';
 import CMPMFormNav from './CMPMFormNav';
 import CMPMGoals from './CMPMGoals';
-import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
 import CMPMPersonalInfo from './CMPMPersonalInfo';
 import CMPMProfessionalInfo from './CMPMProfessionalInfo';
 import CMPMSessionInfo from './CMPMSessionInfo';
@@ -39,7 +39,10 @@ const CMPMWrapper = () => {
       <div className='flex flex-col max-w-4xl w-full mx-auto border border-slate-100 rounded-lg shadow-xl'>
         <CMPMFormNav activeIndex={activeIndex} />
         <FormWrapper>
-          {formStateToDisplay(activeIndex)}
+          <CMPMPersonalInfo activeIndex={activeIndex} />
+          <CMPMProfessionalInfo activeIndex={activeIndex} />
+          <CMPMGoals activeIndex={activeIndex} />
+          <CMPMSessionInfo activeIndex={activeIndex} />
           <div className='mt-9 flex w-full items-center justify-end gap-x-9 col-span-2'>
             <button
               type='button'

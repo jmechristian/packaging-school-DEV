@@ -2,9 +2,12 @@ import React from 'react';
 import TextInput from '../TextInput';
 import TextArea from '../TextArea';
 
-const CMPMGoals = () => {
+const CMPMGoals = ({ activeIndex }) => {
   return (
-    <div className='flex flex-col gap-6 pt-4'>
+    <div
+      className='flex flex-col gap-6 pt-4'
+      style={{ display: activeIndex === 2 ? 'flex' : 'none' }}
+    >
       <TextArea
         name={'yearGoals'}
         label={'What goals do you have for yourself in the next 12 months?'}

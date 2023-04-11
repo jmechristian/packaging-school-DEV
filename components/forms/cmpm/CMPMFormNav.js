@@ -32,7 +32,7 @@ const CMPMFormNav = () => {
   ];
 
   return (
-    <div className='w-full grid grid-cols-4'>
+    <div className='w-full grid grid-cols-4 cursor-pointer'>
       {items.map((item, index) => (
         <div
           key={item.id}

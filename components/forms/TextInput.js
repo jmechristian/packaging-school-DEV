@@ -2,7 +2,7 @@ import React from 'react';
 import { useFormContext } from 'react-hook-form';
 
 const TextInput = ({ label, placeholder, name, type, required }) => {
-  const { register } = useFormContext();
+  const { register, formState } = useFormContext();
 
   return (
     <div>
@@ -27,6 +27,13 @@ const TextInput = ({ label, placeholder, name, type, required }) => {
           placeholder={placeholder}
           aria-describedby={`${name} + ' ' + ${required}`}
         />
+      </div>
+      <div>
+        {formState.errors.hasOwnProperty(name) && (
+          <div className='text-sm text-red-600 mt-1 mb-2'>
+            Please fill out field.
+          </div>
+        )}
       </div>
     </div>
   );
