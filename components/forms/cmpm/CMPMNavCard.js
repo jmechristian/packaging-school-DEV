@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import { CMPMContext } from './CMPMContextProvider';
 
-const CMPMNavCard = ({ item, itemIndex, activeIndex, setActive, active }) => {
-  const cardClickHandler = (itIndex) => {
-    setActive(itIndex);
+const CMPMNavCard = ({ item, itemIndex }) => {
+  const { activeIndex, setActiveIndex } = useContext(CMPMContext);
+  const updateIndexHandler = () => {
+    setActiveIndex(itemIndex);
   };
 
   return (
@@ -10,7 +12,7 @@ const CMPMNavCard = ({ item, itemIndex, activeIndex, setActive, active }) => {
       className={`relative flex items-center justify-between p-8 ${
         activeIndex === itemIndex ? 'bg-base-light' : 'bg-white'
       }`}
-      onClick={() => cardClickHandler(itemIndex)}
+      onClick={updateIndexHandler}
     >
       <div className='flex flex-col gap-2 w-full items-center justify-center'>
         <div

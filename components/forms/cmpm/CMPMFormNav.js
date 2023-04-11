@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   UserCircleIcon,
   BuildingOfficeIcon,
@@ -7,7 +7,7 @@ import {
 } from '@heroicons/react/24/outline';
 import CMPMNavCard from './CMPMNavCard';
 
-const CMPMFormNav = ({ setIndex }) => {
+const CMPMFormNav = () => {
   const items = [
     {
       id: 'personal',
@@ -31,13 +31,6 @@ const CMPMFormNav = ({ setIndex }) => {
     },
   ];
 
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  const setActiveChild = (childIndex) => {
-    setIndex(childIndex);
-    setActiveIndex(childIndex);
-  };
-
   return (
     <div className='w-full grid grid-cols-4'>
       {items.map((item, index) => (
@@ -45,12 +38,7 @@ const CMPMFormNav = ({ setIndex }) => {
           key={item.id}
           className='first:rounded-tl-lg last:rounded-tr-lg border border-slate-100'
         >
-          <CMPMNavCard
-            item={item}
-            setActive={setActiveChild}
-            activeIndex={activeIndex}
-            itemIndex={index}
-          />
+          <CMPMNavCard item={item} itemIndex={index} />
         </div>
       ))}
     </div>

@@ -59,8 +59,8 @@ export default function CheckoutForm() {
           <button
             disabled={!stripe}
             className={`${
-              isApproved ? 'bg-green-600' : 'bg-base-dark'
-            } text-white font-greycliff py-2 px-3 rounded-lg font-semibold`}
+              isApproved ? 'text-green-600' : 'text-slate-700'
+            } font-greycliff rounded-lg font-semibold`}
           >
             {buttonText}
           </button>
