@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useStripe, useElements, CardElement } from '@stripe/react-stripe-js';
+import { useFormContext } from 'react-hook-form';
 
-export default function CheckoutForm() {
+export default function CheckoutForm({ setConfirmation }) {
   const stripe = useStripe();
   const elements = useElements();
+  const { setValue } = useFormContext();
 
   const [isLoading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
@@ -36,7 +38,6 @@ export default function CheckoutForm() {
 
     if (result.error) {
       // Show error to your customer (for example, insufficient funds)
-      console.log(result.error.message);
       setMessage(result.error.message);
       setLoading(false);
       setApproved(false);
@@ -46,6 +47,7 @@ export default function CheckoutForm() {
       if (result.paymentIntent.status === 'succeeded') {
         setLoading(false);
         setApproved(true);
+        setValue('paymentConfirmation', result.paymentIntent.id);
         setButtonText('Approved!');
       }
     }

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { CheckIcon } from '@heroicons/react/20/solid';
 import CheckoutForm from '../../layout/CheckoutForm';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
+import { useFormContext } from 'react-hook-form';
 
 const includedFeatures = [
   'Private forum access',
@@ -15,6 +15,10 @@ const CMPMPricing = () => {
   const [stripePromise, setStripePromise] = useState(() =>
     loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
   );
+
+  const [paymentConfirmation, setPaymentConfirmation] = useState('');
+
+  const { register, formState } = useFormContext();
 
   return (
     <div className='bg-white p-6 flex justify-center items-center mt-6'>
@@ -35,20 +39,31 @@ const CMPMPricing = () => {
                   </span>
                 </p>
                 <Elements stripe={stripePromise}>
-                  <CheckoutForm />
+                  <CheckoutForm
+                    setConfirmation={(val) => setPaymentConfirmation(val)}
+                  />
                 </Elements>
+                <div>
+                  <input
+                    type='hidden'
+                    value={paymentConfirmation}
+                    name='paymentConfirmation'
+                    {...register('paymentConfirmation', {
+                      required: true,
+                    })}
+                  />
+                  {formState.errors.hasOwnProperty('paymentConfirmation') && (
+                    <div className='text-sm text-red-600 mt-3 mb-2'>
+                      Please fill out field.
+                    </div>
+                  )}
+                </div>
                 <div className='text-sm text-slate-500 mt-6'>
                   Upon acceptance a student agreement form will be issued with
                   details on the course and billing options for the full CMPM
                   tuition of $7,000. Completion of this application is not an
                   obligation to enroll in the CMPM program.
                 </div>
-                {/* <a
-                  href='#'
-                  className='mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
-                >
-                  Get access
-                </a> */}
               </div>
             </div>
           </div>
