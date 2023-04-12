@@ -19,7 +19,7 @@ const CMPMSessionInfo = ({ activeIndex }) => {
             Required
           </span>
         </div>
-        <div className='mt-6 gap-12 flex items-center'>
+        <div className='mt-3 gap-12 flex items-center'>
           <div className='flex items-center gap-x-3'>
             <input
               {...register('session-applying', { required: true })}
@@ -94,9 +94,10 @@ const CMPMSessionInfo = ({ activeIndex }) => {
         <div className='mt-6 gap-x-12 gap-y-3 flex flex-wrap items-center'>
           <div className='flex items-center gap-x-3'>
             <input
-              {...register('google')}
+              {...register('referral', { required: true })}
               id='google'
-              name='refered-by'
+              name='referral'
+              value='google'
               type='radio'
               className='h-4 w-4 border-slate-300 text-base-brand focus:ring-base-brand'
             />
@@ -109,10 +110,11 @@ const CMPMSessionInfo = ({ activeIndex }) => {
           </div>
           <div className='flex items-center gap-x-3'>
             <input
-              {...register('linkedIn')}
+              {...register('referral', { required: true })}
               id='linkedIn'
-              name='refered-by'
+              name='referral'
               type='radio'
+              value='linkedin'
               className='h-4 w-4 border-slate-300 text-base-brand focus:ring-base-brand'
             />
             <label
@@ -124,10 +126,11 @@ const CMPMSessionInfo = ({ activeIndex }) => {
           </div>
           <div className='flex items-center gap-x-3'>
             <input
-              {...register('show')}
-              id='show'
-              name='refered-by'
+              {...register('referral', { required: true })}
+              id='industry-show'
+              name='referral'
               type='radio'
+              value='industry-show'
               className='h-4 w-4 border-slate-300 text-base-brand focus:ring-base-brand'
             />
             <label
@@ -139,9 +142,10 @@ const CMPMSessionInfo = ({ activeIndex }) => {
           </div>
           <div className='flex items-center gap-x-3'>
             <input
-              {...register('colleague')}
+              {...register('referral', { required: true })}
               id='colleague'
-              name='refered-by'
+              name='referral'
+              value='colleague'
               type='radio'
               className='h-4 w-4 border-slate-300 text-base-brand focus:ring-base-brand'
             />
@@ -154,9 +158,10 @@ const CMPMSessionInfo = ({ activeIndex }) => {
           </div>
           <div className='flex items-center gap-x-3'>
             <input
-              {...register('other')}
+              {...register('referral', { required: true })}
               id='other'
-              name='refered-by'
+              name='referral'
+              value='other'
               type='radio'
               className='h-4 w-4 border-slate-300 text-base-brand focus:ring-base-brand'
             />
