@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
 import { CMPMContext } from './CMPMContextProvider';
+import { ShieldExclamationIcon } from '@heroicons/react/24/solid';
 
 const CMPMNavCard = ({ item, itemIndex }) => {
-  const { activeIndex, setActiveIndex } = useContext(CMPMContext);
+  const { activeIndex, setActiveIndex, errorIndex } = useContext(CMPMContext);
   const updateIndexHandler = () => {
     setActiveIndex(itemIndex);
   };
@@ -14,6 +15,11 @@ const CMPMNavCard = ({ item, itemIndex }) => {
       }`}
       onClick={updateIndexHandler}
     >
+      {errorIndex.includes(itemIndex) && (
+        <div className='absolute z-10 left-2 bottom-2'>
+          <ShieldExclamationIcon className='h-7 w-7 fill-red-500' />
+        </div>
+      )}
       <div className='flex flex-col gap-2 w-full items-center justify-center'>
         <div
           className={`flex flex-col gap-2 ml-10 mr-10 h-16 w-16 rounded-full justify-center items-center text-center font-greycliff font-medium px-5 ${

@@ -3,13 +3,13 @@ import React, { useState, createContext } from 'react';
 export const CMPMContext = createContext({
   activeIndex: 0,
   setActiveIndex: () => {},
-  errorIndex: null,
+  errorIndex: [],
   setErrorIndex: () => {},
 });
 
 const CMPMContextProvider = ({ children }) => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [errorIndex, setErrorIndex] = useState(null);
+  const [errorIndex, setErrorIndex] = useState([]);
 
   return (
     <CMPMContext.Provider
