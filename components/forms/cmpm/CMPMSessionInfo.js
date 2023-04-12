@@ -10,7 +10,7 @@ const CMPMSessionInfo = ({ activeIndex }) => {
       className='flex flex-col gap-6 divide-y divide-solid pt-4'
       style={{ display: activeIndex === 3 ? 'flex' : 'none' }}
     >
-      <fieldset>
+      <div>
         <div className='flex justify-between items-center py-3'>
           <legend className='font-semibold leading-6 text-slate-700 font-greycliff'>
             Which session are you applying for?
@@ -22,8 +22,9 @@ const CMPMSessionInfo = ({ activeIndex }) => {
         <div className='mt-6 gap-12 flex items-center'>
           <div className='flex items-center gap-x-3'>
             <input
-              {...register('july2023')}
+              {...register('session-applying', { required: true })}
               id='july2023'
+              value='july2023'
               name='session-applying'
               type='radio'
               className='h-4 w-4 border-slate-300 text-base-brand focus:ring-base-brand'
@@ -37,9 +38,10 @@ const CMPMSessionInfo = ({ activeIndex }) => {
           </div>
           <div className='flex items-center gap-x-3'>
             <input
-              {...register('sept2023')}
+              {...register('session-applying', { required: true })}
               id='sept2023'
               name='session-applying'
+              value='sept2023'
               type='radio'
               className='h-4 w-4 border-slate-300 text-base-brand focus:ring-base-brand'
             />
@@ -51,7 +53,7 @@ const CMPMSessionInfo = ({ activeIndex }) => {
             </label>
           </div>
         </div>
-      </fieldset>
+      </div>
       <div className='relative flex gap-x-3 pt-6'>
         <div className='flex h-6 items-center'>
           <input

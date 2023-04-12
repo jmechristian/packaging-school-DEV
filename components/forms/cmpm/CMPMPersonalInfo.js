@@ -4,8 +4,6 @@ import { useFormContext } from 'react-hook-form';
 
 const CMPMPersonalInfo = ({ activeIndex }) => {
   const { register, formState } = useFormContext();
-
-  console.log(formState.errors);
   return (
     <div
       className='flex flex-col pt-4 gap-6'

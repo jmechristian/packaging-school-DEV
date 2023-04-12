@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { CheckIcon } from '@heroicons/react/20/solid';
 import CheckoutForm from '../../layout/CheckoutForm';
 import { loadStripe } from '@stripe/stripe-js';
@@ -12,9 +12,10 @@ const includedFeatures = [
 ];
 
 const CMPMPricing = () => {
-  const stripePromise = loadStripe(
-    process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
+  const [stripePromise, setStripePromise] = useState(() =>
+    loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
   );
+
   return (
     <div className='bg-white p-6 flex justify-center items-center mt-6'>
       <div className='mx-auto w-full'>
