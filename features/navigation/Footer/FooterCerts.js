@@ -7,7 +7,7 @@ const FooterCerts = () => {
       <div className='font-extrabold text-sm uppercase tracking-widest text-slate-200 font-greycliff'>
         Certifications
       </div>
-      <Link href={'/certifications/cmpm'}>
+      <Link href={'/certifications/get-to-know-cmpm'}>
         <p className='text-slate-500 cursor-pointer'>
           Certificate of Mastery in Packaging Management
         </p>
