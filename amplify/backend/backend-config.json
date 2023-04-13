@@ -1,268 +1,99 @@
 {
-  "analytics": {},
-  "api": {
-    "packbrain": {
-      "dependsOn": [],
-      "output": {
-        "authConfig": {
-          "additionalAuthenticationProviders": [
-            {
-              "authenticationType": "AWS_IAM"
-            }
-          ],
-          "defaultAuthentication": {
-            "apiKeyConfig": {
-              "apiKeyExpirationDays": 30,
-              "description": "api key description"
-            },
-            "authenticationType": "API_KEY"
-          }
-        }
-      },
-      "providerPlugin": "awscloudformation",
-      "service": "AppSync"
-    }
-  },
   "auth": {
-    "packbrain": {
-      "customAuth": false,
+    "packschoolmain": {
+      "service": "Cognito",
+      "serviceType": "imported",
+      "providerPlugin": "awscloudformation",
       "dependsOn": [],
-      "frontendAuthConfig": {
-        "mfaConfiguration": "OFF",
-        "mfaTypes": [
-          "SMS"
-        ],
-        "passwordProtectionSettings": {
-          "passwordPolicyCharacters": [
-            "REQUIRES_LOWERCASE",
-            "REQUIRES_NUMBERS",
-            "REQUIRES_SYMBOLS",
-            "REQUIRES_UPPERCASE"
-          ],
-          "passwordPolicyMinLength": 8
-        },
-        "signupAttributes": [
-          "EMAIL"
-        ],
-        "socialProviders": [
-          "GOOGLE"
-        ],
-        "usernameAttributes": [
-          "EMAIL"
-        ],
-        "verificationMechanisms": [
-          "EMAIL"
-        ]
-      },
-      "providerPlugin": "awscloudformation",
-      "service": "Cognito"
-    }
-  },
-  "function": {
-    "addAPSToUser": {
-      "build": true,
-      "dependsOn": [
-        {
-          "attributes": [
-            "GraphQLAPIIdOutput",
-            "GraphQLAPIEndpointOutput",
-            "GraphQLAPIKeyOutput"
-          ],
-          "category": "api",
-          "resourceName": "packbrain"
-        }
-      ],
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    },
-    "addNewUser": {
-      "build": true,
-      "dependsOn": [
-        {
-          "attributes": [
-            "GraphQLAPIIdOutput",
-            "GraphQLAPIEndpointOutput",
-            "GraphQLAPIKeyOutput"
-          ],
-          "category": "api",
-          "resourceName": "packbrain"
-        }
-      ],
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    },
-    "sendEmailFn": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    },
-    "sendRegCode": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    },
-    "sendSponsorForm": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    },
-    "sendWelcomeEmail": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    }
-  },
-  "hosting": {},
-  "notifications": {
-    "autopacksummit": {
-      "service": "Pinpoint",
-      "channels": [
-        "Email"
-      ]
+      "customAuth": false
     }
   },
   "parameters": {
-    "AMPLIFY_analytics_Pinpoint_Id": {
+    "AMPLIFY_auth_packschoolmain_allowUnauthenticatedIdentities": {
       "usedBy": [
         {
-          "category": "analytics",
-          "resourceName": "Pinpoint"
+          "category": "auth",
+          "resourceName": "packschoolmain"
         }
       ]
     },
-    "AMPLIFY_analytics_Pinpoint_Name": {
+    "AMPLIFY_auth_packschoolmain_authRoleArn": {
       "usedBy": [
         {
-          "category": "analytics",
-          "resourceName": "Pinpoint"
+          "category": "auth",
+          "resourceName": "packschoolmain"
         }
       ]
     },
-    "AMPLIFY_analytics_Pinpoint_Region": {
+    "AMPLIFY_auth_packschoolmain_authRoleName": {
       "usedBy": [
         {
-          "category": "analytics",
-          "resourceName": "Pinpoint"
+          "category": "auth",
+          "resourceName": "packschoolmain"
         }
       ]
     },
-    "AMPLIFY_function_addAPSToUser_deploymentBucketName": {
+    "AMPLIFY_auth_packschoolmain_identityPoolId": {
       "usedBy": [
         {
-          "category": "function",
-          "resourceName": "addAPSToUser"
+          "category": "auth",
+          "resourceName": "packschoolmain"
         }
       ]
     },
-    "AMPLIFY_function_addAPSToUser_s3Key": {
+    "AMPLIFY_auth_packschoolmain_identityPoolName": {
       "usedBy": [
         {
-          "category": "function",
-          "resourceName": "addAPSToUser"
+          "category": "auth",
+          "resourceName": "packschoolmain"
         }
       ]
     },
-    "AMPLIFY_function_addNewUser_deploymentBucketName": {
+    "AMPLIFY_auth_packschoolmain_nativeClientId": {
       "usedBy": [
         {
-          "category": "function",
-          "resourceName": "addNewUser"
+          "category": "auth",
+          "resourceName": "packschoolmain"
         }
       ]
     },
-    "AMPLIFY_function_addNewUser_s3Key": {
+    "AMPLIFY_auth_packschoolmain_unauthRoleArn": {
       "usedBy": [
         {
-          "category": "function",
-          "resourceName": "addNewUser"
+          "category": "auth",
+          "resourceName": "packschoolmain"
         }
       ]
     },
-    "AMPLIFY_function_sendEmailFn_deploymentBucketName": {
+    "AMPLIFY_auth_packschoolmain_unauthRoleName": {
       "usedBy": [
         {
-          "category": "function",
-          "resourceName": "sendEmailFn"
+          "category": "auth",
+          "resourceName": "packschoolmain"
         }
       ]
     },
-    "AMPLIFY_function_sendEmailFn_s3Key": {
+    "AMPLIFY_auth_packschoolmain_userPoolId": {
       "usedBy": [
         {
-          "category": "function",
-          "resourceName": "sendEmailFn"
+          "category": "auth",
+          "resourceName": "packschoolmain"
         }
       ]
     },
-    "AMPLIFY_function_sendRegCode_deploymentBucketName": {
+    "AMPLIFY_auth_packschoolmain_userPoolName": {
       "usedBy": [
         {
-          "category": "function",
-          "resourceName": "sendRegCode"
+          "category": "auth",
+          "resourceName": "packschoolmain"
         }
       ]
     },
-    "AMPLIFY_function_sendRegCode_s3Key": {
+    "AMPLIFY_auth_packschoolmain_webClientId": {
       "usedBy": [
         {
-          "category": "function",
-          "resourceName": "sendRegCode"
-        }
-      ]
-    },
-    "AMPLIFY_function_sendSponsorForm_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "sendSponsorForm"
-        }
-      ]
-    },
-    "AMPLIFY_function_sendSponsorForm_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "sendSponsorForm"
-        }
-      ]
-    },
-    "AMPLIFY_function_sendWelcomeEmail_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "sendWelcomeEmail"
-        }
-      ]
-    },
-    "AMPLIFY_function_sendWelcomeEmail_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "sendWelcomeEmail"
-        }
-      ]
-    },
-    "AMPLIFY_notifications_Pinpoint_Id": {
-      "usedBy": [
-        {
-          "category": "notifications",
-          "resourceName": "Pinpoint"
-        }
-      ]
-    },
-    "AMPLIFY_notifications_Pinpoint_Name": {
-      "usedBy": [
-        {
-          "category": "notifications",
-          "resourceName": "Pinpoint"
-        }
-      ]
-    },
-    "AMPLIFY_notifications_Pinpoint_Region": {
-      "usedBy": [
-        {
-          "category": "notifications",
-          "resourceName": "Pinpoint"
+          "category": "auth",
+          "resourceName": "packschoolmain"
         }
       ]
     }

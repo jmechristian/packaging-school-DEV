@@ -12,6 +12,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setAllCourses } from '../all_courses/courseFilterSlice';
 
 import ScrollTop from './ScrollTop';
+import AuthWrapper from '../auth/AuthWrapper';
 
 const Layout = ({ children }) => {
   const dispatch = useDispatch();
@@ -79,6 +80,7 @@ const Layout = ({ children }) => {
         <div className='relative flex flex-col min-h-screen justify-between'>
           <Header />
           <MobileHeader />
+          <AuthWrapper />
           <ScrollTop />
           <DarkToggle />
           {/* <SearchMenu /> */}
