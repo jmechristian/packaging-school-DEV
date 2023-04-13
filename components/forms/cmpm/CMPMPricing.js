@@ -40,7 +40,9 @@ const CMPMPricing = () => {
                 </p>
                 <Elements stripe={stripePromise}>
                   <CheckoutForm
-                    setConfirmation={(val) => setPaymentConfirmation(val)}
+                    setConfirmation={(val) =>
+                      setPaymentConfirmation(val && val)
+                    }
                   />
                 </Elements>
                 <div>
