@@ -15,7 +15,7 @@ const FooterCerts = () => {
       <Link href={'/certifications/get-to-know-cps'}>
         <p className='text-slate-500'>Certificate of Packaging Science</p>
       </Link>
-      <Link href={'/certifications/get-to-know-aps'}>
+      <Link href={'/certifications/get-to-know-apc'}>
         <p className='text-slate-500'>Automotive Packaging Certificate</p>
       </Link>
     </div>
