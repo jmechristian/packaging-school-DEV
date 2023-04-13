@@ -22,8 +22,8 @@ const awsmobile = {
             "profile",
             "aws.cognito.signin.user.admin"
         ],
-        "redirectSignIn": "http://localhost:3000/,https://radiant-ganache-5f2a29.netlify.app/",
-        "redirectSignOut": "http://localhost:3000/,https://radiant-ganache-5f2a29.netlify.app/",
+        "redirectSignIn": "http://localhost:3000/",
+        "redirectSignOut": "http://localhost:3000/",
         "responseType": "code"
     },
     "federationTarget": "COGNITO_USER_POOLS",

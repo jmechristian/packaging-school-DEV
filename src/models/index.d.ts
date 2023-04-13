@@ -84,6 +84,17 @@ export declare class Certificate {
   readonly title_button_2_link?: string | null;
   readonly title_image?: string | null;
   readonly courses?: (CertificateCourses | null)[] | null;
+  readonly whoText?: string | null;
+  readonly courses_total?: number | null;
+  readonly hours_total?: number | null;
+  readonly ceus_total?: number | null;
+  readonly brochure_link?: string | null;
+  readonly video?: string | null;
+  readonly price_full?: number | null;
+  readonly price_monthly?: number | null;
+  readonly price_features?: (string | null)[] | null;
+  readonly lmsLink?: string | null;
+  readonly demoLink?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
   constructor(init: ModelInit<Certificate>);

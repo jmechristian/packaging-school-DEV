@@ -329,6 +329,84 @@ export const schema = {
                         ]
                     }
                 },
+                "whoText": {
+                    "name": "whoText",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "courses_total": {
+                    "name": "courses_total",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "hours_total": {
+                    "name": "hours_total",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "ceus_total": {
+                    "name": "ceus_total",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "brochure_link": {
+                    "name": "brochure_link",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "video": {
+                    "name": "video",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "price_full": {
+                    "name": "price_full",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "price_monthly": {
+                    "name": "price_monthly",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "price_features": {
+                    "name": "price_features",
+                    "isArray": true,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true
+                },
+                "lmsLink": {
+                    "name": "lmsLink",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "demoLink": {
+                    "name": "demoLink",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
@@ -2256,5 +2334,5 @@ export const schema = {
             }
         }
     },
-    "version": "bcb5e742322cfe113f0dd12ebc191cfa"
+    "version": "6ea50cf87a262eb83ae5ff2d70d98c71"
 };
