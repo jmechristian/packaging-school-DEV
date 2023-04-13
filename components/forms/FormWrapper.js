@@ -34,10 +34,6 @@ const FormWrapper = ({ children }) => {
       setErrorIndex((errorIndex) => [...errorIndex, 0]);
     }
 
-    if (!personalErrors.every((key) => Object.keys(errors).includes(key))) {
-      setErrorIndex((errorIndex) => errorIndex.splice(0));
-    }
-
     if (professionalErrors.every((key) => Object.keys(errors).includes(key))) {
       setErrorIndex((errorIndex) => [...errorIndex, 1]);
     }
