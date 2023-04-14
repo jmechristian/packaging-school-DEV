@@ -8,6 +8,7 @@ import Footer from '../navigation/Footer/Footer';
 import MobileHeader from '../navigation//Header/MobileHeader';
 import MobileMenu from '../navigation/Header/MobileMenu';
 import SearchMenu from '../navigation/Header/SearchMenu';
+import AuthWrapper from '../auth/AuthWrapper';
 import { useSelector, useDispatch } from 'react-redux';
 import { setAllCourses } from '../all_courses/courseFilterSlice';
 import { setUser } from '../auth/authslice';
@@ -20,10 +21,7 @@ const Layout = ({ children, user }) => {
   const { loginOpen } = useSelector((state) => state.auth);
 
   useEffect(() => {
-    user &&
-      dispatch(
-        setUser({ username: user.username, email: user.attributes.email })
-      );
+    user && dispatch(setUser(user));
   }, [dispatch, user]);
 
   useEffect(() => {

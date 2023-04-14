@@ -1,10 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useRouter } from 'next/router';
 import { showSearch } from '../navigationSlice';
 import { motion, useScroll } from 'framer-motion';
-import Image from 'next/image';
-
-import { useRouter } from 'next/router';
 import {
   MagnifyingGlassIcon,
   UserCircleIcon,
@@ -13,13 +11,14 @@ import Menu from './Menu';
 import Logo from '../../../components/layout/Logo';
 
 const Navigation = () => {
+  const router = useRouter();
   const dispatch = useDispatch();
   const { menuItemOpen } = useSelector((state) => state.nav);
   const { darkMode } = useSelector((state) => state.layout);
+  const { user } = useSelector((state) => state.auth);
   const [showMenu, setShowMenu] = useState(false);
   const mainMenuRef = useRef();
   const { scrollY } = useScroll();
-  const router = useRouter();
 
   useEffect(() => {
     return scrollY.onChange(() => updateY());
@@ -80,19 +79,32 @@ const Navigation = () => {
             className={`w-6 h-6 stroke-white cursor-pointer`}
             onClick={() => dispatch(showSearch())}
           />
-          <UserCircleIcon
-            className={`w-6 h-6 stroke-white hidden lg:block xl:hidden`}
-          />
-          <div
-            className={`dark:white font-greycliff  text-white hidden xl:block text-sm font-semibold xl:text-base`}
-          >
-            Log In
-          </div>
-          <button className='text-sm font-bold xl:text-base bg-clemson hover:bg-clemson-dark rounded hidden xl:block'>
-            <div className='px-4 py-2 text-white font-greycliff'>
-              Join for Free
+          {user ? (
+            <div className='flex gap-4 items-center'>
+              <div
+                className='w-8 h-8 rounded-full bg-cover bg-center ring-1 ring-white'
+                style={{ backgroundImage: `url(${user.picture})` }}
+              ></div>
+              <div className='text-white text-sm'>Hello {user.given_name}</div>
             </div>
-          </button>
+          ) : (
+            <>
+              <UserCircleIcon
+                className={`w-6 h-6 stroke-white hidden lg:block xl:hidden`}
+              />
+              <div
+                className={` cursor-pointer dark:white font-greycliff  text-white hidden xl:block text-sm font-semibold xl:text-base`}
+                onClick={() => router.push('/login')}
+              >
+                Log In
+              </div>
+              <button className='text-sm font-bold xl:text-base bg-clemson hover:bg-clemson-dark rounded hidden xl:block'>
+                <div className='px-4 py-2 text-white font-greycliff'>
+                  Join for Free
+                </div>
+              </button>
+            </>
+          )}
         </div>
       </div>
     </motion.header>

@@ -8,6 +8,7 @@ import { linkResolver, repositoryName } from '../prismicio';
 import { store } from '../features/store';
 import { Provider } from 'react-redux';
 import { Amplify, Auth, Hub } from 'aws-amplify';
+import { Authenticator } from '@aws-amplify/ui-react';
 
 import awsExports from '../src/aws-exports';
 Amplify.configure(awsExports);
@@ -21,6 +22,7 @@ export default function App({ Component, pageProps }) {
         case 'signIn':
         case 'cognitoHostedUI':
           getUser().then((userData) => setUser(userData));
+          console.log(user);
           break;
         case 'signOut':
           setUser(null);
@@ -54,11 +56,13 @@ export default function App({ Component, pageProps }) {
       )}
     >
       <PrismicPreview repositoryName={repositoryName}>
-        <Provider store={store}>
-          <Layout user={user}>
-            <Component {...pageProps} />
-          </Layout>
-        </Provider>
+        <Authenticator.Provider>
+          <Provider store={store}>
+            <Layout user={user && user.attributes}>
+              <Component {...pageProps} />
+            </Layout>
+          </Provider>
+        </Authenticator.Provider>
       </PrismicPreview>
     </PrismicProvider>
   );
