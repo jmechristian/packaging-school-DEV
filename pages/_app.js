@@ -9,6 +9,7 @@ import { store } from '../features/store';
 import { Provider } from 'react-redux';
 import { Amplify, Auth, Hub } from 'aws-amplify';
 import { Authenticator } from '@aws-amplify/ui-react';
+import { createUser } from '../libs/api';
 
 import awsExports from '../src/aws-exports';
 Amplify.configure(awsExports);
@@ -23,6 +24,7 @@ export default function App({ Component, pageProps }) {
         case 'cognitoHostedUI':
           getUser().then((userData) => setUser(userData));
           console.log(user);
+          // createUser(user);
           break;
         case 'signOut':
           setUser(null);
