@@ -10,14 +10,21 @@ import MobileMenu from '../navigation/Header/MobileMenu';
 import SearchMenu from '../navigation/Header/SearchMenu';
 import { useSelector, useDispatch } from 'react-redux';
 import { setAllCourses } from '../all_courses/courseFilterSlice';
-
+import { setUser } from '../auth/authslice';
 import ScrollTop from './ScrollTop';
-import AuthWrapper from '../auth/AuthWrapper';
 
-const Layout = ({ children }) => {
+const Layout = ({ children, user }) => {
   const dispatch = useDispatch();
   const { menuItemOpen } = useSelector((state) => state.nav);
   const { darkMode } = useSelector((state) => state.layout);
+  const { loginOpen } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    user &&
+      dispatch(
+        setUser({ username: user.username, email: user.attributes.email })
+      );
+  }, [dispatch, user]);
 
   useEffect(() => {
     const getCourses = async () => {
@@ -80,7 +87,6 @@ const Layout = ({ children }) => {
         <div className='relative flex flex-col min-h-screen justify-between'>
           <Header />
           <MobileHeader />
-          <AuthWrapper />
           <ScrollTop />
           <DarkToggle />
           {/* <SearchMenu /> */}
