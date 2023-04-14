@@ -13,19 +13,7 @@
     },
     "categories": {
       "auth": {
-        "packschoolmain": {
-          "userPoolId": "us-east-1_2JouwovYC",
-          "userPoolName": "packbrain-staging",
-          "webClientId": "4ipq2lssmensm4e18eua00limb",
-          "nativeClientId": "4ipq2lssmensm4e18eua00limb",
-          "identityPoolId": "us-east-1:df713456-0ca5-4b8b-87dd-1f2a8c1faa99",
-          "identityPoolName": "testAuthIdentityPool__staging",
-          "allowUnauthenticatedIdentities": false,
-          "authRoleArn": "arn:aws:iam::552673436980:role/amplify-packbrain-staging-54032-authRole",
-          "authRoleName": "amplify-packbrain-staging-54032-authRole",
-          "unauthRoleArn": "arn:aws:iam::552673436980:role/amplify-packbrain-staging-54032-unauthRole",
-          "unauthRoleName": "amplify-packbrain-staging-54032-unauthRole"
-        }
+        "packschoolmainbe713de3": {}
       }
     }
   }
