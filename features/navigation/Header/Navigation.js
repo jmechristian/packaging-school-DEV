@@ -80,12 +80,19 @@ const Navigation = () => {
             onClick={() => dispatch(showSearch())}
           />
           {user ? (
-            <div className='flex gap-4 items-center'>
+            <div className='flex gap-2 items-center'>
               <div
                 className='w-8 h-8 rounded-full bg-cover bg-center ring-1 ring-white'
                 style={{ backgroundImage: `url(${user.picture})` }}
               ></div>
-              <div className='text-white text-sm'>Hello {user.given_name}</div>
+              <div className='flex flex-col'>
+                <div className='text-white text-xs tracking-widest  uppercase font-bold font-greycliff leading-none'>
+                  Hello
+                </div>
+                <div className='text-base-brand font-greycliff leading-none'>
+                  {user.name}
+                </div>
+              </div>
             </div>
           ) : (
             <>

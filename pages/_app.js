@@ -22,9 +22,11 @@ export default function App({ Component, pageProps }) {
       switch (event) {
         case 'signIn':
         case 'cognitoHostedUI':
-          getUser().then((userData) => setUser(userData));
-          console.log(user);
-          // createUser(user);
+          getUser().then((userData) => {
+            setUser(userData);
+            createUser(userData);
+          });
+
           break;
         case 'signOut':
           setUser(null);

@@ -6,7 +6,7 @@ input AMPLIFY {
 type User @model @auth(rules: [{ allow: public }]) {
   id: ID!
   name: String
-  email: String!
+  email: String! @index(name: "byEmail")
   picture: String
   companyName: String
   companyTitle: String
