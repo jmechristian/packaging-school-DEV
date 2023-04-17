@@ -1,10 +1,10 @@
 {
   "version": "1",
   "cognitoConfig": {
-    "identityPoolName": "packschoolmainbe713de3_identitypool_be713de3",
+    "identityPoolName": "testAuthIdentityPool",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "packscbe713de3",
-    "userPoolName": "packschoolmainbe713de3_userpool_be713de3",
+    "resourceNameTruncated": "packbr79db4d3f",
+    "userPoolName": "packbrain",
     "autoVerifiedAttributes": [
       "email"
     ],
@@ -14,11 +14,16 @@
     ],
     "smsAuthenticationMessage": "Your authentication code is {####}",
     "smsVerificationMessage": "Your verification code is {####}",
-    "emailVerificationSubject": "Your verification code",
-    "emailVerificationMessage": "Your verification code is {####}",
+    "emailVerificationSubject": "Verification code: {####}",
+    "emailVerificationMessage": "Verification code: {####}",
     "defaultPasswordPolicy": false,
     "passwordPolicyMinLength": 8,
-    "passwordPolicyCharacters": [],
+    "passwordPolicyCharacters": [
+      "Requires Lowercase",
+      "Requires Numbers",
+      "Requires Symbols",
+      "Requires Uppercase"
+    ],
     "requiredAttributes": [
       "email"
     ],
@@ -27,23 +32,27 @@
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [],
     "userpoolClientReadAttributes": [],
-    "userpoolClientLambdaRole": "packscbe713de3_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "packbr79db4d3f_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "be713de3",
-    "resourceName": "packschoolmainbe713de3",
+    "sharedId": "79db4d3f",
+    "resourceName": "packbrain",
     "authSelections": "identityPoolAndUserPool",
-    "useDefault": "manual",
-    "hostedUI": true,
+    "serviceName": "Cognito",
     "usernameAttributes": [
       "email"
     ],
-    "hostedUIDomainName": "packschoolmainbe713de3-be713de3",
+    "useDefault": "manual",
+    "userPoolGroups": false,
+    "userPoolGroupList": [],
+    "adminQueries": false,
+    "thirdPartyAuth": false,
+    "authProviders": [],
+    "hostedUI": true,
+    "hostedUIDomainName": "tf0k39z292lz",
     "authProvidersUserPool": [
       "Google"
     ],
     "hostedUIProviderMeta": "[{\"ProviderName\":\"Google\",\"authorize_scopes\":\"openid email profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"sub\"}}]",
-    "userPoolGroupList": [],
-    "serviceName": "Cognito",
     "usernameCaseSensitive": false,
     "useEnabledMfas": true,
     "authRoleArn": {
@@ -60,10 +69,6 @@
     },
     "breakCircularDependency": true,
     "dependsOn": [],
-    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:3000/\",\"https://eeu1rh1n7fjt-staging.auth.us-east-1.amazoncognito.com/oauth2/idpresponse/\"],\"LogoutURLs\":[\"http://localhost:3000/\"]}",
-    "userPoolGroups": false,
-    "adminQueries": false,
-    "thirdPartyAuth": false,
-    "authProviders": []
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:3000/\"],\"LogoutURLs\":[\"http://localhost:3000/\"]}"
   }
-} 
+}

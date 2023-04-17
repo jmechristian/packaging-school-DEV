@@ -1,6 +1,13 @@
 export type AmplifyDependentResourcesAttributes = {
+    "api": {
+        "packbrain": {
+            "GraphQLAPIKeyOutput": "string",
+            "GraphQLAPIIdOutput": "string",
+            "GraphQLAPIEndpointOutput": "string"
+        }
+    },
     "auth": {
-        "packschoolmainbe713de3": {
+        "packbrain": {
             "IdentityPoolId": "string",
             "IdentityPoolName": "string",
             "HostedUIDomain": "string",
@@ -12,11 +19,48 @@ export type AmplifyDependentResourcesAttributes = {
             "AppClientID": "string"
         }
     },
-    "api": {
-        "packschoolmain": {
-            "GraphQLAPIKeyOutput": "string",
-            "GraphQLAPIIdOutput": "string",
-            "GraphQLAPIEndpointOutput": "string"
+    "function": {
+        "addAPSToUser": {
+            "Name": "string",
+            "Arn": "string",
+            "Region": "string",
+            "LambdaExecutionRole": "string",
+            "LambdaExecutionRoleArn": "string"
+        },
+        "addNewUser": {
+            "Name": "string",
+            "Arn": "string",
+            "Region": "string",
+            "LambdaExecutionRole": "string",
+            "LambdaExecutionRoleArn": "string"
+        },
+        "sendEmailFn": {
+            "Name": "string",
+            "Arn": "string",
+            "Region": "string",
+            "LambdaExecutionRole": "string",
+            "LambdaExecutionRoleArn": "string"
+        },
+        "sendRegCode": {
+            "Name": "string",
+            "Arn": "string",
+            "Region": "string",
+            "LambdaExecutionRole": "string",
+            "LambdaExecutionRoleArn": "string"
+        },
+        "sendSponsorForm": {
+            "Name": "string",
+            "Arn": "string",
+            "Region": "string",
+            "LambdaExecutionRole": "string",
+            "LambdaExecutionRoleArn": "string"
+        },
+        "sendWelcomeEmail": {
+            "Name": "string",
+            "Arn": "string",
+            "Region": "string",
+            "LambdaExecutionRole": "string",
+            "LambdaExecutionRoleArn": "string"
         }
     }
 }
