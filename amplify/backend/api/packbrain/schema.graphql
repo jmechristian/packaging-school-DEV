@@ -169,13 +169,16 @@ type Company @model @auth(rules: [{ allow: public }]) {
 type User @model @auth(rules: [{ allow: public }]) {
   id: ID!
   name: String! @index(name: "userByName")
-  title: String!
+  title: String
   company: String
-  email: String @index(name: "userByEmail")
+  email: String! @index(name: "userByEmail")
   office: String
   cell: String
+  picture: String
+  linkedin: String
   companyID: ID @index(name: "userByCompany")
   apss: [APS] @manyToMany(relationName: "APSUser")
+  cmpmApplication: CMPMForm @hasOne
 }
 
 type APSSpeaker @model @auth(rules: [{ allow: public }]) {
@@ -197,4 +200,32 @@ type APSSpeaker @model @auth(rules: [{ allow: public }]) {
 
 type RegistrationCode {
   code: String
+}
+
+type CMPMForm
+  @model(timestamps: { createdAt: "createdOn", updatedAt: "updatedOn" })
+  @auth(rules: [{ allow: public }]) {
+  user: User! @belongsTo
+  id: ID!
+  firstName: String
+  lastName: String
+  email: String! @index(name: "cmpmByEmail")
+  phone: String
+  streetAddress: String
+  addressExtra: String
+  city: String
+  state: String
+  country: String
+  companyName: String
+  companyTitle: String
+  linkedin: String
+  background: String
+  whyPackaging: String
+  areaOfInterest: String
+  sessionApplying: String
+  referral: String
+  payment: String
+  yearGoals: String
+  cmpmGoals: String
+  moreAboutYou: String
 }

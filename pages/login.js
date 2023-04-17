@@ -9,7 +9,7 @@ function App({ isPassedToWithAuthenticator, signOut, user }) {
   }
 
   return (
-    <div className='min-h-screen'>
+    <div>
       <h1>Hello {user.username}</h1>
       <button onClick={signOut}>Sign out</button>
     </div>

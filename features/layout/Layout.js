@@ -22,6 +22,7 @@ const Layout = ({ children, user }) => {
 
   useEffect(() => {
     user && dispatch(setUser(user));
+    console.log(user);
   }, [dispatch, user]);
 
   useEffect(() => {

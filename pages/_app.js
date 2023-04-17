@@ -18,27 +18,28 @@ export default function App({ Component, pageProps }) {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    Hub.listen('auth', ({ payload: { event, data } }) => {
-      switch (event) {
-        case 'signIn':
-        case 'cognitoHostedUI':
-          getUser().then((userData) => {
-            setUser(userData);
-            createUser(userData);
-          });
+    const unsubscribe = () =>
+      Hub.listen('auth', ({ payload: { event, data } }) => {
+        switch (event) {
+          case 'signIn':
+            getUser().then((userData) => {
+              setUser(userData);
+              createUser(userData);
+            });
+            break;
+          case 'signOut':
+            setUser(null);
+            break;
+          case 'signIn_failure':
+          case 'cognitoHostedUI_failure':
+            console.log('Sign in failure', data);
+            break;
+          default:
+            break;
+        }
+      });
 
-          break;
-        case 'signOut':
-          setUser(null);
-          break;
-        case 'signIn_failure':
-        case 'cognitoHostedUI_failure':
-          console.log('Sign in failure', data);
-          break;
-      }
-    });
-
-    getUser().then((userData) => setUser(userData));
+    return unsubscribe();
   }, []);
 
   async function getUser() {
@@ -46,7 +47,7 @@ export default function App({ Component, pageProps }) {
       const userData = await Auth.currentAuthenticatedUser();
       return userData;
     } catch {
-      return console.log('Not signed in');
+      return;
     }
   }
 

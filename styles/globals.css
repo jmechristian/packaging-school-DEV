@@ -6,7 +6,7 @@
   }
 
   .container__inner {
-    @apply w-full max-w-7xl mx-auto px-6 md:px-10 lg:px-16 xl:px-0 md:w-5/6 lg:w-full;
+    @apply w-full max-w-7xl mx-auto px-6 lg:px-0 md:w-5/6 lg:w-full;
   }
 
   .hero__padding {
