@@ -18,28 +18,29 @@ export default function App({ Component, pageProps }) {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const unsubscribe = () =>
-      Hub.listen('auth', ({ payload: { event, data } }) => {
-        switch (event) {
-          case 'signIn':
-            getUser().then((userData) => {
-              setUser(userData);
-              createUser(userData);
-            });
-            break;
-          case 'signOut':
-            setUser(null);
-            break;
-          case 'signIn_failure':
-          case 'cognitoHostedUI_failure':
-            console.log('Sign in failure', data);
-            break;
-          default:
-            break;
-        }
-      });
+    const unsubscribe = Hub.listen('auth', ({ payload: { event, data } }) => {
+      switch (event) {
+        case 'signIn':
+          getUser().then((userData) => {
+            setUser(userData);
+            createUser(userData);
+          });
+          break;
+        case 'signOut':
+          setUser(null);
+          break;
+        case 'signIn_failure':
+        case 'cognitoHostedUI_failure':
+          console.log('Sign in failure', data);
+          break;
+        default:
+          break;
+      }
+    });
 
-    return unsubscribe();
+    getUser().then((userData) => {
+      setUser(userData);
+    });
   }, []);
 
   async function getUser() {
