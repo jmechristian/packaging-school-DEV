@@ -7,51 +7,15 @@ import { PrismicPreview } from '@prismicio/next';
 import { linkResolver, repositoryName } from '../prismicio';
 import { store } from '../features/store';
 import { Provider } from 'react-redux';
-import { Amplify, Auth, Hub } from 'aws-amplify';
+import { Amplify } from 'aws-amplify';
 import { Authenticator } from '@aws-amplify/ui-react';
 import { createUser } from '../libs/api';
+import { UserProvider } from '@auth0/nextjs-auth0/client';
 
 import awsExports from '../src/aws-exports';
 Amplify.configure(awsExports);
 
 export default function App({ Component, pageProps }) {
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    const unsubscribe = Hub.listen('auth', ({ payload: { event, data } }) => {
-      switch (event) {
-        case 'signIn':
-          getUser().then((userData) => {
-            setUser(userData);
-            createUser(userData);
-          });
-          break;
-        case 'signOut':
-          setUser(null);
-          break;
-        case 'signIn_failure':
-        case 'cognitoHostedUI_failure':
-          console.log('Sign in failure', data);
-          break;
-        default:
-          break;
-      }
-    });
-
-    getUser().then((userData) => {
-      setUser(userData);
-    });
-  }, []);
-
-  async function getUser() {
-    try {
-      const userData = await Auth.currentAuthenticatedUser();
-      return userData;
-    } catch {
-      return;
-    }
-  }
-
   return (
     <PrismicProvider
       linkResolver={linkResolver}
@@ -62,13 +26,15 @@ export default function App({ Component, pageProps }) {
       )}
     >
       <PrismicPreview repositoryName={repositoryName}>
-        <Authenticator.Provider>
-          <Provider store={store}>
-            <Layout user={user && user.attributes}>
-              <Component {...pageProps} />
-            </Layout>
-          </Provider>
-        </Authenticator.Provider>
+        <UserProvider>
+          <Authenticator.Provider>
+            <Provider store={store}>
+              <Layout>
+                <Component {...pageProps} />
+              </Layout>
+            </Provider>
+          </Authenticator.Provider>
+        </UserProvider>
       </PrismicPreview>
     </PrismicProvider>
   );

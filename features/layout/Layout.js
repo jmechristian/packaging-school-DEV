@@ -8,21 +8,21 @@ import Footer from '../navigation/Footer/Footer';
 import MobileHeader from '../navigation//Header/MobileHeader';
 import MobileMenu from '../navigation/Header/MobileMenu';
 import SearchMenu from '../navigation/Header/SearchMenu';
-import AuthWrapper from '../auth/AuthWrapper';
 import { useSelector, useDispatch } from 'react-redux';
 import { setAllCourses } from '../all_courses/courseFilterSlice';
 import { setUser } from '../auth/authslice';
 import ScrollTop from './ScrollTop';
+import { useUser } from '@auth0/nextjs-auth0/client';
+import { createUser } from '../../libs/api';
 
-const Layout = ({ children, user }) => {
+const Layout = ({ children }) => {
   const dispatch = useDispatch();
-  const { menuItemOpen } = useSelector((state) => state.nav);
   const { darkMode } = useSelector((state) => state.layout);
-  const { loginOpen } = useSelector((state) => state.auth);
+  const { user } = useUser();
 
   useEffect(() => {
     user && dispatch(setUser(user));
-    console.log(user);
+    user && createUser(user);
   }, [dispatch, user]);
 
   useEffect(() => {
@@ -83,14 +83,14 @@ const Layout = ({ children, user }) => {
         <meta name='robots' content='index, follow' />
       </Head>
       <div className={`${darkMode ? 'dark' : ''}`}>
-        <div className='relative flex flex-col min-h-screen justify-between'>
+        <div className='relative flex flex-col justify-between'>
           <Header />
           <MobileHeader />
           <ScrollTop />
           <DarkToggle />
           {/* <SearchMenu /> */}
           <MobileMenu />
-          <main className='relative'>{children}</main>
+          <main className='relative h-full'>{children}</main>
           <Footer />
         </div>
       </div>
