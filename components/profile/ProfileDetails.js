@@ -11,7 +11,7 @@ export default function ProfileDetails({ user }) {
       </div>
       <div className='mt-6'>
         <dl className='grid grid-cols-1 sm:grid-cols-2'>
-          <div className='border-t border-slate-100 px-4 py-6 sm:col-span-1 sm:px-0'>
+          <div className='border-t border-slate-300 px-4 py-7 sm:col-span-1 sm:px-0'>
             <dt className='font-medium leading-6 font-greycliff text-slate-500'>
               Full name
             </dt>
@@ -19,7 +19,7 @@ export default function ProfileDetails({ user }) {
               {user && user.name}
             </dd>
           </div>
-          <div className='border-t border-slate-100 px-4 py-6 sm:col-span-1 sm:px-0'>
+          <div className='border-t border-slate-300 px-4 py-7 sm:col-span-1 sm:px-0'>
             <dt className=' font-medium leading-6 text-slate-500 font-greycliff'>
               Company
             </dt>
@@ -27,7 +27,7 @@ export default function ProfileDetails({ user }) {
               {user && user.company}
             </dd>
           </div>
-          <div className='border-t border-slate-100 px-4 py-6 sm:col-span-1 sm:px-0'>
+          <div className='border-t border-slate-300 px-4 py-7 sm:col-span-1 sm:px-0'>
             <dt className=' font-medium leading-6 text-slate-500 font-greycliff'>
               Email address
             </dt>
@@ -35,7 +35,7 @@ export default function ProfileDetails({ user }) {
               {user && user.email}
             </dd>
           </div>
-          <div className='border-t border-slate-100 px-4 py-6 sm:col-span-1 sm:px-0'>
+          <div className='border-t border-slate-300 px-4 py-7 sm:col-span-1 sm:px-0'>
             <dt className=' font-medium leading-6 text-slate-500 font-greycliff'>
               Title
             </dt>
@@ -43,7 +43,15 @@ export default function ProfileDetails({ user }) {
               {user && user.title}
             </dd>
           </div>
-          <div className='border-t border-slate-100 px-4 py-6 sm:col-span-2 sm:px-0'>
+          <div className='border-t border-slate-300 px-4 py-7 sm:col-span-2 sm:px-0'>
+            <dt className=' font-medium leading-6 text-slate-500 font-greycliff'>
+              LinkedIn
+            </dt>
+            <dd className='mt-1  leading-6 text-slate-700 sm:mt-2'>
+              {user && user.linkedin}
+            </dd>
+          </div>
+          <div className='border-t border-slate-300 px-4 py-7 sm:col-span-2 sm:px-0'>
             <dt className=' font-medium leading-6 text-slate-500 font-greycliff'>
               Bio
             </dt>

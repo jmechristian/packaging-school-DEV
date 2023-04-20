@@ -56,7 +56,7 @@ export default function ProfileHead({ user }) {
               <div className='mt-5 flex justify-center sm:mt-0'>
                 <a
                   href='#'
-                  className='flex items-center justify-center rounded-md bg-white/75 px-4 py-3 text-sm font-semibold text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 hover:bg-slate-50 font-greycliff'
+                  className='flex items-center justify-center rounded-md bg-clemson text-white px-4 py-3 text-sm font-semibold shadow-sm ring-1 ring-inset ring-slate-300 hover:bg-slate-50 font-greycliff'
                 >
                   Start Application
                 </a>
