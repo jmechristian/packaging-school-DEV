@@ -15,7 +15,7 @@ export default function ProfileHead({ user }) {
           <div className='sm:flex sm:space-x-5'>
             <div className='flex-shrink-0'>
               <img
-                className='mx-auto h-40 w-40 rounded-full'
+                className='mx-auto h-32 w-32 rounded-full'
                 src={user && user.picture}
                 alt=''
               />
@@ -28,7 +28,7 @@ export default function ProfileHead({ user }) {
                 {user && user.name}
               </p>
               <p className=' font-medium text-slate-600'>
-                Web Director at The Packaging School
+                {user && user.title} at {user && user.company}
               </p>
             </div>
           </div>

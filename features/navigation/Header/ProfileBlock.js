@@ -55,7 +55,7 @@ const ProfileBlock = ({ user }) => {
           <div
             className={` cursor-pointer dark:white font-greycliff  text-white hidden xl:block text-sm font-semibold xl:text-base`}
           >
-            <a href='/api/auth/login?returnTo=/all_courses'>Login</a>
+            <a href='/api/auth/login?returnTo=/profile'>Login</a>
           </div>
           <button className='text-sm font-bold xl:text-base bg-clemson hover:bg-clemson-dark rounded hidden xl:block'>
             <div className='px-4 py-2 text-white font-greycliff'>
