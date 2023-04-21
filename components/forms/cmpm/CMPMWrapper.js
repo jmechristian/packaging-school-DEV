@@ -1,5 +1,5 @@
-import React, { useMemo, useContext, useState } from 'react';
-import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
+import React, { useContext, useState } from 'react';
+
 import FormWrapper from '../FormWrapper';
 import CenteredTextHeader from '../../layout/CenteredTextHeader';
 import CMPMFormNav from './CMPMFormNav';
@@ -8,13 +8,11 @@ import CMPMPersonalInfo from './CMPMPersonalInfo';
 import CMPMProfessionalInfo from './CMPMProfessionalInfo';
 import CMPMSessionInfo from './CMPMSessionInfo';
 import { CMPMContext } from './CMPMContextProvider';
+import { useUser } from '@auth0/nextjs-auth0/client';
+import { useFormContext } from 'react-hook-form';
 
 const CMPMWrapper = () => {
   const { activeIndex, setActiveIndex } = useContext(CMPMContext);
-
-  const formSaveHandler = () => {
-    setActiveIndex(activeIndex + 1);
-  };
 
   const formStateToDisplay = (activeIndex) => {
     switch (activeIndex) {
@@ -38,37 +36,14 @@ const CMPMWrapper = () => {
       />
       <div className='flex flex-col max-w-4xl w-full mx-auto border border-slate-100 rounded-lg shadow-xl'>
         <CMPMFormNav activeIndex={activeIndex} />
-        <FormWrapper>
+        <FormWrapper
+          activeIndex={activeIndex}
+          setActiveIndex={(val) => setActiveIndex(val)}
+        >
           <CMPMPersonalInfo activeIndex={activeIndex} />
           <CMPMProfessionalInfo activeIndex={activeIndex} />
           <CMPMGoals activeIndex={activeIndex} />
           <CMPMSessionInfo activeIndex={activeIndex} />
-          <div className='mt-9 flex w-full items-center justify-end gap-x-9 col-span-2'>
-            <button
-              type='button'
-              className='text-lg font-semibold font-greycliff text-gray-600'
-            >
-              Save
-            </button>
-            {activeIndex === 3 ? (
-              <button
-                type='submit'
-                className='rounded-md bg-base-brand px-4 py-3 text-lg font-semibold text-white shadow-sm font-greycliff hover:bg-base-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600 flex gap-1 items-center'
-              >
-                <div className='leading-none'>Submit Application</div>
-              </button>
-            ) : (
-              <div
-                className='cursor-pointer rounded-md bg-base-brand px-4 py-3 text-lg font-semibold text-white shadow-sm font-greycliff hover:bg-base-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600 flex gap-1 items-center'
-                onClick={formSaveHandler}
-              >
-                <div className='leading-none'>Save and Continue</div>
-                <div>
-                  <ArrowLongRightIcon className='w-5 h-5 stroke-white' />
-                </div>
-              </div>
-            )}
-          </div>
         </FormWrapper>
       </div>
     </div>

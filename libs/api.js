@@ -20,9 +20,16 @@ export const fetcher = async ({ url, method, body, json = true }) => {
 };
 
 export const createUser = (user) => {
-  console.log(user);
   return fetcher({
     url: '/api/create-user',
+    method: 'post',
+    body: user,
+  });
+};
+
+export const getUser = (user) => {
+  return fetcher({
+    url: '/api/get-user',
     method: 'post',
     body: user,
   });

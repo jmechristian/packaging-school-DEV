@@ -1,28 +1,24 @@
 import { API } from 'aws-amplify';
 import * as queries from '../../src/graphql/queries';
-import * as mutations from '../../src/graphql/mutations';
+import { setUser } from '../../features/auth/authslice';
 
-export default async function createUser(req, res) {
+export default async function CreateUser(req, res) {
   const params = {
-    email: req.body.email,
-    name: req.body.name,
-    picture: req.body.picture,
+    email: req.body,
   };
 
   if (req.method === 'POST') {
     const isUser = await API.graphql({
       query: queries.usersByEmail,
-      variables: { email: req.body.email },
+      variables: { email: req.body },
     });
     if (isUser.data.usersByEmail.items.length != 0) {
       res.status(201);
+      return res.json({ user: isUser.data.usersByEmail.items[0] });
     } else {
-      await API.graphql({
-        query: mutations.createUser,
-        variables: { input: params },
-      });
-      res.status(201);
-      res.json({ message: 'User Created' });
+      console.log('Creating user');
+      res.status(202);
+      res.json({ message: 'No User Found' });
     }
   } else {
     res.status(402);

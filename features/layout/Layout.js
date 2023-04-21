@@ -13,7 +13,8 @@ import { setAllCourses } from '../all_courses/courseFilterSlice';
 import { setUser } from '../auth/authslice';
 import ScrollTop from './ScrollTop';
 import { useUser } from '@auth0/nextjs-auth0/client';
-import { createUser } from '../../libs/api';
+import { API } from 'aws-amplify';
+import { usersByEmail } from '../../src/graphql/queries';
 
 const Layout = ({ children }) => {
   const dispatch = useDispatch();
@@ -21,8 +22,16 @@ const Layout = ({ children }) => {
   const { user } = useUser();
 
   useEffect(() => {
-    user && dispatch(setUser(user));
-    user && createUser(user);
+    if (user) {
+      const getAndSetUser = async () => {
+        const currentUser = await API.graphql({
+          query: usersByEmail,
+          variables: { email: user.email },
+        });
+        dispatch(setUser(currentUser.data.usersByEmail.items[0]));
+      };
+      getAndSetUser();
+    }
   }, [dispatch, user]);
 
   useEffect(() => {

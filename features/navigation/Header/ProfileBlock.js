@@ -37,8 +37,8 @@ const ProfileBlock = ({ user }) => {
           >
             <div className='absolute z-40 bg-white w-40 mt-3'>
               <div className='flex flex-col p-4'>
-                <div className='text-sm'>My Profile</div>
-                <div className='text-sm'>
+                <div className='text-sm text-slate-700'>My Profile</div>
+                <div className='text-sm text-slate-700'>
                   <a href='/api/auth/logout'>Logout</a>
                 </div>
               </div>

@@ -257,17 +257,56 @@ export declare class User {
   };
   readonly id: string;
   readonly name: string;
-  readonly title: string;
+  readonly title?: string | null;
   readonly company?: string | null;
-  readonly email?: string | null;
+  readonly email: string;
   readonly office?: string | null;
   readonly cell?: string | null;
+  readonly picture?: string | null;
+  readonly linkedin?: string | null;
   readonly companyID?: string | null;
   readonly apss?: (APSUser | null)[] | null;
+  readonly cmpmApplication?: CMPMForm | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
+  readonly userCmpmApplicationId?: string | null;
   constructor(init: ModelInit<User>);
   static copyOf(source: User, mutator: (draft: MutableModel<User>) => MutableModel<User> | void): User;
+}
+
+export declare class CMPMForm {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<CMPMForm, 'id'>;
+    readOnlyFields: 'createdOn' | 'updatedOn';
+  };
+  readonly id: string;
+  readonly user: User;
+  readonly firstName?: string | null;
+  readonly lastName?: string | null;
+  readonly email: string;
+  readonly phone?: string | null;
+  readonly streetAddress?: string | null;
+  readonly addressExtra?: string | null;
+  readonly city?: string | null;
+  readonly state?: string | null;
+  readonly country?: string | null;
+  readonly companyName?: string | null;
+  readonly companyTitle?: string | null;
+  readonly linkedin?: string | null;
+  readonly background?: string | null;
+  readonly whyPackaging?: string | null;
+  readonly areaOfInterest?: string | null;
+  readonly sessionApplying?: string | null;
+  readonly referral?: string | null;
+  readonly payment?: string | null;
+  readonly yearGoals?: string | null;
+  readonly cmpmGoals?: string | null;
+  readonly moreAboutYou?: string | null;
+  readonly createdOn?: string | null;
+  readonly updatedOn?: string | null;
+  readonly cMPMFormUserId: string;
+  constructor(init: ModelInit<CMPMForm>);
+  static copyOf(source: CMPMForm, mutator: (draft: MutableModel<CMPMForm>) => MutableModel<CMPMForm> | void): CMPMForm;
 }
 
 export declare class Company {

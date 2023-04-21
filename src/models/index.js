@@ -17,7 +17,7 @@ const CategoryType = {
   "DESIGN": "DESIGN"
 };
 
-const { LessonSource, LessonLink, Tags, Certificate, Course, Article, Lesson, Blog, DayInLifeItem, Career, APS, User, Company, APSSpeaker, CertificateCourses, ArticleRelatedCourses, APSUser, APSSponsor, RegistrationCode } = initSchema(schema);
+const { LessonSource, LessonLink, Tags, Certificate, Course, Article, Lesson, Blog, DayInLifeItem, Career, APS, User, CMPMForm, Company, APSSpeaker, CertificateCourses, ArticleRelatedCourses, APSUser, APSSponsor, RegistrationCode } = initSchema(schema);
 
 export {
   LessonSource,
@@ -32,6 +32,7 @@ export {
   Career,
   APS,
   User,
+  CMPMForm,
   Company,
   APSSpeaker,
   CertificateCourses,

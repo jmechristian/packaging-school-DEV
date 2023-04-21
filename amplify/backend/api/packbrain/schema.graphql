@@ -166,6 +166,8 @@ type Company @model @auth(rules: [{ allow: public }]) {
   apsID: [APS] @manyToMany(relationName: "APSSponsor")
 }
 
+# User //////////
+
 type User @model @auth(rules: [{ allow: public }]) {
   id: ID!
   name: String! @index(name: "userByName")
@@ -178,34 +180,20 @@ type User @model @auth(rules: [{ allow: public }]) {
   linkedin: String
   companyID: ID @index(name: "userByCompany")
   apss: [APS] @manyToMany(relationName: "APSUser")
-  cmpmApplication: CMPMForm @hasOne
+  forms: UserForms @hasOne
 }
 
-type APSSpeaker @model @auth(rules: [{ allow: public }]) {
-  firstName: String!
-  lastName: String!
-  email: String!
-  company: String!
-  title: String!
-  phone: String
-  linkedin: String
-  bio: String!
-  presentationTitle: String
-  presentationSummary: String
-  headshot: String!
-  mediaConsent: Boolean
-  privacyConsent: Boolean
-  apsHistory: APS @belongsTo
-}
-
-type RegistrationCode {
-  code: String
+type UserForms @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  userId: ID! @index(name: "formsByUserId")
+  user: User! @belongsTo(fields: ["userId"])
+  cmpm: CMPMForm @hasOne
 }
 
 type CMPMForm
   @model(timestamps: { createdAt: "createdOn", updatedAt: "updatedOn" })
   @auth(rules: [{ allow: public }]) {
-  user: User! @belongsTo
+  formGroup: UserForms! @belongsTo
   id: ID!
   firstName: String
   lastName: String
@@ -228,4 +216,25 @@ type CMPMForm
   yearGoals: String
   cmpmGoals: String
   moreAboutYou: String
+}
+
+type APSSpeaker @model @auth(rules: [{ allow: public }]) {
+  firstName: String!
+  lastName: String!
+  email: String!
+  company: String!
+  title: String!
+  phone: String
+  linkedin: String
+  bio: String!
+  presentationTitle: String
+  presentationSummary: String
+  headshot: String!
+  mediaConsent: Boolean
+  privacyConsent: Boolean
+  apsHistory: APS @belongsTo
+}
+
+type RegistrationCode {
+  code: String
 }

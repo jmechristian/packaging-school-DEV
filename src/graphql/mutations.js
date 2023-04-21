@@ -1397,7 +1397,7 @@ export const createCompany = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          userCmpmApplicationId
+          userFormsId
         }
         nextToken
         startedAt
@@ -1457,7 +1457,7 @@ export const updateCompany = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          userCmpmApplicationId
+          userFormsId
         }
         nextToken
         startedAt
@@ -1517,7 +1517,7 @@ export const deleteCompany = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          userCmpmApplicationId
+          userFormsId
         }
         nextToken
         startedAt
@@ -1582,7 +1582,9 @@ export const createUser = /* GraphQL */ `
         nextToken
         startedAt
       }
-      cmpmApplication {
+      forms {
+        id
+        userId
         user {
           id
           name
@@ -1599,43 +1601,51 @@ export const createUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          userCmpmApplicationId
+          userFormsId
         }
-        id
-        firstName
-        lastName
-        email
-        phone
-        streetAddress
-        addressExtra
-        city
-        state
-        country
-        companyName
-        companyTitle
-        linkedin
-        background
-        whyPackaging
-        areaOfInterest
-        sessionApplying
-        referral
-        payment
-        yearGoals
-        cmpmGoals
-        moreAboutYou
-        createdOn
-        updatedOn
+        cmpm {
+          id
+          firstName
+          lastName
+          email
+          phone
+          streetAddress
+          addressExtra
+          city
+          state
+          country
+          companyName
+          companyTitle
+          linkedin
+          background
+          whyPackaging
+          areaOfInterest
+          sessionApplying
+          referral
+          payment
+          yearGoals
+          cmpmGoals
+          moreAboutYou
+          createdOn
+          updatedOn
+          _version
+          _deleted
+          _lastChangedAt
+          cMPMFormFormGroupId
+        }
+        createdAt
+        updatedAt
         _version
         _deleted
         _lastChangedAt
-        cMPMFormUserId
+        userFormsCmpmId
       }
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
-      userCmpmApplicationId
+      userFormsId
     }
   }
 `;
@@ -1669,7 +1679,9 @@ export const updateUser = /* GraphQL */ `
         nextToken
         startedAt
       }
-      cmpmApplication {
+      forms {
+        id
+        userId
         user {
           id
           name
@@ -1686,43 +1698,51 @@ export const updateUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          userCmpmApplicationId
+          userFormsId
         }
-        id
-        firstName
-        lastName
-        email
-        phone
-        streetAddress
-        addressExtra
-        city
-        state
-        country
-        companyName
-        companyTitle
-        linkedin
-        background
-        whyPackaging
-        areaOfInterest
-        sessionApplying
-        referral
-        payment
-        yearGoals
-        cmpmGoals
-        moreAboutYou
-        createdOn
-        updatedOn
+        cmpm {
+          id
+          firstName
+          lastName
+          email
+          phone
+          streetAddress
+          addressExtra
+          city
+          state
+          country
+          companyName
+          companyTitle
+          linkedin
+          background
+          whyPackaging
+          areaOfInterest
+          sessionApplying
+          referral
+          payment
+          yearGoals
+          cmpmGoals
+          moreAboutYou
+          createdOn
+          updatedOn
+          _version
+          _deleted
+          _lastChangedAt
+          cMPMFormFormGroupId
+        }
+        createdAt
+        updatedAt
         _version
         _deleted
         _lastChangedAt
-        cMPMFormUserId
+        userFormsCmpmId
       }
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
-      userCmpmApplicationId
+      userFormsId
     }
   }
 `;
@@ -1756,7 +1776,9 @@ export const deleteUser = /* GraphQL */ `
         nextToken
         startedAt
       }
-      cmpmApplication {
+      forms {
+        id
+        userId
         user {
           id
           name
@@ -1773,7 +1795,104 @@ export const deleteUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          userCmpmApplicationId
+          userFormsId
+        }
+        cmpm {
+          id
+          firstName
+          lastName
+          email
+          phone
+          streetAddress
+          addressExtra
+          city
+          state
+          country
+          companyName
+          companyTitle
+          linkedin
+          background
+          whyPackaging
+          areaOfInterest
+          sessionApplying
+          referral
+          payment
+          yearGoals
+          cmpmGoals
+          moreAboutYou
+          createdOn
+          updatedOn
+          _version
+          _deleted
+          _lastChangedAt
+          cMPMFormFormGroupId
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        userFormsCmpmId
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      userFormsId
+    }
+  }
+`;
+export const createUserForms = /* GraphQL */ `
+  mutation CreateUserForms(
+    $input: CreateUserFormsInput!
+    $condition: ModelUserFormsConditionInput
+  ) {
+    createUserForms(input: $input, condition: $condition) {
+      id
+      userId
+      user {
+        id
+        name
+        title
+        company
+        email
+        office
+        cell
+        picture
+        linkedin
+        companyID
+        apss {
+          nextToken
+          startedAt
+        }
+        forms {
+          id
+          userId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          userFormsCmpmId
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        userFormsId
+      }
+      cmpm {
+        formGroup {
+          id
+          userId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          userFormsCmpmId
         }
         id
         firstName
@@ -1802,14 +1921,477 @@ export const deleteUser = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        cMPMFormUserId
+        cMPMFormFormGroupId
       }
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
-      userCmpmApplicationId
+      userFormsCmpmId
+    }
+  }
+`;
+export const updateUserForms = /* GraphQL */ `
+  mutation UpdateUserForms(
+    $input: UpdateUserFormsInput!
+    $condition: ModelUserFormsConditionInput
+  ) {
+    updateUserForms(input: $input, condition: $condition) {
+      id
+      userId
+      user {
+        id
+        name
+        title
+        company
+        email
+        office
+        cell
+        picture
+        linkedin
+        companyID
+        apss {
+          nextToken
+          startedAt
+        }
+        forms {
+          id
+          userId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          userFormsCmpmId
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        userFormsId
+      }
+      cmpm {
+        formGroup {
+          id
+          userId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          userFormsCmpmId
+        }
+        id
+        firstName
+        lastName
+        email
+        phone
+        streetAddress
+        addressExtra
+        city
+        state
+        country
+        companyName
+        companyTitle
+        linkedin
+        background
+        whyPackaging
+        areaOfInterest
+        sessionApplying
+        referral
+        payment
+        yearGoals
+        cmpmGoals
+        moreAboutYou
+        createdOn
+        updatedOn
+        _version
+        _deleted
+        _lastChangedAt
+        cMPMFormFormGroupId
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      userFormsCmpmId
+    }
+  }
+`;
+export const deleteUserForms = /* GraphQL */ `
+  mutation DeleteUserForms(
+    $input: DeleteUserFormsInput!
+    $condition: ModelUserFormsConditionInput
+  ) {
+    deleteUserForms(input: $input, condition: $condition) {
+      id
+      userId
+      user {
+        id
+        name
+        title
+        company
+        email
+        office
+        cell
+        picture
+        linkedin
+        companyID
+        apss {
+          nextToken
+          startedAt
+        }
+        forms {
+          id
+          userId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          userFormsCmpmId
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        userFormsId
+      }
+      cmpm {
+        formGroup {
+          id
+          userId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          userFormsCmpmId
+        }
+        id
+        firstName
+        lastName
+        email
+        phone
+        streetAddress
+        addressExtra
+        city
+        state
+        country
+        companyName
+        companyTitle
+        linkedin
+        background
+        whyPackaging
+        areaOfInterest
+        sessionApplying
+        referral
+        payment
+        yearGoals
+        cmpmGoals
+        moreAboutYou
+        createdOn
+        updatedOn
+        _version
+        _deleted
+        _lastChangedAt
+        cMPMFormFormGroupId
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      userFormsCmpmId
+    }
+  }
+`;
+export const createCMPMForm = /* GraphQL */ `
+  mutation CreateCMPMForm(
+    $input: CreateCMPMFormInput!
+    $condition: ModelCMPMFormConditionInput
+  ) {
+    createCMPMForm(input: $input, condition: $condition) {
+      formGroup {
+        id
+        userId
+        user {
+          id
+          name
+          title
+          company
+          email
+          office
+          cell
+          picture
+          linkedin
+          companyID
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          userFormsId
+        }
+        cmpm {
+          id
+          firstName
+          lastName
+          email
+          phone
+          streetAddress
+          addressExtra
+          city
+          state
+          country
+          companyName
+          companyTitle
+          linkedin
+          background
+          whyPackaging
+          areaOfInterest
+          sessionApplying
+          referral
+          payment
+          yearGoals
+          cmpmGoals
+          moreAboutYou
+          createdOn
+          updatedOn
+          _version
+          _deleted
+          _lastChangedAt
+          cMPMFormFormGroupId
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        userFormsCmpmId
+      }
+      id
+      firstName
+      lastName
+      email
+      phone
+      streetAddress
+      addressExtra
+      city
+      state
+      country
+      companyName
+      companyTitle
+      linkedin
+      background
+      whyPackaging
+      areaOfInterest
+      sessionApplying
+      referral
+      payment
+      yearGoals
+      cmpmGoals
+      moreAboutYou
+      createdOn
+      updatedOn
+      _version
+      _deleted
+      _lastChangedAt
+      cMPMFormFormGroupId
+    }
+  }
+`;
+export const updateCMPMForm = /* GraphQL */ `
+  mutation UpdateCMPMForm(
+    $input: UpdateCMPMFormInput!
+    $condition: ModelCMPMFormConditionInput
+  ) {
+    updateCMPMForm(input: $input, condition: $condition) {
+      formGroup {
+        id
+        userId
+        user {
+          id
+          name
+          title
+          company
+          email
+          office
+          cell
+          picture
+          linkedin
+          companyID
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          userFormsId
+        }
+        cmpm {
+          id
+          firstName
+          lastName
+          email
+          phone
+          streetAddress
+          addressExtra
+          city
+          state
+          country
+          companyName
+          companyTitle
+          linkedin
+          background
+          whyPackaging
+          areaOfInterest
+          sessionApplying
+          referral
+          payment
+          yearGoals
+          cmpmGoals
+          moreAboutYou
+          createdOn
+          updatedOn
+          _version
+          _deleted
+          _lastChangedAt
+          cMPMFormFormGroupId
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        userFormsCmpmId
+      }
+      id
+      firstName
+      lastName
+      email
+      phone
+      streetAddress
+      addressExtra
+      city
+      state
+      country
+      companyName
+      companyTitle
+      linkedin
+      background
+      whyPackaging
+      areaOfInterest
+      sessionApplying
+      referral
+      payment
+      yearGoals
+      cmpmGoals
+      moreAboutYou
+      createdOn
+      updatedOn
+      _version
+      _deleted
+      _lastChangedAt
+      cMPMFormFormGroupId
+    }
+  }
+`;
+export const deleteCMPMForm = /* GraphQL */ `
+  mutation DeleteCMPMForm(
+    $input: DeleteCMPMFormInput!
+    $condition: ModelCMPMFormConditionInput
+  ) {
+    deleteCMPMForm(input: $input, condition: $condition) {
+      formGroup {
+        id
+        userId
+        user {
+          id
+          name
+          title
+          company
+          email
+          office
+          cell
+          picture
+          linkedin
+          companyID
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          userFormsId
+        }
+        cmpm {
+          id
+          firstName
+          lastName
+          email
+          phone
+          streetAddress
+          addressExtra
+          city
+          state
+          country
+          companyName
+          companyTitle
+          linkedin
+          background
+          whyPackaging
+          areaOfInterest
+          sessionApplying
+          referral
+          payment
+          yearGoals
+          cmpmGoals
+          moreAboutYou
+          createdOn
+          updatedOn
+          _version
+          _deleted
+          _lastChangedAt
+          cMPMFormFormGroupId
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        userFormsCmpmId
+      }
+      id
+      firstName
+      lastName
+      email
+      phone
+      streetAddress
+      addressExtra
+      city
+      state
+      country
+      companyName
+      companyTitle
+      linkedin
+      background
+      whyPackaging
+      areaOfInterest
+      sessionApplying
+      referral
+      payment
+      yearGoals
+      cmpmGoals
+      moreAboutYou
+      createdOn
+      updatedOn
+      _version
+      _deleted
+      _lastChangedAt
+      cMPMFormFormGroupId
     }
   }
 `;
@@ -1969,273 +2551,6 @@ export const deleteAPSSpeaker = /* GraphQL */ `
       _deleted
       _lastChangedAt
       aPSSpeakersId
-    }
-  }
-`;
-export const createCMPMForm = /* GraphQL */ `
-  mutation CreateCMPMForm(
-    $input: CreateCMPMFormInput!
-    $condition: ModelCMPMFormConditionInput
-  ) {
-    createCMPMForm(input: $input, condition: $condition) {
-      user {
-        id
-        name
-        title
-        company
-        email
-        office
-        cell
-        picture
-        linkedin
-        companyID
-        apss {
-          nextToken
-          startedAt
-        }
-        cmpmApplication {
-          id
-          firstName
-          lastName
-          email
-          phone
-          streetAddress
-          addressExtra
-          city
-          state
-          country
-          companyName
-          companyTitle
-          linkedin
-          background
-          whyPackaging
-          areaOfInterest
-          sessionApplying
-          referral
-          payment
-          yearGoals
-          cmpmGoals
-          moreAboutYou
-          createdOn
-          updatedOn
-          _version
-          _deleted
-          _lastChangedAt
-          cMPMFormUserId
-        }
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        userCmpmApplicationId
-      }
-      id
-      firstName
-      lastName
-      email
-      phone
-      streetAddress
-      addressExtra
-      city
-      state
-      country
-      companyName
-      companyTitle
-      linkedin
-      background
-      whyPackaging
-      areaOfInterest
-      sessionApplying
-      referral
-      payment
-      yearGoals
-      cmpmGoals
-      moreAboutYou
-      createdOn
-      updatedOn
-      _version
-      _deleted
-      _lastChangedAt
-      cMPMFormUserId
-    }
-  }
-`;
-export const updateCMPMForm = /* GraphQL */ `
-  mutation UpdateCMPMForm(
-    $input: UpdateCMPMFormInput!
-    $condition: ModelCMPMFormConditionInput
-  ) {
-    updateCMPMForm(input: $input, condition: $condition) {
-      user {
-        id
-        name
-        title
-        company
-        email
-        office
-        cell
-        picture
-        linkedin
-        companyID
-        apss {
-          nextToken
-          startedAt
-        }
-        cmpmApplication {
-          id
-          firstName
-          lastName
-          email
-          phone
-          streetAddress
-          addressExtra
-          city
-          state
-          country
-          companyName
-          companyTitle
-          linkedin
-          background
-          whyPackaging
-          areaOfInterest
-          sessionApplying
-          referral
-          payment
-          yearGoals
-          cmpmGoals
-          moreAboutYou
-          createdOn
-          updatedOn
-          _version
-          _deleted
-          _lastChangedAt
-          cMPMFormUserId
-        }
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        userCmpmApplicationId
-      }
-      id
-      firstName
-      lastName
-      email
-      phone
-      streetAddress
-      addressExtra
-      city
-      state
-      country
-      companyName
-      companyTitle
-      linkedin
-      background
-      whyPackaging
-      areaOfInterest
-      sessionApplying
-      referral
-      payment
-      yearGoals
-      cmpmGoals
-      moreAboutYou
-      createdOn
-      updatedOn
-      _version
-      _deleted
-      _lastChangedAt
-      cMPMFormUserId
-    }
-  }
-`;
-export const deleteCMPMForm = /* GraphQL */ `
-  mutation DeleteCMPMForm(
-    $input: DeleteCMPMFormInput!
-    $condition: ModelCMPMFormConditionInput
-  ) {
-    deleteCMPMForm(input: $input, condition: $condition) {
-      user {
-        id
-        name
-        title
-        company
-        email
-        office
-        cell
-        picture
-        linkedin
-        companyID
-        apss {
-          nextToken
-          startedAt
-        }
-        cmpmApplication {
-          id
-          firstName
-          lastName
-          email
-          phone
-          streetAddress
-          addressExtra
-          city
-          state
-          country
-          companyName
-          companyTitle
-          linkedin
-          background
-          whyPackaging
-          areaOfInterest
-          sessionApplying
-          referral
-          payment
-          yearGoals
-          cmpmGoals
-          moreAboutYou
-          createdOn
-          updatedOn
-          _version
-          _deleted
-          _lastChangedAt
-          cMPMFormUserId
-        }
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        userCmpmApplicationId
-      }
-      id
-      firstName
-      lastName
-      email
-      phone
-      streetAddress
-      addressExtra
-      city
-      state
-      country
-      companyName
-      companyTitle
-      linkedin
-      background
-      whyPackaging
-      areaOfInterest
-      sessionApplying
-      referral
-      payment
-      yearGoals
-      cmpmGoals
-      moreAboutYou
-      createdOn
-      updatedOn
-      _version
-      _deleted
-      _lastChangedAt
-      cMPMFormUserId
     }
   }
 `;
@@ -2710,42 +3025,22 @@ export const createAPSUser = /* GraphQL */ `
           nextToken
           startedAt
         }
-        cmpmApplication {
+        forms {
           id
-          firstName
-          lastName
-          email
-          phone
-          streetAddress
-          addressExtra
-          city
-          state
-          country
-          companyName
-          companyTitle
-          linkedin
-          background
-          whyPackaging
-          areaOfInterest
-          sessionApplying
-          referral
-          payment
-          yearGoals
-          cmpmGoals
-          moreAboutYou
-          createdOn
-          updatedOn
+          userId
+          createdAt
+          updatedAt
           _version
           _deleted
           _lastChangedAt
-          cMPMFormUserId
+          userFormsCmpmId
         }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
-        userCmpmApplicationId
+        userFormsId
       }
       createdAt
       updatedAt
@@ -2803,42 +3098,22 @@ export const updateAPSUser = /* GraphQL */ `
           nextToken
           startedAt
         }
-        cmpmApplication {
+        forms {
           id
-          firstName
-          lastName
-          email
-          phone
-          streetAddress
-          addressExtra
-          city
-          state
-          country
-          companyName
-          companyTitle
-          linkedin
-          background
-          whyPackaging
-          areaOfInterest
-          sessionApplying
-          referral
-          payment
-          yearGoals
-          cmpmGoals
-          moreAboutYou
-          createdOn
-          updatedOn
+          userId
+          createdAt
+          updatedAt
           _version
           _deleted
           _lastChangedAt
-          cMPMFormUserId
+          userFormsCmpmId
         }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
-        userCmpmApplicationId
+        userFormsId
       }
       createdAt
       updatedAt
@@ -2896,42 +3171,22 @@ export const deleteAPSUser = /* GraphQL */ `
           nextToken
           startedAt
         }
-        cmpmApplication {
+        forms {
           id
-          firstName
-          lastName
-          email
-          phone
-          streetAddress
-          addressExtra
-          city
-          state
-          country
-          companyName
-          companyTitle
-          linkedin
-          background
-          whyPackaging
-          areaOfInterest
-          sessionApplying
-          referral
-          payment
-          yearGoals
-          cmpmGoals
-          moreAboutYou
-          createdOn
-          updatedOn
+          userId
+          createdAt
+          updatedAt
           _version
           _deleted
           _lastChangedAt
-          cMPMFormUserId
+          userFormsCmpmId
         }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
-        userCmpmApplicationId
+        userFormsId
       }
       createdAt
       updatedAt

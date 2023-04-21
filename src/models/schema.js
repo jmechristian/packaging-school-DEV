@@ -1471,7 +1471,7 @@ export const schema = {
                     "name": "title",
                     "isArray": false,
                     "type": "String",
-                    "isRequired": true,
+                    "isRequired": false,
                     "attributes": []
                 },
                 "company": {
@@ -1485,7 +1485,7 @@ export const schema = {
                     "name": "email",
                     "isArray": false,
                     "type": "String",
-                    "isRequired": false,
+                    "isRequired": true,
                     "attributes": []
                 },
                 "office": {
@@ -1497,6 +1497,20 @@ export const schema = {
                 },
                 "cell": {
                     "name": "cell",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "picture": {
+                    "name": "picture",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "linkedin": {
+                    "name": "linkedin",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
@@ -1525,6 +1539,24 @@ export const schema = {
                         ]
                     }
                 },
+                "cmpmApplication": {
+                    "name": "cmpmApplication",
+                    "isArray": false,
+                    "type": {
+                        "model": "CMPMForm"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "association": {
+                        "connectionType": "HAS_ONE",
+                        "associatedWith": [
+                            "user"
+                        ],
+                        "targetNames": [
+                            "userCmpmApplicationId"
+                        ]
+                    }
+                },
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
@@ -1540,6 +1572,13 @@ export const schema = {
                     "isRequired": false,
                     "attributes": [],
                     "isReadOnly": true
+                },
+                "userCmpmApplicationId": {
+                    "name": "userCmpmApplicationId",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": false,
+                    "attributes": []
                 }
             },
             "syncable": true,
@@ -1573,6 +1612,241 @@ export const schema = {
                         "name": "userByCompany",
                         "fields": [
                             "companyID"
+                        ]
+                    }
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "public",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "CMPMForm": {
+            "name": "CMPMForm",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "user": {
+                    "name": "user",
+                    "isArray": false,
+                    "type": {
+                        "model": "User"
+                    },
+                    "isRequired": true,
+                    "attributes": [],
+                    "association": {
+                        "connectionType": "BELONGS_TO",
+                        "targetNames": [
+                            "cMPMFormUserId"
+                        ]
+                    }
+                },
+                "firstName": {
+                    "name": "firstName",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "lastName": {
+                    "name": "lastName",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "email": {
+                    "name": "email",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "phone": {
+                    "name": "phone",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "streetAddress": {
+                    "name": "streetAddress",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "addressExtra": {
+                    "name": "addressExtra",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "city": {
+                    "name": "city",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "state": {
+                    "name": "state",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "country": {
+                    "name": "country",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "companyName": {
+                    "name": "companyName",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "companyTitle": {
+                    "name": "companyTitle",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "linkedin": {
+                    "name": "linkedin",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "background": {
+                    "name": "background",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "whyPackaging": {
+                    "name": "whyPackaging",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "areaOfInterest": {
+                    "name": "areaOfInterest",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "sessionApplying": {
+                    "name": "sessionApplying",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "referral": {
+                    "name": "referral",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "payment": {
+                    "name": "payment",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "yearGoals": {
+                    "name": "yearGoals",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "cmpmGoals": {
+                    "name": "cmpmGoals",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "moreAboutYou": {
+                    "name": "moreAboutYou",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "createdOn": {
+                    "name": "createdOn",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                },
+                "updatedOn": {
+                    "name": "updatedOn",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                },
+                "cMPMFormUserId": {
+                    "name": "cMPMFormUserId",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                }
+            },
+            "syncable": true,
+            "pluralName": "CMPMForms",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {
+                        "timestamps": {
+                            "createdAt": "createdOn",
+                            "updatedAt": "updatedOn"
+                        }
+                    }
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "cmpmByEmail",
+                        "fields": [
+                            "email"
                         ]
                     }
                 },
@@ -2334,5 +2608,5 @@ export const schema = {
             }
         }
     },
-    "version": "6ea50cf87a262eb83ae5ff2d70d98c71"
+    "version": "583a1be014253ab459a9f9fae3745687"
 };

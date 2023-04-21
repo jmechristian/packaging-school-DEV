@@ -1,7 +1,5 @@
 import { ArrowDownIcon, ArrowUpIcon } from '@heroicons/react/20/solid';
 import {
-  CursorArrowRaysIcon,
-  EnvelopeOpenIcon,
   BoltIcon,
   UsersIcon,
   ClockIcon,

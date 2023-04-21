@@ -15,7 +15,7 @@ export default function ProfileHead({ user }) {
           <div className='sm:flex sm:space-x-5'>
             <div className='flex-shrink-0'>
               <img
-                className='mx-auto h-32 w-32 rounded-full'
+                className='mx-auto h-28 w-28 rounded-full'
                 src={user && user.picture}
                 alt=''
               />
