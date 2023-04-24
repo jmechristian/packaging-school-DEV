@@ -13,9 +13,10 @@ import { setAllCourses } from '../all_courses/courseFilterSlice';
 import { setUser } from '../auth/authslice';
 import ScrollTop from './ScrollTop';
 import { useUser } from '@auth0/nextjs-auth0/client';
-import { API } from 'aws-amplify';
+import { API, graphqlOperation } from 'aws-amplify';
 import { usersByEmail } from '../../src/graphql/queries';
 import { createUser } from '../../src/graphql/mutations';
+import { onUpdateUser } from '../../src/graphql/subscriptions';
 
 const Layout = ({ children }) => {
   const dispatch = useDispatch();
@@ -50,6 +51,15 @@ const Layout = ({ children }) => {
       getAndSetUser();
     }
   }, [dispatch, user]);
+
+  useEffect(() => {
+    const sub = API.graphql(graphqlOperation(onUpdateUser)).subscribe({
+      next: ({ provider, value }) => console.log({ provider, value }),
+      error: (error) => console.warn(error),
+    });
+
+    return sub.unsubscribe();
+  });
 
   useEffect(() => {
     const getCourses = async () => {

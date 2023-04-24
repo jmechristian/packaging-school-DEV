@@ -22,23 +22,19 @@ const FormWrapper = ({ children, activeIndex, setActiveIndex }) => {
   }, [user]);
 
   const getUserFormGroup = async () => {
-    if (user) {
-      if (user && user.cmpmForm) {
-        setUserForms(user.forms);
-      } else {
-        if (user) {
-          await API.graphql({
-            query: createCMPMForm,
-            variables: {
-              input: { email: user.email, cMPMFormUserId: user.id },
-            },
-          });
-          await API.graphql({
-            query: updateUser,
-            variables: { input: { id: user.id, cmpmForm: user.id } },
-          });
-        }
-      }
+    if (user && user.cmpmFormID) {
+      console.log(user.forms);
+    } else {
+      await API.graphql({
+        query: createCMPMForm,
+        variables: {
+          input: { email: user.email, cMPMFormUserId: user.id, id: user.id },
+        },
+      });
+      await API.graphql({
+        query: updateUser,
+        variables: { input: { id: user.id, cmpmFormID: user.id } },
+      });
     }
   };
 

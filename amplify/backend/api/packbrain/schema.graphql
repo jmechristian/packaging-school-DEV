@@ -180,21 +180,15 @@ type User @model @auth(rules: [{ allow: public }]) {
   linkedin: String
   companyID: ID @index(name: "userByCompany")
   apss: [APS] @manyToMany(relationName: "APSUser")
-  userForms: UserForms @hasOne(relationshipName: "userFormGroup")
-}
-
-type UserForms @model @auth(rules: [{ allow: public }]) {
-  id: ID!
-  user: User!
-    @belongsTo(relationshipName: "userFormGroup")
-    @index(name: "forGroupByUserID")
-  cmpm: CMPMForm @hasOne
+  cmpmFormID: ID
+  cmpmForm: CMPMForm @hasOne(fields: ["cmpmFormID"])
 }
 
 type CMPMForm
   @model(timestamps: { createdAt: "createdOn", updatedAt: "updatedOn" })
   @auth(rules: [{ allow: public }]) {
   id: ID!
+  user: User! @belongsTo
   firstName: String
   lastName: String
   email: String! @index(name: "cmpmByEmail")

@@ -24,20 +24,22 @@ export default function ProfileHead({ user }) {
               <p className='text-lg font-medium text-slate-600'>
                 Welcome back,
               </p>
-              <p className='text-xl font-bold text-slate-900 sm:text-4xl'>
+              <div className='text-xl font-bold text-slate-900 sm:text-4xl'>
                 {user && user.name}
-              </p>
+              </div>
               <p className=' font-medium text-slate-600 flex gap-1.5'>
                 {user && user.title ? (
                   user.title
                 ) : (
-                  <div className='text-slate-400 underline'>Enter Title</div>
+                  <span className='text-slate-400 underline'>Enter Title</span>
                 )}{' '}
                 at{' '}
                 {user && user.company ? (
                   user.company
                 ) : (
-                  <div className='text-slate-400 underline'>Enter Company</div>
+                  <span className='text-slate-400 underline'>
+                    Enter Company
+                  </span>
                 )}
               </p>
             </div>

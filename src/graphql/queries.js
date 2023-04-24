@@ -1683,12 +1683,12 @@ export const getCompany = /* GraphQL */ `
           picture
           linkedin
           companyID
+          cmpmFormID
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
-          userUserFormsId
         }
         nextToken
         startedAt
@@ -1830,9 +1830,87 @@ export const getUser = /* GraphQL */ `
         nextToken
         startedAt
       }
-      userForms {
+      cmpmFormID
+      cmpmForm {
         id
-        cmpm {
+        user {
+          id
+          name
+          title
+          company
+          email
+          office
+          cell
+          picture
+          linkedin
+          companyID
+          cmpmFormID
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        firstName
+        lastName
+        email
+        phone
+        streetAddress
+        addressExtra
+        city
+        state
+        country
+        companyName
+        companyTitle
+        linkedin
+        background
+        whyPackaging
+        areaOfInterest
+        sessionApplying
+        referral
+        payment
+        yearGoals
+        cmpmGoals
+        moreAboutYou
+        createdOn
+        updatedOn
+        _version
+        _deleted
+        _lastChangedAt
+        cMPMFormUserId
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const listUsers = /* GraphQL */ `
+  query ListUsers(
+    $filter: ModelUserFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        name
+        title
+        company
+        email
+        office
+        cell
+        picture
+        linkedin
+        companyID
+        apss {
+          nextToken
+          startedAt
+        }
+        cmpmFormID
+        cmpmForm {
           id
           firstName
           lastName
@@ -1860,60 +1938,13 @@ export const getUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          cMPMFormUserId
         }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
-        userFormsCmpmId
-      }
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-      userUserFormsId
-    }
-  }
-`;
-export const listUsers = /* GraphQL */ `
-  query ListUsers(
-    $filter: ModelUserFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        name
-        title
-        company
-        email
-        office
-        cell
-        picture
-        linkedin
-        companyID
-        apss {
-          nextToken
-          startedAt
-        }
-        userForms {
-          id
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
-          userFormsCmpmId
-        }
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        userUserFormsId
       }
       nextToken
       startedAt
@@ -1948,21 +1979,42 @@ export const syncUsers = /* GraphQL */ `
           nextToken
           startedAt
         }
-        userForms {
+        cmpmFormID
+        cmpmForm {
           id
-          createdAt
-          updatedAt
+          firstName
+          lastName
+          email
+          phone
+          streetAddress
+          addressExtra
+          city
+          state
+          country
+          companyName
+          companyTitle
+          linkedin
+          background
+          whyPackaging
+          areaOfInterest
+          sessionApplying
+          referral
+          payment
+          yearGoals
+          cmpmGoals
+          moreAboutYou
+          createdOn
+          updatedOn
           _version
           _deleted
           _lastChangedAt
-          userFormsCmpmId
+          cMPMFormUserId
         }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
-        userUserFormsId
       }
       nextToken
       startedAt
@@ -1999,21 +2051,42 @@ export const usersByName = /* GraphQL */ `
           nextToken
           startedAt
         }
-        userForms {
+        cmpmFormID
+        cmpmForm {
           id
-          createdAt
-          updatedAt
+          firstName
+          lastName
+          email
+          phone
+          streetAddress
+          addressExtra
+          city
+          state
+          country
+          companyName
+          companyTitle
+          linkedin
+          background
+          whyPackaging
+          areaOfInterest
+          sessionApplying
+          referral
+          payment
+          yearGoals
+          cmpmGoals
+          moreAboutYou
+          createdOn
+          updatedOn
           _version
           _deleted
           _lastChangedAt
-          userFormsCmpmId
+          cMPMFormUserId
         }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
-        userUserFormsId
       }
       nextToken
       startedAt
@@ -2050,21 +2123,42 @@ export const usersByEmail = /* GraphQL */ `
           nextToken
           startedAt
         }
-        userForms {
+        cmpmFormID
+        cmpmForm {
           id
-          createdAt
-          updatedAt
+          firstName
+          lastName
+          email
+          phone
+          streetAddress
+          addressExtra
+          city
+          state
+          country
+          companyName
+          companyTitle
+          linkedin
+          background
+          whyPackaging
+          areaOfInterest
+          sessionApplying
+          referral
+          payment
+          yearGoals
+          cmpmGoals
+          moreAboutYou
+          createdOn
+          updatedOn
           _version
           _deleted
           _lastChangedAt
-          userFormsCmpmId
+          cMPMFormUserId
         }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
-        userUserFormsId
       }
       nextToken
       startedAt
@@ -2101,79 +2195,8 @@ export const usersByCompanyID = /* GraphQL */ `
           nextToken
           startedAt
         }
-        userForms {
-          id
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
-          userFormsCmpmId
-        }
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        userUserFormsId
-      }
-      nextToken
-      startedAt
-    }
-  }
-`;
-export const getUserForms = /* GraphQL */ `
-  query GetUserForms($id: ID!) {
-    getUserForms(id: $id) {
-      id
-      cmpm {
-        id
-        firstName
-        lastName
-        email
-        phone
-        streetAddress
-        addressExtra
-        city
-        state
-        country
-        companyName
-        companyTitle
-        linkedin
-        background
-        whyPackaging
-        areaOfInterest
-        sessionApplying
-        referral
-        payment
-        yearGoals
-        cmpmGoals
-        moreAboutYou
-        createdOn
-        updatedOn
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-      userFormsCmpmId
-    }
-  }
-`;
-export const listUserForms = /* GraphQL */ `
-  query ListUserForms(
-    $filter: ModelUserFormsFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listUserForms(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        cmpm {
+        cmpmFormID
+        cmpmForm {
           id
           firstName
           lastName
@@ -2201,69 +2224,13 @@ export const listUserForms = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          cMPMFormUserId
         }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
-        userFormsCmpmId
-      }
-      nextToken
-      startedAt
-    }
-  }
-`;
-export const syncUserForms = /* GraphQL */ `
-  query SyncUserForms(
-    $filter: ModelUserFormsFilterInput
-    $limit: Int
-    $nextToken: String
-    $lastSync: AWSTimestamp
-  ) {
-    syncUserForms(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      lastSync: $lastSync
-    ) {
-      items {
-        id
-        cmpm {
-          id
-          firstName
-          lastName
-          email
-          phone
-          streetAddress
-          addressExtra
-          city
-          state
-          country
-          companyName
-          companyTitle
-          linkedin
-          background
-          whyPackaging
-          areaOfInterest
-          sessionApplying
-          referral
-          payment
-          yearGoals
-          cmpmGoals
-          moreAboutYou
-          createdOn
-          updatedOn
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        userFormsCmpmId
       }
       nextToken
       startedAt
@@ -2274,6 +2241,58 @@ export const getCMPMForm = /* GraphQL */ `
   query GetCMPMForm($id: ID!) {
     getCMPMForm(id: $id) {
       id
+      user {
+        id
+        name
+        title
+        company
+        email
+        office
+        cell
+        picture
+        linkedin
+        companyID
+        apss {
+          nextToken
+          startedAt
+        }
+        cmpmFormID
+        cmpmForm {
+          id
+          firstName
+          lastName
+          email
+          phone
+          streetAddress
+          addressExtra
+          city
+          state
+          country
+          companyName
+          companyTitle
+          linkedin
+          background
+          whyPackaging
+          areaOfInterest
+          sessionApplying
+          referral
+          payment
+          yearGoals
+          cmpmGoals
+          moreAboutYou
+          createdOn
+          updatedOn
+          _version
+          _deleted
+          _lastChangedAt
+          cMPMFormUserId
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
       firstName
       lastName
       email
@@ -2300,6 +2319,7 @@ export const getCMPMForm = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      cMPMFormUserId
     }
   }
 `;
@@ -2312,6 +2332,24 @@ export const listCMPMForms = /* GraphQL */ `
     listCMPMForms(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
+        user {
+          id
+          name
+          title
+          company
+          email
+          office
+          cell
+          picture
+          linkedin
+          companyID
+          cmpmFormID
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
         firstName
         lastName
         email
@@ -2338,6 +2376,7 @@ export const listCMPMForms = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        cMPMFormUserId
       }
       nextToken
       startedAt
@@ -2359,6 +2398,24 @@ export const syncCMPMForms = /* GraphQL */ `
     ) {
       items {
         id
+        user {
+          id
+          name
+          title
+          company
+          email
+          office
+          cell
+          picture
+          linkedin
+          companyID
+          cmpmFormID
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
         firstName
         lastName
         email
@@ -2385,6 +2442,7 @@ export const syncCMPMForms = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        cMPMFormUserId
       }
       nextToken
       startedAt
@@ -2408,6 +2466,24 @@ export const cMPMFormsByEmail = /* GraphQL */ `
     ) {
       items {
         id
+        user {
+          id
+          name
+          title
+          company
+          email
+          office
+          cell
+          picture
+          linkedin
+          companyID
+          cmpmFormID
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
         firstName
         lastName
         email
@@ -2434,6 +2510,7 @@ export const cMPMFormsByEmail = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
+        cMPMFormUserId
       }
       nextToken
       startedAt
@@ -3306,21 +3383,42 @@ export const getAPSUser = /* GraphQL */ `
           nextToken
           startedAt
         }
-        userForms {
+        cmpmFormID
+        cmpmForm {
           id
-          createdAt
-          updatedAt
+          firstName
+          lastName
+          email
+          phone
+          streetAddress
+          addressExtra
+          city
+          state
+          country
+          companyName
+          companyTitle
+          linkedin
+          background
+          whyPackaging
+          areaOfInterest
+          sessionApplying
+          referral
+          payment
+          yearGoals
+          cmpmGoals
+          moreAboutYou
+          createdOn
+          updatedOn
           _version
           _deleted
           _lastChangedAt
-          userFormsCmpmId
+          cMPMFormUserId
         }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
-        userUserFormsId
       }
       createdAt
       updatedAt
@@ -3361,12 +3459,12 @@ export const listAPSUsers = /* GraphQL */ `
           picture
           linkedin
           companyID
+          cmpmFormID
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
-          userUserFormsId
         }
         createdAt
         updatedAt
@@ -3416,12 +3514,12 @@ export const syncAPSUsers = /* GraphQL */ `
           picture
           linkedin
           companyID
+          cmpmFormID
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
-          userUserFormsId
         }
         createdAt
         updatedAt
@@ -3473,12 +3571,12 @@ export const aPSUsersByAPSId = /* GraphQL */ `
           picture
           linkedin
           companyID
+          cmpmFormID
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
-          userUserFormsId
         }
         createdAt
         updatedAt
@@ -3530,12 +3628,12 @@ export const aPSUsersByUserId = /* GraphQL */ `
           picture
           linkedin
           companyID
+          cmpmFormID
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
-          userUserFormsId
         }
         createdAt
         updatedAt
