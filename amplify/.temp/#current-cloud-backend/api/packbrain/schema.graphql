@@ -185,12 +185,15 @@ type User @model @auth(rules: [{ allow: public }]) {
 
 type UserForms @model @auth(rules: [{ allow: public }]) {
   id: ID!
+  userID: ID! @index(name: "formGroupByUserId")
+  user: User! @belongsTo(fields: ["userID"])
   cmpm: CMPMForm @hasOne
 }
 
 type CMPMForm
   @model(timestamps: { createdAt: "createdOn", updatedAt: "updatedOn" })
   @auth(rules: [{ allow: public }]) {
+  formGroup: UserForms! @belongsTo
   id: ID!
   firstName: String
   lastName: String

@@ -1473,6 +1473,7 @@ export const onCreateUser = /* GraphQL */ `
       }
       userForms {
         id
+        userID
         user {
           id
           name
@@ -1526,7 +1527,6 @@ export const onCreateUser = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        userFormsUserId
         userFormsCmpmId
       }
       createdAt
@@ -1567,6 +1567,7 @@ export const onUpdateUser = /* GraphQL */ `
       }
       userForms {
         id
+        userID
         user {
           id
           name
@@ -1620,7 +1621,6 @@ export const onUpdateUser = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        userFormsUserId
         userFormsCmpmId
       }
       createdAt
@@ -1661,6 +1661,7 @@ export const onDeleteUser = /* GraphQL */ `
       }
       userForms {
         id
+        userID
         user {
           id
           name
@@ -1714,7 +1715,6 @@ export const onDeleteUser = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        userFormsUserId
         userFormsCmpmId
       }
       createdAt
@@ -1730,6 +1730,7 @@ export const onCreateUserForms = /* GraphQL */ `
   subscription OnCreateUserForms {
     onCreateUserForms {
       id
+      userID
       user {
         id
         name
@@ -1747,12 +1748,12 @@ export const onCreateUserForms = /* GraphQL */ `
         }
         userForms {
           id
+          userID
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
-          userFormsUserId
           userFormsCmpmId
         }
         createdAt
@@ -1765,12 +1766,12 @@ export const onCreateUserForms = /* GraphQL */ `
       cmpm {
         formGroup {
           id
+          userID
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
-          userFormsUserId
           userFormsCmpmId
         }
         id
@@ -1807,7 +1808,6 @@ export const onCreateUserForms = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      userFormsUserId
       userFormsCmpmId
     }
   }
@@ -1816,6 +1816,7 @@ export const onUpdateUserForms = /* GraphQL */ `
   subscription OnUpdateUserForms {
     onUpdateUserForms {
       id
+      userID
       user {
         id
         name
@@ -1833,12 +1834,12 @@ export const onUpdateUserForms = /* GraphQL */ `
         }
         userForms {
           id
+          userID
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
-          userFormsUserId
           userFormsCmpmId
         }
         createdAt
@@ -1851,12 +1852,12 @@ export const onUpdateUserForms = /* GraphQL */ `
       cmpm {
         formGroup {
           id
+          userID
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
-          userFormsUserId
           userFormsCmpmId
         }
         id
@@ -1893,7 +1894,6 @@ export const onUpdateUserForms = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      userFormsUserId
       userFormsCmpmId
     }
   }
@@ -1902,6 +1902,7 @@ export const onDeleteUserForms = /* GraphQL */ `
   subscription OnDeleteUserForms {
     onDeleteUserForms {
       id
+      userID
       user {
         id
         name
@@ -1919,12 +1920,12 @@ export const onDeleteUserForms = /* GraphQL */ `
         }
         userForms {
           id
+          userID
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
-          userFormsUserId
           userFormsCmpmId
         }
         createdAt
@@ -1937,12 +1938,12 @@ export const onDeleteUserForms = /* GraphQL */ `
       cmpm {
         formGroup {
           id
+          userID
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
-          userFormsUserId
           userFormsCmpmId
         }
         id
@@ -1979,7 +1980,6 @@ export const onDeleteUserForms = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      userFormsUserId
       userFormsCmpmId
     }
   }
@@ -1989,6 +1989,7 @@ export const onCreateCMPMForm = /* GraphQL */ `
     onCreateCMPMForm {
       formGroup {
         id
+        userID
         user {
           id
           name
@@ -2042,7 +2043,6 @@ export const onCreateCMPMForm = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        userFormsUserId
         userFormsCmpmId
       }
       id
@@ -2081,6 +2081,7 @@ export const onUpdateCMPMForm = /* GraphQL */ `
     onUpdateCMPMForm {
       formGroup {
         id
+        userID
         user {
           id
           name
@@ -2134,7 +2135,6 @@ export const onUpdateCMPMForm = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        userFormsUserId
         userFormsCmpmId
       }
       id
@@ -2173,6 +2173,7 @@ export const onDeleteCMPMForm = /* GraphQL */ `
     onDeleteCMPMForm {
       formGroup {
         id
+        userID
         user {
           id
           name
@@ -2226,7 +2227,6 @@ export const onDeleteCMPMForm = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        userFormsUserId
         userFormsCmpmId
       }
       id
@@ -2862,12 +2862,12 @@ export const onCreateAPSUser = /* GraphQL */ `
         }
         userForms {
           id
+          userID
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
-          userFormsUserId
           userFormsCmpmId
         }
         createdAt
@@ -2932,12 +2932,12 @@ export const onUpdateAPSUser = /* GraphQL */ `
         }
         userForms {
           id
+          userID
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
-          userFormsUserId
           userFormsCmpmId
         }
         createdAt
@@ -3002,12 +3002,12 @@ export const onDeleteAPSUser = /* GraphQL */ `
         }
         userForms {
           id
+          userID
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
-          userFormsUserId
           userFormsCmpmId
         }
         createdAt

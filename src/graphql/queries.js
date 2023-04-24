@@ -1832,6 +1832,7 @@ export const getUser = /* GraphQL */ `
       }
       userForms {
         id
+        userID
         user {
           id
           name
@@ -1885,7 +1886,6 @@ export const getUser = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        userFormsUserId
         userFormsCmpmId
       }
       createdAt
@@ -1921,12 +1921,12 @@ export const listUsers = /* GraphQL */ `
         }
         userForms {
           id
+          userID
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
-          userFormsUserId
           userFormsCmpmId
         }
         createdAt
@@ -1971,12 +1971,12 @@ export const syncUsers = /* GraphQL */ `
         }
         userForms {
           id
+          userID
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
-          userFormsUserId
           userFormsCmpmId
         }
         createdAt
@@ -2023,12 +2023,12 @@ export const usersByName = /* GraphQL */ `
         }
         userForms {
           id
+          userID
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
-          userFormsUserId
           userFormsCmpmId
         }
         createdAt
@@ -2075,12 +2075,12 @@ export const usersByEmail = /* GraphQL */ `
         }
         userForms {
           id
+          userID
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
-          userFormsUserId
           userFormsCmpmId
         }
         createdAt
@@ -2127,12 +2127,12 @@ export const usersByCompanyID = /* GraphQL */ `
         }
         userForms {
           id
+          userID
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
-          userFormsUserId
           userFormsCmpmId
         }
         createdAt
@@ -2151,6 +2151,7 @@ export const getUserForms = /* GraphQL */ `
   query GetUserForms($id: ID!) {
     getUserForms(id: $id) {
       id
+      userID
       user {
         id
         name
@@ -2168,12 +2169,12 @@ export const getUserForms = /* GraphQL */ `
         }
         userForms {
           id
+          userID
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
-          userFormsUserId
           userFormsCmpmId
         }
         createdAt
@@ -2186,12 +2187,12 @@ export const getUserForms = /* GraphQL */ `
       cmpm {
         formGroup {
           id
+          userID
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
-          userFormsUserId
           userFormsCmpmId
         }
         id
@@ -2228,7 +2229,6 @@ export const getUserForms = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      userFormsUserId
       userFormsCmpmId
     }
   }
@@ -2242,6 +2242,7 @@ export const listUserForms = /* GraphQL */ `
     listUserForms(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
+        userID
         user {
           id
           name
@@ -2295,7 +2296,6 @@ export const listUserForms = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        userFormsUserId
         userFormsCmpmId
       }
       nextToken
@@ -2318,6 +2318,7 @@ export const syncUserForms = /* GraphQL */ `
     ) {
       items {
         id
+        userID
         user {
           id
           name
@@ -2371,7 +2372,84 @@ export const syncUserForms = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        userFormsUserId
+        userFormsCmpmId
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const userFormsByUserID = /* GraphQL */ `
+  query UserFormsByUserID(
+    $userID: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelUserFormsFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    userFormsByUserID(
+      userID: $userID
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        userID
+        user {
+          id
+          name
+          title
+          company
+          email
+          office
+          cell
+          picture
+          linkedin
+          companyID
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          userUserFormsId
+        }
+        cmpm {
+          id
+          firstName
+          lastName
+          email
+          phone
+          streetAddress
+          addressExtra
+          city
+          state
+          country
+          companyName
+          companyTitle
+          linkedin
+          background
+          whyPackaging
+          areaOfInterest
+          sessionApplying
+          referral
+          payment
+          yearGoals
+          cmpmGoals
+          moreAboutYou
+          createdOn
+          updatedOn
+          _version
+          _deleted
+          _lastChangedAt
+          cMPMFormFormGroupId
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
         userFormsCmpmId
       }
       nextToken
@@ -2384,6 +2462,7 @@ export const getCMPMForm = /* GraphQL */ `
     getCMPMForm(id: $id) {
       formGroup {
         id
+        userID
         user {
           id
           name
@@ -2437,7 +2516,6 @@ export const getCMPMForm = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        userFormsUserId
         userFormsCmpmId
       }
       id
@@ -2481,12 +2559,12 @@ export const listCMPMForms = /* GraphQL */ `
       items {
         formGroup {
           id
+          userID
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
-          userFormsUserId
           userFormsCmpmId
         }
         id
@@ -2539,12 +2617,12 @@ export const syncCMPMForms = /* GraphQL */ `
       items {
         formGroup {
           id
+          userID
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
-          userFormsUserId
           userFormsCmpmId
         }
         id
@@ -2599,12 +2677,12 @@ export const cMPMFormsByEmail = /* GraphQL */ `
       items {
         formGroup {
           id
+          userID
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
-          userFormsUserId
           userFormsCmpmId
         }
         id
@@ -3509,12 +3587,12 @@ export const getAPSUser = /* GraphQL */ `
         }
         userForms {
           id
+          userID
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
-          userFormsUserId
           userFormsCmpmId
         }
         createdAt

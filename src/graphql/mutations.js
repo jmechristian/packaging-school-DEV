@@ -1584,6 +1584,7 @@ export const createUser = /* GraphQL */ `
       }
       userForms {
         id
+        userID
         user {
           id
           name
@@ -1637,7 +1638,6 @@ export const createUser = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        userFormsUserId
         userFormsCmpmId
       }
       createdAt
@@ -1681,6 +1681,7 @@ export const updateUser = /* GraphQL */ `
       }
       userForms {
         id
+        userID
         user {
           id
           name
@@ -1734,7 +1735,6 @@ export const updateUser = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        userFormsUserId
         userFormsCmpmId
       }
       createdAt
@@ -1778,6 +1778,7 @@ export const deleteUser = /* GraphQL */ `
       }
       userForms {
         id
+        userID
         user {
           id
           name
@@ -1831,7 +1832,6 @@ export const deleteUser = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        userFormsUserId
         userFormsCmpmId
       }
       createdAt
@@ -1850,6 +1850,7 @@ export const createUserForms = /* GraphQL */ `
   ) {
     createUserForms(input: $input, condition: $condition) {
       id
+      userID
       user {
         id
         name
@@ -1867,12 +1868,12 @@ export const createUserForms = /* GraphQL */ `
         }
         userForms {
           id
+          userID
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
-          userFormsUserId
           userFormsCmpmId
         }
         createdAt
@@ -1885,12 +1886,12 @@ export const createUserForms = /* GraphQL */ `
       cmpm {
         formGroup {
           id
+          userID
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
-          userFormsUserId
           userFormsCmpmId
         }
         id
@@ -1927,7 +1928,6 @@ export const createUserForms = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      userFormsUserId
       userFormsCmpmId
     }
   }
@@ -1939,6 +1939,7 @@ export const updateUserForms = /* GraphQL */ `
   ) {
     updateUserForms(input: $input, condition: $condition) {
       id
+      userID
       user {
         id
         name
@@ -1956,12 +1957,12 @@ export const updateUserForms = /* GraphQL */ `
         }
         userForms {
           id
+          userID
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
-          userFormsUserId
           userFormsCmpmId
         }
         createdAt
@@ -1974,12 +1975,12 @@ export const updateUserForms = /* GraphQL */ `
       cmpm {
         formGroup {
           id
+          userID
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
-          userFormsUserId
           userFormsCmpmId
         }
         id
@@ -2016,7 +2017,6 @@ export const updateUserForms = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      userFormsUserId
       userFormsCmpmId
     }
   }
@@ -2028,6 +2028,7 @@ export const deleteUserForms = /* GraphQL */ `
   ) {
     deleteUserForms(input: $input, condition: $condition) {
       id
+      userID
       user {
         id
         name
@@ -2045,12 +2046,12 @@ export const deleteUserForms = /* GraphQL */ `
         }
         userForms {
           id
+          userID
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
-          userFormsUserId
           userFormsCmpmId
         }
         createdAt
@@ -2063,12 +2064,12 @@ export const deleteUserForms = /* GraphQL */ `
       cmpm {
         formGroup {
           id
+          userID
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
-          userFormsUserId
           userFormsCmpmId
         }
         id
@@ -2105,7 +2106,6 @@ export const deleteUserForms = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      userFormsUserId
       userFormsCmpmId
     }
   }
@@ -2118,6 +2118,7 @@ export const createCMPMForm = /* GraphQL */ `
     createCMPMForm(input: $input, condition: $condition) {
       formGroup {
         id
+        userID
         user {
           id
           name
@@ -2171,7 +2172,6 @@ export const createCMPMForm = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        userFormsUserId
         userFormsCmpmId
       }
       id
@@ -2213,6 +2213,7 @@ export const updateCMPMForm = /* GraphQL */ `
     updateCMPMForm(input: $input, condition: $condition) {
       formGroup {
         id
+        userID
         user {
           id
           name
@@ -2266,7 +2267,6 @@ export const updateCMPMForm = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        userFormsUserId
         userFormsCmpmId
       }
       id
@@ -2308,6 +2308,7 @@ export const deleteCMPMForm = /* GraphQL */ `
     deleteCMPMForm(input: $input, condition: $condition) {
       formGroup {
         id
+        userID
         user {
           id
           name
@@ -2361,7 +2362,6 @@ export const deleteCMPMForm = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        userFormsUserId
         userFormsCmpmId
       }
       id
@@ -3027,12 +3027,12 @@ export const createAPSUser = /* GraphQL */ `
         }
         userForms {
           id
+          userID
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
-          userFormsUserId
           userFormsCmpmId
         }
         createdAt
@@ -3100,12 +3100,12 @@ export const updateAPSUser = /* GraphQL */ `
         }
         userForms {
           id
+          userID
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
-          userFormsUserId
           userFormsCmpmId
         }
         createdAt
@@ -3173,12 +3173,12 @@ export const deleteAPSUser = /* GraphQL */ `
         }
         userForms {
           id
+          userID
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
-          userFormsUserId
           userFormsCmpmId
         }
         createdAt
