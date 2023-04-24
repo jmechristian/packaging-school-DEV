@@ -5,7 +5,12 @@ import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
 import { useSelector } from 'react-redux';
 import { API } from 'aws-amplify';
 import * as queries from '../../src/graphql/queries';
-import { createUserForms, createCMPMForm } from '../../src/graphql/mutations';
+import {
+  createUserForms,
+  createCMPMForm,
+  updateUser,
+  updateUserForms,
+} from '../../src/graphql/mutations';
 
 const FormWrapper = ({ children, activeIndex, setActiveIndex }) => {
   const { user } = useSelector((state) => state.auth);
@@ -17,21 +22,23 @@ const FormWrapper = ({ children, activeIndex, setActiveIndex }) => {
   }, [user]);
 
   const getUserFormGroup = async () => {
-    if (user && user.userUserFormsId) {
-      const res = await API.graphql({
-        query: getUserFormGroup,
-        variables: { input: { id: user.userUserFormsId } },
-      });
-      setUserForms(res);
-    } else {
-      const newForm = await API.graphql({
-        query: createUserForms,
-        variables: { input: { id: user.id } },
-      });
-      await API.graphql({
-        query: updateUser,
-        variables: { input: { id: user.id, userUserFormsId: newForm.id } },
-      });
+    if (user) {
+      if (user && user.cmpmForm) {
+        setUserForms(user.forms);
+      } else {
+        if (user) {
+          await API.graphql({
+            query: createCMPMForm,
+            variables: {
+              input: { email: user.email, cMPMFormUserId: user.id },
+            },
+          });
+          await API.graphql({
+            query: updateUser,
+            variables: { input: { id: user.id, cmpmForm: user.id } },
+          });
+        }
+      }
     }
   };
 
