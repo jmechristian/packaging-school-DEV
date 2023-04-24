@@ -180,11 +180,14 @@ type User @model @auth(rules: [{ allow: public }]) {
   linkedin: String
   companyID: ID @index(name: "userByCompany")
   apss: [APS] @manyToMany(relationName: "APSUser")
-  userForms: UserForms @hasOne
+  userForms: UserForms @hasOne(relationshipName: "userFormGroup")
 }
 
 type UserForms @model @auth(rules: [{ allow: public }]) {
   id: ID!
+  user: User!
+    @belongsTo(relationshipName: "userFormGroup")
+    @index(name: "forGroupByUserID")
   cmpm: CMPMForm @hasOne
 }
 

@@ -1473,25 +1473,6 @@ export const onCreateUser = /* GraphQL */ `
       }
       userForms {
         id
-        userID
-        user {
-          id
-          name
-          title
-          company
-          email
-          office
-          cell
-          picture
-          linkedin
-          companyID
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
-          userUserFormsId
-        }
         cmpm {
           id
           firstName
@@ -1520,7 +1501,6 @@ export const onCreateUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          cMPMFormFormGroupId
         }
         createdAt
         updatedAt
@@ -1567,25 +1547,6 @@ export const onUpdateUser = /* GraphQL */ `
       }
       userForms {
         id
-        userID
-        user {
-          id
-          name
-          title
-          company
-          email
-          office
-          cell
-          picture
-          linkedin
-          companyID
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
-          userUserFormsId
-        }
         cmpm {
           id
           firstName
@@ -1614,7 +1575,6 @@ export const onUpdateUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          cMPMFormFormGroupId
         }
         createdAt
         updatedAt
@@ -1661,25 +1621,6 @@ export const onDeleteUser = /* GraphQL */ `
       }
       userForms {
         id
-        userID
-        user {
-          id
-          name
-          title
-          company
-          email
-          office
-          cell
-          picture
-          linkedin
-          companyID
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
-          userUserFormsId
-        }
         cmpm {
           id
           firstName
@@ -1708,7 +1649,6 @@ export const onDeleteUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          cMPMFormFormGroupId
         }
         createdAt
         updatedAt
@@ -1730,50 +1670,7 @@ export const onCreateUserForms = /* GraphQL */ `
   subscription OnCreateUserForms {
     onCreateUserForms {
       id
-      userID
-      user {
-        id
-        name
-        title
-        company
-        email
-        office
-        cell
-        picture
-        linkedin
-        companyID
-        apss {
-          nextToken
-          startedAt
-        }
-        userForms {
-          id
-          userID
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
-          userFormsCmpmId
-        }
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        userUserFormsId
-      }
       cmpm {
-        formGroup {
-          id
-          userID
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
-          userFormsCmpmId
-        }
         id
         firstName
         lastName
@@ -1801,7 +1698,6 @@ export const onCreateUserForms = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        cMPMFormFormGroupId
       }
       createdAt
       updatedAt
@@ -1816,50 +1712,7 @@ export const onUpdateUserForms = /* GraphQL */ `
   subscription OnUpdateUserForms {
     onUpdateUserForms {
       id
-      userID
-      user {
-        id
-        name
-        title
-        company
-        email
-        office
-        cell
-        picture
-        linkedin
-        companyID
-        apss {
-          nextToken
-          startedAt
-        }
-        userForms {
-          id
-          userID
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
-          userFormsCmpmId
-        }
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        userUserFormsId
-      }
       cmpm {
-        formGroup {
-          id
-          userID
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
-          userFormsCmpmId
-        }
         id
         firstName
         lastName
@@ -1887,7 +1740,6 @@ export const onUpdateUserForms = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        cMPMFormFormGroupId
       }
       createdAt
       updatedAt
@@ -1902,50 +1754,7 @@ export const onDeleteUserForms = /* GraphQL */ `
   subscription OnDeleteUserForms {
     onDeleteUserForms {
       id
-      userID
-      user {
-        id
-        name
-        title
-        company
-        email
-        office
-        cell
-        picture
-        linkedin
-        companyID
-        apss {
-          nextToken
-          startedAt
-        }
-        userForms {
-          id
-          userID
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
-          userFormsCmpmId
-        }
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        userUserFormsId
-      }
       cmpm {
-        formGroup {
-          id
-          userID
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
-          userFormsCmpmId
-        }
         id
         firstName
         lastName
@@ -1973,7 +1782,6 @@ export const onDeleteUserForms = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        cMPMFormFormGroupId
       }
       createdAt
       updatedAt
@@ -1987,64 +1795,6 @@ export const onDeleteUserForms = /* GraphQL */ `
 export const onCreateCMPMForm = /* GraphQL */ `
   subscription OnCreateCMPMForm {
     onCreateCMPMForm {
-      formGroup {
-        id
-        userID
-        user {
-          id
-          name
-          title
-          company
-          email
-          office
-          cell
-          picture
-          linkedin
-          companyID
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
-          userUserFormsId
-        }
-        cmpm {
-          id
-          firstName
-          lastName
-          email
-          phone
-          streetAddress
-          addressExtra
-          city
-          state
-          country
-          companyName
-          companyTitle
-          linkedin
-          background
-          whyPackaging
-          areaOfInterest
-          sessionApplying
-          referral
-          payment
-          yearGoals
-          cmpmGoals
-          moreAboutYou
-          createdOn
-          updatedOn
-          _version
-          _deleted
-          _lastChangedAt
-          cMPMFormFormGroupId
-        }
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        userFormsCmpmId
-      }
       id
       firstName
       lastName
@@ -2072,71 +1822,12 @@ export const onCreateCMPMForm = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      cMPMFormFormGroupId
     }
   }
 `;
 export const onUpdateCMPMForm = /* GraphQL */ `
   subscription OnUpdateCMPMForm {
     onUpdateCMPMForm {
-      formGroup {
-        id
-        userID
-        user {
-          id
-          name
-          title
-          company
-          email
-          office
-          cell
-          picture
-          linkedin
-          companyID
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
-          userUserFormsId
-        }
-        cmpm {
-          id
-          firstName
-          lastName
-          email
-          phone
-          streetAddress
-          addressExtra
-          city
-          state
-          country
-          companyName
-          companyTitle
-          linkedin
-          background
-          whyPackaging
-          areaOfInterest
-          sessionApplying
-          referral
-          payment
-          yearGoals
-          cmpmGoals
-          moreAboutYou
-          createdOn
-          updatedOn
-          _version
-          _deleted
-          _lastChangedAt
-          cMPMFormFormGroupId
-        }
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        userFormsCmpmId
-      }
       id
       firstName
       lastName
@@ -2164,71 +1855,12 @@ export const onUpdateCMPMForm = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      cMPMFormFormGroupId
     }
   }
 `;
 export const onDeleteCMPMForm = /* GraphQL */ `
   subscription OnDeleteCMPMForm {
     onDeleteCMPMForm {
-      formGroup {
-        id
-        userID
-        user {
-          id
-          name
-          title
-          company
-          email
-          office
-          cell
-          picture
-          linkedin
-          companyID
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
-          userUserFormsId
-        }
-        cmpm {
-          id
-          firstName
-          lastName
-          email
-          phone
-          streetAddress
-          addressExtra
-          city
-          state
-          country
-          companyName
-          companyTitle
-          linkedin
-          background
-          whyPackaging
-          areaOfInterest
-          sessionApplying
-          referral
-          payment
-          yearGoals
-          cmpmGoals
-          moreAboutYou
-          createdOn
-          updatedOn
-          _version
-          _deleted
-          _lastChangedAt
-          cMPMFormFormGroupId
-        }
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        userFormsCmpmId
-      }
       id
       firstName
       lastName
@@ -2256,7 +1888,6 @@ export const onDeleteCMPMForm = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      cMPMFormFormGroupId
     }
   }
 `;
@@ -2862,7 +2493,6 @@ export const onCreateAPSUser = /* GraphQL */ `
         }
         userForms {
           id
-          userID
           createdAt
           updatedAt
           _version
@@ -2932,7 +2562,6 @@ export const onUpdateAPSUser = /* GraphQL */ `
         }
         userForms {
           id
-          userID
           createdAt
           updatedAt
           _version
@@ -3002,7 +2631,6 @@ export const onDeleteAPSUser = /* GraphQL */ `
         }
         userForms {
           id
-          userID
           createdAt
           updatedAt
           _version

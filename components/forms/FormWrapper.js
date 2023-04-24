@@ -5,26 +5,34 @@ import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
 import { useSelector } from 'react-redux';
 import { API } from 'aws-amplify';
 import * as queries from '../../src/graphql/queries';
+import { createUserForms, createCMPMForm } from '../../src/graphql/mutations';
 
 const FormWrapper = ({ children, activeIndex, setActiveIndex }) => {
   const { user } = useSelector((state) => state.auth);
   const [userForms, setUserForms] = useState([]);
+  const [userCMPMForm, setUserCMPMForm] = useState([]);
 
   useEffect(() => {
     user && getUserFormGroup();
   }, [user]);
 
   const getUserFormGroup = async () => {
-    const forms = await API.graphql({
-      query: queries.userFormsByUserId,
-      variables: { userId: user.id },
-    });
-
-    setUserForms(
-      forms.data.userFormsByUserId.items
-        ? forms.data.userFormsByUserId.items[0]
-        : null
-    );
+    if (user && user.userUserFormsId) {
+      const res = await API.graphql({
+        query: getUserFormGroup,
+        variables: { input: { id: user.userUserFormsId } },
+      });
+      setUserForms(res);
+    } else {
+      const newForm = await API.graphql({
+        query: createUserForms,
+        variables: { input: { id: user.id } },
+      });
+      await API.graphql({
+        query: updateUser,
+        variables: { input: { id: user.id, userUserFormsId: newForm.id } },
+      });
+    }
   };
 
   const personalErrors = [

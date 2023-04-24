@@ -27,8 +27,18 @@ export default function ProfileHead({ user }) {
               <p className='text-xl font-bold text-slate-900 sm:text-4xl'>
                 {user && user.name}
               </p>
-              <p className=' font-medium text-slate-600'>
-                {user && user.title} at {user && user.company}
+              <p className=' font-medium text-slate-600 flex gap-1.5'>
+                {user && user.title ? (
+                  user.title
+                ) : (
+                  <div className='text-slate-400 underline'>Enter Title</div>
+                )}{' '}
+                at{' '}
+                {user && user.company ? (
+                  user.company
+                ) : (
+                  <div className='text-slate-400 underline'>Enter Company</div>
+                )}
               </p>
             </div>
           </div>

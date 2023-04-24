@@ -36,7 +36,13 @@ const Layout = ({ children }) => {
         } else {
           const createNewUser = await API.graphql({
             query: createUser,
-            variables: { input: { name: user.name, email: user.email } },
+            variables: {
+              input: {
+                name: user.name,
+                email: user.email,
+                picture: user.picture,
+              },
+            },
           });
           dispatch(setUser(createNewUser.data.createUser));
         }
