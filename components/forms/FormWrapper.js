@@ -4,12 +4,12 @@ import { CMPMContext } from './cmpm/CMPMContextProvider';
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
 import { useSelector } from 'react-redux';
 import { API } from 'aws-amplify';
-import * as queries from '../../src/graphql/queries';
 import {
   createUserForms,
   createCMPMForm,
   updateUser,
   updateUserForms,
+  updateCMPMForm,
 } from '../../src/graphql/mutations';
 
 const FormWrapper = ({ children, activeIndex, setActiveIndex }) => {
@@ -23,7 +23,6 @@ const FormWrapper = ({ children, activeIndex, setActiveIndex }) => {
 
   const getUserFormGroup = async () => {
     if (user && user.cmpmFormID) {
-      console.log(user.forms);
     } else {
       await API.graphql({
         query: createCMPMForm,
@@ -65,11 +64,16 @@ const FormWrapper = ({ children, activeIndex, setActiveIndex }) => {
   const formSaveHandler = async (currentFormState) => {
     console.log('form', currentFormState);
     console.log('user', user);
-    // const startForm = await API.graphql({
-    //   query: mutations.createUserForms,
-    //   variables: { input: { userFormsUserIdId: user.id } },
-    // });
-    // console.log(startForm);
+    await API.graphql({
+      query: updateCMPMForm,
+      variables: {
+        input: {
+          id: user.id,
+          cMPMFormUserId: user.id,
+          firstName: currentFormState.firstName,
+        },
+      },
+    });
   };
 
   const formForwardHandler = (currentFormState) => {
