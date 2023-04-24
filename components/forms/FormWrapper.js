@@ -4,12 +4,11 @@ import { CMPMContext } from './cmpm/CMPMContextProvider';
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
 import { useSelector } from 'react-redux';
 import { API } from 'aws-amplify';
-import * as mutations from '../../src/graphql/mutations';
 import * as queries from '../../src/graphql/queries';
 
 const FormWrapper = ({ children, activeIndex, setActiveIndex }) => {
   const { user } = useSelector((state) => state.auth);
-  const [userForm, setUserForm] = useState(null);
+  const [userForms, setUserForms] = useState([]);
 
   useEffect(() => {
     user && getUserFormGroup();
@@ -21,7 +20,7 @@ const FormWrapper = ({ children, activeIndex, setActiveIndex }) => {
       variables: { userId: user.id },
     });
 
-    setUserForm(
+    setUserForms(
       forms.data.userFormsByUserId.items
         ? forms.data.userFormsByUserId.items[0]
         : null
@@ -62,7 +61,9 @@ const FormWrapper = ({ children, activeIndex, setActiveIndex }) => {
     // console.log(startForm);
   };
 
-  const formForwardHandler = () => {
+  const formForwardHandler = (currentFormState) => {
+    console.log('form', currentFormState);
+    console.log('user', user);
     setActiveIndex(activeIndex + 1);
   };
 
@@ -111,7 +112,7 @@ const FormWrapper = ({ children, activeIndex, setActiveIndex }) => {
             ) : (
               <div
                 className='cursor-pointer rounded-md bg-base-brand px-4 py-3 text-lg font-semibold text-white shadow-sm font-greycliff hover:bg-base-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600 flex gap-1 items-center'
-                onClick={formForwardHandler}
+                onClick={() => formForwardHandler(methods.getValues())}
               >
                 <div className='leading-none'>Save and Continue</div>
                 <div>

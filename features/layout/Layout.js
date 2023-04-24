@@ -15,6 +15,7 @@ import ScrollTop from './ScrollTop';
 import { useUser } from '@auth0/nextjs-auth0/client';
 import { API } from 'aws-amplify';
 import { usersByEmail } from '../../src/graphql/queries';
+import { createUser } from '../../src/graphql/mutations';
 
 const Layout = ({ children }) => {
   const dispatch = useDispatch();
@@ -23,12 +24,22 @@ const Layout = ({ children }) => {
 
   useEffect(() => {
     if (user) {
+      console.log(user);
       const getAndSetUser = async () => {
         const currentUser = await API.graphql({
           query: usersByEmail,
           variables: { email: user.email },
         });
-        dispatch(setUser(currentUser.data.usersByEmail.items[0]));
+
+        if (currentUser.data.usersByEmail.items[0]) {
+          dispatch(setUser(currentUser.data.usersByEmail.items[0]));
+        } else {
+          const createNewUser = await API.graphql({
+            query: createUser,
+            variables: { input: { name: user.name, email: user.email } },
+          });
+          dispatch(setUser(createNewUser.data.createUser));
+        }
       };
       getAndSetUser();
     }
