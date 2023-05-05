@@ -110,12 +110,7 @@
         }
     },
     "hosting": {},
-    "notifications": {
-        "autopacksummit": {
-            "service": "Pinpoint",
-            "channels": []
-        }
-    },
+    "notifications": {},
     "parameters": {
         "AMPLIFY_analytics_Pinpoint_Id": {
             "usedBy": [
