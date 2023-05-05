@@ -17,7 +17,13 @@ const CategoryType = {
   "DESIGN": "DESIGN"
 };
 
-const { LessonSource, LessonLink, Tags, Certificate, Course, Article, Lesson, Blog, DayInLifeItem, Career, APS, User, CMPMForm, Company, APSSpeaker, CertificateCourses, ArticleRelatedCourses, APSUser, APSSponsor, RegistrationCode } = initSchema(schema);
+const MediaType = {
+  "VIDEO": "VIDEO",
+  "IMAGE": "IMAGE",
+  "SLIDES": "SLIDES"
+};
+
+const { LessonSource, LessonLink, Tags, Certificate, Course, Article, Lesson, Blog, DayInLifeItem, Career, APS, User, CMPMForm, Instructor, LMSCourse, LMSCirriculum, LMSLesson, Objective, Slide, LessonVideo, Timestamp, Student, Company, APSSpeaker, CertificateCourses, ArticleRelatedCourses, APSUser, APSSponsor, CourseInstructors, CirriculumCourses, CourseLessons, RegistrationCode } = initSchema(schema);
 
 export {
   LessonSource,
@@ -33,13 +39,26 @@ export {
   APS,
   User,
   CMPMForm,
+  Instructor,
+  LMSCourse,
+  LMSCirriculum,
+  LMSLesson,
+  Objective,
+  Slide,
+  LessonVideo,
+  Timestamp,
+  Student,
   Company,
   APSSpeaker,
   CertificateCourses,
   ArticleRelatedCourses,
   APSUser,
   APSSponsor,
+  CourseInstructors,
+  CirriculumCourses,
+  CourseLessons,
   ModuleType,
   CategoryType,
+  MediaType,
   RegistrationCode
 };

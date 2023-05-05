@@ -15,6 +15,12 @@ export enum CategoryType {
   DESIGN = "DESIGN"
 }
 
+export enum MediaType {
+  VIDEO = "VIDEO",
+  IMAGE = "IMAGE",
+  SLIDES = "SLIDES"
+}
+
 export declare class RegistrationCode {
   readonly code?: string | null;
   constructor(init: ModelInit<RegistrationCode>);
@@ -156,6 +162,8 @@ export declare class Lesson {
   readonly subhead?: string | null;
   readonly type?: ModuleType | keyof typeof ModuleType | null;
   readonly media?: string | null;
+  readonly mediaType?: MediaType | keyof typeof MediaType | null;
+  readonly slides?: (string | null)[] | null;
   readonly seoImage?: string | null;
   readonly content?: string | null;
   readonly sources?: (LessonSource | null)[] | null;
@@ -266,10 +274,14 @@ export declare class User {
   readonly linkedin?: string | null;
   readonly companyID?: string | null;
   readonly apss?: (APSUser | null)[] | null;
-  readonly cmpmApplication?: CMPMForm | null;
+  readonly cmpmFormID?: string | null;
+  readonly cmpmForm?: CMPMForm | null;
+  readonly instructorId?: Instructor | null;
+  readonly studentId?: Student | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
-  readonly userCmpmApplicationId?: string | null;
+  readonly userInstructorIdId?: string | null;
+  readonly userStudentIdId?: string | null;
   constructor(init: ModelInit<User>);
   static copyOf(source: User, mutator: (draft: MutableModel<User>) => MutableModel<User> | void): User;
 }
@@ -307,6 +319,154 @@ export declare class CMPMForm {
   readonly cMPMFormUserId: string;
   constructor(init: ModelInit<CMPMForm>);
   static copyOf(source: CMPMForm, mutator: (draft: MutableModel<CMPMForm>) => MutableModel<CMPMForm> | void): CMPMForm;
+}
+
+export declare class Instructor {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<Instructor, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly userId?: string | null;
+  readonly instructor: User;
+  readonly coursesTaught?: (CourseInstructors | null)[] | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+  constructor(init: ModelInit<Instructor>);
+  static copyOf(source: Instructor, mutator: (draft: MutableModel<Instructor>) => MutableModel<Instructor> | void): Instructor;
+}
+
+export declare class LMSCourse {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<LMSCourse, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly courseId?: string | null;
+  readonly Cirriculum?: (CirriculumCourses | null)[] | null;
+  readonly Lessons?: (CourseLessons | null)[] | null;
+  readonly Instructors?: (CourseInstructors | null)[] | null;
+  readonly price?: number | null;
+  readonly hours?: number | null;
+  readonly videos?: number | null;
+  readonly seoImage?: string | null;
+  readonly description?: string | null;
+  readonly percentComplete?: number | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+  readonly studentCourseEnrolledId?: string | null;
+  constructor(init: ModelInit<LMSCourse>);
+  static copyOf(source: LMSCourse, mutator: (draft: MutableModel<LMSCourse>) => MutableModel<LMSCourse> | void): LMSCourse;
+}
+
+export declare class LMSCirriculum {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<LMSCirriculum, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly title?: string | null;
+  readonly Courses?: (CirriculumCourses | null)[] | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+  constructor(init: ModelInit<LMSCirriculum>);
+  static copyOf(source: LMSCirriculum, mutator: (draft: MutableModel<LMSCirriculum>) => MutableModel<LMSCirriculum> | void): LMSCirriculum;
+}
+
+export declare class LMSLesson {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<LMSLesson, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly title?: string | null;
+  readonly Course?: (CourseLessons | null)[] | null;
+  readonly subheadline?: string | null;
+  readonly objectives?: (Objective | null)[] | null;
+  readonly mediaType?: MediaType | keyof typeof MediaType | null;
+  readonly slides?: (Slide | null)[] | null;
+  readonly video?: LessonVideo | null;
+  readonly percentComplete?: number | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+  readonly lMSLessonVideoId?: string | null;
+  constructor(init: ModelInit<LMSLesson>);
+  static copyOf(source: LMSLesson, mutator: (draft: MutableModel<LMSLesson>) => MutableModel<LMSLesson> | void): LMSLesson;
+}
+
+export declare class Objective {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<Objective, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly objective: string;
+  readonly completed?: boolean | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+  readonly lMSLessonObjectivesId?: string | null;
+  constructor(init: ModelInit<Objective>);
+  static copyOf(source: Objective, mutator: (draft: MutableModel<Objective>) => MutableModel<Objective> | void): Objective;
+}
+
+export declare class Slide {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<Slide, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly slideSource: string;
+  readonly description?: string | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+  readonly lMSLessonSlidesId?: string | null;
+  constructor(init: ModelInit<Slide>);
+  static copyOf(source: Slide, mutator: (draft: MutableModel<Slide>) => MutableModel<Slide> | void): Slide;
+}
+
+export declare class LessonVideo {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<LessonVideo, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly timestamps?: (Timestamp | null)[] | null;
+  readonly lessonId?: string | null;
+  readonly lesson?: LMSLesson | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+  constructor(init: ModelInit<LessonVideo>);
+  static copyOf(source: LessonVideo, mutator: (draft: MutableModel<LessonVideo>) => MutableModel<LessonVideo> | void): LessonVideo;
+}
+
+export declare class Timestamp {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<Timestamp, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly time: string;
+  readonly description?: string | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+  readonly lessonVideoTimestampsId?: string | null;
+  constructor(init: ModelInit<Timestamp>);
+  static copyOf(source: Timestamp, mutator: (draft: MutableModel<Timestamp>) => MutableModel<Timestamp> | void): Timestamp;
+}
+
+export declare class Student {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<Student, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly studentId?: string | null;
+  readonly student?: User | null;
+  readonly courseEnrolled?: (LMSCourse | null)[] | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+  constructor(init: ModelInit<Student>);
+  static copyOf(source: Student, mutator: (draft: MutableModel<Student>) => MutableModel<Student> | void): Student;
 }
 
 export declare class Company {
@@ -421,4 +581,52 @@ export declare class APSSponsor {
   readonly updatedAt?: string | null;
   constructor(init: ModelInit<APSSponsor>);
   static copyOf(source: APSSponsor, mutator: (draft: MutableModel<APSSponsor>) => MutableModel<APSSponsor> | void): APSSponsor;
+}
+
+export declare class CourseInstructors {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<CourseInstructors, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly instructorId?: string | null;
+  readonly lMSCourseId?: string | null;
+  readonly instructor: Instructor;
+  readonly lmsCourse: LMSCourse;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+  constructor(init: ModelInit<CourseInstructors>);
+  static copyOf(source: CourseInstructors, mutator: (draft: MutableModel<CourseInstructors>) => MutableModel<CourseInstructors> | void): CourseInstructors;
+}
+
+export declare class CirriculumCourses {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<CirriculumCourses, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly lMSCourseId?: string | null;
+  readonly lMSCirriculumId?: string | null;
+  readonly lmsCourse: LMSCourse;
+  readonly lmsCirriculum: LMSCirriculum;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+  constructor(init: ModelInit<CirriculumCourses>);
+  static copyOf(source: CirriculumCourses, mutator: (draft: MutableModel<CirriculumCourses>) => MutableModel<CirriculumCourses> | void): CirriculumCourses;
+}
+
+export declare class CourseLessons {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<CourseLessons, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly lMSCourseId?: string | null;
+  readonly lMSLessonId?: string | null;
+  readonly lmsCourse: LMSCourse;
+  readonly lmsLesson: LMSLesson;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+  constructor(init: ModelInit<CourseLessons>);
+  static copyOf(source: CourseLessons, mutator: (draft: MutableModel<CourseLessons>) => MutableModel<CourseLessons> | void): CourseLessons;
 }
