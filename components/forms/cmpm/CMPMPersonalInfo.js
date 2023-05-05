@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import TextInput from '../TextInput';
 import { useFormContext } from 'react-hook-form';
+import { useSelector } from 'react-redux';
 
 const CMPMPersonalInfo = ({ activeIndex }) => {
-  const { register, formState } = useFormContext();
+  const { user } = useSelector((state) => state.auth);
+  const { register, formState, setValue } = useFormContext();
+
+  useEffect(() => {
+    if (user) {
+      setValue('country', user.cmpmForm.country);
+    }
+  }, [user]);
 
   return (
     <div
@@ -16,17 +24,20 @@ const CMPMPersonalInfo = ({ activeIndex }) => {
           placeholder={''}
           label={'First Name'}
           required
+          value={user && user.cmpmForm.firstName}
         />
         <TextInput
           name={'lastName'}
           placeholder={''}
           label={'Last Name'}
+          value={user && user.cmpmForm.lastName}
           required
         />
       </div>
       <div className='grid grid-cols-2 gap-8'>
         <TextInput
           name={'email'}
+          value={user && user.cmpmForm.email}
           placeholder={'you@email.com'}
           label={'Email'}
           type={'email'}
@@ -38,6 +49,7 @@ const CMPMPersonalInfo = ({ activeIndex }) => {
           label={'Phone'}
           required
           type='tel'
+          value={user && user.cmpmForm.phone}
         />
       </div>
       <TextInput
@@ -45,19 +57,28 @@ const CMPMPersonalInfo = ({ activeIndex }) => {
         placeholder={''}
         label={'Street Address'}
         required
+        value={user && user.cmpmForm.streetAddress}
       />
       <TextInput
         name={'streetAddressExtra'}
         placeholder={''}
         label={'Address Line 2'}
+        value={user && user.cmpmForm.streetAddressExtra}
       />
       <div className='grid grid-cols-2 gap-8'>
-        <TextInput name={'city'} placeholder={''} label={'City'} required />
+        <TextInput
+          name={'city'}
+          placeholder={''}
+          label={'City'}
+          required
+          value={user && user.cmpmForm.city}
+        />
         <TextInput
           name={'state'}
           placeholder={''}
           label={'State / Province / Region'}
           required
+          value={user && user.cmpmForm.state}
         />
       </div>
       <div className='grid grid-cols-2 gap-8'>
@@ -352,6 +373,7 @@ const CMPMPersonalInfo = ({ activeIndex }) => {
           name={'birthYear'}
           placeholder={'YYYY'}
           label={'Year of Birth'}
+          value={user && user.cmpmForm.birthYear}
           required
         />
       </div>

@@ -722,6 +722,8 @@ export const getLesson = /* GraphQL */ `
       subhead
       type
       media
+      mediaType
+      slides
       seoImage
       content
       sources {
@@ -799,6 +801,8 @@ export const listLessons = /* GraphQL */ `
         subhead
         type
         media
+        mediaType
+        slides
         seoImage
         content
         sources {
@@ -850,6 +854,8 @@ export const syncLessons = /* GraphQL */ `
         subhead
         type
         media
+        mediaType
+        slides
         seoImage
         content
         sources {
@@ -903,6 +909,8 @@ export const lessonsBySlug = /* GraphQL */ `
         subhead
         type
         media
+        mediaType
+        slides
         seoImage
         content
         sources {
@@ -1689,6 +1697,8 @@ export const getCompany = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          userInstructorIdId
+          userStudentIdId
         }
         nextToken
         startedAt
@@ -1850,6 +1860,8 @@ export const getUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          userInstructorIdId
+          userStudentIdId
         }
         firstName
         lastName
@@ -1879,11 +1891,79 @@ export const getUser = /* GraphQL */ `
         _lastChangedAt
         cMPMFormUserId
       }
+      instructorId {
+        id
+        userId
+        instructor {
+          id
+          name
+          title
+          company
+          email
+          office
+          cell
+          picture
+          linkedin
+          companyID
+          cmpmFormID
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          userInstructorIdId
+          userStudentIdId
+        }
+        coursesTaught {
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      studentId {
+        id
+        studentId
+        student {
+          id
+          name
+          title
+          company
+          email
+          office
+          cell
+          picture
+          linkedin
+          companyID
+          cmpmFormID
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          userInstructorIdId
+          userStudentIdId
+        }
+        courseEnrolled {
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
+      userInstructorIdId
+      userStudentIdId
     }
   }
 `;
@@ -1940,11 +2020,31 @@ export const listUsers = /* GraphQL */ `
           _lastChangedAt
           cMPMFormUserId
         }
+        instructorId {
+          id
+          userId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        studentId {
+          id
+          studentId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
+        userInstructorIdId
+        userStudentIdId
       }
       nextToken
       startedAt
@@ -2010,11 +2110,31 @@ export const syncUsers = /* GraphQL */ `
           _lastChangedAt
           cMPMFormUserId
         }
+        instructorId {
+          id
+          userId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        studentId {
+          id
+          studentId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
+        userInstructorIdId
+        userStudentIdId
       }
       nextToken
       startedAt
@@ -2082,11 +2202,31 @@ export const usersByName = /* GraphQL */ `
           _lastChangedAt
           cMPMFormUserId
         }
+        instructorId {
+          id
+          userId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        studentId {
+          id
+          studentId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
+        userInstructorIdId
+        userStudentIdId
       }
       nextToken
       startedAt
@@ -2154,11 +2294,31 @@ export const usersByEmail = /* GraphQL */ `
           _lastChangedAt
           cMPMFormUserId
         }
+        instructorId {
+          id
+          userId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        studentId {
+          id
+          studentId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
+        userInstructorIdId
+        userStudentIdId
       }
       nextToken
       startedAt
@@ -2226,11 +2386,31 @@ export const usersByCompanyID = /* GraphQL */ `
           _lastChangedAt
           cMPMFormUserId
         }
+        instructorId {
+          id
+          userId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        studentId {
+          id
+          studentId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
+        userInstructorIdId
+        userStudentIdId
       }
       nextToken
       startedAt
@@ -2287,11 +2467,31 @@ export const getCMPMForm = /* GraphQL */ `
           _lastChangedAt
           cMPMFormUserId
         }
+        instructorId {
+          id
+          userId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        studentId {
+          id
+          studentId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
+        userInstructorIdId
+        userStudentIdId
       }
       firstName
       lastName
@@ -2349,6 +2549,8 @@ export const listCMPMForms = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          userInstructorIdId
+          userStudentIdId
         }
         firstName
         lastName
@@ -2415,6 +2617,8 @@ export const syncCMPMForms = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          userInstructorIdId
+          userStudentIdId
         }
         firstName
         lastName
@@ -2483,6 +2687,8 @@ export const cMPMFormsByEmail = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          userInstructorIdId
+          userStudentIdId
         }
         firstName
         lastName
@@ -2653,6 +2859,1531 @@ export const syncAPSSpeakers = /* GraphQL */ `
         _deleted
         _lastChangedAt
         aPSSpeakersId
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const getLMSCirriculum = /* GraphQL */ `
+  query GetLMSCirriculum($id: ID!) {
+    getLMSCirriculum(id: $id) {
+      id
+      title
+      Courses {
+        items {
+          id
+          lMSCirriculumId
+          lMSCourseId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const listLMSCirriculums = /* GraphQL */ `
+  query ListLMSCirriculums(
+    $filter: ModelLMSCirriculumFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listLMSCirriculums(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        title
+        Courses {
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const syncLMSCirriculums = /* GraphQL */ `
+  query SyncLMSCirriculums(
+    $filter: ModelLMSCirriculumFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncLMSCirriculums(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        title
+        Courses {
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const searchLMSCirriculums = /* GraphQL */ `
+  query SearchLMSCirriculums(
+    $filter: SearchableLMSCirriculumFilterInput
+    $sort: [SearchableLMSCirriculumSortInput]
+    $limit: Int
+    $nextToken: String
+    $from: Int
+    $aggregates: [SearchableLMSCirriculumAggregationInput]
+  ) {
+    searchLMSCirriculums(
+      filter: $filter
+      sort: $sort
+      limit: $limit
+      nextToken: $nextToken
+      from: $from
+      aggregates: $aggregates
+    ) {
+      items {
+        id
+        title
+        Courses {
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      total
+      aggregateItems {
+        name
+        result {
+          ... on SearchableAggregateScalarResult {
+            value
+          }
+          ... on SearchableAggregateBucketResult {
+            buckets {
+              key
+              doc_count
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+export const getLMSCourse = /* GraphQL */ `
+  query GetLMSCourse($id: ID!) {
+    getLMSCourse(id: $id) {
+      id
+      courseId
+      Cirriculum {
+        items {
+          id
+          lMSCirriculumId
+          lMSCourseId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
+      Lessons {
+        items {
+          id
+          lMSCourseId
+          lMSLessonId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
+      Instructors {
+        items {
+          id
+          lMSCourseId
+          instructorId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
+      price
+      hours
+      videos
+      seoImage
+      description
+      percentComplete
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      studentCourseEnrolledId
+    }
+  }
+`;
+export const listLMSCourses = /* GraphQL */ `
+  query ListLMSCourses(
+    $filter: ModelLMSCourseFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listLMSCourses(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        courseId
+        Cirriculum {
+          nextToken
+          startedAt
+        }
+        Lessons {
+          nextToken
+          startedAt
+        }
+        Instructors {
+          nextToken
+          startedAt
+        }
+        price
+        hours
+        videos
+        seoImage
+        description
+        percentComplete
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        studentCourseEnrolledId
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const syncLMSCourses = /* GraphQL */ `
+  query SyncLMSCourses(
+    $filter: ModelLMSCourseFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncLMSCourses(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        courseId
+        Cirriculum {
+          nextToken
+          startedAt
+        }
+        Lessons {
+          nextToken
+          startedAt
+        }
+        Instructors {
+          nextToken
+          startedAt
+        }
+        price
+        hours
+        videos
+        seoImage
+        description
+        percentComplete
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        studentCourseEnrolledId
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const searchLMSCourses = /* GraphQL */ `
+  query SearchLMSCourses(
+    $filter: SearchableLMSCourseFilterInput
+    $sort: [SearchableLMSCourseSortInput]
+    $limit: Int
+    $nextToken: String
+    $from: Int
+    $aggregates: [SearchableLMSCourseAggregationInput]
+  ) {
+    searchLMSCourses(
+      filter: $filter
+      sort: $sort
+      limit: $limit
+      nextToken: $nextToken
+      from: $from
+      aggregates: $aggregates
+    ) {
+      items {
+        id
+        courseId
+        Cirriculum {
+          nextToken
+          startedAt
+        }
+        Lessons {
+          nextToken
+          startedAt
+        }
+        Instructors {
+          nextToken
+          startedAt
+        }
+        price
+        hours
+        videos
+        seoImage
+        description
+        percentComplete
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        studentCourseEnrolledId
+      }
+      nextToken
+      total
+      aggregateItems {
+        name
+        result {
+          ... on SearchableAggregateScalarResult {
+            value
+          }
+          ... on SearchableAggregateBucketResult {
+            buckets {
+              key
+              doc_count
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+export const getLMSLesson = /* GraphQL */ `
+  query GetLMSLesson($id: ID!) {
+    getLMSLesson(id: $id) {
+      id
+      title
+      Course {
+        items {
+          id
+          lMSCourseId
+          lMSLessonId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
+      subheadline
+      objectives {
+        items {
+          id
+          objective
+          completed
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          lMSLessonObjectivesId
+        }
+        nextToken
+        startedAt
+      }
+      mediaType
+      slides {
+        items {
+          id
+          slideSource
+          description
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          lMSLessonSlidesId
+        }
+        nextToken
+        startedAt
+      }
+      video {
+        id
+        timestamps {
+          nextToken
+          startedAt
+        }
+        lessonId
+        lesson {
+          id
+          title
+          subheadline
+          mediaType
+          percentComplete
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          lMSLessonVideoId
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      percentComplete
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      lMSLessonVideoId
+    }
+  }
+`;
+export const listLMSLessons = /* GraphQL */ `
+  query ListLMSLessons(
+    $filter: ModelLMSLessonFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listLMSLessons(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        title
+        Course {
+          nextToken
+          startedAt
+        }
+        subheadline
+        objectives {
+          nextToken
+          startedAt
+        }
+        mediaType
+        slides {
+          nextToken
+          startedAt
+        }
+        video {
+          id
+          lessonId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        percentComplete
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        lMSLessonVideoId
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const syncLMSLessons = /* GraphQL */ `
+  query SyncLMSLessons(
+    $filter: ModelLMSLessonFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncLMSLessons(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        title
+        Course {
+          nextToken
+          startedAt
+        }
+        subheadline
+        objectives {
+          nextToken
+          startedAt
+        }
+        mediaType
+        slides {
+          nextToken
+          startedAt
+        }
+        video {
+          id
+          lessonId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        percentComplete
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        lMSLessonVideoId
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const searchLMSLessons = /* GraphQL */ `
+  query SearchLMSLessons(
+    $filter: SearchableLMSLessonFilterInput
+    $sort: [SearchableLMSLessonSortInput]
+    $limit: Int
+    $nextToken: String
+    $from: Int
+    $aggregates: [SearchableLMSLessonAggregationInput]
+  ) {
+    searchLMSLessons(
+      filter: $filter
+      sort: $sort
+      limit: $limit
+      nextToken: $nextToken
+      from: $from
+      aggregates: $aggregates
+    ) {
+      items {
+        id
+        title
+        Course {
+          nextToken
+          startedAt
+        }
+        subheadline
+        objectives {
+          nextToken
+          startedAt
+        }
+        mediaType
+        slides {
+          nextToken
+          startedAt
+        }
+        video {
+          id
+          lessonId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        percentComplete
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        lMSLessonVideoId
+      }
+      nextToken
+      total
+      aggregateItems {
+        name
+        result {
+          ... on SearchableAggregateScalarResult {
+            value
+          }
+          ... on SearchableAggregateBucketResult {
+            buckets {
+              key
+              doc_count
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+export const getStudent = /* GraphQL */ `
+  query GetStudent($id: ID!) {
+    getStudent(id: $id) {
+      id
+      studentId
+      student {
+        id
+        name
+        title
+        company
+        email
+        office
+        cell
+        picture
+        linkedin
+        companyID
+        apss {
+          nextToken
+          startedAt
+        }
+        cmpmFormID
+        cmpmForm {
+          id
+          firstName
+          lastName
+          email
+          phone
+          streetAddress
+          addressExtra
+          city
+          state
+          country
+          companyName
+          companyTitle
+          linkedin
+          background
+          whyPackaging
+          areaOfInterest
+          sessionApplying
+          referral
+          payment
+          yearGoals
+          cmpmGoals
+          moreAboutYou
+          createdOn
+          updatedOn
+          _version
+          _deleted
+          _lastChangedAt
+          cMPMFormUserId
+        }
+        instructorId {
+          id
+          userId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        studentId {
+          id
+          studentId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        userInstructorIdId
+        userStudentIdId
+      }
+      courseEnrolled {
+        items {
+          id
+          courseId
+          price
+          hours
+          videos
+          seoImage
+          description
+          percentComplete
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          studentCourseEnrolledId
+        }
+        nextToken
+        startedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const listStudents = /* GraphQL */ `
+  query ListStudents(
+    $filter: ModelStudentFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listStudents(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        studentId
+        student {
+          id
+          name
+          title
+          company
+          email
+          office
+          cell
+          picture
+          linkedin
+          companyID
+          cmpmFormID
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          userInstructorIdId
+          userStudentIdId
+        }
+        courseEnrolled {
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const syncStudents = /* GraphQL */ `
+  query SyncStudents(
+    $filter: ModelStudentFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncStudents(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        studentId
+        student {
+          id
+          name
+          title
+          company
+          email
+          office
+          cell
+          picture
+          linkedin
+          companyID
+          cmpmFormID
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          userInstructorIdId
+          userStudentIdId
+        }
+        courseEnrolled {
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const searchStudents = /* GraphQL */ `
+  query SearchStudents(
+    $filter: SearchableStudentFilterInput
+    $sort: [SearchableStudentSortInput]
+    $limit: Int
+    $nextToken: String
+    $from: Int
+    $aggregates: [SearchableStudentAggregationInput]
+  ) {
+    searchStudents(
+      filter: $filter
+      sort: $sort
+      limit: $limit
+      nextToken: $nextToken
+      from: $from
+      aggregates: $aggregates
+    ) {
+      items {
+        id
+        studentId
+        student {
+          id
+          name
+          title
+          company
+          email
+          office
+          cell
+          picture
+          linkedin
+          companyID
+          cmpmFormID
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          userInstructorIdId
+          userStudentIdId
+        }
+        courseEnrolled {
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      total
+      aggregateItems {
+        name
+        result {
+          ... on SearchableAggregateScalarResult {
+            value
+          }
+          ... on SearchableAggregateBucketResult {
+            buckets {
+              key
+              doc_count
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+export const getInstructor = /* GraphQL */ `
+  query GetInstructor($id: ID!) {
+    getInstructor(id: $id) {
+      id
+      userId
+      instructor {
+        id
+        name
+        title
+        company
+        email
+        office
+        cell
+        picture
+        linkedin
+        companyID
+        apss {
+          nextToken
+          startedAt
+        }
+        cmpmFormID
+        cmpmForm {
+          id
+          firstName
+          lastName
+          email
+          phone
+          streetAddress
+          addressExtra
+          city
+          state
+          country
+          companyName
+          companyTitle
+          linkedin
+          background
+          whyPackaging
+          areaOfInterest
+          sessionApplying
+          referral
+          payment
+          yearGoals
+          cmpmGoals
+          moreAboutYou
+          createdOn
+          updatedOn
+          _version
+          _deleted
+          _lastChangedAt
+          cMPMFormUserId
+        }
+        instructorId {
+          id
+          userId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        studentId {
+          id
+          studentId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        userInstructorIdId
+        userStudentIdId
+      }
+      coursesTaught {
+        items {
+          id
+          lMSCourseId
+          instructorId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        nextToken
+        startedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const listInstructors = /* GraphQL */ `
+  query ListInstructors(
+    $filter: ModelInstructorFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listInstructors(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        userId
+        instructor {
+          id
+          name
+          title
+          company
+          email
+          office
+          cell
+          picture
+          linkedin
+          companyID
+          cmpmFormID
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          userInstructorIdId
+          userStudentIdId
+        }
+        coursesTaught {
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const syncInstructors = /* GraphQL */ `
+  query SyncInstructors(
+    $filter: ModelInstructorFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncInstructors(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        userId
+        instructor {
+          id
+          name
+          title
+          company
+          email
+          office
+          cell
+          picture
+          linkedin
+          companyID
+          cmpmFormID
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          userInstructorIdId
+          userStudentIdId
+        }
+        coursesTaught {
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const searchInstructors = /* GraphQL */ `
+  query SearchInstructors(
+    $filter: SearchableInstructorFilterInput
+    $sort: [SearchableInstructorSortInput]
+    $limit: Int
+    $nextToken: String
+    $from: Int
+    $aggregates: [SearchableInstructorAggregationInput]
+  ) {
+    searchInstructors(
+      filter: $filter
+      sort: $sort
+      limit: $limit
+      nextToken: $nextToken
+      from: $from
+      aggregates: $aggregates
+    ) {
+      items {
+        id
+        userId
+        instructor {
+          id
+          name
+          title
+          company
+          email
+          office
+          cell
+          picture
+          linkedin
+          companyID
+          cmpmFormID
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          userInstructorIdId
+          userStudentIdId
+        }
+        coursesTaught {
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      total
+      aggregateItems {
+        name
+        result {
+          ... on SearchableAggregateScalarResult {
+            value
+          }
+          ... on SearchableAggregateBucketResult {
+            buckets {
+              key
+              doc_count
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+export const getObjective = /* GraphQL */ `
+  query GetObjective($id: ID!) {
+    getObjective(id: $id) {
+      id
+      objective
+      completed
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      lMSLessonObjectivesId
+    }
+  }
+`;
+export const listObjectives = /* GraphQL */ `
+  query ListObjectives(
+    $filter: ModelObjectiveFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listObjectives(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        objective
+        completed
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        lMSLessonObjectivesId
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const syncObjectives = /* GraphQL */ `
+  query SyncObjectives(
+    $filter: ModelObjectiveFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncObjectives(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        objective
+        completed
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        lMSLessonObjectivesId
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const searchObjectives = /* GraphQL */ `
+  query SearchObjectives(
+    $filter: SearchableObjectiveFilterInput
+    $sort: [SearchableObjectiveSortInput]
+    $limit: Int
+    $nextToken: String
+    $from: Int
+    $aggregates: [SearchableObjectiveAggregationInput]
+  ) {
+    searchObjectives(
+      filter: $filter
+      sort: $sort
+      limit: $limit
+      nextToken: $nextToken
+      from: $from
+      aggregates: $aggregates
+    ) {
+      items {
+        id
+        objective
+        completed
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        lMSLessonObjectivesId
+      }
+      nextToken
+      total
+      aggregateItems {
+        name
+        result {
+          ... on SearchableAggregateScalarResult {
+            value
+          }
+          ... on SearchableAggregateBucketResult {
+            buckets {
+              key
+              doc_count
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+export const getSlide = /* GraphQL */ `
+  query GetSlide($id: ID!) {
+    getSlide(id: $id) {
+      id
+      slideSource
+      description
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      lMSLessonSlidesId
+    }
+  }
+`;
+export const listSlides = /* GraphQL */ `
+  query ListSlides(
+    $filter: ModelSlideFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listSlides(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        slideSource
+        description
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        lMSLessonSlidesId
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const syncSlides = /* GraphQL */ `
+  query SyncSlides(
+    $filter: ModelSlideFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncSlides(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        slideSource
+        description
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        lMSLessonSlidesId
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const getLessonVideo = /* GraphQL */ `
+  query GetLessonVideo($id: ID!) {
+    getLessonVideo(id: $id) {
+      id
+      timestamps {
+        items {
+          id
+          time
+          description
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          lessonVideoTimestampsId
+        }
+        nextToken
+        startedAt
+      }
+      lessonId
+      lesson {
+        id
+        title
+        Course {
+          nextToken
+          startedAt
+        }
+        subheadline
+        objectives {
+          nextToken
+          startedAt
+        }
+        mediaType
+        slides {
+          nextToken
+          startedAt
+        }
+        video {
+          id
+          lessonId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        percentComplete
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        lMSLessonVideoId
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const listLessonVideos = /* GraphQL */ `
+  query ListLessonVideos(
+    $filter: ModelLessonVideoFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listLessonVideos(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        timestamps {
+          nextToken
+          startedAt
+        }
+        lessonId
+        lesson {
+          id
+          title
+          subheadline
+          mediaType
+          percentComplete
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          lMSLessonVideoId
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const syncLessonVideos = /* GraphQL */ `
+  query SyncLessonVideos(
+    $filter: ModelLessonVideoFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncLessonVideos(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        timestamps {
+          nextToken
+          startedAt
+        }
+        lessonId
+        lesson {
+          id
+          title
+          subheadline
+          mediaType
+          percentComplete
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          lMSLessonVideoId
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const getTimestamp = /* GraphQL */ `
+  query GetTimestamp($id: ID!) {
+    getTimestamp(id: $id) {
+      id
+      time
+      description
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      lessonVideoTimestampsId
+    }
+  }
+`;
+export const listTimestamps = /* GraphQL */ `
+  query ListTimestamps(
+    $filter: ModelTimestampFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listTimestamps(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        time
+        description
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        lessonVideoTimestampsId
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const syncTimestamps = /* GraphQL */ `
+  query SyncTimestamps(
+    $filter: ModelTimestampFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncTimestamps(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        time
+        description
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        lessonVideoTimestampsId
       }
       nextToken
       startedAt
@@ -3414,11 +5145,31 @@ export const getAPSUser = /* GraphQL */ `
           _lastChangedAt
           cMPMFormUserId
         }
+        instructorId {
+          id
+          userId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        studentId {
+          id
+          studentId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
+        userInstructorIdId
+        userStudentIdId
       }
       createdAt
       updatedAt
@@ -3465,6 +5216,8 @@ export const listAPSUsers = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          userInstructorIdId
+          userStudentIdId
         }
         createdAt
         updatedAt
@@ -3520,6 +5273,8 @@ export const syncAPSUsers = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          userInstructorIdId
+          userStudentIdId
         }
         createdAt
         updatedAt
@@ -3577,6 +5332,8 @@ export const aPSUsersByAPSId = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          userInstructorIdId
+          userStudentIdId
         }
         createdAt
         updatedAt
@@ -3634,6 +5391,8 @@ export const aPSUsersByUserId = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          userInstructorIdId
+          userStudentIdId
         }
         createdAt
         updatedAt
@@ -3906,6 +5665,866 @@ export const aPSSponsorsByCompanyId = /* GraphQL */ `
           city
           state
           zip
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const getCirriculumCourses = /* GraphQL */ `
+  query GetCirriculumCourses($id: ID!) {
+    getCirriculumCourses(id: $id) {
+      id
+      lMSCirriculumId
+      lMSCourseId
+      lMSCirriculum {
+        id
+        title
+        Courses {
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      lMSCourse {
+        id
+        courseId
+        Cirriculum {
+          nextToken
+          startedAt
+        }
+        Lessons {
+          nextToken
+          startedAt
+        }
+        Instructors {
+          nextToken
+          startedAt
+        }
+        price
+        hours
+        videos
+        seoImage
+        description
+        percentComplete
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        studentCourseEnrolledId
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const listCirriculumCourses = /* GraphQL */ `
+  query ListCirriculumCourses(
+    $filter: ModelCirriculumCoursesFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listCirriculumCourses(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        lMSCirriculumId
+        lMSCourseId
+        lMSCirriculum {
+          id
+          title
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        lMSCourse {
+          id
+          courseId
+          price
+          hours
+          videos
+          seoImage
+          description
+          percentComplete
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          studentCourseEnrolledId
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const syncCirriculumCourses = /* GraphQL */ `
+  query SyncCirriculumCourses(
+    $filter: ModelCirriculumCoursesFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncCirriculumCourses(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        lMSCirriculumId
+        lMSCourseId
+        lMSCirriculum {
+          id
+          title
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        lMSCourse {
+          id
+          courseId
+          price
+          hours
+          videos
+          seoImage
+          description
+          percentComplete
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          studentCourseEnrolledId
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const cirriculumCoursesByLMSCirriculumId = /* GraphQL */ `
+  query CirriculumCoursesByLMSCirriculumId(
+    $lMSCirriculumId: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelCirriculumCoursesFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    cirriculumCoursesByLMSCirriculumId(
+      lMSCirriculumId: $lMSCirriculumId
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        lMSCirriculumId
+        lMSCourseId
+        lMSCirriculum {
+          id
+          title
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        lMSCourse {
+          id
+          courseId
+          price
+          hours
+          videos
+          seoImage
+          description
+          percentComplete
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          studentCourseEnrolledId
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const cirriculumCoursesByLMSCourseId = /* GraphQL */ `
+  query CirriculumCoursesByLMSCourseId(
+    $lMSCourseId: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelCirriculumCoursesFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    cirriculumCoursesByLMSCourseId(
+      lMSCourseId: $lMSCourseId
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        lMSCirriculumId
+        lMSCourseId
+        lMSCirriculum {
+          id
+          title
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        lMSCourse {
+          id
+          courseId
+          price
+          hours
+          videos
+          seoImage
+          description
+          percentComplete
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          studentCourseEnrolledId
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const getCourseLessons = /* GraphQL */ `
+  query GetCourseLessons($id: ID!) {
+    getCourseLessons(id: $id) {
+      id
+      lMSCourseId
+      lMSLessonId
+      lMSCourse {
+        id
+        courseId
+        Cirriculum {
+          nextToken
+          startedAt
+        }
+        Lessons {
+          nextToken
+          startedAt
+        }
+        Instructors {
+          nextToken
+          startedAt
+        }
+        price
+        hours
+        videos
+        seoImage
+        description
+        percentComplete
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        studentCourseEnrolledId
+      }
+      lMSLesson {
+        id
+        title
+        Course {
+          nextToken
+          startedAt
+        }
+        subheadline
+        objectives {
+          nextToken
+          startedAt
+        }
+        mediaType
+        slides {
+          nextToken
+          startedAt
+        }
+        video {
+          id
+          lessonId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        percentComplete
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        lMSLessonVideoId
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const listCourseLessons = /* GraphQL */ `
+  query ListCourseLessons(
+    $filter: ModelCourseLessonsFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listCourseLessons(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        lMSCourseId
+        lMSLessonId
+        lMSCourse {
+          id
+          courseId
+          price
+          hours
+          videos
+          seoImage
+          description
+          percentComplete
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          studentCourseEnrolledId
+        }
+        lMSLesson {
+          id
+          title
+          subheadline
+          mediaType
+          percentComplete
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          lMSLessonVideoId
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const syncCourseLessons = /* GraphQL */ `
+  query SyncCourseLessons(
+    $filter: ModelCourseLessonsFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncCourseLessons(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        lMSCourseId
+        lMSLessonId
+        lMSCourse {
+          id
+          courseId
+          price
+          hours
+          videos
+          seoImage
+          description
+          percentComplete
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          studentCourseEnrolledId
+        }
+        lMSLesson {
+          id
+          title
+          subheadline
+          mediaType
+          percentComplete
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          lMSLessonVideoId
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const courseLessonsByLMSCourseId = /* GraphQL */ `
+  query CourseLessonsByLMSCourseId(
+    $lMSCourseId: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelCourseLessonsFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    courseLessonsByLMSCourseId(
+      lMSCourseId: $lMSCourseId
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        lMSCourseId
+        lMSLessonId
+        lMSCourse {
+          id
+          courseId
+          price
+          hours
+          videos
+          seoImage
+          description
+          percentComplete
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          studentCourseEnrolledId
+        }
+        lMSLesson {
+          id
+          title
+          subheadline
+          mediaType
+          percentComplete
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          lMSLessonVideoId
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const courseLessonsByLMSLessonId = /* GraphQL */ `
+  query CourseLessonsByLMSLessonId(
+    $lMSLessonId: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelCourseLessonsFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    courseLessonsByLMSLessonId(
+      lMSLessonId: $lMSLessonId
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        lMSCourseId
+        lMSLessonId
+        lMSCourse {
+          id
+          courseId
+          price
+          hours
+          videos
+          seoImage
+          description
+          percentComplete
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          studentCourseEnrolledId
+        }
+        lMSLesson {
+          id
+          title
+          subheadline
+          mediaType
+          percentComplete
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          lMSLessonVideoId
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const getCourseInstructors = /* GraphQL */ `
+  query GetCourseInstructors($id: ID!) {
+    getCourseInstructors(id: $id) {
+      id
+      lMSCourseId
+      instructorId
+      lMSCourse {
+        id
+        courseId
+        Cirriculum {
+          nextToken
+          startedAt
+        }
+        Lessons {
+          nextToken
+          startedAt
+        }
+        Instructors {
+          nextToken
+          startedAt
+        }
+        price
+        hours
+        videos
+        seoImage
+        description
+        percentComplete
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        studentCourseEnrolledId
+      }
+      instructor {
+        id
+        userId
+        instructor {
+          id
+          name
+          title
+          company
+          email
+          office
+          cell
+          picture
+          linkedin
+          companyID
+          cmpmFormID
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          userInstructorIdId
+          userStudentIdId
+        }
+        coursesTaught {
+          nextToken
+          startedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const listCourseInstructors = /* GraphQL */ `
+  query ListCourseInstructors(
+    $filter: ModelCourseInstructorsFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listCourseInstructors(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        lMSCourseId
+        instructorId
+        lMSCourse {
+          id
+          courseId
+          price
+          hours
+          videos
+          seoImage
+          description
+          percentComplete
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          studentCourseEnrolledId
+        }
+        instructor {
+          id
+          userId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const syncCourseInstructors = /* GraphQL */ `
+  query SyncCourseInstructors(
+    $filter: ModelCourseInstructorsFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncCourseInstructors(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        lMSCourseId
+        instructorId
+        lMSCourse {
+          id
+          courseId
+          price
+          hours
+          videos
+          seoImage
+          description
+          percentComplete
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          studentCourseEnrolledId
+        }
+        instructor {
+          id
+          userId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const courseInstructorsByLMSCourseId = /* GraphQL */ `
+  query CourseInstructorsByLMSCourseId(
+    $lMSCourseId: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelCourseInstructorsFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    courseInstructorsByLMSCourseId(
+      lMSCourseId: $lMSCourseId
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        lMSCourseId
+        instructorId
+        lMSCourse {
+          id
+          courseId
+          price
+          hours
+          videos
+          seoImage
+          description
+          percentComplete
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          studentCourseEnrolledId
+        }
+        instructor {
+          id
+          userId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const courseInstructorsByInstructorId = /* GraphQL */ `
+  query CourseInstructorsByInstructorId(
+    $instructorId: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelCourseInstructorsFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    courseInstructorsByInstructorId(
+      instructorId: $instructorId
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        lMSCourseId
+        instructorId
+        lMSCourse {
+          id
+          courseId
+          price
+          hours
+          videos
+          seoImage
+          description
+          percentComplete
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          studentCourseEnrolledId
+        }
+        instructor {
+          id
+          userId
           createdAt
           updatedAt
           _version

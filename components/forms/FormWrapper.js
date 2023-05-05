@@ -5,17 +5,13 @@ import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
 import { useSelector } from 'react-redux';
 import { API } from 'aws-amplify';
 import {
-  createUserForms,
   createCMPMForm,
   updateUser,
-  updateUserForms,
   updateCMPMForm,
 } from '../../src/graphql/mutations';
 
 const FormWrapper = ({ children, activeIndex, setActiveIndex }) => {
   const { user } = useSelector((state) => state.auth);
-  const [userForms, setUserForms] = useState([]);
-  const [userCMPMForm, setUserCMPMForm] = useState([]);
 
   useEffect(() => {
     user && getUserFormGroup();
@@ -71,6 +67,25 @@ const FormWrapper = ({ children, activeIndex, setActiveIndex }) => {
           id: user.id,
           cMPMFormUserId: user.id,
           firstName: currentFormState.firstName,
+          lastName: currentFormState.lastName,
+          phone: currentFormState.phone,
+          streetAddress: currentFormState.streetAddress,
+          addressExtra: currentFormState.addressExtra,
+          city: currentFormState.city,
+          state: currentFormState.state,
+          country: currentFormState.country,
+          companyName: currentFormState.companyName,
+          companyTitle: currentFormState.companyTitle,
+          linkedin: currentFormState.linkedin,
+          background: currentFormState.background,
+          whyPackaging: currentFormState.whyPackaging,
+          areaOfInterest: currentFormState.areaOfInterest,
+          sessionApplying: currentFormState.sessionApplying,
+          referral: currentFormState.referral,
+          payment: currentFormState.payment,
+          yearGoals: currentFormState.yearGoals,
+          cmpmGoals: currentFormState.cmpmGoals,
+          moreAboutYou: currentFormState.moreAboutYou,
         },
       },
     });

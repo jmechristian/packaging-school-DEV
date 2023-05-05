@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 
 import FormWrapper from '../FormWrapper';
 import CenteredTextHeader from '../../layout/CenteredTextHeader';
@@ -8,8 +8,6 @@ import CMPMPersonalInfo from './CMPMPersonalInfo';
 import CMPMProfessionalInfo from './CMPMProfessionalInfo';
 import CMPMSessionInfo from './CMPMSessionInfo';
 import { CMPMContext } from './CMPMContextProvider';
-import { useUser } from '@auth0/nextjs-auth0/client';
-import { useFormContext } from 'react-hook-form';
 
 const CMPMWrapper = () => {
   const { activeIndex, setActiveIndex } = useContext(CMPMContext);

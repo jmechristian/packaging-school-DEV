@@ -25,7 +25,6 @@ const Layout = ({ children }) => {
 
   useEffect(() => {
     if (user) {
-      console.log(user);
       const getAndSetUser = async () => {
         const currentUser = await API.graphql({
           query: usersByEmail,
@@ -50,7 +49,7 @@ const Layout = ({ children }) => {
       };
       getAndSetUser();
     }
-  }, [dispatch, user]);
+  }, [user]);
 
   useEffect(() => {
     const sub = API.graphql(graphqlOperation(onUpdateUser)).subscribe({
