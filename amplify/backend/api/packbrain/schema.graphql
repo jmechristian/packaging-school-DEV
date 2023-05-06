@@ -37,7 +37,7 @@ enum MediaType {
   SLIDES
 }
 
-type Certificate @model @searchable @auth(rules: [{ allow: public }]) {
+type Certificate @model @auth(rules: [{ allow: public }]) {
   id: ID!
   slug: String! @index(name: "certificateByTitle")
   title: String!
@@ -63,7 +63,7 @@ type Certificate @model @searchable @auth(rules: [{ allow: public }]) {
   demoLink: String
 }
 
-type Course @model @searchable @auth(rules: [{ allow: public }]) {
+type Course @model @auth(rules: [{ allow: public }]) {
   id: ID!
   slug: String! @index(name: "courseBySlug")
   category: CategoryType!
@@ -101,7 +101,7 @@ type Lesson @model @auth(rules: [{ allow: public }]) {
   actionExample: String
 }
 
-type Blog @model @searchable @auth(rules: [{ allow: public }]) {
+type Blog @model @auth(rules: [{ allow: public }]) {
   id: ID!
   slug: String! @index(name: "blogBySlug")
   title: String!
@@ -198,10 +198,10 @@ type CMPMForm
   @model(timestamps: { createdAt: "createdOn", updatedAt: "updatedOn" })
   @auth(rules: [{ allow: public }]) {
   id: ID!
-  user: User! @belongsTo
+  user: User @belongsTo
   firstName: String
   lastName: String
-  email: String! @index(name: "cmpmByEmail")
+  email: String
   phone: String
   streetAddress: String
   addressExtra: String
@@ -245,13 +245,13 @@ type RegistrationCode {
 
 ######### LMS #########
 
-type LMSCirriculum @model @searchable @auth(rules: [{ allow: public }]) {
+type LMSCirriculum @model @auth(rules: [{ allow: public }]) {
   id: ID!
   title: String
   Courses: [LMSCourse] @manyToMany(relationName: "CirriculumCourses")
 }
 
-type LMSCourse @model @searchable @auth(rules: [{ allow: public }]) {
+type LMSCourse @model @auth(rules: [{ allow: public }]) {
   id: ID!
   courseId: String
   Cirriculum: [LMSCirriculum] @manyToMany(relationName: "CirriculumCourses")
@@ -265,7 +265,7 @@ type LMSCourse @model @searchable @auth(rules: [{ allow: public }]) {
   percentComplete: Int
 }
 
-type LMSLesson @model @searchable @auth(rules: [{ allow: public }]) {
+type LMSLesson @model @auth(rules: [{ allow: public }]) {
   id: ID!
   title: String
   Course: [LMSCourse] @manyToMany(relationName: "CourseLessons")
@@ -277,21 +277,21 @@ type LMSLesson @model @searchable @auth(rules: [{ allow: public }]) {
   percentComplete: Int
 }
 
-type Student @model @searchable @auth(rules: [{ allow: public }]) {
+type Student @model @auth(rules: [{ allow: public }]) {
   id: ID!
   studentId: ID
   student: User @belongsTo(fields: ["studentId"])
   courseEnrolled: [LMSCourse] @hasMany
 }
 
-type Instructor @model @searchable @auth(rules: [{ allow: public }]) {
+type Instructor @model @auth(rules: [{ allow: public }]) {
   id: ID!
   userId: ID
   instructor: User! @belongsTo(fields: ["userId"])
   coursesTaught: [LMSCourse] @manyToMany(relationName: "CourseInstructors")
 }
 
-type Objective @model @searchable @auth(rules: [{ allow: public }]) {
+type Objective @model @auth(rules: [{ allow: public }]) {
   id: ID!
   objective: String!
   completed: Boolean

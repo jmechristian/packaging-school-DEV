@@ -13,25 +13,26 @@ import {
 const FormWrapper = ({ children, activeIndex, setActiveIndex }) => {
   const { user } = useSelector((state) => state.auth);
 
-  useEffect(() => {
-    user && getUserFormGroup();
-  }, [user]);
+  // useEffect(() => {
+  //   user getUserFormGroup();
+  // }, []);
 
-  const getUserFormGroup = async () => {
-    if (user && user.cmpmFormID) {
-    } else {
-      await API.graphql({
-        query: createCMPMForm,
-        variables: {
-          input: { email: user.email, cMPMFormUserId: user.id, id: user.id },
-        },
-      });
-      await API.graphql({
-        query: updateUser,
-        variables: { input: { id: user.id, cmpmFormID: user.id } },
-      });
-    }
-  };
+  // const getUserFormGroup = async () => {
+  //   if (user && user.cmpmFormID) {
+  //     return;
+  //   } else {
+  //     await API.graphql({
+  //       query: createCMPMForm,
+  //       variables: {
+  //         input: { id: user.id },
+  //       },
+  //     });
+  //     await API.graphql({
+  //       query: updateUser,
+  //       variables: { input: { id: user.id, cmpmFormID: user.id } },
+  //     });
+  //   }
+  // };
 
   const personalErrors = [
     'firstName',
@@ -65,9 +66,9 @@ const FormWrapper = ({ children, activeIndex, setActiveIndex }) => {
       variables: {
         input: {
           id: user.id,
-          cMPMFormUserId: user.id,
           firstName: currentFormState.firstName,
           lastName: currentFormState.lastName,
+          email: currentFormState.email,
           phone: currentFormState.phone,
           streetAddress: currentFormState.streetAddress,
           addressExtra: currentFormState.addressExtra,
@@ -86,6 +87,7 @@ const FormWrapper = ({ children, activeIndex, setActiveIndex }) => {
           yearGoals: currentFormState.yearGoals,
           cmpmGoals: currentFormState.cmpmGoals,
           moreAboutYou: currentFormState.moreAboutYou,
+          birthYear: currentFormState.birthYear,
         },
       },
     });

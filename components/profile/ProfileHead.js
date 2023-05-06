@@ -1,7 +1,6 @@
 import FormStat from './FormStat';
 
 export default function ProfileHead({ user }) {
-  console.log(user);
   return (
     <div className='overflow-hidden rounded-t-lg bg-white box-shadow-lg'>
       <h2 className='sr-only' id='profile-overview-title'>

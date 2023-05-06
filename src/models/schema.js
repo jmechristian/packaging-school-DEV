@@ -432,10 +432,6 @@ export const schema = {
                     "properties": {}
                 },
                 {
-                    "type": "searchable",
-                    "properties": {}
-                },
-                {
                     "type": "key",
                     "properties": {
                         "name": "certificateByTitle",
@@ -598,10 +594,6 @@ export const schema = {
             "attributes": [
                 {
                     "type": "model",
-                    "properties": {}
-                },
-                {
-                    "type": "searchable",
                     "properties": {}
                 },
                 {
@@ -1076,10 +1068,6 @@ export const schema = {
             "attributes": [
                 {
                     "type": "model",
-                    "properties": {}
-                },
-                {
-                    "type": "searchable",
                     "properties": {}
                 },
                 {
@@ -1716,7 +1704,7 @@ export const schema = {
                     "type": {
                         "model": "User"
                     },
-                    "isRequired": true,
+                    "isRequired": false,
                     "attributes": [],
                     "association": {
                         "connectionType": "BELONGS_TO",
@@ -1743,7 +1731,7 @@ export const schema = {
                     "name": "email",
                     "isArray": false,
                     "type": "String",
-                    "isRequired": true,
+                    "isRequired": false,
                     "attributes": []
                 },
                 "phone": {
@@ -1892,7 +1880,7 @@ export const schema = {
                     "name": "cMPMFormUserId",
                     "isArray": false,
                     "type": "ID",
-                    "isRequired": true,
+                    "isRequired": false,
                     "attributes": []
                 }
             },
@@ -1906,15 +1894,6 @@ export const schema = {
                             "createdAt": "createdOn",
                             "updatedAt": "updatedOn"
                         }
-                    }
-                },
-                {
-                    "type": "key",
-                    "properties": {
-                        "name": "cmpmByEmail",
-                        "fields": [
-                            "email"
-                        ]
                     }
                 },
                 {
@@ -2005,10 +1984,6 @@ export const schema = {
             "attributes": [
                 {
                     "type": "model",
-                    "properties": {}
-                },
-                {
-                    "type": "searchable",
                     "properties": {}
                 },
                 {
@@ -2168,10 +2143,6 @@ export const schema = {
                     "properties": {}
                 },
                 {
-                    "type": "searchable",
-                    "properties": {}
-                },
-                {
                     "type": "auth",
                     "properties": {
                         "rules": [
@@ -2244,10 +2215,6 @@ export const schema = {
             "attributes": [
                 {
                     "type": "model",
-                    "properties": {}
-                },
-                {
-                    "type": "searchable",
                     "properties": {}
                 },
                 {
@@ -2406,10 +2373,6 @@ export const schema = {
                     "properties": {}
                 },
                 {
-                    "type": "searchable",
-                    "properties": {}
-                },
-                {
                     "type": "auth",
                     "properties": {
                         "rules": [
@@ -2480,10 +2443,6 @@ export const schema = {
             "attributes": [
                 {
                     "type": "model",
-                    "properties": {}
-                },
-                {
-                    "type": "searchable",
                     "properties": {}
                 },
                 {
@@ -2810,10 +2769,6 @@ export const schema = {
             "attributes": [
                 {
                     "type": "model",
-                    "properties": {}
-                },
-                {
-                    "type": "searchable",
                     "properties": {}
                 },
                 {
@@ -3876,5 +3831,5 @@ export const schema = {
             }
         }
     },
-    "version": "54aced717abe54da759289941f1711e0"
+    "version": "d5b1265383726ece53f5bf0685bcc01b"
 };

@@ -292,10 +292,10 @@ export declare class CMPMForm {
     readOnlyFields: 'createdOn' | 'updatedOn';
   };
   readonly id: string;
-  readonly user: User;
+  readonly user?: User | null;
   readonly firstName?: string | null;
   readonly lastName?: string | null;
-  readonly email: string;
+  readonly email?: string | null;
   readonly phone?: string | null;
   readonly streetAddress?: string | null;
   readonly addressExtra?: string | null;
@@ -316,7 +316,7 @@ export declare class CMPMForm {
   readonly moreAboutYou?: string | null;
   readonly createdOn?: string | null;
   readonly updatedOn?: string | null;
-  readonly cMPMFormUserId: string;
+  readonly cMPMFormUserId?: string | null;
   constructor(init: ModelInit<CMPMForm>);
   static copyOf(source: CMPMForm, mutator: (draft: MutableModel<CMPMForm>) => MutableModel<CMPMForm> | void): CMPMForm;
 }

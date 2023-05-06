@@ -4,8 +4,8 @@ import { withPageAuthRequired } from '@auth0/nextjs-auth0/client';
 import ProfileHead from '../../components/profile/ProfileHead';
 import ProfileDetails from '../../components/profile/ProfileDetails';
 import ProfileStats from '../../components/profile/ProfileStats';
-import { API } from 'aws-amplify';
-import { usersByEmail } from '../../src/graphql/queries';
+// import { API } from 'aws-amplify';
+// import { usersByEmail } from '../../src/graphql/queries';
 
 export default withPageAuthRequired(function Page() {
   const currentUser = useSelector((state) => state.auth.user);

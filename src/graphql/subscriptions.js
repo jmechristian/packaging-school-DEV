@@ -10,9 +10,6 @@ export const onCreateLessonSource = /* GraphQL */ `
       position
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       lessonSourcesId
     }
   }
@@ -26,9 +23,6 @@ export const onUpdateLessonSource = /* GraphQL */ `
       position
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       lessonSourcesId
     }
   }
@@ -42,9 +36,6 @@ export const onDeleteLessonSource = /* GraphQL */ `
       position
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       lessonSourcesId
     }
   }
@@ -57,9 +48,6 @@ export const onCreateLessonLink = /* GraphQL */ `
       link
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       lessonLinksId
     }
   }
@@ -72,9 +60,6 @@ export const onUpdateLessonLink = /* GraphQL */ `
       link
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       lessonLinksId
     }
   }
@@ -87,9 +72,6 @@ export const onDeleteLessonLink = /* GraphQL */ `
       link
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       lessonLinksId
     }
   }
@@ -101,9 +83,6 @@ export const onCreateTags = /* GraphQL */ `
       tag
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       lessonTagsId
       blogTagsId
       articleTagsId
@@ -117,9 +96,6 @@ export const onUpdateTags = /* GraphQL */ `
       tag
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       lessonTagsId
       blogTagsId
       articleTagsId
@@ -133,9 +109,6 @@ export const onDeleteTags = /* GraphQL */ `
       tag
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       lessonTagsId
       blogTagsId
       articleTagsId
@@ -163,12 +136,8 @@ export const onCreateCertificate = /* GraphQL */ `
           courseId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         nextToken
-        startedAt
       }
       whoText
       courses_total
@@ -183,9 +152,6 @@ export const onCreateCertificate = /* GraphQL */ `
       demoLink
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -210,12 +176,8 @@ export const onUpdateCertificate = /* GraphQL */ `
           courseId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         nextToken
-        startedAt
       }
       whoText
       courses_total
@@ -230,9 +192,6 @@ export const onUpdateCertificate = /* GraphQL */ `
       demoLink
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -257,12 +216,8 @@ export const onDeleteCertificate = /* GraphQL */ `
           courseId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         nextToken
-        startedAt
       }
       whoText
       courses_total
@@ -277,9 +232,6 @@ export const onDeleteCertificate = /* GraphQL */ `
       demoLink
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -304,12 +256,8 @@ export const onCreateCourse = /* GraphQL */ `
           articleId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         nextToken
-        startedAt
       }
       certificate {
         items {
@@ -318,18 +266,11 @@ export const onCreateCourse = /* GraphQL */ `
           courseId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         nextToken
-        startedAt
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -354,12 +295,8 @@ export const onUpdateCourse = /* GraphQL */ `
           articleId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         nextToken
-        startedAt
       }
       certificate {
         items {
@@ -368,18 +305,11 @@ export const onUpdateCourse = /* GraphQL */ `
           courseId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         nextToken
-        startedAt
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -404,12 +334,8 @@ export const onDeleteCourse = /* GraphQL */ `
           articleId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         nextToken
-        startedAt
       }
       certificate {
         items {
@@ -418,18 +344,11 @@ export const onDeleteCourse = /* GraphQL */ `
           courseId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         nextToken
-        startedAt
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -454,13 +373,9 @@ export const onCreateLesson = /* GraphQL */ `
           position
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           lessonSourcesId
         }
         nextToken
-        startedAt
       }
       links {
         items {
@@ -469,13 +384,9 @@ export const onCreateLesson = /* GraphQL */ `
           link
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           lessonLinksId
         }
         nextToken
-        startedAt
       }
       tags {
         items {
@@ -483,15 +394,11 @@ export const onCreateLesson = /* GraphQL */ `
           tag
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           lessonTagsId
           blogTagsId
           articleTagsId
         }
         nextToken
-        startedAt
       }
       objectives
       actionCTA
@@ -501,9 +408,6 @@ export const onCreateLesson = /* GraphQL */ `
       actionExample
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -528,13 +432,9 @@ export const onUpdateLesson = /* GraphQL */ `
           position
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           lessonSourcesId
         }
         nextToken
-        startedAt
       }
       links {
         items {
@@ -543,13 +443,9 @@ export const onUpdateLesson = /* GraphQL */ `
           link
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           lessonLinksId
         }
         nextToken
-        startedAt
       }
       tags {
         items {
@@ -557,15 +453,11 @@ export const onUpdateLesson = /* GraphQL */ `
           tag
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           lessonTagsId
           blogTagsId
           articleTagsId
         }
         nextToken
-        startedAt
       }
       objectives
       actionCTA
@@ -575,9 +467,6 @@ export const onUpdateLesson = /* GraphQL */ `
       actionExample
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -602,13 +491,9 @@ export const onDeleteLesson = /* GraphQL */ `
           position
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           lessonSourcesId
         }
         nextToken
-        startedAt
       }
       links {
         items {
@@ -617,13 +502,9 @@ export const onDeleteLesson = /* GraphQL */ `
           link
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           lessonLinksId
         }
         nextToken
-        startedAt
       }
       tags {
         items {
@@ -631,15 +512,11 @@ export const onDeleteLesson = /* GraphQL */ `
           tag
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           lessonTagsId
           blogTagsId
           articleTagsId
         }
         nextToken
-        startedAt
       }
       objectives
       actionCTA
@@ -649,9 +526,6 @@ export const onDeleteLesson = /* GraphQL */ `
       actionExample
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -670,22 +544,15 @@ export const onCreateBlog = /* GraphQL */ `
           tag
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           lessonTagsId
           blogTagsId
           articleTagsId
         }
         nextToken
-        startedAt
       }
       date
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -704,22 +571,15 @@ export const onUpdateBlog = /* GraphQL */ `
           tag
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           lessonTagsId
           blogTagsId
           articleTagsId
         }
         nextToken
-        startedAt
       }
       date
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -738,22 +598,15 @@ export const onDeleteBlog = /* GraphQL */ `
           tag
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           lessonTagsId
           blogTagsId
           articleTagsId
         }
         nextToken
-        startedAt
       }
       date
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -773,15 +626,11 @@ export const onCreateArticle = /* GraphQL */ `
           tag
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           lessonTagsId
           blogTagsId
           articleTagsId
         }
         nextToken
-        startedAt
       }
       relatedCourses {
         items {
@@ -790,18 +639,11 @@ export const onCreateArticle = /* GraphQL */ `
           articleId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         nextToken
-        startedAt
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -821,15 +663,11 @@ export const onUpdateArticle = /* GraphQL */ `
           tag
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           lessonTagsId
           blogTagsId
           articleTagsId
         }
         nextToken
-        startedAt
       }
       relatedCourses {
         items {
@@ -838,18 +676,11 @@ export const onUpdateArticle = /* GraphQL */ `
           articleId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         nextToken
-        startedAt
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -869,15 +700,11 @@ export const onDeleteArticle = /* GraphQL */ `
           tag
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           lessonTagsId
           blogTagsId
           articleTagsId
         }
         nextToken
-        startedAt
       }
       relatedCourses {
         items {
@@ -886,18 +713,11 @@ export const onDeleteArticle = /* GraphQL */ `
           articleId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         nextToken
-        startedAt
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -910,9 +730,6 @@ export const onCreateDayInLifeItem = /* GraphQL */ `
       icon
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       careerDayInLifeId
     }
   }
@@ -926,9 +743,6 @@ export const onUpdateDayInLifeItem = /* GraphQL */ `
       icon
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       careerDayInLifeId
     }
   }
@@ -942,9 +756,6 @@ export const onDeleteDayInLifeItem = /* GraphQL */ `
       icon
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       careerDayInLifeId
     }
   }
@@ -966,13 +777,9 @@ export const onCreateCareer = /* GraphQL */ `
           icon
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           careerDayInLifeId
         }
         nextToken
-        startedAt
       }
       cmpmCopy
       cpsCopy
@@ -983,9 +790,6 @@ export const onCreateCareer = /* GraphQL */ `
       beverageCopy
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -1006,13 +810,9 @@ export const onUpdateCareer = /* GraphQL */ `
           icon
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           careerDayInLifeId
         }
         nextToken
-        startedAt
       }
       cmpmCopy
       cpsCopy
@@ -1023,9 +823,6 @@ export const onUpdateCareer = /* GraphQL */ `
       beverageCopy
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -1046,13 +843,9 @@ export const onDeleteCareer = /* GraphQL */ `
           icon
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           careerDayInLifeId
         }
         nextToken
-        startedAt
       }
       cmpmCopy
       cpsCopy
@@ -1063,9 +856,6 @@ export const onDeleteCareer = /* GraphQL */ `
       beverageCopy
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -1080,12 +870,8 @@ export const onCreateAPS = /* GraphQL */ `
           userId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         nextToken
-        startedAt
       }
       Sponsors {
         items {
@@ -1094,12 +880,8 @@ export const onCreateAPS = /* GraphQL */ `
           companyId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         nextToken
-        startedAt
       }
       Speakers {
         items {
@@ -1119,13 +901,9 @@ export const onCreateAPS = /* GraphQL */ `
           id
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           aPSSpeakersId
         }
         nextToken
-        startedAt
       }
       year
       codes {
@@ -1133,9 +911,6 @@ export const onCreateAPS = /* GraphQL */ `
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -1150,12 +925,8 @@ export const onUpdateAPS = /* GraphQL */ `
           userId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         nextToken
-        startedAt
       }
       Sponsors {
         items {
@@ -1164,12 +935,8 @@ export const onUpdateAPS = /* GraphQL */ `
           companyId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         nextToken
-        startedAt
       }
       Speakers {
         items {
@@ -1189,13 +956,9 @@ export const onUpdateAPS = /* GraphQL */ `
           id
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           aPSSpeakersId
         }
         nextToken
-        startedAt
       }
       year
       codes {
@@ -1203,9 +966,6 @@ export const onUpdateAPS = /* GraphQL */ `
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -1220,12 +980,8 @@ export const onDeleteAPS = /* GraphQL */ `
           userId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         nextToken
-        startedAt
       }
       Sponsors {
         items {
@@ -1234,12 +990,8 @@ export const onDeleteAPS = /* GraphQL */ `
           companyId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         nextToken
-        startedAt
       }
       Speakers {
         items {
@@ -1259,13 +1011,9 @@ export const onDeleteAPS = /* GraphQL */ `
           id
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           aPSSpeakersId
         }
         nextToken
-        startedAt
       }
       year
       codes {
@@ -1273,9 +1021,6 @@ export const onDeleteAPS = /* GraphQL */ `
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -1299,14 +1044,10 @@ export const onCreateCompany = /* GraphQL */ `
           cmpmFormID
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           userInstructorIdId
           userStudentIdId
         }
         nextToken
-        startedAt
       }
       website
       email
@@ -1323,18 +1064,11 @@ export const onCreateCompany = /* GraphQL */ `
           companyId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         nextToken
-        startedAt
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -1358,14 +1092,10 @@ export const onUpdateCompany = /* GraphQL */ `
           cmpmFormID
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           userInstructorIdId
           userStudentIdId
         }
         nextToken
-        startedAt
       }
       website
       email
@@ -1382,18 +1112,11 @@ export const onUpdateCompany = /* GraphQL */ `
           companyId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         nextToken
-        startedAt
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -1417,14 +1140,10 @@ export const onDeleteCompany = /* GraphQL */ `
           cmpmFormID
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           userInstructorIdId
           userStudentIdId
         }
         nextToken
-        startedAt
       }
       website
       email
@@ -1441,18 +1160,11 @@ export const onDeleteCompany = /* GraphQL */ `
           companyId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         nextToken
-        startedAt
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -1476,12 +1188,8 @@ export const onCreateUser = /* GraphQL */ `
           userId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         nextToken
-        startedAt
       }
       cmpmFormID
       cmpmForm {
@@ -1500,9 +1208,6 @@ export const onCreateUser = /* GraphQL */ `
           cmpmFormID
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           userInstructorIdId
           userStudentIdId
         }
@@ -1529,9 +1234,6 @@ export const onCreateUser = /* GraphQL */ `
         moreAboutYou
         createdOn
         updatedOn
-        _version
-        _deleted
-        _lastChangedAt
         cMPMFormUserId
       }
       instructorId {
@@ -1551,21 +1253,14 @@ export const onCreateUser = /* GraphQL */ `
           cmpmFormID
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           userInstructorIdId
           userStudentIdId
         }
         coursesTaught {
           nextToken
-          startedAt
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
       }
       studentId {
         id
@@ -1584,27 +1279,17 @@ export const onCreateUser = /* GraphQL */ `
           cmpmFormID
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           userInstructorIdId
           userStudentIdId
         }
         courseEnrolled {
           nextToken
-          startedAt
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       userInstructorIdId
       userStudentIdId
     }
@@ -1630,12 +1315,8 @@ export const onUpdateUser = /* GraphQL */ `
           userId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         nextToken
-        startedAt
       }
       cmpmFormID
       cmpmForm {
@@ -1654,9 +1335,6 @@ export const onUpdateUser = /* GraphQL */ `
           cmpmFormID
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           userInstructorIdId
           userStudentIdId
         }
@@ -1683,9 +1361,6 @@ export const onUpdateUser = /* GraphQL */ `
         moreAboutYou
         createdOn
         updatedOn
-        _version
-        _deleted
-        _lastChangedAt
         cMPMFormUserId
       }
       instructorId {
@@ -1705,21 +1380,14 @@ export const onUpdateUser = /* GraphQL */ `
           cmpmFormID
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           userInstructorIdId
           userStudentIdId
         }
         coursesTaught {
           nextToken
-          startedAt
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
       }
       studentId {
         id
@@ -1738,27 +1406,17 @@ export const onUpdateUser = /* GraphQL */ `
           cmpmFormID
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           userInstructorIdId
           userStudentIdId
         }
         courseEnrolled {
           nextToken
-          startedAt
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       userInstructorIdId
       userStudentIdId
     }
@@ -1784,12 +1442,8 @@ export const onDeleteUser = /* GraphQL */ `
           userId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         nextToken
-        startedAt
       }
       cmpmFormID
       cmpmForm {
@@ -1808,9 +1462,6 @@ export const onDeleteUser = /* GraphQL */ `
           cmpmFormID
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           userInstructorIdId
           userStudentIdId
         }
@@ -1837,9 +1488,6 @@ export const onDeleteUser = /* GraphQL */ `
         moreAboutYou
         createdOn
         updatedOn
-        _version
-        _deleted
-        _lastChangedAt
         cMPMFormUserId
       }
       instructorId {
@@ -1859,21 +1507,14 @@ export const onDeleteUser = /* GraphQL */ `
           cmpmFormID
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           userInstructorIdId
           userStudentIdId
         }
         coursesTaught {
           nextToken
-          startedAt
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
       }
       studentId {
         id
@@ -1892,27 +1533,17 @@ export const onDeleteUser = /* GraphQL */ `
           cmpmFormID
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           userInstructorIdId
           userStudentIdId
         }
         courseEnrolled {
           nextToken
-          startedAt
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       userInstructorIdId
       userStudentIdId
     }
@@ -1935,7 +1566,6 @@ export const onCreateCMPMForm = /* GraphQL */ `
         companyID
         apss {
           nextToken
-          startedAt
         }
         cmpmFormID
         cmpmForm {
@@ -1963,9 +1593,6 @@ export const onCreateCMPMForm = /* GraphQL */ `
           moreAboutYou
           createdOn
           updatedOn
-          _version
-          _deleted
-          _lastChangedAt
           cMPMFormUserId
         }
         instructorId {
@@ -1973,24 +1600,15 @@ export const onCreateCMPMForm = /* GraphQL */ `
           userId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         studentId {
           id
           studentId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         userInstructorIdId
         userStudentIdId
       }
@@ -2017,9 +1635,6 @@ export const onCreateCMPMForm = /* GraphQL */ `
       moreAboutYou
       createdOn
       updatedOn
-      _version
-      _deleted
-      _lastChangedAt
       cMPMFormUserId
     }
   }
@@ -2041,7 +1656,6 @@ export const onUpdateCMPMForm = /* GraphQL */ `
         companyID
         apss {
           nextToken
-          startedAt
         }
         cmpmFormID
         cmpmForm {
@@ -2069,9 +1683,6 @@ export const onUpdateCMPMForm = /* GraphQL */ `
           moreAboutYou
           createdOn
           updatedOn
-          _version
-          _deleted
-          _lastChangedAt
           cMPMFormUserId
         }
         instructorId {
@@ -2079,24 +1690,15 @@ export const onUpdateCMPMForm = /* GraphQL */ `
           userId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         studentId {
           id
           studentId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         userInstructorIdId
         userStudentIdId
       }
@@ -2123,9 +1725,6 @@ export const onUpdateCMPMForm = /* GraphQL */ `
       moreAboutYou
       createdOn
       updatedOn
-      _version
-      _deleted
-      _lastChangedAt
       cMPMFormUserId
     }
   }
@@ -2147,7 +1746,6 @@ export const onDeleteCMPMForm = /* GraphQL */ `
         companyID
         apss {
           nextToken
-          startedAt
         }
         cmpmFormID
         cmpmForm {
@@ -2175,9 +1773,6 @@ export const onDeleteCMPMForm = /* GraphQL */ `
           moreAboutYou
           createdOn
           updatedOn
-          _version
-          _deleted
-          _lastChangedAt
           cMPMFormUserId
         }
         instructorId {
@@ -2185,24 +1780,15 @@ export const onDeleteCMPMForm = /* GraphQL */ `
           userId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         studentId {
           id
           studentId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         userInstructorIdId
         userStudentIdId
       }
@@ -2229,9 +1815,6 @@ export const onDeleteCMPMForm = /* GraphQL */ `
       moreAboutYou
       createdOn
       updatedOn
-      _version
-      _deleted
-      _lastChangedAt
       cMPMFormUserId
     }
   }
@@ -2256,15 +1839,12 @@ export const onCreateAPSSpeaker = /* GraphQL */ `
         id
         Registrants {
           nextToken
-          startedAt
         }
         Sponsors {
           nextToken
-          startedAt
         }
         Speakers {
           nextToken
-          startedAt
         }
         year
         codes {
@@ -2272,16 +1852,10 @@ export const onCreateAPSSpeaker = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
       }
       id
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       aPSSpeakersId
     }
   }
@@ -2306,15 +1880,12 @@ export const onUpdateAPSSpeaker = /* GraphQL */ `
         id
         Registrants {
           nextToken
-          startedAt
         }
         Sponsors {
           nextToken
-          startedAt
         }
         Speakers {
           nextToken
-          startedAt
         }
         year
         codes {
@@ -2322,16 +1893,10 @@ export const onUpdateAPSSpeaker = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
       }
       id
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       aPSSpeakersId
     }
   }
@@ -2356,15 +1921,12 @@ export const onDeleteAPSSpeaker = /* GraphQL */ `
         id
         Registrants {
           nextToken
-          startedAt
         }
         Sponsors {
           nextToken
-          startedAt
         }
         Speakers {
           nextToken
-          startedAt
         }
         year
         codes {
@@ -2372,16 +1934,10 @@ export const onDeleteAPSSpeaker = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
       }
       id
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       aPSSpeakersId
     }
   }
@@ -2398,18 +1954,11 @@ export const onCreateLMSCirriculum = /* GraphQL */ `
           lMSCourseId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         nextToken
-        startedAt
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -2425,18 +1974,11 @@ export const onUpdateLMSCirriculum = /* GraphQL */ `
           lMSCourseId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         nextToken
-        startedAt
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -2452,18 +1994,11 @@ export const onDeleteLMSCirriculum = /* GraphQL */ `
           lMSCourseId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         nextToken
-        startedAt
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -2479,12 +2014,8 @@ export const onCreateLMSCourse = /* GraphQL */ `
           lMSCourseId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         nextToken
-        startedAt
       }
       Lessons {
         items {
@@ -2493,12 +2024,8 @@ export const onCreateLMSCourse = /* GraphQL */ `
           lMSLessonId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         nextToken
-        startedAt
       }
       Instructors {
         items {
@@ -2507,12 +2034,8 @@ export const onCreateLMSCourse = /* GraphQL */ `
           instructorId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         nextToken
-        startedAt
       }
       price
       hours
@@ -2522,9 +2045,6 @@ export const onCreateLMSCourse = /* GraphQL */ `
       percentComplete
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       studentCourseEnrolledId
     }
   }
@@ -2541,12 +2061,8 @@ export const onUpdateLMSCourse = /* GraphQL */ `
           lMSCourseId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         nextToken
-        startedAt
       }
       Lessons {
         items {
@@ -2555,12 +2071,8 @@ export const onUpdateLMSCourse = /* GraphQL */ `
           lMSLessonId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         nextToken
-        startedAt
       }
       Instructors {
         items {
@@ -2569,12 +2081,8 @@ export const onUpdateLMSCourse = /* GraphQL */ `
           instructorId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         nextToken
-        startedAt
       }
       price
       hours
@@ -2584,9 +2092,6 @@ export const onUpdateLMSCourse = /* GraphQL */ `
       percentComplete
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       studentCourseEnrolledId
     }
   }
@@ -2603,12 +2108,8 @@ export const onDeleteLMSCourse = /* GraphQL */ `
           lMSCourseId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         nextToken
-        startedAt
       }
       Lessons {
         items {
@@ -2617,12 +2118,8 @@ export const onDeleteLMSCourse = /* GraphQL */ `
           lMSLessonId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         nextToken
-        startedAt
       }
       Instructors {
         items {
@@ -2631,12 +2128,8 @@ export const onDeleteLMSCourse = /* GraphQL */ `
           instructorId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         nextToken
-        startedAt
       }
       price
       hours
@@ -2646,9 +2139,6 @@ export const onDeleteLMSCourse = /* GraphQL */ `
       percentComplete
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       studentCourseEnrolledId
     }
   }
@@ -2665,12 +2155,8 @@ export const onCreateLMSLesson = /* GraphQL */ `
           lMSLessonId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         nextToken
-        startedAt
       }
       subheadline
       objectives {
@@ -2680,13 +2166,9 @@ export const onCreateLMSLesson = /* GraphQL */ `
           completed
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           lMSLessonObjectivesId
         }
         nextToken
-        startedAt
       }
       mediaType
       slides {
@@ -2696,19 +2178,14 @@ export const onCreateLMSLesson = /* GraphQL */ `
           description
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           lMSLessonSlidesId
         }
         nextToken
-        startedAt
       }
       video {
         id
         timestamps {
           nextToken
-          startedAt
         }
         lessonId
         lesson {
@@ -2719,23 +2196,14 @@ export const onCreateLMSLesson = /* GraphQL */ `
           percentComplete
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           lMSLessonVideoId
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
       }
       percentComplete
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       lMSLessonVideoId
     }
   }
@@ -2752,12 +2220,8 @@ export const onUpdateLMSLesson = /* GraphQL */ `
           lMSLessonId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         nextToken
-        startedAt
       }
       subheadline
       objectives {
@@ -2767,13 +2231,9 @@ export const onUpdateLMSLesson = /* GraphQL */ `
           completed
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           lMSLessonObjectivesId
         }
         nextToken
-        startedAt
       }
       mediaType
       slides {
@@ -2783,19 +2243,14 @@ export const onUpdateLMSLesson = /* GraphQL */ `
           description
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           lMSLessonSlidesId
         }
         nextToken
-        startedAt
       }
       video {
         id
         timestamps {
           nextToken
-          startedAt
         }
         lessonId
         lesson {
@@ -2806,23 +2261,14 @@ export const onUpdateLMSLesson = /* GraphQL */ `
           percentComplete
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           lMSLessonVideoId
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
       }
       percentComplete
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       lMSLessonVideoId
     }
   }
@@ -2839,12 +2285,8 @@ export const onDeleteLMSLesson = /* GraphQL */ `
           lMSLessonId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         nextToken
-        startedAt
       }
       subheadline
       objectives {
@@ -2854,13 +2296,9 @@ export const onDeleteLMSLesson = /* GraphQL */ `
           completed
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           lMSLessonObjectivesId
         }
         nextToken
-        startedAt
       }
       mediaType
       slides {
@@ -2870,19 +2308,14 @@ export const onDeleteLMSLesson = /* GraphQL */ `
           description
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           lMSLessonSlidesId
         }
         nextToken
-        startedAt
       }
       video {
         id
         timestamps {
           nextToken
-          startedAt
         }
         lessonId
         lesson {
@@ -2893,23 +2326,14 @@ export const onDeleteLMSLesson = /* GraphQL */ `
           percentComplete
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           lMSLessonVideoId
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
       }
       percentComplete
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       lMSLessonVideoId
     }
   }
@@ -2932,7 +2356,6 @@ export const onCreateStudent = /* GraphQL */ `
         companyID
         apss {
           nextToken
-          startedAt
         }
         cmpmFormID
         cmpmForm {
@@ -2960,9 +2383,6 @@ export const onCreateStudent = /* GraphQL */ `
           moreAboutYou
           createdOn
           updatedOn
-          _version
-          _deleted
-          _lastChangedAt
           cMPMFormUserId
         }
         instructorId {
@@ -2970,24 +2390,15 @@ export const onCreateStudent = /* GraphQL */ `
           userId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         studentId {
           id
           studentId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         userInstructorIdId
         userStudentIdId
       }
@@ -3003,19 +2414,12 @@ export const onCreateStudent = /* GraphQL */ `
           percentComplete
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           studentCourseEnrolledId
         }
         nextToken
-        startedAt
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -3037,7 +2441,6 @@ export const onUpdateStudent = /* GraphQL */ `
         companyID
         apss {
           nextToken
-          startedAt
         }
         cmpmFormID
         cmpmForm {
@@ -3065,9 +2468,6 @@ export const onUpdateStudent = /* GraphQL */ `
           moreAboutYou
           createdOn
           updatedOn
-          _version
-          _deleted
-          _lastChangedAt
           cMPMFormUserId
         }
         instructorId {
@@ -3075,24 +2475,15 @@ export const onUpdateStudent = /* GraphQL */ `
           userId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         studentId {
           id
           studentId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         userInstructorIdId
         userStudentIdId
       }
@@ -3108,19 +2499,12 @@ export const onUpdateStudent = /* GraphQL */ `
           percentComplete
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           studentCourseEnrolledId
         }
         nextToken
-        startedAt
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -3142,7 +2526,6 @@ export const onDeleteStudent = /* GraphQL */ `
         companyID
         apss {
           nextToken
-          startedAt
         }
         cmpmFormID
         cmpmForm {
@@ -3170,9 +2553,6 @@ export const onDeleteStudent = /* GraphQL */ `
           moreAboutYou
           createdOn
           updatedOn
-          _version
-          _deleted
-          _lastChangedAt
           cMPMFormUserId
         }
         instructorId {
@@ -3180,24 +2560,15 @@ export const onDeleteStudent = /* GraphQL */ `
           userId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         studentId {
           id
           studentId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         userInstructorIdId
         userStudentIdId
       }
@@ -3213,19 +2584,12 @@ export const onDeleteStudent = /* GraphQL */ `
           percentComplete
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           studentCourseEnrolledId
         }
         nextToken
-        startedAt
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -3247,7 +2611,6 @@ export const onCreateInstructor = /* GraphQL */ `
         companyID
         apss {
           nextToken
-          startedAt
         }
         cmpmFormID
         cmpmForm {
@@ -3275,9 +2638,6 @@ export const onCreateInstructor = /* GraphQL */ `
           moreAboutYou
           createdOn
           updatedOn
-          _version
-          _deleted
-          _lastChangedAt
           cMPMFormUserId
         }
         instructorId {
@@ -3285,24 +2645,15 @@ export const onCreateInstructor = /* GraphQL */ `
           userId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         studentId {
           id
           studentId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         userInstructorIdId
         userStudentIdId
       }
@@ -3313,18 +2664,11 @@ export const onCreateInstructor = /* GraphQL */ `
           instructorId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         nextToken
-        startedAt
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -3346,7 +2690,6 @@ export const onUpdateInstructor = /* GraphQL */ `
         companyID
         apss {
           nextToken
-          startedAt
         }
         cmpmFormID
         cmpmForm {
@@ -3374,9 +2717,6 @@ export const onUpdateInstructor = /* GraphQL */ `
           moreAboutYou
           createdOn
           updatedOn
-          _version
-          _deleted
-          _lastChangedAt
           cMPMFormUserId
         }
         instructorId {
@@ -3384,24 +2724,15 @@ export const onUpdateInstructor = /* GraphQL */ `
           userId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         studentId {
           id
           studentId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         userInstructorIdId
         userStudentIdId
       }
@@ -3412,18 +2743,11 @@ export const onUpdateInstructor = /* GraphQL */ `
           instructorId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         nextToken
-        startedAt
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -3445,7 +2769,6 @@ export const onDeleteInstructor = /* GraphQL */ `
         companyID
         apss {
           nextToken
-          startedAt
         }
         cmpmFormID
         cmpmForm {
@@ -3473,9 +2796,6 @@ export const onDeleteInstructor = /* GraphQL */ `
           moreAboutYou
           createdOn
           updatedOn
-          _version
-          _deleted
-          _lastChangedAt
           cMPMFormUserId
         }
         instructorId {
@@ -3483,24 +2803,15 @@ export const onDeleteInstructor = /* GraphQL */ `
           userId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         studentId {
           id
           studentId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         userInstructorIdId
         userStudentIdId
       }
@@ -3511,18 +2822,11 @@ export const onDeleteInstructor = /* GraphQL */ `
           instructorId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         nextToken
-        startedAt
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -3534,9 +2838,6 @@ export const onCreateObjective = /* GraphQL */ `
       completed
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       lMSLessonObjectivesId
     }
   }
@@ -3549,9 +2850,6 @@ export const onUpdateObjective = /* GraphQL */ `
       completed
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       lMSLessonObjectivesId
     }
   }
@@ -3564,9 +2862,6 @@ export const onDeleteObjective = /* GraphQL */ `
       completed
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       lMSLessonObjectivesId
     }
   }
@@ -3579,9 +2874,6 @@ export const onCreateSlide = /* GraphQL */ `
       description
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       lMSLessonSlidesId
     }
   }
@@ -3594,9 +2886,6 @@ export const onUpdateSlide = /* GraphQL */ `
       description
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       lMSLessonSlidesId
     }
   }
@@ -3609,9 +2898,6 @@ export const onDeleteSlide = /* GraphQL */ `
       description
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       lMSLessonSlidesId
     }
   }
@@ -3627,13 +2913,9 @@ export const onCreateLessonVideo = /* GraphQL */ `
           description
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           lessonVideoTimestampsId
         }
         nextToken
-        startedAt
       }
       lessonId
       lesson {
@@ -3641,40 +2923,28 @@ export const onCreateLessonVideo = /* GraphQL */ `
         title
         Course {
           nextToken
-          startedAt
         }
         subheadline
         objectives {
           nextToken
-          startedAt
         }
         mediaType
         slides {
           nextToken
-          startedAt
         }
         video {
           id
           lessonId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         percentComplete
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         lMSLessonVideoId
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -3689,13 +2959,9 @@ export const onUpdateLessonVideo = /* GraphQL */ `
           description
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           lessonVideoTimestampsId
         }
         nextToken
-        startedAt
       }
       lessonId
       lesson {
@@ -3703,40 +2969,28 @@ export const onUpdateLessonVideo = /* GraphQL */ `
         title
         Course {
           nextToken
-          startedAt
         }
         subheadline
         objectives {
           nextToken
-          startedAt
         }
         mediaType
         slides {
           nextToken
-          startedAt
         }
         video {
           id
           lessonId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         percentComplete
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         lMSLessonVideoId
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -3751,13 +3005,9 @@ export const onDeleteLessonVideo = /* GraphQL */ `
           description
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           lessonVideoTimestampsId
         }
         nextToken
-        startedAt
       }
       lessonId
       lesson {
@@ -3765,40 +3015,28 @@ export const onDeleteLessonVideo = /* GraphQL */ `
         title
         Course {
           nextToken
-          startedAt
         }
         subheadline
         objectives {
           nextToken
-          startedAt
         }
         mediaType
         slides {
           nextToken
-          startedAt
         }
         video {
           id
           lessonId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         percentComplete
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         lMSLessonVideoId
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -3810,9 +3048,6 @@ export const onCreateTimestamp = /* GraphQL */ `
       description
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       lessonVideoTimestampsId
     }
   }
@@ -3825,9 +3060,6 @@ export const onUpdateTimestamp = /* GraphQL */ `
       description
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       lessonVideoTimestampsId
     }
   }
@@ -3840,9 +3072,6 @@ export const onDeleteTimestamp = /* GraphQL */ `
       description
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       lessonVideoTimestampsId
     }
   }
@@ -3867,7 +3096,6 @@ export const onCreateCertificateCourses = /* GraphQL */ `
         title_image
         courses {
           nextToken
-          startedAt
         }
         whoText
         courses_total
@@ -3882,9 +3110,6 @@ export const onCreateCertificateCourses = /* GraphQL */ `
         demoLink
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
       }
       course {
         id
@@ -3900,23 +3125,15 @@ export const onCreateCertificateCourses = /* GraphQL */ `
         price
         articles {
           nextToken
-          startedAt
         }
         certificate {
           nextToken
-          startedAt
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -3940,7 +3157,6 @@ export const onUpdateCertificateCourses = /* GraphQL */ `
         title_image
         courses {
           nextToken
-          startedAt
         }
         whoText
         courses_total
@@ -3955,9 +3171,6 @@ export const onUpdateCertificateCourses = /* GraphQL */ `
         demoLink
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
       }
       course {
         id
@@ -3973,23 +3186,15 @@ export const onUpdateCertificateCourses = /* GraphQL */ `
         price
         articles {
           nextToken
-          startedAt
         }
         certificate {
           nextToken
-          startedAt
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -4013,7 +3218,6 @@ export const onDeleteCertificateCourses = /* GraphQL */ `
         title_image
         courses {
           nextToken
-          startedAt
         }
         whoText
         courses_total
@@ -4028,9 +3232,6 @@ export const onDeleteCertificateCourses = /* GraphQL */ `
         demoLink
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
       }
       course {
         id
@@ -4046,23 +3247,15 @@ export const onDeleteCertificateCourses = /* GraphQL */ `
         price
         articles {
           nextToken
-          startedAt
         }
         certificate {
           nextToken
-          startedAt
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -4086,17 +3279,12 @@ export const onCreateArticleRelatedCourses = /* GraphQL */ `
         price
         articles {
           nextToken
-          startedAt
         }
         certificate {
           nextToken
-          startedAt
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
       }
       article {
         id
@@ -4108,23 +3296,15 @@ export const onCreateArticleRelatedCourses = /* GraphQL */ `
         content
         tags {
           nextToken
-          startedAt
         }
         relatedCourses {
           nextToken
-          startedAt
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -4148,17 +3328,12 @@ export const onUpdateArticleRelatedCourses = /* GraphQL */ `
         price
         articles {
           nextToken
-          startedAt
         }
         certificate {
           nextToken
-          startedAt
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
       }
       article {
         id
@@ -4170,23 +3345,15 @@ export const onUpdateArticleRelatedCourses = /* GraphQL */ `
         content
         tags {
           nextToken
-          startedAt
         }
         relatedCourses {
           nextToken
-          startedAt
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -4210,17 +3377,12 @@ export const onDeleteArticleRelatedCourses = /* GraphQL */ `
         price
         articles {
           nextToken
-          startedAt
         }
         certificate {
           nextToken
-          startedAt
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
       }
       article {
         id
@@ -4232,23 +3394,15 @@ export const onDeleteArticleRelatedCourses = /* GraphQL */ `
         content
         tags {
           nextToken
-          startedAt
         }
         relatedCourses {
           nextToken
-          startedAt
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -4262,15 +3416,12 @@ export const onCreateAPSUser = /* GraphQL */ `
         id
         Registrants {
           nextToken
-          startedAt
         }
         Sponsors {
           nextToken
-          startedAt
         }
         Speakers {
           nextToken
-          startedAt
         }
         year
         codes {
@@ -4278,9 +3429,6 @@ export const onCreateAPSUser = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
       }
       user {
         id
@@ -4295,7 +3443,6 @@ export const onCreateAPSUser = /* GraphQL */ `
         companyID
         apss {
           nextToken
-          startedAt
         }
         cmpmFormID
         cmpmForm {
@@ -4323,9 +3470,6 @@ export const onCreateAPSUser = /* GraphQL */ `
           moreAboutYou
           createdOn
           updatedOn
-          _version
-          _deleted
-          _lastChangedAt
           cMPMFormUserId
         }
         instructorId {
@@ -4333,32 +3477,20 @@ export const onCreateAPSUser = /* GraphQL */ `
           userId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         studentId {
           id
           studentId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         userInstructorIdId
         userStudentIdId
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -4372,15 +3504,12 @@ export const onUpdateAPSUser = /* GraphQL */ `
         id
         Registrants {
           nextToken
-          startedAt
         }
         Sponsors {
           nextToken
-          startedAt
         }
         Speakers {
           nextToken
-          startedAt
         }
         year
         codes {
@@ -4388,9 +3517,6 @@ export const onUpdateAPSUser = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
       }
       user {
         id
@@ -4405,7 +3531,6 @@ export const onUpdateAPSUser = /* GraphQL */ `
         companyID
         apss {
           nextToken
-          startedAt
         }
         cmpmFormID
         cmpmForm {
@@ -4433,9 +3558,6 @@ export const onUpdateAPSUser = /* GraphQL */ `
           moreAboutYou
           createdOn
           updatedOn
-          _version
-          _deleted
-          _lastChangedAt
           cMPMFormUserId
         }
         instructorId {
@@ -4443,32 +3565,20 @@ export const onUpdateAPSUser = /* GraphQL */ `
           userId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         studentId {
           id
           studentId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         userInstructorIdId
         userStudentIdId
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -4482,15 +3592,12 @@ export const onDeleteAPSUser = /* GraphQL */ `
         id
         Registrants {
           nextToken
-          startedAt
         }
         Sponsors {
           nextToken
-          startedAt
         }
         Speakers {
           nextToken
-          startedAt
         }
         year
         codes {
@@ -4498,9 +3605,6 @@ export const onDeleteAPSUser = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
       }
       user {
         id
@@ -4515,7 +3619,6 @@ export const onDeleteAPSUser = /* GraphQL */ `
         companyID
         apss {
           nextToken
-          startedAt
         }
         cmpmFormID
         cmpmForm {
@@ -4543,9 +3646,6 @@ export const onDeleteAPSUser = /* GraphQL */ `
           moreAboutYou
           createdOn
           updatedOn
-          _version
-          _deleted
-          _lastChangedAt
           cMPMFormUserId
         }
         instructorId {
@@ -4553,32 +3653,20 @@ export const onDeleteAPSUser = /* GraphQL */ `
           userId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         studentId {
           id
           studentId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         userInstructorIdId
         userStudentIdId
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -4592,15 +3680,12 @@ export const onCreateAPSSponsor = /* GraphQL */ `
         id
         Registrants {
           nextToken
-          startedAt
         }
         Sponsors {
           nextToken
-          startedAt
         }
         Speakers {
           nextToken
-          startedAt
         }
         year
         codes {
@@ -4608,16 +3693,12 @@ export const onCreateAPSSponsor = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
       }
       company {
         id
         name
         Employees {
           nextToken
-          startedAt
         }
         website
         email
@@ -4629,19 +3710,12 @@ export const onCreateAPSSponsor = /* GraphQL */ `
         zip
         apsID {
           nextToken
-          startedAt
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -4655,15 +3729,12 @@ export const onUpdateAPSSponsor = /* GraphQL */ `
         id
         Registrants {
           nextToken
-          startedAt
         }
         Sponsors {
           nextToken
-          startedAt
         }
         Speakers {
           nextToken
-          startedAt
         }
         year
         codes {
@@ -4671,16 +3742,12 @@ export const onUpdateAPSSponsor = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
       }
       company {
         id
         name
         Employees {
           nextToken
-          startedAt
         }
         website
         email
@@ -4692,19 +3759,12 @@ export const onUpdateAPSSponsor = /* GraphQL */ `
         zip
         apsID {
           nextToken
-          startedAt
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -4718,15 +3778,12 @@ export const onDeleteAPSSponsor = /* GraphQL */ `
         id
         Registrants {
           nextToken
-          startedAt
         }
         Sponsors {
           nextToken
-          startedAt
         }
         Speakers {
           nextToken
-          startedAt
         }
         year
         codes {
@@ -4734,16 +3791,12 @@ export const onDeleteAPSSponsor = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
       }
       company {
         id
         name
         Employees {
           nextToken
-          startedAt
         }
         website
         email
@@ -4755,19 +3808,12 @@ export const onDeleteAPSSponsor = /* GraphQL */ `
         zip
         apsID {
           nextToken
-          startedAt
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -4782,28 +3828,21 @@ export const onCreateCirriculumCourses = /* GraphQL */ `
         title
         Courses {
           nextToken
-          startedAt
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
       }
       lMSCourse {
         id
         courseId
         Cirriculum {
           nextToken
-          startedAt
         }
         Lessons {
           nextToken
-          startedAt
         }
         Instructors {
           nextToken
-          startedAt
         }
         price
         hours
@@ -4813,16 +3852,10 @@ export const onCreateCirriculumCourses = /* GraphQL */ `
         percentComplete
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         studentCourseEnrolledId
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -4837,28 +3870,21 @@ export const onUpdateCirriculumCourses = /* GraphQL */ `
         title
         Courses {
           nextToken
-          startedAt
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
       }
       lMSCourse {
         id
         courseId
         Cirriculum {
           nextToken
-          startedAt
         }
         Lessons {
           nextToken
-          startedAt
         }
         Instructors {
           nextToken
-          startedAt
         }
         price
         hours
@@ -4868,16 +3894,10 @@ export const onUpdateCirriculumCourses = /* GraphQL */ `
         percentComplete
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         studentCourseEnrolledId
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -4892,28 +3912,21 @@ export const onDeleteCirriculumCourses = /* GraphQL */ `
         title
         Courses {
           nextToken
-          startedAt
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
       }
       lMSCourse {
         id
         courseId
         Cirriculum {
           nextToken
-          startedAt
         }
         Lessons {
           nextToken
-          startedAt
         }
         Instructors {
           nextToken
-          startedAt
         }
         price
         hours
@@ -4923,16 +3936,10 @@ export const onDeleteCirriculumCourses = /* GraphQL */ `
         percentComplete
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         studentCourseEnrolledId
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -4947,15 +3954,12 @@ export const onCreateCourseLessons = /* GraphQL */ `
         courseId
         Cirriculum {
           nextToken
-          startedAt
         }
         Lessons {
           nextToken
-          startedAt
         }
         Instructors {
           nextToken
-          startedAt
         }
         price
         hours
@@ -4965,9 +3969,6 @@ export const onCreateCourseLessons = /* GraphQL */ `
         percentComplete
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         studentCourseEnrolledId
       }
       lMSLesson {
@@ -4975,40 +3976,28 @@ export const onCreateCourseLessons = /* GraphQL */ `
         title
         Course {
           nextToken
-          startedAt
         }
         subheadline
         objectives {
           nextToken
-          startedAt
         }
         mediaType
         slides {
           nextToken
-          startedAt
         }
         video {
           id
           lessonId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         percentComplete
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         lMSLessonVideoId
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -5023,15 +4012,12 @@ export const onUpdateCourseLessons = /* GraphQL */ `
         courseId
         Cirriculum {
           nextToken
-          startedAt
         }
         Lessons {
           nextToken
-          startedAt
         }
         Instructors {
           nextToken
-          startedAt
         }
         price
         hours
@@ -5041,9 +4027,6 @@ export const onUpdateCourseLessons = /* GraphQL */ `
         percentComplete
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         studentCourseEnrolledId
       }
       lMSLesson {
@@ -5051,40 +4034,28 @@ export const onUpdateCourseLessons = /* GraphQL */ `
         title
         Course {
           nextToken
-          startedAt
         }
         subheadline
         objectives {
           nextToken
-          startedAt
         }
         mediaType
         slides {
           nextToken
-          startedAt
         }
         video {
           id
           lessonId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         percentComplete
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         lMSLessonVideoId
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -5099,15 +4070,12 @@ export const onDeleteCourseLessons = /* GraphQL */ `
         courseId
         Cirriculum {
           nextToken
-          startedAt
         }
         Lessons {
           nextToken
-          startedAt
         }
         Instructors {
           nextToken
-          startedAt
         }
         price
         hours
@@ -5117,9 +4085,6 @@ export const onDeleteCourseLessons = /* GraphQL */ `
         percentComplete
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         studentCourseEnrolledId
       }
       lMSLesson {
@@ -5127,40 +4092,28 @@ export const onDeleteCourseLessons = /* GraphQL */ `
         title
         Course {
           nextToken
-          startedAt
         }
         subheadline
         objectives {
           nextToken
-          startedAt
         }
         mediaType
         slides {
           nextToken
-          startedAt
         }
         video {
           id
           lessonId
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         percentComplete
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         lMSLessonVideoId
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -5175,15 +4128,12 @@ export const onCreateCourseInstructors = /* GraphQL */ `
         courseId
         Cirriculum {
           nextToken
-          startedAt
         }
         Lessons {
           nextToken
-          startedAt
         }
         Instructors {
           nextToken
-          startedAt
         }
         price
         hours
@@ -5193,9 +4143,6 @@ export const onCreateCourseInstructors = /* GraphQL */ `
         percentComplete
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         studentCourseEnrolledId
       }
       instructor {
@@ -5215,27 +4162,17 @@ export const onCreateCourseInstructors = /* GraphQL */ `
           cmpmFormID
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           userInstructorIdId
           userStudentIdId
         }
         coursesTaught {
           nextToken
-          startedAt
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -5250,15 +4187,12 @@ export const onUpdateCourseInstructors = /* GraphQL */ `
         courseId
         Cirriculum {
           nextToken
-          startedAt
         }
         Lessons {
           nextToken
-          startedAt
         }
         Instructors {
           nextToken
-          startedAt
         }
         price
         hours
@@ -5268,9 +4202,6 @@ export const onUpdateCourseInstructors = /* GraphQL */ `
         percentComplete
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         studentCourseEnrolledId
       }
       instructor {
@@ -5290,27 +4221,17 @@ export const onUpdateCourseInstructors = /* GraphQL */ `
           cmpmFormID
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           userInstructorIdId
           userStudentIdId
         }
         coursesTaught {
           nextToken
-          startedAt
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -5325,15 +4246,12 @@ export const onDeleteCourseInstructors = /* GraphQL */ `
         courseId
         Cirriculum {
           nextToken
-          startedAt
         }
         Lessons {
           nextToken
-          startedAt
         }
         Instructors {
           nextToken
-          startedAt
         }
         price
         hours
@@ -5343,9 +4261,6 @@ export const onDeleteCourseInstructors = /* GraphQL */ `
         percentComplete
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
         studentCourseEnrolledId
       }
       instructor {
@@ -5365,27 +4280,17 @@ export const onDeleteCourseInstructors = /* GraphQL */ `
           cmpmFormID
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
           userInstructorIdId
           userStudentIdId
         }
         coursesTaught {
           nextToken
-          startedAt
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
