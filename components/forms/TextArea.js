@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useFormContext } from 'react-hook-form';
 
-const TextArea = ({ label, name, required }) => {
-  const { register, formState } = useFormContext();
+const TextArea = ({ label, name, required, value }) => {
+  const { register, formState, setValue } = useFormContext();
+  useEffect(() => {
+    if (value) {
+      setValue(name, value);
+    }
+  }, [value]);
 
   return (
     <div>

@@ -77,7 +77,7 @@ const FormWrapper = ({ children, activeIndex, setActiveIndex }) => {
           country: currentFormState.country,
           companyName: currentFormState.companyName,
           companyTitle: currentFormState.companyTitle,
-          linkedin: currentFormState.linkedin,
+          linkedin: currentFormState.linkedIn,
           background: currentFormState.background,
           whyPackaging: currentFormState.whyPackaging,
           areaOfInterest: currentFormState.areaOfInterest,

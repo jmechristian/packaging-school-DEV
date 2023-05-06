@@ -9,8 +9,6 @@ const CMPMPersonalInfo = ({ activeIndex }) => {
   const { register, formState } = useFormContext();
   const { formValues } = useContext(CMPMContext);
 
-  console.log(formValues);
-
   return (
     <div
       className='flex flex-col pt-4 gap-6'

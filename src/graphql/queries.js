@@ -1029,6 +1029,7 @@ export const getUser = /* GraphQL */ `
         yearGoals
         cmpmGoals
         moreAboutYou
+        birthYear
         createdOn
         updatedOn
         cMPMFormUserId
@@ -1137,6 +1138,7 @@ export const listUsers = /* GraphQL */ `
           yearGoals
           cmpmGoals
           moreAboutYou
+          birthYear
           createdOn
           updatedOn
           cMPMFormUserId
@@ -1215,6 +1217,7 @@ export const usersByName = /* GraphQL */ `
           yearGoals
           cmpmGoals
           moreAboutYou
+          birthYear
           createdOn
           updatedOn
           cMPMFormUserId
@@ -1293,6 +1296,7 @@ export const usersByEmail = /* GraphQL */ `
           yearGoals
           cmpmGoals
           moreAboutYou
+          birthYear
           createdOn
           updatedOn
           cMPMFormUserId
@@ -1371,6 +1375,7 @@ export const usersByCompanyID = /* GraphQL */ `
           yearGoals
           cmpmGoals
           moreAboutYou
+          birthYear
           createdOn
           updatedOn
           cMPMFormUserId
@@ -1438,6 +1443,7 @@ export const getCMPMForm = /* GraphQL */ `
           yearGoals
           cmpmGoals
           moreAboutYou
+          birthYear
           createdOn
           updatedOn
           cMPMFormUserId
@@ -1480,6 +1486,7 @@ export const getCMPMForm = /* GraphQL */ `
       yearGoals
       cmpmGoals
       moreAboutYou
+      birthYear
       createdOn
       updatedOn
       cMPMFormUserId
@@ -1533,6 +1540,7 @@ export const listCMPMForms = /* GraphQL */ `
         yearGoals
         cmpmGoals
         moreAboutYou
+        birthYear
         createdOn
         updatedOn
         cMPMFormUserId
@@ -1882,6 +1890,7 @@ export const getStudent = /* GraphQL */ `
           yearGoals
           cmpmGoals
           moreAboutYou
+          birthYear
           createdOn
           updatedOn
           cMPMFormUserId
@@ -2004,6 +2013,7 @@ export const getInstructor = /* GraphQL */ `
           yearGoals
           cmpmGoals
           moreAboutYou
+          birthYear
           createdOn
           updatedOn
           cMPMFormUserId
@@ -2767,6 +2777,7 @@ export const getAPSUser = /* GraphQL */ `
           yearGoals
           cmpmGoals
           moreAboutYou
+          birthYear
           createdOn
           updatedOn
           cMPMFormUserId

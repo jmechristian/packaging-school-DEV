@@ -220,6 +220,7 @@ type CMPMForm
   yearGoals: String
   cmpmGoals: String
   moreAboutYou: String
+  birthYear: String
 }
 
 type APSSpeaker @model @auth(rules: [{ allow: public }]) {

@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import TextInput from '../TextInput';
 import TextArea from '../TextArea';
 import { useSelector } from 'react-redux';
+import { CMPMContext } from './CMPMContextProvider';
 
 const CMPMProfessionalInfo = ({ activeIndex }) => {
   const { user } = useSelector((state) => state.auth);
+  const { formValues } = useContext(CMPMContext);
+
+  console.log(formValues);
 
   return (
     <div
@@ -17,39 +21,39 @@ const CMPMProfessionalInfo = ({ activeIndex }) => {
           placeholder={''}
           label={'Company Name'}
           required
-          value={user && user.cmpmForm ? user.cmpmForm.companyName : ''}
+          value={formValues ? formValues.companyName : ''}
         />
         <TextInput
           name={'companyTitle'}
           placeholder={''}
           label={'Company Title'}
           required
-          value={user && user.cmpmForm ? user.cmpmForm.companyTitle : ''}
+          value={formValues ? formValues.companyTitle : ''}
         />
       </div>
       <TextInput
         name={'linkedIn'}
         placeholder={'https://'}
         label={'LinkedIn Profile'}
-        value={user && user.cmpmForm ? user.cmpmForm.linkedIn : ''}
+        value={formValues ? formValues.linkedin : ''}
       />
       <TextArea
         name={'background'}
         label={'Your Background'}
         required
-        value={user && user.cmpmForm ? user.cmpmForm.background : ''}
+        value={formValues ? formValues.background : ''}
       />
       <TextArea
         name={'whyPackaging'}
         label={'Why did you get into packaging?'}
         required
-        value={user && user.cmpmForm ? user.cmpmForm.whyPackaging : ''}
+        value={formValues ? formValues.whyPackaging : ''}
       />
       <TextArea
         name={'areaOfInterest'}
         label={'What is your main area of interest?'}
         required
-        value={user && user.cmpmForm ? user.cmpmForm.areaOfInterest : ''}
+        value={formValues ? formValues.areaOfInterest : ''}
       />
     </div>
   );

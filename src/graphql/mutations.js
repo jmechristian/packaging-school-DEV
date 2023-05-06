@@ -1343,6 +1343,7 @@ export const createUser = /* GraphQL */ `
         yearGoals
         cmpmGoals
         moreAboutYou
+        birthYear
         createdOn
         updatedOn
         cMPMFormUserId
@@ -1473,6 +1474,7 @@ export const updateUser = /* GraphQL */ `
         yearGoals
         cmpmGoals
         moreAboutYou
+        birthYear
         createdOn
         updatedOn
         cMPMFormUserId
@@ -1603,6 +1605,7 @@ export const deleteUser = /* GraphQL */ `
         yearGoals
         cmpmGoals
         moreAboutYou
+        birthYear
         createdOn
         updatedOn
         cMPMFormUserId
@@ -1711,6 +1714,7 @@ export const createCMPMForm = /* GraphQL */ `
           yearGoals
           cmpmGoals
           moreAboutYou
+          birthYear
           createdOn
           updatedOn
           cMPMFormUserId
@@ -1753,6 +1757,7 @@ export const createCMPMForm = /* GraphQL */ `
       yearGoals
       cmpmGoals
       moreAboutYou
+      birthYear
       createdOn
       updatedOn
       cMPMFormUserId
@@ -1804,6 +1809,7 @@ export const updateCMPMForm = /* GraphQL */ `
           yearGoals
           cmpmGoals
           moreAboutYou
+          birthYear
           createdOn
           updatedOn
           cMPMFormUserId
@@ -1846,6 +1852,7 @@ export const updateCMPMForm = /* GraphQL */ `
       yearGoals
       cmpmGoals
       moreAboutYou
+      birthYear
       createdOn
       updatedOn
       cMPMFormUserId
@@ -1897,6 +1904,7 @@ export const deleteCMPMForm = /* GraphQL */ `
           yearGoals
           cmpmGoals
           moreAboutYou
+          birthYear
           createdOn
           updatedOn
           cMPMFormUserId
@@ -1939,6 +1947,7 @@ export const deleteCMPMForm = /* GraphQL */ `
       yearGoals
       cmpmGoals
       moreAboutYou
+      birthYear
       createdOn
       updatedOn
       cMPMFormUserId
@@ -2546,6 +2555,7 @@ export const createStudent = /* GraphQL */ `
           yearGoals
           cmpmGoals
           moreAboutYou
+          birthYear
           createdOn
           updatedOn
           cMPMFormUserId
@@ -2634,6 +2644,7 @@ export const updateStudent = /* GraphQL */ `
           yearGoals
           cmpmGoals
           moreAboutYou
+          birthYear
           createdOn
           updatedOn
           cMPMFormUserId
@@ -2722,6 +2733,7 @@ export const deleteStudent = /* GraphQL */ `
           yearGoals
           cmpmGoals
           moreAboutYou
+          birthYear
           createdOn
           updatedOn
           cMPMFormUserId
@@ -2810,6 +2822,7 @@ export const createInstructor = /* GraphQL */ `
           yearGoals
           cmpmGoals
           moreAboutYou
+          birthYear
           createdOn
           updatedOn
           cMPMFormUserId
@@ -2892,6 +2905,7 @@ export const updateInstructor = /* GraphQL */ `
           yearGoals
           cmpmGoals
           moreAboutYou
+          birthYear
           createdOn
           updatedOn
           cMPMFormUserId
@@ -2974,6 +2988,7 @@ export const deleteInstructor = /* GraphQL */ `
           yearGoals
           cmpmGoals
           moreAboutYou
+          birthYear
           createdOn
           updatedOn
           cMPMFormUserId
@@ -3705,6 +3720,7 @@ export const createAPSUser = /* GraphQL */ `
           yearGoals
           cmpmGoals
           moreAboutYou
+          birthYear
           createdOn
           updatedOn
           cMPMFormUserId
@@ -3796,6 +3812,7 @@ export const updateAPSUser = /* GraphQL */ `
           yearGoals
           cmpmGoals
           moreAboutYou
+          birthYear
           createdOn
           updatedOn
           cMPMFormUserId
@@ -3887,6 +3904,7 @@ export const deleteAPSUser = /* GraphQL */ `
           yearGoals
           cmpmGoals
           moreAboutYou
+          birthYear
           createdOn
           updatedOn
           cMPMFormUserId
