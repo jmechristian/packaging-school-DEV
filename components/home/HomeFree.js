@@ -19,20 +19,28 @@ const HomeFree = ({ courses }) => {
 
   console.log(courses);
   return (
-    <div className='flex flex-col gap-9 bg-base-mid rounded-t-xl py-9 px-6'>
-      <div className='flex flex-col gap-3'>
-        <div className='font-greycliff font-semibold text-2xl text-center text-white'>
-          Get Started For Free!
-        </div>
-        <div className='font-greycliff font-semibold shadow text-lg text-center text-white bg-clemson hover:bg-slate-200 py-3 rounded-lg'>
-          Create Your Free Account
+    <div className='flex flex-col bg-slate-200 rounded-lg lg:items-start gap-9 py-12 px-6 lg:px-12 lg:max-w-7xl lg:mx-auto w-full'>
+      <div className='flex w-full flex-col lg:flex-row lg:justify-between gap-3'>
+        <div className='flex flex-row justify-between w-full items-center'>
+          <div className='flex flex-col gap-3'>
+            <div className='text-lg text-center lg:text-left gap-2 flex flex-col'>
+              <div className='font-greycliff font-bold text-2xl md:text-3xl'>
+                Get Started for Free Today!
+              </div>
+              <div className='text-slate-600'>
+                <span className='underline font-semibold text-slate-700'>
+                  Create Your Free Account
+                </span>{' '}
+                and take your first step to becoming a knowledge leader.
+              </div>
+            </div>
+          </div>
+          <div className='bg-white border border-slate-600 rounded-lg p-3 font-greycliff hidden lg:block font-semibold'>
+            <Link href={'/all_courses'}>Create Free Account</Link>
+          </div>
         </div>
       </div>
-      <div className='text-white text-lg text-center'>
-        <span className='underline font-semibold'>Join us today</span> and take
-        your first step to becoming a knowledge leader.
-      </div>
-      <Scroller rows='2' scroll={scrollRef}>
+      <div className='lg:grid grid-cols-4 gap-6 hidden'>
         {freeCourses &&
           freeCourses.map((course, i) => (
             <div
@@ -55,8 +63,34 @@ const HomeFree = ({ courses }) => {
               />
             </div>
           ))}
-      </Scroller>
-      <div className='flex flex-col gap-1 items-center text-white font-semibold font-greycliff text-xl'>
+      </div>
+      <div className='lg:hidden block'>
+        <Scroller rows='2' scroll={scrollRef}>
+          {freeCourses &&
+            freeCourses.map((course, i) => (
+              <div
+                key={course.node.course_title[0].text}
+                className='inline-block'
+              >
+                <CourseCard
+                  category={course.node.categories[0].category}
+                  title={course.node.course_title[0].text}
+                  desc={
+                    course.node.course_subtitle &&
+                    course.node.course_subtitle[0].text
+                  }
+                  video={course.node.embed_id}
+                  hours={course.node.course_hours}
+                  lessons={course.node.course_lessons}
+                  price={course.node.course_price}
+                  slug={course.node._meta.uid}
+                  reset={null}
+                />
+              </div>
+            ))}
+        </Scroller>
+      </div>
+      <div className='flex w-full text-slate-700 flex-col gap-1 items-center lg:text-center mt-3 font-bold font-greycliff text-xl'>
         <Link href='/all_courses'>Explore All Courses</Link>
       </div>
     </div>

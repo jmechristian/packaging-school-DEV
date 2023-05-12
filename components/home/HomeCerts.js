@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const certs = [
   {
@@ -24,11 +25,16 @@ const certs = [
 
 const HomeCerts = () => {
   return (
-    <div className='flex flex-col gap-6 container__inner'>
-      <div className='font-greycliff font-bold text-2xl text-center'>
-        PhD-Developed, Comprehensive Certificate Programs
+    <div className='flex flex-col gap-9 container__inner'>
+      <div className='flex flex-row justify-between w-full items-center'>
+        <div className='font-greycliff font-bold text-2xl md:text-3xl'>
+          PhD-Developed, Comprehensive Certificate Programs
+        </div>
+        <div className='bg-white border border-slate-600 rounded-lg p-3 font-greycliff hidden lg:block font-semibold'>
+          <Link href={'/certifications'}>Explore Certificates</Link>
+        </div>
       </div>
-      <div className='grid grid-cols-1 gap-4'>
+      <div className='grid grid-cols-1 lg:grid-cols-3 gap-4'>
         {certs.map((cert) => (
           <div className='bg-slate-200 rounded-lg py-9 px-6' key={cert.name}>
             <div className='flex flex-col gap-4'>
