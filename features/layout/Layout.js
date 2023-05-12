@@ -65,7 +65,7 @@ const Layout = ({ children }) => {
       const courses = await client.query({
         query: gql`
           query AllCourses {
-            allCourses(sortBy: course_title_ASC) {
+            allCourses(sortBy: course_title_ASC, first: 100) {
               edges {
                 node {
                   course_id
