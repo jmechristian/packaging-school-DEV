@@ -61,7 +61,7 @@ const HomeHero = () => {
         <div className='text-slate-600 text-lg md:text-xl lg:text-2xl leading-relaxed'>
           Join the tens of thousands of people across the globe that have
           leveraged the expert-led cirriculum of The Packaging School to stand
-          out amongst their peers, get their teams update to date, or develop
+          out amongst their peers, accelerate their teams, or develop
           cost-effecient, packing solutions for their companies and startups.
         </div>
       </div>
