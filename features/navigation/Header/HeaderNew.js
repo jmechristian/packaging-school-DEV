@@ -14,6 +14,7 @@ import Link from 'next/link';
 import CourseDropDownCourses from './MenuDropDowns/CourseDropDownCourses';
 import CourseDropDownCallout from './MenuDropDowns/CourseDropDownCallout';
 import CertMegaMenu from '../../../components/nav/CertMegaMenu';
+import CertMenuItem from '../../../components/shared/CertMenuItem';
 
 const currencies = ['CAD', 'USD', 'AUD', 'EUR', 'GBP'];
 const navigation = {
@@ -366,8 +367,41 @@ export default function HeaderNew() {
 
                                   <div className='relative bg-slate-100'>
                                     <div className='mx-auto max-w-7xl px-8'>
-                                      <div className='grid grid-cols-3 items-start gap-x-8 gap-y-10 pb-8 pt-6'>
-                                        <CertMegaMenu />
+                                      <div className='grid grid-cols-3 items-start gap-x-8 gap-y-10 pb-8 pt-8'>
+                                        <div className='grid grid-cols-1 col-span-1 gap-6 h-full'>
+                                          <CertMenuItem
+                                            title='Certificate of Mastery in Packaging Management'
+                                            apply='/'
+                                            learnMore='/'
+                                            content='A 12-month, PhD-led program teaching you the latest technologies accelerating the packaging field in the space of packaging development, material procurement, and organizational management.'
+                                            bgColor='bg-base-brand'
+                                          />
+
+                                          <CertMenuItem
+                                            title='Automotive Packaging Certificate'
+                                            bgColor='bg-green-700'
+                                            content='The first and only 100% online academic program that will enable you to develop the professional skill set you need to be successful in the automotive packaging field.'
+                                            apply='/'
+                                            learnMore='/'
+                                          />
+                                        </div>
+                                        <div className='grid grid-cols-1 col-span-1 gap-6 h-full'>
+                                          <CertMenuItem
+                                            title='Certificate of Packaging Science'
+                                            apply='/'
+                                            learnMore='/'
+                                            bgColor='bg-slate-700'
+                                            content='A 12-month, online program teaching the materials, processes, and influences shaping the advancement of the industry. Speak the language of packaging and be a key differentiator for you and your company.'
+                                          />
+                                          <CertMenuItem
+                                            title='Food Packaging Certificate'
+                                            apply='/'
+                                            bgColor='bg-yellow-700'
+                                            learnMore='/'
+                                            content='In Development! Want to be a part? Interested In Sponsoring? Leave your mark on the packaging industry. Click below to apply or reach out to our Academic Director Dr. Julie Suggs'
+                                          />
+                                        </div>
+                                        <CourseDropDownCallout />
                                       </div>
                                     </div>
                                   </div>
