@@ -10,16 +10,14 @@ import HomeCTA from '../components/home/HomeCTA';
 export default function Home() {
   return (
     <div className='relative w-full h-full '>
-      <div className='hero__padding'>
-        <div className='flex flex-col gap-24 md:gap-32 lg:gap-40'>
-          <HomeHero />
-          <HomeCerts />
-          <HomeLogos />
-          <HomeFree />
-          <HomeFeatures />
-          <HomeTestimonials />
-          <HomeCTA />
-        </div>
+      <div className='flex flex-col gap-24 md:gap-32 lg:gap-40'>
+        <HomeHero />
+        <HomeCerts />
+        <HomeLogos />
+        <HomeFree />
+        <HomeFeatures />
+        <HomeTestimonials />
+        <HomeCTA />
       </div>
       <GradientCTA
         headline='Ready to Elevate Your Career?'

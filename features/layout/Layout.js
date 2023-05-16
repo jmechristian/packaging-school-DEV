@@ -17,6 +17,7 @@ import { API, graphqlOperation } from 'aws-amplify';
 import { usersByEmail } from '../../src/graphql/queries';
 import { createUser } from '../../src/graphql/mutations';
 import { onUpdateUser } from '../../src/graphql/subscriptions';
+import HeaderNew from '../navigation/Header/HeaderNew';
 
 const Layout = ({ children }) => {
   const dispatch = useDispatch();
@@ -119,12 +120,13 @@ const Layout = ({ children }) => {
       </Head>
       <div className={`${darkMode ? 'dark' : ''}`}>
         <div className='relative flex flex-col justify-between'>
-          <Header />
-          <MobileHeader />
+          {/* <Header />
+          <MobileHeader /> */}
+          <HeaderNew />
           <ScrollTop />
-          <DarkToggle />
+          {/* <DarkToggle /> */}
           {/* <SearchMenu /> */}
-          <MobileMenu />
+          {/* <MobileMenu /> */}
           <main className='relative h-full'>{children}</main>
           <Footer />
         </div>

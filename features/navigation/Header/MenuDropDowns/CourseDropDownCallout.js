@@ -4,11 +4,11 @@ import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
 
 const CourseDropDownCallout = () => {
   return (
-    <div className='bg-slate-300 rounded-br-lg'>
+    <div className='bg-slate-300 rounded-lg'>
       <div className='px-8 py-10 flex flex-col gap-8'>
         <BootcampCTA />
         <div className='flex flex-col gap-2'>
-          <div className='font-semibold w-full border-b border-b-slate-400 pb-2'>
+          <div className='font-bold w-full border-b border-b-slate-400 pb-2 font-greycliff'>
             Not Sure Where to Start?
           </div>
           <div className='flex gap-2 justify-between items-center border-b border-b-slate-400 pb-2'>

@@ -33,7 +33,7 @@ const HomeHero = () => {
       </div>
       <div className='flex flex-col gap-9 md:gap-12 lg:max-w-5xl lg:mx-auto lg:text-center lg:pt-24'>
         <div className='w-full flex flex-col gap-1 items-start md:items-center'>
-          <div className='font-greycliff font-bold text-4xl md:text-6xl lg:text-8xl'>
+          <div className='font-greycliff font-bold text-5xl md:text-6xl lg:text-8xl'>
             Become a
           </div>
           <TypeAnimation
@@ -42,7 +42,7 @@ const HomeHero = () => {
               1000, // Waits 1s
               'Packaging Engineer', // Deletes 'One' and types 'Two'
               1000, // Waits 2s
-              'Sustainable Expert', // Types 'Three' without deleting 'Two',
+              'Sustainability Expert', // Types 'Three' without deleting 'Two',
               1000,
               'Logistics Expert',
               1000,
@@ -55,13 +55,13 @@ const HomeHero = () => {
             wrapper='span'
             cursor={true}
             repeat={Infinity}
-            className='font-greycliff text-4xl font-bold md:text-6xl lg:text-8xl'
+            className='font-greycliff text-5xl font-bold md:text-6xl lg:text-8xl'
           />
         </div>
         <div className='text-slate-600 text-lg md:text-xl lg:text-2xl leading-relaxed'>
           Join the tens of thousands of people across the globe that have
           leveraged the expert-led cirriculum of The Packaging School to stand
-          out amongst their peers, accelerate their teams, or develop
+          out amongst their peers, accelerate their teams, and develop
           cost-effecient, packing solutions for their companies and startups.
         </div>
       </div>
