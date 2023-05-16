@@ -4,7 +4,7 @@ import { AcademicCapIcon, BeakerIcon } from '@heroicons/react/24/solid';
 
 const CertMenuItem = ({ title, content, bgColor, icon, learnMore, apply }) => {
   return (
-    <div className='cols-span-1 flex flex-col bg-base-light rounded-lg p-6 gap-4 h-full justify-between'>
+    <div className='cols-span-1 flex flex-col bg-base-light rounded-lg p-5 gap-4 h-full justify-between'>
       <div className='flex flex-col gap-2 col-span-4 items-center justify-center'>
         <div className='flex flex-col gap-3 h-full'>
           <div className='flex gap-3 items-center w-full'>
