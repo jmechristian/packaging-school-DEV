@@ -17,15 +17,24 @@ import CertMegaMenu from '../../../components/nav/CertMegaMenu';
 import CertMenuItem from '../../../components/shared/CertMenuItem';
 import CourseMenuBlock from '../shared/CourseMenuBlock';
 import MobileMenuCoursesCallout from '../MobileMenu/MobileMenuComponents/MobileMenuCoursesCallout';
+import CertMegaCallout from '../../../components/nav/CertMegaCallout';
 
 const currencies = ['CAD', 'USD', 'AUD', 'EUR', 'GBP'];
 const navigation = {
   categories: [
     {
       name: 'Certificates',
+      body: <CertMegaMenu />,
+      callout: <CertMegaCallout />,
     },
     {
       name: 'Courses',
+      body: (
+        <div className='flex flex-col gap-6'>
+          <CourseMenuBlock />
+        </div>
+      ),
+      callout: <MobileMenuCoursesCallout />,
     },
   ],
   pages: [
@@ -69,7 +78,7 @@ export default function HeaderNew() {
               leaveFrom='translate-x-0'
               leaveTo='-translate-x-full'
             >
-              <Dialog.Panel className='relative flex w-full max-w-full flex-col overflow-y-auto bg-white pb-12 shadow-xl'>
+              <Dialog.Panel className='relative flex w-full max-w-full flex-col overflow-y-auto bg-slate-100 pb-12 shadow-xl'>
                 <div className='flex px-4 pb-2 pt-5'>
                   <button
                     type='button'
@@ -91,7 +100,7 @@ export default function HeaderNew() {
                           className={({ selected }) =>
                             classNames(
                               selected
-                                ? 'border-clemson text-clemson'
+                                ? 'border-base-brand text-base-brand'
                                 : 'border-transparent text-gray-900',
                               'flex-1 whitespace-nowrap border-b-2 px-1 py-4 text-base font-medium'
                             )
@@ -103,14 +112,19 @@ export default function HeaderNew() {
                     </Tab.List>
                   </div>
                   <Tab.Panels as={Fragment}>
-                    <div className='flex flex-col gap-8 py-6 bg-slate-100'>
-                      <div className='flex flex-col gap-8 px-6 md:px-9'>
-                        <CourseMenuBlock />
-                      </div>
-                      <div className='flex flex-col px-6 md:px-9'>
-                        <MobileMenuCoursesCallout />
-                      </div>
-                    </div>
+                    {navigation.categories.map((category, categoryIdx) => (
+                      <Tab.Panel
+                        key={category.name}
+                        className='space-y-12 px-4 pb-6 pt-10'
+                      >
+                        <div className='grid grid-cols-1 items-start gap-x-6 gap-y-10'>
+                          <div className='grid grid-cols-1 gap-x-6 gap-y-10'>
+                            <div>{category.body}</div>
+                            <div>{category.callout}</div>
+                          </div>
+                        </div>
+                      </Tab.Panel>
+                    ))}
                   </Tab.Panels>
                 </Tab.Group>
 
@@ -145,34 +159,6 @@ export default function HeaderNew() {
                     </a>
                   </div>
                 </div>
-
-                <div className='space-y-6 border-t border-gray-200 px-4 py-6'>
-                  {/* Currency selector */}
-                  <form>
-                    <div className='inline-block'>
-                      <label htmlFor='mobile-currency' className='sr-only'>
-                        Currency
-                      </label>
-                      <div className='group relative -ml-2 rounded-md border-transparent focus-within:ring-2 focus-within:ring-white'>
-                        <select
-                          id='mobile-currency'
-                          name='currency'
-                          className='flex items-center rounded-md border-transparent bg-none py-0.5 pl-2 pr-5 text-sm font-medium text-gray-700 focus:border-transparent focus:outline-none focus:ring-0 group-hover:text-gray-800'
-                        >
-                          {currencies.map((currency) => (
-                            <option key={currency}>{currency}</option>
-                          ))}
-                        </select>
-                        <div className='pointer-events-none absolute inset-y-0 right-0 flex items-center'>
-                          <ChevronDownIcon
-                            className='h-5 w-5 text-gray-500'
-                            aria-hidden='true'
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </form>
-                </div>
               </Dialog.Panel>
             </Transition.Child>
           </div>
@@ -183,7 +169,7 @@ export default function HeaderNew() {
         <nav aria-label='Top'>
           {/* Top navigation */}
           <div className='bg-gray-900'>
-            <div className='mx-auto flex h-10 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8'>
+            <div className='mx-auto flex min-h-10 max-w-7xl items-center justify-between px-6 lg:px-8 py-1.5'>
               <div className='flex-1 text-center text-sm font-medium text-white lg:flex-none'>
                 <div className='flex gap-1 items-center font-greycliff'>
                   <div>
@@ -239,7 +225,7 @@ export default function HeaderNew() {
                                 <Popover.Button
                                   className={classNames(
                                     open
-                                      ? 'border-clemson text-clemson'
+                                      ? 'border-base-brand text-base-brand'
                                       : 'border-transparent text-gray-700 hover:text-gray-800',
                                     'relative z-10 -mb-px flex items-center border-b-2 pt-px font-semibold font-greycliff transition-colors duration-200 ease-out'
                                   )}
@@ -275,6 +261,7 @@ export default function HeaderNew() {
                                             learnMore='/'
                                             content='A 12-month, PhD-led program teaching you the latest technologies accelerating the packaging field in the space of packaging development, material procurement, and organizational management.'
                                             bgColor='bg-base-brand'
+                                            icon={'academicHat'}
                                           />
 
                                           <CertMenuItem
@@ -283,6 +270,7 @@ export default function HeaderNew() {
                                             content='The first and only 100% online academic program that will enable you to develop the professional skill set you need to be successful in the automotive packaging field.'
                                             apply='/'
                                             learnMore='/'
+                                            icon='cog'
                                           />
                                         </div>
                                         <div className='grid grid-cols-1 col-span-1 gap-6 h-full'>
@@ -292,6 +280,7 @@ export default function HeaderNew() {
                                             learnMore='/'
                                             bgColor='bg-slate-700'
                                             content='A 12-month, online program teaching the materials, processes, and influences shaping the advancement of the industry. Speak the language of packaging and be a key differentiator for you and your company.'
+                                            icon='beaker'
                                           />
                                           <CertMenuItem
                                             title='Food Packaging Certificate'
@@ -299,9 +288,10 @@ export default function HeaderNew() {
                                             bgColor='bg-indigo-900'
                                             learnMore='/'
                                             content='In Development! Want to be a part? Interested In Sponsoring? Leave your mark on the packaging industry. Click below to apply or reach out to our Academic Director Dr. Julie Suggs'
+                                            icon='food'
                                           />
                                         </div>
-                                        <CourseDropDownCallout />
+                                        <CertMegaCallout />
                                       </div>
                                     </div>
                                   </div>
@@ -321,7 +311,7 @@ export default function HeaderNew() {
                                 <Popover.Button
                                   className={classNames(
                                     open
-                                      ? 'border-clemson text-clemson'
+                                      ? 'border-base-brand text-base-brand'
                                       : 'border-transparent text-gray-700 hover:text-gray-800',
                                     'relative z-10 -mb-px flex items-center border-b-2 pt-px font-semibold font-greycliff transition-colors duration-200 ease-out'
                                   )}
@@ -399,11 +389,11 @@ export default function HeaderNew() {
 
                   {/* Logo (lg-) */}
                   <a href='#' className='lg:hidden'>
-                    <span className='sr-only'>Your Company</span>
+                    <span className='sr-only'>Packaging School</span>
                     <img
-                      src='https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600'
+                      src='https://packschool.s3.amazonaws.com/logoSquare.svg'
                       alt=''
-                      className='h-8 w-auto'
+                      className='h-12 w-auto'
                     />
                   </a>
 

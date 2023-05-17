@@ -58,7 +58,7 @@ const HomeHero = () => {
             className='font-greycliff text-5xl font-bold md:text-6xl lg:text-8xl'
           />
         </div>
-        <div className='text-slate-600 text-lg md:text-xl lg:text-2xl leading-relaxed'>
+        <div className='text-slate-600 text-lg md:text-xl lg:text-2xl lg:leading-normal'>
           Join the tens of thousands of people across the globe that have
           leveraged the expert-led cirriculum of The Packaging School to stand
           out amongst their peers, accelerate their teams, and develop
