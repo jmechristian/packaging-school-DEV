@@ -15,19 +15,19 @@ const CertMenuItem = ({ title, content, bgColor, icon, learnMore, apply }) => {
                 <AcademicCapIcon className='w-6 h-6' />
               </div>
             </div>
-            <div className='font-semibold font-greycliff text-slate-600 text-lg leading-tight'>
+            <div className='font-semibold font-greycliff text-slate-700 text-lg leading-tight'>
               {title}
             </div>
           </div>
 
-          <div className='text-sm'>{content}</div>
+          <div className='text-sm line-clamp-3'>{content}</div>
         </div>
       </div>
       <div className='flex items-center gap-1 h-full'>
-        <div className='rounded-lg px-3 py-1.5 font-greycliff w-fit text-clemson font-semibold'>
+        <div className='rounded-lg px-3 py-1.5 font-greycliff text-sm w-fit  text-clemson-dark font-semibold'>
           <Link href={apply}>Apply Now</Link>
         </div>
-        <div className='rounded-lg px-3 py-1.5 font-greycliff  text-slate-500 font-semibold'>
+        <div className='rounded-lg px-3 py-1.5 font-greycliff text-sm  text-slate-500 font-semibold'>
           <Link href={learnMore}>Learn More</Link>
         </div>
       </div>

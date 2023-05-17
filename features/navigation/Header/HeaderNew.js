@@ -15,6 +15,8 @@ import CourseDropDownCourses from './MenuDropDowns/CourseDropDownCourses';
 import CourseDropDownCallout from './MenuDropDowns/CourseDropDownCallout';
 import CertMegaMenu from '../../../components/nav/CertMegaMenu';
 import CertMenuItem from '../../../components/shared/CertMenuItem';
+import CourseMenuBlock from '../shared/CourseMenuBlock';
+import MobileMenuCoursesCallout from '../MobileMenu/MobileMenuComponents/MobileMenuCoursesCallout';
 
 const currencies = ['CAD', 'USD', 'AUD', 'EUR', 'GBP'];
 const navigation = {
@@ -67,7 +69,7 @@ export default function HeaderNew() {
               leaveFrom='translate-x-0'
               leaveTo='-translate-x-full'
             >
-              <Dialog.Panel className='relative flex w-full max-w-xs flex-col overflow-y-auto bg-white pb-12 shadow-xl'>
+              <Dialog.Panel className='relative flex w-full max-w-full flex-col overflow-y-auto bg-white pb-12 shadow-xl'>
                 <div className='flex px-4 pb-2 pt-5'>
                   <button
                     type='button'
@@ -101,116 +103,14 @@ export default function HeaderNew() {
                     </Tab.List>
                   </div>
                   <Tab.Panels as={Fragment}>
-                    {/* {navigation.categories.map((category, categoryIdx) => (
-                      <Tab.Panel
-                        key={category.name}
-                        className='space-y-12 px-4 pb-6 pt-10'
-                      >
-                        <div className='grid grid-cols-1 items-start gap-x-6 gap-y-10'>
-                          <div className='grid grid-cols-1 gap-x-6 gap-y-10'>
-                            <div>
-                              <p
-                                id={`mobile-featured-heading-${categoryIdx}`}
-                                className='font-medium text-gray-900'
-                              >
-                                Featured
-                              </p>
-                              <ul
-                                role='list'
-                                aria-labelledby={`mobile-featured-heading-${categoryIdx}`}
-                                className='mt-6 space-y-6'
-                              >
-                                {category.featured.map((item) => (
-                                  <li key={item.name} className='flex'>
-                                    <a
-                                      href={item.href}
-                                      className='text-gray-500'
-                                    >
-                                      {item.name}
-                                    </a>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                            <div>
-                              <p
-                                id='mobile-categories-heading'
-                                className='font-medium text-gray-900'
-                              >
-                                Categories
-                              </p>
-                              <ul
-                                role='list'
-                                aria-labelledby='mobile-categories-heading'
-                                className='mt-6 space-y-6'
-                              >
-                                {category.categories.map((item) => (
-                                  <li key={item.name} className='flex'>
-                                    <a
-                                      href={item.href}
-                                      className='text-gray-500'
-                                    >
-                                      {item.name}
-                                    </a>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                          </div>
-                          <div className='grid grid-cols-1 gap-x-6 gap-y-10'>
-                            <div>
-                              <p
-                                id='mobile-collection-heading'
-                                className='font-medium text-gray-900'
-                              >
-                                Collection
-                              </p>
-                              <ul
-                                role='list'
-                                aria-labelledby='mobile-collection-heading'
-                                className='mt-6 space-y-6'
-                              >
-                                {category.collection.map((item) => (
-                                  <li key={item.name} className='flex'>
-                                    <a
-                                      href={item.href}
-                                      className='text-gray-500'
-                                    >
-                                      {item.name}
-                                    </a>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-
-                            <div>
-                              <p
-                                id='mobile-brand-heading'
-                                className='font-medium text-gray-900'
-                              >
-                                Brands
-                              </p>
-                              <ul
-                                role='list'
-                                aria-labelledby='mobile-brand-heading'
-                                className='mt-6 space-y-6'
-                              >
-                                {category.brands.map((item) => (
-                                  <li key={item.name} className='flex'>
-                                    <a
-                                      href={item.href}
-                                      className='text-gray-500'
-                                    >
-                                      {item.name}
-                                    </a>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </Tab.Panel>
-                    ))} */}
+                    <div className='flex flex-col gap-8 py-6 bg-slate-100'>
+                      <div className='flex flex-col gap-8 px-6 md:px-9'>
+                        <CourseMenuBlock />
+                      </div>
+                      <div className='flex flex-col px-6 md:px-9'>
+                        <MobileMenuCoursesCallout />
+                      </div>
+                    </div>
                   </Tab.Panels>
                 </Tab.Group>
 
@@ -367,7 +267,7 @@ export default function HeaderNew() {
 
                                   <div className='relative bg-slate-100'>
                                     <div className='mx-auto max-w-7xl px-8'>
-                                      <div className='grid grid-cols-3 items-start gap-x-8 gap-y-10 pb-8 pt-8'>
+                                      <div className='grid grid-cols-3 items-start gap-x-8 gap-y-10 py-10'>
                                         <div className='grid grid-cols-1 col-span-1 gap-6 h-full'>
                                           <CertMenuItem
                                             title='Certificate of Mastery in Packaging Management'
@@ -449,7 +349,7 @@ export default function HeaderNew() {
 
                                   <div className='relative bg-slate-100'>
                                     <div className='mx-auto max-w-7xl px-8'>
-                                      <div className='grid grid-cols-3 items-start gap-x-8 gap-y-10 pb-8 pt-3'>
+                                      <div className='grid grid-cols-3 items-start gap-x-8 gap-y-10 pb-8 pt-8'>
                                         <CourseDropDownCourses />
                                         <CourseDropDownCallout />
                                       </div>
