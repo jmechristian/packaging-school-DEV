@@ -23,7 +23,7 @@ export default function ProfileHead({ user }) {
               <div className='text-xl font-bold text-slate-900 sm:text-4xl'>
                 {user.name}
               </div>
-              <p className=' font-medium text-slate-600 flex gap-1.5'>
+              <p className=' font-medium text-slate-600 flex justify-center gap-1.5'>
                 {user.title ? (
                   user.title
                 ) : (

@@ -68,7 +68,7 @@ function classNames(...classes) {
 
 export default function ProfileStats() {
   return (
-    <div className='px-16 pb-16 flex flex-col gap-16'>
+    <div className='px-6 md:px-16 pb-16 flex flex-col gap-16'>
       <div>
         <h3 className='text-base font-bold leading-6 text-gray-900 font-greycliff'>
           Your Progress Last 30 days

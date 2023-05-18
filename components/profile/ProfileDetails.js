@@ -1,6 +1,6 @@
 export default function ProfileDetails({ user }) {
   return (
-    <div className='px-16 py-12'>
+    <div className='px-6 md:px-16 py-12'>
       <div className='px-4 sm:px-0'>
         <h3 className='text-lg font-bold font-greycliff leading-7 text-slate-900'>
           Your Information

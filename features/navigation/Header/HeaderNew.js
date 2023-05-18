@@ -9,7 +9,6 @@ import {
   XMarkIcon,
   AcademicCapIcon,
 } from '@heroicons/react/24/outline';
-import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import Logo from '../../../components/layout/Logo';
 import Link from 'next/link';
 import CourseDropDownCourses from './MenuDropDowns/CourseDropDownCourses';
@@ -19,6 +18,8 @@ import CertMenuItem from '../../../components/shared/CertMenuItem';
 import CourseMenuBlock from '../shared/CourseMenuBlock';
 import MobileMenuCoursesCallout from '../MobileMenu/MobileMenuComponents/MobileMenuCoursesCallout';
 import CertMegaCallout from '../../../components/nav/CertMegaCallout';
+import { showSearch } from '../navigationSlice';
+import { useDispatch } from 'react-redux';
 
 const navigation = {
   categories: [
@@ -51,6 +52,7 @@ function classNames(...classes) {
 export default function HeaderNew() {
   const [open, setOpen] = useState(false);
   const { user } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
   return (
     <div className='bg-white'>
       {/* Mobile menu */}
@@ -402,6 +404,7 @@ export default function HeaderNew() {
                     <a
                       href='#'
                       className='ml-2 p-2 text-slate-400 hover:text-slate-500'
+                      onClick={() => dispatch(showSearch())}
                     >
                       <span className='sr-only'>Search</span>
                       <MagnifyingGlassIcon
@@ -428,6 +431,7 @@ export default function HeaderNew() {
                           <a
                             href='#'
                             className='-m-2 p-2 text-slate-400 hover:text-slate-500'
+                            onClick={() => dispatch(showSearch())}
                           >
                             <span className='sr-only'>Search</span>
                             <MagnifyingGlassIcon

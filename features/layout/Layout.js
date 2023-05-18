@@ -3,11 +3,7 @@ import { gql } from '@apollo/client';
 import { client } from '../../helpers/apollo-client';
 import DarkToggle from '../layout/DarkToggle';
 import Head from 'next/head';
-import Header from '../navigation/Header/Header';
 import Footer from '../navigation/Footer/Footer';
-import MobileHeader from '../navigation//Header/MobileHeader';
-import MobileMenu from '../navigation/Header/MobileMenu';
-import SearchMenu from '../navigation/Header/SearchMenu';
 import { useSelector, useDispatch } from 'react-redux';
 import { setAllCourses } from '../all_courses/courseFilterSlice';
 import { setUser } from '../auth/authslice';
@@ -18,10 +14,12 @@ import { usersByEmail } from '../../src/graphql/queries';
 import { createUser } from '../../src/graphql/mutations';
 import { onUpdateUser } from '../../src/graphql/subscriptions';
 import HeaderNew from '../navigation/Header/HeaderNew';
+import SearchContainer from '../../components/search/SearchContainer';
 
 const Layout = ({ children }) => {
   const dispatch = useDispatch();
   const { darkMode } = useSelector((state) => state.layout);
+  const { searchOpen } = useSelector((state) => state.nav);
   const { user } = useUser();
 
   useEffect(() => {
@@ -120,13 +118,10 @@ const Layout = ({ children }) => {
       </Head>
       <div className={`${darkMode ? 'dark' : ''}`}>
         <div className='relative flex flex-col justify-between'>
-          {/* <Header />
-          <MobileHeader /> */}
+          {searchOpen && <SearchContainer />}
           <HeaderNew />
           <ScrollTop />
           {/* <DarkToggle /> */}
-          {/* <SearchMenu /> */}
-          {/* <MobileMenu /> */}
           <main className='relative h-full'>{children}</main>
           <Footer />
         </div>
