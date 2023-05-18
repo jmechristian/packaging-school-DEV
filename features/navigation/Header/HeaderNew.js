@@ -1,5 +1,6 @@
 import { Fragment, useState } from 'react';
 import { Dialog, Popover, Tab, Transition } from '@headlessui/react';
+import { useSelector } from 'react-redux';
 import {
   Bars3Icon,
   BoltIcon,
@@ -19,7 +20,6 @@ import CourseMenuBlock from '../shared/CourseMenuBlock';
 import MobileMenuCoursesCallout from '../MobileMenu/MobileMenuComponents/MobileMenuCoursesCallout';
 import CertMegaCallout from '../../../components/nav/CertMegaCallout';
 
-const currencies = ['CAD', 'USD', 'AUD', 'EUR', 'GBP'];
 const navigation = {
   categories: [
     {
@@ -30,7 +30,7 @@ const navigation = {
     {
       name: 'Courses',
       body: (
-        <div className='flex flex-col gap-6'>
+        <div className='flex flex-col gap-9'>
           <CourseMenuBlock />
         </div>
       ),
@@ -50,7 +50,7 @@ function classNames(...classes) {
 
 export default function HeaderNew() {
   const [open, setOpen] = useState(false);
-
+  const { user } = useSelector((state) => state.auth);
   return (
     <div className='bg-white'>
       {/* Mobile menu */}
@@ -180,19 +180,43 @@ export default function HeaderNew() {
               </div>
 
               <div className='hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6'>
-                <a
-                  href='#'
-                  className='text-sm font-semibold text-clemson hover:text-gray-100 font-greycliff'
-                >
-                  Create a FREE account
-                </a>
-                <span className='h-6 w-px bg-gray-600' aria-hidden='true' />
-                <a
-                  href='#'
-                  className='text-sm font-medium text-white hover:text-gray-100 font-greycliff'
-                >
-                  Sign in
-                </a>
+                {!user ? (
+                  <>
+                    <a
+                      href='#'
+                      className='text-sm font-semibold text-clemson hover:text-gray-100 font-greycliff'
+                    >
+                      Create a FREE account
+                    </a>
+                    <span className='h-6 w-px bg-gray-600' aria-hidden='true' />
+                    <Link
+                      href='/api/auth/login?returnTo=/profile'
+                      className='text-sm font-medium text-white hover:text-gray-100 font-greycliff'
+                    >
+                      <a className='text-sm font-medium text-white hover:text-gray-100 font-greycliff'>
+                        Sign in
+                      </a>
+                    </Link>
+                  </>
+                ) : (
+                  <>
+                    <a
+                      href='#'
+                      className='text-sm font-semibold text-clemson hover:text-gray-100 font-greycliff'
+                    >
+                      Hello, {user && user.name}
+                    </a>
+                    <span className='h-6 w-px bg-gray-600' aria-hidden='true' />
+                    <Link
+                      href='/api/auth/logout'
+                      className='text-sm font-medium text-white hover:text-gray-100 font-greycliff'
+                    >
+                      <a className='text-sm font-medium text-white hover:text-gray-100 font-greycliff'>
+                        Sign Out
+                      </a>
+                    </Link>
+                  </>
+                )}
               </div>
             </div>
           </div>
@@ -414,13 +438,14 @@ export default function HeaderNew() {
                         </div>
 
                         <div className='flex'>
-                          <a
-                            href='#'
-                            className='-m-2 p-2 text-slate-400 hover:text-slate-500'
-                          >
-                            <span className='sr-only'>Account</span>
-                            <UserIcon className='h-6 w-6' aria-hidden='true' />
-                          </a>
+                          <Link href='/profile'>
+                            <a className='-m-2 p-2 text-slate-400 hover:text-slate-500'>
+                              <UserIcon
+                                className='h-6 w-6'
+                                aria-hidden='true'
+                              />
+                            </a>
+                          </Link>
                         </div>
                       </div>
 
@@ -440,9 +465,6 @@ export default function HeaderNew() {
                           />
                           <span className='ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800'>
                             0
-                          </span>
-                          <span className='sr-only'>
-                            items in cart, view bag
                           </span>
                         </a>
                       </div>
