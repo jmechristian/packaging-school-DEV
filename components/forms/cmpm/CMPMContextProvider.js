@@ -21,7 +21,7 @@ const CMPMContextProvider = ({ children, pageData }) => {
         setActiveIndex,
         errorIndex,
         setErrorIndex,
-        formValues: pageData.getCMPMForm,
+        formValues: pageData?.getCMPMForm,
         setFormValues,
       }}
     >

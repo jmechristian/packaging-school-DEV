@@ -1,8 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import { getCMPMForm } from '../../../src/graphql/queries';
 import { Amplify, API, graphqlOperation } from 'aws-amplify';
-import FormWrapper from '../../../components/forms/FormWrapper';
-import CMPMFormNav from '../../../components/forms/cmpm/CMPMFormNav';
 import CMPMContextProvider, {
   CMPMContext,
 } from '../../../components/forms/cmpm/CMPMContextProvider';
