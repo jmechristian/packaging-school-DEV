@@ -107,3 +107,7 @@ body {
   margin-left: calc(100% * -0.5);
   left: 50%;
 }
+
+.aa-Panel {
+  z-index: 110;
+}

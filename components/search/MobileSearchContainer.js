@@ -4,11 +4,9 @@ import {
   InstantSearch,
   SearchBox,
   Hits,
-  Index,
   Pagination,
   Configure,
 } from 'react-instantsearch-hooks-web';
-import '@algolia/autocomplete-theme-classic';
 import Link from 'next/link';
 import { MagnifyingGlassIcon, XMarkIcon } from '@heroicons/react/24/solid';
 import { useDispatch } from 'react-redux';
@@ -39,17 +37,13 @@ function Hit({ hit }) {
   );
 }
 
-const SearchContainer = () => {
+const MobileSearchContainer = () => {
   const dispatch = useDispatch();
-
   return (
     <div className='fixed inset-0 flex justify-center items-between p-4 bg-black/60 backdrop-blur-sm z-[60]'>
-      <div className='dark:bg-[#222] bg-white w-full h-full rounded-lg p-12 flex flex-col justify-between lg:max-w-7xl lg:mx-auto'>
-        <InstantSearch
-          searchClient={searchClient}
-          indexName='COURSES'
-          insights={{ useCookie: true }}
-        >
+      <div className='dark:bg-[#222] bg-white w-full h-full rounded-lg px-6 py-6 flex flex-col justify-between'>
+        <InstantSearch searchClient={searchClient} indexName='COURSES'>
+          <Configure hitsPerPage={3} />
           <div className='w-full flex flex-col justify-between'>
             <div className='flex items-start justify-between w-full'>
               <div className='flex gap-2 items-center mb-3'>
@@ -65,7 +59,7 @@ const SearchContainer = () => {
               </div>
             </div>
             <div className='flex flex-col'>
-              <div className='flex flex-col gap-16 h-full'>
+              <div className='flex flex-col gap-3 h-full'>
                 <SearchBox
                   placeholder='What Do You Want To Learn?'
                   autoFocus
@@ -77,32 +71,7 @@ const SearchContainer = () => {
                     reset: 'hidden',
                   }}
                 />
-                <div className='grid grid-cols-2 gap-9'>
-                  <div className='w-full flex flex-col'>
-                    <div className='font-greycliff font-semibold text-lg text-white'>
-                      In Courses
-                    </div>
-                    <Index indexName='COURSES'>
-                      <Configure hitsPerPage={3} />
-                      <Hits
-                        hitComponent={Hit}
-                        classNames={{ list: 'divide-y' }}
-                      />
-                    </Index>
-                  </div>
-                  <div className='w-full flex flex-col'>
-                    <div className='font-greycliff font-semibold text-lg text-white'>
-                      In Certificates
-                    </div>
-                    <Index indexName='CERTIFICATES'>
-                      <Configure hitsPerPage={3} />
-                      <Hits
-                        hitComponent={Hit}
-                        classNames={{ list: 'divide-y' }}
-                      />
-                    </Index>
-                  </div>
-                </div>
+                <Hits hitComponent={Hit} classNames={{ list: 'divide-y' }} />
               </div>
             </div>
           </div>
@@ -118,4 +87,4 @@ const SearchContainer = () => {
   );
 };
 
-export default SearchContainer;
+export default MobileSearchContainer;

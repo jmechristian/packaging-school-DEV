@@ -30,16 +30,6 @@ export default function TextInput() {
             placeholder='What do you want to learn?'
           />
         </div>
-        <button
-          type='button'
-          className='relative -ml-px inline-flex items-center gap-x-1.5 rounded-r-md px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50'
-        >
-          <ChevronDownIcon
-            className='-ml-0.5 h-5 w-5 text-gray-400 text=lg font-greycliff'
-            aria-hidden='true'
-          />
-          All
-        </button>
       </div>
     </div>
   );
