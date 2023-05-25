@@ -15,12 +15,15 @@ const searchClient = algoliasearch(
 export function ProductItem({ hit, components }) {
   return (
     <a href={hit.slug} className='aa-ItemLink'>
-      <div className='flex flex-col gap-2'>
-        <div className='font-greycliff font-semibold text-lg'>
+      <div className='flex flex-col px-3 py-1.5'>
+        <div className='font-greycliff font-semibold leading-snug'>
           <components.Highlight hit={hit} attribute='title' />
         </div>
-        <div className='aa-ItemTitle'>
+        <div className='aa-ItemTitle line-clamp-2 text-sm text-slate-600'>
           <components.Highlight hit={hit} attribute='subheadline' />
+        </div>
+        <div className='aa-ItemTitle line-clamp-2 text-sm text-slate-600'>
+          <components.Highlight hit={hit} attribute='subhead' />
         </div>
       </div>
     </a>
@@ -37,9 +40,17 @@ const HomeHero = () => {
     searchClient,
     indexName: 'COURSES_query_suggestions',
     getSearchParams() {
-      return recentSearchesPlugin.data.getAlgoliaSearchParams({
-        hitsPerPage: 5,
-      });
+      return {
+        hitsPerPage: 12,
+      };
+    },
+    transformSource({ source }) {
+      return {
+        ...source,
+        onSelect({ setIsOpen }) {
+          setIsOpen(true);
+        },
+      };
     },
   });
 
@@ -94,32 +105,66 @@ const HomeHero = () => {
                   },
                 },
               },
+              {
+                sourceId: 'CERTIFICATES',
+                getItems() {
+                  return getAlgoliaResults({
+                    searchClient,
+                    queries: [
+                      {
+                        indexName: 'CERTIFICATES',
+                        query,
+                      },
+                    ],
+                  });
+                },
+                templates: {
+                  item({ item, components }) {
+                    return <ProductItem hit={item} components={components} />;
+                  },
+                },
+              },
+              {
+                sourceId: 'LESSONS',
+                getItems() {
+                  return getAlgoliaResults({
+                    searchClient,
+                    queries: [
+                      {
+                        indexName: 'LESSONS',
+                        query,
+                      },
+                    ],
+                  });
+                },
+                templates: {
+                  item({ item, components }) {
+                    return <ProductItem hit={item} components={components} />;
+                  },
+                },
+              },
+              {
+                sourceId: 'LIBRARY',
+                getItems() {
+                  return getAlgoliaResults({
+                    searchClient,
+                    queries: [
+                      {
+                        indexName: 'LIBRARY',
+                        query,
+                      },
+                    ],
+                  });
+                },
+                templates: {
+                  item({ item, components }) {
+                    return <ProductItem hit={item} components={components} />;
+                  },
+                },
+              },
             ];
           }}
         />
-        <div className='flex flex-wrap gap-2'>
-          <div className='rounded-lg border border-slate-300 p-1.5 md:p-2 flex gap-1 text-slate-500 text-xs md:text-sm'>
-            Sustainability
-          </div>
-          <div className='rounded-lg border border-slate-300 p-1.5 md:p-2 flex gap-1 text-slate-500 text-xs md:text-sm'>
-            Corrugated
-          </div>
-          <div className='rounded-lg border border-slate-300 p-1.5 md:p-2 flex gap-1 text-slate-500 text-xs md:text-sm'>
-            Glass
-          </div>
-          <div className='rounded-lg border border-slate-300 p-1.5 md:p-2 flex gap-1 text-slate-500 text-xs md:text-sm'>
-            Shipping
-          </div>
-          <div className='rounded-lg border border-slate-300 p-1.5 md:p-2 flex gap-1 text-slate-500 text-xs md:text-sm'>
-            Design Process
-          </div>
-          <div className='rounded-lg border border-slate-300 p-1.5 md:p-2 flex gap-1 text-slate-500 text-xs md:text-sm'>
-            Certifications
-          </div>
-          <div className='rounded-lg border border-slate-300 p-1.5 md:p-2 flex gap-1 text-slate-500 text-xs md:text-sm'>
-            Automotive
-          </div>
-        </div>
       </div>
       <div className='flex flex-col gap-9 md:gap-12 lg:max-w-5xl lg:mx-auto lg:text-center lg:pt-24'>
         <div className='w-full flex flex-col gap-1 items-start md:items-center'>
