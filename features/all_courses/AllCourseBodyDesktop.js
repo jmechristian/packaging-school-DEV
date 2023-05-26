@@ -15,11 +15,6 @@ const AllCourseBodyDesktop = ({ coursesToShow }) => {
         </div>
       </div>
       <div className='w-2/3 xl:w-3/4 flex flex-col gap-10'>
-        <div className='flex flex-col gap-6'>
-          <div className='w-full'>
-            <AllCourseSearch />
-          </div>
-        </div>
         <AllCourseCert />
         <AllCourseCourses
           coursesToShow={coursesToShow}

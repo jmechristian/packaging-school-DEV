@@ -6,6 +6,7 @@ import {
   CakeIcon,
   CogIcon,
 } from '@heroicons/react/24/solid';
+import CertIcon from '../icons/CertIcon';
 
 const CertMenuItem = ({ title, content, bgColor, icon, learnMore, apply }) => {
   const setIcon = () => {
@@ -19,7 +20,9 @@ const CertMenuItem = ({ title, content, bgColor, icon, learnMore, apply }) => {
       case 'food':
         return <CakeIcon className='w-6 h-6' />;
       default:
-        return <AcademicCapIcon className='w-6 h-6' />;
+        return (
+          <CertIcon className='w-6 h-6 stroke-2 stroke-white fill-transparent' />
+        );
     }
   };
 
