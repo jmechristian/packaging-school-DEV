@@ -316,3 +316,13 @@ type Timestamp @model @auth(rules: [{ allow: public }]) {
   time: String!
   description: String
 }
+
+######### Staff #########
+
+type Staff @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  fullName: String!
+  title: String!
+  image: String!
+  linkedIn: String
+}

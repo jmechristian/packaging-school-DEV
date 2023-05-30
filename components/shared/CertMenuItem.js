@@ -43,7 +43,7 @@ const CertMenuItem = ({ title, content, bgColor, icon, learnMore, apply }) => {
             </div>
           </div>
 
-          <div className='text-sm line-clamp-3'>{content}</div>
+          <div className='text-sm line-clamp-3 text-slate-600'>{content}</div>
         </div>
       </div>
       <div className='flex items-center gap-1 h-full'>

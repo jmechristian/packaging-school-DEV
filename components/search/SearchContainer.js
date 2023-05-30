@@ -16,25 +16,176 @@ import {
   InstantSearch,
   SearchBox,
   Highlight,
+  Configure,
 } from 'react-instantsearch-hooks-web';
+import { ArrowUpRightIcon } from '@heroicons/react/24/outline';
+import CMPMIcon from '../icons/CMPMIcon';
+import GlobalMaterialsIcon from '../icons/GlobalMaterialsIcon';
+import LotmIcon from '../icons/LotmIcon';
 
 const searchClient = algoliasearch(
   process.env.NEXT_PUBLIC_ALGOLIA_ID,
   process.env.NEXT_PUBLIC_ALGOLIA_API_KEY
 );
 
-export function ProductItem({ hit, components }) {
+export function ProductItem({ hit }) {
   return (
-    <a href={hit.slug} className='aa-ItemLink'>
-      <div className='flex flex-col px-3 py-1.5'>
-        <div className='font-greycliff font-semibold leading-snug text-lg dark:text-white'>
-          <Highlight hit={hit} attribute='title' />
+    <a
+      href={hit.slug}
+      className='aa-ItemLink hover:bg-slate-700 cursor-pointer'
+    >
+      <div className='grid grid-cols-5 w-full'>
+        <div className='flex flex-col px-3 py-1.5 col-span-4'>
+          <div className='font-greycliff font-semibold leading-snug text-lg dark:text-white'>
+            <Highlight hit={hit} attribute='title' />
+          </div>
+          <div className='aa-ItemTitle line-clamp-2  text-slate-600 dark:text-slate-400'>
+            <Highlight hit={hit} attribute='subheadline' />
+          </div>
+          <div className='aa-ItemTitle line-clamp-2   text-slate-600 dark:text-slate-400'>
+            <Highlight hit={hit} attribute='subhead' />
+          </div>
         </div>
-        <div className='aa-ItemTitle line-clamp-2  text-slate-600 dark:text-white/50'>
-          <Highlight hit={hit} attribute='subheadline' />
+        <div className='col-span-1 flex items-center justify-end'>
+          <ArrowUpRightIcon className='w-5 h-5 mr-2 stroke-white' />
         </div>
-        <div className='aa-ItemTitle line-clamp-2   text-slate-600'>
-          <Highlight hit={hit} attribute='subhead' />
+      </div>
+    </a>
+  );
+}
+
+export function CertItem({ hit }) {
+  const setBackground = () => {
+    switch (hit.title) {
+      case 'Certificate of Mastery in Packaging Management':
+        return 'bg-gradient-to-br from-base-brand to-slate-700';
+      case 'Certificate of Packaging Science':
+        return 'bg-gradient-to-br from-base-dark to-slate-900';
+      case 'Automotive Packaging Certificate':
+        return 'bg-gradient-to-br from-clemson to-orange-800';
+      default:
+        return 'bg-gradient-to-br from-base-brand to-slate-900';
+    }
+  };
+
+  return (
+    <a
+      href={hit.slug}
+      className='aa-ItemLink hover:bg-slate-700 cursor-pointer'
+    >
+      <div className='grid grid-cols-5 w-full'>
+        <div className='px-3 py-1.5 col-span-4'>
+          <div className='flex gap-3 w-full'>
+            <div>
+              <CMPMIcon scale={12} background={setBackground()} />
+            </div>
+            <div className='flex flex-col '>
+              <div className='font-greycliff font-semibold leading-snug text-lg dark:text-white'>
+                <Highlight hit={hit} attribute='title' />
+              </div>
+              <div className='aa-ItemTitle line-clamp-2  text-slate-600 dark:text-slate-400'>
+                <Highlight hit={hit} attribute='subheadline' />
+              </div>
+              <div className='aa-ItemTitle line-clamp-2   text-slate-600 dark:text-slate-400'>
+                <Highlight hit={hit} attribute='subhead' />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className='col-span-1 flex items-center justify-end'>
+          <ArrowUpRightIcon className='w-5 h-5 mr-2 stroke-white' />
+        </div>
+      </div>
+    </a>
+  );
+}
+
+export function CourseItem({ hit }) {
+  const setBackground = () => {
+    switch (hit.title) {
+      case 'Certificate of Mastery in Packaging Management':
+        return 'bg-gradient-to-br from-base-brand to-slate-700';
+      case 'Certificate of Packaging Science':
+        return 'bg-gradient-to-br from-base-dark to-slate-900';
+      case 'Automotive Packaging Certificate':
+        return 'bg-gradient-to-br from-clemson to-orange-800';
+      default:
+        return 'bg-gradient-to-br from-green-600 to-green-900';
+    }
+  };
+
+  return (
+    <a
+      href={hit.slug}
+      className='aa-ItemLink hover:bg-slate-700 cursor-pointer'
+    >
+      <div className='grid grid-cols-5 w-full'>
+        <div className='px-3 py-1.5 col-span-4'>
+          <div className='flex gap-3 w-full'>
+            <div>
+              <GlobalMaterialsIcon scale={12} background={setBackground()} />
+            </div>
+            <div className='flex flex-col '>
+              <div className='font-greycliff font-semibold leading-snug text-lg dark:text-white'>
+                <Highlight hit={hit} attribute='title' />
+              </div>
+              <div className='aa-ItemTitle line-clamp-2  text-slate-600 dark:text-slate-400'>
+                <Highlight hit={hit} attribute='subheadline' />
+              </div>
+              <div className='aa-ItemTitle line-clamp-2   text-slate-600 dark:text-slate-400'>
+                <Highlight hit={hit} attribute='subhead' />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className='col-span-1 flex items-center justify-end'>
+          <ArrowUpRightIcon className='w-5 h-5 mr-2 stroke-white' />
+        </div>
+      </div>
+    </a>
+  );
+}
+
+export function LOTMItem({ hit }) {
+  const setBackground = () => {
+    switch (hit.title) {
+      case 'Certificate of Mastery in Packaging Management':
+        return 'bg-gradient-to-br from-base-brand to-slate-700';
+      case 'Certificate of Packaging Science':
+        return 'bg-gradient-to-br from-base-dark to-slate-900';
+      case 'Automotive Packaging Certificate':
+        return 'bg-gradient-to-br from-clemson to-orange-800';
+      default:
+        return 'bg-gradient-to-br from-red-500 to-red-900';
+    }
+  };
+
+  return (
+    <a
+      href={hit.slug}
+      className='aa-ItemLink hover:bg-slate-700 cursor-pointer'
+    >
+      <div className='grid grid-cols-5 w-full'>
+        <div className='px-3 py-1.5 col-span-4'>
+          <div className='flex gap-3 w-full'>
+            <div>
+              <LotmIcon style='w-12 h-12 fill-white' />
+            </div>
+            <div className='flex flex-col '>
+              <div className='font-greycliff font-semibold leading-snug text-lg dark:text-white'>
+                <Highlight hit={hit} attribute='title' />
+              </div>
+              <div className='aa-ItemTitle line-clamp-2  text-slate-600 dark:text-slate-400'>
+                <Highlight hit={hit} attribute='subheadline' />
+              </div>
+              <div className='aa-ItemTitle line-clamp-2   text-slate-600 dark:text-slate-400'>
+                <Highlight hit={hit} attribute='subhead' />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className='col-span-1 flex items-center justify-end'>
+          <ArrowUpRightIcon className='w-5 h-5 mr-2 stroke-white' />
         </div>
       </div>
     </a>
@@ -59,6 +210,12 @@ const SearchContainer = () => {
     },
     {
       value: 'packaging design',
+    },
+    {
+      value: 'packaging solution',
+    },
+    {
+      value: 'design a box',
     },
   ];
 
@@ -122,8 +279,17 @@ const SearchContainer = () => {
 
   return (
     <div className='fixed inset-0 justify-center items-between py-20 bg-black/60 backdrop-blur-sm z-[60]'>
+      <div
+        className='absolute right-6 top-6 cursor-pointer'
+        onClick={() => dispatch(closeSearch())}
+      >
+        <XMarkIcon className='w-10 h-10 text-white' />
+      </div>
       <div className='dark:bg-[#222] bg-white w-full h-full rounded-lg lg:max-w-6xl lg:mx-auto  grid grid-cols-3 '>
-        <div className='col-span-2 p-9'>
+        <div
+          className='col-span-2 p-9 grid overflow-y-scroll relative'
+          id='scrollers'
+        >
           <InstantSearch
             searchClient={searchClient}
             indexName='COURSES'
@@ -132,8 +298,9 @@ const SearchContainer = () => {
             <div className='w-full flex flex-col gap-6'>
               <SearchBox
                 classNames={{
-                  input: 'w-full text-lg font-medium py-4',
+                  input: 'w-full text-xl font-medium py-4',
                   submitIcon: 'hidden',
+                  resetIcon: 'hidden',
                 }}
                 placeholder='What do you want to learn today?...'
               />
@@ -142,14 +309,39 @@ const SearchContainer = () => {
                 <div className='w-full bg-slate-400 text-slate-700 text-sm font-bold font-greycliff px-6 py-1.5'>
                   CERTIFICATES
                 </div>
-                <Hits hitComponent={ProductItem} />
+                <Hits
+                  hitComponent={CertItem}
+                  classNames={{ list: 'flex flex-col gap-4' }}
+                />
               </Index>
 
               <Index indexName='COURSES'>
+                <Configure hitsPerPage={5} />
                 <div className='w-full bg-slate-400 text-slate-700 text-sm font-bold font-greycliff px-6 py-1.5'>
                   COURSES
                 </div>
-                <Hits />
+                <Hits
+                  hitComponent={CourseItem}
+                  classNames={{ list: 'flex flex-col gap-4' }}
+                />
+              </Index>
+              <Index indexName='LESSONS'>
+                <div className='w-full bg-slate-400 text-slate-700 text-sm font-bold font-greycliff px-6 py-1.5'>
+                  LEARNING OF THE MONTH
+                </div>
+                <Hits
+                  hitComponent={LOTMItem}
+                  classNames={{ list: 'flex flex-col gap-4' }}
+                />
+              </Index>
+              <Index indexName='LIBRARY'>
+                <div className='w-full bg-slate-400 text-slate-700 text-sm font-bold font-greycliff px-6 py-1.5'>
+                  LIBRARY
+                </div>
+                <Hits
+                  hitComponent={ProductItem}
+                  classNames={{ list: 'flex flex-col gap-4' }}
+                />
               </Index>
             </div>
           </InstantSearch>
@@ -191,11 +383,11 @@ const SearchContainer = () => {
               <div className='flex flex-wrap items-center gap-3 mt-3'>
                 {tags.map((tag) => (
                   <div
-                    className='flex items-center gap-1 bg-slate-200 dark:bg-white/40 rounded-lg px-3 py-1.5'
+                    className='flex items-center gap-1 bg-slate-200 dark:bg-slate-500 rounded-lg px-3 py-1.5'
                     key={tag.value}
                   >
                     <div>
-                      <MagnifyingGlassIcon className='w-4 h-4 text-slate-600 dark:text-white' />
+                      <MagnifyingGlassIcon className='w-4 h-4 text-slate-700 dark:text-white' />
                     </div>
                     <div className='text-sm'>{tag.value}</div>
                   </div>

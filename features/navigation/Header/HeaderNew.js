@@ -40,7 +40,7 @@ const navigation = {
   ],
   pages: [
     { name: 'Library', href: '#' },
-    { name: 'About', href: '#' },
+    { name: 'About', href: '/about' },
     // { name: 'Campus Store', href: '#' },
   ],
 };
@@ -286,13 +286,13 @@ export default function HeaderNew() {
                                             apply='/'
                                             learnMore='/'
                                             content='A 12-month, PhD-led program teaching you the latest technologies accelerating the packaging field in the space of packaging development, material procurement, and organizational management.'
-                                            bgColor='bg-gradient-to-br from-base-light to-slate-900'
+                                            bgColor='bg-gradient-to-br from-base-brand to-slate-700'
                                             // icon={'academicHat'}
                                           />
 
                                           <CertMenuItem
                                             title='Automotive Packaging Certificate'
-                                            bgColor='bg-gradient-to-br from-clemson to-slate-900'
+                                            bgColor='bg-gradient-to-br from-clemson to-orange-800'
                                             content='The first and only 100% online academic program that will enable you to develop the professional skill set you need to be successful in the automotive packaging field.'
                                             apply='/'
                                             learnMore='/'
@@ -304,7 +304,7 @@ export default function HeaderNew() {
                                             title='Certificate of Packaging Science'
                                             apply='/'
                                             learnMore='/'
-                                            bgColor='bg-gradient-to-br from-base-brand to-slate-900'
+                                            bgColor='bg-gradient-to-br from-base-dark to-slate-900'
                                             content='A 12-month, online program teaching the materials, processes, and influences shaping the advancement of the industry. Speak the language of packaging and be a key differentiator for you and your company.'
                                             // icon='beaker'
                                           />
