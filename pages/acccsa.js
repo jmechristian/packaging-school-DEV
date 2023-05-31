@@ -1,7 +1,9 @@
 import React from 'react';
 import AcccsaHero from '../components/acccsa/AcccsaHero';
+import AcccsaCourses from '../components/acccsa/AcccsaCourses';
+import Link from 'next/link';
 
-const AcccsaCourses = [
+const courses = [
   {
     category: 'Industria',
     items: [
@@ -125,7 +127,25 @@ const AcccsaCourses = [
 const Page = () => {
   return (
     <>
+      <div className='w-full flex justify-center items-center bg-base-mid overflow-hidden'>
+        <div className='flex gap-12 max-w-7xl mx-auto py-4'>
+          <div className='font-greycliff text-white font-semibold text-lg'>
+            <Link href='http://www.acccsa.org/'>ACCCSA.org</Link>
+          </div>
+          <div className='font-greycliff text-white font-semibold text-lg'>
+            <Link href='http://www.revistacorrugando.com/'>
+              RevistaCorrugando.com
+            </Link>
+          </div>
+          <div className='font-greycliff text-white font-semibold text-lg'>
+            <Link href='https://packagingschool.com/acccsa/?preview_id=4153&preview_nonce=bff4f21f7d&preview=true#Registrese'>
+              Registrese
+            </Link>
+          </div>
+        </div>
+      </div>
       <AcccsaHero />
+      <AcccsaCourses courses={courses} />
     </>
   );
 };
