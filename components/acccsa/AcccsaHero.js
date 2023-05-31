@@ -25,7 +25,7 @@ export default function AcccsaHero() {
             </div>
           </div>
           <div className='text-center'>
-            <h1 className='text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl'>
+            <h1 className='text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl font-greycliff'>
               Educación en línea de The Packaging School - AICC para asociados
               de ACCCSA
             </h1>

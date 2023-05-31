@@ -148,7 +148,7 @@ const Page = () => {
       <AcccsaHero />
       <AcccsaCourses courses={courses} />
       <div className='relative flex bg-slate-200 rounded-lg py-9 px-6'>
-        <div className='max-w-7xl mx-auto flex flex-row-reverse gap-9'>
+        <div className='max-w-7xl mx-auto flex gap-9'>
           <div className='p-12'>
             <div className='text-5xl font-greycliff font-semibold'>
               Regístrese aquí
