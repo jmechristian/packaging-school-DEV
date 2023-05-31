@@ -3,7 +3,7 @@ import AcccsaItem from './AcccsaItem';
 
 const AcccsaCourses = ({ courses }) => {
   return (
-    <div className='max-w-7xl mx-auto flex flex-col gap-8 px-6 lg:px-0 pb-16'>
+    <div className='max-w-7xl mx-auto flex flex-col gap-8 px-6 xl:px-0 pb-16'>
       <h2 className='mt-16 text-2xl font-bold tracking-tight text-gray-900 font-greycliff'>
         Cursos diseñados para su aprendizaje.
       </h2>
