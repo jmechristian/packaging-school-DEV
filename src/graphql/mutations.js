@@ -3307,6 +3307,54 @@ export const deleteTimestamp = /* GraphQL */ `
     }
   }
 `;
+export const createStaff = /* GraphQL */ `
+  mutation CreateStaff(
+    $input: CreateStaffInput!
+    $condition: ModelStaffConditionInput
+  ) {
+    createStaff(input: $input, condition: $condition) {
+      id
+      fullName
+      title
+      image
+      linkedIn
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateStaff = /* GraphQL */ `
+  mutation UpdateStaff(
+    $input: UpdateStaffInput!
+    $condition: ModelStaffConditionInput
+  ) {
+    updateStaff(input: $input, condition: $condition) {
+      id
+      fullName
+      title
+      image
+      linkedIn
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteStaff = /* GraphQL */ `
+  mutation DeleteStaff(
+    $input: DeleteStaffInput!
+    $condition: ModelStaffConditionInput
+  ) {
+    deleteStaff(input: $input, condition: $condition) {
+      id
+      fullName
+      title
+      image
+      linkedIn
+      createdAt
+      updatedAt
+    }
+  }
+`;
 export const createCertificateCourses = /* GraphQL */ `
   mutation CreateCertificateCourses(
     $input: CreateCertificateCoursesInput!

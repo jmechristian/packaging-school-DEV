@@ -195,7 +195,7 @@ const people2 = [
 const Index = () => {
   return (
     <>
-      <div className='w-full flex justify-center items-center bg-base-mid mt-24'>
+      <div className='w-full flex justify-center items-center bg-base-mid'>
         <div className='flex gap-12 max-w-7xl mx-auto py-4'>
           <div className='font-greycliff text-white font-semibold text-lg'>
             <Link href='/automotive-resources'>Free Resources</Link>

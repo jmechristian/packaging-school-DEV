@@ -3091,6 +3091,45 @@ export const onDeleteTimestamp = /* GraphQL */ `
     }
   }
 `;
+export const onCreateStaff = /* GraphQL */ `
+  subscription OnCreateStaff {
+    onCreateStaff {
+      id
+      fullName
+      title
+      image
+      linkedIn
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateStaff = /* GraphQL */ `
+  subscription OnUpdateStaff {
+    onUpdateStaff {
+      id
+      fullName
+      title
+      image
+      linkedIn
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteStaff = /* GraphQL */ `
+  subscription OnDeleteStaff {
+    onDeleteStaff {
+      id
+      fullName
+      title
+      image
+      linkedIn
+      createdAt
+      updatedAt
+    }
+  }
+`;
 export const onCreateCertificateCourses = /* GraphQL */ `
   subscription OnCreateCertificateCourses {
     onCreateCertificateCourses {

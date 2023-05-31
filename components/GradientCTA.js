@@ -19,16 +19,18 @@ const GradientCTA = ({
         <div className='mt-10 flex items-center gap-x-6 lg:mt-0 lg:flex-shrink-0'>
           <a
             href={buttonLink}
-            className='rounded-md bg-clemson font-greycliff px-5 py-4 text-sm md:text-xl font-bold text-white shadow-sm hover:bg-clemson-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
+            className='rounded-md bg-clemson font-greycliff px-5 py-4 cursor-pointer text-sm md:text-xl font-bold text-white shadow-sm hover:bg-clemson-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
           >
             {buttonText}
           </a>
-          <a
-            href={secondaryButtonLink}
-            className='text-sm md:text-lg font-greycliff font-semibold leading-6 text-white'
-          >
-            {secondaryButtonText} <span aria-hidden='true'>→</span>
-          </a>
+          {secondaryButtonLink && (
+            <a
+              href={secondaryButtonLink}
+              className='text-sm md:text-lg font-greycliff font-semibold cursor-pointer leading-6 text-white'
+            >
+              {secondaryButtonText} <span aria-hidden='true'>→</span>
+            </a>
+          )}
         </div>
       </div>
     </div>

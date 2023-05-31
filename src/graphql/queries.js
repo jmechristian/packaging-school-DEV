@@ -2256,6 +2256,39 @@ export const listTimestamps = /* GraphQL */ `
     }
   }
 `;
+export const getStaff = /* GraphQL */ `
+  query GetStaff($id: ID!) {
+    getStaff(id: $id) {
+      id
+      fullName
+      title
+      image
+      linkedIn
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listStaff = /* GraphQL */ `
+  query ListStaff(
+    $filter: ModelStaffFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listStaff(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        fullName
+        title
+        image
+        linkedIn
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
 export const getCertificateCourses = /* GraphQL */ `
   query GetCertificateCourses($id: ID!) {
     getCertificateCourses(id: $id) {
