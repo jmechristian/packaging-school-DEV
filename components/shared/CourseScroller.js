@@ -12,18 +12,61 @@ const CourseScroller = ({
   link_text,
   category,
 }) => {
-  const [freeCourses, setFreeCourses] = useState([]);
+  //   const [freeCourses, setFreeCourses] = useState([]);
 
-  const { allCourses } = useSelector((state) => state.course_filter);
+  //   const { allCourses } = useSelector((state) => state.course_filter);
   const scrollRef = useRef();
 
-  useEffect(() => {
-    allCourses &&
-      setFreeCourses(
-        allCourses.filter((c) => c.node.categories[0].category === category)
-      );
-    console.log(freeCourses);
-  }, [setFreeCourses, allCourses]);
+  //   useEffect(() => {
+  //     allCourses &&
+  //       setFreeCourses(
+  //         allCourses.filter((c) => c.node.categories[0].category === category)
+  //       );
+  //     console.log(freeCourses);
+  //   }, [setFreeCourses, allCourses]);
+
+  const courses = [
+    {
+      uid: 'paperboard-cartons-course',
+      title: 'Paperboard Cartons',
+      subtitle:
+        'Explore the capabilities of paperboard cartons in this course, and comprehend why it’s widely used across the packaging industry.',
+      video: 'https://www.youtube.com/watch?v=YZ5tmiPh1Tw',
+      price: 399,
+      hours: 6,
+      lessons: 61,
+    },
+    {
+      uid: 'paperboard-cartons-course',
+      title: 'Paperboard Cartons',
+      subtitle:
+        'Explore the capabilities of paperboard cartons in this course, and comprehend why it’s widely used across the packaging industry.',
+      video: 'https://www.youtube.com/watch?v=YZ5tmiPh1Tw',
+      price: 399,
+      hours: 6,
+      lessons: 61,
+    },
+    {
+      uid: 'paperboard-cartons-course',
+      title: 'Paperboard Cartons',
+      subtitle:
+        'Explore the capabilities of paperboard cartons in this course, and comprehend why it’s widely used across the packaging industry.',
+      video: 'https://www.youtube.com/watch?v=YZ5tmiPh1Tw',
+      price: 399,
+      hours: 6,
+      lessons: 61,
+    },
+    {
+      uid: 'paperboard-cartons-course',
+      title: 'Paperboard Cartons',
+      subtitle:
+        'Explore the capabilities of paperboard cartons in this course, and comprehend why it’s widely used across the packaging industry.',
+      video: 'https://www.youtube.com/watch?v=YZ5tmiPh1Tw',
+      price: 399,
+      hours: 6,
+      lessons: 61,
+    },
+  ];
 
   return (
     <div className='flex flex-col bg-slate-200 rounded-lg lg:items-start gap-9 py-12 px-6 lg:px-12 lg:max-w-7xl lg:mx-auto w-full'>
@@ -34,7 +77,17 @@ const CourseScroller = ({
               <div className='font-greycliff font-bold text-2xl md:text-3xl'>
                 {headline}
               </div>
-              <div className='text-slate-600'>{subheadline}</div>
+              <div className='text-slate-600'>
+                <span
+                  className='underline font-semibold'
+                  onClick={() =>
+                    window.open('/courses/packaging-foundations', '_blank')
+                  }
+                >
+                  Packaging Foundations
+                </span>{' '}
+                plus a materials course of your choosing.
+              </div>
             </div>
           </div>
           <div className='bg-white border border-slate-600 rounded-lg p-3 font-greycliff hidden lg:block font-semibold'>
@@ -43,24 +96,18 @@ const CourseScroller = ({
         </div>
       </div>
       <div className='lg:grid grid-cols-4 gap-6 hidden'>
-        {freeCourses &&
-          freeCourses.map((course, i) => (
-            <div
-              key={course.node.course_title[0].text}
-              className='inline-block'
-            >
+        {courses &&
+          courses.map((course, i) => (
+            <div key={course.title} className='inline-block'>
               <CourseCard
-                category={course.node.categories[0].category}
-                title={course.node.course_title[0].text}
-                desc={
-                  course.node.course_subtitle &&
-                  course.node.course_subtitle[0].text
-                }
-                video={course.node.embed_id}
-                hours={course.node.course_hours}
-                lessons={course.node.course_lessons}
-                price={course.node.course_price}
-                slug={course.node._meta.uid}
+                category={'Materials'}
+                title={course.title}
+                desc={course.subtitle}
+                video={course.video}
+                hours={course.hours}
+                lessons={course.lessons}
+                price={course.price}
+                slug={course.uid}
                 reset={null}
               />
             </div>
@@ -68,32 +115,23 @@ const CourseScroller = ({
       </div>
       <div className='lg:hidden block'>
         <Scroller rows='2' scroll={scrollRef}>
-          {freeCourses &&
-            freeCourses.map((course, i) => (
-              <div
-                key={course.node.course_title[0].text}
-                className='inline-block'
-              >
+          {courses &&
+            courses.map((course, i) => (
+              <div key={course.title} className='inline-block'>
                 <CourseCard
-                  category={course.node.categories[0].category}
-                  title={course.node.course_title[0].text}
-                  desc={
-                    course.node.course_subtitle &&
-                    course.node.course_subtitle[0].text
-                  }
-                  video={course.node.embed_id}
-                  hours={course.node.course_hours}
-                  lessons={course.node.course_lessons}
-                  price={course.node.course_price}
-                  slug={course.node._meta.uid}
+                  category={'Materials'}
+                  title={course.title}
+                  desc={course.subtitle}
+                  video={course.video}
+                  hours={course.hours}
+                  lessons={course.lessons}
+                  price={course.price}
+                  slug={course.uid}
                   reset={null}
                 />
               </div>
             ))}
         </Scroller>
-      </div>
-      <div className='flex w-full text-slate-700 flex-col gap-1 items-center lg:text-center mt-3 font-bold font-greycliff text-xl'>
-        <Link href='/all_courses'>Explore All Courses</Link>
       </div>
     </div>
   );

@@ -4,10 +4,11 @@ import SalesDetails from '../components/sales-bootcamp/SalesDetails';
 import SalesHeroVideo from '../components/sales-bootcamp/SalesHeroVideo';
 import CourseScroller from '../components/shared/CourseScroller';
 import SalesFeatures from '../components/sales-bootcamp/SalesFeatures';
+import SalesStaff from '../components/sales-bootcamp/SalesStaff';
 
 const Page = () => {
   return (
-    <>
+    <div className='flex flex-col gap-9'>
       <SalesHeroVideo />
       <SalesFeatures />
       <SalesDetails />
@@ -18,7 +19,8 @@ const Page = () => {
         link_text={'Register Now'}
         category='Materials'
       />
-    </>
+      <SalesStaff />
+    </div>
   );
 };
 
