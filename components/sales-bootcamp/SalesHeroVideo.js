@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import VideoPlayer from '../VideoPlayer';
 
 const navigation = [
   { name: 'Product', href: '#' },
@@ -57,13 +58,13 @@ export default function SalesHeroVideo() {
             </div>
             <div className='mt-16 flow-root sm:mt-24'>
               <div className='-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4'>
-                <img
-                  src='https://tailwindui.com/img/component-images/project-app-screenshot.png'
-                  alt='App screenshot'
-                  width={2432}
-                  height={1442}
-                  className='rounded-md shadow-2xl ring-1 ring-gray-900/10'
-                />
+                <div className='aspect-[16/9]'>
+                  <VideoPlayer
+                    videoEmbedLink={
+                      'https://player.vimeo.com/video/451535827?h=27b06b5bf3&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'
+                    }
+                  />
+                </div>
               </div>
             </div>
           </div>
