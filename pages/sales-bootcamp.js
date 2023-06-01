@@ -8,7 +8,7 @@ import SalesStaff from '../components/sales-bootcamp/SalesStaff';
 
 const Page = () => {
   return (
-    <div className='flex flex-col gap-9'>
+    <div className='flex flex-col gap-12'>
       <SalesHeroVideo />
       <SalesFeatures />
       <SalesDetails />
