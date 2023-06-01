@@ -1,19 +1,7 @@
-import { useState } from 'react';
-import { Dialog } from '@headlessui/react';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import VideoPlayer from '../VideoPlayer';
-import Link from 'next/link';
+import Script from 'next/script';
+import React from 'react';
 
-const navigation = [
-  { name: 'Product', href: '#' },
-  { name: 'Features', href: '#' },
-  { name: 'Marketplace', href: '#' },
-  { name: 'Company', href: '#' },
-];
-
-export default function SalesHeroVideo() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
+const Page = () => {
   return (
     <div className='bg-white'>
       <div className='relative isolate'>
@@ -29,11 +17,11 @@ export default function SalesHeroVideo() {
             }}
           />
         </div>
-        <div className='py-24 sm:py-32 lg:pb-40'>
-          <div className='mx-auto max-w-7xl px-6 lg:px-8'>
-            <div className='mx-auto max-w-3xl text-center'>
+        <div className='py-24 sm:py-32 lg:pb-40 grid grid-cols-1 lg:grid-cols-2 max-w-7xl mx-auto'>
+          <div className='px-6 lg:px-8'>
+            <div className='mx-auto max-w-3xl'>
               <img
-                className='w-44 lg:w-60 h-auto mx-auto mb-12'
+                className='w-44 h-auto mb-9'
                 src='https://packschool.s3.amazonaws.com/sandler_ps-logo.png'
                 alt='Sandler Sales Training'
               />
@@ -47,33 +35,15 @@ export default function SalesHeroVideo() {
                 team can implement from the first day to immediately start to
                 improve performance.
               </p>
-              <div className='mt-10 flex items-center justify-center gap-x-6'>
-                <Link href='/sales-bootcamp-registration-page'>
-                  <a className='rounded-md bg-clemson px-3.5 py-2.5 font-greycliff font-semibold text-white shadow-sm hover:bg-clemson-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'>
-                    Get started Today
-                  </a>
-                </Link>
-                <a
-                  href='https://packschool.s3.amazonaws.com/Sales-Bootcamp-Program-Outline.pdf'
-                  target='_blank'
-                  rel='noreferrer'
-                  className='font-semibold font-greycliff leading-6 text-gray-900'
-                >
-                  Download Program Outline <span aria-hidden='true'>→</span>
-                </a>
-              </div>
             </div>
-            <div className='mt-16 flow-root sm:mt-24'>
-              <div className='-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4'>
-                <div className='aspect-[16/9]'>
-                  <VideoPlayer
-                    videoEmbedLink={
-                      'https://player.vimeo.com/video/451535827?h=27b06b5bf3&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'
-                    }
-                  />
-                </div>
-              </div>
-            </div>
+          </div>
+          <div>
+            <div class='_form_69'></div>
+            <Script
+              src='https://packagingschool42200.activehosted.com/f/embed.php?id=69'
+              type='text/javascript'
+              charset='utf-8'
+            />
           </div>
         </div>
         <div
@@ -91,4 +61,6 @@ export default function SalesHeroVideo() {
       </div>
     </div>
   );
-}
+};
+
+export default Page;

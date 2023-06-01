@@ -4,7 +4,7 @@ const tiers = [
   {
     name: 'First 60 Days',
     id: 'tier-hobby',
-    href: '#',
+    href: '/sales-bootcamp-registration-page',
     priceMonthly: 'Fast Track Sales Bootcamp',
     description:
       'This program is the first step to our sales training. It introduces the core principles of the Sandler Sales System, promoting a more effective and efficient sales process. Each session is interactive and led by live instructors. You can expect real-time role-play opportunities, live reinforcement of learning, and customized coaching to answer your specific sales obstacles.',
@@ -17,7 +17,7 @@ const tiers = [
   {
     name: 'Last 30 Days',
     id: 'tier-team',
-    href: '#',
+    href: '/sales-bootcamp-registration-page',
     priceMonthly: 'Sales Mastery',
     description:
       'After the Fast Track Sales Bootcamp, you will move into Sales Mastery. These will be smaller group sessions where we will deep dive into the Sandler tactics to have a chance to role-play, brainstorm, and strategize advanced skills. These sessions will include advanced skill-building in prospecting, selling, account management, negotiating, and more. All sessions are interactive and led by live instructors.',
