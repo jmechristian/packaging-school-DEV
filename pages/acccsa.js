@@ -128,7 +128,10 @@ const courses = [
 const Page = () => {
   return (
     <>
-      <div className='w-full flex justify-center items-center bg-base-mid overflow-hidden'>
+      <div
+        className='w-full flex justify-center items-center bg-base-mid overflow-scroll relative z-20'
+        id='scrollers'
+      >
         <div className='flex gap-12 max-w-7xl mx-auto py-4'>
           <div className='font-greycliff text-white font-semibold text-lg'>
             <Link href='http://www.acccsa.org/'>ACCCSA.org</Link>
@@ -139,9 +142,7 @@ const Page = () => {
             </Link>
           </div>
           <div className='font-greycliff text-white font-semibold text-lg'>
-            <Link href='https://packagingschool.com/acccsa/?preview_id=4153&preview_nonce=bff4f21f7d&preview=true#Registrese'>
-              Registrese
-            </Link>
+            <Link href='#Registrese'>Registrese</Link>
           </div>
         </div>
       </div>
@@ -165,7 +166,7 @@ const Page = () => {
               ACCCSA le enviará un usuario y contraseña.
             </p>
           </div>
-          <div className='_form_51 max-w-fit py-9'></div>
+          <div className='_form_51 max-w-fit py-9' id='Registrese'></div>
           <Script
             src='https://packagingschool42200.activehosted.com/f/embed.php?id=51'
             type='text/javascript'
