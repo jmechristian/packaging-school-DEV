@@ -202,12 +202,11 @@ export default function HeaderNew() {
                   </>
                 ) : (
                   <>
-                    <a
-                      href='#'
-                      className='text-sm font-semibold text-clemson hover:text-gray-100 font-greycliff'
-                    >
-                      Hello, {user && user.name}
-                    </a>
+                    <Link href='/profile'>
+                      <a className='text-sm font-semibold text-clemson hover:text-gray-100 font-greycliff'>
+                        Hello, {user && user.name}
+                      </a>
+                    </Link>
                     <span className='h-6 w-px bg-gray-600' aria-hidden='true' />
                     <Link
                       href='/api/auth/logout'

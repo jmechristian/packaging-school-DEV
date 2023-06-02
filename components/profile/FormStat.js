@@ -1,6 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Amplify, API, graphqlOperation } from 'aws-amplify';
+import awsExports from '../../src/aws-exports';
+import { createCMPMForm, updateUser } from '../../src/graphql/mutations';
+import { useRouter } from 'next/router';
 
-const FormStat = ({ stat, label, link, updated }) => {
+Amplify.configure(awsExports);
+const FormStat = ({ stat, label, link, updated, userId }) => {
+  const [isErrors, setIsError] = useState(null);
+  const router = useRouter();
+
   const options = {
     weekday: 'long',
     year: 'numeric',
@@ -8,6 +16,30 @@ const FormStat = ({ stat, label, link, updated }) => {
     day: 'numeric',
   };
   const newDate = new Date(updated).toLocaleString();
+
+  const formCreateHandler = async () => {
+    const res = await API.graphql({
+      query: createCMPMForm,
+      variables: { input: { id: userId, cMPMFormUserId: userId } },
+    });
+    if (res.data) {
+      addCmpmToUser();
+    } else {
+      setIsError('Error creating new form.');
+    }
+  };
+
+  const addCmpmToUser = async () => {
+    const res = await API.graphql({
+      query: updateUser,
+      variables: { input: { id: userId, cmpmFormID: userId } },
+    });
+    if (res.data) {
+      router.push(link);
+    } else {
+      setIsError('Error updating user.');
+    }
+  };
 
   return (
     <div className='flex flex-col' key={label}>
@@ -27,8 +59,8 @@ const FormStat = ({ stat, label, link, updated }) => {
           )}
         </div>
         <div className='mt-5 flex justify-center sm:mt-0'>
-          <a
-            href={link}
+          <button
+            onClick={updated ? () => router.push(link) : formCreateHandler}
             className={`flex items-center justify-center rounded-md cursor-pointer ${
               !updated
                 ? 'bg-clemson hover:bg-clemson-dark'
@@ -36,7 +68,7 @@ const FormStat = ({ stat, label, link, updated }) => {
             } text-white px-4 py-3 text-sm font-semibold shadow-sm ring-1 ring-inset ring-slate-300 font-greycliff`}
           >
             {updated ? 'View' : 'Start'} Application
-          </a>
+          </button>
         </div>
       </div>
     </div>

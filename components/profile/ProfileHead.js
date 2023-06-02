@@ -55,7 +55,8 @@ export default function ProfileHead({ user }) {
           label='Application'
           stat={user.cmpmFormID}
           link={`/forms/cmpm/${user.id}`}
-          updated={user.cmpmForm.updatedOn}
+          updated={user.cmpmForm?.updatedOn}
+          userId={user.id}
         />
         <FormStat label='Certificates' />
         <FormStat label='Courses' />

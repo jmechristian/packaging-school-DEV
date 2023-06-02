@@ -261,8 +261,15 @@ type LMSCourse @model @auth(rules: [{ allow: public }]) {
   price: Int
   hours: Int
   videos: Int
+  preview: String
   seoImage: String
-  description: String
+  infoSheet: String
+  title: String
+  subheadline: String
+  what_learned: String
+  objectives: [String]
+  link: String
+  trial_link: String
   percentComplete: Int
 }
 
