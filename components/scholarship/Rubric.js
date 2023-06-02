@@ -1,5 +1,6 @@
 import React from 'react';
 import { CheckCircleIcon } from '@heroicons/react/20/solid';
+import Link from 'next/link';
 
 const benefits = [
   'Competitive salaries',
@@ -31,12 +32,11 @@ const Rubric = () => {
                 time but all decisions will go out at once.
               </p>
               <div className='mt-10 flex cursor-pointer'>
-                <a
-                  href='/about'
-                  className='text-lg font-greycliff font-bold leading-6 text-clemson'
-                >
-                  Download Rubric <span aria-hidden='true'>&rarr;</span>
-                </a>
+                <Link href='/about'>
+                  <a className='text-lg font-greycliff font-bold leading-6 text-clemson'>
+                    Download Rubric <span aria-hidden='true'>&rarr;</span>
+                  </a>
+                </Link>
               </div>
             </div>
           </div>
