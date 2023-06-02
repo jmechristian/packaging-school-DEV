@@ -1,6 +1,7 @@
 import React from 'react';
 import DoubleTestimonial from './DoubleTestimonial';
 import VideoPlayer from './VideoPlayer';
+import Link from 'next/link';
 
 const WhyUs = () => {
   return (
@@ -20,12 +21,11 @@ const WhyUs = () => {
               come take a journey of discovery with us.
             </p>
             <div className='mt-10 flex cursor-pointer'>
-              <a
-                href='/about'
-                className='text-lg font-greycliff font-bold leading-6 text-clemson'
-              >
-                Why Choose Us? <span aria-hidden='true'>&rarr;</span>
-              </a>
+              <Link href='/about'>
+                <a className='text-lg font-greycliff font-bold leading-6 text-clemson'>
+                  Why Choose Us? <span aria-hidden='true'>&rarr;</span>
+                </a>
+              </Link>
             </div>
           </div>
           <div className='w-full h-full aspect-[16/9]'>
