@@ -147,7 +147,11 @@ export default function ProfileDetails({ user, isEditing }) {
                 type='submit'
                 className='bg-transparent hover:bg-slate-300 border cursor-pointer border-slate-900 font-greycliff font-semibold px-4 py-2 rounded-lg w-fit text-right'
               >
-                {isSent ? 'Updated!' : 'Update Profile'}
+                {isSending
+                  ? 'Sending...'
+                  : !isSent
+                  ? 'Update Profile'
+                  : 'Updated!'}
               </button>
             </div>
           </form>
