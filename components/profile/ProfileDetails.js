@@ -204,11 +204,7 @@ export default function ProfileDetails({ user, isEditing }) {
                 Bio
               </dt>
               <dd className='mt-1  leading-6 text-slate-700 sm:mt-2'>
-                Fugiat ipsum ipsum deserunt culpa aute sint do nostrud anim
-                incididunt cillum culpa consequat. Excepteur qui ipsum aliquip
-                consequat sint. Sit id mollit nulla mollit nostrud in ea officia
-                proident. Irure nostrud pariatur mollit ad adipisicing
-                reprehenderit deserunt qui eu.
+                {user && user.bio}
               </dd>
             </div>
           </dl>
