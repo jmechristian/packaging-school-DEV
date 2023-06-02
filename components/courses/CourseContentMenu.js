@@ -59,7 +59,7 @@ const CourseContentMenu = ({ link, trialLink }) => {
       <div className='flex px-4 md:px-5 gap-3 md:5'>
         <button
           className='bg-white border border-clemson py-1.5 rounded-md shadow'
-          onClick={() => linkHandler(trialLink)}
+          onClick={() => window.open(link, '_blank')}
         >
           <div className='text-sm md:text-lg font-semibold text-clemson px-3 w-24 md:w-40'>
             Free Trial
@@ -67,7 +67,7 @@ const CourseContentMenu = ({ link, trialLink }) => {
         </button>
         <button
           className='bg-clemson py-1.5 lg:py-2 rounded-md shadow'
-          onClick={() => linkHandler(link)}
+          onClick={() => window.open(trialLink, '_blank')}
         >
           <div className='text-sm md:text-lg font-semibold text-white px-3 w-24 md:w-40'>
             Enroll Now
