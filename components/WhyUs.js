@@ -18,7 +18,7 @@ const WhyUs = () => {
               concepts. We help you see the why behind packaging wins and
               losses. Like air and water packaging surrounds us and will be a
               key to sustainability. Check out the example video here, and then
-              come take a journey of discovery with us.
+              come take a journey of discovery with us..
             </p>
             <div className='mt-10 flex cursor-pointer'>
               <Link href='/about'>
