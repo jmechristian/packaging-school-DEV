@@ -1139,6 +1139,7 @@ export const createCompany = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
@@ -1190,6 +1191,7 @@ export const updateCompany = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
@@ -1241,6 +1243,7 @@ export const deleteCompany = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
@@ -1288,6 +1291,7 @@ export const createUser = /* GraphQL */ `
       company
       email
       office
+      bio
       cell
       picture
       linkedin
@@ -1312,6 +1316,7 @@ export const createUser = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
@@ -1358,6 +1363,7 @@ export const createUser = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
@@ -1384,6 +1390,7 @@ export const createUser = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
@@ -1419,6 +1426,7 @@ export const updateUser = /* GraphQL */ `
       company
       email
       office
+      bio
       cell
       picture
       linkedin
@@ -1443,6 +1451,7 @@ export const updateUser = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
@@ -1489,6 +1498,7 @@ export const updateUser = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
@@ -1515,6 +1525,7 @@ export const updateUser = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
@@ -1550,6 +1561,7 @@ export const deleteUser = /* GraphQL */ `
       company
       email
       office
+      bio
       cell
       picture
       linkedin
@@ -1574,6 +1586,7 @@ export const deleteUser = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
@@ -1620,6 +1633,7 @@ export const deleteUser = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
@@ -1646,6 +1660,7 @@ export const deleteUser = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
@@ -1683,6 +1698,7 @@ export const createCMPMForm = /* GraphQL */ `
         company
         email
         office
+        bio
         cell
         picture
         linkedin
@@ -1778,6 +1794,7 @@ export const updateCMPMForm = /* GraphQL */ `
         company
         email
         office
+        bio
         cell
         picture
         linkedin
@@ -1873,6 +1890,7 @@ export const deleteCMPMForm = /* GraphQL */ `
         company
         email
         office
+        bio
         cell
         picture
         linkedin
@@ -2196,8 +2214,15 @@ export const createLMSCourse = /* GraphQL */ `
       price
       hours
       videos
+      preview
       seoImage
-      description
+      infoSheet
+      title
+      subheadline
+      what_learned
+      objectives
+      link
+      trial_link
       percentComplete
       createdAt
       updatedAt
@@ -2246,8 +2271,15 @@ export const updateLMSCourse = /* GraphQL */ `
       price
       hours
       videos
+      preview
       seoImage
-      description
+      infoSheet
+      title
+      subheadline
+      what_learned
+      objectives
+      link
+      trial_link
       percentComplete
       createdAt
       updatedAt
@@ -2296,8 +2328,15 @@ export const deleteLMSCourse = /* GraphQL */ `
       price
       hours
       videos
+      preview
       seoImage
-      description
+      infoSheet
+      title
+      subheadline
+      what_learned
+      objectives
+      link
+      trial_link
       percentComplete
       createdAt
       updatedAt
@@ -2524,6 +2563,7 @@ export const createStudent = /* GraphQL */ `
         company
         email
         office
+        bio
         cell
         picture
         linkedin
@@ -2584,8 +2624,15 @@ export const createStudent = /* GraphQL */ `
           price
           hours
           videos
+          preview
           seoImage
-          description
+          infoSheet
+          title
+          subheadline
+          what_learned
+          objectives
+          link
+          trial_link
           percentComplete
           createdAt
           updatedAt
@@ -2613,6 +2660,7 @@ export const updateStudent = /* GraphQL */ `
         company
         email
         office
+        bio
         cell
         picture
         linkedin
@@ -2673,8 +2721,15 @@ export const updateStudent = /* GraphQL */ `
           price
           hours
           videos
+          preview
           seoImage
-          description
+          infoSheet
+          title
+          subheadline
+          what_learned
+          objectives
+          link
+          trial_link
           percentComplete
           createdAt
           updatedAt
@@ -2702,6 +2757,7 @@ export const deleteStudent = /* GraphQL */ `
         company
         email
         office
+        bio
         cell
         picture
         linkedin
@@ -2762,8 +2818,15 @@ export const deleteStudent = /* GraphQL */ `
           price
           hours
           videos
+          preview
           seoImage
-          description
+          infoSheet
+          title
+          subheadline
+          what_learned
+          objectives
+          link
+          trial_link
           percentComplete
           createdAt
           updatedAt
@@ -2791,6 +2854,7 @@ export const createInstructor = /* GraphQL */ `
         company
         email
         office
+        bio
         cell
         picture
         linkedin
@@ -2874,6 +2938,7 @@ export const updateInstructor = /* GraphQL */ `
         company
         email
         office
+        bio
         cell
         picture
         linkedin
@@ -2957,6 +3022,7 @@ export const deleteInstructor = /* GraphQL */ `
         company
         email
         office
+        bio
         cell
         picture
         linkedin
@@ -3737,6 +3803,7 @@ export const createAPSUser = /* GraphQL */ `
         company
         email
         office
+        bio
         cell
         picture
         linkedin
@@ -3829,6 +3896,7 @@ export const updateAPSUser = /* GraphQL */ `
         company
         email
         office
+        bio
         cell
         picture
         linkedin
@@ -3921,6 +3989,7 @@ export const deleteAPSUser = /* GraphQL */ `
         company
         email
         office
+        bio
         cell
         picture
         linkedin
@@ -4168,8 +4237,15 @@ export const createCirriculumCourses = /* GraphQL */ `
         price
         hours
         videos
+        preview
         seoImage
-        description
+        infoSheet
+        title
+        subheadline
+        what_learned
+        objectives
+        link
+        trial_link
         percentComplete
         createdAt
         updatedAt
@@ -4213,8 +4289,15 @@ export const updateCirriculumCourses = /* GraphQL */ `
         price
         hours
         videos
+        preview
         seoImage
-        description
+        infoSheet
+        title
+        subheadline
+        what_learned
+        objectives
+        link
+        trial_link
         percentComplete
         createdAt
         updatedAt
@@ -4258,8 +4341,15 @@ export const deleteCirriculumCourses = /* GraphQL */ `
         price
         hours
         videos
+        preview
         seoImage
-        description
+        infoSheet
+        title
+        subheadline
+        what_learned
+        objectives
+        link
+        trial_link
         percentComplete
         createdAt
         updatedAt
@@ -4294,8 +4384,15 @@ export const createCourseLessons = /* GraphQL */ `
         price
         hours
         videos
+        preview
         seoImage
-        description
+        infoSheet
+        title
+        subheadline
+        what_learned
+        objectives
+        link
+        trial_link
         percentComplete
         createdAt
         updatedAt
@@ -4355,8 +4452,15 @@ export const updateCourseLessons = /* GraphQL */ `
         price
         hours
         videos
+        preview
         seoImage
-        description
+        infoSheet
+        title
+        subheadline
+        what_learned
+        objectives
+        link
+        trial_link
         percentComplete
         createdAt
         updatedAt
@@ -4416,8 +4520,15 @@ export const deleteCourseLessons = /* GraphQL */ `
         price
         hours
         videos
+        preview
         seoImage
-        description
+        infoSheet
+        title
+        subheadline
+        what_learned
+        objectives
+        link
+        trial_link
         percentComplete
         createdAt
         updatedAt
@@ -4477,8 +4588,15 @@ export const createCourseInstructors = /* GraphQL */ `
         price
         hours
         videos
+        preview
         seoImage
-        description
+        infoSheet
+        title
+        subheadline
+        what_learned
+        objectives
+        link
+        trial_link
         percentComplete
         createdAt
         updatedAt
@@ -4494,6 +4612,7 @@ export const createCourseInstructors = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
@@ -4539,8 +4658,15 @@ export const updateCourseInstructors = /* GraphQL */ `
         price
         hours
         videos
+        preview
         seoImage
-        description
+        infoSheet
+        title
+        subheadline
+        what_learned
+        objectives
+        link
+        trial_link
         percentComplete
         createdAt
         updatedAt
@@ -4556,6 +4682,7 @@ export const updateCourseInstructors = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
@@ -4601,8 +4728,15 @@ export const deleteCourseInstructors = /* GraphQL */ `
         price
         hours
         videos
+        preview
         seoImage
-        description
+        infoSheet
+        title
+        subheadline
+        what_learned
+        objectives
+        link
+        trial_link
         percentComplete
         createdAt
         updatedAt
@@ -4618,6 +4752,7 @@ export const deleteCourseInstructors = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin

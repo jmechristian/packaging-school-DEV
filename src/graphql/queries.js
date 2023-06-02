@@ -899,6 +899,7 @@ export const getCompany = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
@@ -974,6 +975,7 @@ export const getUser = /* GraphQL */ `
       company
       email
       office
+      bio
       cell
       picture
       linkedin
@@ -998,6 +1000,7 @@ export const getUser = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
@@ -1044,6 +1047,7 @@ export const getUser = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
@@ -1070,6 +1074,7 @@ export const getUser = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
@@ -1107,6 +1112,7 @@ export const listUsers = /* GraphQL */ `
         company
         email
         office
+        bio
         cell
         picture
         linkedin
@@ -1186,6 +1192,7 @@ export const usersByName = /* GraphQL */ `
         company
         email
         office
+        bio
         cell
         picture
         linkedin
@@ -1265,6 +1272,7 @@ export const usersByEmail = /* GraphQL */ `
         company
         email
         office
+        bio
         cell
         picture
         linkedin
@@ -1344,6 +1352,7 @@ export const usersByCompanyID = /* GraphQL */ `
         company
         email
         office
+        bio
         cell
         picture
         linkedin
@@ -1412,6 +1421,7 @@ export const getCMPMForm = /* GraphQL */ `
         company
         email
         office
+        bio
         cell
         picture
         linkedin
@@ -1509,6 +1519,7 @@ export const listCMPMForms = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
@@ -1704,8 +1715,15 @@ export const getLMSCourse = /* GraphQL */ `
       price
       hours
       videos
+      preview
       seoImage
-      description
+      infoSheet
+      title
+      subheadline
+      what_learned
+      objectives
+      link
+      trial_link
       percentComplete
       createdAt
       updatedAt
@@ -1735,8 +1753,15 @@ export const listLMSCourses = /* GraphQL */ `
         price
         hours
         videos
+        preview
         seoImage
-        description
+        infoSheet
+        title
+        subheadline
+        what_learned
+        objectives
+        link
+        trial_link
         percentComplete
         createdAt
         updatedAt
@@ -1859,6 +1884,7 @@ export const getStudent = /* GraphQL */ `
         company
         email
         office
+        bio
         cell
         picture
         linkedin
@@ -1919,8 +1945,15 @@ export const getStudent = /* GraphQL */ `
           price
           hours
           videos
+          preview
           seoImage
-          description
+          infoSheet
+          title
+          subheadline
+          what_learned
+          objectives
+          link
+          trial_link
           percentComplete
           createdAt
           updatedAt
@@ -1950,6 +1983,7 @@ export const listStudents = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
@@ -1982,6 +2016,7 @@ export const getInstructor = /* GraphQL */ `
         company
         email
         office
+        bio
         cell
         picture
         linkedin
@@ -2067,6 +2102,7 @@ export const listInstructors = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
@@ -2779,6 +2815,7 @@ export const getAPSUser = /* GraphQL */ `
         company
         email
         office
+        bio
         cell
         picture
         linkedin
@@ -2861,6 +2898,7 @@ export const listAPSUsers = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
@@ -2910,6 +2948,7 @@ export const aPSUsersByAPSId = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
@@ -2959,6 +2998,7 @@ export const aPSUsersByUserId = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
@@ -3185,8 +3225,15 @@ export const getCirriculumCourses = /* GraphQL */ `
         price
         hours
         videos
+        preview
         seoImage
-        description
+        infoSheet
+        title
+        subheadline
+        what_learned
+        objectives
+        link
+        trial_link
         percentComplete
         createdAt
         updatedAt
@@ -3224,8 +3271,15 @@ export const listCirriculumCourses = /* GraphQL */ `
           price
           hours
           videos
+          preview
           seoImage
-          description
+          infoSheet
+          title
+          subheadline
+          what_learned
+          objectives
+          link
+          trial_link
           percentComplete
           createdAt
           updatedAt
@@ -3269,8 +3323,15 @@ export const cirriculumCoursesByLMSCirriculumId = /* GraphQL */ `
           price
           hours
           videos
+          preview
           seoImage
-          description
+          infoSheet
+          title
+          subheadline
+          what_learned
+          objectives
+          link
+          trial_link
           percentComplete
           createdAt
           updatedAt
@@ -3314,8 +3375,15 @@ export const cirriculumCoursesByLMSCourseId = /* GraphQL */ `
           price
           hours
           videos
+          preview
           seoImage
-          description
+          infoSheet
+          title
+          subheadline
+          what_learned
+          objectives
+          link
+          trial_link
           percentComplete
           createdAt
           updatedAt
@@ -3349,8 +3417,15 @@ export const getCourseLessons = /* GraphQL */ `
         price
         hours
         videos
+        preview
         seoImage
-        description
+        infoSheet
+        title
+        subheadline
+        what_learned
+        objectives
+        link
+        trial_link
         percentComplete
         createdAt
         updatedAt
@@ -3403,8 +3478,15 @@ export const listCourseLessons = /* GraphQL */ `
           price
           hours
           videos
+          preview
           seoImage
-          description
+          infoSheet
+          title
+          subheadline
+          what_learned
+          objectives
+          link
+          trial_link
           percentComplete
           createdAt
           updatedAt
@@ -3452,8 +3534,15 @@ export const courseLessonsByLMSCourseId = /* GraphQL */ `
           price
           hours
           videos
+          preview
           seoImage
-          description
+          infoSheet
+          title
+          subheadline
+          what_learned
+          objectives
+          link
+          trial_link
           percentComplete
           createdAt
           updatedAt
@@ -3501,8 +3590,15 @@ export const courseLessonsByLMSLessonId = /* GraphQL */ `
           price
           hours
           videos
+          preview
           seoImage
-          description
+          infoSheet
+          title
+          subheadline
+          what_learned
+          objectives
+          link
+          trial_link
           percentComplete
           createdAt
           updatedAt
@@ -3546,8 +3642,15 @@ export const getCourseInstructors = /* GraphQL */ `
         price
         hours
         videos
+        preview
         seoImage
-        description
+        infoSheet
+        title
+        subheadline
+        what_learned
+        objectives
+        link
+        trial_link
         percentComplete
         createdAt
         updatedAt
@@ -3563,6 +3666,7 @@ export const getCourseInstructors = /* GraphQL */ `
           company
           email
           office
+          bio
           cell
           picture
           linkedin
@@ -3605,8 +3709,15 @@ export const listCourseInstructors = /* GraphQL */ `
           price
           hours
           videos
+          preview
           seoImage
-          description
+          infoSheet
+          title
+          subheadline
+          what_learned
+          objectives
+          link
+          trial_link
           percentComplete
           createdAt
           updatedAt
@@ -3650,8 +3761,15 @@ export const courseInstructorsByLMSCourseId = /* GraphQL */ `
           price
           hours
           videos
+          preview
           seoImage
-          description
+          infoSheet
+          title
+          subheadline
+          what_learned
+          objectives
+          link
+          trial_link
           percentComplete
           createdAt
           updatedAt
@@ -3695,8 +3813,15 @@ export const courseInstructorsByInstructorId = /* GraphQL */ `
           price
           hours
           videos
+          preview
           seoImage
-          description
+          infoSheet
+          title
+          subheadline
+          what_learned
+          objectives
+          link
+          trial_link
           percentComplete
           createdAt
           updatedAt
