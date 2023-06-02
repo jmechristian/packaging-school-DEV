@@ -183,6 +183,7 @@ type User @model @auth(rules: [{ allow: public }]) {
   company: String
   email: String! @index(name: "userByEmail")
   office: String
+  bio: String
   cell: String
   picture: String
   linkedin: String

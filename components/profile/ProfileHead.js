@@ -1,6 +1,6 @@
 import FormStat from './FormStat';
 
-export default function ProfileHead({ user }) {
+export default function ProfileHead({ user, toggleEditing }) {
   return (
     <div className='overflow-hidden rounded-t-lg bg-white box-shadow-lg'>
       <h2 className='sr-only' id='profile-overview-title'>
@@ -41,12 +41,12 @@ export default function ProfileHead({ user }) {
             </div>
           </div>
           <div className='mt-5 flex justify-center sm:mt-0'>
-            <a
-              href='#'
+            <button
+              onClick={toggleEditing}
               className='flex items-center justify-center rounded-md bg-white px-4 py-3 font-semibold text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 hover:bg-slate-50 font-greycliff'
             >
               Edit profile
-            </a>
+            </button>
           </div>
         </div>
       </div>
