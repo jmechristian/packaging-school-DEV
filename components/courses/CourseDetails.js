@@ -18,12 +18,12 @@ const CourseDetails = ({ hours, lessons, videos }) => {
           {lessons} Lessons
         </div>
       </div>
-      <div className='flex gap-2'>
+      {/* <div className='flex gap-2'>
         <FilmIcon className='w-6 h-6 stroke-base-dark dark:stroke-base-brand' />
         <div className='dark:text-base-brand text-base-dark'>
           {videos} Videos
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
