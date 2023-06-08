@@ -2181,6 +2181,7 @@ export const createLMSCourse = /* GraphQL */ `
     createLMSCourse(input: $input, condition: $condition) {
       id
       courseId
+      category
       Cirriculum {
         items {
           id
@@ -2213,6 +2214,7 @@ export const createLMSCourse = /* GraphQL */ `
       }
       price
       hours
+      lessons
       videos
       preview
       seoImage
@@ -2238,6 +2240,7 @@ export const updateLMSCourse = /* GraphQL */ `
     updateLMSCourse(input: $input, condition: $condition) {
       id
       courseId
+      category
       Cirriculum {
         items {
           id
@@ -2270,6 +2273,7 @@ export const updateLMSCourse = /* GraphQL */ `
       }
       price
       hours
+      lessons
       videos
       preview
       seoImage
@@ -2295,6 +2299,7 @@ export const deleteLMSCourse = /* GraphQL */ `
     deleteLMSCourse(input: $input, condition: $condition) {
       id
       courseId
+      category
       Cirriculum {
         items {
           id
@@ -2327,6 +2332,7 @@ export const deleteLMSCourse = /* GraphQL */ `
       }
       price
       hours
+      lessons
       videos
       preview
       seoImage
@@ -2621,8 +2627,10 @@ export const createStudent = /* GraphQL */ `
         items {
           id
           courseId
+          category
           price
           hours
+          lessons
           videos
           preview
           seoImage
@@ -2718,8 +2726,10 @@ export const updateStudent = /* GraphQL */ `
         items {
           id
           courseId
+          category
           price
           hours
+          lessons
           videos
           preview
           seoImage
@@ -2815,8 +2825,10 @@ export const deleteStudent = /* GraphQL */ `
         items {
           id
           courseId
+          category
           price
           hours
+          lessons
           videos
           preview
           seoImage
@@ -4225,6 +4237,7 @@ export const createCirriculumCourses = /* GraphQL */ `
       lMSCourse {
         id
         courseId
+        category
         Cirriculum {
           nextToken
         }
@@ -4236,6 +4249,7 @@ export const createCirriculumCourses = /* GraphQL */ `
         }
         price
         hours
+        lessons
         videos
         preview
         seoImage
@@ -4277,6 +4291,7 @@ export const updateCirriculumCourses = /* GraphQL */ `
       lMSCourse {
         id
         courseId
+        category
         Cirriculum {
           nextToken
         }
@@ -4288,6 +4303,7 @@ export const updateCirriculumCourses = /* GraphQL */ `
         }
         price
         hours
+        lessons
         videos
         preview
         seoImage
@@ -4329,6 +4345,7 @@ export const deleteCirriculumCourses = /* GraphQL */ `
       lMSCourse {
         id
         courseId
+        category
         Cirriculum {
           nextToken
         }
@@ -4340,6 +4357,7 @@ export const deleteCirriculumCourses = /* GraphQL */ `
         }
         price
         hours
+        lessons
         videos
         preview
         seoImage
@@ -4372,6 +4390,7 @@ export const createCourseLessons = /* GraphQL */ `
       lMSCourse {
         id
         courseId
+        category
         Cirriculum {
           nextToken
         }
@@ -4383,6 +4402,7 @@ export const createCourseLessons = /* GraphQL */ `
         }
         price
         hours
+        lessons
         videos
         preview
         seoImage
@@ -4440,6 +4460,7 @@ export const updateCourseLessons = /* GraphQL */ `
       lMSCourse {
         id
         courseId
+        category
         Cirriculum {
           nextToken
         }
@@ -4451,6 +4472,7 @@ export const updateCourseLessons = /* GraphQL */ `
         }
         price
         hours
+        lessons
         videos
         preview
         seoImage
@@ -4508,6 +4530,7 @@ export const deleteCourseLessons = /* GraphQL */ `
       lMSCourse {
         id
         courseId
+        category
         Cirriculum {
           nextToken
         }
@@ -4519,6 +4542,7 @@ export const deleteCourseLessons = /* GraphQL */ `
         }
         price
         hours
+        lessons
         videos
         preview
         seoImage
@@ -4576,6 +4600,7 @@ export const createCourseInstructors = /* GraphQL */ `
       lMSCourse {
         id
         courseId
+        category
         Cirriculum {
           nextToken
         }
@@ -4587,6 +4612,7 @@ export const createCourseInstructors = /* GraphQL */ `
         }
         price
         hours
+        lessons
         videos
         preview
         seoImage
@@ -4646,6 +4672,7 @@ export const updateCourseInstructors = /* GraphQL */ `
       lMSCourse {
         id
         courseId
+        category
         Cirriculum {
           nextToken
         }
@@ -4657,6 +4684,7 @@ export const updateCourseInstructors = /* GraphQL */ `
         }
         price
         hours
+        lessons
         videos
         preview
         seoImage
@@ -4716,6 +4744,7 @@ export const deleteCourseInstructors = /* GraphQL */ `
       lMSCourse {
         id
         courseId
+        category
         Cirriculum {
           nextToken
         }
@@ -4727,6 +4756,7 @@ export const deleteCourseInstructors = /* GraphQL */ `
         }
         price
         hours
+        lessons
         videos
         preview
         seoImage

@@ -12,21 +12,16 @@ const AllCourseCoursesMobile = ({ coursesToShow }) => {
       <Scroller rows='2' scroll={scrollRef}>
         {coursesToShow &&
           coursesToShow.map((course, i) => (
-            <div
-              key={course.node.course_title[0].text}
-              className='inline-block'
-            >
+            <div key={course.id} className='inline-block'>
               <CourseCard
-                title={course.node.course_title[0].text}
-                desc={
-                  course.node.course_subtitle &&
-                  course.node.course_subtitle[0].text
-                }
-                video={course.node.embed_id}
-                hours={course.node.course_hours}
-                lessons={course.node.course_lessons}
-                price={course.node.course_price}
-                slug={course.node._meta.uid}
+                title={course.title}
+                desc={course.subheadline}
+                video={course.preview}
+                hours={course.hours}
+                lessons={course.lessons}
+                price={course.price}
+                slug={course.title}
+                category={course.category}
                 reset={null}
               />
             </div>

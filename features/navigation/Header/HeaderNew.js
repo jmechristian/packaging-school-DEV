@@ -19,7 +19,10 @@ import CourseMenuBlock from '../shared/CourseMenuBlock';
 import MobileMenuCoursesCallout from '../MobileMenu/MobileMenuComponents/MobileMenuCoursesCallout';
 import CertMegaCallout from '../../../components/nav/CertMegaCallout';
 import { showSearch } from '../navigationSlice';
+import { setDark, setLight } from '../../layout/layoutSlice';
 import { useDispatch } from 'react-redux';
+import { LightBulbIcon } from '@heroicons/react/24/outline';
+import { MoonIcon } from '@heroicons/react/24/solid';
 
 const navigation = {
   categories: [
@@ -52,6 +55,7 @@ function classNames(...classes) {
 export default function HeaderNew() {
   const [open, setOpen] = useState(false);
   const { user } = useSelector((state) => state.auth);
+  const { darkMode } = useSelector((state) => state.layout);
   const dispatch = useDispatch();
   return (
     <div className='bg-white'>
@@ -458,18 +462,18 @@ export default function HeaderNew() {
                       />
 
                       <div className='flow-root'>
-                        <a
-                          href='#'
-                          className='group -m-2 flex items-center p-2'
-                        >
-                          <AcademicCapIcon
-                            className='h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500'
-                            aria-hidden='true'
-                          />
-                          <span className='ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800'>
-                            0
-                          </span>
-                        </a>
+                        {darkMode ? (
+                          <div onClick={() => dispatch(setLight())}>
+                            <MoonIcon className='w-6 h-6 text-gray-400 group-hover:text-gray-500 cursor-pointer' />
+                          </div>
+                        ) : (
+                          <div onClick={() => dispatch(setDark())}>
+                            <LightBulbIcon
+                              className='h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500 cursor-pointer'
+                              aria-hidden='true'
+                            />
+                          </div>
+                        )}
                       </div>
                     </div>
                   </div>

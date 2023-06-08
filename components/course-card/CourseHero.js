@@ -19,7 +19,7 @@ const CourseHero = ({ video, bgcolor, newWidth }) => {
       <div
         className={`bg-${bgcolor} aspect-square ${
           newWidth ? 'w-36 h-36' : 'w-20 h-20'
-        } col-span-2 cursor-pointer`}
+        } col-span-2 cursor-pointer rounded-full`}
       >
         <div className='flex justify-center items-center h-full'>
           <div

@@ -8,7 +8,7 @@ const AllCoursesMain = ({ courses }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    courses && dispatch(setAllCourses(courses.data.allCourses.edges));
+    courses && dispatch(setAllCourses(courses));
   });
 
   return (

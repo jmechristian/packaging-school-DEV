@@ -1682,6 +1682,7 @@ export const getLMSCourse = /* GraphQL */ `
     getLMSCourse(id: $id) {
       id
       courseId
+      category
       Cirriculum {
         items {
           id
@@ -1714,6 +1715,7 @@ export const getLMSCourse = /* GraphQL */ `
       }
       price
       hours
+      lessons
       videos
       preview
       seoImage
@@ -1741,6 +1743,7 @@ export const listLMSCourses = /* GraphQL */ `
       items {
         id
         courseId
+        category
         Cirriculum {
           nextToken
         }
@@ -1752,6 +1755,7 @@ export const listLMSCourses = /* GraphQL */ `
         }
         price
         hours
+        lessons
         videos
         preview
         seoImage
@@ -1942,8 +1946,10 @@ export const getStudent = /* GraphQL */ `
         items {
           id
           courseId
+          category
           price
           hours
+          lessons
           videos
           preview
           seoImage
@@ -3213,6 +3219,7 @@ export const getCirriculumCourses = /* GraphQL */ `
       lMSCourse {
         id
         courseId
+        category
         Cirriculum {
           nextToken
         }
@@ -3224,6 +3231,7 @@ export const getCirriculumCourses = /* GraphQL */ `
         }
         price
         hours
+        lessons
         videos
         preview
         seoImage
@@ -3268,8 +3276,10 @@ export const listCirriculumCourses = /* GraphQL */ `
         lMSCourse {
           id
           courseId
+          category
           price
           hours
+          lessons
           videos
           preview
           seoImage
@@ -3320,8 +3330,10 @@ export const cirriculumCoursesByLMSCirriculumId = /* GraphQL */ `
         lMSCourse {
           id
           courseId
+          category
           price
           hours
+          lessons
           videos
           preview
           seoImage
@@ -3372,8 +3384,10 @@ export const cirriculumCoursesByLMSCourseId = /* GraphQL */ `
         lMSCourse {
           id
           courseId
+          category
           price
           hours
+          lessons
           videos
           preview
           seoImage
@@ -3405,6 +3419,7 @@ export const getCourseLessons = /* GraphQL */ `
       lMSCourse {
         id
         courseId
+        category
         Cirriculum {
           nextToken
         }
@@ -3416,6 +3431,7 @@ export const getCourseLessons = /* GraphQL */ `
         }
         price
         hours
+        lessons
         videos
         preview
         seoImage
@@ -3475,8 +3491,10 @@ export const listCourseLessons = /* GraphQL */ `
         lMSCourse {
           id
           courseId
+          category
           price
           hours
+          lessons
           videos
           preview
           seoImage
@@ -3531,8 +3549,10 @@ export const courseLessonsByLMSCourseId = /* GraphQL */ `
         lMSCourse {
           id
           courseId
+          category
           price
           hours
+          lessons
           videos
           preview
           seoImage
@@ -3587,8 +3607,10 @@ export const courseLessonsByLMSLessonId = /* GraphQL */ `
         lMSCourse {
           id
           courseId
+          category
           price
           hours
+          lessons
           videos
           preview
           seoImage
@@ -3630,6 +3652,7 @@ export const getCourseInstructors = /* GraphQL */ `
       lMSCourse {
         id
         courseId
+        category
         Cirriculum {
           nextToken
         }
@@ -3641,6 +3664,7 @@ export const getCourseInstructors = /* GraphQL */ `
         }
         price
         hours
+        lessons
         videos
         preview
         seoImage
@@ -3706,8 +3730,10 @@ export const listCourseInstructors = /* GraphQL */ `
         lMSCourse {
           id
           courseId
+          category
           price
           hours
+          lessons
           videos
           preview
           seoImage
@@ -3758,8 +3784,10 @@ export const courseInstructorsByLMSCourseId = /* GraphQL */ `
         lMSCourse {
           id
           courseId
+          category
           price
           hours
+          lessons
           videos
           preview
           seoImage
@@ -3810,8 +3838,10 @@ export const courseInstructorsByInstructorId = /* GraphQL */ `
         lMSCourse {
           id
           courseId
+          category
           price
           hours
+          lessons
           videos
           preview
           seoImage

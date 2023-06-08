@@ -13,20 +13,12 @@ const AllCourseBody = () => {
     if (selectedFilter.name === 'All') {
       return allCourses;
     } else {
-      return allCourses.filter(
-        (o) =>
-          o.node.categories.some((c) => c.category === selectedFilter.name) ||
-          o.node.certificate.some(
-            (cl) =>
-              cl.certificate_link &&
-              cl.certificate_link._meta.uid === selectedFilter.value
-          )
-      );
+      return allCourses.filter((o) => o.category === selectedFilter.value);
     }
   }, [selectedFilter, allCourses]);
 
   return (
-    <div className='bg-slate-300'>
+    <div className='bg-slate-100'>
       {coursesToShow && (
         <>
           <AllCourseBodyMobile coursesToShow={coursesToShow} />

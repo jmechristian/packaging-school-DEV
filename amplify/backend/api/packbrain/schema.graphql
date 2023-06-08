@@ -193,6 +193,7 @@ type User @model @auth(rules: [{ allow: public }]) {
   cmpmForm: CMPMForm @hasOne(fields: ["cmpmFormID"])
   instructorId: Instructor @hasOne
   studentId: Student @hasOne
+  savedCourses: [LMSCourse] @hasMany
 }
 
 type CMPMForm
@@ -256,12 +257,14 @@ type LMSCirriculum @model @auth(rules: [{ allow: public }]) {
 type LMSCourse @model @auth(rules: [{ allow: public }]) {
   id: ID!
   courseId: String
+  category: CategoryType @default(value: "MATERIALS")
   Cirriculum: [LMSCirriculum] @manyToMany(relationName: "CirriculumCourses")
   Lessons: [LMSLesson] @manyToMany(relationName: "CourseLessons")
   Instructors: [Instructor] @manyToMany(relationName: "CourseInstructors")
-  price: Int
-  hours: Int
-  videos: Int
+  price: String
+  hours: String
+  lessons: String
+  videos: String
   preview: String
   seoImage: String
   infoSheet: String
@@ -272,6 +275,7 @@ type LMSCourse @model @auth(rules: [{ allow: public }]) {
   link: String
   trial_link: String
   percentComplete: Int
+  slug: String
 }
 
 type LMSLesson @model @auth(rules: [{ allow: public }]) {

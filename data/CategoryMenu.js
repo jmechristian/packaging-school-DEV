@@ -5,26 +5,26 @@ export const categoryMenu = [
   },
   {
     name: 'Materials',
-    value: 'materials',
+    value: 'MATERIALS',
   },
   {
     name: 'Industry',
-    value: 'industry',
+    value: 'INDUSTRY',
   },
   {
     name: 'Food & Beverage',
-    value: 'food',
+    value: 'FOODANDBEVERAGE',
   },
   {
     name: 'Business',
-    value: 'business',
+    value: 'BUSINESS',
   },
   {
     name: 'Supply Chain & Logistics',
-    value: 'supply',
+    value: 'SUPPLYCHAIN',
   },
   {
     name: 'Design',
-    value: 'design',
+    value: 'DESIGN',
   },
 ];
