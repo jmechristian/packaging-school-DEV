@@ -17,7 +17,7 @@ const HomeFree = ({ courses }) => {
 
   console.log(courses);
   return (
-    <div className='flex flex-col bg-slate-200 rounded-lg lg:items-start gap-9 py-12 px-6 lg:px-12 lg:max-w-7xl lg:mx-auto w-full'>
+    <div className='flex flex-col bg-slate-200 rounded-lg lg:items-start gap-9 py-12 px-6 lg:max-w-7xl lg:mx-auto w-full'>
       <div className='flex w-full flex-col lg:flex-row lg:justify-between gap-3'>
         <div className='flex flex-row justify-between w-full items-center'>
           <div className='flex flex-col gap-3'>
@@ -38,7 +38,7 @@ const HomeFree = ({ courses }) => {
           </div>
         </div>
       </div>
-      <div className='lg:grid grid-cols-4 gap-6 hidden'>
+      <div className='lg:grid grid-cols-4 gap-4 hidden'>
         {freeCourses &&
           freeCourses.map((course, i) => (
             <div key={course.id} className='inline-block'>

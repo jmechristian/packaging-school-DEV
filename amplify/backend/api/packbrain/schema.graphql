@@ -193,7 +193,7 @@ type User @model @auth(rules: [{ allow: public }]) {
   cmpmForm: CMPMForm @hasOne(fields: ["cmpmFormID"])
   instructorId: Instructor @hasOne
   studentId: Student @hasOne
-  savedCourses: [LMSCourse] @hasMany
+  savedCourses: [String]
 }
 
 type CMPMForm

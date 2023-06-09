@@ -109,16 +109,16 @@ const CourseCard = ({
           darkMode ? 'bg-slate-900 text-white' : 'bg-white'
         } rounded-xl shadow-lg aspect-1`}
       >
-        <div className='p-6 flex flex-col justify-between h-full'>
+        <div className='p-4 flex flex-col justify-between h-full'>
           <div className='flex flex-col gap-4'>
             <div className='flex justify-between'>
               <div
-                className={`${textColor()} uppercase text-xs font-bold py-1.5 rounded px-3 tracking-wide`}
+                className={`${textColor()} uppercase text-xs font-bold py-1.5 rounded px-2 tracking-wide`}
               >
                 {category}
               </div>
               <div>
-                <StarIcon className='w-6 h-6 text-slate-300 dark:text-yellow-400' />
+                <StarIcon className='w-6 h-6 text-slate-300 dark:text-slate-700' />
               </div>
             </div>
             <div className='font-semibold text-xl font-greycliff leading-tight line-clamp-2'>

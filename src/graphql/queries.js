@@ -1091,6 +1091,15 @@ export const getUser = /* GraphQL */ `
         createdAt
         updatedAt
       }
+      savedCourses {
+        items {
+          id
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
       userInstructorIdId
@@ -1160,6 +1169,9 @@ export const listUsers = /* GraphQL */ `
           studentId
           createdAt
           updatedAt
+        }
+        savedCourses {
+          nextToken
         }
         createdAt
         updatedAt
@@ -1241,6 +1253,9 @@ export const usersByName = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        savedCourses {
+          nextToken
+        }
         createdAt
         updatedAt
         userInstructorIdId
@@ -1320,6 +1335,9 @@ export const usersByEmail = /* GraphQL */ `
           studentId
           createdAt
           updatedAt
+        }
+        savedCourses {
+          nextToken
         }
         createdAt
         updatedAt
@@ -1401,10 +1419,65 @@ export const usersByCompanyID = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        savedCourses {
+          nextToken
+        }
         createdAt
         updatedAt
         userInstructorIdId
         userStudentIdId
+      }
+      nextToken
+    }
+  }
+`;
+export const getSavedCourse = /* GraphQL */ `
+  query GetSavedCourse($id: ID!) {
+    getSavedCourse(id: $id) {
+      id
+      userID
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listSavedCourses = /* GraphQL */ `
+  query ListSavedCourses(
+    $filter: ModelSavedCourseFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listSavedCourses(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        userID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const savedCoursesByUserID = /* GraphQL */ `
+  query SavedCoursesByUserID(
+    $userID: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelSavedCourseFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    savedCoursesByUserID(
+      userID: $userID
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        userID
+        createdAt
+        updatedAt
       }
       nextToken
     }
@@ -1469,6 +1542,9 @@ export const getCMPMForm = /* GraphQL */ `
           studentId
           createdAt
           updatedAt
+        }
+        savedCourses {
+          nextToken
         }
         createdAt
         updatedAt
@@ -1727,6 +1803,7 @@ export const getLMSCourse = /* GraphQL */ `
       link
       trial_link
       percentComplete
+      slug
       createdAt
       updatedAt
       studentCourseEnrolledId
@@ -1767,6 +1844,7 @@ export const listLMSCourses = /* GraphQL */ `
         link
         trial_link
         percentComplete
+        slug
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -1937,6 +2015,9 @@ export const getStudent = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        savedCourses {
+          nextToken
+        }
         createdAt
         updatedAt
         userInstructorIdId
@@ -1961,6 +2042,7 @@ export const getStudent = /* GraphQL */ `
           link
           trial_link
           percentComplete
+          slug
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -2070,6 +2152,9 @@ export const getInstructor = /* GraphQL */ `
           studentId
           createdAt
           updatedAt
+        }
+        savedCourses {
+          nextToken
         }
         createdAt
         updatedAt
@@ -2870,6 +2955,9 @@ export const getAPSUser = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        savedCourses {
+          nextToken
+        }
         createdAt
         updatedAt
         userInstructorIdId
@@ -3243,6 +3331,7 @@ export const getCirriculumCourses = /* GraphQL */ `
         link
         trial_link
         percentComplete
+        slug
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -3291,6 +3380,7 @@ export const listCirriculumCourses = /* GraphQL */ `
           link
           trial_link
           percentComplete
+          slug
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -3345,6 +3435,7 @@ export const cirriculumCoursesByLMSCirriculumId = /* GraphQL */ `
           link
           trial_link
           percentComplete
+          slug
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -3399,6 +3490,7 @@ export const cirriculumCoursesByLMSCourseId = /* GraphQL */ `
           link
           trial_link
           percentComplete
+          slug
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -3443,6 +3535,7 @@ export const getCourseLessons = /* GraphQL */ `
         link
         trial_link
         percentComplete
+        slug
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -3506,6 +3599,7 @@ export const listCourseLessons = /* GraphQL */ `
           link
           trial_link
           percentComplete
+          slug
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -3564,6 +3658,7 @@ export const courseLessonsByLMSCourseId = /* GraphQL */ `
           link
           trial_link
           percentComplete
+          slug
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -3622,6 +3717,7 @@ export const courseLessonsByLMSLessonId = /* GraphQL */ `
           link
           trial_link
           percentComplete
+          slug
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -3676,6 +3772,7 @@ export const getCourseInstructors = /* GraphQL */ `
         link
         trial_link
         percentComplete
+        slug
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -3745,6 +3842,7 @@ export const listCourseInstructors = /* GraphQL */ `
           link
           trial_link
           percentComplete
+          slug
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -3799,6 +3897,7 @@ export const courseInstructorsByLMSCourseId = /* GraphQL */ `
           link
           trial_link
           percentComplete
+          slug
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -3853,6 +3952,7 @@ export const courseInstructorsByInstructorId = /* GraphQL */ `
           link
           trial_link
           percentComplete
+          slug
           createdAt
           updatedAt
           studentCourseEnrolledId

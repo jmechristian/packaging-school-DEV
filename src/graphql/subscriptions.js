@@ -1296,6 +1296,15 @@ export const onCreateUser = /* GraphQL */ `
         createdAt
         updatedAt
       }
+      savedCourses {
+        items {
+          id
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
       userInstructorIdId
@@ -1427,6 +1436,15 @@ export const onUpdateUser = /* GraphQL */ `
         }
         createdAt
         updatedAt
+      }
+      savedCourses {
+        items {
+          id
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
       createdAt
       updatedAt
@@ -1560,10 +1578,49 @@ export const onDeleteUser = /* GraphQL */ `
         createdAt
         updatedAt
       }
+      savedCourses {
+        items {
+          id
+          userID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
       userInstructorIdId
       userStudentIdId
+    }
+  }
+`;
+export const onCreateSavedCourse = /* GraphQL */ `
+  subscription OnCreateSavedCourse {
+    onCreateSavedCourse {
+      id
+      userID
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateSavedCourse = /* GraphQL */ `
+  subscription OnUpdateSavedCourse {
+    onUpdateSavedCourse {
+      id
+      userID
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteSavedCourse = /* GraphQL */ `
+  subscription OnDeleteSavedCourse {
+    onDeleteSavedCourse {
+      id
+      userID
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -1626,6 +1683,9 @@ export const onCreateCMPMForm = /* GraphQL */ `
           studentId
           createdAt
           updatedAt
+        }
+        savedCourses {
+          nextToken
         }
         createdAt
         updatedAt
@@ -1720,6 +1780,9 @@ export const onUpdateCMPMForm = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        savedCourses {
+          nextToken
+        }
         createdAt
         updatedAt
         userInstructorIdId
@@ -1812,6 +1875,9 @@ export const onDeleteCMPMForm = /* GraphQL */ `
           studentId
           createdAt
           updatedAt
+        }
+        savedCourses {
+          nextToken
         }
         createdAt
         updatedAt
@@ -2079,6 +2145,7 @@ export const onCreateLMSCourse = /* GraphQL */ `
       link
       trial_link
       percentComplete
+      slug
       createdAt
       updatedAt
       studentCourseEnrolledId
@@ -2135,6 +2202,7 @@ export const onUpdateLMSCourse = /* GraphQL */ `
       link
       trial_link
       percentComplete
+      slug
       createdAt
       updatedAt
       studentCourseEnrolledId
@@ -2191,6 +2259,7 @@ export const onDeleteLMSCourse = /* GraphQL */ `
       link
       trial_link
       percentComplete
+      slug
       createdAt
       updatedAt
       studentCourseEnrolledId
@@ -2453,6 +2522,9 @@ export const onCreateStudent = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        savedCourses {
+          nextToken
+        }
         createdAt
         updatedAt
         userInstructorIdId
@@ -2477,6 +2549,7 @@ export const onCreateStudent = /* GraphQL */ `
           link
           trial_link
           percentComplete
+          slug
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -2549,6 +2622,9 @@ export const onUpdateStudent = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        savedCourses {
+          nextToken
+        }
         createdAt
         updatedAt
         userInstructorIdId
@@ -2573,6 +2649,7 @@ export const onUpdateStudent = /* GraphQL */ `
           link
           trial_link
           percentComplete
+          slug
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -2645,6 +2722,9 @@ export const onDeleteStudent = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        savedCourses {
+          nextToken
+        }
         createdAt
         updatedAt
         userInstructorIdId
@@ -2669,6 +2749,7 @@ export const onDeleteStudent = /* GraphQL */ `
           link
           trial_link
           percentComplete
+          slug
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -2740,6 +2821,9 @@ export const onCreateInstructor = /* GraphQL */ `
           studentId
           createdAt
           updatedAt
+        }
+        savedCourses {
+          nextToken
         }
         createdAt
         updatedAt
@@ -2822,6 +2906,9 @@ export const onUpdateInstructor = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        savedCourses {
+          nextToken
+        }
         createdAt
         updatedAt
         userInstructorIdId
@@ -2902,6 +2989,9 @@ export const onDeleteInstructor = /* GraphQL */ `
           studentId
           createdAt
           updatedAt
+        }
+        savedCourses {
+          nextToken
         }
         createdAt
         updatedAt
@@ -3618,6 +3708,9 @@ export const onCreateAPSUser = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        savedCourses {
+          nextToken
+        }
         createdAt
         updatedAt
         userInstructorIdId
@@ -3708,6 +3801,9 @@ export const onUpdateAPSUser = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        savedCourses {
+          nextToken
+        }
         createdAt
         updatedAt
         userInstructorIdId
@@ -3797,6 +3893,9 @@ export const onDeleteAPSUser = /* GraphQL */ `
           studentId
           createdAt
           updatedAt
+        }
+        savedCourses {
+          nextToken
         }
         createdAt
         updatedAt
@@ -3997,6 +4096,7 @@ export const onCreateCirriculumCourses = /* GraphQL */ `
         link
         trial_link
         percentComplete
+        slug
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -4048,6 +4148,7 @@ export const onUpdateCirriculumCourses = /* GraphQL */ `
         link
         trial_link
         percentComplete
+        slug
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -4099,6 +4200,7 @@ export const onDeleteCirriculumCourses = /* GraphQL */ `
         link
         trial_link
         percentComplete
+        slug
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -4141,6 +4243,7 @@ export const onCreateCourseLessons = /* GraphQL */ `
         link
         trial_link
         percentComplete
+        slug
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -4208,6 +4311,7 @@ export const onUpdateCourseLessons = /* GraphQL */ `
         link
         trial_link
         percentComplete
+        slug
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -4275,6 +4379,7 @@ export const onDeleteCourseLessons = /* GraphQL */ `
         link
         trial_link
         percentComplete
+        slug
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -4342,6 +4447,7 @@ export const onCreateCourseInstructors = /* GraphQL */ `
         link
         trial_link
         percentComplete
+        slug
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -4411,6 +4517,7 @@ export const onUpdateCourseInstructors = /* GraphQL */ `
         link
         trial_link
         percentComplete
+        slug
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -4480,6 +4587,7 @@ export const onDeleteCourseInstructors = /* GraphQL */ `
         link
         trial_link
         percentComplete
+        slug
         createdAt
         updatedAt
         studentCourseEnrolledId
