@@ -1,9 +1,11 @@
 import React from 'react';
 import CourseCard from '../../components/course-card/CourseCard';
 import ScrollButtons from '../../components/ScrollButtons';
+import { useSelector } from 'react-redux';
 
 const AllCourseCourses = ({ selectedFilter, coursesToShow }) => {
   // console.log(coursesToShow);
+  const { user } = useSelector((state) => state.auth);
   return (
     <div className=' flex flex-col gap-6'>
       <div className='flex justify-between items-end'>
@@ -26,6 +28,7 @@ const AllCourseCourses = ({ selectedFilter, coursesToShow }) => {
               price={course.price}
               slug={course.title}
               category={course.category}
+              savedCourses={user?.savedCourses}
             />
           </div>
         ))}

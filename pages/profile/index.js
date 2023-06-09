@@ -26,7 +26,7 @@ export default withPageAuthRequired(function Page() {
                 toggleEditing={() => toggleEditing()}
               />
               <ProfileDetails user={currentUser} isEditing={isEditing} />
-              <ProfileStats />
+              <ProfileStats user={currentUser} />
             </>
           )}
         </div>

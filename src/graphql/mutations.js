@@ -1145,6 +1145,7 @@ export const createCompany = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -1197,6 +1198,7 @@ export const updateCompany = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -1249,6 +1251,7 @@ export const deleteCompany = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -1322,6 +1325,7 @@ export const createUser = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -1369,6 +1373,7 @@ export const createUser = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -1396,6 +1401,7 @@ export const createUser = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -1407,15 +1413,7 @@ export const createUser = /* GraphQL */ `
         createdAt
         updatedAt
       }
-      savedCourses {
-        items {
-          id
-          userID
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
+      savedCourses
       createdAt
       updatedAt
       userInstructorIdId
@@ -1466,6 +1464,7 @@ export const updateUser = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -1513,6 +1512,7 @@ export const updateUser = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -1540,6 +1540,7 @@ export const updateUser = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -1551,15 +1552,7 @@ export const updateUser = /* GraphQL */ `
         createdAt
         updatedAt
       }
-      savedCourses {
-        items {
-          id
-          userID
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
+      savedCourses
       createdAt
       updatedAt
       userInstructorIdId
@@ -1610,6 +1603,7 @@ export const deleteUser = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -1657,6 +1651,7 @@ export const deleteUser = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -1684,6 +1679,7 @@ export const deleteUser = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -1695,58 +1691,11 @@ export const deleteUser = /* GraphQL */ `
         createdAt
         updatedAt
       }
-      savedCourses {
-        items {
-          id
-          userID
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
+      savedCourses
       createdAt
       updatedAt
       userInstructorIdId
       userStudentIdId
-    }
-  }
-`;
-export const createSavedCourse = /* GraphQL */ `
-  mutation CreateSavedCourse(
-    $input: CreateSavedCourseInput!
-    $condition: ModelSavedCourseConditionInput
-  ) {
-    createSavedCourse(input: $input, condition: $condition) {
-      id
-      userID
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const updateSavedCourse = /* GraphQL */ `
-  mutation UpdateSavedCourse(
-    $input: UpdateSavedCourseInput!
-    $condition: ModelSavedCourseConditionInput
-  ) {
-    updateSavedCourse(input: $input, condition: $condition) {
-      id
-      userID
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const deleteSavedCourse = /* GraphQL */ `
-  mutation DeleteSavedCourse(
-    $input: DeleteSavedCourseInput!
-    $condition: ModelSavedCourseConditionInput
-  ) {
-    deleteSavedCourse(input: $input, condition: $condition) {
-      id
-      userID
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -1813,9 +1762,7 @@ export const createCMPMForm = /* GraphQL */ `
           createdAt
           updatedAt
         }
-        savedCourses {
-          nextToken
-        }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -1912,9 +1859,7 @@ export const updateCMPMForm = /* GraphQL */ `
           createdAt
           updatedAt
         }
-        savedCourses {
-          nextToken
-        }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -2011,9 +1956,7 @@ export const deleteCMPMForm = /* GraphQL */ `
           createdAt
           updatedAt
         }
-        savedCourses {
-          nextToken
-        }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -2696,9 +2639,7 @@ export const createStudent = /* GraphQL */ `
           createdAt
           updatedAt
         }
-        savedCourses {
-          nextToken
-        }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -2799,9 +2740,7 @@ export const updateStudent = /* GraphQL */ `
           createdAt
           updatedAt
         }
-        savedCourses {
-          nextToken
-        }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -2902,9 +2841,7 @@ export const deleteStudent = /* GraphQL */ `
           createdAt
           updatedAt
         }
-        savedCourses {
-          nextToken
-        }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -3005,9 +2942,7 @@ export const createInstructor = /* GraphQL */ `
           createdAt
           updatedAt
         }
-        savedCourses {
-          nextToken
-        }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -3092,9 +3027,7 @@ export const updateInstructor = /* GraphQL */ `
           createdAt
           updatedAt
         }
-        savedCourses {
-          nextToken
-        }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -3179,9 +3112,7 @@ export const deleteInstructor = /* GraphQL */ `
           createdAt
           updatedAt
         }
-        savedCourses {
-          nextToken
-        }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -3963,9 +3894,7 @@ export const createAPSUser = /* GraphQL */ `
           createdAt
           updatedAt
         }
-        savedCourses {
-          nextToken
-        }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -4059,9 +3988,7 @@ export const updateAPSUser = /* GraphQL */ `
           createdAt
           updatedAt
         }
-        savedCourses {
-          nextToken
-        }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -4155,9 +4082,7 @@ export const deleteAPSUser = /* GraphQL */ `
           createdAt
           updatedAt
         }
-        savedCourses {
-          nextToken
-        }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -4759,6 +4684,7 @@ export const createCourseInstructors = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -4832,6 +4758,7 @@ export const updateCourseInstructors = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -4905,6 +4832,7 @@ export const deleteCourseInstructors = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId

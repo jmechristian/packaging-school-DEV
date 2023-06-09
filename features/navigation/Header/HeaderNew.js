@@ -173,7 +173,7 @@ export default function HeaderNew() {
       <header className='relative'>
         <nav aria-label='Top'>
           {/* Top navigation */}
-          <div className='bg-gray-900'>
+          <div className='bg-gray-900 dark:bg-base-mid'>
             <div className='mx-auto flex min-h-10 max-w-7xl items-center justify-between px-6 lg:px-8 py-1.5'>
               <div className='flex-1 text-center text-sm font-medium text-white lg:flex-none'>
                 <div className='flex gap-1 items-center font-greycliff'>
@@ -206,7 +206,7 @@ export default function HeaderNew() {
                 ) : (
                   <>
                     <Link href='/profile'>
-                      <a className='text-sm font-semibold text-clemson hover:text-gray-100 font-greycliff'>
+                      <a className='text-sm font-semibold text-clemson dark:text-white hover:text-gray-100 font-greycliff'>
                         Hello, {user && user.name}
                       </a>
                     </Link>
@@ -229,7 +229,7 @@ export default function HeaderNew() {
           <div className='bg-white dark:bg-dark-mid'>
             <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
               <div className='border-b border-slate-200 dark:border-slate-600'>
-                <div className='flex h-20 items-center justify-between'>
+                <div className='flex h-24 items-center justify-between'>
                   {/* Logo (lg+) */}
                   <div className='hidden lg:flex lg:items-center'>
                     <Link href='/'>

@@ -1043,6 +1043,7 @@ export const onCreateCompany = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -1092,6 +1093,7 @@ export const onUpdateCompany = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -1141,6 +1143,7 @@ export const onDeleteCompany = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -1211,6 +1214,7 @@ export const onCreateUser = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -1258,6 +1262,7 @@ export const onCreateUser = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -1285,6 +1290,7 @@ export const onCreateUser = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -1296,15 +1302,7 @@ export const onCreateUser = /* GraphQL */ `
         createdAt
         updatedAt
       }
-      savedCourses {
-        items {
-          id
-          userID
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
+      savedCourses
       createdAt
       updatedAt
       userInstructorIdId
@@ -1352,6 +1350,7 @@ export const onUpdateUser = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -1399,6 +1398,7 @@ export const onUpdateUser = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -1426,6 +1426,7 @@ export const onUpdateUser = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -1437,15 +1438,7 @@ export const onUpdateUser = /* GraphQL */ `
         createdAt
         updatedAt
       }
-      savedCourses {
-        items {
-          id
-          userID
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
+      savedCourses
       createdAt
       updatedAt
       userInstructorIdId
@@ -1493,6 +1486,7 @@ export const onDeleteUser = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -1540,6 +1534,7 @@ export const onDeleteUser = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -1567,6 +1562,7 @@ export const onDeleteUser = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -1578,49 +1574,11 @@ export const onDeleteUser = /* GraphQL */ `
         createdAt
         updatedAt
       }
-      savedCourses {
-        items {
-          id
-          userID
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
+      savedCourses
       createdAt
       updatedAt
       userInstructorIdId
       userStudentIdId
-    }
-  }
-`;
-export const onCreateSavedCourse = /* GraphQL */ `
-  subscription OnCreateSavedCourse {
-    onCreateSavedCourse {
-      id
-      userID
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onUpdateSavedCourse = /* GraphQL */ `
-  subscription OnUpdateSavedCourse {
-    onUpdateSavedCourse {
-      id
-      userID
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onDeleteSavedCourse = /* GraphQL */ `
-  subscription OnDeleteSavedCourse {
-    onDeleteSavedCourse {
-      id
-      userID
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -1684,9 +1642,7 @@ export const onCreateCMPMForm = /* GraphQL */ `
           createdAt
           updatedAt
         }
-        savedCourses {
-          nextToken
-        }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -1780,9 +1736,7 @@ export const onUpdateCMPMForm = /* GraphQL */ `
           createdAt
           updatedAt
         }
-        savedCourses {
-          nextToken
-        }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -1876,9 +1830,7 @@ export const onDeleteCMPMForm = /* GraphQL */ `
           createdAt
           updatedAt
         }
-        savedCourses {
-          nextToken
-        }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -2522,9 +2474,7 @@ export const onCreateStudent = /* GraphQL */ `
           createdAt
           updatedAt
         }
-        savedCourses {
-          nextToken
-        }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -2622,9 +2572,7 @@ export const onUpdateStudent = /* GraphQL */ `
           createdAt
           updatedAt
         }
-        savedCourses {
-          nextToken
-        }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -2722,9 +2670,7 @@ export const onDeleteStudent = /* GraphQL */ `
           createdAt
           updatedAt
         }
-        savedCourses {
-          nextToken
-        }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -2822,9 +2768,7 @@ export const onCreateInstructor = /* GraphQL */ `
           createdAt
           updatedAt
         }
-        savedCourses {
-          nextToken
-        }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -2906,9 +2850,7 @@ export const onUpdateInstructor = /* GraphQL */ `
           createdAt
           updatedAt
         }
-        savedCourses {
-          nextToken
-        }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -2990,9 +2932,7 @@ export const onDeleteInstructor = /* GraphQL */ `
           createdAt
           updatedAt
         }
-        savedCourses {
-          nextToken
-        }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -3708,9 +3648,7 @@ export const onCreateAPSUser = /* GraphQL */ `
           createdAt
           updatedAt
         }
-        savedCourses {
-          nextToken
-        }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -3801,9 +3739,7 @@ export const onUpdateAPSUser = /* GraphQL */ `
           createdAt
           updatedAt
         }
-        savedCourses {
-          nextToken
-        }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -3894,9 +3830,7 @@ export const onDeleteAPSUser = /* GraphQL */ `
           createdAt
           updatedAt
         }
-        savedCourses {
-          nextToken
-        }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -4468,6 +4402,7 @@ export const onCreateCourseInstructors = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -4538,6 +4473,7 @@ export const onUpdateCourseInstructors = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -4608,6 +4544,7 @@ export const onDeleteCourseInstructors = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId

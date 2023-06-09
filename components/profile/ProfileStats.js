@@ -66,15 +66,19 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
-export default function ProfileStats() {
+export default function ProfileStats({ user }) {
   return (
     <div className='px-6 md:px-16 pb-16 flex flex-col gap-16'>
       <div>
         <h3 className='text-base font-bold leading-6 text-gray-900 font-greycliff'>
-          Your Progress Last 30 days
+          Your Saved Courses
         </h3>
-
-        <dl className='mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3'>
+        <div className='flex flex-col gap-2'>
+          {user?.savedCourses.map((it, i) => (
+            <div key={i}>{it}</div>
+          ))}
+        </div>
+        {/* <dl className='mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3'>
           {stats.map((item) => (
             <div
               key={item.id}
@@ -138,9 +142,9 @@ export default function ProfileStats() {
               </dd>
             </div>
           ))}
-        </dl>
+        </dl> */}
       </div>
-      <div>
+      {/* <div>
         <h3 className='text-base font-bold leading-6 text-gray-900 font-greycliff'>
           Your Networking Last 30 days
         </h3>
@@ -210,7 +214,7 @@ export default function ProfileStats() {
             </div>
           ))}
         </dl>
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -905,6 +905,7 @@ export const getCompany = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -1006,6 +1007,7 @@ export const getUser = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -1053,6 +1055,7 @@ export const getUser = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -1080,6 +1083,7 @@ export const getUser = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -1091,15 +1095,7 @@ export const getUser = /* GraphQL */ `
         createdAt
         updatedAt
       }
-      savedCourses {
-        items {
-          id
-          userID
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
+      savedCourses
       createdAt
       updatedAt
       userInstructorIdId
@@ -1170,9 +1166,7 @@ export const listUsers = /* GraphQL */ `
           createdAt
           updatedAt
         }
-        savedCourses {
-          nextToken
-        }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -1253,9 +1247,7 @@ export const usersByName = /* GraphQL */ `
           createdAt
           updatedAt
         }
-        savedCourses {
-          nextToken
-        }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -1336,9 +1328,7 @@ export const usersByEmail = /* GraphQL */ `
           createdAt
           updatedAt
         }
-        savedCourses {
-          nextToken
-        }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -1419,65 +1409,11 @@ export const usersByCompanyID = /* GraphQL */ `
           createdAt
           updatedAt
         }
-        savedCourses {
-          nextToken
-        }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
         userStudentIdId
-      }
-      nextToken
-    }
-  }
-`;
-export const getSavedCourse = /* GraphQL */ `
-  query GetSavedCourse($id: ID!) {
-    getSavedCourse(id: $id) {
-      id
-      userID
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const listSavedCourses = /* GraphQL */ `
-  query ListSavedCourses(
-    $filter: ModelSavedCourseFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listSavedCourses(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        userID
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
-export const savedCoursesByUserID = /* GraphQL */ `
-  query SavedCoursesByUserID(
-    $userID: ID!
-    $sortDirection: ModelSortDirection
-    $filter: ModelSavedCourseFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    savedCoursesByUserID(
-      userID: $userID
-      sortDirection: $sortDirection
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-    ) {
-      items {
-        id
-        userID
-        createdAt
-        updatedAt
       }
       nextToken
     }
@@ -1543,9 +1479,7 @@ export const getCMPMForm = /* GraphQL */ `
           createdAt
           updatedAt
         }
-        savedCourses {
-          nextToken
-        }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -1601,6 +1535,7 @@ export const listCMPMForms = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -2015,9 +1950,7 @@ export const getStudent = /* GraphQL */ `
           createdAt
           updatedAt
         }
-        savedCourses {
-          nextToken
-        }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -2077,6 +2010,7 @@ export const listStudents = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -2153,9 +2087,7 @@ export const getInstructor = /* GraphQL */ `
           createdAt
           updatedAt
         }
-        savedCourses {
-          nextToken
-        }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -2199,6 +2131,7 @@ export const listInstructors = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -2955,9 +2888,7 @@ export const getAPSUser = /* GraphQL */ `
           createdAt
           updatedAt
         }
-        savedCourses {
-          nextToken
-        }
+        savedCourses
         createdAt
         updatedAt
         userInstructorIdId
@@ -2998,6 +2929,7 @@ export const listAPSUsers = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -3048,6 +2980,7 @@ export const aPSUsersByAPSId = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -3098,6 +3031,7 @@ export const aPSUsersByUserId = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId
@@ -3793,6 +3727,7 @@ export const getCourseInstructors = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          savedCourses
           createdAt
           updatedAt
           userInstructorIdId

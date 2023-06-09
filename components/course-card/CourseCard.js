@@ -1,17 +1,19 @@
-import React from 'react';
-import CourseHero from './CourseHero';
-import CourseTitle from './CourseTitle';
-import CourseDesc from './CourseDesc';
+import React, { useState, useEffect, useMemo } from 'react';
+// import CourseHero from './CourseHero';
+// import CourseTitle from './CourseTitle';
+// import CourseDesc from './CourseDesc';
 import { motion } from 'framer-motion';
-import { Tooltip } from 'react-tooltip';
-import 'react-tooltip/dist/react-tooltip.css';
+// import { Tooltip } from 'react-tooltip';
+// import 'react-tooltip/dist/react-tooltip.css';
 import {
   VideoCameraIcon,
   ArrowSmallRightIcon,
   StarIcon,
 } from '@heroicons/react/24/solid';
+import { API } from 'aws-amplify';
 import { useDispatch, useSelector } from 'react-redux';
 import { setPreviewOpen } from '../../features/all_courses/courseFilterSlice';
+import { updateUser } from '../../src/graphql/mutations';
 
 const CourseCard = ({
   title,
@@ -21,8 +23,20 @@ const CourseCard = ({
   price,
   category,
   courseId,
+  savedCourses,
 }) => {
   const dispatch = useDispatch();
+  const { darkMode } = useSelector((state) => state.layout);
+  const { user } = useSelector((state) => state.auth);
+  // const [isFavorited, setIsFavorite] = useState(false);
+  const [userArray, setUserArray] = useState(
+    savedCourses ? [...savedCourses] : []
+  );
+
+  const isFavorited = useMemo(
+    () => user?.savedCourses.includes(courseId),
+    [user]
+  );
 
   const textColor = () => {
     switch (category) {
@@ -53,11 +67,50 @@ const CourseCard = ({
     }
   };
 
-  const { darkMode } = useSelector((state) => state.layout);
-  const { user } = useSelector((state) => state.auth);
-
   const openPreview = () => {
     dispatch(setPreviewOpen(video));
+  };
+
+  const toggleFavorite = async () => {
+    if (isFavorited) {
+      // setIsFavorite(false);
+      let newArray = [...userArray];
+      const indexIs = newArray.indexOf(courseId);
+      console.log(indexIs);
+      let finalArray = newArray.splice(indexIs, 1);
+      console.log(finalArray);
+      const res = await API.graphql({
+        query: updateUser,
+        variables: {
+          input: {
+            id: user.id,
+            savedCourses: finalArray,
+          },
+        },
+      });
+
+      if (res.errors) {
+        console.log(res.errors);
+      }
+    }
+
+    if (!user.savedCourses.includes(courseId)) {
+      // setIsFavorite(true);
+      let newishArray = [...user.savedCourses, courseId];
+      const res = await API.graphql({
+        query: updateUser,
+        variables: {
+          input: {
+            id: user.id,
+            savedCourses: newishArray,
+          },
+        },
+      });
+
+      if (res.errors) {
+        console.log(res.errors);
+      }
+    }
   };
 
   return (
@@ -106,11 +159,17 @@ const CourseCard = ({
               >
                 {category}
               </div>
-              <div>
-                <StarIcon
-                  className={`w-6 h-6 text-slate-300 dark:text-slate-700`}
-                />
-              </div>
+              {user && (
+                <div onClick={toggleFavorite}>
+                  <StarIcon
+                    className={`w-6 h-6 cursor-pointer ${
+                      isFavorited
+                        ? 'text-yellow-500'
+                        : 'text-slate-300 dark:text-slate-700'
+                    } `}
+                  />
+                </div>
+              )}
             </div>
             <div className='font-semibold text-xl font-greycliff leading-tight line-clamp-2'>
               {title}
@@ -145,7 +204,7 @@ const CourseCard = ({
           </div>
         </div>
       </motion.div>
-      <Tooltip anchorSelect='.desc' />
+      {/* <Tooltip anchorSelect='.desc' /> */}
     </>
   );
 };

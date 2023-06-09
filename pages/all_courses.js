@@ -9,7 +9,6 @@ import { gql } from '@apollo/client';
 import { listLMSCourses } from '../src/graphql/queries';
 
 const AllCourses = ({ courses }) => {
-  console.log(courses);
   const dispatch = useDispatch();
   const { preview } = useSelector((state) => state.course_filter);
   return (
