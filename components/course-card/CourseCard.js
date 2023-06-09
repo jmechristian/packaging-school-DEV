@@ -18,23 +18,11 @@ const CourseCard = ({
   desc,
   video,
   hours,
-  lessons,
   price,
-  slug,
-  reset,
   category,
-  newWidth,
+  courseId,
 }) => {
   const dispatch = useDispatch();
-
-  const data = {
-    datasets: [
-      {
-        data: [55, 45],
-        backgroundColor: ['#1f97bf', '#e2e8f0'],
-      },
-    ],
-  };
 
   const textColor = () => {
     switch (category) {
@@ -66,6 +54,7 @@ const CourseCard = ({
   };
 
   const { darkMode } = useSelector((state) => state.layout);
+  const { user } = useSelector((state) => state.auth);
 
   const openPreview = () => {
     dispatch(setPreviewOpen(video));

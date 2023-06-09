@@ -17,6 +17,7 @@ const AllCourseCourses = ({ selectedFilter, coursesToShow }) => {
         {coursesToShow.map((course, i) => (
           <div className='block' key={course.id}>
             <CourseCard
+              courseId={course.id}
               title={course.title}
               desc={course.subheadline}
               video={course.preview}

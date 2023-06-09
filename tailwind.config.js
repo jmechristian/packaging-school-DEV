@@ -22,6 +22,8 @@ module.exports = {
         clemson: '#ff9321',
         'clemson-dark': '#ca6800',
         dark: '#0e1424',
+        'dark-mid': '#1a1a1a',
+        'dark-dark': '#0E0E0E',
       },
       backgroundImage: {
         'dark-mobile':
