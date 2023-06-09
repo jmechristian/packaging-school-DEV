@@ -7,7 +7,6 @@ import {
   MagnifyingGlassIcon,
   UserIcon,
   XMarkIcon,
-  AcademicCapIcon,
 } from '@heroicons/react/24/outline';
 import Logo from '../../../components/layout/Logo';
 import Link from 'next/link';
@@ -227,9 +226,9 @@ export default function HeaderNew() {
           </div>
 
           {/* Secondary navigation */}
-          <div className='bg-white'>
+          <div className='bg-white dark:bg-dark-mid'>
             <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
-              <div className='border-b border-gray-200'>
+              <div className='border-b border-slate-200 dark:border-slate-600'>
                 <div className='flex h-20 items-center justify-between'>
                   {/* Logo (lg+) */}
                   <div className='hidden lg:flex lg:items-center'>
@@ -254,8 +253,8 @@ export default function HeaderNew() {
                                 <Popover.Button
                                   className={classNames(
                                     open
-                                      ? 'border-base-brand text-base-brand'
-                                      : 'border-transparent text-gray-700 hover:text-gray-800',
+                                      ? 'border-base-brand text-base-brand dark:text-white/80'
+                                      : 'border-transparent text-gray-700 hover:text-gray-800 dark:text-white/80',
                                     'relative z-10 -mb-px flex items-center border-b-2 pt-px font-semibold font-greycliff transition-colors duration-200 ease-out'
                                   )}
                                 >
@@ -340,8 +339,8 @@ export default function HeaderNew() {
                                 <Popover.Button
                                   className={classNames(
                                     open
-                                      ? 'border-base-brand text-base-brand'
-                                      : 'border-transparent text-gray-700 hover:text-gray-800',
+                                      ? 'border-base-brand text-base-brand dark:text-white/80'
+                                      : 'border-transparent text-gray-700 hover:text-gray-800 dark:text-white/80',
                                     'relative z-10 -mb-px flex items-center border-b-2 pt-px font-semibold font-greycliff transition-colors duration-200 ease-out'
                                   )}
                                 >
@@ -383,7 +382,7 @@ export default function HeaderNew() {
                           <a
                             key={page.name}
                             href={page.href}
-                            className='flex items-center font-semibold font-greycliff text-slate-700 hover:text-slate-800'
+                            className='flex items-center font-semibold font-greycliff text-slate-700 hover:text-slate-800 dark:text-white/80'
                           >
                             {page.name}
                           </a>

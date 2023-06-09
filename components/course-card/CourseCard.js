@@ -107,7 +107,9 @@ const CourseCard = ({
                 {category}
               </div>
               <div>
-                <StarIcon className='w-6 h-6 text-slate-300 dark:text-slate-700' />
+                <StarIcon
+                  className={`w-6 h-6 text-slate-300 dark:text-slate-700`}
+                />
               </div>
             </div>
             <div className='font-semibold text-xl font-greycliff leading-tight line-clamp-2'>
