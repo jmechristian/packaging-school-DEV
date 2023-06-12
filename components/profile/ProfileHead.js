@@ -1,4 +1,5 @@
 import FormStat from './FormStat';
+import { PencilSquareIcon } from '@heroicons/react/24/outline';
 
 export default function ProfileHead({ user, toggleEditing }) {
   return (
@@ -40,26 +41,23 @@ export default function ProfileHead({ user, toggleEditing }) {
               </p>
             </div>
           </div>
-          <div className='mt-5 flex justify-center sm:mt-0'>
-            <button
-              onClick={toggleEditing}
-              className='flex items-center justify-center rounded-md bg-white px-4 py-3 font-semibold text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 hover:bg-slate-50 font-greycliff'
-            >
-              Edit profile
-            </button>
-          </div>
         </div>
       </div>
       <div className='grid grid-cols-1 divide-y divide-slate-200 border-t border-slate-200 bg-base-mid sm:grid-cols-3 sm:divide-x sm:divide-y-0'>
+        <div className='sm:col-span-3 py-2.5 w-full bg-base-dark'>
+          <div className='font-greycliff text-center font-semibold text-lg text-white'>
+            Certificate Applications
+          </div>
+        </div>
         <FormStat
-          label='Application'
+          label='CMPM'
           stat={user.cmpmFormID}
           link={`/forms/cmpm/${user.id}`}
           updated={user.cmpmForm?.updatedOn}
           userId={user.id}
         />
-        <FormStat label='Certificates' />
-        <FormStat label='Courses' />
+        <FormStat label='CPS' />
+        <FormStat label='Automotive Packaging' />
       </div>
     </div>
   );

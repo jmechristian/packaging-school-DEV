@@ -7,6 +7,7 @@ import {
   ChatBubbleLeftRightIcon,
   ShareIcon,
 } from '@heroicons/react/24/outline';
+import SavedCourse from './SavedCourse';
 
 const stats = [
   {
@@ -70,12 +71,14 @@ export default function ProfileStats({ user }) {
   return (
     <div className='px-6 md:px-16 pb-16 flex flex-col gap-16'>
       <div>
-        <h3 className='text-base font-bold leading-6 text-gray-900 font-greycliff'>
+        <h3 className='text-lg font-bold leading-6 text-gray-900 font-greycliff mb-6'>
           Your Saved Courses
         </h3>
-        <div className='flex flex-col gap-2'>
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-3'>
           {user?.savedCourses.map((it, i) => (
-            <div key={i}>{it}</div>
+            <div key={i}>
+              <SavedCourse courseId={it} savedCourse={user?.savedCourses} />
+            </div>
           ))}
         </div>
         {/* <dl className='mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3'>

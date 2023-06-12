@@ -29,14 +29,16 @@ const CourseCard = ({
   const { darkMode } = useSelector((state) => state.layout);
   const { user } = useSelector((state) => state.auth);
   // const [isFavorited, setIsFavorite] = useState(false);
-  const [userArray, setUserArray] = useState(
-    savedCourses ? [...savedCourses] : []
-  );
+  const [userArray, setUserArray] = useState([]);
 
   const isFavorited = useMemo(
     () => user?.savedCourses.includes(courseId),
-    [user]
+    [user, courseId]
   );
+
+  useEffect(() => {
+    user && setUserArray([...user.savedCourses]);
+  }, [user]);
 
   const textColor = () => {
     switch (category) {
@@ -73,11 +75,11 @@ const CourseCard = ({
 
   const toggleFavorite = async () => {
     if (isFavorited) {
-      // setIsFavorite(false);
-      let newArray = [...userArray];
-      const indexIs = newArray.indexOf(courseId);
-      console.log(indexIs);
-      let finalArray = newArray.splice(indexIs, 1);
+      let finalArray;
+      const newArray = [...userArray];
+      const index = newArray.indexOf(courseId);
+      console.log(index);
+      finalArray = newArray.toSpliced(index, 1);
       console.log(finalArray);
       const res = await API.graphql({
         query: updateUser,
@@ -94,7 +96,7 @@ const CourseCard = ({
       }
     }
 
-    if (!user.savedCourses.includes(courseId)) {
+    if (!isFavorited) {
       // setIsFavorite(true);
       let newishArray = [...user.savedCourses, courseId];
       const res = await API.graphql({
@@ -114,41 +116,10 @@ const CourseCard = ({
   };
 
   return (
-    // <motion.div
-    //   className={`flex flex-col bg-white rounded-md p-3 drop-shadow-lg gap-4 ${
-    //     newWidth ? newWidth : 'w-72'
-    //   } h-full snap-start cursor-grab`}
-    // >
-    //   <motion.div className='grid grid-cols-6 gap-3 lg:gap-5 border-b border-b-slate-300 pb-3'>
-    //     <CourseHero
-    //       video={video}
-    //       bgcolor={backgroundColor()}
-    //       newWidth={newWidth}
-    //     />
-    //     <CourseTitle
-    //       title={title}
-    //       hours={hours}
-    //       lessons={lessons}
-    //       price={price}
-    //       desc={desc}
-    //       slug={slug}
-    //       data={data}
-    //       newWidth={newWidth}
-    //     />
-    //   </motion.div>
-    //   <div className='grid grid-cols-6 pb-1 h-full items-stretch lg:grid'>
-    //     <CourseDesc
-    //       desc={desc}
-    //       slug={slug}
-    //       data={data}
-    //       reset={reset}
-    //       newWidth={newWidth}
-    //     />
-    //   </div>
     <>
       <motion.div
         className={`w-full ${
-          darkMode ? 'bg-slate-900 text-white' : 'bg-white'
+          darkMode ? 'bg-dark-mid text-white' : 'bg-white'
         } rounded-xl shadow-lg aspect-1`}
       >
         <div className='p-4 flex flex-col justify-between h-full'>
@@ -192,12 +163,12 @@ const CourseCard = ({
               </div>
             </div>
             <div className='flex gap-2' onClick={openPreview}>
-              <div className='w-9 h-9 rounded bg-black/80 flex justify-center items-center'>
+              <div className='w-9 h-9 rounded bg-black/80 flex justify-center items-center cursor-pointer'>
                 <div>
                   <VideoCameraIcon className='w-5 h-5 text-white' />
                 </div>
               </div>
-              <div className='w-9 h-9 rounded bg-black/80 flex justify-center items-center'>
+              <div className='w-9 h-9 rounded bg-black/80 flex justify-center items-center cursor-pointer'>
                 <ArrowSmallRightIcon className='w-5 h-5 text-white' />
               </div>
             </div>

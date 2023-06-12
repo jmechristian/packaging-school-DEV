@@ -44,8 +44,10 @@ const FormStat = ({ stat, label, link, updated, userId }) => {
   return (
     <div className='flex flex-col' key={label}>
       <div className='px-6 py-5 text-center text-lg font-medium font-greycliff'>
-        <span className='text-slate-100 font-bold'>{stat ? '1' : '0'}</span>{' '}
-        <span className='text-slate-100'>{label}</span>
+        <span className='text-slate-100 font-bold text-sm'>
+          {stat ? '1' : '0'}
+        </span>{' '}
+        <span className='text-slate-100 text-sm'>{label}</span>
       </div>
       <div className='flex flex-col gap-2 py-16 border-r border-r-slate-300 bg-slate-200 h-full justify-center items-center'>
         <div className='text-slate-700 text-sm'>

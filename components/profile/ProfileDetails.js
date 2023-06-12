@@ -1,8 +1,9 @@
 import { API } from 'aws-amplify';
 import { useState } from 'react';
 import { updateUser } from '../../src/graphql/mutations';
+import { PencilSquareIcon, XMarkIcon } from '@heroicons/react/24/solid';
 
-export default function ProfileDetails({ user, isEditing }) {
+export default function ProfileDetails({ user, isEditing, toggleEditing }) {
   const [fullName, setFullName] = useState(user?.name);
   const [email, setEmail] = useState(user?.email);
   const [company, setCompany] = useState(user?.company);
@@ -43,13 +44,27 @@ export default function ProfileDetails({ user, isEditing }) {
 
   return (
     <div className='px-6 md:px-16 py-12'>
-      <div className='px-4 sm:px-0'>
-        <h3 className='text-lg font-bold font-greycliff leading-7 text-slate-900'>
-          Your Information
-        </h3>
-        <p className='mt-1 max-w-2xl  leading-6 text-slate-500'>
-          Personal details and bio.
-        </p>
+      <div className='flex justify-between'>
+        <div className='px-4 sm:px-0'>
+          <h3 className='text-lg font-bold font-greycliff leading-7 text-slate-900'>
+            Your Information
+          </h3>
+          <p className='mt-1 max-w-2xl  leading-6 text-slate-500'>
+            Personal details and bio.
+          </p>
+        </div>
+        <div className='mt-5 flex justify-center sm:mt-0'>
+          <div
+            onClick={toggleEditing}
+            className='flex items-center justify-center rounded-md bg-white w-10 h-10 font-semibold text-slate-900 shadow-sm ring-1 ring-inset ring-slate-400 hover:bg-slate-50 font-greycliff'
+          >
+            {isEditing ? (
+              <XMarkIcon className='w-5 h-5 text-slate-500' />
+            ) : (
+              <PencilSquareIcon className='w-5 h-5 text-slate-500' />
+            )}
+          </div>
+        </div>
       </div>
       {isEditing ? (
         <div className='mt-6'>
@@ -142,7 +157,7 @@ export default function ProfileDetails({ user, isEditing }) {
                 onChange={(e) => setBio(e.target.value)}
               />
             </div>
-            <div className='flex justify-end'>
+            <div className='flex justify-end col-span-2'>
               <button
                 type='submit'
                 className='bg-transparent hover:bg-slate-300 border cursor-pointer border-slate-900 font-greycliff font-semibold px-4 py-2 rounded-lg w-fit text-right'

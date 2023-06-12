@@ -17,7 +17,7 @@ export default withPageAuthRequired(function Page() {
   return (
     <div className='bg-slate-100 min-h-screen'>
       <div className='md:py-16'>
-        <div className='mx-auto max-w-6xl shadow-xl my-16 rounded-lg flex flex-col'>
+        <div className='mx-auto max-w-6xl shadow-xl my-16 rounded-lg flex flex-col gap-6'>
           {currentUser && (
             <>
               <ProfileHead
@@ -25,7 +25,11 @@ export default withPageAuthRequired(function Page() {
                 isEditing={isEditing}
                 toggleEditing={() => toggleEditing()}
               />
-              <ProfileDetails user={currentUser} isEditing={isEditing} />
+              <ProfileDetails
+                user={currentUser}
+                isEditing={isEditing}
+                toggleEditing={() => toggleEditing()}
+              />
               <ProfileStats user={currentUser} />
             </>
           )}

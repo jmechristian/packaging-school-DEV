@@ -5,12 +5,15 @@ import DarkToggle from '../layout/DarkToggle';
 import Head from 'next/head';
 import Footer from '../navigation/Footer/Footer';
 import { useSelector, useDispatch } from 'react-redux';
-import { setAllCourses } from '../all_courses/courseFilterSlice';
+import {
+  setAllCourses,
+  setPreviewClosed,
+} from '../all_courses/courseFilterSlice';
 import { setUser } from '../auth/authslice';
 import ScrollTop from './ScrollTop';
 import { useUser } from '@auth0/nextjs-auth0/client';
 import { API, graphqlOperation } from 'aws-amplify';
-
+import CoursePreview from '../../components/course-card/CoursePreview';
 import { usersByEmail, listLMSCourses } from '../../src/graphql/queries';
 import { createUser } from '../../src/graphql/mutations';
 import HeaderNew from '../navigation/Header/HeaderNew';
@@ -21,6 +24,7 @@ const Layout = ({ children }) => {
   const dispatch = useDispatch();
   const { darkMode } = useSelector((state) => state.layout);
   const { searchOpen } = useSelector((state) => state.nav);
+  const { preview } = useSelector((state) => state.course_filter);
   const { user } = useUser();
 
   useEffect(() => {
@@ -87,6 +91,9 @@ const Layout = ({ children }) => {
       <div className={`${darkMode ? 'dark' : ''}`}>
         <div className='relative flex flex-col justify-between'>
           {searchOpen && <SearchContainer />}
+          {preview && (
+            <CoursePreview close={() => dispatch(setPreviewClosed())} />
+          )}
           <HeaderNew />
           <ScrollTop />
           {/* <DarkToggle /> */}
