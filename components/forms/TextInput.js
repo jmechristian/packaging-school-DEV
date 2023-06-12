@@ -8,7 +8,7 @@ const TextInput = ({ label, placeholder, name, type, required, value }) => {
     if (value) {
       setValue(name, value);
     }
-  }, [value]);
+  }, [value, name, setValue]);
 
   return (
     <div>

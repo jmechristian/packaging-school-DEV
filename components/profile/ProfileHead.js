@@ -1,7 +1,7 @@
 import FormStat from './FormStat';
 import { PencilSquareIcon } from '@heroicons/react/24/outline';
 
-export default function ProfileHead({ user, toggleEditing }) {
+export default function ProfileHead({ user }) {
   return (
     <div className='overflow-hidden rounded-t-lg bg-white box-shadow-lg'>
       <h2 className='sr-only' id='profile-overview-title'>
