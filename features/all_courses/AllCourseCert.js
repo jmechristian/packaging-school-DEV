@@ -6,8 +6,8 @@ const AllCoursesCert = () => {
   return (
     <div className=' flex flex-col gap-6'>
       <div className='flex justify-between items-end'>
-        <div className='font-medium text-xl font-greycliff '>
-          Comprehensive <span className='font-bold'>Certificate Programs</span>
+        <div className='font-medium text-2xl font-greycliff dark:text-white'>
+          Find Your<span className='font-bold'>&nbsp;Learning Path</span>
         </div>
         <ScrollButtons />
       </div>

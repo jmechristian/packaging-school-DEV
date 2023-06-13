@@ -24,6 +24,7 @@ const CourseCard = ({
   category,
   courseId,
   savedCourses,
+  slug,
 }) => {
   const dispatch = useDispatch();
   const { darkMode } = useSelector((state) => state.layout);
@@ -162,13 +163,19 @@ const CourseCard = ({
                 ${price}
               </div>
             </div>
-            <div className='flex gap-2' onClick={openPreview}>
-              <div className='w-9 h-9 rounded bg-black/80 flex justify-center items-center cursor-pointer'>
+            <div className='flex gap-2'>
+              <div
+                className='w-9 h-9 rounded bg-black/80 flex justify-center items-center cursor-pointer'
+                onClick={openPreview}
+              >
                 <div>
                   <VideoCameraIcon className='w-5 h-5 text-white' />
                 </div>
               </div>
-              <div className='w-9 h-9 rounded bg-black/80 flex justify-center items-center cursor-pointer'>
+              <div
+                className='w-9 h-9 rounded bg-black/80 flex justify-center items-center cursor-pointer'
+                onClick={() => window.open(`/courses/${slug}`)}
+              >
                 <ArrowSmallRightIcon className='w-5 h-5 text-white' />
               </div>
             </div>

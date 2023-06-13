@@ -6,18 +6,21 @@ import { createClient, linkResolver } from '../../prismicio';
 import { useSelector, useDispatch } from 'react-redux';
 import { setPreviewClosed } from '../../features/all_courses/courseFilterSlice';
 import CourseContentMenu from '../../components/courses/CourseContentMenu';
+import { lMSCoursesBySlug } from '../../src/graphql/queries';
+import { API } from 'aws-amplify';
 
-const Page = ({ page }) => {
+const Page = ({ course }) => {
   const dispatch = useDispatch();
+  console.log(course);
   const { preview } = useSelector((state) => state.course_filter);
   return (
     <div className='relative'>
-      <CourseMain data={page.data} />
-      <CourseBottom related={page.data.related_courses} />
+      <CourseMain data={course} />
+      <CourseBottom related={[]} />
       {preview && <CoursePreview close={() => dispatch(setPreviewClosed())} />}
       <CourseContentMenu
-        link={page.data.lms_link}
-        trialLink={page.data.lms_trial_link}
+        link={course.link}
+        trialLink={`${course.link}?et=free_trial`}
       />
     </div>
   );
@@ -25,39 +28,15 @@ const Page = ({ page }) => {
 
 export default Page;
 
-export async function getStaticProps({ params, previewData }) {
-  const client = createClient({ previewData });
-
-  const page = await client.getByUID('course', params.uid, {
-    fetchLinks: [
-      'certification.certificate_name',
-      'course.course_title',
-      'course.course_hero',
-      'course.course_price',
-      'course.course_hours',
-      'course.course_lessons',
-      'course.course_videos',
-      'course.categories',
-      'course.embed_id',
-      'course.course_subtitle',
-    ],
+export async function getServerSideProps({ params }) {
+  const slug = params.uid;
+  const res = await API.graphql({
+    query: lMSCoursesBySlug,
+    variables: { slug: slug },
   });
+  const course = res.data.lMSCoursesBySlug.items[0];
 
   return {
-    props: {
-      page,
-    },
-    revalidate: 10,
-  };
-}
-
-export async function getStaticPaths() {
-  const client = createClient();
-
-  const pages = await client.getAllByType('course');
-
-  return {
-    paths: pages.map((page) => prismicH.asLink(page, linkResolver)),
-    fallback: false,
+    props: { course },
   };
 }

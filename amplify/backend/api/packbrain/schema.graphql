@@ -275,7 +275,7 @@ type LMSCourse @model @auth(rules: [{ allow: public }]) {
   link: String
   trial_link: String
   percentComplete: Int
-  slug: String
+  slug: String! @index(name: "LMScourseBySlug")
 }
 
 type LMSLesson @model @auth(rules: [{ allow: public }]) {

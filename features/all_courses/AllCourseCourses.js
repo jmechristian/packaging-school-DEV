@@ -9,7 +9,7 @@ const AllCourseCourses = ({ selectedFilter, coursesToShow }) => {
   return (
     <div className=' flex flex-col gap-6'>
       <div className='flex justify-between items-end'>
-        <div className='font-medium text-xl font-greycliff'>
+        <div className='font-medium text-2xl font-greycliff dark:text-white'>
           Browse <span className='font-bold'>{selectedFilter.name}&nbsp;</span>
           Courses
         </div>
@@ -26,7 +26,7 @@ const AllCourseCourses = ({ selectedFilter, coursesToShow }) => {
               hours={course.hours}
               lessons={course.lessons}
               price={course.price}
-              slug={course.title}
+              slug={course.slug}
               category={course.category}
               savedCourses={user?.savedCourses}
             />

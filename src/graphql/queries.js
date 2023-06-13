@@ -1788,6 +1788,57 @@ export const listLMSCourses = /* GraphQL */ `
     }
   }
 `;
+export const lMSCoursesBySlug = /* GraphQL */ `
+  query LMSCoursesBySlug(
+    $slug: String!
+    $sortDirection: ModelSortDirection
+    $filter: ModelLMSCourseFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    lMSCoursesBySlug(
+      slug: $slug
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        courseId
+        category
+        Cirriculum {
+          nextToken
+        }
+        Lessons {
+          nextToken
+        }
+        Instructors {
+          nextToken
+        }
+        price
+        hours
+        lessons
+        videos
+        preview
+        seoImage
+        infoSheet
+        title
+        subheadline
+        what_learned
+        objectives
+        link
+        trial_link
+        percentComplete
+        slug
+        createdAt
+        updatedAt
+        studentCourseEnrolledId
+      }
+      nextToken
+    }
+  }
+`;
 export const getLMSLesson = /* GraphQL */ `
   query GetLMSLesson($id: ID!) {
     getLMSLesson(id: $id) {
