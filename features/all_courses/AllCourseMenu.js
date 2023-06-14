@@ -28,7 +28,7 @@ const AllCourseMenu = () => {
                 className={`${
                   selectedFilter.value === item.value
                     ? 'bg-base-brand text-slate-200 font-medium rounded'
-                    : 'text-slate-500 dark:text-gray-500'
+                    : 'text-slate-500 dark:text-gray-400'
                 } pl-2 py-1.5 cursor-pointer`}
                 key={item.value}
                 onClick={() => filterClickHandler(item.name, item.value)}
@@ -48,7 +48,7 @@ const AllCourseMenu = () => {
                 className={`${
                   selectedFilter.value === item.value
                     ? 'bg-base-brand text-slate-200 font-medium rounded'
-                    : 'text-slate-500 dark:text-gray-600'
+                    : 'text-slate-500 dark:text-gray-400'
                 } pl-2 py-1.5 cursor-pointer`}
                 key={item.value}
                 onClick={() => filterClickHandler(item.name, item.value)}

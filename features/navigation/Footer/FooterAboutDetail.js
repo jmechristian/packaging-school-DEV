@@ -8,7 +8,7 @@ const FooterAboutDetail = () => {
         <div className='font-extrabold font-greycliff uppercase tracking-widest text-slate-200'>
           Who We Are
         </div>
-        <p className='text-sm text-slate-500 dark:text-slate-400'>
+        <p className='text-sm text-slate-500 dark:text-gray-500'>
           The Packaging School brings together the business, art, and science of
           packaging so you can lead projects, optimize supply chains, increase
           margins, and develop sustainable solutions.

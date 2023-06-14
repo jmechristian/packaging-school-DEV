@@ -3,7 +3,7 @@ import React from 'react';
 const CertificateCardTitle = () => {
   return (
     <div className='flex flex-col gap-3'>
-      <div className='font-greycliff font-extrabold text-xl md:text-2xl xl:text-3xl text-white'>
+      <div className='font-greycliff font-semibold text-xl md:text-2xl xl:text-3xl text-white'>
         Certificate of Mastery in Packaging Management
       </div>
       <div className='hidden lg:block xl:hidden'>

@@ -174,13 +174,13 @@ export default function HeaderNew() {
         <nav aria-label='Top'>
           {/* Top navigation */}
           <div className='bg-gray-900 dark:bg-dark-dark flex items-center justify-center'>
-            <div className='flex min-h-10 max-w-7xl items-center justify-center px-8 py-2'>
+            <div className='flex min-h-10 max-w-7xl items-center justify-between w-full px-8 lg:px-0 py-2'>
               <div className='flex justify-center items-center text-center lg:flex-none'>
                 <div className='flex gap-1 items-center font-greycliff'>
                   <div>
-                    <BoltIcon className='w-5 h-5 fill-white dark:fill-yellow-400' />
+                    <BoltIcon className='w-5 h-5 fill-white dark:fill-base-brand' />
                   </div>
-                  <div className='text-white dark:text-white/70 text-sm md:text-base leading-tight'>
+                  <div className='text-white text-sm md:text-base leading-tight'>
                     New Course! IADD Diecutting Academy: Die Making 101
                   </div>
                 </div>
@@ -208,7 +208,7 @@ export default function HeaderNew() {
                 ) : (
                   <>
                     <Link href='/profile'>
-                      <a className='text-sm font-semibold text-clemson dark:text-white hover:text-gray-100 font-greycliff'>
+                      <a className='text-sm font-semibold text-clemson  hover:text-gray-100 font-greycliff'>
                         Hello, {user && user.name}
                       </a>
                     </Link>
@@ -229,8 +229,8 @@ export default function HeaderNew() {
 
           {/* Secondary navigation */}
           <div className='bg-white dark:bg-dark-mid'>
-            <div className='mx-auto max-w-7xl px-4'>
-              <div className='border-b border-slate-200 dark:border-dark-mid'>
+            <div className='mx-auto max-w-7xl px-4 md:px-0 py-1'>
+              <div className='border-b border-slate-200 dark:border-gray-600'>
                 <div className='flex h-24 items-center justify-between'>
                   {/* Logo (lg+) */}
                   <div className='hidden lg:flex lg:items-center'>

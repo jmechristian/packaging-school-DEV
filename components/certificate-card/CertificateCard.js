@@ -5,8 +5,8 @@ import CertificateCardTitle from '../../components/certificate-card/CertificateC
 
 const CertificateCard = () => {
   return (
-    <div className='bg-cmpm-cert bg-cover rounded-md drop-shadow-lg w-72 md:w-96 lg:w-full snap-start cursor-grab'>
-      <div className='grid grid-cols-12 w-full py-6 px-4 lg:px-6 xl:px-10 gap-5 xl:gap-8 items-center'>
+    <div className='bg-dark-mid bg-cover rounded-md drop-shadow-lg w-72 md:w-96 lg:w-full snap-start cursor-grab'>
+      <div className='grid grid-cols-12 w-full py-6 px-4 lg:px-6 xl:px-10 gap-5 xl:gap-8 items-center bg-gradient-to-r from-base-brand/50 to-clemson/50 via-base-mid/50 rounded-lg'>
         <div className='col-span-4 hidden lg:block'>
           <CertificateCardImage />
         </div>

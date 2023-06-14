@@ -8,7 +8,7 @@ const FooterEmailSignup = () => {
         <div className='font-extrabold text-sm uppercase tracking-widest text-slate-200 font-greycliff'>
           Stay Up To Date
         </div>
-        <p className='text-slate-500'>
+        <p className='text-slate-500 dark:text-gray-500'>
           Be the first to know about new classes and the latest tools to
           maximize your knowledge.
         </p>
@@ -29,7 +29,7 @@ const FooterEmailSignup = () => {
             </div>
           </button>
         </form>
-        <p className='text-xs text-slate-500 max-w-prose'>
+        <p className='text-xs text-slate-500 dark:text-gray-500 max-w-prose'>
           By signing up you indicate you have read and agree to our Terms of
           Use. Packaging School will always respect your privacy.
         </p>

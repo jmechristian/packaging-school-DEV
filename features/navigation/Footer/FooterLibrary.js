@@ -8,12 +8,12 @@ const FooterLibrary = () => {
       </div>
       <div className='grid grid-cols-2 gap-y-1 gap-x-8 lg:gap-x-4 justify-between'>
         <div className='flex flex-col gap-1'>
-          <p className='text-slate-500 w-fit'>Lessons</p>
-          <p className='text-slate-500 w-fit'>Videos</p>
+          <p className='text-slate-500 dark:text-gray-500 w-fit'>Lessons</p>
+          <p className='text-slate-500 dark:text-gray-500 w-fit'>Videos</p>
         </div>
         <div className='flex flex-col gap-1'>
-          <p className='text-slate-500 w-fit'>Free Tools</p>
-          <p className='text-slate-500 w-fit'>Glossary</p>
+          <p className='text-slate-500 dark:text-gray-500 w-fit'>Free Tools</p>
+          <p className='text-slate-500 dark:text-gray-500 w-fit'>Glossary</p>
         </div>
       </div>
     </div>

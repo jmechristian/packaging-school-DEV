@@ -18,13 +18,13 @@ const FooterCopyright = () => {
           <div className='text-slate-300 text-xs'>
             South Carolina Commission on Higher Education License #5400
           </div>
-          <div className='text-slate-500 text-xs'>
+          <div className='text-slate-500 dark:text-gray-500 text-xs'>
             Copyright © 2015-2022 The Packaging School, LLC. All Rights
             Reserved.
           </div>
         </div>
       </div>
-      <div className='flex gap-3 text-xs text-slate-500 lg:col-span-4 lg:justify-end'>
+      <div className='flex gap-3 text-xs text-slate-500 dark:text-gray-500 lg:col-span-4 lg:justify-end'>
         <div>Privacy Policy</div>
         <div>Terms of Service</div>
       </div>
