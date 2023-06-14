@@ -7,6 +7,7 @@ import YouTubeEmbed from '../YouTubeEmbed';
 import VideoPlayer from '../VideoPlayer';
 
 const CourseMain = ({ data }) => {
+  console.log(data);
   return (
     <section className='w-full h-full bg-white dark:bg-dark-dark bg-cover lg:py-16'>
       <div className='pb-12 md:container__inner lg:hidden h-full'>
@@ -23,13 +24,13 @@ const CourseMain = ({ data }) => {
           mass: 1,
           delay: 0.8,
         }}
-        key={data.course_id}
+        key={data.courseId}
       >
         <div className='grid grid-cols-1 lg:grid-cols-5 '>
           <div className='flex flex-col gap-16 lg:col-span-3'>
             <CourseIntro
-              id={data.course_id}
-              categories={data.category}
+              id={data.courseId}
+              category={data.category}
               title={data.title}
               instructor={data.instructor ? data.instructor : ''}
               subtitle={data.subheadline}

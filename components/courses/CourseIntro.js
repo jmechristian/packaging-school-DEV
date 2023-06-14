@@ -14,6 +14,7 @@ const CourseIntro = ({
   lessons,
   videos,
 }) => {
+  console.log(category);
   const backgroundColor = () => {
     switch (category) {
       case 'MATERIALS':

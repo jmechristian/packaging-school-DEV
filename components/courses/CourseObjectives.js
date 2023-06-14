@@ -59,7 +59,7 @@ const CourseObjectives = ({ what, items }) => {
                           <CheckBadgeIcon className='w-6 h-6 fill-base-brand' />
                         </motion.div>
                         <motion.div className='gray__white text-lg'>
-                          {item.overview_items}
+                          {item}
                         </motion.div>
                       </motion.div>
                     ))}
@@ -72,7 +72,7 @@ const CourseObjectives = ({ what, items }) => {
                           <CheckBadgeIcon className='w-6 h-6 fill-base-brand' />
                         </motion.div>
                         <motion.div className='gray__white text-lg'>
-                          {item.overview_items}
+                          {item}
                         </motion.div>
                       </motion.div>
                     ))}

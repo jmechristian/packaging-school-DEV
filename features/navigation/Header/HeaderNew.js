@@ -230,7 +230,7 @@ export default function HeaderNew() {
           {/* Secondary navigation */}
           <div className='bg-white dark:bg-dark-mid'>
             <div className='mx-auto max-w-7xl'>
-              <div className='border-b border-t border-slate-200 dark:border-gray-700'>
+              <div className='border-b border-t lg:border-t-0 border-slate-200 dark:border-gray-700'>
                 <div className='flex h-24 items-center justify-between px-4 md:px-8 lg:px-0'>
                   {/* Logo (lg+) */}
                   <div className='hidden lg:flex lg:items-center'>
