@@ -17,16 +17,16 @@ const Page = () => {
   return (
     <div className='pb-24 flex flex-col gap-12'>
       <CenteredTextHeader
-        headline='Certificate Application'
+        headline='CMPM Application'
         heading='Certificate of Mastery in Packaging Management'
         subhead='Distinguish yourself from your colleagues by acquiring a tangible solution that can be presented to both management and peers. Take your first step below and tell us a little bit about yourself to proceed with your application. You will receive a confirmation email within 1-3 business days of your complete application submission. We are looking forward to getting to know you better and can not wait to share our perspective with you on how packaging is an awesome industry full of opportunity.'
       />
       <div className='max-w-4xl mx-auto px-6 lg:px-0 w-full'>
         <form
-          className='w-full flex flex-col gap-12'
+          className='w-full flex flex-col gap-6 md:gap-12'
           onSubmit={handleSubmit((data) => onSubmit(data))}
         >
-          <div className='grid grid-cols-1 md:grid-cols-2 gap-16'>
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-12'>
             <div className='flex flex-col gap-2'>
               <div className='w-full flex justify-between items-center px-1'>
                 <label
@@ -78,7 +78,7 @@ const Page = () => {
               )}
             </div>
           </div>
-          <div className='grid grid-cols-1 md:grid-cols-2 gap-16'>
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-12'>
             <div className='flex flex-col gap-2'>
               <div className='w-full flex justify-between items-center px-1'>
                 <label
