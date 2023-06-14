@@ -7,8 +7,8 @@ const AllCourseCertMobile = () => {
 
   return (
     <div className='flex flex-col gap-4'>
-      <div className='font-medium text-lg leading-tight col-span-4 container__inner'>
-        Comprehensive <span className='font-bold'>Certificate Programs</span>
+      <div className='text-2xl font-semibold font-greycliff dark:text-slate-400 leading-tight col-span-4 container__inner mb-2'>
+        Certificate Programs
       </div>
       <Scroller scroll={certRef} rows='1'>
         <CertificateCard />

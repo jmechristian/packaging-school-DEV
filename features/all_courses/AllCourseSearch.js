@@ -25,7 +25,7 @@ const AllCourseSearch = () => {
           onChange={(e) => setCourseSearchText(e.target.value)}
         />
         <button
-          className='w-full h-full bg-base-mid flex justify-center items-center col-span-2 md:col-span-1'
+          className='w-full h-full bg-base-mid dark:bg-dark-mid flex justify-center items-center col-span-2 md:col-span-1'
           type='submit'
         >
           <MagnifyingGlassIcon className='w-6 h-6 stroke-white' />

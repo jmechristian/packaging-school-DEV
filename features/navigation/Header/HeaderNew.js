@@ -3,7 +3,6 @@ import { Dialog, Popover, Tab, Transition } from '@headlessui/react';
 import { useSelector } from 'react-redux';
 import {
   Bars3Icon,
-  BoltIcon,
   MagnifyingGlassIcon,
   UserIcon,
   XMarkIcon,
@@ -21,7 +20,8 @@ import { showSearch } from '../navigationSlice';
 import { setDark, setLight } from '../../layout/layoutSlice';
 import { useDispatch } from 'react-redux';
 import { LightBulbIcon } from '@heroicons/react/24/outline';
-import { MoonIcon } from '@heroicons/react/24/solid';
+import { MoonIcon, BoltIcon } from '@heroicons/react/24/solid';
+import LogoSquare from '../../../components/layout/LogoSquare';
 
 const navigation = {
   categories: [
@@ -173,14 +173,16 @@ export default function HeaderNew() {
       <header className='relative'>
         <nav aria-label='Top'>
           {/* Top navigation */}
-          <div className='bg-gray-900 dark:bg-base-mid flex items-center justify-center'>
-            <div className='flex min-h-10 max-w-7xl items-center justify-center px-8 py-1.5'>
-              <div className='flex justify-center items-center text-center text-sm font-medium text-white lg:flex-none'>
+          <div className='bg-gray-900 dark:bg-dark-dark flex items-center justify-center'>
+            <div className='flex min-h-10 max-w-7xl items-center justify-center px-8 py-2'>
+              <div className='flex justify-center items-center text-center lg:flex-none'>
                 <div className='flex gap-1 items-center font-greycliff'>
                   <div>
-                    <BoltIcon className='w-5 h-5 fill-white' />
+                    <BoltIcon className='w-5 h-5 fill-white dark:fill-yellow-400' />
                   </div>
-                  <div>New Course! IADD Diecutting Academy: Die Making 101</div>
+                  <div className='text-white dark:text-white/70 text-sm md:text-base leading-tight'>
+                    New Course! IADD Diecutting Academy: Die Making 101
+                  </div>
                 </div>
               </div>
 
@@ -228,7 +230,7 @@ export default function HeaderNew() {
           {/* Secondary navigation */}
           <div className='bg-white dark:bg-dark-mid'>
             <div className='mx-auto max-w-7xl px-4'>
-              <div className='border-b border-slate-200 dark:border-slate-600'>
+              <div className='border-b border-slate-200 dark:border-dark-mid'>
                 <div className='flex h-24 items-center justify-between'>
                   {/* Logo (lg+) */}
                   <div className='hidden lg:flex lg:items-center'>
@@ -395,7 +397,7 @@ export default function HeaderNew() {
                   <div className='flex flex-1 items-center lg:hidden'>
                     <button
                       type='button'
-                      className='rounded-md bg-white dark:bg-dark-mid p-2 text-slate-400 dark:text-white'
+                      className='rounded-md bg-white dark:bg-dark-mid p-2 text-slate-400 dark:text-white/40'
                       onClick={() => setOpen(true)}
                     >
                       <span className='sr-only'>Open menu</span>
@@ -405,7 +407,7 @@ export default function HeaderNew() {
                     {/* Search */}
                     <a
                       href='#'
-                      className='ml-2 p-2 text-slate-400 hover:text-slate-500'
+                      className='ml-2 p-2 text-slate-400 hover:text-slate-500 dark:text-white/40'
                       onClick={() => dispatch(showSearch())}
                     >
                       <span className='sr-only'>Search</span>
@@ -419,11 +421,7 @@ export default function HeaderNew() {
                   {/* Logo (lg-) */}
                   <a href='#' className='lg:hidden'>
                     <span className='sr-only'>Packaging School</span>
-                    <img
-                      src='https://packschool.s3.amazonaws.com/logoSquare.svg'
-                      alt=''
-                      className='h-12 w-auto'
-                    />
+                    <LogoSquare className='w-6 h-6' />
                   </a>
 
                   <div className='flex flex-1 items-center justify-end'>
@@ -432,7 +430,7 @@ export default function HeaderNew() {
                         <div className='hidden lg:flex'>
                           <a
                             href='#'
-                            className='-m-2 p-2 text-slate-400 hover:text-slate-500'
+                            className='-m-2 p-2 text-slate-400 hover:text-slate-500 dark:text-white/40'
                             onClick={() => dispatch(showSearch())}
                           >
                             <span className='sr-only'>Search</span>
@@ -445,7 +443,7 @@ export default function HeaderNew() {
 
                         <div className='flex'>
                           <Link href='/profile'>
-                            <a className='-m-2 p-2 text-slate-400 hover:text-slate-500'>
+                            <a className='-m-2 p-2 text-slate-400 hover:text-slate-500 dark:text-white/40'>
                               <UserIcon
                                 className='h-6 w-6'
                                 aria-hidden='true'
@@ -456,19 +454,19 @@ export default function HeaderNew() {
                       </div>
 
                       <span
-                        className='mx-4 h-6 w-px bg-slate-200 lg:mx-6'
+                        className='mx-4 h-6 w-px bg-slate-200 dark:bg-white/40 lg:mx-6'
                         aria-hidden='true'
                       />
 
                       <div className='flow-root'>
                         {darkMode ? (
                           <div onClick={() => dispatch(setLight())}>
-                            <MoonIcon className='w-6 h-6 text-gray-400 group-hover:text-gray-500 cursor-pointer' />
+                            <MoonIcon className='w-6 h-6 text-gray-400 group-hover:text-gray-500 dark:text-white/40 cursor-pointer' />
                           </div>
                         ) : (
                           <div onClick={() => dispatch(setDark())}>
                             <LightBulbIcon
-                              className='h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500 cursor-pointer'
+                              className='h-6 w-6 flex-shrink-0 text-gray-400 dark:text-white/40 group-hover:text-gray-500 cursor-pointer'
                               aria-hidden='true'
                             />
                           </div>

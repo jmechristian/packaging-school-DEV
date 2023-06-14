@@ -1,7 +1,12 @@
 import React, { useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setMobileFilterOpen } from './courseFilterSlice';
-import { Bars3Icon } from '@heroicons/react/24/outline';
+import {
+  Bars3Icon,
+  Funnel,
+  AdjustmentsVerticalIcon,
+  FunnelIcon,
+} from '@heroicons/react/24/outline';
 
 import AllCourseMobileMenu from './AllCourseMobileMenu';
 
@@ -12,7 +17,7 @@ const AllCourseFilter = () => {
   return (
     <>
       <div className='grid grid-cols-6 items-center container__inner'>
-        <div className='font-medium text-lg font-greycliff col-span-4'>
+        <div className='font-semibold text-xl font-greycliff col-span-4 dark:text-slate-400'>
           Browse <span className='font-bold'>{selectedFilter.name}&nbsp;</span>
           Courses
         </div>
@@ -21,9 +26,8 @@ const AllCourseFilter = () => {
           onClick={() => dispatch(setMobileFilterOpen())}
         >
           <div>
-            <Bars3Icon className='w-5 h-5 stroke-slate-900' />
+            <AdjustmentsVerticalIcon className='w-6 h-6 stroke-slate-900 dark:stroke-white' />
           </div>
-          <div className='text-lg text-slate-900'>Filter</div>
         </button>
       </div>
       <AllCourseMobileMenu />

@@ -88,7 +88,7 @@ const Layout = ({ children }) => {
         <meta name='keywords' content='packaging, sustainability' />
         <meta name='robots' content='index, follow' />
       </Head>
-      <div className={`${darkMode ? 'dark' : ''}`}>
+      <div className={`${darkMode ? 'dark' : ''} `}>
         <div className='relative flex flex-col justify-between'>
           {searchOpen && <SearchContainer />}
           {preview && (
