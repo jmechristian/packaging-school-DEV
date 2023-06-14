@@ -25,7 +25,7 @@ const CMPMWrapper = () => {
   };
 
   return (
-    <div className='flex flex-col pb-24 gap-6'>
+    <div className='flex flex-col pb-24 gap-12'>
       <CenteredTextHeader
         headline='CMPM Application'
         heading='Certificate of Mastery in Packaging Management'

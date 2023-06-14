@@ -34,7 +34,9 @@ const CenteredTextHeader = ({
             <h1 className='text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl font-greycliff'>
               {headline}
             </h1>
-            <p className='mt-6 text-lg leading-8 text-gray-600'>{subhead}</p>
+            <p className='mt-6 md:text-lg leading-7 md:leading-8 text-gray-600'>
+              {subhead}
+            </p>
             {buttonText && (
               <div className='mt-10 flex items-center justify-center gap-x-6'>
                 <a
