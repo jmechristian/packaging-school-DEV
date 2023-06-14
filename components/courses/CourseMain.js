@@ -8,7 +8,7 @@ import VideoPlayer from '../VideoPlayer';
 
 const CourseMain = ({ data }) => {
   return (
-    <section className='w-full h-full bg-white dark:bg-dark bg-cover lg:dark:bg-dark lg:py-16'>
+    <section className='w-full h-full bg-white dark:bg-dark-mid bg-cover lg:py-16'>
       <div className='pb-12 md:container__inner lg:hidden h-full'>
         <VideoPlayer videoEmbedLink={data.embed_id} />
       </div>
@@ -29,35 +29,35 @@ const CourseMain = ({ data }) => {
           <div className='flex flex-col gap-16 lg:col-span-3'>
             <CourseIntro
               id={data.course_id}
-              categories={data.categories}
-              title={data.course_title}
-              instructor={data.instructor}
-              subtitle={data.course_subtitle}
-              infoSheet={data.course_info_sheet}
-              hours={data.course_hours}
-              lessons={data.course_lessons}
-              videos={data.course_videos}
+              categories={data.category}
+              title={data.title}
+              instructor={data.instructor ? data.instructor : ''}
+              subtitle={data.subheadline}
+              infoSheet={data.infoSheet}
+              hours={data.hours}
+              lessons={data.lessons}
+              videos={data.videos}
             />
             <div className='lg:hidden'>
               <CourseInfo
-                embedid={data.embed_id}
-                price={data.course_price}
-                certification={data.certificate}
+                embedid={data.preview}
+                price={data.price}
+                certification={''}
               />
             </div>
             <CourseObjectives
               what={data.what_learned}
-              items={data.what_learned_items}
+              items={data.objectives}
             />
           </div>
           <div className='hidden lg:inline-grid lg:col-span-2 pl-8'>
             <CourseInfo
-              embedid={data.embed_id}
-              videos={data.course_videos}
-              price={data.course_price}
-              certification={data.certificate}
-              link={data.lms_link}
-              trialLink={data.lms_trial_link}
+              embedid={data.preview}
+              videos={data.videos}
+              price={data.price}
+              certification={''}
+              link={data.link}
+              trialLink={`${data.link}?et=free_trial`}
             />
           </div>
         </div>

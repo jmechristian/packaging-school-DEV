@@ -17,9 +17,7 @@ const CourseObjectives = ({ what, items }) => {
         <div className='font-semibold font-greycliff text-2xl black__white '>
           What You Will Learn
         </div>
-        <div className='gray__white text-lg'>
-          <PrismicRichText field={what} />
-        </div>
+        <div className='gray__white text-lg'>{what}</div>
       </div>
       {items.length > 1 && (
         <div className='flex flex-col gap-6'>

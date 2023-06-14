@@ -10,7 +10,7 @@ const CourseBottom = ({ related }) => {
         <div className='container__inner'>
           <StudentSuccess />
         </div>
-        {related[0].related.data && (
+        {related && (
           <div>
             <div className='container__inner'>
               <div className='border-b border-b-gray-400 pb-4'>

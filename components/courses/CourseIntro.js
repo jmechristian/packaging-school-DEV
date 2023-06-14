@@ -1,12 +1,11 @@
 import React from 'react';
-import { PrismicRichText } from '@prismicio/react';
 import Instructor from './Instructor';
 import CourseItems from './CourseItems';
 import CourseDetails from './CourseDetails';
 
 const CourseIntro = ({
   id,
-  categories,
+  category,
   title,
   instructor,
   subtitle,
@@ -16,8 +15,8 @@ const CourseIntro = ({
   videos,
 }) => {
   const backgroundColor = () => {
-    switch (categories[0].category) {
-      case 'Materials':
+    switch (category) {
+      case 'MATERIALS':
         return 'bg-blue-900';
       case 'Industry':
         return 'bg-red-800';
@@ -42,19 +41,15 @@ const CourseIntro = ({
         </div>
         <div className={` ${backgroundColor()} max-w-fit rounded-md`}>
           <div className=' text-white text-xs lg:text-sm flex py-1 px-3'>
-            {categories[0].category}
+            {category}
           </div>
         </div>
       </div>
       <div className='flex flex-col gap-4'>
-        <div className='hero__headline black__white mb-3'>
-          <PrismicRichText field={title} />
-        </div>
-        <div className='gray__white text-lg'>
-          <PrismicRichText field={subtitle} />
-        </div>
+        <div className='hero__headline black__white mb-3'>{title}</div>
+        <div className='gray__white text-lg'>{subtitle}</div>
       </div>
-      <Instructor instructor={instructor} />
+      {/* <Instructor instructor={instructor} /> */}
       <CourseDetails hours={hours} lessons={lessons} videos={videos} />
       <CourseItems infoSheet={infoSheet} />
     </div>

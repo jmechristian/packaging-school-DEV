@@ -96,7 +96,6 @@ const Layout = ({ children }) => {
           )}
           <HeaderNew />
           <ScrollTop />
-          {/* <DarkToggle /> */}
           <main className='relative h-full'>{children}</main>
           <Footer />
         </div>

@@ -83,8 +83,8 @@ export default function HeaderNew() {
               leaveFrom='translate-x-0'
               leaveTo='-translate-x-full'
             >
-              <Dialog.Panel className='relative flex w-full max-w-full flex-col overflow-y-auto bg-slate-100 pb-12 shadow-xl'>
-                <div className='flex px-4 pb-2 pt-5'>
+              <Dialog.Panel className='relative flex w-full max-w-full flex-col overflow-y-auto bg-slate-100 dark:bg-dark-dark pb-12 shadow-xl'>
+                <div className='flex pb-2 pt-5'>
                   <button
                     type='button'
                     className='-m-2 inline-flex items-center justify-center rounded-md p-2 text-gray-400'
@@ -120,7 +120,7 @@ export default function HeaderNew() {
                     {navigation.categories.map((category, categoryIdx) => (
                       <Tab.Panel
                         key={category.name}
-                        className='space-y-12 px-4 pb-6 pt-10'
+                        className='space-y-12 px-4 pb-6 pt-10 max-w-[96%]'
                       >
                         <div className='grid grid-cols-1 items-start gap-x-6 gap-y-10'>
                           <div className='grid grid-cols-1 gap-x-6 gap-y-10'>
@@ -173,9 +173,9 @@ export default function HeaderNew() {
       <header className='relative'>
         <nav aria-label='Top'>
           {/* Top navigation */}
-          <div className='bg-gray-900 dark:bg-base-mid'>
-            <div className='mx-auto flex min-h-10 max-w-7xl items-center justify-between px-6 lg:px-8 py-1.5'>
-              <div className='flex-1 text-center text-sm font-medium text-white lg:flex-none'>
+          <div className='bg-gray-900 dark:bg-base-mid flex items-center justify-center'>
+            <div className='flex min-h-10 max-w-7xl items-center justify-center px-8 py-1.5'>
+              <div className='flex justify-center items-center text-center text-sm font-medium text-white lg:flex-none'>
                 <div className='flex gap-1 items-center font-greycliff'>
                   <div>
                     <BoltIcon className='w-5 h-5 fill-white' />
@@ -227,7 +227,7 @@ export default function HeaderNew() {
 
           {/* Secondary navigation */}
           <div className='bg-white dark:bg-dark-mid'>
-            <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
+            <div className='mx-auto max-w-7xl px-4'>
               <div className='border-b border-slate-200 dark:border-slate-600'>
                 <div className='flex h-24 items-center justify-between'>
                   {/* Logo (lg+) */}
@@ -395,7 +395,7 @@ export default function HeaderNew() {
                   <div className='flex flex-1 items-center lg:hidden'>
                     <button
                       type='button'
-                      className='-ml-2 rounded-md bg-white p-2 text-slate-400'
+                      className='rounded-md bg-white dark:bg-dark-mid p-2 text-slate-400 dark:text-white'
                       onClick={() => setOpen(true)}
                     >
                       <span className='sr-only'>Open menu</span>
@@ -426,7 +426,7 @@ export default function HeaderNew() {
                     />
                   </a>
 
-                  <div className='flex flex-1 items-center justify-end'>
+                  <div className='flex flex-1 items-center justify-center'>
                     <div className='flex items-center lg:ml-8'>
                       <div className='flex space-x-8'>
                         <div className='hidden lg:flex'>

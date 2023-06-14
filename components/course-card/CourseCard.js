@@ -119,7 +119,7 @@ const CourseCard = ({
   return (
     <>
       <motion.div
-        className={`w-full ${
+        className={`w-full max-w-[350px] ${
           darkMode ? 'bg-dark-mid text-white' : 'bg-white'
         } rounded-xl shadow-lg aspect-1`}
       >
