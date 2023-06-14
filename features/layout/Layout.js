@@ -1,7 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { gql } from '@apollo/client';
-import { client } from '../../helpers/apollo-client';
-import DarkToggle from '../layout/DarkToggle';
+import React, { useEffect } from 'react';
 import Head from 'next/head';
 import Footer from '../navigation/Footer/Footer';
 import { useSelector, useDispatch } from 'react-redux';
@@ -10,15 +7,16 @@ import {
   setPreviewClosed,
 } from '../all_courses/courseFilterSlice';
 import { setUser } from '../auth/authslice';
+import { setDark } from './layoutSlice';
 import ScrollTop from './ScrollTop';
 import { useUser } from '@auth0/nextjs-auth0/client';
 import { API, graphqlOperation } from 'aws-amplify';
 import CoursePreview from '../../components/course-card/CoursePreview';
 import { usersByEmail, listLMSCourses } from '../../src/graphql/queries';
 import { createUser } from '../../src/graphql/mutations';
+import { onUpdateUser } from '../../src/graphql/subscriptions';
 import HeaderNew from '../navigation/Header/HeaderNew';
 import SearchContainer from '../../components/search/SearchContainer';
-import { onUpdateUser } from '../../src/graphql/subscriptions';
 
 const Layout = ({ children }) => {
   const dispatch = useDispatch();
@@ -71,6 +69,10 @@ const Layout = ({ children }) => {
 
       dispatch(setAllCourses(courses.data.listLMSCourses.items));
     };
+
+    if (window.matchMedia('(prefers-color-scheme: dark)')) {
+      dispatch(setDark());
+    }
 
     getCourses();
   }, [dispatch]);

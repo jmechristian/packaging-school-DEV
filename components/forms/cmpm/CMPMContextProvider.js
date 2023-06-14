@@ -1,4 +1,4 @@
-import React, { useState, createContext } from 'react';
+import React, { useState, createContext, useEffect } from 'react';
 
 export const CMPMContext = createContext({
   activeIndex: 0,
@@ -7,12 +7,25 @@ export const CMPMContext = createContext({
   setErrorIndex: () => {},
   formValue: {},
   setFormValues: () => {},
+  initParams: { firstName: '', lastName: '', email: '', phone: '' },
 });
 
-const CMPMContextProvider = ({ children, pageData }) => {
+const CMPMContextProvider = ({ children, pageData, params }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [errorIndex, setErrorIndex] = useState([]);
   const [formValues, setFormValues] = useState({});
+  const [initParams, setInitParams] = useState({});
+
+  useEffect(() => {
+    if (params) {
+      setInitParams({
+        firstName: params.firstName,
+        lastName: params.lastName,
+        email: params.email,
+        phone: params.phone,
+      });
+    }
+  }, [params]);
 
   return (
     <CMPMContext.Provider
@@ -23,6 +36,7 @@ const CMPMContextProvider = ({ children, pageData }) => {
         setErrorIndex,
         formValues: pageData?.getCMPMForm,
         setFormValues,
+        params: initParams,
       }}
     >
       {children}

@@ -9,7 +9,7 @@ import CMPMSessionInfo from './CMPMSessionInfo';
 import { CMPMContext } from './CMPMContextProvider';
 
 const CMPMWrapper = () => {
-  const { activeIndex, setActiveIndex } = useContext(CMPMContext);
+  const { activeIndex, setActiveIndex, params } = useContext(CMPMContext);
 
   const formStateToDisplay = (activeIndex) => {
     switch (activeIndex) {
@@ -27,7 +27,7 @@ const CMPMWrapper = () => {
   return (
     <div className='flex flex-col pb-24 gap-6'>
       <CenteredTextHeader
-        headline='Student Application'
+        headline='CMPM Application'
         heading='Certificate of Mastery in Packaging Management'
         subhead='Thank you for your interest in the Certificate of Mastery in Packaging Management (CMPM) offered through Clemson University’s Center for Corporate Learning. Below is our application for admission. Our request is that you embrace the application as an opportunity for the Packaging School Education Team to understand your personal and professional goals so that we may ensure the CMPM program is a fit for you.'
       />
@@ -37,7 +37,7 @@ const CMPMWrapper = () => {
           activeIndex={activeIndex}
           setActiveIndex={(val) => setActiveIndex(val)}
         >
-          <CMPMPersonalInfo activeIndex={activeIndex} />
+          <CMPMPersonalInfo activeIndex={activeIndex} params={params} />
           <CMPMProfessionalInfo activeIndex={activeIndex} />
           <CMPMGoals activeIndex={activeIndex} />
           <CMPMSessionInfo activeIndex={activeIndex} />

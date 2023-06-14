@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 import CenteredTextHeader from '../components/layout/CenteredTextHeader';
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
@@ -10,9 +11,13 @@ const Page = () => {
     formState: { errors },
   } = useForm();
   const [isErrors, setErrors] = useState(null);
+  const router = useRouter();
 
-  const onSubmit = (data) => console.log(data);
-  console.log(errors);
+  const onSubmit = (data) => {
+    router.push(
+      `/continue-certificate-of-mastery-in-packaging-management?firstName=${data.firstName}&lastName=${data.lastName}&email=${data.email}&phone=${data.phone}`
+    );
+  };
 
   return (
     <div className='pb-24 flex flex-col gap-12'>

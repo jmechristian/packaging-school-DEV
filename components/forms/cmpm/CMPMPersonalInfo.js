@@ -4,7 +4,7 @@ import { useFormContext } from 'react-hook-form';
 import { useSelector } from 'react-redux';
 import { CMPMContext } from './CMPMContextProvider';
 
-const CMPMPersonalInfo = ({ activeIndex }) => {
+const CMPMPersonalInfo = ({ activeIndex, params }) => {
   const { user } = useSelector((state) => state.auth);
   const { register, formState } = useFormContext();
   const { formValues } = useContext(CMPMContext);
@@ -20,20 +20,20 @@ const CMPMPersonalInfo = ({ activeIndex }) => {
           placeholder={''}
           label={'First Name'}
           required
-          value={formValues ? formValues.firstName : ''}
+          value={params ? params.firstName : ''}
         />
         <TextInput
           name={'lastName'}
           placeholder={''}
           label={'Last Name'}
-          value={formValues ? formValues.lastName : ''}
+          value={params ? params.lastName : ''}
           required
         />
       </div>
       <div className='grid grid-cols-2 gap-8'>
         <TextInput
           name={'email'}
-          value={formValues ? formValues.email : ''}
+          value={params ? params.email : ''}
           placeholder={'you@email.com'}
           label={'Email'}
           type={'email'}
@@ -45,7 +45,7 @@ const CMPMPersonalInfo = ({ activeIndex }) => {
           label={'Phone'}
           required
           type='tel'
-          value={formValues ? formValues.phone : ''}
+          value={params ? params.phone : ''}
         />
       </div>
       <TextInput
