@@ -8,7 +8,7 @@ import VideoPlayer from '../VideoPlayer';
 
 const CourseMain = ({ data }) => {
   return (
-    <section className='w-full h-full bg-white dark:bg-dark-mid bg-cover lg:py-16'>
+    <section className='w-full h-full bg-white dark:bg-dark-dark bg-cover lg:py-16'>
       <div className='pb-12 md:container__inner lg:hidden h-full'>
         <VideoPlayer videoEmbedLink={data.embed_id} />
       </div>

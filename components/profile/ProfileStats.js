@@ -74,7 +74,7 @@ export default function ProfileStats({ user }) {
         <h3 className='text-lg font-bold leading-6 text-gray-900 font-greycliff mb-6'>
           Your Saved Courses
         </h3>
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-3'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3'>
           {user?.savedCourses.map((it, i) => (
             <div key={i}>
               <SavedCourse courseId={it} savedCourse={user?.savedCourses} />
