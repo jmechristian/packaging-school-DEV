@@ -19,9 +19,9 @@ const CourseIntro = ({
     switch (category) {
       case 'MATERIALS':
         return 'bg-blue-900';
-      case 'Industry':
+      case 'INDUSTRY':
         return 'bg-red-800';
-      case 'Design':
+      case 'DESIGN':
         return 'bg-green-800';
       case 'Food & Beverage':
         return 'bg-cyan-900';
@@ -48,7 +48,9 @@ const CourseIntro = ({
       </div>
       <div className='flex flex-col gap-4'>
         <div className='hero__headline black__white mb-3'>{title}</div>
-        <div className='gray__white text-lg'>{subtitle}</div>
+        <div className='text-slate-500 dark:text-gray-400 text-lg'>
+          {subtitle}
+        </div>
       </div>
       {/* <Instructor instructor={instructor} /> */}
       <CourseDetails hours={hours} lessons={lessons} videos={videos} />

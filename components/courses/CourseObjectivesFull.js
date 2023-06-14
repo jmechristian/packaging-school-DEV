@@ -11,7 +11,7 @@ const CourseObjectivesFull = ({ first, second }) => {
               <div>
                 <CheckBadgeIcon className='w-6 h-6 fill-base-brand' />
               </div>
-              <div className='gray__white text-lg'>{item.overview_items}</div>
+              <div className='gray__white text-lg'>{item}</div>
             </div>
           ))}
       </div>
@@ -22,7 +22,7 @@ const CourseObjectivesFull = ({ first, second }) => {
               <div>
                 <CheckBadgeIcon className='w-6 h-6 fill-base-brand' />
               </div>
-              <div className='gray__white text-lg'>{item.overview_items}</div>
+              <div className='gray__white text-lg'>{item}</div>
             </div>
           ))}
       </div>

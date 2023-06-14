@@ -6,7 +6,7 @@ import RotatingCaret from '../RotatingCaret';
 
 const CourseObjectives = ({ what, items }) => {
   const [showObjectives, setShowObjectives] = useState(false);
-
+  console.log(items);
   const half = Math.ceil(items.length / 2);
   const firstHalf = items.slice(0, half);
   const secondHalf = items.slice(half);
@@ -17,7 +17,7 @@ const CourseObjectives = ({ what, items }) => {
         <div className='font-semibold font-greycliff text-2xl black__white '>
           What You Will Learn
         </div>
-        <div className='gray__white text-lg'>{what}</div>
+        <div className='text-slate-500 dark:text-gray-400 text-lg'>{what}</div>
       </div>
       {items.length > 1 && (
         <div className='flex flex-col gap-6'>
@@ -79,7 +79,7 @@ const CourseObjectives = ({ what, items }) => {
                 </motion.div>
               </motion.div>
               {!showObjectives && (
-                <motion.div className='absolute -left-5 -right-5 bottom-0 top-0 bg-gradient-to-t from-white dark:from-dark via-white/70 dark:via-dark/95 z-10'></motion.div>
+                <motion.div className='absolute -left-5 -right-5 bottom-0 top-0 bg-gradient-to-t from-white dark:from-dark-dark via-white/70 dark:via-dark-dark/95 z-10'></motion.div>
               )}
             </motion.div>
           </AnimatePresence>

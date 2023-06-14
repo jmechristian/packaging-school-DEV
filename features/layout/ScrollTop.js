@@ -43,7 +43,7 @@ const ScrollTop = () => {
       animate={showTopButton ? 'show' : 'hidden'}
     >
       <button
-        className='bg-dark dark:bg-base-dark rounded-full w-12 h-12 flex justify-center items-center shadow-xl'
+        className='bg-dark dark:bg-base-dark rounded-full w-9 h-9 md:w-12 md:h-12 flex justify-center items-center shadow-xl'
         onClick={() => {
           window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
         }}

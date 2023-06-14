@@ -44,6 +44,8 @@ const CourseMain = ({ data }) => {
                 embedid={data.preview}
                 price={data.price}
                 certification={''}
+                link={data.link}
+                trialLink={`${data.link}?et=free_trial`}
               />
             </div>
             <CourseObjectives

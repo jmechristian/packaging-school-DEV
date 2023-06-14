@@ -37,7 +37,7 @@ const CourseTitle = ({ title, hours, lessons, price, newWidth }) => {
           newWidth ? 'text-lg' : 'text-sm'
         } leading-snug`}
       >
-        {price === 'FREE' ? 'Free!' : `$${price}`}
+        {price === 'FREE' || 'Free' ? 'Free!' : `$${price}`}
       </div>
     </div>
   );
