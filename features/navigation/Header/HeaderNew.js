@@ -426,7 +426,7 @@ export default function HeaderNew() {
                     />
                   </a>
 
-                  <div className='flex flex-1 items-center justify-center'>
+                  <div className='flex flex-1 items-center justify-end'>
                     <div className='flex items-center lg:ml-8'>
                       <div className='flex space-x-8'>
                         <div className='hidden lg:flex'>
