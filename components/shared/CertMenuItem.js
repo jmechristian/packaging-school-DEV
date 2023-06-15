@@ -26,8 +26,6 @@ const CertMenuItem = ({ title, content, bgColor, icon, learnMore, apply }) => {
     }
   };
 
-  console.log(apply);
-
   return (
     <div className='cols-span-1 flex flex-col bg-base-light rounded-lg p-5 gap-4 h-full justify-between'>
       <div className='flex flex-col gap-2 col-span-4 items-center justify-center'>

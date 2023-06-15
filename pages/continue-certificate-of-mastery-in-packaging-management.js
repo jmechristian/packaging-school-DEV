@@ -8,8 +8,6 @@ const Page = () => {
 
   const { firstName, lastName, email, phone } = router.query;
 
-  console.log(firstName);
-
   return (
     <CMPMContextProvider params={{ firstName, lastName, email, phone }}>
       <CMPMWrapper />

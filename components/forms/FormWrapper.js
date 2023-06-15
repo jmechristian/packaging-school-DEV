@@ -9,30 +9,12 @@ import {
   updateUser,
   updateCMPMForm,
 } from '../../src/graphql/mutations';
+import SignInModal from '../shared/SignInModal';
 
 const FormWrapper = ({ children, activeIndex, setActiveIndex }) => {
   const { user } = useSelector((state) => state.auth);
 
-  // useEffect(() => {
-  //   user getUserFormGroup();
-  // }, []);
-
-  // const getUserFormGroup = async () => {
-  //   if (user && user.cmpmFormID) {
-  //     return;
-  //   } else {
-  //     await API.graphql({
-  //       query: createCMPMForm,
-  //       variables: {
-  //         input: { id: user.id },
-  //       },
-  //     });
-  //     await API.graphql({
-  //       query: updateUser,
-  //       variables: { input: { id: user.id, cmpmFormID: user.id } },
-  //     });
-  //   }
-  // };
+  const [open, setOpen] = useState(false);
 
   const personalErrors = [
     'firstName',
@@ -59,38 +41,40 @@ const FormWrapper = ({ children, activeIndex, setActiveIndex }) => {
   const goalErrors = ['yearGoals', 'cmpmGoals', 'moreAboutYou'];
 
   const formSaveHandler = async (currentFormState) => {
-    console.log('form', currentFormState);
-    console.log('user', user);
-    await API.graphql({
-      query: updateCMPMForm,
-      variables: {
-        input: {
-          id: user.id,
-          firstName: currentFormState.firstName,
-          lastName: currentFormState.lastName,
-          email: currentFormState.email,
-          phone: currentFormState.phone,
-          streetAddress: currentFormState.streetAddress,
-          addressExtra: currentFormState.addressExtra,
-          city: currentFormState.city,
-          state: currentFormState.state,
-          country: currentFormState.country,
-          companyName: currentFormState.companyName,
-          companyTitle: currentFormState.companyTitle,
-          linkedin: currentFormState.linkedIn,
-          background: currentFormState.background,
-          whyPackaging: currentFormState.whyPackaging,
-          areaOfInterest: currentFormState.areaOfInterest,
-          sessionApplying: currentFormState.sessionApplying,
-          referral: currentFormState.referral,
-          payment: currentFormState.payment,
-          yearGoals: currentFormState.yearGoals,
-          cmpmGoals: currentFormState.cmpmGoals,
-          moreAboutYou: currentFormState.moreAboutYou,
-          birthYear: currentFormState.birthYear,
+    if (!user) {
+      setOpen(true);
+    } else if (user) {
+      await API.graphql({
+        query: updateCMPMForm,
+        variables: {
+          input: {
+            id: user.id,
+            firstName: currentFormState.firstName,
+            lastName: currentFormState.lastName,
+            email: currentFormState.email,
+            phone: currentFormState.phone,
+            streetAddress: currentFormState.streetAddress,
+            addressExtra: currentFormState.addressExtra,
+            city: currentFormState.city,
+            state: currentFormState.state,
+            country: currentFormState.country,
+            companyName: currentFormState.companyName,
+            companyTitle: currentFormState.companyTitle,
+            linkedin: currentFormState.linkedIn,
+            background: currentFormState.background,
+            whyPackaging: currentFormState.whyPackaging,
+            areaOfInterest: currentFormState.areaOfInterest,
+            sessionApplying: currentFormState.sessionApplying,
+            referral: currentFormState.referral,
+            payment: currentFormState.payment,
+            yearGoals: currentFormState.yearGoals,
+            cmpmGoals: currentFormState.cmpmGoals,
+            moreAboutYou: currentFormState.moreAboutYou,
+            birthYear: currentFormState.birthYear,
+          },
         },
-      },
-    });
+      });
+    }
   };
 
   const formForwardHandler = (currentFormState) => {
@@ -123,6 +107,7 @@ const FormWrapper = ({ children, activeIndex, setActiveIndex }) => {
 
   return (
     <div className='mx-auto w-full px-16 pt-6 pb-12 bg-slate-100'>
+      <SignInModal open={open} setOpen={() => setOpen(false)} />
       <FormProvider {...methods}>
         <form onSubmit={methods.handleSubmit(onSubmit, onError)}>
           {children}

@@ -8,8 +8,6 @@ const CMPMProfessionalInfo = ({ activeIndex }) => {
   const { user } = useSelector((state) => state.auth);
   const { formValues } = useContext(CMPMContext);
 
-  console.log(formValues);
-
   return (
     <div
       className='grid flex-col gap-6 pt-4'

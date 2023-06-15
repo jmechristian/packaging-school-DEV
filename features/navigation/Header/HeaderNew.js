@@ -287,7 +287,7 @@ export default function HeaderNew() {
                                         <div className='grid grid-cols-1 col-span-1 gap-6 h-full'>
                                           <CertMenuItem
                                             title='Certificate of Mastery in Packaging Management'
-                                            apply='/'
+                                            apply='/certificate-of-mastery-in-packaging-management'
                                             learnMore='/'
                                             content='A 12-month, PhD-led program teaching you the latest technologies accelerating the packaging field in the space of packaging development, material procurement, and organizational management.'
                                             bgColor='bg-gradient-to-br from-base-brand to-slate-700'
