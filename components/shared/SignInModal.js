@@ -1,8 +1,17 @@
 import { Fragment, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { CheckIcon, RocketLaunchIcon } from '@heroicons/react/24/outline';
+import { useRouter } from 'next/router';
 
 export default function SignInModal({ open, setOpen }) {
+  const router = useRouter();
+  const currentPath = router.asPath;
+  console.log(currentPath);
+
+  const signInHandler = () => {
+    router.push(`/api/auth/login?returnTo=${currentPath}`);
+  };
+
   return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog as='div' className='relative z-10' onClose={setOpen}>
@@ -56,7 +65,7 @@ export default function SignInModal({ open, setOpen }) {
                   <button
                     type='button'
                     className='inline-flex w-full justify-center rounded-md bg-clemson px-3 py-3 text-lg font-semibold text-white shadow-sm hover:bg-clemson-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-clemson-dark'
-                    onClick={() => setOpen(false)}
+                    onClick={signInHandler}
                   >
                     Sign In with LinkedIn
                   </button>

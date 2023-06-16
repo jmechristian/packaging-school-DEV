@@ -15,6 +15,8 @@ const FormWrapper = ({ children, activeIndex, setActiveIndex }) => {
   const { user } = useSelector((state) => state.auth);
 
   const [open, setOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isUpdated, setIsUpdated] = useState(false);
 
   const personalErrors = [
     'firstName',
@@ -44,42 +46,144 @@ const FormWrapper = ({ children, activeIndex, setActiveIndex }) => {
     if (!user) {
       setOpen(true);
     } else if (user) {
-      await API.graphql({
-        query: updateCMPMForm,
-        variables: {
-          input: {
-            id: user.id,
-            firstName: currentFormState.firstName,
-            lastName: currentFormState.lastName,
-            email: currentFormState.email,
-            phone: currentFormState.phone,
-            streetAddress: currentFormState.streetAddress,
-            addressExtra: currentFormState.addressExtra,
-            city: currentFormState.city,
-            state: currentFormState.state,
-            country: currentFormState.country,
-            companyName: currentFormState.companyName,
-            companyTitle: currentFormState.companyTitle,
-            linkedin: currentFormState.linkedIn,
-            background: currentFormState.background,
-            whyPackaging: currentFormState.whyPackaging,
-            areaOfInterest: currentFormState.areaOfInterest,
-            sessionApplying: currentFormState.sessionApplying,
-            referral: currentFormState.referral,
-            payment: currentFormState.payment,
-            yearGoals: currentFormState.yearGoals,
-            cmpmGoals: currentFormState.cmpmGoals,
-            moreAboutYou: currentFormState.moreAboutYou,
-            birthYear: currentFormState.birthYear,
+      if (user.cmpmFormID) {
+        console.log('updating form');
+        await API.graphql({
+          query: updateCMPMForm,
+          variables: {
+            input: {
+              id: user.id,
+              firstName: currentFormState.firstName,
+              lastName: currentFormState.lastName,
+              email: currentFormState.email,
+              phone: currentFormState.phone,
+              streetAddress: currentFormState.streetAddress,
+              addressExtra: currentFormState.addressExtra,
+              city: currentFormState.city,
+              state: currentFormState.state,
+              country: currentFormState.country,
+              companyName: currentFormState.companyName,
+              companyTitle: currentFormState.companyTitle,
+              linkedin: currentFormState.linkedIn,
+              background: currentFormState.background,
+              whyPackaging: currentFormState.whyPackaging,
+              areaOfInterest: currentFormState.areaOfInterest,
+              sessionApplying: currentFormState.sessionApplying,
+              referral: currentFormState.referral,
+              payment: currentFormState.payment,
+              yearGoals: currentFormState.yearGoals,
+              cmpmGoals: currentFormState.cmpmGoals,
+              moreAboutYou: currentFormState.moreAboutYou,
+              birthYear: currentFormState.birthYear,
+            },
           },
-        },
-      });
+        });
+      } else if (user && !user.cmpmFormID) {
+        console.log('creating form');
+        await API.graphql({
+          query: createCMPMForm,
+          variables: {
+            input: {
+              id: user.id,
+              cMPMFormUserId: user.id,
+              firstName: currentFormState.firstName,
+              lastName: currentFormState.lastName,
+              email: currentFormState.email,
+              phone: currentFormState.phone,
+              streetAddress: currentFormState.streetAddress,
+              addressExtra: currentFormState.addressExtra,
+              city: currentFormState.city,
+              state: currentFormState.state,
+              country: currentFormState.country,
+              companyName: currentFormState.companyName,
+              companyTitle: currentFormState.companyTitle,
+              linkedin: currentFormState.linkedIn,
+              background: currentFormState.background,
+              whyPackaging: currentFormState.whyPackaging,
+              areaOfInterest: currentFormState.areaOfInterest,
+              sessionApplying: currentFormState.sessionApplying,
+              referral: currentFormState.referral,
+              payment: currentFormState.payment,
+              yearGoals: currentFormState.yearGoals,
+              cmpmGoals: currentFormState.cmpmGoals,
+              moreAboutYou: currentFormState.moreAboutYou,
+              birthYear: currentFormState.birthYear,
+            },
+          },
+        });
+      }
     }
   };
 
-  const formForwardHandler = (currentFormState) => {
-    console.log('form', currentFormState);
-    console.log('user', user);
+  const formForwardHandler = async (currentFormState) => {
+    if (user) {
+      if (user.cmpmFormID) {
+        console.log('updating form');
+        await API.graphql({
+          query: updateCMPMForm,
+          variables: {
+            input: {
+              id: user.id,
+              firstName: currentFormState.firstName,
+              lastName: currentFormState.lastName,
+              email: currentFormState.email,
+              phone: currentFormState.phone,
+              streetAddress: currentFormState.streetAddress,
+              addressExtra: currentFormState.addressExtra,
+              city: currentFormState.city,
+              state: currentFormState.state,
+              country: currentFormState.country,
+              companyName: currentFormState.companyName,
+              companyTitle: currentFormState.companyTitle,
+              linkedin: currentFormState.linkedIn,
+              background: currentFormState.background,
+              whyPackaging: currentFormState.whyPackaging,
+              areaOfInterest: currentFormState.areaOfInterest,
+              sessionApplying: currentFormState.sessionApplying,
+              referral: currentFormState.referral,
+              payment: currentFormState.payment,
+              yearGoals: currentFormState.yearGoals,
+              cmpmGoals: currentFormState.cmpmGoals,
+              moreAboutYou: currentFormState.moreAboutYou,
+              birthYear: currentFormState.birthYear,
+            },
+          },
+        });
+      } else if (user && !user.cmpmFormID) {
+        console.log('creating form');
+        await API.graphql({
+          query: createCMPMForm,
+          variables: {
+            input: {
+              id: user.id,
+              cMPMFormUserId: user.id,
+              firstName: currentFormState.firstName,
+              lastName: currentFormState.lastName,
+              email: currentFormState.email,
+              phone: currentFormState.phone,
+              streetAddress: currentFormState.streetAddress,
+              addressExtra: currentFormState.addressExtra,
+              city: currentFormState.city,
+              state: currentFormState.state,
+              country: currentFormState.country,
+              companyName: currentFormState.companyName,
+              companyTitle: currentFormState.companyTitle,
+              linkedin: currentFormState.linkedIn,
+              background: currentFormState.background,
+              whyPackaging: currentFormState.whyPackaging,
+              areaOfInterest: currentFormState.areaOfInterest,
+              sessionApplying: currentFormState.sessionApplying,
+              referral: currentFormState.referral,
+              payment: currentFormState.payment,
+              yearGoals: currentFormState.yearGoals,
+              cmpmGoals: currentFormState.cmpmGoals,
+              moreAboutYou: currentFormState.moreAboutYou,
+              birthYear: currentFormState.birthYear,
+            },
+          },
+        });
+      }
+    }
     setActiveIndex(activeIndex + 1);
   };
 
@@ -131,7 +235,9 @@ const FormWrapper = ({ children, activeIndex, setActiveIndex }) => {
                 className='cursor-pointer rounded-md bg-base-brand px-4 py-3 text-lg font-semibold text-white shadow-sm font-greycliff hover:bg-base-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600 flex gap-1 items-center'
                 onClick={() => formForwardHandler(methods.getValues())}
               >
-                <div className='leading-none'>Save and Continue</div>
+                <div className='leading-none'>
+                  {user && 'Save and'} &nbsp;Continue
+                </div>
                 <div>
                   <ArrowLongRightIcon className='w-5 h-5 stroke-white' />
                 </div>
