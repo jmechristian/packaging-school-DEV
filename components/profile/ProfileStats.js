@@ -75,11 +75,13 @@ export default function ProfileStats({ user }) {
           Your Saved Courses
         </h3>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3'>
-          {user?.savedCourses.map((it, i) => (
-            <div key={i}>
-              <SavedCourse courseId={it} savedCourse={user?.savedCourses} />
-            </div>
-          ))}
+          {user &&
+            user.savedCourses &&
+            user.savedCourses.map((it, i) => (
+              <div key={i}>
+                <SavedCourse courseId={it} savedCourse={user?.savedCourses} />
+              </div>
+            ))}
         </div>
         {/* <dl className='mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3'>
           {stats.map((item) => (
