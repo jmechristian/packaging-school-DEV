@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 import CenteredTextHeader from '../components/layout/CenteredTextHeader';
@@ -102,6 +102,7 @@ const Page = () => {
                 className='block w-full rounded-md border-0 py-1.5 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
                 placeholder='Enter Email'
                 aria-describedby='email'
+                defaultValue={router.query.email ? router.query.email : ''}
               />
               {errors.email && (
                 <span className='text-sm text-red-500 mt-1'>

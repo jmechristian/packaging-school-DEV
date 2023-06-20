@@ -33,12 +33,14 @@ const CourseCard = ({
   const [userArray, setUserArray] = useState([]);
 
   const isFavorited = useMemo(
-    () => user?.savedCourses.includes(courseId),
+    () => user && user.savedCourses && user.savedCourses.includes(courseId),
     [user, courseId]
   );
 
   useEffect(() => {
-    user && setUserArray([...user.savedCourses]);
+    user && user.savedCourses
+      ? setUserArray([...user.savedCourses])
+      : setUserArray([]);
   }, [user]);
 
   const textColor = () => {
@@ -99,7 +101,7 @@ const CourseCard = ({
 
     if (!isFavorited) {
       // setIsFavorite(true);
-      let newishArray = [...user.savedCourses, courseId];
+      let newishArray = [...userArray, courseId];
       const res = await API.graphql({
         query: updateUser,
         variables: {

@@ -22,6 +22,7 @@ import { useDispatch } from 'react-redux';
 import { LightBulbIcon } from '@heroicons/react/24/outline';
 import { MoonIcon, BoltIcon } from '@heroicons/react/24/solid';
 import LogoSquare from '../../../components/layout/LogoSquare';
+import { useRouter } from 'next/router';
 
 const navigation = {
   categories: [
@@ -53,9 +54,13 @@ function classNames(...classes) {
 
 export default function HeaderNew() {
   const [open, setOpen] = useState(false);
+  const [isPath, setIsPath] = useState('/');
   const { user } = useSelector((state) => state.auth);
   const { darkMode } = useSelector((state) => state.layout);
   const dispatch = useDispatch();
+  const router = useRouter();
+  const currentPath = router.asPath;
+
   return (
     <div className='bg-white'>
       {/* Mobile menu */}
@@ -189,15 +194,17 @@ export default function HeaderNew() {
               <div className='hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6'>
                 {!user ? (
                   <>
-                    <a
-                      href='#'
+                    <Link
+                      href={`/api/auth/login?returnTo=${currentPath}`}
                       className='text-sm font-semibold text-clemson hover:text-gray-100 font-greycliff'
                     >
-                      Create a FREE account
-                    </a>
+                      <a className='text-sm font-semibold text-clemson hover:text-gray-100 font-greycliff'>
+                        Create a FREE account
+                      </a>
+                    </Link>
                     <span className='h-6 w-px bg-gray-600' aria-hidden='true' />
                     <Link
-                      href='/api/auth/login?returnTo=/profile'
+                      href={`/api/auth/login?returnTo=${currentPath}`}
                       className='text-sm font-medium text-white hover:text-gray-100 font-greycliff'
                     >
                       <a className='text-sm font-medium text-white hover:text-gray-100 font-greycliff'>

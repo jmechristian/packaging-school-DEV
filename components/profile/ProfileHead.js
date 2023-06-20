@@ -52,9 +52,10 @@ export default function ProfileHead({ user }) {
         <FormStat
           label='CMPM'
           stat={user.cmpmFormID}
-          link={`/forms/cmpm/${user.id}`}
+          link={'/certificate-of-mastery-in-packaging-management'}
+          view={`/forms/cmpm/${user.id}`}
           updated={user.cmpmForm?.updatedOn}
-          userId={user.id}
+          user={user}
         />
         <FormStat label='CPS' />
         <FormStat label='Automotive Packaging' />

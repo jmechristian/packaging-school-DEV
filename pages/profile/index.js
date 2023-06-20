@@ -4,15 +4,23 @@ import { withPageAuthRequired } from '@auth0/nextjs-auth0/client';
 import ProfileHead from '../../components/profile/ProfileHead';
 import ProfileDetails from '../../components/profile/ProfileDetails';
 import ProfileStats from '../../components/profile/ProfileStats';
+import { useRouter } from 'next/router';
 
 export default withPageAuthRequired(function Page() {
   const currentUser = useSelector((state) => state.auth.user);
   const [isEditing, setIsEditing] = useState(false);
   const dispatch = useDispatch();
+  const router = useRouter();
 
   const toggleEditing = () => {
     setIsEditing(!isEditing);
   };
+
+  useEffect(() => {
+    if (!currentUser) {
+      router.push('/');
+    }
+  }, [currentUser]);
 
   return (
     <div className='bg-slate-100 min-h-screen'>

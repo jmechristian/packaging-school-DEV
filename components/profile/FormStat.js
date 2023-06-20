@@ -5,7 +5,7 @@ import { createCMPMForm, updateUser } from '../../src/graphql/mutations';
 import { useRouter } from 'next/router';
 
 Amplify.configure(awsExports);
-const FormStat = ({ stat, label, link, updated, userId }) => {
+const FormStat = ({ stat, label, link, updated, user, view }) => {
   const [isErrors, setIsError] = useState(null);
   const router = useRouter();
 
@@ -20,7 +20,7 @@ const FormStat = ({ stat, label, link, updated, userId }) => {
   const formCreateHandler = async () => {
     const res = await API.graphql({
       query: createCMPMForm,
-      variables: { input: { id: userId, cMPMFormUserId: userId } },
+      variables: { input: { id: user.id, cMPMFormUserId: user.id } },
     });
     if (res.data) {
       addCmpmToUser();
@@ -32,10 +32,10 @@ const FormStat = ({ stat, label, link, updated, userId }) => {
   const addCmpmToUser = async () => {
     const res = await API.graphql({
       query: updateUser,
-      variables: { input: { id: userId, cmpmFormID: userId } },
+      variables: { input: { id: user.id, cmpmFormID: user.id } },
     });
     if (res.data) {
-      router.push(link);
+      router.push(`${link}?email=${user.email}`);
     } else {
       setIsError('Error updating user.');
     }
@@ -62,7 +62,7 @@ const FormStat = ({ stat, label, link, updated, userId }) => {
         </div>
         <div className='mt-5 flex justify-center sm:mt-0'>
           <button
-            onClick={updated ? () => router.push(link) : formCreateHandler}
+            onClick={updated ? () => router.push(view) : formCreateHandler}
             className={`flex items-center justify-center rounded-md cursor-pointer ${
               !updated
                 ? 'bg-clemson hover:bg-clemson-dark'
