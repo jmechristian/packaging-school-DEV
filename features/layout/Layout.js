@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Footer from '../navigation/Footer/Footer';
 import { useSelector, useDispatch } from 'react-redux';
@@ -17,6 +17,8 @@ import { createUser } from '../../src/graphql/mutations';
 import { onUpdateUser } from '../../src/graphql/subscriptions';
 import HeaderNew from '../navigation/Header/HeaderNew';
 import SearchContainer from '../../components/search/SearchContainer';
+import Router from 'next/router';
+import Loading from '../../components/shared/Loading';
 
 const Layout = ({ children }) => {
   const dispatch = useDispatch();
@@ -96,6 +98,7 @@ const Layout = ({ children }) => {
           {preview && (
             <CoursePreview close={() => dispatch(setPreviewClosed())} />
           )}
+          <Loading />
           <HeaderNew />
           <ScrollTop />
           <main className='relative h-full'>{children}</main>

@@ -14,7 +14,7 @@ const CMPMPersonalInfo = ({ activeIndex, params }) => {
       className='flex flex-col pt-4 gap-6'
       style={{ display: activeIndex === 0 ? 'flex' : 'none' }}
     >
-      <div className='grid grid-cols-2 gap-8'>
+      <div className='grid md:grid-cols-2 gap-8'>
         <TextInput
           name={'firstName'}
           placeholder={''}
@@ -42,7 +42,7 @@ const CMPMPersonalInfo = ({ activeIndex, params }) => {
           required
         />
       </div>
-      <div className='grid grid-cols-2 gap-8'>
+      <div className='grid md:grid-cols-2 gap-8'>
         <TextInput
           name={'email'}
           value={
@@ -77,7 +77,7 @@ const CMPMPersonalInfo = ({ activeIndex, params }) => {
         label={'Address Line 2'}
         value={formValues ? formValues.streetAddressExtra : ''}
       />
-      <div className='grid grid-cols-2 gap-8'>
+      <div className='grid md:grid-cols-2 gap-8'>
         <TextInput
           name={'city'}
           placeholder={''}
@@ -93,9 +93,9 @@ const CMPMPersonalInfo = ({ activeIndex, params }) => {
           value={formValues ? formValues.state : ''}
         />
       </div>
-      <div className='grid grid-cols-2 gap-8'>
+      <div className='grid md:grid-cols-2 gap-8'>
         <div className='flex flex-col gap-2'>
-          <div className='flex justify-between'>
+          <div className='md:flex justify-between'>
             <label
               htmlFor={'country'}
               className='block font-greycliff font-semibold leading-6 text-slate-700'
@@ -110,7 +110,7 @@ const CMPMPersonalInfo = ({ activeIndex, params }) => {
             </span>
           </div>
           <select
-            className='form-select'
+            className='form-select w-full'
             id='country'
             name='country'
             {...register('country', { required: true })}

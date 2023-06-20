@@ -14,6 +14,7 @@ import { API } from 'aws-amplify';
 import { useDispatch, useSelector } from 'react-redux';
 import { setPreviewOpen } from '../../features/all_courses/courseFilterSlice';
 import { updateUser } from '../../src/graphql/mutations';
+import { useRouter } from 'next/router';
 
 const CourseCard = ({
   title,
@@ -29,6 +30,7 @@ const CourseCard = ({
   const dispatch = useDispatch();
   const { darkMode } = useSelector((state) => state.layout);
   const { user } = useSelector((state) => state.auth);
+  const router = useRouter();
   // const [isFavorited, setIsFavorite] = useState(false);
   const [userArray, setUserArray] = useState([]);
 
@@ -176,7 +178,7 @@ const CourseCard = ({
               </div>
               <div
                 className='w-9 h-9 rounded bg-black/80 flex justify-center items-center cursor-pointer'
-                onClick={() => window.open(`/courses/${slug}`)}
+                onClick={() => router.push(`/courses/${slug}`)}
               >
                 <ArrowSmallRightIcon className='w-5 h-5 text-white' />
               </div>

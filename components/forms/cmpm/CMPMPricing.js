@@ -51,7 +51,7 @@ const CMPMPricing = () => {
                     value={paymentConfirmation}
                     name='paymentConfirmation'
                     {...register('paymentConfirmation', {
-                      required: true,
+                      required: false,
                     })}
                   />
                   {formState.errors.hasOwnProperty('paymentConfirmation') && (

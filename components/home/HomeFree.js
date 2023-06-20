@@ -15,7 +15,6 @@ const HomeFree = ({ courses }) => {
     allCourses && setFreeCourses(allCourses.filter((c) => c.price === 'FREE'));
   }, [setFreeCourses, allCourses]);
 
-  console.log(courses);
   return (
     <div className='flex flex-col bg-slate-200 rounded-lg lg:items-start gap-9 py-12 px-6 lg:max-w-7xl lg:mx-auto w-full'>
       <div className='flex w-full flex-col lg:flex-row lg:justify-between gap-3'>

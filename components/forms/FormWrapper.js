@@ -47,7 +47,7 @@ const FormWrapper = ({ children, activeIndex, setActiveIndex }) => {
       setOpen(true);
     } else if (user) {
       if (user.cmpmFormID) {
-        console.log('updating form');
+        setIsLoading(true);
         await API.graphql({
           query: updateCMPMForm,
           variables: {
@@ -78,8 +78,10 @@ const FormWrapper = ({ children, activeIndex, setActiveIndex }) => {
             },
           },
         });
+        setIsLoading(false);
+        setIsUpdated(true);
       } else if (user && !user.cmpmFormID) {
-        console.log('creating form');
+        setIsLoading(true);
         await API.graphql({
           query: createCMPMForm,
           variables: {
@@ -111,6 +113,8 @@ const FormWrapper = ({ children, activeIndex, setActiveIndex }) => {
             },
           },
         });
+        setIsLoading(false);
+        setIsUpdated(true);
       }
     }
   };
@@ -118,7 +122,7 @@ const FormWrapper = ({ children, activeIndex, setActiveIndex }) => {
   const formForwardHandler = async (currentFormState) => {
     if (user) {
       if (user.cmpmFormID) {
-        console.log('updating form');
+        setIsLoading(true);
         await API.graphql({
           query: updateCMPMForm,
           variables: {
@@ -149,8 +153,10 @@ const FormWrapper = ({ children, activeIndex, setActiveIndex }) => {
             },
           },
         });
+        setIsLoading(false);
+        setIsUpdated(true);
       } else if (user && !user.cmpmFormID) {
-        console.log('creating form');
+        setIsLoading(true);
         await API.graphql({
           query: createCMPMForm,
           variables: {
@@ -182,6 +188,8 @@ const FormWrapper = ({ children, activeIndex, setActiveIndex }) => {
             },
           },
         });
+        setIsLoading(false);
+        setIsUpdated(true);
       }
     }
     setActiveIndex(activeIndex + 1);
@@ -210,39 +218,53 @@ const FormWrapper = ({ children, activeIndex, setActiveIndex }) => {
   const { setErrorIndex, errorIndex } = useContext(CMPMContext);
 
   return (
-    <div className='mx-auto w-full px-16 pt-6 pb-12 bg-slate-100'>
+    <div className='mx-auto w-full px-6 md:px-16 pt-6 pb-12 bg-slate-100'>
       <SignInModal open={open} setOpen={() => setOpen(false)} />
       <FormProvider {...methods}>
         <form onSubmit={methods.handleSubmit(onSubmit, onError)}>
           {children}
-          <div className='mt-9 flex w-full items-center justify-end gap-x-9 col-span-2'>
-            <button
-              type='button'
-              className='text-lg font-semibold font-greycliff text-gray-600'
-              onClick={() => formSaveHandler(methods.getValues())}
-            >
-              Save
-            </button>
-            {activeIndex === 3 ? (
+          <div className='mt-9 flex w-full items-center justify-between gap-x-9 col-span-2'>
+            <div>
+              {isLoading && (
+                <div className='text-green-600 text-lg font-greycliff font-semibold'>
+                  Sending...
+                </div>
+              )}
+              {isUpdated && (
+                <div className='text-green-600 text-lg font-greycliff font-semibold'>
+                  Updated!
+                </div>
+              )}
+            </div>
+            <div className='flex gap-6 items-center'>
               <button
-                type='submit'
-                className='rounded-md bg-base-brand px-4 py-3 text-lg font-semibold text-white shadow-sm font-greycliff hover:bg-base-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600 flex gap-1 items-center'
+                type='button'
+                className='text-lg font-semibold font-greycliff text-gray-600'
+                onClick={() => formSaveHandler(methods.getValues())}
               >
-                <div className='leading-none'>Submit Application</div>
+                Save
               </button>
-            ) : (
-              <div
-                className='cursor-pointer rounded-md bg-base-brand px-4 py-3 text-lg font-semibold text-white shadow-sm font-greycliff hover:bg-base-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600 flex gap-1 items-center'
-                onClick={() => formForwardHandler(methods.getValues())}
-              >
-                <div className='leading-none'>
-                  {user && 'Save and'} &nbsp;Continue
+              {activeIndex === 3 ? (
+                <button
+                  type='submit'
+                  className='rounded-md bg-base-brand px-4 py-3 text-lg font-semibold text-white shadow-sm font-greycliff hover:bg-base-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600 flex gap-1 items-center'
+                >
+                  <div className='leading-none'>Submit Application</div>
+                </button>
+              ) : (
+                <div
+                  className='cursor-pointer rounded-md bg-base-brand px-4 py-3 text-lg font-semibold text-white shadow-sm font-greycliff hover:bg-base-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600 flex gap-1 items-center'
+                  onClick={() => formForwardHandler(methods.getValues())}
+                >
+                  <div className='leading-none'>
+                    {user && 'Save and'} &nbsp;Continue
+                  </div>
+                  <div>
+                    <ArrowLongRightIcon className='w-5 h-5 stroke-white' />
+                  </div>
                 </div>
-                <div>
-                  <ArrowLongRightIcon className='w-5 h-5 stroke-white' />
-                </div>
-              </div>
-            )}
+              )}
+            </div>
           </div>
         </form>
       </FormProvider>

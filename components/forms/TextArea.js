@@ -11,7 +11,7 @@ const TextArea = ({ label, name, required, value }) => {
 
   return (
     <div>
-      <div className='flex justify-between'>
+      <div className='flex flex-col lg:flex-row md:justify-between'>
         <label
           htmlFor={name}
           className='block font-greycliff font-semibold leading-6 text-slate-700 max-w-lg'

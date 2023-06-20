@@ -33,7 +33,7 @@ const CMPMNavCard = ({ item, itemIndex }) => {
           </div>
         </div>
         <div
-          className={`font-greycliff font-semibold ${
+          className={`text-sm md:text-base font-greycliff font-semibold ${
             activeIndex === itemIndex ? 'text-slate-800' : 'text-slate-400'
           }`}
         >

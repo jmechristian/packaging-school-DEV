@@ -13,7 +13,7 @@ const CMPMProfessionalInfo = ({ activeIndex }) => {
       className='grid flex-col gap-6 pt-4'
       style={{ display: activeIndex === 1 ? 'flex' : 'none' }}
     >
-      <div className='grid grid-cols-2 gap-8'>
+      <div className='grid lg:grid-cols-2 gap-8'>
         <TextInput
           name={'companyName'}
           placeholder={''}

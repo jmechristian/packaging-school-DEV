@@ -179,7 +179,7 @@ export default function HeaderNew() {
         <nav aria-label='Top'>
           {/* Top navigation */}
           <div className='bg-gray-900 dark:bg-dark-dark flex items-center justify-center'>
-            <div className='flex min-h-10 max-w-7xl items-center justify-between w-full px-8 lg:px-0 py-3'>
+            <div className='flex min-h-10 max-w-7xl items-center justify-between w-full px-8 xl:px-0 py-3'>
               <div className='flex justify-center items-center text-center lg:flex-none'>
                 <div className='flex gap-1 items-center font-greycliff'>
                   <div>
@@ -238,7 +238,7 @@ export default function HeaderNew() {
           <div className='bg-white dark:bg-dark-mid'>
             <div className='mx-auto max-w-7xl'>
               <div className='border-b border-t lg:border-t-0 border-slate-200 dark:border-gray-700'>
-                <div className='flex h-24 items-center justify-between px-4 md:px-8 lg:px-0'>
+                <div className='flex h-24 items-center justify-between px-4 md:px-8 xl:pl-0'>
                   {/* Logo (lg+) */}
                   <div className='hidden lg:flex lg:items-center'>
                     <Link href='/'>
