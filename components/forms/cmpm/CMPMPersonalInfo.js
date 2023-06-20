@@ -20,20 +20,34 @@ const CMPMPersonalInfo = ({ activeIndex, params }) => {
           placeholder={''}
           label={'First Name'}
           required
-          value={params.firstName ? params.firstName : formValues.firstName}
+          value={
+            params.firstName
+              ? params.firstName
+              : formValues
+              ? formValues.firstName
+              : ''
+          }
         />
         <TextInput
           name={'lastName'}
           placeholder={''}
           label={'Last Name'}
-          value={params.lastName ? params.lastName : formValues.lastName}
+          value={
+            params.lastName
+              ? params.lastName
+              : formValues
+              ? formValues.lastName
+              : ''
+          }
           required
         />
       </div>
       <div className='grid grid-cols-2 gap-8'>
         <TextInput
           name={'email'}
-          value={params.email ? params.email : formValues.email}
+          value={
+            params.email ? params.email : formValues ? formValues.email : ''
+          }
           placeholder={'you@email.com'}
           label={'Email'}
           type={'email'}
@@ -45,7 +59,9 @@ const CMPMPersonalInfo = ({ activeIndex, params }) => {
           label={'Phone'}
           required
           type='tel'
-          value={params.phone ? params.phone : formValues.phone}
+          value={
+            params.phone ? params.phone : formValues ? formValues.phone : ''
+          }
         />
       </div>
       <TextInput

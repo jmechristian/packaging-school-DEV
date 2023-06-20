@@ -1,15 +1,18 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import CMPMContextProvider from '../components/forms/cmpm/CMPMContextProvider';
 import CMPMWrapper from '../components/forms/cmpm/CMPMWrapper';
 import { useRouter } from 'next/router';
 
 const Page = () => {
   const router = useRouter();
+  const [isParams, setIsParams] = useState({});
 
-  const { firstName, lastName, email, phone } = router.query;
+  useEffect(() => {
+    router.query && setIsParams({ ...router.query });
+  }, [router]);
 
   return (
-    <CMPMContextProvider params={{ firstName, lastName, email, phone }}>
+    <CMPMContextProvider params={isParams}>
       <CMPMWrapper />
     </CMPMContextProvider>
   );
