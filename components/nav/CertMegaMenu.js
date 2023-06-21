@@ -28,7 +28,7 @@ const CertMegaMenu = () => {
       <div className='grid grid-cols-1 col-span-1 gap-3 lg:gap-6 lg:h-full'>
         <CertMenuItem
           title='Certificate of Packaging Science'
-          apply='/'
+          apply='/certificate-of-packaging-science-application'
           learnMore='/'
           bgColor='bg-slate-700'
           content='A 12-month, online program teaching the materials, processes, and influences shaping the advancement of the industry. Speak the language of packaging and be a key differentiator for you and your company.'

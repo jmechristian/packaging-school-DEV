@@ -25,7 +25,7 @@ const CenteredTextHeader = ({
           )}
           <div className='mb-8 flex justify-center'>
             {heading && (
-              <div className='relative rounded-full py-1 px-3 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20'>
+              <div className='relative rounded-full py-1 px-6 leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20'>
                 {heading}
               </div>
             )}

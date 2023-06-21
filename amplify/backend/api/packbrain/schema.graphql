@@ -223,6 +223,7 @@ type CMPMForm
   cmpmGoals: String
   moreAboutYou: String
   birthYear: String
+  optOut: Boolean
 }
 
 type APSSpeaker @model @auth(rules: [{ allow: public }]) {

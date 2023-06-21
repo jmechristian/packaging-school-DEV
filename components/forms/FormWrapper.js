@@ -3,17 +3,14 @@ import { useForm, FormProvider } from 'react-hook-form';
 import { CMPMContext } from './cmpm/CMPMContextProvider';
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
 import { useSelector } from 'react-redux';
+import { useRouter } from 'next/router';
 import { API } from 'aws-amplify';
-import {
-  createCMPMForm,
-  updateUser,
-  updateCMPMForm,
-} from '../../src/graphql/mutations';
+import { createCMPMForm, updateCMPMForm } from '../../src/graphql/mutations';
 import SignInModal from '../shared/SignInModal';
 
 const FormWrapper = ({ children, activeIndex, setActiveIndex }) => {
   const { user } = useSelector((state) => state.auth);
-
+  const router = useRouter();
   const [open, setOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isUpdated, setIsUpdated] = useState(false);
@@ -38,7 +35,7 @@ const FormWrapper = ({ children, activeIndex, setActiveIndex }) => {
     'areaOfInterest',
   ];
 
-  const sessionErrors = ['session-applying', 'referral', 'payment'];
+  const sessionErrors = ['session-applying', 'optOut', 'referral', 'payment'];
 
   const goalErrors = ['yearGoals', 'cmpmGoals', 'moreAboutYou'];
 
@@ -47,6 +44,7 @@ const FormWrapper = ({ children, activeIndex, setActiveIndex }) => {
       setOpen(true);
     } else if (user) {
       if (user.cmpmFormID) {
+        setIsUpdated(false);
         setIsLoading(true);
         await API.graphql({
           query: updateCMPMForm,
@@ -75,12 +73,14 @@ const FormWrapper = ({ children, activeIndex, setActiveIndex }) => {
               cmpmGoals: currentFormState.cmpmGoals,
               moreAboutYou: currentFormState.moreAboutYou,
               birthYear: currentFormState.birthYear,
+              optOut: currentFormState.optOut,
             },
           },
         });
         setIsLoading(false);
         setIsUpdated(true);
       } else if (user && !user.cmpmFormID) {
+        setIsUpdated(false);
         setIsLoading(true);
         await API.graphql({
           query: createCMPMForm,
@@ -110,6 +110,7 @@ const FormWrapper = ({ children, activeIndex, setActiveIndex }) => {
               cmpmGoals: currentFormState.cmpmGoals,
               moreAboutYou: currentFormState.moreAboutYou,
               birthYear: currentFormState.birthYear,
+              optOut: currentFormState.optOut,
             },
           },
         });
@@ -122,6 +123,7 @@ const FormWrapper = ({ children, activeIndex, setActiveIndex }) => {
   const formForwardHandler = async (currentFormState) => {
     if (user) {
       if (user.cmpmFormID) {
+        setIsUpdated(false);
         setIsLoading(true);
         await API.graphql({
           query: updateCMPMForm,
@@ -150,12 +152,14 @@ const FormWrapper = ({ children, activeIndex, setActiveIndex }) => {
               cmpmGoals: currentFormState.cmpmGoals,
               moreAboutYou: currentFormState.moreAboutYou,
               birthYear: currentFormState.birthYear,
+              optOut: currentFormState.optOut,
             },
           },
         });
         setIsLoading(false);
         setIsUpdated(true);
       } else if (user && !user.cmpmFormID) {
+        setIsUpdated(false);
         setIsLoading(true);
         await API.graphql({
           query: createCMPMForm,
@@ -185,6 +189,7 @@ const FormWrapper = ({ children, activeIndex, setActiveIndex }) => {
               cmpmGoals: currentFormState.cmpmGoals,
               moreAboutYou: currentFormState.moreAboutYou,
               birthYear: currentFormState.birthYear,
+              optOut: currentFormState.optOut,
             },
           },
         });
@@ -196,7 +201,11 @@ const FormWrapper = ({ children, activeIndex, setActiveIndex }) => {
   };
 
   const methods = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data, errors) => {
+    console.log(data);
+    console.log(errors);
+    router.push('/cmpm-application-confirmation');
+  };
   const onError = (errors) => {
     if (personalErrors.every((key) => Object.keys(errors).includes(key))) {
       setErrorIndex((errorIndex) => [...errorIndex, 0]);

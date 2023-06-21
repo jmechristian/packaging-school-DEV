@@ -11,10 +11,10 @@ const TextArea = ({ label, name, required, value }) => {
 
   return (
     <div>
-      <div className='flex flex-col lg:flex-row md:justify-between'>
+      <div className='flex flex-row justify-between'>
         <label
           htmlFor={name}
-          className='block font-greycliff font-semibold leading-6 text-slate-700 max-w-lg'
+          className='block font-greycliff font-semibold leading-5 text-slate-700 max-w-[75%] text-sm md:text-base'
         >
           {label}
         </label>
@@ -22,13 +22,13 @@ const TextArea = ({ label, name, required, value }) => {
           {required ? 'Required' : ''}
         </span>
       </div>
-      <div className='mt-2'>
+      <div className='mt-2 md:mt-2'>
         <textarea
           {...register(`${name}`, { required: required ? true : false })}
           name={name}
           rows={3}
           id={name}
-          className='block w-full rounded-md border-0 py-1.5 text-slate-700 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
+          className='block w-full rounded-md border-0 py-1.5 text-slate-700 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-gray-400 text-sm md:text-base focus:ring-2 focus:ring-inset focus:ring-slate-600 sm:text-sm sm:leading-6'
           aria-describedby={`${name} + ' ' + ${required}`}
         />
       </div>

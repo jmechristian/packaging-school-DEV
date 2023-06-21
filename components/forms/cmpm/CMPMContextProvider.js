@@ -25,7 +25,11 @@ const CMPMContextProvider = ({ children, pageData, params }) => {
         phone: params.phone,
       });
     }
-  }, [params]);
+
+    if (pageData) {
+      setFormValues(pageData.getCMPMForm);
+    }
+  }, [params, pageData]);
 
   return (
     <CMPMContext.Provider
@@ -34,7 +38,7 @@ const CMPMContextProvider = ({ children, pageData, params }) => {
         setActiveIndex,
         errorIndex,
         setErrorIndex,
-        formValues: pageData?.getCMPMForm,
+        formValues: formValues,
         setFormValues,
         params: initParams,
       }}

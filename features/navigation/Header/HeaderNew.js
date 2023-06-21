@@ -313,7 +313,7 @@ export default function HeaderNew() {
                                         <div className='grid grid-cols-1 col-span-1 gap-6 h-full'>
                                           <CertMenuItem
                                             title='Certificate of Packaging Science'
-                                            apply='/'
+                                            apply='/certificate-of-packaging-science-application'
                                             learnMore='/'
                                             bgColor='bg-gradient-to-br from-base-dark to-slate-900'
                                             content='A 12-month, online program teaching the materials, processes, and influences shaping the advancement of the industry. Speak the language of packaging and be a key differentiator for you and your company.'

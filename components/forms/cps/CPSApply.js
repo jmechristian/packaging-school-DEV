@@ -1,109 +1,27 @@
-import React, { useContext } from 'react';
+import React from 'react';
+import CPSPricing from './CPSPricing';
 import { useFormContext } from 'react-hook-form';
 import TextInput from '../TextInput';
-import CMPMPricing from './CMPMPricing';
-import { CMPMContext } from './CMPMContextProvider';
 
-const CMPMSessionInfo = ({ activeIndex }) => {
+const CPSApply = () => {
   const { register, formState } = useFormContext();
-  const { formValues } = useContext(CMPMContext);
   return (
-    <div
-      className='flex flex-col gap-6 divide-y divide-solid pt-4'
-      style={{ display: activeIndex === 3 ? 'flex' : 'none' }}
-    >
-      <div>
-        <div className='flex justify-between items-center py-3'>
-          <legend className='font-semibold leading-6 text-slate-700 font-greycliff'>
-            Which session are you applying for?
-          </legend>
-          <span className='leading-6 text-red-500' id='email-optional'>
-            Required
-          </span>
-        </div>
-        <div className='mt-3 gap-12 flex items-center'>
-          <div className='flex items-center gap-x-3'>
-            <input
-              {...register('sessionApplying', { required: true })}
-              id='july2023'
-              value='july2023'
-              name='sessionApplying'
-              type='radio'
-              checked={formValues.sessionApplying === 'july2023'}
-              className='h-4 w-4 border-slate-300 text-base-brand focus:ring-base-brand'
-            />
-            <label
-              htmlFor='july2023'
-              className='block font-medium font-greycliff leading-6 text-slate-900'
-            >
-              July 2023
-            </label>
-          </div>
-          <div className='flex items-center gap-x-3'>
-            <input
-              {...register('session-applying', { required: true })}
-              id='sept2023'
-              name='session-applying'
-              value='sept2023'
-              type='radio'
-              checked={formValues.sessionApplying === 'sept2023'}
-              className='h-4 w-4 border-slate-300 text-base-brand focus:ring-base-brand'
-            />
-            <label
-              htmlFor='sept2023'
-              className='block font-medium font-greycliff leading-6 text-slate-900'
-            >
-              September 2023
-            </label>
-          </div>
-        </div>
-        {formState.errors.hasOwnProperty('session-applying') && (
-          <div className='text-sm text-red-600 mt-3 mb-2'>
-            Please fill out field.
-          </div>
-        )}
-      </div>
-
-      <div className='relative flex gap-x-3 pt-6'>
-        <div className='flex h-6 items-center'>
-          <input
-            {...register('optOut')}
-            id='optOut'
-            name='optOut'
-            type='checkbox'
-            className='h-4 w-4 rounded border-slate-300 text-base-brand focus:ring-base-brand'
-          />
-        </div>
-        <div className='leading-6'>
-          <label
-            htmlFor='comments'
-            className='font-semibold font-greycliff text-slate-700'
-          >
-            I would like to opt out of early access to the online lessons.
-          </label>
-          <p className='text-sm mt-2 px-0 md:pr-9 text-slate-600 leading-normal'>
-            Early access to the online lessons can be granted to anyone upon
-            full payment of the tuition. Students participating in early access
-            will not receive any feedback from the instructor until the cohort
-            start date selected above. Students opting to not pay early in full
-            will receive access to the lessons along with the rest of their
-            cohort on the selected start date.
-          </p>
-        </div>
-      </div>
-
+    <div className='flex flex-col gap-6'>
       <fieldset>
-        <div className='flex justify-between items-center pt-6'>
-          <legend className='font-semibold leading-6 text-slate-700 font-greycliff'>
+        <div className='flex justify-between items-center'>
+          <legend className='text-sm md:text-base max-w-[75%] font-semibold leading-6 text-slate-700 font-greycliff'>
             Where did you hear about the Certificate of Mastery in Packaging
             Management?
           </legend>
-          <span className='leading-6 text-red-500' id='email-optional'>
+          <span
+            className='leading-6 text-red-500 text-sm md:text-base'
+            id='email-optional'
+          >
             Required
           </span>
         </div>
         <div>
-          <div className='mt-6 gap-x-12 gap-y-3 flex flex-wrap items-center'>
+          <div className='mt-6 gap-x-12 gap-y-3 flex flex-wrap items-center text-sm md:text-base'>
             <div className='flex items-center gap-x-3'>
               <input
                 {...register('referral', { required: true })}
@@ -196,15 +114,15 @@ const CMPMSessionInfo = ({ activeIndex }) => {
 
       <fieldset>
         <div>
-          <div className='flex justify-between items-center pt-6'>
-            <legend className='font-semibold leading-6 text-slate-700 font-greycliff'>
+          <div className='flex justify-between items-center pt-6 text-sm md:text-base'>
+            <legend className='font-semibold leading-6 text-slate-700 font-greycliff text-sm md:text-base'>
               How will you be paying for this program?
             </legend>
             <span className='leading-6 text-red-500' id='email-optional'>
               Required
             </span>
           </div>
-          <div className='mt-6 gap-12 flex items-center'>
+          <div className='mt-6 gap-4 lg:gap-12 flex flex-wrap items-center text-sm md:text-base'>
             <div className='flex items-center gap-x-3'>
               <input
                 {...register('payment', { required: true })}
@@ -277,9 +195,9 @@ const CMPMSessionInfo = ({ activeIndex }) => {
           </div>
         )}
       </fieldset>
-      <CMPMPricing />
+      <CPSPricing />
     </div>
   );
 };
 
-export default CMPMSessionInfo;
+export default CPSApply;
