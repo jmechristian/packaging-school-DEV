@@ -39,7 +39,7 @@ const CPSWrapper = ({ params }) => {
   }, [params, methods]);
 
   const sendFormToAWS = async () => {
-    if (user && user.CPSFormID) {
+    if (user && user.cpsFormID) {
       setIsUpdated(false);
       setIsLoading(true);
       await API.graphql({
@@ -140,8 +140,10 @@ const CPSWrapper = ({ params }) => {
       <FormProvider {...methods}>
         <CPSNav />
         <CPSForm methods={{ ...methods }} />
-        <div className='flex justify-between bg-slate-300 dark:bg-dark-dark px-6 py-4 rounded-t sticky z-50 bottom-0 gap-3 lg:gap-6 border-t border-t-slate-300 text-sm md:text-base'>
-          <div>{isLoading ? 'Sending...' : isUpdated ? 'Updated!' : ''}</div>
+        <div className='flex justify-between items-center bg-slate-300 dark:bg-dark-dark px-6 py-4 rounded-t sticky z-50 bottom-0 gap-3 lg:gap-6 border-t border-t-slate-300 text-sm md:text-base'>
+          <div className='w-fit font-greycliff font-semibold h-full text-green-600 text-lg'>
+            {isLoading ? 'Sending...' : isUpdated ? 'Updated!' : ''}
+          </div>
           <div className='flex gap-2 items-center'>
             <div
               className='flex cursor-pointer justify-center items-center w-fit px-6 py-3 rounded-lg ring-2 ring-slate-400 text-slate-500 font-greycliff font-semibold '
