@@ -16,13 +16,15 @@ import IndustryIcon from '../../../components/icons/IndustryIcon';
 import MaterialIcon from '../../../components/icons/MaterialIcon';
 import SupplyIcon from '../../../components/icons/SupplyIcon';
 
-const CourseMenuBlock = () => {
+const CourseMenuBlock = ({ toggleOpen }) => {
   const router = useRouter();
   const dispatch = useDispatch();
 
   const categoryClickHandler = (name, value) => {
+    toggleOpen();
+    let newVal = value?.toUpperCase();
     router.push('/all_courses');
-    dispatch(setSelectedFilter({ name: name, value: value }));
+    dispatch(setSelectedFilter({ name: name, value: newVal }));
     dispatch(closeMobileMenu());
     dispatch(setMenuItem());
     dispatch(setSelectedNav(null));
@@ -80,7 +82,7 @@ const CourseMenuBlock = () => {
           <SupplyIcon style='h-6 w-6 stroke-white stroke-2 fill-transparent' />
         }
         category='Supply Chain & Logistics'
-        value='supply'
+        value='supplychain'
         desc='Optimize your logistics from hazmat packaging, regulations, distribution, and more.'
         setFilter={categoryClickHandler}
       />
@@ -91,7 +93,10 @@ const CourseMenuBlock = () => {
         }}
       >
         <div className='flex justify-center gap-2 items-center py-3 px-8 cursor-pointer'>
-          <div className='font-bold text-slate-900 font-greycliff'>
+          <div
+            className='font-bold text-slate-900 font-greycliff'
+            onClick={() => toggleOpen()}
+          >
             Explore All Courses
           </div>
           <div>

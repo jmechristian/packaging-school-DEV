@@ -7,8 +7,17 @@ import {
   CogIcon,
 } from '@heroicons/react/24/solid';
 import CertIcon from '../icons/CertIcon';
+import { Popover } from '@headlessui/react';
 
-const CertMenuItem = ({ title, content, bgColor, icon, learnMore, apply }) => {
+const CertMenuItem = ({
+  title,
+  content,
+  bgColor,
+  icon,
+  learnMore,
+  apply,
+  toggleOpen,
+}) => {
   const setIcon = () => {
     switch (icon) {
       case 'academicCap':
@@ -47,10 +56,16 @@ const CertMenuItem = ({ title, content, bgColor, icon, learnMore, apply }) => {
         </div>
       </div>
       <div className='flex items-center gap-1 h-full'>
-        <div className='rounded-lg px-3 py-1.5 font-greycliff text-sm w-fit  text-clemson font-bold'>
+        <div
+          className='rounded-lg px-3 py-1.5 font-greycliff text-sm w-fit  text-clemson font-bold'
+          onClick={() => toggleOpen()}
+        >
           <Link href={apply}>Apply Now</Link>
         </div>
-        <div className='rounded-lg px-3 py-1.5 font-greycliff text-sm  text-slate-500 font-semibold'>
+        <div
+          className='rounded-lg px-3 py-1.5 font-greycliff text-sm  text-slate-500 font-semibold'
+          onClick={() => toggleOpen()}
+        >
           <Link href={learnMore}>Learn More</Link>
         </div>
       </div>

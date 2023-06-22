@@ -65,7 +65,11 @@ export default function HeaderNew() {
     <div className='bg-white'>
       {/* Mobile menu */}
       <Transition.Root show={open} as={Fragment}>
-        <Dialog as='div' className='relative z-40 lg:hidden' onClose={setOpen}>
+        <Dialog
+          as='div'
+          className='relative z-40 lg:hidden'
+          onClose={() => setOpen(false)}
+        >
           <Transition.Child
             as={Fragment}
             enter='transition-opacity ease-linear duration-300'
@@ -256,7 +260,7 @@ export default function HeaderNew() {
                           key={navigation.categories[0].name}
                           className='flex'
                         >
-                          {({ open }) => (
+                          {({ open, close }) => (
                             <>
                               <div className='relative flex'>
                                 <Popover.Button
@@ -298,6 +302,7 @@ export default function HeaderNew() {
                                             learnMore='/'
                                             content='A 12-month, PhD-led program teaching you the latest technologies accelerating the packaging field in the space of packaging development, material procurement, and organizational management.'
                                             bgColor='bg-gradient-to-br from-base-brand to-slate-700'
+                                            toggleOpen={() => close()}
                                             // icon={'academicHat'}
                                           />
 
@@ -307,6 +312,7 @@ export default function HeaderNew() {
                                             content='The first and only 100% online academic program that will enable you to develop the professional skill set you need to be successful in the automotive packaging field.'
                                             apply='/'
                                             learnMore='/'
+                                            toggleOpen={() => close()}
                                             // icon='cog'
                                           />
                                         </div>
@@ -315,6 +321,7 @@ export default function HeaderNew() {
                                             title='Certificate of Packaging Science'
                                             apply='/certificate-of-packaging-science-application'
                                             learnMore='/'
+                                            toggleOpen={() => close()}
                                             bgColor='bg-gradient-to-br from-base-dark to-slate-900'
                                             content='A 12-month, online program teaching the materials, processes, and influences shaping the advancement of the industry. Speak the language of packaging and be a key differentiator for you and your company.'
                                             // icon='beaker'
@@ -322,6 +329,7 @@ export default function HeaderNew() {
                                           <CertMenuItem
                                             title='Food Packaging Certificate'
                                             apply='/'
+                                            toggleOpen={() => close()}
                                             bgColor='bg-gradient-to-br from-green-500 to-slate-900'
                                             learnMore='/'
                                             content='In Development! Want to be a part? Interested In Sponsoring? Leave your mark on the packaging industry. Click below to apply or reach out to our Academic Director Dr. Julie Suggs'
@@ -342,7 +350,7 @@ export default function HeaderNew() {
                           key={navigation.categories[1].name}
                           className='flex'
                         >
-                          {({ open }) => (
+                          {({ open, close }) => (
                             <>
                               <div className='relative flex'>
                                 <Popover.Button
@@ -377,7 +385,9 @@ export default function HeaderNew() {
                                   <div className='relative bg-slate-100'>
                                     <div className='mx-auto max-w-7xl px-8'>
                                       <div className='grid grid-cols-3 items-start gap-x-8 gap-y-10 pb-8 pt-8'>
-                                        <CourseDropDownCourses />
+                                        <CourseDropDownCourses
+                                          toggleOpen={() => close()}
+                                        />
                                         <CourseDropDownCallout />
                                       </div>
                                     </div>
