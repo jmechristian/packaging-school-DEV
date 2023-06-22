@@ -33,23 +33,33 @@ const CPSNav = () => {
   ];
 
   return (
-    <div className='w-full grid grid-cols-4 sticky top-0 bg-slate-100 shadow-sm'>
-      {items.map((item) => (
-        <div
-          key={item.id}
-          className={`border border-slate-200 w-full py-3 text-center text-sm font-greycliff font-semibold ${
-            isSelected === item.id && 'bg-slate-200 text-clemson'
-          }`}
-          onClick={() => setIsSelected(item.id)}
-        >
-          <a href={`#${item.id}`}>{item.label}</a>
-        </div>
-      ))}
-      <div className='col-span-4 flex justify-center items-center w-full py-3 bg-clemson font-greycliff font-semibold text-white'>
-        Save Form
-      </div>
-      <div className='col-span-4 flex justify-center items-center w-full py-3 bg-base-mid font-greycliff font-semibold text-white'>
-        Submit Form
+    <div className='flex flex-col sticky top-0'>
+      <div className='w-full grid grid-cols-4 bg-slate-100 shadow-sm overflow-hidden relative'>
+        {items.map((item) => (
+          <div
+            key={item.id}
+            className={`border flex gap-1 justify-center items-center col-span-1 border-slate-200 w-full py-3 lg:py-4 text-center text-sm md:text-base font-greycliff font-semibold ${
+              isSelected === item.id
+                ? 'bg-base-mid text-white'
+                : 'text-slate-500'
+            }`}
+          >
+            <div className='w-12 h-12 rounded-full hidden lg:flex justify-center items-center'>
+              <div>
+                <item.icon
+                  className={`'w-8 h-8 ${
+                    isSelected === item.id
+                      ? 'stroke-clemson'
+                      : 'stroke-slate-500'
+                  }'`}
+                />
+              </div>
+            </div>
+            <a href={`#${item.id}`} onClick={() => setIsSelected(item.id)}>
+              {item.label}
+            </a>
+          </div>
+        ))}
       </div>
     </div>
   );

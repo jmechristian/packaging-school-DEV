@@ -7,7 +7,6 @@ import YouTubeEmbed from '../YouTubeEmbed';
 import VideoPlayer from '../VideoPlayer';
 
 const CourseMain = ({ data }) => {
-  console.log(data);
   return (
     <section className='w-full h-full bg-white dark:bg-dark-dark bg-cover lg:py-16'>
       <div className='pb-12 md:container__inner lg:hidden h-full'>

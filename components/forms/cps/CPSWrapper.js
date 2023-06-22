@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-
-import { Tab } from '@headlessui/react';
-import { useForm, FormProvider, useFormContext } from 'react-hook-form';
+import { useForm, FormProvider } from 'react-hook-form';
 import CPSPersonalInfo from './CPSPersonalInfo';
 import CPSProfessionalInfo from './CPSProfessionalInfo';
 import CPSGoals from './CPSGoals';
@@ -17,31 +15,42 @@ function classNames(...classes) {
 
 const CPSWrapper = () => {
   const methods = useForm();
-  const onSubmit = (data) => console.log(data);
   const { user } = useSelector((state) => state.auth);
   const router = useRouter();
 
-  let [categories] = useState({
-    Personal: [{ component: CPSPersonalInfo }],
-    Professional: [{ component: CPSProfessionalInfo }],
-    Goals: [{ component: CPSGoals }],
-    Apply: [{ component: CPSApply }],
-  });
-
   const sendFormToAWS = async () => {};
 
-  const saveHandler = (event) => {
-    event.preventDefault();
+  const saveHandler = () => {
     const data = methods.getValues();
-    console.log(methods.formState.errors);
+    console.log(data);
     sendFormToAWS();
   };
 
+  const onSubmit = (data, e) => console.log(data, e);
+  const onError = (errors, e) => console.log(errors, e);
+
   return (
-    <div className='w-full max-w-md py-8 sm:px-0'>
+    <div className='w-full max-w-4xl mx-auto py-8 sm:px-0'>
       <FormProvider {...methods}>
-        <CPSNav />
-        <CPSForm />
+        <CPSNav
+          save={saveHandler}
+          submit={methods.handleSubmit(onSubmit, onError)}
+        />
+        <CPSForm methods={{ ...methods }} />
+        <div className='flex flex-col lg:flex-row justify-end bg-slate-100 px-6 py-6 rounded-t sticky bottom-0 gap-6 border-t border-t-slate-300'>
+          <div
+            className='flex justify-center items-center w-fit px-6 py-3 rounded-lg bg-base-mid font-greycliff font-semibold text-white'
+            onClick={() => save()}
+          >
+            Save Form
+          </div>
+          <div
+            className='flex justify-center items-center w-fit px-6 py-3 rounded-lg bg-clemson font-greycliff font-semibold text-white'
+            onClick={() => submit()}
+          >
+            Submit Form
+          </div>
+        </div>
       </FormProvider>
     </div>
   );

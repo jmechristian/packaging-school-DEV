@@ -5,7 +5,7 @@ import CPSWrapper from '../components/forms/cps/CPSWrapper';
 
 const Page = () => {
   return (
-    <div className='flex flex-col gap-6 md:gap-16 pb-24'>
+    <div className='flex flex-col gap-6 md:gap-10 pb-24'>
       <CenteredTextHeader
         headline='Certificate Application'
         heading='Certificate Of Packaging Science'

@@ -6,18 +6,20 @@ import { useForm, FormProvider, useFormContext } from 'react-hook-form';
 const CPSProfessionalInfo = () => {
   return (
     <div className='flex flex-col gap-6'>
-      <TextInput
-        name={'companyName'}
-        placeholder={'Enter Company Name'}
-        label={'Company Name'}
-        required
-      />
-      <TextInput
-        name={'companyTitle'}
-        placeholder={'Enter Company Title'}
-        label={'Company Title'}
-        required
-      />
+      <div className='grid grid-col-1 lg:grid-cols-2 lg:gap-12'>
+        <TextInput
+          name={'companyName'}
+          placeholder={'Enter Company Name'}
+          label={'Company Name'}
+          required
+        />
+        <TextInput
+          name={'companyTitle'}
+          placeholder={'Enter Company Title'}
+          label={'Company Title'}
+          required
+        />
+      </div>
       <TextInput
         name={'linkedIn'}
         placeholder={'https://'}
