@@ -1,5 +1,10 @@
 import FormStat from './FormStat';
 import { PencilSquareIcon } from '@heroicons/react/24/outline';
+import {
+  createCMPMForm,
+  updateUser,
+  createCPSForm,
+} from '../../src/graphql/mutations';
 
 export default function ProfileHead({ user }) {
   return (
@@ -56,14 +61,20 @@ export default function ProfileHead({ user }) {
           view={`/forms/cmpm/${user.id}`}
           updated={user.cmpmForm?.updatedOn}
           user={user}
+          value={'cmpmFormID'}
+          value1={'cMPMFormUserId'}
+          query={createCMPMForm}
         />
         <FormStat
           label='CPS'
           stat={user.cpsFormID}
-          link={'/certificate-of-mastery-in-packaging-management'}
+          link={'/certificate-of-packaging-science-application'}
           view={`/forms/cps/${user.id}`}
           updated={user.cpsForm?.updatedOn}
           user={user}
+          value={'cpsFormID'}
+          value1={'cPSFormUserId'}
+          query={createCPSForm}
         />
         <FormStat label='Automotive Packaging' />
       </div>

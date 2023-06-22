@@ -1,11 +1,25 @@
 import React, { useState } from 'react';
 import { Amplify, API, graphqlOperation } from 'aws-amplify';
 import awsExports from '../../src/aws-exports';
-import { createCMPMForm, updateUser } from '../../src/graphql/mutations';
+import {
+  createCMPMForm,
+  updateUser,
+  createCPSForm,
+} from '../../src/graphql/mutations';
 import { useRouter } from 'next/router';
 
 Amplify.configure(awsExports);
-const FormStat = ({ stat, label, link, updated, user, view }) => {
+const FormStat = ({
+  stat,
+  label,
+  link,
+  updated,
+  user,
+  view,
+  query,
+  value,
+  value1,
+}) => {
   const [isErrors, setIsError] = useState(null);
   const router = useRouter();
 
@@ -19,8 +33,8 @@ const FormStat = ({ stat, label, link, updated, user, view }) => {
 
   const formCreateHandler = async () => {
     const res = await API.graphql({
-      query: createCMPMForm,
-      variables: { input: { id: user.id, cMPMFormUserId: user.id } },
+      query: `${query}`,
+      variables: { input: { id: user.id, [value1]: user.id } },
     });
     if (res.data) {
       addCmpmToUser();
@@ -32,7 +46,7 @@ const FormStat = ({ stat, label, link, updated, user, view }) => {
   const addCmpmToUser = async () => {
     const res = await API.graphql({
       query: updateUser,
-      variables: { input: { id: user.id, cmpmFormID: user.id } },
+      variables: { input: { id: user.id, [value]: user.id } },
     });
     if (res.data) {
       router.push(`${link}?email=${user.email}`);
