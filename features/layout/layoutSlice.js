@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   darkMode: false,
   isFixed: false,
+  signInModal: false,
 };
 
 export const layoutSlice = createSlice({
@@ -21,9 +22,13 @@ export const layoutSlice = createSlice({
     setUnfixed: (state) => {
       state.isFixed = false;
     },
+    toggleSignInModal: (state) => {
+      state.signInModal = !state.signInModal;
+    },
   },
 });
 
-export const { setDark, setLight, setFixed, setUnfixed } = layoutSlice.actions;
+export const { setDark, setLight, setFixed, setUnfixed, toggleSignInModal } =
+  layoutSlice.actions;
 
 export default layoutSlice.reducer;

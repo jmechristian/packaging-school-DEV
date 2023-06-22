@@ -5,7 +5,7 @@ import { useFormContext } from 'react-hook-form';
 const CPSGoals = () => {
   const { formState, register } = useFormContext();
   return (
-    <div className='flex flex-col gap-6'>
+    <div className='flex flex-col gap-6 lg:gap-9'>
       <TextArea
         name={'yearGoals'}
         label={'What goals do you have for yourself in the next 12 months?'}

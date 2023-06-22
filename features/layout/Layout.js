@@ -7,7 +7,7 @@ import {
   setPreviewClosed,
 } from '../all_courses/courseFilterSlice';
 import { setUser } from '../auth/authslice';
-import { setDark } from './layoutSlice';
+import { setDark, toggleSignInModal } from './layoutSlice';
 import ScrollTop from './ScrollTop';
 import { useUser } from '@auth0/nextjs-auth0/client';
 import { API, graphqlOperation } from 'aws-amplify';
@@ -17,12 +17,12 @@ import { createUser } from '../../src/graphql/mutations';
 import { onUpdateUser } from '../../src/graphql/subscriptions';
 import HeaderNew from '../navigation/Header/HeaderNew';
 import SearchContainer from '../../components/search/SearchContainer';
-import Router from 'next/router';
 import Loading from '../../components/shared/Loading';
+import SignInModal from '../../components/shared/SignInModal';
 
 const Layout = ({ children }) => {
   const dispatch = useDispatch();
-  const { darkMode } = useSelector((state) => state.layout);
+  const { darkMode, signInModal } = useSelector((state) => state.layout);
   const { searchOpen } = useSelector((state) => state.nav);
   const { preview } = useSelector((state) => state.course_filter);
   const { user } = useUser();
@@ -95,6 +95,12 @@ const Layout = ({ children }) => {
       <div className={`${darkMode ? 'dark' : ''} `}>
         <div className='relative flex flex-col justify-between'>
           {searchOpen && <SearchContainer />}
+          {signInModal && (
+            <SignInModal
+              open={signInModal}
+              setOpen={() => dispatch(toggleSignInModal())}
+            />
+          )}
           {preview && (
             <CoursePreview close={() => dispatch(setPreviewClosed())} />
           )}

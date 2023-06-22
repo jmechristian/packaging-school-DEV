@@ -15,14 +15,14 @@ const Page = () => {
   return (
     <div className='flex flex-col gap-16 pb-24'>
       <CenteredTextHeader
-        headline='Certificate Application'
-        heading='Certificate Of Packaging Science'
+        headline='Certificate of Packaging Science'
+        heading='Student Application'
         subhead='Empower yourself with the essential tools for success in the packaging profession, providing 24/7 access to review relevant content on-demand. Set your employees up for success, supporting their career advancement, and utilize this program for effective onboarding and retention strategies.'
       />
       <div className='px-6 xl:px-0'>
         <FormProvider {...methods}>
           <form
-            className='grid lg:grid-cols-2 gap-6'
+            className='grid md:grid-cols-2 gap-6 lg:gap-12 max-w-4xl mx-auto'
             onSubmit={methods.handleSubmit(onSubmit)}
           >
             <div>
@@ -51,7 +51,7 @@ const Page = () => {
             </div>
             <div>
               <TextInput
-                name={'phoneNumber'}
+                name={'phone'}
                 placeholder={'Enter Phone Number'}
                 label={'Phone Number'}
               />

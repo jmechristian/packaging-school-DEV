@@ -5,8 +5,8 @@ import { useForm, FormProvider, useFormContext } from 'react-hook-form';
 
 const CPSProfessionalInfo = () => {
   return (
-    <div className='flex flex-col gap-6'>
-      <div className='grid grid-col-1 lg:grid-cols-2 lg:gap-12'>
+    <div className='flex flex-col gap-6 lg:gap-9'>
+      <div className='grid grid-col-1 gap-6 md:grid-cols-2 md:gap-12'>
         <TextInput
           name={'companyName'}
           placeholder={'Enter Company Name'}
