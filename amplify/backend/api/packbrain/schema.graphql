@@ -191,6 +191,8 @@ type User @model @auth(rules: [{ allow: public }]) {
   apss: [APS] @manyToMany(relationName: "APSUser")
   cmpmFormID: ID
   cmpmForm: CMPMForm @hasOne(fields: ["cmpmFormID"])
+  cpsFormID: ID
+  cpsForm: CPSForm @hasOne(fields: ["cpsFormID"])
   instructorId: Instructor @hasOne
   studentId: Student @hasOne
   savedCourses: [String]
@@ -223,6 +225,37 @@ type CMPMForm
   cmpmGoals: String
   moreAboutYou: String
   birthYear: String
+  optOut: Boolean
+}
+
+type CPSForm
+  @model(timestamps: { createdAt: "createdOn", updatedAt: "updatedOn" })
+  @auth(rules: [{ allow: public }]) {
+  id: ID!
+  user: User @belongsTo
+  firstName: String
+  lastName: String
+  email: String
+  phone: String
+  streetAddress: String
+  addressExtra: String
+  city: String
+  state: String
+  country: String
+  birthYear: String
+  companyName: String
+  companyTitle: String
+  linkedin: String
+  background: String
+  whyPackaging: String
+  areaOfInterest: String
+  sessionApplying: String
+  referral: String
+  payment: String
+  yearGoals: String
+  cpsGoals: String
+  moreAboutYou: String
+  elective: String
   optOut: Boolean
 }
 

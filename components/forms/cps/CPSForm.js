@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CPSPersonalInfo from './CPSPersonalInfo';
 import CPSProfessionalInfo from './CPSProfessionalInfo';
 import CPSGoals from './CPSGoals';
@@ -7,6 +7,7 @@ import CPSApply from './CPSApply';
 const CPSForm = ({ methods }) => {
   const onSubmit = (data, e) => console.log(data, e);
   const onError = (errors, e) => console.log(errors, e);
+
   return (
     <form
       className='w-full bg-slate-200 p-6 divide-y space-y-6 divide-slate-300'

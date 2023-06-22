@@ -38,7 +38,7 @@ const CPSNav = () => {
         {items.map((item) => (
           <div
             key={item.id}
-            className={`border flex gap-1 justify-center items-center col-span-1 border-slate-200 w-full py-3 lg:py-4 text-center text-sm md:text-base font-greycliff font-semibold ${
+            className={`border flex gap-1 justify-center items-center col-span-1 border-slate-200 w-full py-3 text-center text-sm md:text-base font-greycliff font-semibold ${
               isSelected === item.id
                 ? 'bg-base-mid text-white'
                 : 'text-slate-500'

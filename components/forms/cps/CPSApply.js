@@ -2,16 +2,16 @@ import React from 'react';
 import CPSPricing from './CPSPricing';
 import { useFormContext } from 'react-hook-form';
 import TextInput from '../TextInput';
+import Link from 'next/link';
 
 const CPSApply = () => {
   const { register, formState } = useFormContext();
   return (
-    <div className='flex flex-col gap-6'>
+    <div className='flex flex-col gap-12'>
       <fieldset>
         <div className='flex justify-between items-center'>
           <legend className='text-sm md:text-base max-w-[75%] font-semibold leading-6 text-slate-700 font-greycliff'>
-            Where did you hear about the Certificate of Mastery in Packaging
-            Management?
+            Where did you hear about the Certificate of Packaging Science?
           </legend>
           <span
             className='leading-6 text-red-500 text-sm md:text-base'
@@ -195,6 +195,65 @@ const CPSApply = () => {
           </div>
         )}
       </fieldset>
+      <div className='flex flex-col gap-3'>
+        <div className='flex justify-between'>
+          <label
+            htmlFor={'country'}
+            className='block text-sm md:text-base font-greycliff font-semibold leading-6 text-slate-700'
+          >
+            Elective<sup>*</sup>
+          </label>
+          <span
+            className='text-sm lg:text-base leading-6 text-red-500'
+            id='email-optional'
+          >
+            Required
+          </span>
+        </div>
+        <select
+          className='form-select w-full text-sm md:text-base'
+          id='elective'
+          name='elective'
+          {...register('elective', { required: true })}
+        >
+          <option value=''>Select Elective</option>
+          <option value='later'>
+            I&apos;d like to decide at a later date.
+          </option>
+          <option value='human_factors'>
+            Human Factors in Packaging Design
+          </option>
+          <option value='solidworks'>Solidworks for Packaging - Basics</option>
+          <option value='project_management'>
+            Project Management Essentials
+          </option>
+          <option value='cannabis'>Cannabis Packaging</option>
+          <option value='pressure_labels'>Pressure Sensitive Labels</option>
+          <option value='liquid_filling_machinery'>
+            Liquid Filling Machinery
+          </option>
+          <option value='corrugated'>Corrugated Design</option>
+          <option value='bioplastics'>
+            Sales Operations for Printing and Packaging
+          </option>
+        </select>
+        {formState.errors.elective && (
+          <div className='text-sm text-red-600 mt-1 mb-2'>
+            Please fill out field.
+          </div>
+        )}
+        <div className='text-slate-700 text-sm mt-1'>
+          <sup>*</sup>Course descriptions can be found{' '}
+          <Link
+            href='/all_courses'
+            className='flex gap-1 items-center'
+            target='_blank'
+          >
+            here
+          </Link>
+          .
+        </div>
+      </div>
       <CPSPricing />
     </div>
   );

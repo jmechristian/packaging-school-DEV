@@ -905,6 +905,7 @@ export const getCompany = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          cpsFormID
           savedCourses
           createdAt
           updatedAt
@@ -1007,6 +1008,7 @@ export const getUser = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          cpsFormID
           savedCourses
           createdAt
           updatedAt
@@ -1035,9 +1037,61 @@ export const getUser = /* GraphQL */ `
         cmpmGoals
         moreAboutYou
         birthYear
+        optOut
         createdOn
         updatedOn
         cMPMFormUserId
+      }
+      cpsFormID
+      cpsForm {
+        id
+        user {
+          id
+          name
+          title
+          company
+          email
+          office
+          bio
+          cell
+          picture
+          linkedin
+          companyID
+          cmpmFormID
+          cpsFormID
+          savedCourses
+          createdAt
+          updatedAt
+          userInstructorIdId
+          userStudentIdId
+        }
+        firstName
+        lastName
+        email
+        phone
+        streetAddress
+        addressExtra
+        city
+        state
+        country
+        birthYear
+        companyName
+        companyTitle
+        linkedin
+        background
+        whyPackaging
+        areaOfInterest
+        sessionApplying
+        referral
+        payment
+        yearGoals
+        cpsGoals
+        moreAboutYou
+        elective
+        optOut
+        createdOn
+        updatedOn
+        cPSFormUserId
       }
       instructorId {
         id
@@ -1055,6 +1109,7 @@ export const getUser = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          cpsFormID
           savedCourses
           createdAt
           updatedAt
@@ -1083,6 +1138,7 @@ export const getUser = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          cpsFormID
           savedCourses
           createdAt
           updatedAt
@@ -1150,9 +1206,41 @@ export const listUsers = /* GraphQL */ `
           cmpmGoals
           moreAboutYou
           birthYear
+          optOut
           createdOn
           updatedOn
           cMPMFormUserId
+        }
+        cpsFormID
+        cpsForm {
+          id
+          firstName
+          lastName
+          email
+          phone
+          streetAddress
+          addressExtra
+          city
+          state
+          country
+          birthYear
+          companyName
+          companyTitle
+          linkedin
+          background
+          whyPackaging
+          areaOfInterest
+          sessionApplying
+          referral
+          payment
+          yearGoals
+          cpsGoals
+          moreAboutYou
+          elective
+          optOut
+          createdOn
+          updatedOn
+          cPSFormUserId
         }
         instructorId {
           id
@@ -1231,9 +1319,41 @@ export const usersByName = /* GraphQL */ `
           cmpmGoals
           moreAboutYou
           birthYear
+          optOut
           createdOn
           updatedOn
           cMPMFormUserId
+        }
+        cpsFormID
+        cpsForm {
+          id
+          firstName
+          lastName
+          email
+          phone
+          streetAddress
+          addressExtra
+          city
+          state
+          country
+          birthYear
+          companyName
+          companyTitle
+          linkedin
+          background
+          whyPackaging
+          areaOfInterest
+          sessionApplying
+          referral
+          payment
+          yearGoals
+          cpsGoals
+          moreAboutYou
+          elective
+          optOut
+          createdOn
+          updatedOn
+          cPSFormUserId
         }
         instructorId {
           id
@@ -1312,9 +1432,41 @@ export const usersByEmail = /* GraphQL */ `
           cmpmGoals
           moreAboutYou
           birthYear
+          optOut
           createdOn
           updatedOn
           cMPMFormUserId
+        }
+        cpsFormID
+        cpsForm {
+          id
+          firstName
+          lastName
+          email
+          phone
+          streetAddress
+          addressExtra
+          city
+          state
+          country
+          birthYear
+          companyName
+          companyTitle
+          linkedin
+          background
+          whyPackaging
+          areaOfInterest
+          sessionApplying
+          referral
+          payment
+          yearGoals
+          cpsGoals
+          moreAboutYou
+          elective
+          optOut
+          createdOn
+          updatedOn
+          cPSFormUserId
         }
         instructorId {
           id
@@ -1393,9 +1545,41 @@ export const usersByCompanyID = /* GraphQL */ `
           cmpmGoals
           moreAboutYou
           birthYear
+          optOut
           createdOn
           updatedOn
           cMPMFormUserId
+        }
+        cpsFormID
+        cpsForm {
+          id
+          firstName
+          lastName
+          email
+          phone
+          streetAddress
+          addressExtra
+          city
+          state
+          country
+          birthYear
+          companyName
+          companyTitle
+          linkedin
+          background
+          whyPackaging
+          areaOfInterest
+          sessionApplying
+          referral
+          payment
+          yearGoals
+          cpsGoals
+          moreAboutYou
+          elective
+          optOut
+          createdOn
+          updatedOn
+          cPSFormUserId
         }
         instructorId {
           id
@@ -1463,9 +1647,41 @@ export const getCMPMForm = /* GraphQL */ `
           cmpmGoals
           moreAboutYou
           birthYear
+          optOut
           createdOn
           updatedOn
           cMPMFormUserId
+        }
+        cpsFormID
+        cpsForm {
+          id
+          firstName
+          lastName
+          email
+          phone
+          streetAddress
+          addressExtra
+          city
+          state
+          country
+          birthYear
+          companyName
+          companyTitle
+          linkedin
+          background
+          whyPackaging
+          areaOfInterest
+          sessionApplying
+          referral
+          payment
+          yearGoals
+          cpsGoals
+          moreAboutYou
+          elective
+          optOut
+          createdOn
+          updatedOn
+          cPSFormUserId
         }
         instructorId {
           id
@@ -1507,6 +1723,7 @@ export const getCMPMForm = /* GraphQL */ `
       cmpmGoals
       moreAboutYou
       birthYear
+      optOut
       createdOn
       updatedOn
       cMPMFormUserId
@@ -1535,6 +1752,7 @@ export const listCMPMForms = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          cpsFormID
           savedCourses
           createdAt
           updatedAt
@@ -1563,9 +1781,199 @@ export const listCMPMForms = /* GraphQL */ `
         cmpmGoals
         moreAboutYou
         birthYear
+        optOut
         createdOn
         updatedOn
         cMPMFormUserId
+      }
+      nextToken
+    }
+  }
+`;
+export const getCPSForm = /* GraphQL */ `
+  query GetCPSForm($id: ID!) {
+    getCPSForm(id: $id) {
+      id
+      user {
+        id
+        name
+        title
+        company
+        email
+        office
+        bio
+        cell
+        picture
+        linkedin
+        companyID
+        apss {
+          nextToken
+        }
+        cmpmFormID
+        cmpmForm {
+          id
+          firstName
+          lastName
+          email
+          phone
+          streetAddress
+          addressExtra
+          city
+          state
+          country
+          companyName
+          companyTitle
+          linkedin
+          background
+          whyPackaging
+          areaOfInterest
+          sessionApplying
+          referral
+          payment
+          yearGoals
+          cmpmGoals
+          moreAboutYou
+          birthYear
+          optOut
+          createdOn
+          updatedOn
+          cMPMFormUserId
+        }
+        cpsFormID
+        cpsForm {
+          id
+          firstName
+          lastName
+          email
+          phone
+          streetAddress
+          addressExtra
+          city
+          state
+          country
+          birthYear
+          companyName
+          companyTitle
+          linkedin
+          background
+          whyPackaging
+          areaOfInterest
+          sessionApplying
+          referral
+          payment
+          yearGoals
+          cpsGoals
+          moreAboutYou
+          elective
+          optOut
+          createdOn
+          updatedOn
+          cPSFormUserId
+        }
+        instructorId {
+          id
+          userId
+          createdAt
+          updatedAt
+        }
+        studentId {
+          id
+          studentId
+          createdAt
+          updatedAt
+        }
+        savedCourses
+        createdAt
+        updatedAt
+        userInstructorIdId
+        userStudentIdId
+      }
+      firstName
+      lastName
+      email
+      phone
+      streetAddress
+      addressExtra
+      city
+      state
+      country
+      birthYear
+      companyName
+      companyTitle
+      linkedin
+      background
+      whyPackaging
+      areaOfInterest
+      sessionApplying
+      referral
+      payment
+      yearGoals
+      cpsGoals
+      moreAboutYou
+      elective
+      optOut
+      createdOn
+      updatedOn
+      cPSFormUserId
+    }
+  }
+`;
+export const listCPSForms = /* GraphQL */ `
+  query ListCPSForms(
+    $filter: ModelCPSFormFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listCPSForms(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        user {
+          id
+          name
+          title
+          company
+          email
+          office
+          bio
+          cell
+          picture
+          linkedin
+          companyID
+          cmpmFormID
+          cpsFormID
+          savedCourses
+          createdAt
+          updatedAt
+          userInstructorIdId
+          userStudentIdId
+        }
+        firstName
+        lastName
+        email
+        phone
+        streetAddress
+        addressExtra
+        city
+        state
+        country
+        birthYear
+        companyName
+        companyTitle
+        linkedin
+        background
+        whyPackaging
+        areaOfInterest
+        sessionApplying
+        referral
+        payment
+        yearGoals
+        cpsGoals
+        moreAboutYou
+        elective
+        optOut
+        createdOn
+        updatedOn
+        cPSFormUserId
       }
       nextToken
     }
@@ -1985,9 +2393,41 @@ export const getStudent = /* GraphQL */ `
           cmpmGoals
           moreAboutYou
           birthYear
+          optOut
           createdOn
           updatedOn
           cMPMFormUserId
+        }
+        cpsFormID
+        cpsForm {
+          id
+          firstName
+          lastName
+          email
+          phone
+          streetAddress
+          addressExtra
+          city
+          state
+          country
+          birthYear
+          companyName
+          companyTitle
+          linkedin
+          background
+          whyPackaging
+          areaOfInterest
+          sessionApplying
+          referral
+          payment
+          yearGoals
+          cpsGoals
+          moreAboutYou
+          elective
+          optOut
+          createdOn
+          updatedOn
+          cPSFormUserId
         }
         instructorId {
           id
@@ -2061,6 +2501,7 @@ export const listStudents = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          cpsFormID
           savedCourses
           createdAt
           updatedAt
@@ -2122,9 +2563,41 @@ export const getInstructor = /* GraphQL */ `
           cmpmGoals
           moreAboutYou
           birthYear
+          optOut
           createdOn
           updatedOn
           cMPMFormUserId
+        }
+        cpsFormID
+        cpsForm {
+          id
+          firstName
+          lastName
+          email
+          phone
+          streetAddress
+          addressExtra
+          city
+          state
+          country
+          birthYear
+          companyName
+          companyTitle
+          linkedin
+          background
+          whyPackaging
+          areaOfInterest
+          sessionApplying
+          referral
+          payment
+          yearGoals
+          cpsGoals
+          moreAboutYou
+          elective
+          optOut
+          createdOn
+          updatedOn
+          cPSFormUserId
         }
         instructorId {
           id
@@ -2182,6 +2655,7 @@ export const listInstructors = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          cpsFormID
           savedCourses
           createdAt
           updatedAt
@@ -2923,9 +3397,41 @@ export const getAPSUser = /* GraphQL */ `
           cmpmGoals
           moreAboutYou
           birthYear
+          optOut
           createdOn
           updatedOn
           cMPMFormUserId
+        }
+        cpsFormID
+        cpsForm {
+          id
+          firstName
+          lastName
+          email
+          phone
+          streetAddress
+          addressExtra
+          city
+          state
+          country
+          birthYear
+          companyName
+          companyTitle
+          linkedin
+          background
+          whyPackaging
+          areaOfInterest
+          sessionApplying
+          referral
+          payment
+          yearGoals
+          cpsGoals
+          moreAboutYou
+          elective
+          optOut
+          createdOn
+          updatedOn
+          cPSFormUserId
         }
         instructorId {
           id
@@ -2980,6 +3486,7 @@ export const listAPSUsers = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          cpsFormID
           savedCourses
           createdAt
           updatedAt
@@ -3031,6 +3538,7 @@ export const aPSUsersByAPSId = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          cpsFormID
           savedCourses
           createdAt
           updatedAt
@@ -3082,6 +3590,7 @@ export const aPSUsersByUserId = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          cpsFormID
           savedCourses
           createdAt
           updatedAt
@@ -3778,6 +4287,7 @@ export const getCourseInstructors = /* GraphQL */ `
           linkedin
           companyID
           cmpmFormID
+          cpsFormID
           savedCourses
           createdAt
           updatedAt

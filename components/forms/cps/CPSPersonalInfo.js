@@ -26,7 +26,7 @@ const CPSPersonalInfo = () => {
         required
       />
       <TextInput
-        name={'phoneNumber'}
+        name={'phone'}
         placeholder={'Enter Phone Number'}
         label={'Phone Number'}
       />
