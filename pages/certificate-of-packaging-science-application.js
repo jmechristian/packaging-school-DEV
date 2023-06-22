@@ -56,15 +56,17 @@ const Page = () => {
                 label={'Phone Number'}
               />
             </div>
-            <button
-              type='submit'
-              className='bg-clemson hover:bg-clemson-dark mt-2 text-white font-semibold items-center rounded-lg px-4 py-3 flex gap-1'
-            >
-              Continue Application
-              <div>
-                <ArrowLongRightIcon className='w-6 h-6 stroke-white' />
-              </div>
-            </button>
+            <div className='col-span-2 flex justify-end items-center'>
+              <button
+                type='submit'
+                className='bg-clemson  align-end w-fit hover:bg-clemson-dark mt-2 text-white font-semibold items-center rounded-lg px-4 py-3 flex gap-1'
+              >
+                Continue Application
+                <div>
+                  <ArrowLongRightIcon className='w-6 h-6 stroke-white' />
+                </div>
+              </button>
+            </div>
           </form>
         </FormProvider>
       </div>
