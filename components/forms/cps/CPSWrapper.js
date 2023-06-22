@@ -31,10 +31,6 @@ const CPSWrapper = ({ params }) => {
         console.log(`${property}: ${params[property]}`);
         methods.setValue(`${property}`, `${params[property]}`);
       }
-      //   methods.setValue('firstName', params.firstName);
-      //   methods.setValue('lastName', params.lastName);
-      //   methods.setValue('email', params.email);
-      //   methods.setValue('phone', params.phone);
     }
   }, [params, methods]);
 
@@ -132,7 +128,92 @@ const CPSWrapper = ({ params }) => {
     }
   };
 
-  const onSubmit = (data, e) => console.log(data, e);
+  const onSubmit = async (data, e) => {
+    e.preventDefault();
+    if (!user) {
+      const res = await API.graphql({
+        query: createCPSForm,
+        variables: {
+          input: {
+            firstName: data.firstName,
+            lastName: data.lastName,
+            email: data.email,
+            phone: data.phone,
+            streetAddress: data.streetAddress,
+            addressExtra: data.addressExtra,
+            city: data.city,
+            state: data.state,
+            country: data.country,
+            birthYear: data.birthYear,
+            companyName: data.companyName,
+            companyTitle: data.companyTitle,
+            linkedin: data.linkedin,
+            background: data.background,
+            whyPackaging: data.whyPackaging,
+            areaOfInterest: data.areaOfInterest,
+            referral: data.referral,
+            payment: data.payment,
+            yearGoals: data.yearGoals,
+            cpsGoals: data.cpsGoals,
+            moreAboutYou: data.moreAboutYou,
+            elective: data.elective,
+          },
+        },
+      });
+
+      if (res.data) {
+        router.push('/cps-application-confirmation');
+      }
+    }
+
+    if (user && !user.cpsFormID) {
+      const res = await API.graphql({
+        query: createCPSForm,
+        variables: {
+          input: {
+            id: user.id,
+            cPSFormUserId: user.id,
+            firstName: data.firstName,
+            lastName: data.lastName,
+            email: data.email,
+            phone: data.phone,
+            streetAddress: data.streetAddress,
+            addressExtra: data.addressExtra,
+            city: data.city,
+            state: data.state,
+            country: data.country,
+            birthYear: data.birthYear,
+            companyName: data.companyName,
+            companyTitle: data.companyTitle,
+            linkedin: data.linkedin,
+            background: data.background,
+            whyPackaging: data.whyPackaging,
+            areaOfInterest: data.areaOfInterest,
+            referral: data.referral,
+            payment: data.payment,
+            yearGoals: data.yearGoals,
+            cpsGoals: data.cpsGoals,
+            moreAboutYou: data.moreAboutYou,
+            elective: data.elective,
+          },
+        },
+      });
+
+      if (res.data) {
+        await API.graphql({
+          query: updateUser,
+          variables: {
+            input: {
+              id: user.id,
+              cpsFormID: user.id,
+            },
+          },
+        });
+
+        router.push('/cps-application-confirmation');
+      }
+    }
+  };
   const onError = (errors, e) => console.log(errors, e);
 
   return (

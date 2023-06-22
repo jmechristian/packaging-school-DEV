@@ -12,7 +12,7 @@ const CPSGoals = () => {
         required
       />
       <TextArea
-        name={'cmpmGoals'}
+        name={'cpsGoals'}
         label={
           'How do you see The Certificate of Packaging Science helping you achieve those goals?'
         }
