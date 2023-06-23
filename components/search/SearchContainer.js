@@ -30,27 +30,20 @@ const searchClient = algoliasearch(
 
 export function ProductItem({ hit }) {
   return (
-    <a
-      href={hit.slug}
-      className='aa-ItemLink hover:bg-slate-700 cursor-pointer'
-    >
-      <div className='grid grid-cols-5 w-full'>
-        <div className='flex flex-col px-3 py-1.5 col-span-4'>
-          <div className='font-greycliff font-semibold leading-snug text-lg dark:text-white'>
-            <Highlight hit={hit} attribute='title' />
-          </div>
-          <div className='aa-ItemTitle line-clamp-2  text-slate-600 dark:text-slate-400'>
-            <Highlight hit={hit} attribute='subheadline' />
-          </div>
-          <div className='aa-ItemTitle line-clamp-2   text-slate-600 dark:text-slate-400'>
-            <Highlight hit={hit} attribute='subhead' />
-          </div>
+    <div className='flex justify-between items-center w-full'>
+      <a
+        href={hit.slug}
+        className='aa-ItemLink hover:bg-slate-700 cursor-pointer w-full'
+      >
+        <div className='font-greycliff font-semibold leading-snug lg:text-lg dark:text-white w-full'>
+          <Highlight hit={hit} attribute='title' />
         </div>
-        <div className='col-span-1 flex items-center justify-end'>
+
+        <div className='col-span-1 flex items-center justify-end w-full'>
           <ArrowUpRightIcon className='w-5 h-5 mr-2 stroke-white' />
         </div>
-      </div>
-    </a>
+      </a>
+    </div>
   );
 }
 
@@ -74,16 +67,16 @@ export function CertItem({ hit }) {
       className='aa-ItemLink hover:bg-slate-700 cursor-pointer'
     >
       <div className='grid grid-cols-5 w-full'>
-        <div className='px-3 py-1.5 col-span-4'>
+        <div className='lg:px-3 py-1.5 col-span-4'>
           <div className='flex gap-3 w-full'>
             <div>
               <CMPMIcon scale={12} background={setBackground()} />
             </div>
             <div className='flex flex-col '>
-              <div className='font-greycliff font-semibold leading-snug text-lg dark:text-white'>
+              <div className='font-greycliff font-semibold leading-snug lg:text-lg dark:text-white'>
                 <Highlight hit={hit} attribute='title' />
               </div>
-              <div className='aa-ItemTitle line-clamp-2  text-slate-600 dark:text-slate-400'>
+              <div className='aa-ItemTitle text-sm md:text-base line-clamp-2  text-slate-600 dark:text-slate-400'>
                 <Highlight hit={hit} attribute='subheadline' />
               </div>
               <div className='aa-ItemTitle line-clamp-2   text-slate-600 dark:text-slate-400'>
@@ -126,13 +119,13 @@ export function CourseItem({ hit }) {
               <GlobalMaterialsIcon scale={12} background={setBackground()} />
             </div>
             <div className='flex flex-col '>
-              <div className='font-greycliff font-semibold leading-snug text-lg dark:text-white'>
+              <div className='font-greycliff font-semibold leading-snug md:text-lg dark:text-white'>
                 <Highlight hit={hit} attribute='title' />
               </div>
-              <div className='aa-ItemTitle line-clamp-2  text-slate-600 dark:text-slate-400'>
+              <div className='aa-ItemTitle line-clamp-2 text-sm md:text-base text-slate-600 dark:text-slate-400'>
                 <Highlight hit={hit} attribute='subheadline' />
               </div>
-              <div className='aa-ItemTitle line-clamp-2   text-slate-600 dark:text-slate-400'>
+              <div className='aa-ItemTitle line-clamp-2  text-sm md:text-base text-slate-600 dark:text-slate-400'>
                 <Highlight hit={hit} attribute='subhead' />
               </div>
             </div>
@@ -172,13 +165,13 @@ export function LOTMItem({ hit }) {
               <LotmIcon style='w-12 h-12 fill-white' />
             </div>
             <div className='flex flex-col '>
-              <div className='font-greycliff font-semibold leading-snug text-lg dark:text-white'>
+              <div className='font-greycliff font-semibold leading-snug md:text-lg dark:text-white'>
                 <Highlight hit={hit} attribute='title' />
               </div>
-              <div className='aa-ItemTitle line-clamp-2  text-slate-600 dark:text-slate-400'>
+              <div className='aa-ItemTitle line-clamp-2 text-sm md:text-base text-slate-600 dark:text-slate-400'>
                 <Highlight hit={hit} attribute='subheadline' />
               </div>
-              <div className='aa-ItemTitle line-clamp-2   text-slate-600 dark:text-slate-400'>
+              <div className='aa-ItemTitle line-clamp-2  text-sm md:text-base text-slate-600 dark:text-slate-400'>
                 <Highlight hit={hit} attribute='subhead' />
               </div>
             </div>
@@ -278,16 +271,16 @@ const SearchContainer = () => {
   });
 
   return (
-    <div className='fixed inset-0 justify-center items-between py-20 bg-black/60 backdrop-blur-sm z-[60]'>
+    <div className='fixed inset-0 justify-center items-between p-4 lg:py-20 bg-black/60 backdrop-blur-sm z-[60]'>
       <div
-        className='absolute right-6 top-6 cursor-pointer'
+        className='absolute right-6 top-6 cursor-pointer z-[80]'
         onClick={() => dispatch(closeSearch())}
       >
-        <XMarkIcon className='w-10 h-10 text-white' />
+        <XMarkIcon className='md:w-10 md:h-10 h-6 w-6 text-white' />
       </div>
-      <div className='dark:bg-[#222] bg-white w-full h-full rounded-lg lg:max-w-6xl lg:mx-auto  grid grid-cols-3 '>
+      <div className='dark:bg-[#222] bg-white w-full h-full rounded-lg lg:max-w-6xl lg:mx-auto  grid lg:grid-cols-3'>
         <div
-          className='col-span-2 p-9 grid overflow-y-scroll relative'
+          className='col-span-1 lg:col-span-2 px-3 lg:px-9 py-10 grid overflow-y-scroll relative'
           id='scrollers'
         >
           <InstantSearch
@@ -298,7 +291,7 @@ const SearchContainer = () => {
             <div className='w-full flex flex-col gap-6'>
               <SearchBox
                 classNames={{
-                  input: 'w-full text-xl font-medium py-4',
+                  input: 'w-full text-base md:text-xl font-medium py-4',
                   submitIcon: 'hidden',
                   resetIcon: 'hidden',
                 }}
@@ -340,13 +333,13 @@ const SearchContainer = () => {
                 </div>
                 <Hits
                   hitComponent={ProductItem}
-                  classNames={{ list: 'flex flex-col gap-4' }}
+                  classNames={{ list: 'flex flex-col gap-6 w-full' }}
                 />
               </Index>
             </div>
           </InstantSearch>
         </div>
-        <div className='col-span-1 dark:bg-black/70 bg-slate-100 rounded-lg py-6 px-2'>
+        <div className='hidden lg:block lg:col-span-1 dark:bg-black/70 bg-slate-100 rounded-lg py-6 px-2'>
           <div className='flex flex-col gap-9'>
             <div className='px-6 py-3 row-span-2 flex flex-col gap-3'>
               <div className='font-greycliff font-semibold text-slate-500 dark:text-clemson text-lg'>
