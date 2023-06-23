@@ -22,7 +22,7 @@ const CPSForm = ({ methods }) => {
 
   const dispatch = useDispatch();
 
-  const sendFormToAWS = async () => {
+  const sendFormToAWS = async (data) => {
     if (user && user.cpsFormID) {
       setIsUpdated(false);
       setIsLoading(true);
@@ -107,6 +107,129 @@ const CPSForm = ({ methods }) => {
     }
   };
 
+  const submitFormToAWS = async () => {
+    if (!user) {
+      setIsUpdated(false);
+      setIsLoading(true);
+      await API.graphql({
+        query: createCPSForm,
+        variables: {
+          input: {
+            firstName: methods.getValues('firstName'),
+            lastName: methods.getValues('lastName'),
+            email: methods.getValues('email'),
+            phone: methods.getValues('phone'),
+            streetAddress: methods.getValues('streetAddress'),
+            addressExtra: methods.getValues('addressExtra'),
+            city: methods.getValues('city'),
+            state: methods.getValues('state'),
+            country: methods.getValues('country'),
+            birthYear: methods.getValues('birthYear'),
+            companyName: methods.getValues('companyName'),
+            companyTitle: methods.getValues('companyTitle'),
+            linkedin: methods.getValues('linkedin'),
+            background: methods.getValues('background'),
+            whyPackaging: methods.getValues('whyPackaging'),
+            areaOfInterest: methods.getValues('areaOfInterest'),
+            referral: methods.getValues('referral'),
+            payment: methods.getValues('payment'),
+            yearGoals: methods.getValues('yearGoals'),
+            cpsGoals: methods.getValues('cpsGoals'),
+            moreAboutYou: methods.getValues('moreAboutYou'),
+            elective: methods.getValues('elective'),
+          },
+        },
+      });
+      setIsLoading(false);
+      setIsUpdated(true);
+      router.push('/cps-application-confirmation');
+    }
+    if (user && user.cpsFormID) {
+      setIsUpdated(false);
+      setIsLoading(true);
+      await API.graphql({
+        query: updateCPSForm,
+        variables: {
+          input: {
+            id: user.id,
+            firstName: methods.getValues('firstName'),
+            lastName: methods.getValues('lastName'),
+            email: methods.getValues('email'),
+            phone: methods.getValues('phone'),
+            streetAddress: methods.getValues('streetAddress'),
+            addressExtra: methods.getValues('addressExtra'),
+            city: methods.getValues('city'),
+            state: methods.getValues('state'),
+            country: methods.getValues('country'),
+            birthYear: methods.getValues('birthYear'),
+            companyName: methods.getValues('companyName'),
+            companyTitle: methods.getValues('companyTitle'),
+            linkedin: methods.getValues('linkedin'),
+            background: methods.getValues('background'),
+            whyPackaging: methods.getValues('whyPackaging'),
+            areaOfInterest: methods.getValues('areaOfInterest'),
+            referral: methods.getValues('referral'),
+            payment: methods.getValues('payment'),
+            yearGoals: methods.getValues('yearGoals'),
+            cpsGoals: methods.getValues('cpsGoals'),
+            moreAboutYou: methods.getValues('moreAboutYou'),
+            elective: methods.getValues('elective'),
+          },
+        },
+      });
+      setIsLoading(false);
+      setIsUpdated(true);
+      router.push('/cps-application-confirmation');
+    } else if (user && !user.CPSFormID) {
+      setIsUpdated(false);
+      setIsLoading(true);
+      await API.graphql({
+        query: createCPSForm,
+        variables: {
+          input: {
+            id: user.id,
+            cPSFormUserId: user.id,
+            firstName: methods.getValues('firstName'),
+            lastName: methods.getValues('lastName'),
+            email: methods.getValues('email'),
+            phone: methods.getValues('phone'),
+            streetAddress: methods.getValues('streetAddress'),
+            addressExtra: methods.getValues('addressExtra'),
+            city: methods.getValues('city'),
+            state: methods.getValues('state'),
+            country: methods.getValues('country'),
+            birthYear: methods.getValues('birthYear'),
+            companyName: methods.getValues('companyName'),
+            companyTitle: methods.getValues('companyTitle'),
+            linkedin: methods.getValues('linkedin'),
+            background: methods.getValues('background'),
+            whyPackaging: methods.getValues('whyPackaging'),
+            areaOfInterest: methods.getValues('areaOfInterest'),
+            referral: methods.getValues('referral'),
+            payment: methods.getValues('payment'),
+            yearGoals: methods.getValues('yearGoals'),
+            cpsGoals: methods.getValues('cpsGoals'),
+            moreAboutYou: methods.getValues('moreAboutYou'),
+            elective: methods.getValues('elective'),
+          },
+        },
+      });
+
+      await API.graphql({
+        query: updateUser,
+        variables: {
+          input: {
+            id: user.id,
+            cpsFormID: user.id,
+          },
+        },
+      });
+      setIsLoading(false);
+      setIsUpdated(true);
+      router.push('/cps-application-confirmation');
+    }
+  };
+
   const saveHandler = () => {
     const data = methods.getValues();
     if (user) {
@@ -117,7 +240,7 @@ const CPSForm = ({ methods }) => {
   };
 
   const onSubmit = async (data) => {
-    console.log(data);
+    submitFormToAWS(data);
   };
 
   const onError = (errors, e) => console.log(errors, e);
