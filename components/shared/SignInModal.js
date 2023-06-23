@@ -13,7 +13,7 @@ export default function SignInModal({ open, setOpen }) {
 
   return (
     <Transition.Root show={open} as={Fragment}>
-      <Dialog as='div' className='relative z-10' onClose={setOpen}>
+      <Dialog as='div' className='relative z-50' onClose={setOpen}>
         <Transition.Child
           as={Fragment}
           enter='ease-out duration-300'
@@ -50,12 +50,14 @@ export default function SignInModal({ open, setOpen }) {
                       as='h3'
                       className='text-xl font-greycliff font-semibold leading-6 text-gray-900'
                     >
-                      Sign In to save your form.
+                      Simple Sign-In Required
                     </Dialog.Title>
                     <div className='mt-2'>
                       <p className='text-sm text-gray-500'>
-                        Access all your favorite courses and saved applications
-                        all in one convenient place.
+                        Access all your favorited Packaging School content
+                        including courses, articles, saved applications, and
+                        more all in one convenient place. Use your LinkedIn or
+                        Google accounts to get started.
                       </p>
                     </div>
                   </div>
@@ -66,7 +68,7 @@ export default function SignInModal({ open, setOpen }) {
                     className='inline-flex w-full justify-center rounded-md bg-clemson px-3 py-3 text-lg font-semibold text-white shadow-sm hover:bg-clemson-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-clemson-dark'
                     onClick={signInHandler}
                   >
-                    Sign In with LinkedIn
+                    Continue
                   </button>
                 </div>
               </Dialog.Panel>

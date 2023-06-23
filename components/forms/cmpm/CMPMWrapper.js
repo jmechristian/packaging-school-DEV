@@ -1,48 +1,30 @@
-import React, { useContext } from 'react';
-import FormWrapper from '../FormWrapper';
-import CenteredTextHeader from '../../layout/CenteredTextHeader';
-import CMPMFormNav from './CMPMFormNav';
-import CMPMGoals from './CMPMGoals';
-import CMPMPersonalInfo from './CMPMPersonalInfo';
-import CMPMProfessionalInfo from './CMPMProfessionalInfo';
-import CMPMSessionInfo from './CMPMSessionInfo';
-import { CMPMContext } from './CMPMContextProvider';
+import React, { useEffect } from 'react';
+import { useForm, FormProvider } from 'react-hook-form';
 
-const CMPMWrapper = () => {
-  const { activeIndex, setActiveIndex, params } = useContext(CMPMContext);
+import CMPMForm from './CMPMForm';
+import CMPMNav from './CMPMNav';
 
-  const formStateToDisplay = (activeIndex) => {
-    switch (activeIndex) {
-      case 0:
-        return <CMPMPersonalInfo />;
-      case 1:
-        return <CMPMProfessionalInfo />;
-      case 2:
-        return <CMPMGoals />;
-      default:
-        return <CMPMSessionInfo />;
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ');
+}
+
+const CMPMWrapper = ({ params }) => {
+  const methods = useForm();
+
+  useEffect(() => {
+    if (params) {
+      for (const property in params) {
+        methods.setValue(`${property}`, `${params[property]}`);
+      }
     }
-  };
+  }, [params, methods]);
 
   return (
-    <div className='flex flex-col pb-24 gap-12'>
-      <CenteredTextHeader
-        headline='CMPM Application'
-        heading='Certificate of Mastery in Packaging Management'
-        subhead='Thank you for your interest in the Certificate of Mastery in Packaging Management (CMPM) offered through Clemson University’s Center for Corporate Learning. Below is our application for admission. Our request is that you embrace the application as an opportunity for the Packaging School Education Team to understand your personal and professional goals so that we may ensure the CMPM program is a fit for you.'
-      />
-      <div className='flex flex-col max-w-4xl w-full mx-auto border border-slate-100 rounded-lg shadow-xl'>
-        <CMPMFormNav activeIndex={activeIndex} />
-        <FormWrapper
-          activeIndex={activeIndex}
-          setActiveIndex={(val) => setActiveIndex(val)}
-        >
-          <CMPMPersonalInfo activeIndex={activeIndex} params={params} />
-          <CMPMProfessionalInfo activeIndex={activeIndex} />
-          <CMPMGoals activeIndex={activeIndex} />
-          <CMPMSessionInfo activeIndex={activeIndex} />
-        </FormWrapper>
-      </div>
+    <div className='w-full max-w-4xl mx-auto sm:px-0 pb-24'>
+      <FormProvider {...methods}>
+        <CMPMNav />
+        <CMPMForm methods={methods} />
+      </FormProvider>
     </div>
   );
 };
