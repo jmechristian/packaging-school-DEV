@@ -48,35 +48,41 @@ export default function ProfileHead({ user }) {
           </div>
         </div>
       </div>
-      <div className='grid grid-cols-1 divide-y divide-slate-200 border-t border-slate-200 bg-base-mid sm:grid-cols-3 sm:divide-x sm:divide-y-0'>
-        <div className='sm:col-span-3 py-2.5 w-full bg-base-dark'>
-          <div className='font-greycliff text-center font-semibold text-lg text-white'>
-            Certificate Applications
+      <div className='grid grid-cols-1 lg:grid-cols-3'>
+        <div className='col-span-1 bg-slate-300 flex flex-col gap-6 py-3 px-9'>
+          <div className='font-greycliff text-lg text-slate-600 font-semibold'>
+            Badges Earned
           </div>
         </div>
-        <FormStat
-          label='CMPM'
-          stat={user.cmpmFormID}
-          link={'/certificate-of-mastery-in-packaging-management'}
-          view={`/forms/cmpm/${user.id}`}
-          updated={user.cmpmForm?.updatedOn}
-          user={user}
-          value={'cmpmFormID'}
-          value1={'cMPMFormUserId'}
-          query={createCMPMForm}
-        />
-        <FormStat
-          label='CPS'
-          stat={user.cpsFormID}
-          link={'/certificate-of-packaging-science-application'}
-          view={`/forms/cps/${user.id}`}
-          updated={user.cpsForm?.updatedOn}
-          user={user}
-          value={'cpsFormID'}
-          value1={'cPSFormUserId'}
-          query={createCPSForm}
-        />
-        <FormStat label='Automotive Packaging' />
+        <div className='lg:col-span-2 grid lg:grid-cols-2'>
+          <div className='sm:col-span-2 py-2.5 w-full bg-base-dark'>
+            <div className='font-greycliff text-center font-semibold text-lg text-white'>
+              Certificate Applications
+            </div>
+          </div>
+          <FormStat
+            label='CMPM'
+            stat={user.cmpmFormID}
+            link={'/certificate-of-mastery-in-packaging-management'}
+            view={`/forms/cmpm/${user.id}`}
+            updated={user.cmpmForm?.updatedOn}
+            user={user}
+            value={'cmpmFormID'}
+            value1={'cMPMFormUserId'}
+            query={createCMPMForm}
+          />
+          <FormStat
+            label='CPS'
+            stat={user.cpsFormID}
+            link={'/certificate-of-packaging-science-application'}
+            view={`/forms/cps/${user.id}`}
+            updated={user.cpsForm?.updatedOn}
+            user={user}
+            value={'cpsFormID'}
+            value1={'cPSFormUserId'}
+            query={createCPSForm}
+          />
+        </div>
       </div>
     </div>
   );

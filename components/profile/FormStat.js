@@ -57,7 +57,7 @@ const FormStat = ({
 
   return (
     <div className='flex flex-col' key={label}>
-      <div className='px-6 py-5 text-center text-lg font-medium font-greycliff'>
+      <div className='py-2 text-center text-lg font-medium font-greycliff bg-base-mid'>
         <span className='text-slate-100 font-bold text-sm'>
           {stat ? '1' : '0'}
         </span>{' '}

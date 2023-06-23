@@ -42,7 +42,7 @@ const navigation = {
     },
   ],
   pages: [
-    { name: 'Library', href: '#' },
+    { name: 'Library', href: 'https://library.packagingschool.com' },
     { name: 'About', href: '/about' },
     // { name: 'Campus Store', href: '#' },
   ],
