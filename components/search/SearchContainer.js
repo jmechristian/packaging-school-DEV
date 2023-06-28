@@ -34,6 +34,8 @@ export function ProductItem({ hit }) {
       <a
         href={`https://library.packagingschool.com/blog/${hit.slug}`}
         className='aa-ItemLink hover:bg-slate-700 cursor-pointer w-full'
+        target='_blank'
+        rel='noReferrer'
       >
         <div className='font-greycliff font-semibold leading-snug lg:text-lg dark:text-white w-full'>
           <Highlight hit={hit} attribute='title' />
@@ -157,6 +159,8 @@ export function LOTMItem({ hit }) {
     <a
       href={`https://library.packagingschool.com/lessons/${hit.slug}`}
       className='aa-ItemLink hover:bg-slate-700 cursor-pointer'
+      target='_blank'
+      rel='noReferrer'
     >
       <div className='grid grid-cols-5 w-full'>
         <div className='px-3 py-1.5 col-span-4'>
