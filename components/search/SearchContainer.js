@@ -356,7 +356,10 @@ const SearchContainer = () => {
                   <div
                     className='flex gap-3 items-start cursor-pointer'
                     key={item.link}
-                    onClick={() => router.push(item.link)}
+                    onClick={() => {
+                      router.push(item.link);
+                      dispatch(closeSearch());
+                    }}
                   >
                     <div className='mt-1'>
                       {/* <div className='w-10 h-10 auto bg-slate-400' /> */}
