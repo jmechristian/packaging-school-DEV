@@ -32,7 +32,7 @@ export function ProductItem({ hit }) {
   return (
     <div className='flex justify-between items-center w-full'>
       <a
-        href={hit.slug}
+        href={`https://library.packagingschool.com/blog/${hit.slug}`}
         className='aa-ItemLink hover:bg-slate-700 cursor-pointer w-full'
       >
         <div className='font-greycliff font-semibold leading-snug lg:text-lg dark:text-white w-full'>
@@ -109,7 +109,7 @@ export function CourseItem({ hit }) {
 
   return (
     <a
-      href={hit.slug}
+      href={`/courses/${hit.slug}`}
       className='aa-ItemLink hover:bg-slate-700 cursor-pointer'
     >
       <div className='grid grid-cols-5 w-full'>
@@ -155,7 +155,7 @@ export function LOTMItem({ hit }) {
 
   return (
     <a
-      href={hit.slug}
+      href={`https://library.packagingschool.com/lessons/${hit.slug}`}
       className='aa-ItemLink hover:bg-slate-700 cursor-pointer'
     >
       <div className='grid grid-cols-5 w-full'>
