@@ -1,6 +1,6 @@
 import React from 'react';
 import algoliasearch from 'algoliasearch/lite';
-
+import { useRouter } from 'next/router';
 import '@algolia/autocomplete-theme-classic';
 import { createLocalStorageRecentSearchesPlugin } from '@algolia/autocomplete-plugin-recent-searches';
 import { createQuerySuggestionsPlugin } from '@algolia/autocomplete-plugin-query-suggestions';
@@ -191,6 +191,7 @@ export function LOTMItem({ hit }) {
 
 const SearchContainer = () => {
   const dispatch = useDispatch();
+  const router = useRouter();
 
   const tags = [
     {
@@ -221,7 +222,7 @@ const SearchContainer = () => {
       title: 'Certificate of Certificate of Mastery in Packaging Management',
       subtitle:
         "Conducted in collaboration with Clemson University's Center for Corporate Learning, this 12-week, PhD-Led certificate program is perfect for ambitious professionals seeking to advance their career in the packaging industry and for companies actively seeking future leaders and rising stars to lead their teams.",
-      link: '/certificates/get-to-know-cmpm',
+      link: '/certifications/get-to-know-cmpm',
       type: 'CERTIFICATE',
       icon: (
         <CertIcon className='w-9 h-9 fill-transparent stroke-slate-400 stroke-2' />
@@ -231,7 +232,7 @@ const SearchContainer = () => {
       title: 'Automotive Packaging Certificate',
       subtitle:
         'Learn the unique landscape of automotive packaging - from returnable packaging systems through expendable case studies and applications, supplier databases, transportation, and unique SME feedback, there is no other program that provides this type of content.',
-      link: '/certificates/get-to-know-apc',
+      link: '/certifications/get-to-know-apc',
       type: 'CERTIFICATE',
       icon: (
         <CertIcon className='w-9 h-9 fill-transparent stroke-slate-400 stroke-2' />
@@ -355,6 +356,7 @@ const SearchContainer = () => {
                   <div
                     className='flex gap-3 items-start cursor-pointer'
                     key={item.link}
+                    onClick={() => router.push(item.link)}
                   >
                     <div className='mt-1'>
                       {/* <div className='w-10 h-10 auto bg-slate-400' /> */}
