@@ -24,30 +24,6 @@ import { MoonIcon, BoltIcon } from '@heroicons/react/24/solid';
 import LogoSquare from '../../../components/layout/LogoSquare';
 import { useRouter } from 'next/router';
 
-const navigation = {
-  categories: [
-    {
-      name: 'Certificates',
-      body: <CertMegaMenu />,
-      callout: <CertMegaCallout />,
-    },
-    {
-      name: 'Courses',
-      body: (
-        <div className='flex flex-col gap-9'>
-          <CourseMenuBlock />
-        </div>
-      ),
-      callout: <MobileMenuCoursesCallout />,
-    },
-  ],
-  pages: [
-    { name: 'Library', href: 'https://library.packagingschool.com' },
-    { name: 'About', href: '/about' },
-    // { name: 'Campus Store', href: '#' },
-  ],
-};
-
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
@@ -60,6 +36,30 @@ export default function HeaderNew() {
   const dispatch = useDispatch();
   const router = useRouter();
   const currentPath = router.asPath;
+
+  const navigation = {
+    categories: [
+      {
+        name: 'Certificates',
+        body: <CertMegaMenu onClose={() => setOpen(false)} />,
+        callout: <CertMegaCallout onClose={() => setOpen(false)} />,
+      },
+      {
+        name: 'Courses',
+        body: (
+          <div className='flex flex-col gap-9'>
+            <CourseMenuBlock />
+          </div>
+        ),
+        callout: <MobileMenuCoursesCallout />,
+      },
+    ],
+    pages: [
+      { name: 'Library', href: 'https://library.packagingschool.com' },
+      { name: 'About', href: '/about' },
+      // { name: 'Campus Store', href: '#' },
+    ],
+  };
 
   return (
     <div className='bg-white'>

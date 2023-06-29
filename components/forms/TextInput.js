@@ -11,7 +11,7 @@ const TextInput = ({ label, placeholder, name, type, required, value }) => {
   }, [value, name, setValue]);
 
   return (
-    <div>
+    <div className='w-full'>
       <div className='flex justify-between'>
         <label
           htmlFor={name}
@@ -23,7 +23,7 @@ const TextInput = ({ label, placeholder, name, type, required, value }) => {
           {required ? 'Required' : ''}
         </span>
       </div>
-      <div className='mt-1 md:mt-2'>
+      <div className='mt-1 md:mt-2 w-full'>
         <input
           type={type ? type : 'text'}
           {...register(`${name}`, { required: required ? true : false })}
@@ -34,7 +34,7 @@ const TextInput = ({ label, placeholder, name, type, required, value }) => {
           aria-describedby={`${name} + ' ' + ${required}`}
         />
       </div>
-      <div>
+      <div className='w-full'>
         {formState.errors.hasOwnProperty(name) && (
           <div className='text-sm text-red-600 mt-1 mb-2'>
             Please fill out field.

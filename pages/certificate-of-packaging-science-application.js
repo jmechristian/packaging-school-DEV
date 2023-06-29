@@ -19,13 +19,13 @@ const Page = () => {
         heading='Student Application'
         subhead='Empower yourself with the essential tools for success in the packaging profession, providing 24/7 access to review relevant content on-demand. Set your employees up for success, supporting their career advancement, and utilize this program for effective onboarding and retention strategies.'
       />
-      <div className='px-6 xl:px-0'>
+      <div className='px-6 xl:px-0 w-full'>
         <FormProvider {...methods}>
           <form
-            className='grid md:grid-cols-2 gap-6 lg:gap-12 max-w-4xl mx-auto'
+            className='grid md:grid-cols-2 w-full gap-6 lg:gap-12 max-w-4xl mx-auto'
             onSubmit={methods.handleSubmit(onSubmit)}
           >
-            <div>
+            <div className='w-full'>
               <TextInput
                 name={'firstName'}
                 placeholder={'Enter First Name'}
@@ -33,7 +33,7 @@ const Page = () => {
                 required
               />
             </div>
-            <div>
+            <div className='w-full'>
               <TextInput
                 name={'lastName'}
                 placeholder={'Enter Last Name'}
@@ -56,10 +56,10 @@ const Page = () => {
                 label={'Phone Number'}
               />
             </div>
-            <div className='col-span-2 flex justify-end items-center'>
+            <div className='col-span-2 flex flex-1 justify-end items-center w-full'>
               <button
                 type='submit'
-                className='bg-clemson  align-end w-fit hover:bg-clemson-dark mt-2 text-white font-semibold items-center rounded-lg px-4 py-3 flex gap-1'
+                className='bg-clemson md:align-end w-full md:w-fit hover:bg-clemson-dark mt-2 text-white font-semibold items-center rounded-lg px-4 py-3 flex justify-center gap-1'
               >
                 Continue Application
                 <div>
