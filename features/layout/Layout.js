@@ -56,7 +56,8 @@ const Layout = ({ children }) => {
 
     const sub = API.graphql(graphqlOperation(onUpdateUser)).subscribe({
       next: ({ value }) => {
-        dispatch(setUser(value.data.onUpdateUser));
+        if (user && value.data.onUpdateUser.email === user.email)
+          dispatch(setUser(value.data.onUpdateUser));
       },
     });
 
