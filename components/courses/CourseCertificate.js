@@ -37,7 +37,7 @@ const CourseCertificate = ({ certification }) => {
         </>
       ) : (
         <div className='black__white text-lg'>
-          Differientiate yourself from your peers with the comprehensive
+          Differentiate yourself from your peers with the comprehensive
           knowledge of a full certificate program.{' '}
           <Link href='/certifications'>
             <u className='cursor-pointer'>Enroll now!</u>
