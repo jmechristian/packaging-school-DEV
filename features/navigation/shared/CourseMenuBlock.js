@@ -16,12 +16,12 @@ import IndustryIcon from '../../../components/icons/IndustryIcon';
 import MaterialIcon from '../../../components/icons/MaterialIcon';
 import SupplyIcon from '../../../components/icons/SupplyIcon';
 
-const CourseMenuBlock = ({ toggleOpen }) => {
+const CourseMenuBlock = ({ onClose }) => {
   const router = useRouter();
   const dispatch = useDispatch();
 
   const categoryClickHandler = (name, value) => {
-    toggleOpen();
+    onClose();
     let newVal = value?.toUpperCase();
     router.push('/all_courses');
     dispatch(setSelectedFilter({ name: name, value: newVal }));
@@ -95,7 +95,7 @@ const CourseMenuBlock = ({ toggleOpen }) => {
         <div className='flex justify-center gap-2 items-center py-3 px-8 cursor-pointer'>
           <div
             className='font-bold text-slate-900 font-greycliff'
-            onClick={() => toggleOpen()}
+            onClick={() => onClose()}
           >
             Explore All Courses
           </div>

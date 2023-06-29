@@ -30,7 +30,9 @@ const CMPMWrapper = ({ params }) => {
       });
       console.log(newForm);
     }
-  }, []);
+
+    return () => Cookies.remove('cmpmFormSave');
+  }, [methods]);
 
   return (
     <div className='w-full max-w-4xl mx-auto sm:px-0 pb-24'>

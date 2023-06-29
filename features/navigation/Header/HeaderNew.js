@@ -48,10 +48,10 @@ export default function HeaderNew() {
         name: 'Courses',
         body: (
           <div className='flex flex-col gap-9'>
-            <CourseMenuBlock />
+            <CourseMenuBlock onClose={() => setOpen(false)} />
           </div>
         ),
-        callout: <MobileMenuCoursesCallout />,
+        callout: <MobileMenuCoursesCallout onClose={() => setOpen(false)} />,
       },
     ],
     pages: [
@@ -302,7 +302,7 @@ export default function HeaderNew() {
                                             learnMore='/'
                                             content='A 12-month, PhD-led program teaching you the latest technologies accelerating the packaging field in the space of packaging development, material procurement, and organizational management.'
                                             bgColor='bg-gradient-to-br from-base-brand to-slate-700'
-                                            toggleOpen={() => close()}
+                                            onClose={() => close()}
                                             // icon={'academicHat'}
                                           />
 
@@ -312,7 +312,7 @@ export default function HeaderNew() {
                                             content='The first and only 100% online academic program that will enable you to develop the professional skill set you need to be successful in the automotive packaging field.'
                                             apply='/'
                                             learnMore='/'
-                                            toggleOpen={() => close()}
+                                            onClose={() => close()}
                                             // icon='cog'
                                           />
                                         </div>
@@ -321,7 +321,7 @@ export default function HeaderNew() {
                                             title='Certificate of Packaging Science'
                                             apply='/certificate-of-packaging-science-application'
                                             learnMore='/'
-                                            toggleOpen={() => close()}
+                                            onClose={() => close()}
                                             bgColor='bg-gradient-to-br from-base-dark to-slate-900'
                                             content='A 12-month, online program teaching the materials, processes, and influences shaping the advancement of the industry. Speak the language of packaging and be a key differentiator for you and your company.'
                                             // icon='beaker'
@@ -329,7 +329,7 @@ export default function HeaderNew() {
                                           <CertMenuItem
                                             title='Food Packaging Certificate'
                                             apply='/'
-                                            toggleOpen={() => close()}
+                                            onClose={() => close()}
                                             bgColor='bg-gradient-to-br from-green-500 to-slate-900'
                                             learnMore='/'
                                             content='In Development! Want to be a part? Interested In Sponsoring? Leave your mark on the packaging industry. Click below to apply or reach out to our Academic Director Dr. Julie Suggs'
@@ -386,9 +386,11 @@ export default function HeaderNew() {
                                     <div className='mx-auto max-w-7xl px-8'>
                                       <div className='grid grid-cols-3 items-start gap-x-8 gap-y-10 pb-8 pt-8'>
                                         <CourseDropDownCourses
-                                          toggleOpen={() => close()}
+                                          onClose={() => close()}
                                         />
-                                        <CourseDropDownCallout />
+                                        <CourseDropDownCallout
+                                          onClose={() => close()}
+                                        />
                                       </div>
                                     </div>
                                   </div>
