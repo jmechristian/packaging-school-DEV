@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { API } from 'aws-amplify';
 import {
   updateCMPMForm,
@@ -17,13 +17,14 @@ import CMPMSessionInfo from './CMPMSessionInfo';
 const CMPMForm = ({ methods }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isUpdated, setIsUpdated] = useState(false);
+  const [cookieData, setCookieData] = useState(undefined);
   const router = useRouter();
 
   const { user } = useSelector((state) => state.auth);
 
   const dispatch = useDispatch();
 
-  const sendFormToAWS = async (data) => {
+  const sendFormToAWS = async () => {
     if (user && user.cmpmFormID) {
       setIsUpdated(false);
       setIsLoading(true);
@@ -233,9 +234,12 @@ const CMPMForm = ({ methods }) => {
 
   const saveHandler = () => {
     const data = methods.getValues();
+    console.log(data);
+    const rawData = JSON.stringify(data);
     if (user) {
       sendFormToAWS(data);
     } else if (!user) {
+      Cookies.set('cmpmFormSave', rawData, { expires: 7 });
       dispatch(toggleSignInModal());
     }
   };

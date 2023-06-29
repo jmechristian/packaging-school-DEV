@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 
 export default function SignInModal({ open, setOpen }) {
   const router = useRouter();
-  const currentPath = router.asPath;
+  const currentPath = router.pathname;
 
   const signInHandler = () => {
     router.push(`/api/auth/login?returnTo=${currentPath}`);
