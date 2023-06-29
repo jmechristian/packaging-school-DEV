@@ -56,7 +56,7 @@ const HomeHero = () => {
 
   return (
     <div className='flex flex-col lg:flex-col-reverse gap-12 container__inner '>
-      <div className='w-full flex flex-col gap-4 lg:max-w-4xl lg:mx-auto'>
+      <div className='w-full flex flex-col gap-4 lg:max-w-4xl lg:mx-auto pt-12 lg:pt-0'>
         <Autocomplete
           openOnFocus={true}
           // onStateChange={(state) => console.log(state)}
