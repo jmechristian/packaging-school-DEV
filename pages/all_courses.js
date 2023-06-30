@@ -18,7 +18,7 @@ const AllCourses = ({ courses }) => {
   );
 };
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   // const courses = await client.query({
   //   query: gql`
   //     query AllCourses {
