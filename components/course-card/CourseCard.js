@@ -15,6 +15,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setPreviewOpen } from '../../features/all_courses/courseFilterSlice';
 import { updateUser } from '../../src/graphql/mutations';
 import { useRouter } from 'next/router';
+import { toggleSignInModal } from '../../features/layout/layoutSlice';
 
 const CourseCard = ({
   title,
@@ -79,6 +80,9 @@ const CourseCard = ({
   };
 
   const toggleFavorite = async () => {
+    if (!user) {
+      dispatch(toggleSignInModal());
+    }
     if (isFavorited) {
       let finalArray;
       const newArray = [...userArray];
@@ -101,7 +105,7 @@ const CourseCard = ({
       }
     }
 
-    if (!isFavorited) {
+    if (user && !isFavorited) {
       // setIsFavorite(true);
       let newishArray = [...userArray, courseId];
       const res = await API.graphql({
@@ -135,17 +139,16 @@ const CourseCard = ({
               >
                 {category}
               </div>
-              {user && (
-                <div onClick={toggleFavorite}>
-                  <StarIcon
-                    className={`w-6 h-6 cursor-pointer ${
-                      isFavorited
-                        ? 'text-yellow-500'
-                        : 'text-slate-300 dark:text-slate-700'
-                    } `}
-                  />
-                </div>
-              )}
+
+              <div onClick={toggleFavorite}>
+                <StarIcon
+                  className={`w-6 h-6 cursor-pointer ${
+                    isFavorited
+                      ? 'text-yellow-500'
+                      : 'text-slate-300 dark:text-dark-dark'
+                  } `}
+                />
+              </div>
             </div>
             <div className='font-semibold text-xl font-greycliff leading-tight line-clamp-2'>
               {title}
