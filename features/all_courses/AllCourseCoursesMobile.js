@@ -20,7 +20,7 @@ const AllCourseCoursesMobile = ({ coursesToShow }) => {
                 hours={course.hours}
                 lessons={course.lessons}
                 price={course.price}
-                slug={course.title}
+                slug={course.slug}
                 category={course.category}
                 reset={null}
               />

@@ -168,7 +168,7 @@ const CourseCard = ({
             <div className='flex flex-col'>
               <div className='text-sm dark:text-white/50'>{hours} hours</div>
               <div className='font-greycliff text-2xl font-semibold'>
-                {price === 'FREE' ? 'Free' : price}
+                {price === 'FREE' ? 'Free' : '$' + price}
               </div>
             </div>
             <div className='flex gap-2'>
