@@ -145,7 +145,7 @@ const CourseCard = ({
                   className={`w-6 h-6 cursor-pointer ${
                     isFavorited
                       ? 'text-yellow-500'
-                      : 'text-slate-300 dark:text-dark-dark'
+                      : 'text-slate-300 dark:text-neutral-600'
                   } `}
                 />
               </div>
