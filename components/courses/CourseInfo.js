@@ -11,7 +11,7 @@ const CourseInfo = ({ price, link, trialLink, certification, embedid }) => {
       <div className='dark:bg-dark-mid bg-slate-200 shadow-lg rounded-md'>
         <div className='flex flex-col gap-4 border-b border-b-slate-200 dark:border-b-slate-700 p-4 md:p-6 pt-8 lg:pt-8 lg:p-8'>
           <div className='flex flex-col gap-10'>
-            <div className='block h-full aspect-[16/9]'>
+            <div className='block h-full max-w-md aspect-[16/9]'>
               {embedid && <VideoPlayer videoEmbedLink={embedid} />}
             </div>
             <div className='flex flex-col gap-6'>

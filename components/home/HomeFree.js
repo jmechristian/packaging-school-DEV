@@ -9,6 +9,7 @@ const HomeFree = ({ courses }) => {
   const [freeCourses, setFreeCourses] = useState([]);
 
   const { allCourses } = useSelector((state) => state.course_filter);
+  const { user } = useSelector((state) => state.auth);
   const scrollRef = useRef();
 
   useEffect(() => {
@@ -42,15 +43,16 @@ const HomeFree = ({ courses }) => {
           freeCourses.map((course, i) => (
             <div key={course.id} className='inline-block'>
               <CourseCard
-                category={course.category}
+                courseId={course.id}
                 title={course.title}
                 desc={course.subheadline}
                 video={course.preview}
                 hours={course.hours}
                 lessons={course.lessons}
                 price={course.price}
-                slug={course.title}
-                reset={null}
+                slug={course.slug}
+                category={course.category}
+                savedCourses={user?.savedCourses}
               />
             </div>
           ))}
