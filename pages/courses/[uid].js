@@ -28,8 +28,8 @@ const Page = ({ course }) => {
       <CourseBottom related={[]} />
       {preview && <CoursePreview close={() => dispatch(setPreviewClosed())} />}
       <CourseContentMenu
-        link={course.link}
-        trialLink={`${course.link}?et=free_trial`}
+        link={course && course.link}
+        trialLink={`${course && course.link}?et=free_trial`}
       />
     </div>
   );
