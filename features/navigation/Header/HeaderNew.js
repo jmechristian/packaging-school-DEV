@@ -438,7 +438,7 @@ export default function HeaderNew() {
                   </div>
 
                   {/* Logo (lg-) */}
-                  <a href='#' className='lg:hidden'>
+                  <a href='/' className='lg:hidden'>
                     <span className='sr-only'>Packaging School</span>
                     <LogoSquare className='w-6 h-6' />
                   </a>
