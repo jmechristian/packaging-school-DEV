@@ -34,6 +34,7 @@ const CourseCard = ({
   const router = useRouter();
   // const [isFavorited, setIsFavorite] = useState(false);
   const [userArray, setUserArray] = useState([]);
+  const [isCleanCategory, setIsCleanCategory] = useState();
 
   const isFavorited = useMemo(
     () => user && user.savedCourses && user.savedCourses.includes(courseId),

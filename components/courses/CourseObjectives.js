@@ -6,7 +6,6 @@ import RotatingCaret from '../RotatingCaret';
 
 const CourseObjectives = ({ what, items }) => {
   const [showObjectives, setShowObjectives] = useState(false);
-  console.log(items);
   const half = Math.ceil(items.length / 2);
   const firstHalf = items.slice(0, half);
   const secondHalf = items.slice(half);
