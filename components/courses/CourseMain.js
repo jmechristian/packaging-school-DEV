@@ -9,10 +9,7 @@ import VideoPlayer from '../VideoPlayer';
 const CourseMain = ({ data }) => {
   return (
     data && (
-      <section className='w-full h-full bg-white dark:bg-dark-dark bg-cover lg:py-16'>
-        <div className='pb-12 md:container__inner lg:hidden h-full'>
-          <VideoPlayer videoEmbedLink={data.preview} />
-        </div>
+      <section className='w-full h-full bg-white dark:bg-dark-dark bg-cover py-16'>
         <motion.div
           className='container__inner'
           initial={{ opacity: 0 }}
