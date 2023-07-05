@@ -10,7 +10,7 @@ export function SplitText({ children, ...rest }) {
         style={{
           display: 'inline-block',
           overflow: 'hidden',
-          paddingBottom: '6px',
+          paddingBottom: '3px',
           lineHeight: 1,
         }}
       >

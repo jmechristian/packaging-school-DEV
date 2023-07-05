@@ -8,6 +8,9 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
+    fontFamily: {
+      sans: 'Inter',
+    },
     extend: {
       fontFamily: {
         roboto: 'roboto, sans-serif',

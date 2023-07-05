@@ -5,6 +5,10 @@
     @apply text-slate-900;
   }
 
+  .container-7xl {
+    @apply w-full max-w-7xl mx-auto px-6 lg:px-0;
+  }
+
   .container__inner {
     @apply w-full max-w-7xl mx-auto px-6 lg:px-0 md:w-5/6 lg:w-full;
   }
@@ -110,4 +114,11 @@ body {
 
 .aa-Panel {
   z-index: 110;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  @apply font-sans tracking-tight font-semibold leading-5 dark:text-white;
 }
