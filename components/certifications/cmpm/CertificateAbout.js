@@ -34,24 +34,42 @@ const CertificateAbout = () => {
             </p>
           </div>
         </div>
-        <div className='grid grid-cols-3 grid-rows-3 gap-9'>
-          <StatCard stat='80' title='Certificate Hours' />
-          <StatCard stat='14' title='Certificate Courses' />
-          <StatCard stat='8' title={`CEU \nCredits`} />
-          <StatCard
-            stat={<AcademicCapIcon className='w-12 h-12 stroke-base-brand' />}
-            title='PhD-led Project'
-          />
-          <StatCard
-            stat={<DocumentPlusIcon className='w-12 h-12 stroke-base-brand' />}
-            title='Application Required'
-          />
-          <StatCard
-            stat={
-              <MagnifyingGlassPlusIcon className='w-12 h-12 stroke-base-brand' />
-            }
-            title='Rigorous Examination'
-          />
+        <div className='flex flex-col gap-9'>
+          <div className='grid grid-cols-3 gap-9'>
+            <StatCard stat='80' title='Certificate Hours' />
+            <StatCard stat='14' title='Certificate Courses' />
+            <StatCard stat='8' title={`CEU \nCredits`} />
+            <StatCard
+              stat={<AcademicCapIcon className='w-12 h-12 stroke-base-brand' />}
+              title='PhD-led Project'
+            />
+            <StatCard
+              stat={
+                <DocumentPlusIcon className='w-12 h-12 stroke-base-brand' />
+              }
+              title='Application Required'
+            />
+            <StatCard
+              stat={
+                <MagnifyingGlassPlusIcon className='w-12 h-12 stroke-base-brand' />
+              }
+              title='Rigorous Examination'
+            />
+          </div>
+          <div className='w-full bg-dark-mid rounded-lg p-9 flex gap-9 items-center'>
+            <div className='w-36'>
+              <img
+                src='https://packschool.s3.amazonaws.com/01-LOGO_ClemsonCCL.png'
+                alt='Clemson University Center for Corporate Learning'
+                className='w-36'
+              />
+            </div>
+            <div>
+              <p className='w-fit text-white text-sm leading-none font-greycliff'>
+                Offered through Clemson University Center for Corporate Learning
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
