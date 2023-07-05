@@ -6,13 +6,8 @@ import clsx from 'clsx';
 
 const sections = [
   {
-    id: 'who',
-    title: (
-      <>
-        <h3 className='hidden lg:inline'>Who is this for?</h3>
-        <h3 className='lg:hidden'>Contents</h3>
-      </>
-    ),
+    id: 'about',
+    title: 'About CMPM',
   },
   { id: 'screencasts', title: 'Screencasts' },
   { id: 'resources', title: 'Resources' },
@@ -149,7 +144,7 @@ const CertificateNavigation = () => {
       <div className='hidden sm:flex sm:h-32 sm:justify-center sm:border-b sm:border-slate-200 sm:bg-white/95 sm:[@supports(backdrop-filter:blur(0))]:bg-white/80 sm:[@supports(backdrop-filter:blur(0))]:backdrop-blur'>
         <ol
           role='list'
-          className='mb-[-2px] grid auto-cols-[minmax(0,15rem)] grid-flow-col text-base font-medium text-slate-900 [counter-reset:section]'
+          className='mb-[-2px] container-7xl grid auto-cols-[minmax(0,15rem)] grid-flow-col text-base font-medium text-slate-900 [counter-reset:section]'
         >
           {sections.map((section, sectionIndex) => (
             <li key={section.id} className='flex [counter-increment:section]'>

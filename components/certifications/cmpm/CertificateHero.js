@@ -7,14 +7,14 @@ import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
 
 const CertificateHero = () => {
   return (
-    <div className='grid lg:grid-cols-2 items-center gap-6 overflow-hidden py-12 md:py-20 container-7xl'>
+    <div className='grid lg:grid-cols-2 items-center gap-6 overflow-hidden py-12 md:py-24 container-7xl'>
       <div>
         <CertHeroImage />
       </div>
       <div className='flex flex-col gap-9'>
         <div>
           <FadeIn>
-            <h1 className='text-6xl'>
+            <h1 className='text-5xl'>
               Certificate of Mastery in Packaging Management
             </h1>
           </FadeIn>
@@ -22,9 +22,10 @@ const CertificateHero = () => {
         <div>
           <FadeIn>
             <p className='text-2xl font-greycliff text-slate-700 dark:text-gray-500'>
-              Experience our highly valued Certificate of Mastery in Packaging
-              Management program, conducted in collaboration with Clemson
-              University&apos;s Center for Corporate Learning.
+              A 12-week, PhD-led certificate program ideal for ambitious
+              professionals seeking to advance their career in the packaging
+              industry and for companies actively seeking future leaders and
+              rising stars to lead their teams.
             </p>
           </FadeIn>
         </div>
@@ -35,7 +36,7 @@ const CertificateHero = () => {
                 Apply Now
               </button>
               <div className='flex gap-1.5 items-center'>
-                <div className='font-semibold text-lg font-greycliff dark:text-white'>
+                <div className='font-semibold text-xl font-greycliff dark:text-white'>
                   Compare Certificates
                 </div>
                 <div>
