@@ -14,7 +14,7 @@ module.exports = {
     extend: {
       fontFamily: {
         roboto: 'roboto, sans-serif',
-        greycliff: 'greycliff-cf, sans-serif',
+        greycliff: 'Inter, sans-serif',
       },
       colors: {
         'base-brand': '#1f97bf',

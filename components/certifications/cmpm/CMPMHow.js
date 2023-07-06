@@ -11,22 +11,22 @@ import {
 const item = [
   {
     id: 1,
-    icon: <LightBulbIcon className='w-8 h-8 stroke-slate-600' />,
+    icon: <LightBulbIcon className='w-8 h-8 stroke-slate-200' />,
     title: 'Weekly Updates with Dr. Suggs',
   },
   {
     id: 2,
-    icon: <ChatBubbleLeftRightIcon className='w-8 h-8 stroke-slate-600' />,
+    icon: <ChatBubbleLeftRightIcon className='w-8 h-8 stroke-slate-200' />,
     title: '1:1 Mentorship',
   },
   {
     id: 3,
-    icon: <RssIcon className='w-8 h-8 stroke-slate-600' />,
+    icon: <RssIcon className='w-8 h-8 stroke-slate-200' />,
     title: 'Open Communication',
   },
   {
     id: 4,
-    icon: <TrophyIcon className='w-8 h-8 stroke-slate-600' />,
+    icon: <TrophyIcon className='w-8 h-8 stroke-slate-200' />,
     title: 'Phd-Led Project',
   },
 ];
@@ -64,20 +64,20 @@ const CMPMHow = () => {
           </div>
           <div className='flex flex-col gap-3'>
             <div
-              className='w-full aspect-[3/5] relative bg-center bg-cover rounded-lg'
+              className='w-full aspect-[3/4] lg:aspect-[3/2] relative bg-center bg-cover rounded-lg'
               style={{
                 backgroundImage: `url('https://packschool.s3.amazonaws.com/Julie-Suggs-callout.webp')`,
               }}
             >
               <div className='absolute bottom-0 left-0 right-0 p-2'>
-                <div className='grid grid-cols-2 gap-2 w-full h-full text-center'>
+                <div className='grid grid-cols-2 lg:grid-cols-4 gap-2 w-full h-full text-center'>
                   {item.map((it) => (
                     <div
-                      className='bg-white/60 flex flex-col px-2 gap-2 justify-center items-center backdrop-blur-sm shadow-sm w-full h-full aspect-[3/2] rounded-lg'
+                      className='bg-white/40 flex flex-col px-2 gap-2 justify-center items-center backdrop-blur-sm shadow-sm w-full h-full aspect-[4/2] lg:aspect-[3/2] rounded-lg'
                       key={it.id}
                     >
                       <div>{it.icon}</div>
-                      <div className=' text-slate-900 font-semibold leading-tight text-sm'>
+                      <div className=' text-slate-800 font-semibold leading-tight text-sm'>
                         {it.title}
                       </div>
                     </div>
