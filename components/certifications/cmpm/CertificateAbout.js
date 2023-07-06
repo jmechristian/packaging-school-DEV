@@ -23,7 +23,7 @@ const CertificateAbout = () => {
             </FadeIn>
           </h2>
           <div>
-            <p className='dark:text-gray-400 text-slate-700 text-xl font-greycliff tracking-wide'>
+            <p className='dark:text-gray-500 text-slate-700 text-xl font-greycliff tracking-wide'>
               Distinguish yourself from your colleagues by acquiring a tangible
               solution that can be presented to both management and peers. The
               exceptional feature of this program lies in its{' '}
