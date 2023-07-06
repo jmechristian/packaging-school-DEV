@@ -50,16 +50,20 @@ const CertificateAbout = () => {
               <StatCard stat='14' title='Certificate Courses' />
               <StatCard stat='8' title={`CEU \nCredits`} />
               <StatCard
-                stat={<AcademicCapIcon className='w-12 h-12 stroke-white' />}
+                stat={
+                  <AcademicCapIcon className='w-12 h-12 stroke-white dark:stroke-clemson' />
+                }
                 title='PhD-led Project'
               />
               <StatCard
-                stat={<DocumentPlusIcon className='w-12 h-12 stroke-white' />}
+                stat={
+                  <DocumentPlusIcon className='w-12 h-12 stroke-white dark:stroke-clemson' />
+                }
                 title='Application Required'
               />
               <StatCard
                 stat={
-                  <MagnifyingGlassPlusIcon className='w-12 h-12 stroke-white' />
+                  <MagnifyingGlassPlusIcon className='w-12 h-12 stroke-white dark:stroke-clemson' />
                 }
                 title='Rigorous Examination'
               />
