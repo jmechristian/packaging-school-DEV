@@ -5,8 +5,8 @@ import FadeIn from '../../../helpers/FadeIn';
 const CertificateWhat = () => {
   return (
     <section
-      className='py-48 border-t dark:border-t-gray-800 border-t-gray-300'
-      id='about'
+      className='py-40 border-t dark:border-t-gray-800 border-t-gray-300'
+      id='know'
     >
       <div className='flex flex-col gap-9 container-7xl'>
         <div className='flex flex-col gap-9 max-w-4xl mx-auto'>
@@ -31,7 +31,7 @@ const CertificateWhat = () => {
           </div>
         </div>
         <FadeIn>
-          <div className='w-full h-full aspect-[16/9] mt-16'>
+          <div className='w-full h-full aspect-[16/9] mt-8'>
             <VideoPlayer videoEmbedLink={'https://youtu.be/N_hYWvQO0Sg'} />
           </div>
         </FadeIn>
