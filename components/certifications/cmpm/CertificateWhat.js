@@ -4,7 +4,10 @@ import FadeIn from '../../../helpers/FadeIn';
 
 const CertificateWhat = () => {
   return (
-    <div className='py-36 border-t dark:border-t-gray-800 border-t-gray-300'>
+    <section
+      className='py-48 border-t dark:border-t-gray-800 border-t-gray-300'
+      id='about'
+    >
       <div className='flex flex-col gap-9 container-7xl'>
         <div className='flex flex-col gap-9 max-w-4xl mx-auto'>
           <h2 className='text-5xl max-w-2xl'>
@@ -33,7 +36,7 @@ const CertificateWhat = () => {
           </div>
         </FadeIn>
       </div>
-    </div>
+    </section>
   );
 };
 

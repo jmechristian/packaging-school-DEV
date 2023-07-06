@@ -7,9 +7,9 @@ import clsx from 'clsx';
 const sections = [
   {
     id: 'about',
-    title: 'About CMPM',
+    title: 'What is CMPM?',
   },
-  { id: 'screencasts', title: 'Screencasts' },
+  { id: 'know', title: 'Get to know CMPM' },
   { id: 'resources', title: 'Resources' },
   { id: 'pricing', title: 'Pricing' },
   { id: 'author', title: 'Author' },

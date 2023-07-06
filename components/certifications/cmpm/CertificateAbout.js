@@ -10,10 +10,10 @@ import {
 
 const CertificateAbout = () => {
   return (
-    <section className='py-40 container-7xl' id='about'>
+    <section className='py-48 container-7xl' id='about'>
       <div className='grid lg:grid-cols-2 gap-28'>
         <div className='flex flex-col gap-9'>
-          <SectionHeading number='1'>About CMPM</SectionHeading>
+          <SectionHeading number='1'>What is CMPM?</SectionHeading>
           <h2 className='text-5xl max-w-2xl'>
             <FadeIn>
               Executive-level education design to be agile giving you the
@@ -21,16 +21,23 @@ const CertificateAbout = () => {
             </FadeIn>
           </h2>
           <div>
-            <p className='text-gray-500 text-lg'>
+            <p className='text-gray-400 text-xl leading-7 font-greycliff'>
               Distinguish yourself from your colleagues by acquiring a tangible
               solution that can be presented to both management and peers. The
-              exceptional feature of this program lies in its Packaging
-              Development Plan (PDP) and personalized 1-1 coaching, enabling
-              students to apply course teachings to their own organizational or
-              personal projects. The PDP, an ongoing project within the CMPM,
-              becomes an invaluable asset to share with stakeholders involved in
-              realizing your projects, and it offers endless possibilities as it
-              can be tailored to your unique requirements.
+              exceptional feature of this program lies in its{' '}
+              <span className='text-white font-bold'>
+                Packaging Development Plan (PDP)
+              </span>{' '}
+              and{' '}
+              <span className='text-white font-bold'>
+                personalized 1-1 coaching
+              </span>
+              , enabling students to apply course teachings to their own
+              organizational or personal projects. The PDP, an ongoing project
+              within the CMPM, becomes an invaluable asset to share with
+              stakeholders involved in realizing your projects, and it offers
+              endless possibilities as it can be tailored to your unique
+              requirements.
             </p>
           </div>
         </div>

@@ -8,9 +8,9 @@ const Sandbox = () => {
   return (
     <div className='flex flex-col dark:bg-dark-dark'>
       <CertificateHero />
-      <CertificateWhat />
       <CertificateNavigation />
       <CertificateAbout />
+      <CertificateWhat />
     </div>
   );
 };

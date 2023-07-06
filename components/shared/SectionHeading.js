@@ -9,11 +9,11 @@ export function SectionHeading({ number, children, className, ...props }) {
       )}
       {...props}
     >
-      <span className='font-mono text-sm text-base-brand' aria-hidden='true'>
+      <span className='font-mono text-sm text-clemson' aria-hidden='true'>
         {number.padStart(2, '0')}
       </span>
       <span className='ml-3 h-3.5 w-px bg-blue-600/20 dark:bg-base-brand' />
-      <span className='ml-3 text-base font-medium tracking-tight'>
+      <span className='ml-3 text-base font-medium tracking-tight text-base-brand'>
         {children}
       </span>
     </h2>
