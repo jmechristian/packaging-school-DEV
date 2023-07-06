@@ -10,13 +10,13 @@ import {
 
 const CertificateAbout = () => {
   return (
-    <section className='py-40 container-7xl' id='about'>
-      <div className='grid lg:grid-cols-2 gap-28 justify-end'>
+    <section className='py-32 container-7xl' id='about'>
+      <div className='grid lg:grid-cols-2 gap-9 lg:gap-28 justify-end'>
         <div className='flex flex-col gap-9'>
           <FadeIn>
             <SectionHeading number='1'>What is CMPM?</SectionHeading>
           </FadeIn>
-          <h2 className='text-5xl max-w-2xl'>
+          <h2 className='text-4xl lg:text-5xl max-w-2xl'>
             <FadeIn>
               Executive-level education design to be agile giving you the
               competitive edge.
@@ -43,9 +43,9 @@ const CertificateAbout = () => {
             </p>
           </div>
         </div>
-        <div className='flex flex-col gap-9'>
+        <div className='flex flex-col gap-9 lg:gap-12 justify-end'>
           <FadeIn>
-            <div className='grid grid-cols-3 gap-9'>
+            <div className='grid grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-9'>
               <StatCard stat='80' title='Certificate Hours' />
               <StatCard stat='14' title='Certificate Courses' />
               <StatCard stat='8' title={`CEU \nCredits`} />
@@ -70,12 +70,12 @@ const CertificateAbout = () => {
             </div>
           </FadeIn>
           <FadeIn>
-            <div className='w-full bg-dark-mid rounded-lg p-9 flex gap-9 items-center'>
-              <div className='w-36'>
+            <div className='w-full py-6 lg:py-9 flex gap-9 items-center border-t border-b border-slate-800'>
+              <div className='w-40'>
                 <img
                   src='https://packschool.s3.amazonaws.com/01-LOGO_ClemsonCCL.png'
                   alt='Clemson University Center for Corporate Learning'
-                  className='w-36'
+                  className='w-40'
                 />
               </div>
               <div>

@@ -2,12 +2,10 @@ import { autocomplete } from '@algolia/autocomplete-js';
 import { MagnifyingGlassIcon } from '@heroicons/react/24/solid';
 import React, { createElement, Fragment, useEffect, useRef } from 'react';
 import { createRoot } from 'react-dom/client';
-import { createQuerySuggestionsPlugin } from '@algolia/autocomplete-plugin-query-suggestions';
-import { GrCertificate } from 'react-icons/gr';
-import { IconContext } from 'react-icons';
 import CertIcon from '../icons/CertIcon';
 import CourseIcon from '../icons/CourseIcon';
 import WorkshopIcon from '../icons/WorkshopIcon';
+import { useRouter } from 'next/router';
 
 const tags = [
   {
@@ -32,7 +30,7 @@ const cirriculum = [
     title: 'Certificate of Certificate of Mastery in Packaging Management',
     subtitle:
       "Conducted in collaboration with Clemson University's Center for Corporate Learning, this 12-week, PhD-Led certificate program is perfect for ambitious professionals seeking to advance their career in the packaging industry and for companies actively seeking future leaders and rising stars to lead their teams.",
-    link: '/certificates/get-to-know-cmpm',
+    link: '/certifications/get-to-know-cmpm',
     type: 'CERTIFICATE',
     icon: (
       <CertIcon className='w-9 h-9 fill-transparent stroke-slate-400 stroke-2' />
@@ -42,7 +40,7 @@ const cirriculum = [
     title: 'Automotive Packaging Certificate',
     subtitle:
       'Learn the unique landscape of automotive packaging - from returnable packaging systems through expendable case studies and applications, supplier databases, transportation, and unique SME feedback, there is no other program that provides this type of content.',
-    link: '/certificates/get-to-know-apc',
+    link: '/certifications/get-to-know-apc',
     type: 'CERTIFICATE',
     icon: (
       <CertIcon className='w-9 h-9 fill-transparent stroke-slate-400 stroke-2' />
@@ -74,6 +72,8 @@ export function Autocomplete(props) {
   const containerRef = useRef(null);
   const panelRootRef = useRef(null);
   const rootRef = useRef(null);
+
+  const router = useRouter();
 
   useEffect(() => {
     if (!containerRef.current) {
@@ -142,6 +142,7 @@ export function Autocomplete(props) {
                     <div
                       className='flex gap-3 items-start cursor-pointer'
                       key={item.link}
+                      onClick={() => router.push(item.link)}
                     >
                       <div>
                         {/* <div className='w-10 h-10 auto bg-slate-400' /> */}

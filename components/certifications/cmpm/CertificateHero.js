@@ -14,14 +14,14 @@ const CertificateHero = () => {
       <div className='flex flex-col gap-9'>
         <div>
           <FadeIn>
-            <h1 className='text-6xl'>
+            <h1 className='text-4xl xl:text-5xl leading-tight'>
               Certificate of Mastery in Packaging Management
             </h1>
           </FadeIn>
         </div>
         <div>
           <FadeIn>
-            <p className='text-2xl font-greycliff text-slate-700 dark:text-gray-500 tracking-wide'>
+            <p className='text-xl lg:text-2xl font-greycliff text-slate-700 dark:text-gray-500 tracking-wide'>
               A 12-week, PhD-led certificate program ideal for ambitious
               professionals seeking to advance their career in the packaging
               industry and for companies actively seeking future leaders and

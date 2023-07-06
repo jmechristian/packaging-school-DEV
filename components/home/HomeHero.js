@@ -2,28 +2,161 @@ import React from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import algoliasearch from 'algoliasearch';
 import { getAlgoliaResults } from '@algolia/autocomplete-js';
-import TextInput from '../layout/TextInput';
 import { Autocomplete } from '../search/Autocomplete';
 import { createLocalStorageRecentSearchesPlugin } from '@algolia/autocomplete-plugin-recent-searches';
 import { createQuerySuggestionsPlugin } from '@algolia/autocomplete-plugin-query-suggestions';
+import CMPMIcon from '../icons/CMPMIcon';
+import { useRouter } from 'next/router';
+import GlobalMaterialsIcon from '../icons/GlobalMaterialsIcon';
+import LotmIcon from '../icons/LotmIcon';
 
 const searchClient = algoliasearch(
   process.env.NEXT_PUBLIC_ALGOLIA_ID,
   process.env.NEXT_PUBLIC_ALGOLIA_API_KEY
 );
 
+export function CertItem({ hit, components }) {
+  const setBackground = () => {
+    switch (hit.title) {
+      case 'Certificate of Mastery in Packaging Management':
+        return 'bg-gradient-to-br from-base-brand to-slate-700';
+      case 'Certificate of Packaging Science':
+        return 'bg-gradient-to-br from-base-dark to-slate-900';
+      case 'Automotive Packaging Certificate':
+        return 'bg-gradient-to-br from-clemson to-orange-800';
+      default:
+        return 'bg-gradient-to-br from-base-brand to-slate-900';
+    }
+  };
+
+  return (
+    <a
+      href={hit.slug}
+      className='aa-ItemLink hover:bg-slate-100 cursor-pointer'
+    >
+      <div className='grid grid-cols-5 w-full'>
+        <div className='lg:px-3 py-1.5 col-span-5'>
+          <div className='flex gap-3 w-full'>
+            <div>
+              <CMPMIcon scale={12} background={setBackground()} />
+            </div>
+            <div className='flex flex-col '>
+              <div className='font-greycliff font-semibold leading-snug dark:text-white'>
+                <components.Highlight hit={hit} attribute='title' />
+              </div>
+              <div className='aa-ItemTitle text-sm line-clamp-2  text-slate-600 dark:text-slate-400'>
+                <components.Highlight hit={hit} attribute='subheadline' />
+              </div>
+              <div className='aa-ItemTitle line-clamp-2   text-slate-600 dark:text-slate-400'>
+                <components.Highlight hit={hit} attribute='subhead' />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+  );
+}
+
 export function ProductItem({ hit, components }) {
   return (
-    <a href={hit.slug} className='aa-ItemLink'>
-      <div className='flex flex-col px-3 py-1.5'>
-        <div className='font-greycliff font-semibold leading-snug'>
+    <div className='flex justify-between items-center w-full pl-6'>
+      <a
+        href={`https://library.packagingschool.com/blog/${hit.slug}`}
+        className='aa-ItemLink hover:bg-slate-100 cursor-pointer w-full'
+        target='_blank'
+        rel='noReferrer'
+      >
+        <div className='font-greycliff font-semibold leading-snug lg:text-lg dark:text-white w-full'>
           <components.Highlight hit={hit} attribute='title' />
         </div>
-        <div className='aa-ItemTitle line-clamp-2 text-sm text-slate-600'>
-          <components.Highlight hit={hit} attribute='subheadline' />
+      </a>
+    </div>
+  );
+}
+
+export function CourseItem({ hit, components }) {
+  const setBackground = () => {
+    switch (hit.title) {
+      case 'Certificate of Mastery in Packaging Management':
+        return 'bg-gradient-to-br from-base-brand to-slate-700';
+      case 'Certificate of Packaging Science':
+        return 'bg-gradient-to-br from-base-dark to-slate-900';
+      case 'Automotive Packaging Certificate':
+        return 'bg-gradient-to-br from-clemson to-orange-800';
+      default:
+        return 'bg-gradient-to-br from-green-600 to-green-900';
+    }
+  };
+
+  return (
+    <a
+      href={`/courses/${hit.slug}`}
+      className='aa-ItemLink hover:bg-slate-100 cursor-pointer'
+    >
+      <div className='grid grid-cols-5 w-full'>
+        <div className='px-3 py-1.5 col-span-5'>
+          <div className='flex gap-3 w-full'>
+            <div>
+              <GlobalMaterialsIcon scale={12} background={setBackground()} />
+            </div>
+            <div className='flex flex-col '>
+              <div className='font-greycliff font-semibold leading-snug dark:text-white'>
+                <components.Highlight hit={hit} attribute='title' />
+              </div>
+              <div className='aa-ItemTitle line-clamp-2 text-sm text-slate-600 dark:text-slate-400'>
+                <components.Highlight hit={hit} attribute='subheadline' />
+              </div>
+              <div className='aa-ItemTitle line-clamp-2  text-sm md:text-base text-slate-600 dark:text-slate-400'>
+                <components.Highlight hit={hit} attribute='subhead' />
+              </div>
+            </div>
+          </div>
         </div>
-        <div className='aa-ItemTitle line-clamp-2 text-sm text-slate-600'>
-          <components.Highlight hit={hit} attribute='subhead' />
+      </div>
+    </a>
+  );
+}
+
+export function LOTMItem({ hit, components }) {
+  const setBackground = () => {
+    switch (hit.title) {
+      case 'Certificate of Mastery in Packaging Management':
+        return 'bg-gradient-to-br from-base-brand to-slate-700';
+      case 'Certificate of Packaging Science':
+        return 'bg-gradient-to-br from-base-dark to-slate-900';
+      case 'Automotive Packaging Certificate':
+        return 'bg-gradient-to-br from-clemson to-orange-800';
+      default:
+        return 'bg-gradient-to-br from-red-500 to-red-900';
+    }
+  };
+
+  return (
+    <a
+      href={`https://library.packagingschool.com/lessons/${hit.slug}`}
+      className='aa-ItemLink hover:bg-slate-100 cursor-pointer'
+      target='_blank'
+      rel='noReferrer'
+    >
+      <div className='grid grid-cols-5 w-full'>
+        <div className='px-3 py-1.5 col-span-5'>
+          <div className='flex gap-3 w-full'>
+            <div>
+              <LotmIcon style='w-12 h-12 fill-slate-900' />
+            </div>
+            <div className='flex flex-col '>
+              <div className='font-greycliff font-semibold leading-snug dark:text-white'>
+                <components.Highlight hit={hit} attribute='title' />
+              </div>
+              <div className='aa-ItemTitle line-clamp-2 text-sm text-slate-600 dark:text-slate-400'>
+                <components.Highlight hit={hit} attribute='subheadline' />
+              </div>
+              <div className='aa-ItemTitle line-clamp-2 text-sm text-slate-600 dark:text-slate-400'>
+                <components.Highlight hit={hit} attribute='subhead' />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </a>
@@ -31,6 +164,8 @@ export function ProductItem({ hit, components }) {
 }
 
 const HomeHero = () => {
+  const router = useRouter();
+
   const recentSearchesPlugin = createLocalStorageRecentSearchesPlugin({
     key: 'RECENT_SEARCH',
     limit: 5,
@@ -101,7 +236,7 @@ const HomeHero = () => {
                 },
                 templates: {
                   item({ item, components }) {
-                    return <ProductItem hit={item} components={components} />;
+                    return <CourseItem hit={item} components={components} />;
                   },
                 },
               },
@@ -120,7 +255,7 @@ const HomeHero = () => {
                 },
                 templates: {
                   item({ item, components }) {
-                    return <ProductItem hit={item} components={components} />;
+                    return <CertItem hit={item} components={components} />;
                   },
                 },
               },
@@ -139,7 +274,7 @@ const HomeHero = () => {
                 },
                 templates: {
                   item({ item, components }) {
-                    return <ProductItem hit={item} components={components} />;
+                    return <LOTMItem hit={item} components={components} />;
                   },
                 },
               },
@@ -168,7 +303,7 @@ const HomeHero = () => {
       </div>
       <div className='flex flex-col gap-9 md:gap-12 lg:max-w-5xl lg:mx-auto lg:text-center lg:pt-24'>
         <div className='w-full flex flex-col gap-1 items-start md:items-center'>
-          <div className='font-greycliff font-bold text-5xl md:text-6xl lg:text-8xl'>
+          <div className='font-sans font-bold text-5xl md:text-6xl lg:text-8xl tracking-tight'>
             Become a
           </div>
           <TypeAnimation
@@ -190,10 +325,10 @@ const HomeHero = () => {
             wrapper='span'
             cursor={true}
             repeat={Infinity}
-            className='font-greycliff text-5xl font-bold md:text-6xl lg:text-8xl'
+            className='font-sans tracking-tight text-5xl font-bold md:text-6xl lg:text-8xl'
           />
         </div>
-        <div className='text-slate-600 text-lg md:text-xl lg:text-2xl lg:leading-normal'>
+        <div className='text-slate-600 text-lg md:text-xl lg:text-2xl lg:leading-normal font-greycliff font-medium'>
           Join the tens of thousands of people across the globe that have
           leveraged the expert-led curriculum of the Packaging School to stand
           out amongst their peers, accelerate their teams, and develop

@@ -76,6 +76,10 @@
   button {
     @apply font-greycliff;
   }
+
+  #autocomplete-1-input {
+    @apply text-xl h-16;
+  }
 }
 
 @tailwind components;

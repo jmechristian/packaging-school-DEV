@@ -9,10 +9,10 @@ const sections = [
     id: 'about',
     title: 'What is CMPM?',
   },
-  { id: 'know', title: 'Get to know CMPM' },
-  { id: 'resources', title: 'Resources' },
-  { id: 'pricing', title: 'Pricing' },
-  { id: 'author', title: 'Author' },
+  { id: 'how', title: 'How does it work?' },
+  { id: 'where', title: 'Where do I start?' },
+  { id: 'reviews', title: 'Reviews' },
+  { id: 'apply', title: 'Apply Now' },
 ];
 
 function MenuIcon({ open, ...props }) {
