@@ -4,10 +4,10 @@ import RotatingCaret from '../../RotatingCaret';
 const WeekItem = ({ week, title, content }) => {
   const [showContent, setShowContent] = useState(false);
   return (
-    <div className='w-full dark:bg-dark-mid rounded-lg p-6 shadow-sm h-full'>
+    <div className='w-full dark:bg-dark-mid bg-slate-300 rounded-lg p-6 shadow-sm h-full'>
       <div className='flex flex-col gap-6'>
         <div className='flex justify-between'>
-          <div className='bg-dark-dark rounded-lg text-clemson text-center uppercase py-1.5 text-xs font-semibold tracking-wider w-20'>
+          <div className='dark:bg-dark-dark bg-base-mid rounded-lg dark:text-clemson text-white text-center uppercase py-1.5 text-xs font-semibold tracking-wider w-20'>
             Week {week}
           </div>
           <div onClick={() => setShowContent(!showContent)}>
@@ -18,7 +18,7 @@ const WeekItem = ({ week, title, content }) => {
           </div>
         </div>
         <div>
-          <p className='dark:text-white font-semibold text-xl whitespace-pre-wrap'>
+          <p className='dark:text-white font-medium text-xl whitespace-pre-wrap'>
             {title}
           </p>
         </div>

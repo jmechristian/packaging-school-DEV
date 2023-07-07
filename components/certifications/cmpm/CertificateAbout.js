@@ -16,7 +16,7 @@ const CertificateAbout = () => {
           <FadeIn>
             <SectionHeading number='1'>What is CMPM?</SectionHeading>
           </FadeIn>
-          <h2 className='text-4xl lg:text-5xl max-w-2xl'>
+          <h2 className='text-4xl lg:text-5xl max-w-2xl dark:text-white'>
             <FadeIn>
               Executive-level education design to be agile giving you the
               competitive edge.

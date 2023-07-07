@@ -124,5 +124,5 @@ h1,
 h2,
 h3,
 h4 {
-  @apply font-sans tracking-tight font-semibold leading-5 dark:text-white;
+  @apply font-sans tracking-tight font-semibold leading-5;
 }

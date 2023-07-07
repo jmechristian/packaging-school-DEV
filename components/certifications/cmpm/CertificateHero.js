@@ -14,7 +14,7 @@ const CertificateHero = () => {
       <div className='flex flex-col gap-9'>
         <div>
           <FadeIn>
-            <h1 className='text-4xl xl:text-5xl leading-tight'>
+            <h1 className='text-4xl xl:text-5xl leading-tight dark:text-white'>
               Certificate of Mastery in Packaging Management
             </h1>
           </FadeIn>

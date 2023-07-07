@@ -7,7 +7,7 @@ const CertificateWhat = () => {
     <section className='py-16 lg:py-32'>
       <div className='flex flex-col gap-9 container-7xl'>
         <div className='flex flex-col gap-9 max-w-4xl mx-auto'>
-          <h2 className='text-4xl lg:text-5xl max-w-2xl'>
+          <h2 className='text-4xl lg:text-5xl max-w-2xl dark:text-white'>
             <FadeIn>
               The Industry&apos;s Most Valuable Certificate Program
             </FadeIn>
