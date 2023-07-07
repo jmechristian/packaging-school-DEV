@@ -302,7 +302,7 @@ const HomeHero = () => {
         />
       </div>
       <div className='flex flex-col gap-9 md:gap-12 lg:max-w-5xl lg:mx-auto lg:text-center lg:pt-24'>
-        <div className='w-full flex flex-col gap-1 items-start md:items-center'>
+        <div className='w-full flex flex-col gap-1 items-start md:items-center h-44'>
           <div className='font-sans font-bold text-5xl md:text-6xl lg:text-8xl tracking-tight'>
             Become a
           </div>
