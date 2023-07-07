@@ -14,9 +14,9 @@ const CertificateWhat = () => {
           </h2>
           <div>
             <FadeIn>
-              <p className='dark:text-gray-500 text-slate-700 font-greycliff text-xl lg:text-2xl'>
+              <p className='dark:text-gray-500 text-slate-700 font-greycliff text-xl'>
                 With a duration of 12 weeks and 14 comprehensive courses, this
-                <span className='text-white font-bold'>
+                <span className='dark:text-white text-slate-900 font-bold'>
                   {' '}
                   online program
                 </span>{' '}

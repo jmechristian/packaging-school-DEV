@@ -70,7 +70,7 @@ const CertificateAbout = () => {
             </div>
           </FadeIn>
           <FadeIn>
-            <div className='w-full py-6 lg:py-9 flex gap-9 items-center border-t border-b border-slate-800'>
+            <div className='w-full py-6 lg:p-9 flex gap-9 items-center border-t border-b border-slate-800'>
               <div className='w-40'>
                 <img
                   src='https://packschool.s3.amazonaws.com/01-LOGO_ClemsonCCL.png'
@@ -79,7 +79,7 @@ const CertificateAbout = () => {
                 />
               </div>
               <div>
-                <p className='w-fit text-white text-sm leading-none font-greycliff'>
+                <p className='w-fit dark:text-white text-sm leading-none font-greycliff'>
                   Offered through Clemson University Center for Corporate
                   Learning
                 </p>

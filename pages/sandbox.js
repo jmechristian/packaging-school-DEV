@@ -7,6 +7,7 @@ import CMPMHow from '../components/certifications/cmpm/CMPMHow';
 import CMPMReviews from '../components/forms/cmpm/CMPMReviews';
 import CMPMWhere from '../components/forms/cmpm/CMPMWhere';
 import CMPMApply from '../components/forms/cmpm/CMPMApply';
+import CertificateCirriculum from '../components/certifications/cmpm/CertificateCirriculum';
 
 const Sandbox = () => {
   return (
@@ -16,6 +17,7 @@ const Sandbox = () => {
       <CertificateAbout />
       <CertificateWhat />
       <CMPMHow />
+      <CertificateCirriculum />
       <CMPMWhere />
       <CMPMReviews />
       <CMPMApply />
