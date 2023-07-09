@@ -7,8 +7,10 @@ const CertificateCirriculum = () => {
     <div className='container-7xl py-16 lg:py-32'>
       <FadeIn>
         <div className='flex flex-col gap-16'>
-          <div className='text-center text-5xl dark:text-white'>
-            <h2>Comprehensive Cirriculum</h2>
+          <div className='lg:text-center text-4xl lg:text-5xl dark:text-white'>
+            <h2 className='leading-tight font-bold'>
+              Comprehensive Cirriculum
+            </h2>
           </div>
           <div className='grid lg:grid-cols-4 gap-9 overflow-hidden'>
             <div className='flex flex-col gap-9 w-full'>

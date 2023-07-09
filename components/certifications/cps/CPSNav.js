@@ -7,7 +7,7 @@ import clsx from 'clsx';
 const sections = [
   {
     id: 'about',
-    title: 'What is CMPM?',
+    title: 'What is CPS?',
   },
   { id: 'how', title: 'How does it work?' },
   { id: 'where', title: 'Where do I start?' },
@@ -32,48 +32,10 @@ function MenuIcon({ open, ...props }) {
   );
 }
 
-const CertificateNavigation = () => {
+const CPSNav = () => {
   let navBarRef = useRef();
   let [activeIndex, setActiveIndex] = useState(null);
   let mobileActiveIndex = activeIndex === null ? 0 : activeIndex;
-
-  // useEffect(() => {
-  //   function updateActiveIndex() {
-  //     let newActiveIndex = null;
-  //     let elements = sections.map(({ id }) => document.getElementById(id));
-  //     let bodyRect = document.body.getBoundingClientRect();
-  //     let offset = bodyRect.top + navBarRef.current.offsetHeight + 1;
-
-  //     if (window.scrollY >= Math.floor(bodyRect.height) - window.innerHeight) {
-  //       setActiveIndex(sections.length - 1);
-  //       return;
-  //     }
-
-  //     for (let index = 0; index < elements.length; index++) {
-  //       if (
-  //         window.scrollY >=
-  //         elements[index].getBoundingClientRect().top - offset
-  //       ) {
-  //         newActiveIndex = index;
-  //       } else {
-  //         break;
-  //       }
-  //     }
-
-  //     setActiveIndex(newActiveIndex);
-  //   }
-
-  //   updateActiveIndex();
-
-  //   window.addEventListener('resize', updateActiveIndex);
-  //   window.addEventListener('scroll', updateActiveIndex, { passive: true });
-
-  //   return () => {
-  //     window.removeEventListener('resize', updateActiveIndex);
-  //     window.removeEventListener('scroll', updateActiveIndex);
-  //   };
-  // }, []);
-
   return (
     <div ref={navBarRef} className='sticky top-0 z-50'>
       <Popover className='sm:hidden'>
@@ -167,7 +129,7 @@ const CertificateNavigation = () => {
             <div
               onClick={() =>
                 window.open(
-                  '/certificate-of-mastery-in-packaging-management',
+                  '/certificate-of-packaging-science-application',
                   '_blank'
                 )
               }
@@ -187,4 +149,4 @@ const CertificateNavigation = () => {
   );
 };
 
-export default CertificateNavigation;
+export default CPSNav;

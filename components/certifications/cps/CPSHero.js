@@ -1,11 +1,9 @@
 import React from 'react';
-import HeadlineMotion from '../../../helpers/HeadlineMotion';
 import FadeIn from '../../../helpers/FadeIn';
 import CertHeroImage from '../../../slices/CertificateHero/components/CertHeroImage';
-import Link from 'next/link';
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
 
-const CertificateHero = () => {
+const CPSHero = () => {
   return (
     <div className='grid lg:grid-cols-2 items-center gap-6 overflow-hidden py-12 md:py-24 container-7xl'>
       <div>
@@ -15,17 +13,19 @@ const CertificateHero = () => {
         <div>
           <FadeIn>
             <h1 className='text-4xl xl:text-5xl leading-tight dark:text-white'>
-              Certificate of Mastery in Packaging Management (CMPM)
+              Certificate of Packaging Science
             </h1>
           </FadeIn>
         </div>
         <div>
           <FadeIn>
             <p className='text-xl lg:text-2xl font-greycliff text-slate-700 dark:text-gray-500 tracking-wide'>
-              A 12-week, PhD-led certificate program ideal for ambitious
-              professionals seeking to advance their career in the packaging
-              industry and for companies actively seeking future leaders and
-              rising stars to lead their teams.
+              Ideal for professionals in the packaging or related industries
+              seeking a comprehensive understanding of the packaging industry.
+              With the flexibility of one-year access, this is an excellent
+              choice for salespeople, packaging engineers, marketing leads,
+              operations personnel, and procurement professionals looking to
+              gain valuable insights.
             </p>
           </FadeIn>
         </div>
@@ -51,4 +51,4 @@ const CertificateHero = () => {
   );
 };
 
-export default CertificateHero;
+export default CPSHero;

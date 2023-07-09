@@ -95,9 +95,9 @@ const CMPMReviews = () => {
         </FadeIn>
         <FadeIn>
           <div>
-            <div className='mx-auto max-w-7xl px-6 lg:px-8'>
+            <div>
               <div className='max-w-3xl'>
-                <p className='mt-2 text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl'>
+                <p className='text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl'>
                   We have worked with tens of thousands of amazing people.
                 </p>
               </div>

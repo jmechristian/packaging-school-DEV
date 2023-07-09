@@ -42,11 +42,11 @@ const CMPMHow = () => {
             </FadeIn>
             <FadeIn>
               <div className='flex flex-col gap-9'>
-                <div className='flex flex-col gap-3'>
-                  <div className='font-bold text-5xl'>
+                <div className='flex flex-col'>
+                  <div className='font-bold text-4xl lg:text-5xl'>
                     <h2 className='dark:text-white'>12-weeks.</h2>
                   </div>
-                  <div className='text-gray-500 font-bold text-5xl'>
+                  <div className='text-gray-500 font-bold text-4xl lg:text-5xl'>
                     PhD-Led.
                   </div>
                 </div>
