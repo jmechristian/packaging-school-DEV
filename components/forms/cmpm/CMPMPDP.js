@@ -19,7 +19,10 @@ const CMPMPDP = ({
   const onSubmit = (data) => console.log(data);
 
   return (
-    <div className='bg-gradient-to-tr from-clemson-dark via-base-dark to-base-brand'>
+    <div
+      className='bg-gradient-to-tr from-clemson-dark via-base-dark to-base-brand scroll-mt-24'
+      id='interest'
+    >
       <div className='mx-auto max-w-7xl px-6 py-24 sm:py-32 grid lg:grid-cols-2 lg:gap-24 gap-16'>
         <div className='flex flex-col gap-5'>
           <h2 className='text-3xl font-bold font-greycliff tracking-tight text-white sm:text-5xl'>
