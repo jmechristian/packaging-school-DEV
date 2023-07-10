@@ -73,12 +73,14 @@ const Layout = ({ children }) => {
       dispatch(setAllCourses(courses.data.listLMSCourses.items));
     };
 
-    if (window.matchMedia('(prefers-color-scheme: dark)')) {
-      console.log('dark');
-      dispatch(setDark());
+    if (
+      localStorage.theme === 'dark' ||
+      (!('theme' in localStorage) &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      document.documentElement.classList.add('dark');
     } else {
-      dispatch(setLight());
-      console.log('light');
+      document.documentElement.classList.remove('dark');
     }
 
     getCourses();

@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setDark, setLight } from './layoutSlice';
 import { SunIcon, MoonIcon } from '@heroicons/react/24/outline';
 
 const DarkToggle = () => {
+  const setLight = () => {
+    localStorage.theme = 'light';
+  };
+
   const dispatch = useDispatch();
   const { darkMode } = useSelector((state) => state.layout);
   return (
