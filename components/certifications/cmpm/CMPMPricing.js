@@ -48,7 +48,7 @@ export default function CMPMPricing() {
           <div className='grid lg:grid-cols-3 gap-6 mt-6'>
             {schedule.map((it, i) => (
               <div
-                className='bg-slate-500 dark:bg-dark-mid rounded-lg shadow-sm'
+                className='bg-base-mid dark:bg-dark-mid rounded-lg shadow-sm'
                 key={it.deadline}
               >
                 <div className='flex flex-col gap-3 p-4'>
