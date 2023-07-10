@@ -73,16 +73,6 @@ const Layout = ({ children }) => {
       dispatch(setAllCourses(courses.data.listLMSCourses.items));
     };
 
-    if (
-      localStorage.theme === 'dark' ||
-      (!('theme' in localStorage) &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches)
-    ) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-
     getCourses();
   }, [dispatch]);
 
@@ -114,7 +104,7 @@ const Layout = ({ children }) => {
           <Loading />
           <HeaderNew />
           <ScrollTop />
-          <main className='relative h-full'>{children}</main>
+          <main className='relative h-full w-full'>{children}</main>
           <Footer />
         </div>
       </div>

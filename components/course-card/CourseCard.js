@@ -147,7 +147,7 @@ const CourseCard = ({
                 />
               </div>
             </div>
-            <div className='font-semibold text-xl font-greycliff leading-tight line-clamp-2 text-slate-900'>
+            <div className='font-semibold text-xl font-greycliff leading-tight line-clamp-2 text-slate-900 dark:text-white'>
               {title}
             </div>
             <div

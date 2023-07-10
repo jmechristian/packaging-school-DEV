@@ -102,7 +102,7 @@ const CPSNav = () => {
           </>
         )}
       </Popover>
-      <div className='hidden sm:flex sm:h-32 sm:justify-center sm:border-b border-slate-300  sm:bg-white/95 sm:dark:bg-white/10 sm:[@supports(backdrop-filter:blur(0))]:bg-white/80 sm:[@supports(backdrop-filter:blur(0))]:backdrop-blur'>
+      <div className='hidden sm:flex sm:h-32 sm:justify-center sm:border-b border-slate-300  sm:bg-white/95 sm:dark:bg-white/10 sm:[@supports(backdrop-filter:blur(0))]:bg-white/80 sm:dark:[@supports(backdrop-filter:blur(0))]:bg-white/10 sm:[@supports(backdrop-filter:blur(0))]:backdrop-blur'>
         <ol
           role='list'
           className='mb-[-2px] container-7xl grid auto-cols-[minmax(0,15rem)] grid-flow-col xl:text-lg font-medium text-slate-900 dark:text-gray-300 [counter-reset:section]'

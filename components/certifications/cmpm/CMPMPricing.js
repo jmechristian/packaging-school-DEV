@@ -48,17 +48,17 @@ export default function CMPMPricing() {
           <div className='grid lg:grid-cols-3 gap-6 mt-6'>
             {schedule.map((it, i) => (
               <div
-                className='bg-base-mid dark:bg-dark-mid rounded-lg shadow-sm'
+                className='bg-slate-400 dark:bg-dark-mid rounded-lg shadow-sm'
                 key={it.deadline}
               >
                 <div className='flex flex-col gap-3 p-4'>
-                  <div className='dark:text-base-brand text-slate-300 uppercase tracking-wide text-sm font-semibold'>
+                  <div className='dark:text-base-brand text-slate-700 uppercase tracking-wide text-sm font-semibold'>
                     {it.session}
                   </div>
                   <div className='text-white text-lg font-bold whitespace-pre-wrap'>
                     {it.dates}
                   </div>
-                  <div className='dark:text-base-brand text-slate-300 uppercase tracking-wide text-sm font-semibold mt-9'>
+                  <div className='dark:text-base-brand text-slate-700 uppercase tracking-wide text-sm font-semibold mt-9'>
                     Application Deadline
                   </div>
                   <div className='text-white dark:text-gray-400  text-lg font-bold whitespace-pre-wrap'>
