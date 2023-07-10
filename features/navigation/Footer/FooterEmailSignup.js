@@ -5,10 +5,10 @@ const FooterEmailSignup = () => {
   return (
     <div className='flex flex-col gap-4'>
       <div className='flex flex-col gap-1 text-sm'>
-        <div className='font-extrabold text-sm uppercase tracking-widest text-slate-200 font-greycliff'>
+        <div className='font-extrabold text-sm uppercase tracking-widest text-gray-200 font-greycliff'>
           Stay Up To Date
         </div>
-        <p className='text-slate-500 dark:text-gray-500'>
+        <p className='text-gray-500 dark:text-gray-500'>
           Be the first to know about new classes and the latest tools to
           maximize your knowledge.
         </p>
@@ -21,15 +21,15 @@ const FooterEmailSignup = () => {
             value={email}
             placeholder='you@email.com'
             onChange={(e) => setEmail(e.target.value)}
-            className='flex w-full border border-slate-500  bg-slate-800 rounded-l text-slate-300 focus:ring-base-light focus:border-none'
+            className='flex w-full border border-gray-500  bg-gray-800 rounded-l text-gray-300 focus:ring-base-light focus:border-none'
           />
-          <button className='bg-base-dark flex justify-center items-center border-none rounded-r border border-slate-500'>
-            <div className='text-slate-300 font-medium uppercase text-xs tracking-widest px-3'>
+          <button className='bg-base-dark flex justify-center items-center border-none rounded-r border border-gray-500'>
+            <div className='text-gray-300 font-medium uppercase text-xs tracking-widest px-3'>
               Subscribe
             </div>
           </button>
         </form>
-        <p className='text-xs text-slate-500 dark:text-gray-500 max-w-prose'>
+        <p className='text-xs text-gray-500 dark:text-gray-500 max-w-prose'>
           By signing up you indicate you have read and agree to our Terms of
           Use. Packaging School will always respect your privacy.
         </p>

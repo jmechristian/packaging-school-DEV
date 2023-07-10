@@ -11,7 +11,7 @@ const FooterMenu = () => {
       <FooterCourses />
       <FooterLibrary />
       <FooterNav />
-      <div className='border-b border-b-slate-500 w-full lg:hidden'></div>
+      <div className='border-b border-b-gray-500 w-full lg:hidden'></div>
     </div>
   );
 };

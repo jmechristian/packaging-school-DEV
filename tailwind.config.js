@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: 'class',
+  // darkMode: 'class',
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
     './features/**/*.{js,ts,jsx,tsx}',
@@ -13,7 +13,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        roboto: 'roboto, sans-serif',
+        roboto: 'Inter, sans-serif',
         greycliff: 'Inter, sans-serif',
       },
       colors: {

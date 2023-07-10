@@ -7,7 +7,7 @@ import {
   setPreviewClosed,
 } from '../all_courses/courseFilterSlice';
 import { setUser } from '../auth/authslice';
-import { setDark, toggleSignInModal } from './layoutSlice';
+import { setDark, setLight, toggleSignInModal } from './layoutSlice';
 import ScrollTop from './ScrollTop';
 import { useUser } from '@auth0/nextjs-auth0/client';
 import { API, graphqlOperation } from 'aws-amplify';
@@ -74,7 +74,11 @@ const Layout = ({ children }) => {
     };
 
     if (window.matchMedia('(prefers-color-scheme: dark)')) {
+      console.log('dark');
       dispatch(setDark());
+    } else {
+      dispatch(setLight());
+      console.log('light');
     }
 
     getCourses();

@@ -5,10 +5,10 @@ const FooterAboutDetail = () => {
   return (
     <div className='flex flex-col gap-4'>
       <div className='flex flex-col gap-1 text-sm'>
-        <div className='font-extrabold font-greycliff uppercase tracking-widest text-slate-200'>
+        <div className='font-extrabold font-greycliff uppercase tracking-widest text-gray-200'>
           Who We Are
         </div>
-        <p className='text-sm text-slate-500 dark:text-gray-500'>
+        <p className='text-sm text-gray-500 dark:text-gray-500'>
           The Packaging School brings together the business, art, and science of
           packaging so you can lead projects, optimize supply chains, increase
           margins, and develop sustainable solutions.

@@ -9,7 +9,6 @@ import Timeline from '../components/about/Timeline';
 Amplify.configure(awsExports);
 
 const Page = ({ pageData }) => {
-  console.log(pageData);
   return (
     <>
       <Mission />

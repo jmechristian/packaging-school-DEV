@@ -127,11 +127,7 @@ const CourseCard = ({
 
   return (
     <>
-      <motion.div
-        className={`w-full max-w-[300px] lg:max-w-[350px] ${
-          darkMode ? 'bg-dark-mid text-white' : 'bg-white'
-        } rounded-xl shadow-lg aspect-1`}
-      >
+      <motion.div className='w-full max-w-[300px] lg:max-w-[350px] dark:bg-dark-mid text-white bg-slate-100 rounded-xl shadow-lg aspect-1'>
         <div className='p-4 flex flex-col justify-between h-full'>
           <div className='flex flex-col gap-4'>
             <div className='flex justify-between'>
@@ -146,16 +142,16 @@ const CourseCard = ({
                   className={`w-6 h-6 cursor-pointer ${
                     isFavorited
                       ? 'text-yellow-500'
-                      : 'text-slate-300 dark:text-neutral-600'
+                      : 'text-slate-400 dark:text-neutral-600'
                   } `}
                 />
               </div>
             </div>
-            <div className='font-semibold text-xl font-greycliff leading-tight line-clamp-2'>
+            <div className='font-semibold text-xl font-greycliff leading-tight line-clamp-2 text-slate-900'>
               {title}
             </div>
             <div
-              className='line-clamp-3 text-sm desc dark:text-white/60'
+              className='line-clamp-3 text-sm desc dark:text-white/60 text-slate-700'
               data-tooltip-content={desc}
             >
               {desc}
@@ -166,8 +162,10 @@ const CourseCard = ({
           </div>
           <div className='flex justify-between items-end'>
             <div className='flex flex-col'>
-              <div className='text-sm dark:text-white/50'>{hours} hours</div>
-              <div className='font-greycliff text-2xl font-semibold'>
+              <div className='text-sm dark:text-white/50 text-slate-700'>
+                {hours} hours
+              </div>
+              <div className='font-greycliff text-2xl font-semibold text-slate-900 dark:text-white'>
                 {price === 'FREE' ? 'Free' : '$' + price}
               </div>
             </div>
