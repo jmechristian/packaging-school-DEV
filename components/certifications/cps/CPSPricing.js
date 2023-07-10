@@ -1,5 +1,12 @@
+import React from 'react';
 import { CheckIcon } from '@heroicons/react/20/solid';
+import {
+  RocketLaunchIcon,
+  DocumentPlusIcon,
+  CalendarDaysIcon,
+} from '@heroicons/react/24/outline';
 import Link from 'next/link';
+import StatCard from '../../shared/StatCard';
 
 const schedule = [
   {
@@ -19,7 +26,7 @@ const schedule = [
   },
 ];
 
-export default function CMPMPricing() {
+const CPSPricing = () => {
   return (
     <div>
       <div className='mx-auto'>
@@ -32,41 +39,37 @@ export default function CMPMPricing() {
             please feel out the short application form and submit your $25
             application fee.
           </span>{' '}
-          Our request is that you embrace the application as an opportunity for
-          the Packaging School Education Team to understand your personal and
-          professional goals so that we may ensure the CMPM program is a fit for
-          you. You will receive both a confirmation of receipt soon after
-          submission and personal response regarding your application within 1-3
-          business days.
+          If you have any inquiries, Diana Whitaker, our Student Engagement
+          Director, is available to schedule a call with you to address all your
+          questions and concerns.
         </div>
       </div>
       <div className='mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none'>
         <div className='p-8 sm:p-10 lg:flex-auto'>
-          <h3 className='text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-400'>
-            Find Your Cohort
-          </h3>
           <div className='grid lg:grid-cols-3 gap-6 mt-6'>
-            {schedule.map((it, i) => (
-              <div
-                className='bg-dark-mid rounded-lg shadow-sm'
-                key={it.deadline}
-              >
-                <div className='flex flex-col gap-3 p-4'>
-                  <div className='text-base-brand uppercase tracking-wide text-sm font-semibold'>
-                    {it.session}
-                  </div>
-                  <div className='text-white text-lg font-bold whitespace-pre-wrap'>
-                    {it.dates}
-                  </div>
-                  <div className='text-base-brand uppercase tracking-wide text-sm font-semibold mt-9'>
-                    Application Deadline
-                  </div>
-                  <div className='text-gray-400 text-lg font-bold whitespace-pre-wrap'>
-                    {it.deadline}
-                  </div>
-                </div>
-              </div>
-            ))}
+            <StatCard
+              stat={
+                <RocketLaunchIcon className='w-12 h-12 stroke-white dark:stroke-clemson' />
+              }
+              title='24/7 Online Access'
+            />
+            <StatCard
+              stat={
+                <DocumentPlusIcon className='w-12 h-12 stroke-white dark:stroke-clemson' />
+              }
+              title='Application Required'
+            />
+            <StatCard
+              stat={
+                <CalendarDaysIcon className='w-12 h-12 stroke-white dark:stroke-clemson' />
+              }
+              title='12 Months to Complete'
+            />
+            <div className='col-span-3 dark:text-white lg:text-lg'>
+              Become a packaging professional, or deepen your mastery of the
+              industry. Learn the science, technology, art, language, math, and
+              business of packaging at your own pace.
+            </div>
           </div>
         </div>
         <div className='-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0'>
@@ -77,13 +80,13 @@ export default function CMPMPricing() {
               </p>
               <p className='mt-6 flex items-baseline justify-center gap-x-2'>
                 <span className='text-5xl font-bold tracking-tight text-gray-900'>
-                  $7,000
+                  $3,999
                 </span>
                 <span className='text-sm font-semibold leading-6 tracking-wide text-gray-600'>
                   USD
                 </span>
               </p>
-              <Link href='/certificate-of-mastery-in-packaging-management'>
+              <Link href='/certificate-of-packaging-science-application'>
                 <a className='mt-10 block w-full rounded-md bg-clemson px-3 py-3 text-center text-lg font-semibold text-white shadow-sm hover:bg-clemson-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-clemson'>
                   Apply Now
                 </a>
@@ -97,4 +100,6 @@ export default function CMPMPricing() {
       </div>
     </div>
   );
-}
+};
+
+export default CPSPricing;

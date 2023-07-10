@@ -2,7 +2,7 @@ import React from 'react';
 import FadeIn from '../../../helpers/FadeIn';
 import { SectionHeading } from '../../shared/SectionHeading';
 
-const CMPMReviews = () => {
+const CPSReviews = () => {
   const testimonials = [
     {
       body: 'The CMPM is a great program for both up-and-coming professionals curious to know more about packaging engineering as well as seasoned packaging professionals who are looking to do deeper dives and obtain additional knowledge; very fun, useful and engaging overall!',
@@ -113,11 +113,11 @@ const CMPMReviews = () => {
                           <p>{`“${testimonial.body}”`}</p>
                         </blockquote>
                         <figcaption className='mt-6 flex items-center gap-x-4'>
-                          <img
+                          {/* <img
                             className='h-10 w-10 rounded-full bg-gray-50'
                             src={testimonial.author.imageUrl}
                             alt=''
-                          />
+                          /> */}
                           <div>
                             <div className='font-semibold text-gray-900 dark:text-white'>
                               {testimonial.author.name}
@@ -138,4 +138,4 @@ const CMPMReviews = () => {
   );
 };
 
-export default CMPMReviews;
+export default CPSReviews;

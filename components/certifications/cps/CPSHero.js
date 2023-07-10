@@ -13,7 +13,7 @@ const CPSHero = () => {
         <div>
           <FadeIn>
             <h1 className='text-4xl xl:text-5xl leading-tight dark:text-white'>
-              Certificate of Packaging Science
+              Certificate of Packaging Science (CPS)
             </h1>
           </FadeIn>
         </div>

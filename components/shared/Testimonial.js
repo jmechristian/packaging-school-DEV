@@ -52,7 +52,7 @@ const Testimonial = ({ id, author, children }) => {
               {children}
             </blockquote>
             <figcaption className='mt-10 flex items-center sm:justify-center'>
-              <div className='overflow-hidden rounded-full bg-slate-200'>
+              <div className='overflow-hidden rounded-full h-12 w-12 bg-slate-200'>
                 <Image
                   className='h-12 w-12 object-cover'
                   src={author.image}

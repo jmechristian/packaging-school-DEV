@@ -14,12 +14,32 @@ const CPSHow = () => {
   const { allCourses } = useSelector((state) => state.course_filter);
   const { user } = useSelector((state) => state.auth);
 
-  //   const orderedCourse = allCourses.sort((a, b) => a.courseId - b.courseId);
+  const cpsCourses = [
+    { id: 'CPS-C01' },
+    { id: 'CPS-C02' },
+    { id: 'CPS-C03' },
+    { id: 'CPS-C04-C05' },
+    { id: 'CPS-C06' },
+    { id: 'CPS-C07' },
+    { id: 'CPS-C08' },
+    { id: 'CPS-C09' },
+    { id: 'CPS-C10' },
+    { id: 'CPS-C11' },
+    { id: 'CPS-C12' },
+  ];
+
+  const filterArray =
+    allCourses &&
+    allCourses.filter((el) => {
+      return cpsCourses.some((f) => {
+        return f.id === el.courseId;
+      });
+    });
 
   return (
     <section id='how'>
-      <div className='container-7xl py-32 flex flex-col gap-16'>
-        <div className='grid lg:grid-cols-2 gap-24'>
+      <div className='container-7xl py-32 flex flex-col gap-24'>
+        <div className='grid lg:grid-cols-2'>
           <div className='flex flex-col gap-16'>
             <FadeIn>
               <SectionHeading number='2'>How does it work?</SectionHeading>
@@ -62,89 +82,52 @@ const CPSHow = () => {
               </div>
             </FadeIn>
           </div>
+          <FadeIn>
+            <div className='w-full h-full justify-center items-center  pt-16 px-24 hidden lg:flex'>
+              <div
+                className='bg-cover bg-center w-full h-full rounded-lg'
+                style={{
+                  backgroundImage: `url("https://packschool.s3.amazonaws.com/chris-marsh-psgrad02.webp")`,
+                }}
+              ></div>
+            </div>
+          </FadeIn>
         </div>
         <div className='flex flex-col gap-6'>
           <div className='font-semibold text-lg tracking-wide dark:text-white'>
             Courses Included
           </div>
-          <div className='grid lg:grid-cols-4 gap-6'>
-            {allCourses && (
-              <>
-                <CourseCard
-                  courseId={allCourses[0].id}
-                  title={allCourses[0].title}
-                  desc={allCourses[0].subheadline}
-                  video={allCourses[0].preview}
-                  hours={allCourses[0].hours}
-                  lessons={allCourses[0].lessons}
-                  price={allCourses[0].price}
-                  slug={allCourses[0].slug}
-                  category={allCourses[0].category}
-                  savedCourses={user?.savedCourses}
-                />
-                <CourseCard
-                  courseId={allCourses[1].id}
-                  title={allCourses[1].title}
-                  desc={allCourses[1].subheadline}
-                  video={allCourses[1].preview}
-                  hours={allCourses[1].hours}
-                  lessons={allCourses[1].lessons}
-                  price={allCourses[1].price}
-                  slug={allCourses[1].slug}
-                  category={allCourses[1].category}
-                  savedCourses={user?.savedCourses}
-                />
-                <CourseCard
-                  courseId={allCourses[2].id}
-                  title={allCourses[2].title}
-                  desc={allCourses[2].subheadline}
-                  video={allCourses[2].preview}
-                  hours={allCourses[2].hours}
-                  lessons={allCourses[2].lessons}
-                  price={allCourses[2].price}
-                  slug={allCourses[2].slug}
-                  category={allCourses[2].category}
-                  savedCourses={user?.savedCourses}
-                />
-                <CourseCard
-                  courseId={allCourses[0].id}
-                  title={allCourses[0].title}
-                  desc={allCourses[0].subheadline}
-                  video={allCourses[0].preview}
-                  hours={allCourses[0].hours}
-                  lessons={allCourses[0].lessons}
-                  price={allCourses[0].price}
-                  slug={allCourses[0].slug}
-                  category={allCourses[0].category}
-                  savedCourses={user?.savedCourses}
-                />
-                <CourseCard
-                  courseId={allCourses[0].id}
-                  title={allCourses[0].title}
-                  desc={allCourses[0].subheadline}
-                  video={allCourses[0].preview}
-                  hours={allCourses[0].hours}
-                  lessons={allCourses[0].lessons}
-                  price={allCourses[0].price}
-                  slug={allCourses[0].slug}
-                  category={allCourses[0].category}
-                  savedCourses={user?.savedCourses}
-                />
-                <CourseCard
-                  courseId={allCourses[0].id}
-                  title={allCourses[0].title}
-                  desc={allCourses[0].subheadline}
-                  video={allCourses[0].preview}
-                  hours={allCourses[0].hours}
-                  lessons={allCourses[0].lessons}
-                  price={allCourses[0].price}
-                  slug={allCourses[0].slug}
-                  category={allCourses[0].category}
-                  savedCourses={user?.savedCourses}
-                />
-              </>
-            )}
-          </div>
+          <FadeIn>
+            <div className='grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'>
+              {allCourses &&
+                filterArray &&
+                filterArray
+                  .sort((p1, p2) =>
+                    p2.courseId < p1.courseId
+                      ? 1
+                      : p2.courseId > p1.courseId
+                      ? -1
+                      : 0
+                  )
+
+                  .map((course) => (
+                    <div key={course.id}>
+                      <CourseCard
+                        courseId={course.courseId}
+                        title={course.title}
+                        desc={course.subheadline}
+                        video={course.preview}
+                        hours={course.hours}
+                        lessons={course.lessons}
+                        price={course.price}
+                        slug={course.slug}
+                        category={course.category}
+                        savedCourses={user?.savedCourses}
+                      />
+                    </div>
+                  ))}
+            </div>
+          </FadeIn>
         </div>
       </div>
     </section>
