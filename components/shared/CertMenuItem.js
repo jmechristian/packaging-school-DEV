@@ -36,7 +36,7 @@ const CertMenuItem = ({
   };
 
   return (
-    <div className='cols-span-1 flex flex-col bg-base-light rounded-lg p-5 gap-4 h-full justify-between'>
+    <div className='cols-span-1 flex flex-col bg-slate-200 dark:bg-dark-mid rounded-lg p-5 gap-4 h-full justify-between'>
       <div className='flex flex-col gap-2 col-span-4 items-center justify-center'>
         <div className='flex flex-col gap-3 h-full'>
           <div className='flex gap-3 items-center w-full'>
@@ -47,12 +47,14 @@ const CertMenuItem = ({
                 {setIcon()}
               </div>
             </div>
-            <div className='font-semibold font-greycliff text-slate-700 text-lg leading-tight'>
+            <div className='font-semibold font-greycliff text-slate-700 dark:text-white text-lg leading-tight'>
               {title}
             </div>
           </div>
 
-          <div className='text-sm line-clamp-3 text-slate-600'>{content}</div>
+          <div className='text-sm line-clamp-3 text-slate-600 dark:text-slate-400'>
+            {content}
+          </div>
         </div>
       </div>
       <div className='flex items-center gap-1 h-full'>

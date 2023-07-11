@@ -6,7 +6,7 @@ const CertMegaCallout = () => {
     <div className='rounded-lg'>
       <div className='lg:px-8 flex flex-col gap-8'>
         <div className='flex flex-col gap-3'>
-          <div className='font-bold font-greycliff text-lg'>
+          <div className='font-bold font-greycliff text-lg dark:text-gray-200 text-slate-900'>
             Questions about Certifications?
           </div>
           <div
@@ -37,17 +37,19 @@ const CertMegaCallout = () => {
           </div>
         </div>
         <div className='flex flex-col gap-2'>
-          <div className='font-bold w-full text-lg border-b border-b-slate-400 pb-2 font-greycliff'>
+          <div className='font-bold w-full dark:text-gray-200 text-slate-900 text-lg border-b border-b-slate-400 pb-2 font-greycliff'>
             Not Sure Where to Start?
           </div>
           <div className='flex gap-2 justify-between items-center border-b border-b-slate-400 pb-2'>
-            <div className='text-sm text-slate-700'>Compare Certificates</div>
+            <div className='text-sm text-slate-700 dark:text-gray-500'>
+              Compare Certificates
+            </div>
             <div>
               <ArrowLongRightIcon className='h-5 w-5 stroke-slate-700' />
             </div>
           </div>
           <div className='flex gap-2 justify-between items-center border-b border-b-slate-400 pb-2'>
-            <div className='text-sm text-slate-700'>
+            <div className='text-sm text-slate-700 dark:text-gray-500'>
               Take our Skills Assessment
             </div>
             <div>
@@ -55,7 +57,9 @@ const CertMegaCallout = () => {
             </div>
           </div>
           <div className='flex gap-2 justify-between items-center border-b border-b-slate-400 pb-2'>
-            <div className='text-sm text-slate-700'>Contact Our Team</div>
+            <div className='text-sm text-slate-700 dark:text-gray-500'>
+              Contact Our Team
+            </div>
             <div>
               <ArrowLongRightIcon className='h-5 w-5 stroke-slate-700' />
             </div>

@@ -45,8 +45,8 @@ const CPSPricing = () => {
         </div>
       </div>
       <div className='mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none'>
-        <div className='p-8 sm:p-10 lg:flex-auto'>
-          <div className='grid lg:grid-cols-3 gap-6 mt-6'>
+        <div className='p-8 sm:p-10 lg:flex-col'>
+          <div className='lg:grid lg:grid-cols-3 gap-6 mt-6 flex flex-col gap-6'>
             <StatCard
               stat={
                 <RocketLaunchIcon className='w-12 h-12 stroke-white dark:stroke-clemson' />

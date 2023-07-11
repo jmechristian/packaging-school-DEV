@@ -118,6 +118,7 @@ body {
 
 .aa-Panel {
   z-index: 110;
+  overflow: scroll !important;
 }
 
 h1,

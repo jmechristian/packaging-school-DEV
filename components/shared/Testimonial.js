@@ -48,7 +48,7 @@ const Testimonial = ({ id, author, children }) => {
       <FadeIn>
         <Container size='md' className='relative'>
           <figure>
-            <blockquote className='mt-10 font-display text-4xl font-medium tracking-tight text-slate-900 dark:text-white sm:text-center'>
+            <blockquote className='mt-10 font-display text-2xl lg:text-4xl font-medium tracking-tight text-slate-900 dark:text-white sm:text-center'>
               {children}
             </blockquote>
             <figcaption className='mt-10 flex items-center sm:justify-center'>

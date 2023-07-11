@@ -93,7 +93,7 @@ export default function HeaderNew() {
               leaveTo='-translate-x-full'
             >
               <Dialog.Panel className='relative flex w-full max-w-full flex-col overflow-y-auto bg-slate-100 dark:bg-dark-dark pb-12 shadow-xl'>
-                <div className='flex pb-2 pt-5'>
+                <div className='flex pb-2 pt-2 pl-2'>
                   <button
                     type='button'
                     className='-m-2 inline-flex items-center justify-center rounded-md p-2 text-gray-400'
@@ -114,8 +114,8 @@ export default function HeaderNew() {
                           className={({ selected }) =>
                             classNames(
                               selected
-                                ? 'border-base-brand text-base-brand'
-                                : 'border-transparent text-gray-900',
+                                ? ' text-base-brand dark:text-white'
+                                : 'border-transparent text-gray-900 dark:text-gray-500',
                               'flex-1 whitespace-nowrap border-b-2 px-1 py-4 text-base font-medium'
                             )
                           }
@@ -147,7 +147,7 @@ export default function HeaderNew() {
                     <div key={page.name} className='flow-root'>
                       <a
                         href={page.href}
-                        className='-m-2 block p-2 font-medium text-gray-900'
+                        className='-m-2 block p-2 font-medium text-gray-900 dark:text-white'
                       >
                         {page.name}
                       </a>
@@ -157,19 +157,25 @@ export default function HeaderNew() {
 
                 <div className='space-y-6 border-t border-gray-200 px-4 py-6'>
                   <div className='flow-root'>
-                    <a
-                      href='#'
-                      className='-m-2 block p-2 font-medium text-gray-900'
-                    >
-                      Create a Free account
-                    </a>
+                    {!user && (
+                      <a
+                        href={`/api/auth/login?returnTo=${currentPath}`}
+                        className='-m-2 block p-2 font-medium text-gray-900 dark:text-white'
+                      >
+                        Create a Free account
+                      </a>
+                    )}
                   </div>
                   <div className='flow-root'>
                     <a
-                      href='#'
-                      className='-m-2 block p-2 font-medium text-gray-900'
+                      href={
+                        user
+                          ? '/api/auth/logout'
+                          : `/api/auth/login?returnTo=${currentPath}`
+                      }
+                      className='-m-2 block p-2 font-medium text-gray-900 dark:text-white'
                     >
-                      Sign in
+                      {user ? 'Sign Out' : 'Sign In'}
                     </a>
                   </div>
                 </div>

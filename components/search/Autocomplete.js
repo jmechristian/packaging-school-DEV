@@ -94,8 +94,8 @@ export function Autocomplete(props) {
         }
 
         panelRootRef.current.render(
-          <div className='grid grid-cols-2'>
-            <div>
+          <div className='flex flex-col lg:grid lg:grid-cols-2'>
+            <div className='py-3'>
               {!state.query ? (
                 elements.querySuggestionsPlugin
               ) : (
@@ -160,7 +160,7 @@ export function Autocomplete(props) {
                   ))}
                 </div>
               </div>
-              <div className='px-6 flex flex-col gap-3 overflow-hidden'>
+              {/* <div className='px-6 flex flex-col gap-3 overflow-hidden'>
                 <div className='font-greycliff font-semibold text-slate-500 text-lg'>
                   Popular Searches
                 </div>
@@ -178,7 +178,7 @@ export function Autocomplete(props) {
                     </div>
                   ))}
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         );
