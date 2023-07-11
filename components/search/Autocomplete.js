@@ -75,6 +75,13 @@ export function Autocomplete(props) {
 
   const router = useRouter();
 
+  const clear = () => {
+    rootRef.current = root;
+
+    panelRootRef.current?.unmount();
+    panelRootRef.current = createRoot(root);
+  };
+
   useEffect(() => {
     if (!containerRef.current) {
       return undefined;
@@ -83,6 +90,7 @@ export function Autocomplete(props) {
     const search = autocomplete({
       container: containerRef.current,
       placeholder: 'What do you want to learn today?',
+      openOnFocus: true,
       insights: true,
       renderer: { createElement, Fragment, render: () => {} },
       render({ children, state, elements }, root) {
@@ -142,14 +150,21 @@ export function Autocomplete(props) {
                     <div
                       className='flex gap-3 items-start cursor-pointer'
                       key={item.link}
-                      onClick={() => router.push(item.link)}
                     >
                       <div>
                         {/* <div className='w-10 h-10 auto bg-slate-400' /> */}
                         {item.icon}
                       </div>
                       <div className='flex flex-col gap-1'>
-                        <div className='font-semibold font-greycliff leading-tight'>
+                        <div
+                          className='font-semibold font-greycliff leading-tight'
+                          onClick={() => {
+                            router.push(item.link);
+                            document
+                              .getElementById('home')
+                              .classList.remove('aa-Detached');
+                          }}
+                        >
                           {item.title}
                         </div>
                         <div className='text-sm line-clamp-2 text-slate-600'>

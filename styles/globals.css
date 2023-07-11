@@ -121,6 +121,11 @@ body {
   overflow: scroll !important;
 }
 
+.aa-Panel::-webkit-scrollbar {
+  display: none;
+  width: 0;
+}
+
 h1,
 h2,
 h3,

@@ -31,7 +31,7 @@ export default function Document() {
           }}
         />
       </Head>
-      <body className='flex flex-col min-h-screen'>
+      <body className='flex flex-col min-h-screen' id='home'>
         <Main />
         <NextScript />
       </body>
