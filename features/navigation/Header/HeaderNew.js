@@ -273,7 +273,7 @@ export default function HeaderNew() {
                                   className={classNames(
                                     open
                                       ? 'border-base-brand text-base-brand dark:text-white/80'
-                                      : 'border-transparent text-gray-700 hover:text-gray-800 dark:text-white/80',
+                                      : 'border-transparent text-gray-700 dark:hover:text-gray-500 hover:text-gray-800 dark:text-white/80',
                                     'relative z-10 -mb-px flex items-center border-b-2 pt-px font-semibold font-greycliff transition-colors duration-200 ease-out'
                                   )}
                                 >
@@ -298,7 +298,7 @@ export default function HeaderNew() {
                                     aria-hidden='true'
                                   />
 
-                                  <div className='relative bg-slate-100'>
+                                  <div className='relative bg-slate-100 dark:bg-dark-dark'>
                                     <div className='mx-auto max-w-7xl px-8'>
                                       <div className='grid grid-cols-3 items-start gap-x-8 gap-y-10 py-10'>
                                         <div className='grid grid-cols-1 col-span-1 gap-6 h-full'>
@@ -363,7 +363,7 @@ export default function HeaderNew() {
                                   className={classNames(
                                     open
                                       ? 'border-base-brand text-base-brand dark:text-white/80'
-                                      : 'border-transparent text-gray-700 hover:text-gray-800 dark:text-white/80',
+                                      : 'border-transparent text-gray-700 dark:hover:text-gray-500 hover:text-gray-800 dark:text-white/80',
                                     'relative z-10 -mb-px flex items-center border-b-2 pt-px font-semibold font-greycliff transition-colors duration-200 ease-out'
                                   )}
                                 >
@@ -388,7 +388,7 @@ export default function HeaderNew() {
                                     aria-hidden='true'
                                   />
 
-                                  <div className='relative bg-slate-100'>
+                                  <div className='relative bg-slate-100 dark:bg-dark-dark'>
                                     <div className='mx-auto max-w-7xl px-8'>
                                       <div className='grid grid-cols-3 items-start gap-x-8 gap-y-10 pb-8 pt-8'>
                                         <CourseDropDownCourses
@@ -409,7 +409,7 @@ export default function HeaderNew() {
                           <a
                             key={page.name}
                             href={page.href}
-                            className='flex items-center font-semibold font-greycliff text-slate-700 hover:text-slate-800 dark:text-white/80'
+                            className='flex items-center font-semibold font-greycliff text-slate-700 dark:hover:text-gray-500 hover:text-slate-800 dark:text-white/80'
                           >
                             {page.name}
                           </a>

@@ -3,9 +3,10 @@ import Router from 'next/router';
 import Lottie from 'lottie-react';
 import loadingAnimation from '../../loading.json';
 import { AnimatePresence, motion } from 'framer-motion';
+import FadeIn from '../../helpers/FadeIn';
 
 const Loading = () => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
     // Used for page transition
     const start = () => {
@@ -28,7 +29,7 @@ const Loading = () => {
     <AnimatePresence mode='wait' initial={false}>
       {loading && (
         <motion.div
-          className='fixed inset-0 z-[200] bg-base-mid flex flex-col gap-12 justify-center items-center'
+          className='fixed inset-0 z-[200] bg-base-mid dark:bg-dark-mid flex flex-col gap-12 justify-center items-center'
           initial={{ x: '100%' }}
           animate={{ x: 0, opacity: 1 }}
           exit={{ x: '100%' }}
@@ -39,13 +40,15 @@ const Loading = () => {
           }}
         >
           <motion.div
-            className='rounded-full bg-base-brand h-[50%] aspect-1 p-6 bg-cover bg-center opacity-70 shadow-xl'
+            className='rounded-full bg-base-brand h-[50%] aspect-1 bg-cover bg-center opacity-70 shadow-xl relative'
             style={{ backgroundImage: `url('/images/sky.jpg')` }}
           >
-            <Lottie animationData={loadingAnimation} loop={true} />
+            <FadeIn>
+              <Lottie animationData={loadingAnimation} loop={true} />
+            </FadeIn>
           </motion.div>
-          <motion.div className='font-bold tracking-tight text-4xl text-white'>
-            Knowledge Inbound...
+          <motion.div className='font-semibold text-4xl text-white'>
+            Knowledge <span className='italic'>Inbound...</span>
           </motion.div>
         </motion.div>
       )}

@@ -8,16 +8,6 @@ import { lMSCoursesBySlug, listLMSCourses } from '../../src/graphql/queries';
 import { API } from 'aws-amplify';
 
 const Page = ({ course }) => {
-  console.log(course);
-  // useEffect(() => {
-  //   const getCourses = async () => {
-  //     const res = await API.graphql({ query: listLMSCourses });
-  //     console.log(res.data);
-  //   };
-
-  //   getCourses();
-  // }, []);
-
   const dispatch = useDispatch();
   const { preview } = useSelector((state) => state.course_filter);
   return (
