@@ -6,7 +6,7 @@ import CertMenuItem from '../shared/CertMenuItem';
 const CertMegaMenu = ({ onClose }) => {
   return (
     <div className='flex flex-col gap-3'>
-      <div className='grid grid-cols-1 col-span-1 gap-3 lg:gap-6 lg:h-full'>
+      <div className='grid grid-cols-1 col-span-1 gap-3 lg:gap-6 h-full'>
         <CertMenuItem
           title='Certificate of Mastery in Packaging Management'
           apply='/certificate-of-mastery-in-packaging-management'
