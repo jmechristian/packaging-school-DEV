@@ -317,7 +317,7 @@ export default function HeaderNew() {
                                             bgColor='bg-gradient-to-br from-clemson to-orange-800'
                                             content='The first and only 100% online academic program that will enable you to develop the professional skill set you need to be successful in the automotive packaging field.'
                                             apply='https://learn.packagingschool.com/enroll/735516'
-                                            learnMore='/certifications/get-to-know-aps'
+                                            learnMore='/certifications/get-to-know-apc'
                                             onClose={() => close()}
                                             // icon='cog'
                                           />
