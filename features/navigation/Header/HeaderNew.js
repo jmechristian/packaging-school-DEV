@@ -300,8 +300,8 @@ export default function HeaderNew() {
 
                                   <div className='relative bg-slate-100 dark:bg-dark-dark'>
                                     <div className='mx-auto max-w-7xl px-8'>
-                                      <div className='grid grid-cols-3 items-start gap-x-8 gap-y-10 py-10'>
-                                        <div className='grid grid-cols-1 col-span-1 gap-6 h-full'>
+                                      <div className='grid grid-cols-3 overflow-hidden items-start gap-x-8 gap-y-10 py-10'>
+                                        <div className='grid grid-cols-1 overflow-hidden col-span-1 gap-6 h-full'>
                                           <CertMenuItem
                                             title='Certificate of Mastery in Packaging Management'
                                             apply='/certificate-of-mastery-in-packaging-management'
