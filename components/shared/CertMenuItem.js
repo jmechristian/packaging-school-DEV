@@ -37,8 +37,8 @@ const CertMenuItem = ({
 
   return (
     <div className='cols-span-1 flex flex-col bg-slate-200 dark:bg-dark-mid rounded-lg p-5 gap-4 h-full justify-between'>
-      <div className='flex flex-col gap-2 col-span-4 items-center justify-center'>
-        <div className='flex flex-col gap-3 h-full'>
+      <div className='flex flex-col gap-2 col-span-4 items-center justify-center h-full'>
+        <div className='grid gap-3 h-full'>
           <div className='flex gap-3 items-center w-full'>
             <div>
               <div
