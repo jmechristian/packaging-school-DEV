@@ -7,12 +7,15 @@ const certs = [
     name: 'Certificate of Mastery in Packaging Management',
     body: 'Offered by the world renowned Clemson University Center for Corporate Learning and facilitated by PhDs, this certificate showcases the latest technologies accelerating the packaging field and provides a structured approach to deliver proactive learning in the space of packaging development, material procurement, and organizational management.',
     link: 'certifications/get-to-know-cmpm',
+    apply: '/certificate-of-mastery-in-packaging-management',
     image:
       'https://packschool.s3.amazonaws.com/certifications/Packaging-School-Blank-CMPM-1.png',
     background: 'bg-gradient-to-br from-base-brand to-slate-700',
   },
   {
     name: 'Certificate of Packaging Science',
+    link: 'certifications/get-to-know-cmpm',
+    apply: '/certificate-of-packaging-science-application',
     body: 'The Certificate of Packaging Science is a one year online program that teaches the materials, processes, and influences shaping the advancement of the industry. From design conception to production and end-of-life, learn how to speak the language of packaging and utilize it as a key differentiator for you and your company.',
     image:
       'https://packschool.s3.amazonaws.com/certifications/Packaging-School-Blank-CPS-Julie-Suggs.png',
@@ -20,6 +23,8 @@ const certs = [
   },
   {
     name: 'Automotive Packaging Certificate',
+    link: 'certifications/get-to-know-apc',
+    apply: 'https://learn.packagingschool.com/enroll/735516',
     body: 'The first and only 100% online academic program that will enable you to develop the professional skill set you need to be successful in the automotive packaging field We’ve collaborated with subject matter experts and state-of-the-art facilities so you’ll understand the unique roles of Tier 1s, OEMs, and packaging suppliers.',
     image:
       'https://packschool.s3.amazonaws.com/certifications/NEW-Packaging-School-Blank-APC-Julie-Suggs.png',
@@ -58,10 +63,10 @@ const HomeCerts = () => {
               </div>
               <div className='flex gap-4'>
                 <div className='bg-clemson cursor-pointer text-white font-greycliff font-semibold rounded-lg p-2'>
-                  Apply Now
+                  <Link href={cert.apply}>Apply Now</Link>
                 </div>
                 <div className='border cursor-pointer border-slate-600 text-slate-800 font-greycliff font-semibold rounded-lg p-2'>
-                  More Info
+                  <Link href={cert.link}>More Info</Link>
                 </div>
               </div>
             </div>

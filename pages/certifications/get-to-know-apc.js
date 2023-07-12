@@ -1,186 +1,51 @@
-import {
-  BoltIcon,
-  CalendarDaysIcon,
-  UsersIcon,
-} from '@heroicons/react/24/outline';
-import { useSelector } from 'react-redux';
-import CertificationsFeatureStats from '../../components/certifications/CertificationsFeatureStats';
-import CertificationsHero from '../../components/certifications/CertificationsHero';
-import CertificationsLogos from '../../components/certifications/CertificationsLogos';
-import CertificationsPricing from '../../components/certifications/CertificationsPricing';
-import CertificationsSecondFeature from '../../components/certifications/CertificationsSecondFeature';
+import React from 'react';
+import CertificateHero from '../../components/certifications/cmpm/CertificateHero';
+import CertificateAbout from '../../components/certifications/cmpm/CertificateAbout';
+import CertificateWhat from '../../components/certifications/cmpm/CertificateWhat';
+import CertificateNavigation from '../../components/certifications/cmpm/CertificateNavigation';
+import CMPMHow from '../../components/certifications/cmpm/CMPMHow';
+import CMPMReviews from '../../components/certifications/cmpm/CMPMReviews';
+import CMPMWhere from '../../components/certifications/cmpm/CMPMWhere';
+import CMPMApply from '../../components/certifications/cmpm/CMPMApply';
+import CertificateCirriculum from '../../components/certifications/cmpm/CertificateCirriculum';
+import Testimonial from '../../components/shared/Testimonial';
 import GradientCTA from '../../components/GradientCTA';
-import { Amplify, API, graphqlOperation } from 'aws-amplify';
-import awsExports from '../../src/aws-exports';
-import DoubleTestimonial from '../../components/DoubleTestimonial';
-import APSWorkbook from '../../components/certifications/APSWorkbook';
-import APSExperts from '../../components/certifications/APSExperts';
-Amplify.configure(awsExports);
+import CMPMPDP from '../../components/forms/cmpm/CMPMPDP';
 
-const GRAPHQL_ENDPOINT = process.env.GRAPHQL_ENDPOINT;
-const GRAPHQL_API_KEY = process.env.GRAPHQL_API_KEY;
-
-const primaryFeatures = [
-  {
-    name: 'Advance Your Career',
-    description:
-      "This Certificate will show your employers that you're dedicated and possess a hard work ethic.",
-    href: '#',
-    icon: BoltIcon,
-  },
-  {
-    name: 'Keep Up With Innovation',
-    description:
-      "Packaging is a field of science, which means materials, processes, and technologies are constantly evolving. We'll keep you informed.",
-    href: '#',
-    icon: UsersIcon,
-  },
-  {
-    name: 'Find Insights & Inspiration',
-    description:
-      'Expanding your knowledge base is an excellent way to discover new ideas in packaging and make yourself stand out.',
-    href: '#',
-    icon: CalendarDaysIcon,
-  },
-  {
-    name: 'Learn The Market',
-    description:
-      'We exist in a rapidly-changing marketplace where company ownership, business cultures, and packaging responsibilities vary.',
-    href: '#',
-    icon: BoltIcon,
-  },
-  {
-    name: 'Differentiate Yourself',
-    description:
-      'Apply your learning right away while you enhance your resume with a specialization in packaging.',
-    href: '#',
-    icon: UsersIcon,
-  },
-  {
-    name: 'Grow Your Network',
-    description:
-      'Throughout the program, you will have the opportunity to ask questions, share experiences, and learn from people who have the experience and expertise to help your business flourish.',
-    href: '#',
-    icon: CalendarDaysIcon,
-  },
-];
-
-export const Page = ({ cert }) => {
-  const { darkMode } = useSelector((state) => state.layout);
-
-  const stats = [
-    { id: 1, name: 'Course Hours', value: `${cert.hours_total}` },
-    {
-      id: 2,
-      name: 'Courses Included',
-      value: `${cert.courses_total}`,
-      link: true,
-    },
-    { id: 3, name: 'CEUs Earned', value: `${cert.ceus_total}` },
-    { id: 4, name: 'Flexibility to Complete', value: '12 months' },
-  ];
-
+const Page = () => {
   return (
-    <div className='bg-white dark:bg-slate-900'>
-      <div className='flex flex-col gap-32 md:gap-48'>
-        <CertificationsHero
-          darkMode={darkMode}
-          title_button_1_link={cert.title_button_1_link}
-          title_button_1_text={cert.title_button_1_text}
-          title_button_2_link={cert.title_button_2_link}
-          title_button_2_text={cert.title_button_2_text}
-          title_callout_1={cert.title_callout_1}
-          title_callout_2={cert.title_callout_2}
-          title_image={cert.title_image}
-          title_text={cert.title_text}
-          title={cert.title}
-        />
-        <CertificationsLogos darkMode={darkMode} />
-        <CertificationsFeatureStats
-          brochureLink={cert.brochure_link}
-          whoText={cert.whoText}
-          darkMode={darkMode}
-          video={cert.video}
-          stats={stats}
-          courses={cert.courses?.items}
-        />
-        <CertificationsPricing
-          price_full={cert.price_full}
-          price_monthly={cert.price_monthly}
-          pricing_features={cert.price_features}
-        />
-        <APSWorkbook />
-        <APSExperts />
-        {/* <CertificationsSecondFeature
-          darkMode={darkMode}
-          features={primaryFeatures}
-        /> */}
-        <DoubleTestimonial />
-        <GradientCTA
-          headline='Ready to Elevate Your Career?'
-          subheadline='Try a demo, risk-free.'
-          buttonText='Get Started For Free'
-          secondaryButtonText='Need More Info?'
-        />
-      </div>
+    <div className='flex flex-col dark:bg-dark-dark'>
+      <CertificateHero />
+      <CertificateNavigation />
+      <CertificateAbout />
+      <CertificateWhat />
+      <CMPMHow />
+      <CertificateCirriculum />
+      <Testimonial
+        id='testimonial-from-tommy-stroman'
+        author={{
+          name: 'Sheridyn Gasser',
+          role: 'Structural / Graphic Designer',
+          image: 'https://packschool.s3.amazonaws.com/sharw.jpeg',
+        }}
+      >
+        <p>
+          “I have greatly broadened my knowledge of the packaging industry as a
+          whole, which was exactly what I hoped to gain from this program. I
+          highly recommend this program to anyone who wants to take a deeper
+          dive into the industry!”
+        </p>
+      </Testimonial>
+      <CMPMWhere />
+      <CMPMReviews />
+      <CMPMPDP
+        headline='Want to focus on a specific topic?'
+        subheadline="Let's make CMPM fit your requirements. Enter your information to let us know what you want to focus on. Our cirriculum team will work with you to shape a program that benefits you and your company's specific needs. "
+        buttonText='Get My PDP Plan'
+        buttonLink='/cmpm-custom-development-plan-registration'
+      />
     </div>
   );
 };
-
-export async function getStaticProps() {
-  const getCourses = /* GraphQL */ `
-    query MyQuery($slug: String!) {
-      certificatesBySlug(slug: $slug) {
-        items {
-          courses {
-            items {
-              course {
-                id
-                category
-                hour
-                lessons
-                price
-                slug
-                title
-                video
-                videos
-                subhead
-              }
-            }
-          }
-          title
-          title_button_1_link
-          title_button_1_text
-          title_button_2_link
-          title_button_2_text
-          title_callout_1
-          title_callout_2
-          title_image
-          title_text
-          slug
-          id
-          brochure_link
-          ceus_total
-          courses_total
-          hours_total
-          whoText
-          video
-          price_features
-          price_full
-          price_monthly
-        }
-      }
-    }
-  `;
-
-  const variables = {
-    slug: 'automotive-packaging-certificate',
-  };
-
-  const res = await API.graphql(graphqlOperation(getCourses, variables));
-  const cert = await res.data.certificatesBySlug.items[0];
-
-  return { props: { cert }, revalidate: 10 };
-}
 
 export default Page;
