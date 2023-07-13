@@ -478,9 +478,9 @@ export default function HeaderNew() {
                         </div>
                       </div>
 
-                      {/* <div className='flow-root'>
+                      <div className='flow-root'>
                         {darkMode ? (
-                          <div onClick={() => (localStorage.theme = 'light')}>
+                          <div>
                             <MoonIcon className='w-6 h-6 text-gray-400 group-hover:text-gray-500 dark:text-white/40 cursor-pointer' />
                           </div>
                         ) : (
@@ -491,7 +491,7 @@ export default function HeaderNew() {
                             />
                           </div>
                         )}
-                      </div> */}
+                      </div>
                     </div>
                   </div>
                 </div>
