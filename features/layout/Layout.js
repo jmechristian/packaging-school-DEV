@@ -76,6 +76,20 @@ const Layout = ({ children }) => {
     getCourses();
   }, [dispatch]);
 
+  useEffect(() => {
+    if (window.matchMedia) {
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        dispatch(setDark());
+      } else {
+        dispatch(setLight());
+      }
+
+      if (!window.matchMedia) {
+        dispatch(setLight());
+      }
+    }
+  }, [dispatch]);
+
   return (
     <>
       <Head>

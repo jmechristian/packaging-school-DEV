@@ -478,9 +478,14 @@ export default function HeaderNew() {
                         </div>
                       </div>
 
+                      <span
+                        className='mx-4 h-6 w-px bg-slate-200 dark:bg-white/40 lg:mx-6'
+                        aria-hidden='true'
+                      />
+
                       <div className='flow-root'>
                         {darkMode ? (
-                          <div>
+                          <div onClick={() => dispatch(setLight())}>
                             <MoonIcon className='w-6 h-6 text-gray-400 group-hover:text-gray-500 dark:text-white/40 cursor-pointer' />
                           </div>
                         ) : (
