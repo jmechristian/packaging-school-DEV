@@ -40,15 +40,15 @@ const Loading = () => {
           }}
         >
           <motion.div
-            className='rounded-full bg-base-brand h-[33%] md:h-[50%] aspect-1 bg-cover bg-center opacity-70 shadow-xl relative'
-            style={{ backgroundImage: `url('/images/sky.jpg')` }}
+            className='rounded-full  h-[33%] md:h-[50%] aspect-1 bg-cover bg-center opacity-70 shadow-xl relative'
+            // style={{ backgroundImage: `url('/images/sky.jpg')` }}
           >
             <FadeIn>
               <Lottie animationData={loadingAnimation} loop={true} />
             </FadeIn>
           </motion.div>
-          <motion.div className='font-semibold text-xl md:text-4xl text-white'>
-            Knowledge <span className='italic'>Inbound...</span>
+          <motion.div className='font-semibold text-xl md:text-3xl text-white'>
+            Expertise <span className='italic'>Inbound...</span>
           </motion.div>
         </motion.div>
       )}
