@@ -36,9 +36,9 @@ const CertMenuItem = ({
   };
 
   return (
-    <div className='cols-span-1 grid bg-slate-200 dark:bg-dark-mid rounded-lg p-5 gap-4 h-full justify-between'>
-      <div className='grid gap-2  items-center justify-center h-full'>
-        <div className='grid gap-3 h-full overflow-hidden'>
+    <div className='flex flex-col bg-slate-200 dark:bg-dark-mid rounded-lg p-5 gap-4 h-full justify-between'>
+      <div className='flex items-center justify-center h-full'>
+        <div className='flex flex-col gap-3 h-full overflow-hidden'>
           <div className='flex gap-3 items-center w-full overflow-hidden'>
             <div>
               <div
