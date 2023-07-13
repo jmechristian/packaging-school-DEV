@@ -11,11 +11,12 @@ import CertificateCirriculum from '../../components/certifications/cmpm/Certific
 import Testimonial from '../../components/shared/Testimonial';
 import GradientCTA from '../../components/GradientCTA';
 import CMPMPDP from '../../components/forms/cmpm/CMPMPDP';
+import APCHero from '../../components/certifications/aps/APCHero';
 
 const Page = () => {
   return (
     <div className='flex flex-col dark:bg-dark-dark'>
-      <CertificateHero />
+      <APCHero />
       <CertificateNavigation />
       <CertificateAbout />
       <CertificateWhat />

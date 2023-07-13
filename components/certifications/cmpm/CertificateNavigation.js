@@ -99,6 +99,19 @@ const CertificateNavigation = () => {
                   </a>
                 </Popover.Button>
               ))}
+              <Link href={'/'}>
+                <a className='flex items-center px-4 py-3'>
+                  <span
+                    aria-hidden='true'
+                    className='font-mono text-sm text-base-brand'
+                  >
+                    05
+                  </span>
+                  <span className='ml-4 text-base font-medium text-slate-900 dark:text-white'>
+                    Apply Now
+                  </span>
+                </a>
+              </Link>
             </Popover.Panel>
             <div className='absolute inset-x-0 bottom-full z-10 h-4 bg-white dark:bg-dark-dark' />
           </>

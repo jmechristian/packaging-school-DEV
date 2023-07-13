@@ -22,40 +22,36 @@ const Page = () => {
       <div className='px-6 xl:px-0'>
         <FormProvider {...methods}>
           <form
-            className='grid md:grid-cols-2 gap-6 lg:gap-12 max-w-4xl mx-auto'
+            className='md:grid flex flex-col gap-4 md:grid-cols-2 gap-6 lg:gap-12 max-w-4xl mx-auto'
             onSubmit={methods.handleSubmit(onSubmit)}
           >
-            <div>
-              <TextInput
-                name={'firstName'}
-                placeholder={'Enter First Name'}
-                label={'First Name'}
-                required
-              />
-            </div>
-            <div>
-              <TextInput
-                name={'lastName'}
-                placeholder={'Enter Last Name'}
-                label={'Last Name'}
-                required
-              />
-            </div>
-            <div>
-              <TextInput
-                name={'email'}
-                placeholder={'Enter Email'}
-                label={'Email'}
-                required
-              />
-            </div>
-            <div>
-              <TextInput
-                name={'phone'}
-                placeholder={'Enter Phone Number'}
-                label={'Phone Number'}
-              />
-            </div>
+            <TextInput
+              name={'firstName'}
+              placeholder={'Enter First Name'}
+              label={'First Name'}
+              required
+            />
+
+            <TextInput
+              name={'lastName'}
+              placeholder={'Enter Last Name'}
+              label={'Last Name'}
+              required
+            />
+
+            <TextInput
+              name={'email'}
+              placeholder={'Enter Email'}
+              label={'Email'}
+              required
+            />
+
+            <TextInput
+              name={'phone'}
+              placeholder={'Enter Phone Number'}
+              label={'Phone Number'}
+            />
+
             <div className='col-span-2 flex justify-end items-center'>
               <button
                 type='submit'
