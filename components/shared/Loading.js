@@ -32,7 +32,7 @@ const Loading = () => {
           className='fixed inset-0 z-[200] bg-base-mid dark:bg-dark-mid flex flex-col gap-12 justify-center items-center'
           initial={{ x: '100%' }}
           animate={{ x: 0, opacity: 1 }}
-          exit={{ x: '100%' }}
+          exit={{ x: '-100%' }}
           transition={{
             type: 'spring',
             velocity: 3,
@@ -40,14 +40,14 @@ const Loading = () => {
           }}
         >
           <motion.div
-            className='rounded-full bg-base-brand h-[50%] aspect-1 bg-cover bg-center opacity-70 shadow-xl relative'
+            className='rounded-full bg-base-brand h-[33%] md:h-[50%] aspect-1 bg-cover bg-center opacity-70 shadow-xl relative'
             style={{ backgroundImage: `url('/images/sky.jpg')` }}
           >
             <FadeIn>
               <Lottie animationData={loadingAnimation} loop={true} />
             </FadeIn>
           </motion.div>
-          <motion.div className='font-semibold text-4xl text-white'>
+          <motion.div className='font-semibold text-xl md:text-4xl text-white'>
             Knowledge <span className='italic'>Inbound...</span>
           </motion.div>
         </motion.div>
