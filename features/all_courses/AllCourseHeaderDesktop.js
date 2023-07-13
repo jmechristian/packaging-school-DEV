@@ -1,9 +1,15 @@
 import React from 'react';
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
+import { useRouter } from 'next/router';
 
 const AllCourseHeaderDesktop = () => {
+  const router = useRouter();
+
   return (
-    <div className='hidden lg:flex justify-between item-center w-full bg-bootcamp-mobile bg-cover bg-center'>
+    <div
+      className='hidden lg:flex justify-between item-center w-full bg-bootcamp-mobile bg-cover bg-center'
+      onClick={() => router.push('/courses/packaging-boot-camp-101')}
+    >
       <div className='container__inner w-full flex justify-center gap-24'>
         <div className='flex flex-col gap-2 py-8'>
           <div className='text-white font-greycliff font-bold text-3xl'>

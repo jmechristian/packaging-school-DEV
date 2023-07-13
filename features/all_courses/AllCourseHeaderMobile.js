@@ -1,9 +1,14 @@
 import React from 'react';
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
+import { useRouter } from 'next/router';
 
 const AllCourseHeaderMobile = () => {
+  const router = useRouter();
   return (
-    <div className='flex justify-center item-center w-full bg-bootcamp-mobile bg-cover bg-center lg:hidden'>
+    <div
+      className='flex justify-center item-center w-full bg-bootcamp-mobile bg-cover bg-center lg:hidden'
+      onClick={() => router.push('/courses/packaging-boot-camp-101')}
+    >
       <div className='flex flex-col gap-4 justify-center items-center text-center py-8 px-8'>
         <div className='text-white font-greycliff font-bold text-2xl'>
           New to Packaging?

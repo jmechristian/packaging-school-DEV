@@ -40,7 +40,7 @@ const Loading = () => {
           }}
         >
           <motion.div
-            className='rounded-full  h-[33%] md:h-[50%] aspect-1 bg-cover bg-center opacity-70 shadow-xl relative'
+            className='rounded-full  h-[33%] md:h-[50%] aspect-1 bg-cover bg-center opacity-70 relative'
             // style={{ backgroundImage: `url('/images/sky.jpg')` }}
           >
             <FadeIn>
