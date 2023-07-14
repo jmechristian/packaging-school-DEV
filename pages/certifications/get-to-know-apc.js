@@ -1,16 +1,7 @@
 import React from 'react';
-import CertificateHero from '../../components/certifications/cmpm/CertificateHero';
-import CertificateAbout from '../../components/certifications/cmpm/CertificateAbout';
-import CertificateWhat from '../../components/certifications/cmpm/CertificateWhat';
-import CertificateNavigation from '../../components/certifications/cmpm/CertificateNavigation';
-import CMPMHow from '../../components/certifications/cmpm/CMPMHow';
 import CMPMReviews from '../../components/certifications/cmpm/CMPMReviews';
-import CMPMWhere from '../../components/certifications/cmpm/CMPMWhere';
-import CMPMApply from '../../components/certifications/cmpm/CMPMApply';
-import CertificateCirriculum from '../../components/certifications/cmpm/CertificateCirriculum';
 import Testimonial from '../../components/shared/Testimonial';
 import GradientCTA from '../../components/GradientCTA';
-import CMPMPDP from '../../components/forms/cmpm/CMPMPDP';
 import APCHero from '../../components/certifications/aps/APCHero';
 import APCNavigation from '../../components/certifications/aps/APCNav';
 import APCAbout from '../../components/certifications/aps/APCAbout';
@@ -18,6 +9,7 @@ import APCVideo from '../../components/certifications/aps/APCVideo';
 import APCHow from '../../components/certifications/aps/APCHow';
 import APSExperts from '../../components/certifications/APSExperts';
 import APCStart from '../../components/certifications/aps/APCStart';
+import APCAPS from '../../components/certifications/aps/APCAPS';
 
 const Page = () => {
   return (
@@ -25,31 +17,32 @@ const Page = () => {
       <APCHero />
       <APCNavigation />
       <APCAbout />
-      <APCVideo />
       <Testimonial
-        id='testimonial-from-tommy-stroman'
+        id='tommy-stroman'
         author={{
-          name: 'Sheridyn Gasser',
-          role: 'Structural / Graphic Designer',
-          image: 'https://packschool.s3.amazonaws.com/sharw.jpeg',
+          name: 'Lauren McDonald',
+          role: 'Packaging Engineer II / Nissan Motor Corp.',
         }}
       >
         <p>
-          “I have greatly broadened my knowledge of the packaging industry as a
-          whole, which was exactly what I hoped to gain from this program. I
-          highly recommend this program to anyone who wants to take a deeper
-          dive into the industry!”
+          “I was interested to see what this program had to offer versus my
+          knowledge and experience working as a packaging engineer at an OEM.
+          This course offered much more than I expected and I would highly
+          recommend this certificate course for those interested in pursuing an
+          automotive packaging career!”
         </p>
       </Testimonial>
+      <APCVideo />
       <APCHow />
       <APSExperts />
       <APCStart />
       <CMPMReviews />
-      <CMPMPDP
-        headline='Want to focus on a specific topic?'
-        subheadline="Let's make CMPM fit your requirements. Enter your information to let us know what you want to focus on. Our cirriculum team will work with you to shape a program that benefits you and your company's specific needs. "
-        buttonText='Get My PDP Plan'
-        buttonLink='/cmpm-custom-development-plan-registration'
+      <APCAPS />
+      <GradientCTA
+        headline={'Not sure if this is for you or your team?'}
+        subheadline={'There is no cost to begin.  Try a free demo today.'}
+        buttonLink={'https://learn.packagingschool.com/enroll/38965?et=free'}
+        buttonText={'Take me to my demo.'}
       />
     </div>
   );

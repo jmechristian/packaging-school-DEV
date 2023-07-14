@@ -52,15 +52,17 @@ const Testimonial = ({ id, author, children }) => {
               {children}
             </blockquote>
             <figcaption className='mt-10 flex items-center sm:justify-center'>
-              <div className='overflow-hidden rounded-full h-12 w-12 bg-slate-200'>
-                <Image
-                  className='h-12 w-12 object-cover'
-                  src={author.image}
-                  alt={author.name}
-                  width={48}
-                  height={48}
-                />
-              </div>
+              {author.image && (
+                <div className='overflow-hidden rounded-full h-12 w-12 bg-slate-200'>
+                  <Image
+                    className='h-12 w-12 object-cover'
+                    src={author.image}
+                    alt={author.name}
+                    width={48}
+                    height={48}
+                  />
+                </div>
+              )}
               <div className='ml-4'>
                 <div className='text-base font-medium leading-6 tracking-tight text-slate-900 dark:text-clemson'>
                   {author.name}
