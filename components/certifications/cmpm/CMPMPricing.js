@@ -29,7 +29,7 @@ export default function CMPMPricing() {
         <div className='mt-6 text-xl text-gray-700 dark:text-gray-500 max-w-prose'>
           To start your journey,{' '}
           <span className='font-bold dark:text-white'>
-            please feel out the short application form and submit your $25
+            please fill out the short application form and submit your $25
             application fee.
           </span>{' '}
           Our request is that you embrace the application as an opportunity for

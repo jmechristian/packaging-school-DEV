@@ -99,7 +99,7 @@ const CertificateNavigation = () => {
                   </a>
                 </Popover.Button>
               ))}
-              <Link href={'/'}>
+              <Link href={'/certificate-of-mastery-in-packaging-management'}>
                 <a className='flex items-center px-4 py-3'>
                   <span
                     aria-hidden='true'

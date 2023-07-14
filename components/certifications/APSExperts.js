@@ -69,9 +69,9 @@ const APSExperts = () => {
 
   return (
     <div className='py-12 sm:py-16'>
-      <div className='mx-auto max-w-7xl px-6 text-center lg:px-8'>
+      <div className='mx-auto max-w-7xl px-6 lg:text-center lg:px-8'>
         <div className='mx-auto max-w-2xl'>
-          <h2 className='text-3xl font-bold tracking-tight dark:text-white sm:text-5xl font-greycliff'>
+          <h2 className='text-4xl lg:text-5xl font-semibold tracking-tight dark:text-white sm:text-5xl font-greycliff'>
             Meet The Experts
           </h2>
         </div>
@@ -82,7 +82,7 @@ const APSExperts = () => {
           {people.map((person) => (
             <li
               key={person.name}
-              className='rounded-2xl bg-slate-800 py-10 px-8'
+              className='rounded-2xl dark:bg-dark-mid p-6 text-center'
             >
               <img
                 className='mx-auto h-48 w-48 rounded-full md:h-56 md:w-56'

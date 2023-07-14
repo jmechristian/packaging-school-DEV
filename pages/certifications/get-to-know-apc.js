@@ -12,16 +12,20 @@ import Testimonial from '../../components/shared/Testimonial';
 import GradientCTA from '../../components/GradientCTA';
 import CMPMPDP from '../../components/forms/cmpm/CMPMPDP';
 import APCHero from '../../components/certifications/aps/APCHero';
+import APCNavigation from '../../components/certifications/aps/APCNav';
+import APCAbout from '../../components/certifications/aps/APCAbout';
+import APCVideo from '../../components/certifications/aps/APCVideo';
+import APCHow from '../../components/certifications/aps/APCHow';
+import APSExperts from '../../components/certifications/APSExperts';
+import APCStart from '../../components/certifications/aps/APCStart';
 
 const Page = () => {
   return (
     <div className='flex flex-col dark:bg-dark-dark'>
       <APCHero />
-      <CertificateNavigation />
-      <CertificateAbout />
-      <CertificateWhat />
-      <CMPMHow />
-      <CertificateCirriculum />
+      <APCNavigation />
+      <APCAbout />
+      <APCVideo />
       <Testimonial
         id='testimonial-from-tommy-stroman'
         author={{
@@ -37,7 +41,9 @@ const Page = () => {
           dive into the industry!”
         </p>
       </Testimonial>
-      <CMPMWhere />
+      <APCHow />
+      <APSExperts />
+      <APCStart />
       <CMPMReviews />
       <CMPMPDP
         headline='Want to focus on a specific topic?'
