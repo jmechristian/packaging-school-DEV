@@ -3084,7 +3084,7 @@ export const createLMSCollection = /* GraphQL */ `
         nextToken
       }
       hours
-      prince
+      price
       createdAt
       updatedAt
     }
@@ -3113,7 +3113,7 @@ export const updateLMSCollection = /* GraphQL */ `
         nextToken
       }
       hours
-      prince
+      price
       createdAt
       updatedAt
     }
@@ -3142,7 +3142,7 @@ export const deleteLMSCollection = /* GraphQL */ `
         nextToken
       }
       hours
-      prince
+      price
       createdAt
       updatedAt
     }
@@ -5999,7 +5999,7 @@ export const createCollectionCourses = /* GraphQL */ `
           nextToken
         }
         hours
-        prince
+        price
         createdAt
         updatedAt
       }
@@ -6063,7 +6063,7 @@ export const updateCollectionCourses = /* GraphQL */ `
           nextToken
         }
         hours
-        prince
+        price
         createdAt
         updatedAt
       }
@@ -6127,7 +6127,7 @@ export const deleteCollectionCourses = /* GraphQL */ `
           nextToken
         }
         hours
-        prince
+        price
         createdAt
         updatedAt
       }

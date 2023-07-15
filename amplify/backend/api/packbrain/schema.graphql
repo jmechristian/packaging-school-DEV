@@ -320,6 +320,7 @@ type LMSCollection @model @auth(rules: [{ allow: public }]) {
   instructor: String
   instructorImage: String
   instructorDescription: String
+  instructorLink: String
   courses: [LMSCourse] @manyToMany(relationName: "collectionCourses")
   hours: String
   price: Int

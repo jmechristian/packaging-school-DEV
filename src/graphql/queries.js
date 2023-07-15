@@ -2283,7 +2283,7 @@ export const getLMSCollection = /* GraphQL */ `
         nextToken
       }
       hours
-      prince
+      price
       createdAt
       updatedAt
     }
@@ -2307,7 +2307,7 @@ export const listLMSCollections = /* GraphQL */ `
           nextToken
         }
         hours
-        prince
+        price
         createdAt
         updatedAt
       }
@@ -4595,7 +4595,7 @@ export const getCollectionCourses = /* GraphQL */ `
           nextToken
         }
         hours
-        prince
+        price
         createdAt
         updatedAt
       }
@@ -4650,7 +4650,7 @@ export const listCollectionCourses = /* GraphQL */ `
           instructorImage
           instructorDescription
           hours
-          prince
+          price
           createdAt
           updatedAt
         }
@@ -4711,7 +4711,7 @@ export const collectionCoursesByLMSCourseId = /* GraphQL */ `
           instructorImage
           instructorDescription
           hours
-          prince
+          price
           createdAt
           updatedAt
         }
@@ -4772,7 +4772,7 @@ export const collectionCoursesByLMSCollectionId = /* GraphQL */ `
           instructorImage
           instructorDescription
           hours
-          prince
+          price
           createdAt
           updatedAt
         }

@@ -76,6 +76,35 @@ const CourseCard = ({
     }
   };
 
+  const categoryText = () => {
+    switch (category) {
+      case 'Materials':
+        return 'Materials';
+      case 'MATERIALS':
+        return 'Materials';
+      case 'Industry':
+        return 'Industry';
+      case 'INDUSTRY':
+        return 'Industry';
+      case 'Design':
+        return 'Design';
+      case 'DESIGN':
+        return 'Design';
+      case 'FOODANDBEVERAGE':
+        return 'Food & Beverage';
+      case 'Food & Beverage':
+        return 'Food & Beverage';
+      case 'Supply Chain & Logistics':
+        return 'Supply Chain & Logistics';
+      case 'SUPPLYCHAIN':
+        return 'Supply Chain & Logistics';
+      case 'Business':
+        return 'Business';
+      case 'BUSINESS':
+        return 'Business';
+    }
+  };
+
   const openPreview = () => {
     dispatch(setPreviewOpen(video));
   };
@@ -134,7 +163,7 @@ const CourseCard = ({
               <div
                 className={`${textColor()} uppercase text-xs font-bold py-1.5 rounded px-2 tracking-wide`}
               >
-                {category}
+                {categoryText()}
               </div>
 
               <div onClick={toggleFavorite}>
