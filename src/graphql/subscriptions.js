@@ -2918,6 +2918,8 @@ export const onCreateLMSCollection = /* GraphQL */ `
         }
         nextToken
       }
+      hours
+      prince
       createdAt
       updatedAt
     }
@@ -2942,6 +2944,8 @@ export const onUpdateLMSCollection = /* GraphQL */ `
         }
         nextToken
       }
+      hours
+      prince
       createdAt
       updatedAt
     }
@@ -2966,6 +2970,8 @@ export const onDeleteLMSCollection = /* GraphQL */ `
         }
         nextToken
       }
+      hours
+      prince
       createdAt
       updatedAt
     }
@@ -5683,6 +5689,8 @@ export const onCreateCollectionCourses = /* GraphQL */ `
         courses {
           nextToken
         }
+        hours
+        prince
         createdAt
         updatedAt
       }
@@ -5742,6 +5750,8 @@ export const onUpdateCollectionCourses = /* GraphQL */ `
         courses {
           nextToken
         }
+        hours
+        prince
         createdAt
         updatedAt
       }
@@ -5801,6 +5811,8 @@ export const onDeleteCollectionCourses = /* GraphQL */ `
         courses {
           nextToken
         }
+        hours
+        prince
         createdAt
         updatedAt
       }

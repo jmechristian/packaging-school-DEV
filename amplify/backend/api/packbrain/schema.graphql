@@ -322,7 +322,7 @@ type LMSCollection @model @auth(rules: [{ allow: public }]) {
   instructorDescription: String
   courses: [LMSCourse] @manyToMany(relationName: "collectionCourses")
   hours: String
-  prince: Int
+  price: Int
 }
 
 type LMSLesson @model @auth(rules: [{ allow: public }]) {
