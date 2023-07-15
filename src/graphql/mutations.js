@@ -2905,6 +2905,16 @@ export const createLMSCourse = /* GraphQL */ `
       trial_link
       percentComplete
       slug
+      collection {
+        items {
+          id
+          lMSCourseId
+          lMSCollectionId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
       studentCourseEnrolledId
@@ -2965,6 +2975,16 @@ export const updateLMSCourse = /* GraphQL */ `
       trial_link
       percentComplete
       slug
+      collection {
+        items {
+          id
+          lMSCourseId
+          lMSCollectionId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
       studentCourseEnrolledId
@@ -3025,9 +3045,100 @@ export const deleteLMSCourse = /* GraphQL */ `
       trial_link
       percentComplete
       slug
+      collection {
+        items {
+          id
+          lMSCourseId
+          lMSCollectionId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
       studentCourseEnrolledId
+    }
+  }
+`;
+export const createLMSCollection = /* GraphQL */ `
+  mutation CreateLMSCollection(
+    $input: CreateLMSCollectionInput!
+    $condition: ModelLMSCollectionConditionInput
+  ) {
+    createLMSCollection(input: $input, condition: $condition) {
+      id
+      description
+      title
+      instructor
+      instructorImage
+      instructorDescription
+      courses {
+        items {
+          id
+          lMSCourseId
+          lMSCollectionId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateLMSCollection = /* GraphQL */ `
+  mutation UpdateLMSCollection(
+    $input: UpdateLMSCollectionInput!
+    $condition: ModelLMSCollectionConditionInput
+  ) {
+    updateLMSCollection(input: $input, condition: $condition) {
+      id
+      description
+      title
+      instructor
+      instructorImage
+      instructorDescription
+      courses {
+        items {
+          id
+          lMSCourseId
+          lMSCollectionId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteLMSCollection = /* GraphQL */ `
+  mutation DeleteLMSCollection(
+    $input: DeleteLMSCollectionInput!
+    $condition: ModelLMSCollectionConditionInput
+  ) {
+    deleteLMSCollection(input: $input, condition: $condition) {
+      id
+      description
+      title
+      instructor
+      instructorImage
+      instructorDescription
+      courses {
+        items {
+          id
+          lMSCourseId
+          lMSCollectionId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -5243,6 +5354,9 @@ export const createCirriculumCourses = /* GraphQL */ `
         trial_link
         percentComplete
         slug
+        collection {
+          nextToken
+        }
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -5298,6 +5412,9 @@ export const updateCirriculumCourses = /* GraphQL */ `
         trial_link
         percentComplete
         slug
+        collection {
+          nextToken
+        }
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -5353,6 +5470,9 @@ export const deleteCirriculumCourses = /* GraphQL */ `
         trial_link
         percentComplete
         slug
+        collection {
+          nextToken
+        }
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -5399,6 +5519,9 @@ export const createCourseLessons = /* GraphQL */ `
         trial_link
         percentComplete
         slug
+        collection {
+          nextToken
+        }
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -5470,6 +5593,9 @@ export const updateCourseLessons = /* GraphQL */ `
         trial_link
         percentComplete
         slug
+        collection {
+          nextToken
+        }
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -5541,6 +5667,9 @@ export const deleteCourseLessons = /* GraphQL */ `
         trial_link
         percentComplete
         slug
+        collection {
+          nextToken
+        }
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -5612,6 +5741,9 @@ export const createCourseInstructors = /* GraphQL */ `
         trial_link
         percentComplete
         slug
+        collection {
+          nextToken
+        }
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -5687,6 +5819,9 @@ export const updateCourseInstructors = /* GraphQL */ `
         trial_link
         percentComplete
         slug
+        collection {
+          nextToken
+        }
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -5762,6 +5897,9 @@ export const deleteCourseInstructors = /* GraphQL */ `
         trial_link
         percentComplete
         slug
+        collection {
+          nextToken
+        }
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -5790,6 +5928,192 @@ export const deleteCourseInstructors = /* GraphQL */ `
           userStudentIdId
         }
         coursesTaught {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createCollectionCourses = /* GraphQL */ `
+  mutation CreateCollectionCourses(
+    $input: CreateCollectionCoursesInput!
+    $condition: ModelCollectionCoursesConditionInput
+  ) {
+    createCollectionCourses(input: $input, condition: $condition) {
+      id
+      lMSCourseId
+      lMSCollectionId
+      lMSCourse {
+        id
+        courseId
+        category
+        Cirriculum {
+          nextToken
+        }
+        Lessons {
+          nextToken
+        }
+        Instructors {
+          nextToken
+        }
+        price
+        hours
+        lessons
+        videos
+        preview
+        seoImage
+        infoSheet
+        title
+        subheadline
+        what_learned
+        objectives
+        link
+        trial_link
+        percentComplete
+        slug
+        collection {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        studentCourseEnrolledId
+      }
+      lMSCollection {
+        id
+        description
+        title
+        instructor
+        instructorImage
+        instructorDescription
+        courses {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateCollectionCourses = /* GraphQL */ `
+  mutation UpdateCollectionCourses(
+    $input: UpdateCollectionCoursesInput!
+    $condition: ModelCollectionCoursesConditionInput
+  ) {
+    updateCollectionCourses(input: $input, condition: $condition) {
+      id
+      lMSCourseId
+      lMSCollectionId
+      lMSCourse {
+        id
+        courseId
+        category
+        Cirriculum {
+          nextToken
+        }
+        Lessons {
+          nextToken
+        }
+        Instructors {
+          nextToken
+        }
+        price
+        hours
+        lessons
+        videos
+        preview
+        seoImage
+        infoSheet
+        title
+        subheadline
+        what_learned
+        objectives
+        link
+        trial_link
+        percentComplete
+        slug
+        collection {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        studentCourseEnrolledId
+      }
+      lMSCollection {
+        id
+        description
+        title
+        instructor
+        instructorImage
+        instructorDescription
+        courses {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteCollectionCourses = /* GraphQL */ `
+  mutation DeleteCollectionCourses(
+    $input: DeleteCollectionCoursesInput!
+    $condition: ModelCollectionCoursesConditionInput
+  ) {
+    deleteCollectionCourses(input: $input, condition: $condition) {
+      id
+      lMSCourseId
+      lMSCollectionId
+      lMSCourse {
+        id
+        courseId
+        category
+        Cirriculum {
+          nextToken
+        }
+        Lessons {
+          nextToken
+        }
+        Instructors {
+          nextToken
+        }
+        price
+        hours
+        lessons
+        videos
+        preview
+        seoImage
+        infoSheet
+        title
+        subheadline
+        what_learned
+        objectives
+        link
+        trial_link
+        percentComplete
+        slug
+        collection {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        studentCourseEnrolledId
+      }
+      lMSCollection {
+        id
+        description
+        title
+        instructor
+        instructorImage
+        instructorDescription
+        courses {
           nextToken
         }
         createdAt
