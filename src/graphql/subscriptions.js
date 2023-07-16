@@ -2749,16 +2749,7 @@ export const onCreateLMSCourse = /* GraphQL */ `
       trial_link
       percentComplete
       slug
-      collection {
-        items {
-          id
-          lMSCourseId
-          lMSCollectionId
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
+      collection
       createdAt
       updatedAt
       studentCourseEnrolledId
@@ -2816,16 +2807,7 @@ export const onUpdateLMSCourse = /* GraphQL */ `
       trial_link
       percentComplete
       slug
-      collection {
-        items {
-          id
-          lMSCourseId
-          lMSCollectionId
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
+      collection
       createdAt
       updatedAt
       studentCourseEnrolledId
@@ -2883,16 +2865,7 @@ export const onDeleteLMSCourse = /* GraphQL */ `
       trial_link
       percentComplete
       slug
-      collection {
-        items {
-          id
-          lMSCourseId
-          lMSCollectionId
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
+      collection
       createdAt
       updatedAt
       studentCourseEnrolledId
@@ -2908,16 +2881,8 @@ export const onCreateLMSCollection = /* GraphQL */ `
       instructor
       instructorImage
       instructorDescription
-      courses {
-        items {
-          id
-          lMSCourseId
-          lMSCollectionId
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
+      instructorLink
+      courses
       hours
       price
       createdAt
@@ -2934,16 +2899,8 @@ export const onUpdateLMSCollection = /* GraphQL */ `
       instructor
       instructorImage
       instructorDescription
-      courses {
-        items {
-          id
-          lMSCourseId
-          lMSCollectionId
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
+      instructorLink
+      courses
       hours
       price
       createdAt
@@ -2960,16 +2917,8 @@ export const onDeleteLMSCollection = /* GraphQL */ `
       instructor
       instructorImage
       instructorDescription
-      courses {
-        items {
-          id
-          lMSCourseId
-          lMSCollectionId
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
+      instructorLink
+      courses
       hours
       price
       createdAt
@@ -3291,6 +3240,7 @@ export const onCreateStudent = /* GraphQL */ `
           trial_link
           percentComplete
           slug
+          collection
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -3421,6 +3371,7 @@ export const onUpdateStudent = /* GraphQL */ `
           trial_link
           percentComplete
           slug
+          collection
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -3551,6 +3502,7 @@ export const onDeleteStudent = /* GraphQL */ `
           trial_link
           percentComplete
           slug
+          collection
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -5078,9 +5030,7 @@ export const onCreateCirriculumCourses = /* GraphQL */ `
         trial_link
         percentComplete
         slug
-        collection {
-          nextToken
-        }
+        collection
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -5133,9 +5083,7 @@ export const onUpdateCirriculumCourses = /* GraphQL */ `
         trial_link
         percentComplete
         slug
-        collection {
-          nextToken
-        }
+        collection
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -5188,9 +5136,7 @@ export const onDeleteCirriculumCourses = /* GraphQL */ `
         trial_link
         percentComplete
         slug
-        collection {
-          nextToken
-        }
+        collection
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -5234,9 +5180,7 @@ export const onCreateCourseLessons = /* GraphQL */ `
         trial_link
         percentComplete
         slug
-        collection {
-          nextToken
-        }
+        collection
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -5305,9 +5249,7 @@ export const onUpdateCourseLessons = /* GraphQL */ `
         trial_link
         percentComplete
         slug
-        collection {
-          nextToken
-        }
+        collection
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -5376,9 +5318,7 @@ export const onDeleteCourseLessons = /* GraphQL */ `
         trial_link
         percentComplete
         slug
-        collection {
-          nextToken
-        }
+        collection
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -5447,9 +5387,7 @@ export const onCreateCourseInstructors = /* GraphQL */ `
         trial_link
         percentComplete
         slug
-        collection {
-          nextToken
-        }
+        collection
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -5522,9 +5460,7 @@ export const onUpdateCourseInstructors = /* GraphQL */ `
         trial_link
         percentComplete
         slug
-        collection {
-          nextToken
-        }
+        collection
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -5597,9 +5533,7 @@ export const onDeleteCourseInstructors = /* GraphQL */ `
         trial_link
         percentComplete
         slug
-        collection {
-          nextToken
-        }
+        collection
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -5630,189 +5564,6 @@ export const onDeleteCourseInstructors = /* GraphQL */ `
         coursesTaught {
           nextToken
         }
-        createdAt
-        updatedAt
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onCreateCollectionCourses = /* GraphQL */ `
-  subscription OnCreateCollectionCourses {
-    onCreateCollectionCourses {
-      id
-      lMSCourseId
-      lMSCollectionId
-      lMSCourse {
-        id
-        courseId
-        category
-        Cirriculum {
-          nextToken
-        }
-        Lessons {
-          nextToken
-        }
-        Instructors {
-          nextToken
-        }
-        price
-        hours
-        lessons
-        videos
-        preview
-        seoImage
-        infoSheet
-        title
-        subheadline
-        what_learned
-        objectives
-        link
-        trial_link
-        percentComplete
-        slug
-        collection {
-          nextToken
-        }
-        createdAt
-        updatedAt
-        studentCourseEnrolledId
-      }
-      lMSCollection {
-        id
-        description
-        title
-        instructor
-        instructorImage
-        instructorDescription
-        courses {
-          nextToken
-        }
-        hours
-        price
-        createdAt
-        updatedAt
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onUpdateCollectionCourses = /* GraphQL */ `
-  subscription OnUpdateCollectionCourses {
-    onUpdateCollectionCourses {
-      id
-      lMSCourseId
-      lMSCollectionId
-      lMSCourse {
-        id
-        courseId
-        category
-        Cirriculum {
-          nextToken
-        }
-        Lessons {
-          nextToken
-        }
-        Instructors {
-          nextToken
-        }
-        price
-        hours
-        lessons
-        videos
-        preview
-        seoImage
-        infoSheet
-        title
-        subheadline
-        what_learned
-        objectives
-        link
-        trial_link
-        percentComplete
-        slug
-        collection {
-          nextToken
-        }
-        createdAt
-        updatedAt
-        studentCourseEnrolledId
-      }
-      lMSCollection {
-        id
-        description
-        title
-        instructor
-        instructorImage
-        instructorDescription
-        courses {
-          nextToken
-        }
-        hours
-        price
-        createdAt
-        updatedAt
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onDeleteCollectionCourses = /* GraphQL */ `
-  subscription OnDeleteCollectionCourses {
-    onDeleteCollectionCourses {
-      id
-      lMSCourseId
-      lMSCollectionId
-      lMSCourse {
-        id
-        courseId
-        category
-        Cirriculum {
-          nextToken
-        }
-        Lessons {
-          nextToken
-        }
-        Instructors {
-          nextToken
-        }
-        price
-        hours
-        lessons
-        videos
-        preview
-        seoImage
-        infoSheet
-        title
-        subheadline
-        what_learned
-        objectives
-        link
-        trial_link
-        percentComplete
-        slug
-        collection {
-          nextToken
-        }
-        createdAt
-        updatedAt
-        studentCourseEnrolledId
-      }
-      lMSCollection {
-        id
-        description
-        title
-        instructor
-        instructorImage
-        instructorDescription
-        courses {
-          nextToken
-        }
-        hours
-        price
         createdAt
         updatedAt
       }

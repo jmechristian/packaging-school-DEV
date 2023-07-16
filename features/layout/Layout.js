@@ -13,7 +13,7 @@ import { useUser } from '@auth0/nextjs-auth0/client';
 import { API, graphqlOperation } from 'aws-amplify';
 import CoursePreview from '../../components/course-card/CoursePreview';
 import { usersByEmail, listLMSCourses } from '../../src/graphql/queries';
-import { createUser } from '../../src/graphql/mutations';
+import { createUser, updateLMSCourse } from '../../src/graphql/mutations';
 import { onUpdateUser } from '../../src/graphql/subscriptions';
 import HeaderNew from '../navigation/Header/HeaderNew';
 import SearchContainer from '../../components/search/SearchContainer';
@@ -69,8 +69,10 @@ const Layout = ({ children }) => {
   useEffect(() => {
     const getCourses = async () => {
       const courses = await API.graphql({ query: listLMSCourses });
-
-      dispatch(setAllCourses(courses.data.listLMSCourses.items));
+      const filteredOutCollections = courses.data.listLMSCourses.items.filter(
+        (course) => course.collection[0] === 'null'
+      );
+      dispatch(setAllCourses(filteredOutCollections));
     };
 
     getCourses();
