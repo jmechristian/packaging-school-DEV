@@ -33,22 +33,24 @@ const Page = ({ collection }) => {
           <h1 className='text-4xl xl:text-5xl leading-tight max-w-3xl dark:text-white'>
             {collection && collection.title}
           </h1>
-          <h3 className='dark:text-white text-xl'>{collection.subtitle}</h3>
+          <h3 className='dark:text-white text-xl'>
+            {collection && collection.subtitle}
+          </h3>
           <p className='dark:text-gray-400'>
             <a
-              href={collection.instructorLink}
+              href={collection && collection.instructorLink}
               target='_blank'
               rel='noreferrer'
             >
-              {collection.instructor}
+              {collection && collection.instructor}
             </a>
           </p>
           <p className='text-base lg:text-lg dark:text-gray-500 text-gray-600 max-w-4xl'>
-            {collection.description}
+            {collection && collection.description}
           </p>
           <CTAButton
             text={'Enroll Now'}
-            click={() => router.push(collection.lmsLink)}
+            click={() => router.push(collection && collection.lmsLink)}
           />
         </div>
         <div className='flex flex-col gap-6'>
