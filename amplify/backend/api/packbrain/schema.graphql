@@ -313,20 +313,20 @@ type LMSCourse @model @auth(rules: [{ allow: public }]) {
   collection: [String]
 }
 
-type LMSCollection @model @auth(rules: [{ allow: public }]) {
-  id: ID!
-  description: String
-  title: String!
-  subtitle: String
-  instructor: String
-  instructorImage: String
-  instructorDescription: String
-  instructorLink: String
-  courses: [String]
-  hours: String
-  price: Int
-  slug: String! @index(name: "LMScollectionBySlug")
-}
+# type LMSCollection @model @auth(rules: [{ allow: public }]) {
+#   id: ID!
+#   description: String
+#   title: String!
+#   subtitle: String
+#   instructor: String
+#   instructorImage: String
+#   instructorDescription: String
+#   instructorLink: String
+#   courses: [String]
+#   hours: String
+#   price: Int
+#   slug: String! @index(name: "LMScollectionBySlug")
+# }
 
 type LMSLesson @model @auth(rules: [{ allow: public }]) {
   id: ID!
