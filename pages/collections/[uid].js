@@ -52,7 +52,7 @@ const Page = ({ collection }) => {
           />
         </div>
         <div className='flex flex-col gap-6'>
-          <FadeIn>
+          {/* <FadeIn>
             <div className='grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'>
               {collectionCourses.length > 0 &&
                 collectionCourses.map((course) => (
@@ -70,7 +70,7 @@ const Page = ({ collection }) => {
                   </div>
                 ))}
             </div>
-          </FadeIn>
+          </FadeIn> */}
         </div>
       </div>
     </div>
