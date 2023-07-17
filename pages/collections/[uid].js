@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {
   listLMSCollections,
+  listLMSCourses,
   lMSCollectionsBySlug,
 } from '../../src/graphql/queries';
 import { API } from 'aws-amplify';
@@ -10,21 +11,10 @@ import { useSelector } from 'react-redux';
 import FadeIn from '../../helpers/FadeIn';
 import ShortCourseCard from '../../components/shared/ShortCourseCard';
 
-const Page = ({ collection }) => {
-  console.log(collection);
-  const { allCourses } = useSelector((state) => state.course_filter);
-  const router = useRouter();
-  const [collectionCourses, setCollectionCourses] = useState([]);
-  // useEffect(() => {
-  //   const filterArray = (array1, array2) => {
-  //     const filtered = array1.filter((el) => {
-  //       return array2.indexOf(el.id) != -1;
-  //     });
-  //     setCollectionCourses(filtered);
-  //   };
+const Page = ({ collection, courses }) => {
+  console.log(courses);
 
-  //   allCourses && filterArray(allCourses, collection.courses);
-  // }, [allCourses]);
+  const router = useRouter();
 
   return (
     <div className='relative dark:bg-dark-dark py-24'>
@@ -54,10 +44,10 @@ const Page = ({ collection }) => {
           />
         </div>
         <div className='flex flex-col gap-6'>
-          {/* <FadeIn>
+          <FadeIn>
             <div className='grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'>
-              {collectionCourses.length > 0 &&
-                collectionCourses.map((course) => (
+              {courses.length > 0 &&
+                courses.map((course) => (
                   <div key={course.id}>
                     <ShortCourseCard
                       courseId={course.id}
@@ -72,7 +62,7 @@ const Page = ({ collection }) => {
                   </div>
                 ))}
             </div>
-          </FadeIn> */}
+          </FadeIn>
         </div>
       </div>
     </div>
@@ -98,7 +88,19 @@ export async function getStaticProps({ params }) {
   });
   const collection = res.data.lMSCollectionsBySlug.items[0];
 
+  const collectionId = collection.id;
+
+  const collectionCourses = await API.graphql({
+    query: listLMSCourses,
+    variables: {
+      filter: {
+        collection: { contains: collectionId },
+      },
+    },
+  });
+  const courses = collectionCourses.data.listLMSCourses.items;
+
   return {
-    props: { collection },
+    props: { collection, courses },
   };
 }
