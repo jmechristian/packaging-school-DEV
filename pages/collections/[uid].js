@@ -15,16 +15,16 @@ const Page = ({ collection }) => {
   const { allCourses } = useSelector((state) => state.course_filter);
   const router = useRouter();
   const [collectionCourses, setCollectionCourses] = useState([]);
-  useEffect(() => {
-    const filterArray = (array1, array2) => {
-      const filtered = array1.filter((el) => {
-        return array2.indexOf(el.id) != -1;
-      });
-      setCollectionCourses(filtered);
-    };
+  // useEffect(() => {
+  //   const filterArray = (array1, array2) => {
+  //     const filtered = array1.filter((el) => {
+  //       return array2.indexOf(el.id) != -1;
+  //     });
+  //     setCollectionCourses(filtered);
+  //   };
 
-    allCourses && filterArray(allCourses, collection.courses);
-  }, [allCourses]);
+  //   allCourses && filterArray(allCourses, collection.courses);
+  // }, [allCourses]);
 
   return (
     <div className='relative dark:bg-dark-dark py-24'>
