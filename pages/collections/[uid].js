@@ -12,8 +12,6 @@ import FadeIn from '../../helpers/FadeIn';
 import ShortCourseCard from '../../components/shared/ShortCourseCard';
 
 const Page = ({ collection, courses }) => {
-  console.log(courses);
-
   const router = useRouter();
 
   return (
@@ -46,7 +44,7 @@ const Page = ({ collection, courses }) => {
         <div className='flex flex-col gap-6'>
           <FadeIn>
             <div className='grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'>
-              {courses.length > 0 &&
+              {courses &&
                 courses.map((course) => (
                   <div key={course.id}>
                     <ShortCourseCard
