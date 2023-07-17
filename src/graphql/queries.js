@@ -2264,6 +2264,7 @@ export const getLMSCollection = /* GraphQL */ `
       courses
       hours
       price
+      slug
       createdAt
       updatedAt
     }
@@ -2288,6 +2289,42 @@ export const listLMSCollections = /* GraphQL */ `
         courses
         hours
         price
+        slug
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const lMSCollectionsBySlug = /* GraphQL */ `
+  query LMSCollectionsBySlug(
+    $slug: String!
+    $sortDirection: ModelSortDirection
+    $filter: ModelLMSCollectionFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    lMSCollectionsBySlug(
+      slug: $slug
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        description
+        title
+        subtitle
+        instructor
+        instructorImage
+        instructorDescription
+        instructorLink
+        courses
+        hours
+        price
+        slug
         createdAt
         updatedAt
       }

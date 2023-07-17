@@ -3051,6 +3051,7 @@ export const createLMSCollection = /* GraphQL */ `
       courses
       hours
       price
+      slug
       createdAt
       updatedAt
     }
@@ -3073,6 +3074,7 @@ export const updateLMSCollection = /* GraphQL */ `
       courses
       hours
       price
+      slug
       createdAt
       updatedAt
     }
@@ -3095,6 +3097,7 @@ export const deleteLMSCollection = /* GraphQL */ `
       courses
       hours
       price
+      slug
       createdAt
       updatedAt
     }
