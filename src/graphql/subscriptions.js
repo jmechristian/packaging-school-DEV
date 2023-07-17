@@ -2878,6 +2878,7 @@ export const onCreateLMSCollection = /* GraphQL */ `
       id
       description
       title
+      subtitle
       instructor
       instructorImage
       instructorDescription
@@ -2896,6 +2897,7 @@ export const onUpdateLMSCollection = /* GraphQL */ `
       id
       description
       title
+      subtitle
       instructor
       instructorImage
       instructorDescription
@@ -2914,6 +2916,7 @@ export const onDeleteLMSCollection = /* GraphQL */ `
       id
       description
       title
+      subtitle
       instructor
       instructorImage
       instructorDescription

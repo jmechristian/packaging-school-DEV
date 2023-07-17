@@ -2256,6 +2256,7 @@ export const getLMSCollection = /* GraphQL */ `
       id
       description
       title
+      subtitle
       instructor
       instructorImage
       instructorDescription
@@ -2279,6 +2280,7 @@ export const listLMSCollections = /* GraphQL */ `
         id
         description
         title
+        subtitle
         instructor
         instructorImage
         instructorDescription
