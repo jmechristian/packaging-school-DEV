@@ -72,9 +72,7 @@ const Layout = ({ children }) => {
         query: listLMSCourses,
         variables: { filter: { collection: { contains: 'null' } } },
       });
-      // const filteredOutCollections = courses.data.listLMSCourses.items.filter(
-      //   (course) => course.collection[0] === 'null'
-      // );
+
       dispatch(setAllCourses(courses.data.listLMSCourses.items));
     };
 

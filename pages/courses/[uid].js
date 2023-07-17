@@ -26,7 +26,10 @@ const Page = ({ course }) => {
 export default Page;
 
 export async function getStaticPaths() {
-  const res = await API.graphql({ query: listLMSCourses });
+  const res = await API.graphql({
+    query: listLMSCourses,
+    variables: { filter: { collection: { contains: 'null' } } },
+  });
   const paths = res.data.listLMSCourses.items.map((course) => ({
     params: { uid: course.slug },
   }));
