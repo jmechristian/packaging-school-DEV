@@ -317,6 +317,7 @@ type LMSCollection @model @auth(rules: [{ allow: public }]) {
   id: ID!
   description: String
   title: String!
+  subtitle: String
   instructor: String
   instructorImage: String
   instructorDescription: String
@@ -324,6 +325,8 @@ type LMSCollection @model @auth(rules: [{ allow: public }]) {
   courses: [String]
   hours: String
   price: Int
+  slug: String! @index(name: "LMScollectionBySlug")
+  lmsLink: String
 }
 
 type LMSLesson @model @auth(rules: [{ allow: public }]) {
