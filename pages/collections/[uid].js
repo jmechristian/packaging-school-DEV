@@ -31,7 +31,7 @@ const Page = ({ collection }) => {
       <div className='flex flex-col gap-16  container-7xl'>
         <div className='flex flex-col gap-6'>
           <h1 className='text-4xl xl:text-5xl leading-tight max-w-3xl dark:text-white'>
-            {collection.title}
+            {collection && collection.title}
           </h1>
           <h3 className='dark:text-white text-xl'>{collection.subtitle}</h3>
           <p className='dark:text-gray-400'>
