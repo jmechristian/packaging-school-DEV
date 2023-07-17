@@ -199,14 +199,16 @@ const CourseCard = ({
               </div>
             </div>
             <div className='flex gap-2'>
-              <div
-                className='w-9 h-9 rounded bg-black/80 flex justify-center items-center cursor-pointer'
-                onClick={openPreview}
-              >
-                <div>
-                  <VideoCameraIcon className='w-5 h-5 text-white' />
+              {video && (
+                <div
+                  className='w-9 h-9 rounded bg-black/80 flex justify-center items-center cursor-pointer'
+                  onClick={openPreview}
+                >
+                  <div>
+                    <VideoCameraIcon className='w-5 h-5 text-white' />
+                  </div>
                 </div>
-              </div>
+              )}
               <div
                 className='w-9 h-9 rounded bg-black/80 flex justify-center items-center cursor-pointer'
                 onClick={() => router.push(`/courses/${slug}`)}

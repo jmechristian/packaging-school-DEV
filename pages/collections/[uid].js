@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   listLMSCollections,
   lMSCollectionsBySlug,
@@ -6,9 +6,26 @@ import {
 import { API } from 'aws-amplify';
 import CTAButton from '../../components/shared/CTAButton';
 import { useRouter } from 'next/router';
+import { useSelector } from 'react-redux';
+import FadeIn from '../../helpers/FadeIn';
+import ShortCourseCard from '../../components/shared/ShortCourseCard';
 
 const Page = ({ collection }) => {
+  console.log(collection);
+  const { allCourses } = useSelector((state) => state.course_filter);
   const router = useRouter();
+  const [collectionCourses, setCollectionCourses] = useState([]);
+  useEffect(() => {
+    const filterArray = (array1, array2) => {
+      const filtered = array1.filter((el) => {
+        return array2.indexOf(el.id) != -1;
+      });
+      setCollectionCourses(filtered);
+    };
+
+    allCourses && filterArray(allCourses, collection.courses);
+  }, [allCourses]);
+
   return (
     <div className='relative dark:bg-dark-dark py-24'>
       <div className='flex flex-col gap-16  container-7xl'>
@@ -35,11 +52,25 @@ const Page = ({ collection }) => {
           />
         </div>
         <div className='flex flex-col gap-6'>
-          <div className='grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
-            <div className='w-full dark:bg-dark-mid p-4'>
-              <div className='flex fle'
+          <FadeIn>
+            <div className='grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'>
+              {collectionCourses.length > 0 &&
+                collectionCourses.map((course) => (
+                  <div key={course.id}>
+                    <ShortCourseCard
+                      courseId={course.id}
+                      title={course.title}
+                      desc={course.subheadline}
+                      hours={course.hours}
+                      price={course.price}
+                      slug={course.slug}
+                      category={course.category}
+                      video={course.preview}
+                    />
+                  </div>
+                ))}
             </div>
-          </div>
+          </FadeIn>
         </div>
       </div>
     </div>

@@ -19,7 +19,7 @@ const AllCourseBody = () => {
 
   return (
     <div className='bg-slate-100 dark:bg-dark-dark'>
-      {coursesToShow && (
+      {allCourses && (
         <>
           <AllCourseBodyMobile coursesToShow={coursesToShow} />
           <AllCourseBodyDesktop coursesToShow={coursesToShow} />

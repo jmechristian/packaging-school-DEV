@@ -326,7 +326,8 @@ type LMSCollection @model @auth(rules: [{ allow: public }]) {
   hours: String
   price: Int
   slug: String! @index(name: "LMScollectionBySlug")
-  category: CategoryType @default(value: "MATERIAL")
+  category: CategoryType @default(value: "INDUSTRY")
+  collectionId: String
 }
 
 type LMSLesson @model @auth(rules: [{ allow: public }]) {

@@ -14,20 +14,61 @@ const CourseIntro = ({
   lessons,
   videos,
 }) => {
-  const backgroundColor = () => {
+  const textColor = () => {
     switch (category) {
+      case 'Materials':
+        return 'bg-base-dark text-white';
       case 'MATERIALS':
-        return 'bg-blue-900';
+        return 'bg-base-dark text-white';
+      case 'Industry':
+        return 'bg-base-brand';
       case 'INDUSTRY':
-        return 'bg-red-800';
+        return 'bg-base-brand text-white';
+      case 'Design':
+        return 'bg-clemson';
       case 'DESIGN':
-        return 'bg-green-800';
+        return 'bg-clemson';
+      case 'FOODANDBEVERAGE':
+        return 'bg-base-light text-slate-900';
       case 'Food & Beverage':
-        return 'bg-cyan-900';
+        return 'bg-base-light text-slate-900';
       case 'Supply Chain & Logistics':
-        return 'bg-fuchsia-700';
+        return 'bg-clemson-dark text-white';
+      case 'SUPPLYCHAIN':
+        return 'bg-clemson-dark text-white';
       case 'Business':
-        return 'bg-violet-800';
+        return 'bg-green-600';
+      case 'BUSINESS':
+        return 'bg-green-600';
+    }
+  };
+
+  const categoryText = () => {
+    switch (category) {
+      case 'Materials':
+        return 'Materials';
+      case 'MATERIALS':
+        return 'Materials';
+      case 'Industry':
+        return 'Industry';
+      case 'INDUSTRY':
+        return 'Industry';
+      case 'Design':
+        return 'Design';
+      case 'DESIGN':
+        return 'Design';
+      case 'FOODANDBEVERAGE':
+        return 'Food & Beverage';
+      case 'Food & Beverage':
+        return 'Food & Beverage';
+      case 'Supply Chain & Logistics':
+        return 'Supply Chain & Logistics';
+      case 'SUPPLYCHAIN':
+        return 'Supply Chain & Logistics';
+      case 'Business':
+        return 'Business';
+      case 'BUSINESS':
+        return 'Business';
     }
   };
 
@@ -39,9 +80,9 @@ const CourseIntro = ({
             {id}
           </div>
         </div>
-        <div className={` ${backgroundColor()} max-w-fit rounded-md`}>
-          <div className=' text-white text-xs lg:text-sm flex py-1 px-3'>
-            {category}
+        <div className={` ${textColor()} max-w-fit rounded-md`}>
+          <div className=' text-xs lg:text-sm flex py-1 px-3'>
+            {categoryText()}
           </div>
         </div>
       </div>

@@ -68,11 +68,14 @@ const Layout = ({ children }) => {
 
   useEffect(() => {
     const getCourses = async () => {
-      const courses = await API.graphql({ query: listLMSCourses });
-      const filteredOutCollections = courses.data.listLMSCourses.items.filter(
-        (course) => course.collection[0] === 'null'
-      );
-      dispatch(setAllCourses(filteredOutCollections));
+      const courses = await API.graphql({
+        query: listLMSCourses,
+        variables: { filter: { collection: { contains: 'null' } } },
+      });
+      // const filteredOutCollections = courses.data.listLMSCourses.items.filter(
+      //   (course) => course.collection[0] === 'null'
+      // );
+      dispatch(setAllCourses(courses.data.listLMSCourses.items));
     };
 
     getCourses();

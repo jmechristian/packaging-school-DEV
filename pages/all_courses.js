@@ -10,10 +10,11 @@ import { listLMSCourses } from '../src/graphql/queries';
 
 const AllCourses = ({ courses }) => {
   const dispatch = useDispatch();
+  const { allCourses } = useSelector((state) => state.course_filter);
 
   return (
     <>
-      <AllCoursesMain courses={courses} />
+      <AllCoursesMain courses={allCourses && allCourses} />
     </>
   );
 };

@@ -2265,6 +2265,8 @@ export const getLMSCollection = /* GraphQL */ `
       hours
       price
       slug
+      category
+      collectionId
       createdAt
       updatedAt
     }
@@ -2290,6 +2292,8 @@ export const listLMSCollections = /* GraphQL */ `
         hours
         price
         slug
+        category
+        collectionId
         createdAt
         updatedAt
       }
@@ -2325,6 +2329,8 @@ export const lMSCollectionsBySlug = /* GraphQL */ `
         hours
         price
         slug
+        category
+        collectionId
         createdAt
         updatedAt
       }
