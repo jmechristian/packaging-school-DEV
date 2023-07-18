@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import {
   ArrowSmallRightIcon,
   VideoCameraIcon,
+  StarIcon,
 } from '@heroicons/react/24/solid';
-import { useDispatch } from 'react-redux';
+import { API } from 'aws-amplify';
+import { updateUser } from '../../src/graphql/mutations';
+import { useDispatch, useSelector } from 'react-redux';
 import { setPreviewOpen } from '../../features/all_courses/courseFilterSlice';
 import { useRouter } from 'next/router';
 
@@ -16,9 +19,23 @@ const ShortCourseCard = ({
   slug,
   hours,
   video,
+  courseId,
 }) => {
   const dispatch = useDispatch();
   const router = useRouter();
+  const { user } = useSelector((state) => state.auth);
+  const [userArray, setUserArray] = useState([]);
+
+  const isFavorited = useMemo(
+    () => user && user.savedCourses && user.savedCourses.includes(courseId),
+    [user, courseId]
+  );
+
+  useEffect(() => {
+    user && user.savedCourses
+      ? setUserArray([...user.savedCourses])
+      : setUserArray([]);
+  }, [user]);
 
   const textColor = () => {
     switch (category) {
@@ -82,6 +99,51 @@ const ShortCourseCard = ({
     dispatch(setPreviewOpen(video));
   };
 
+  const toggleFavorite = async () => {
+    if (!user) {
+      dispatch(toggleSignInModal());
+    }
+    if (isFavorited) {
+      let finalArray;
+      const newArray = [...userArray];
+      const index = newArray.indexOf(courseId);
+      console.log(index);
+      finalArray = newArray.toSpliced(index, 1);
+      console.log(finalArray);
+      const res = await API.graphql({
+        query: updateUser,
+        variables: {
+          input: {
+            id: user.id,
+            savedCourses: finalArray,
+          },
+        },
+      });
+
+      if (res.errors) {
+        console.log(res.errors);
+      }
+    }
+
+    if (user && !isFavorited) {
+      // setIsFavorite(true);
+      let newishArray = [...userArray, courseId];
+      const res = await API.graphql({
+        query: updateUser,
+        variables: {
+          input: {
+            id: user.id,
+            savedCourses: newishArray,
+          },
+        },
+      });
+
+      if (res.errors) {
+        console.log(res.errors);
+      }
+    }
+  };
+
   return (
     <motion.div className='w-full max-w-[300px] lg:max-w-[350px] dark:bg-dark-mid text-white bg-slate-200 rounded-xl shadow-lg aspect-1'>
       <div className='p-4 flex flex-col justify-between h-full'>
@@ -91,6 +153,15 @@ const ShortCourseCard = ({
               className={`${textColor()} uppercase text-xs font-bold py-1.5 rounded px-2 tracking-wide`}
             >
               {categoryText()}
+            </div>
+            <div onClick={toggleFavorite}>
+              <StarIcon
+                className={`w-6 h-6 cursor-pointer ${
+                  isFavorited
+                    ? 'text-yellow-500'
+                    : 'text-slate-400 dark:text-neutral-600'
+                } `}
+              />
             </div>
           </div>
           <div className='font-semibold text-xl font-greycliff leading-tight line-clamp-2 text-slate-900 dark:text-white'>
