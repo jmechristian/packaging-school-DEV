@@ -9,16 +9,16 @@ const nextConfig = {
       'tailwindui.com',
     ],
   },
-  // async redirects() {
-  //   return [
-  //     // Path Matching - will match `/old-blog/a`, but not `/old-blog/a/b`
-  //     {
-  //       source: '/get-to-know-cmpm',
-  //       destination: '/blog/:slug',
-  //       permanent: true,
-  //     },
-  //   ];
-  // },
+  async redirects() {
+    return [
+      // Path Matching - will match `/old-blog/a`, but not `/old-blog/a/b`
+      {
+        source: '/courses/packdesign-workshop',
+        destination: 'https://library.packagingschool.com/packdesign-workshop',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
