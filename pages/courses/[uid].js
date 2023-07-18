@@ -13,7 +13,7 @@ const Page = ({ course }) => {
   return (
     <div className='relative'>
       <CourseMain data={course} />
-      <CourseBottom related={[]} />
+      <CourseBottom category={course.category} id={course.id} />
       {preview && <CoursePreview close={() => dispatch(setPreviewClosed())} />}
       <CourseContentMenu
         link={course && course.link}
