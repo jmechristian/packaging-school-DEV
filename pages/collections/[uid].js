@@ -16,7 +16,7 @@ const Page = ({ collection, courses }) => {
 
   return (
     <div className='relative dark:bg-dark-dark py-24'>
-      <div className='flex flex-col gap-16  container-7xl'>
+      <div className='flex flex-col gap-24  container-7xl'>
         <div className='flex flex-col gap-6'>
           <h1 className='text-4xl xl:text-5xl leading-tight max-w-3xl dark:text-white'>
             {collection && collection.title}
@@ -36,14 +36,21 @@ const Page = ({ collection, courses }) => {
           <p className='text-base lg:text-lg dark:text-gray-500 text-gray-600 max-w-4xl'>
             {collection && collection.description}
           </p>
-          <CTAButton
-            text={'Enroll Now'}
-            click={() =>
-              router.push(collection && collection.lmsLink, '_blank')
-            }
-          />
+          {collection.link && (
+            <CTAButton
+              text={'Enroll Now'}
+              click={() =>
+                router.push(collection && collection.lmsLink, '_blank')
+              }
+            />
+          )}
         </div>
         <div className='flex flex-col gap-6'>
+          <FadeIn>
+            <h3 className='dark:text-white text-xl lg:text-2xl'>
+              Courses Included
+            </h3>
+          </FadeIn>
           <FadeIn>
             <div className='grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'>
               {courses &&

@@ -60,7 +60,7 @@ const cirriculum = [
     title: 'Pack Design Workshop',
     subtitle:
       'Master the fundamentals of packaging design in this immersive, online workshop. Work through the design process from ideation to building your own digital prototypes.',
-    link: 'https://library.packagingschool.com/packdesign-camp',
+    link: 'https://library.packagingschool.com/packdesign-workshop',
     type: 'WORKSHOP',
     icon: (
       <WorkshopIcon className='w-9 h-9 fill-transparent stroke-slate-400 stroke-2' />

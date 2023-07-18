@@ -54,7 +54,7 @@ const CourseMenuBlock = ({ onClose }) => {
           <FoodIcon style='h-6 w-6 stroke-white stroke-2 fill-transparent' />
         }
         category='Food & Beverage'
-        value='food'
+        value='FOODANDBEVERAGE'
         desc='Learn in partnership with the International Society of Beverage Technologists (ISBT).'
         setFilter={categoryClickHandler}
       />
