@@ -26,6 +26,7 @@ const CourseCard = ({
   category,
   courseId,
   savedCourses,
+  type,
   slug,
 }) => {
   const dispatch = useDispatch();
@@ -211,7 +212,13 @@ const CourseCard = ({
               )}
               <div
                 className='w-9 h-9 rounded bg-black/80 flex justify-center items-center cursor-pointer'
-                onClick={() => router.push(`/courses/${slug}`)}
+                onClick={() =>
+                  router.push(
+                    `/${
+                      type && type === 'COLLECTION' ? 'collections' : 'courses'
+                    }/${slug}`
+                  )
+                }
               >
                 <ArrowSmallRightIcon className='w-5 h-5 text-white' />
               </div>

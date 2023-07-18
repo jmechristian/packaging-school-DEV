@@ -29,7 +29,7 @@ const Loading = () => {
     <AnimatePresence mode='wait' initial={false}>
       {loading && (
         <motion.div
-          className='fixed inset-0 z-[200] bg-base-mid dark:bg-dark-mid flex flex-col gap-12 justify-center items-center'
+          className='fixed inset-0 z-[200] bg-base-mid dark:bg-clemson flex flex-col gap-12 justify-center items-center'
           initial={{ x: '100%' }}
           animate={{ x: 0, opacity: 1 }}
           exit={{ x: '-100%' }}
@@ -39,14 +39,14 @@ const Loading = () => {
             bounce: 0,
           }}
         >
-          <motion.div
+          {/* <motion.div
             className='rounded-full  h-[33%] md:h-[50%] aspect-1 bg-cover bg-center opacity-70 relative'
             // style={{ backgroundImage: `url('/images/sky.jpg')` }}
           >
             <FadeIn>
               <Lottie animationData={loadingAnimation} loop={true} />
             </FadeIn>
-          </motion.div>
+          </motion.div> */}
           <motion.div className='font-semibold text-xl md:text-3xl text-white'>
             Expertise <span className='italic'>Inbound...</span>
           </motion.div>

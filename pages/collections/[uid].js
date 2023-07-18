@@ -92,7 +92,7 @@ export async function getStaticProps({ params }) {
     query: listLMSCourses,
     variables: {
       filter: {
-        collection: { contains: collectionId },
+        collection: { contains: collection.id },
       },
     },
   });

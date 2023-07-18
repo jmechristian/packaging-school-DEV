@@ -29,6 +29,7 @@ const AllCourseCourses = ({ selectedFilter, coursesToShow }) => {
               slug={course.slug}
               category={course.category}
               savedCourses={user?.savedCourses}
+              type={course.type ? course.type : undefined}
             />
           </div>
         ))}

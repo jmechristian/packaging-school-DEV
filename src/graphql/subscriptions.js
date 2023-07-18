@@ -2704,6 +2704,7 @@ export const onCreateLMSCourse = /* GraphQL */ `
       id
       courseId
       category
+      type
       Cirriculum {
         items {
           id
@@ -2762,6 +2763,7 @@ export const onUpdateLMSCourse = /* GraphQL */ `
       id
       courseId
       category
+      type
       Cirriculum {
         items {
           id
@@ -2820,6 +2822,7 @@ export const onDeleteLMSCourse = /* GraphQL */ `
       id
       courseId
       category
+      type
       Cirriculum {
         items {
           id
@@ -3237,6 +3240,7 @@ export const onCreateStudent = /* GraphQL */ `
           id
           courseId
           category
+          type
           price
           hours
           lessons
@@ -3368,6 +3372,7 @@ export const onUpdateStudent = /* GraphQL */ `
           id
           courseId
           category
+          type
           price
           hours
           lessons
@@ -3499,6 +3504,7 @@ export const onDeleteStudent = /* GraphQL */ `
           id
           courseId
           category
+          type
           price
           hours
           lessons
@@ -5018,6 +5024,7 @@ export const onCreateCirriculumCourses = /* GraphQL */ `
         id
         courseId
         category
+        type
         Cirriculum {
           nextToken
         }
@@ -5071,6 +5078,7 @@ export const onUpdateCirriculumCourses = /* GraphQL */ `
         id
         courseId
         category
+        type
         Cirriculum {
           nextToken
         }
@@ -5124,6 +5132,7 @@ export const onDeleteCirriculumCourses = /* GraphQL */ `
         id
         courseId
         category
+        type
         Cirriculum {
           nextToken
         }
@@ -5168,6 +5177,7 @@ export const onCreateCourseLessons = /* GraphQL */ `
         id
         courseId
         category
+        type
         Cirriculum {
           nextToken
         }
@@ -5237,6 +5247,7 @@ export const onUpdateCourseLessons = /* GraphQL */ `
         id
         courseId
         category
+        type
         Cirriculum {
           nextToken
         }
@@ -5306,6 +5317,7 @@ export const onDeleteCourseLessons = /* GraphQL */ `
         id
         courseId
         category
+        type
         Cirriculum {
           nextToken
         }
@@ -5375,6 +5387,7 @@ export const onCreateCourseInstructors = /* GraphQL */ `
         id
         courseId
         category
+        type
         Cirriculum {
           nextToken
         }
@@ -5448,6 +5461,7 @@ export const onUpdateCourseInstructors = /* GraphQL */ `
         id
         courseId
         category
+        type
         Cirriculum {
           nextToken
         }
@@ -5521,6 +5535,7 @@ export const onDeleteCourseInstructors = /* GraphQL */ `
         id
         courseId
         category
+        type
         Cirriculum {
           nextToken
         }
