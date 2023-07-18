@@ -17,7 +17,7 @@ import CourseMenuBlock from '../shared/CourseMenuBlock';
 import MobileMenuCoursesCallout from '../MobileMenu/MobileMenuComponents/MobileMenuCoursesCallout';
 import CertMegaCallout from '../../../components/nav/CertMegaCallout';
 import { showSearch } from '../navigationSlice';
-import { setDark, setLight } from '../../layout/layoutSlice';
+import { setDark, setLight, toggleSignInModal } from '../../layout/layoutSlice';
 import { useDispatch } from 'react-redux';
 import { LightBulbIcon } from '@heroicons/react/24/outline';
 import { MoonIcon, BoltIcon } from '@heroicons/react/24/solid';
@@ -467,14 +467,26 @@ export default function HeaderNew() {
                         </div>
 
                         <div className='flex'>
-                          <Link href='/profile'>
-                            <a className='-m-2 p-2 text-slate-400 hover:text-slate-500 dark:text-white/40'>
+                          {user ? (
+                            <Link href='/profile'>
+                              <a className='-m-2 p-2 text-slate-400 hover:text-slate-500 dark:text-white/40 cursor-pointer'>
+                                <UserIcon
+                                  className='h-6 w-6'
+                                  aria-hidden='true'
+                                />
+                              </a>
+                            </Link>
+                          ) : (
+                            <div
+                              className='-m-2 p-2 text-slate-400 hover:text-slate-500 dark:text-white/40 cursor-pointer'
+                              onClick={() => dispatch(toggleSignInModal())}
+                            >
                               <UserIcon
                                 className='h-6 w-6'
                                 aria-hidden='true'
                               />
-                            </a>
-                          </Link>
+                            </div>
+                          )}
                         </div>
                       </div>
 

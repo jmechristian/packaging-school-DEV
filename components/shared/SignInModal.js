@@ -2,6 +2,7 @@ import { Fragment, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { CheckIcon, RocketLaunchIcon } from '@heroicons/react/24/outline';
 import { useRouter } from 'next/router';
+import CTAButton from '../shared/CTAButton';
 
 export default function SignInModal({ open, setOpen }) {
   const router = useRouter();
@@ -37,39 +38,45 @@ export default function SignInModal({ open, setOpen }) {
               leaveFrom='opacity-100 translate-y-0 sm:scale-100'
               leaveTo='opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95'
             >
-              <Dialog.Panel className='relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-9'>
-                <div>
-                  <div className='mx-auto flex h-28 w-28 items-center justify-center rounded-full bg-gradient-to-br from-base-mid via-base-dark to-clemson shadow-sm'>
-                    <RocketLaunchIcon
-                      className='h-12 w-12 text-white/70'
-                      aria-hidden='true'
-                    />
-                  </div>
-                  <div className='mt-3 text-center sm:mt-6'>
+              <Dialog.Panel className='relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-3xl sm:p-9'>
+                <div className='flex gap-12'>
+                  <div
+                    className='aspect-[3/4] w-full bg-black rounded-xl bg-cover bg-center'
+                    style={{
+                      backgroundImage: `url('https://packschool.s3.amazonaws.com/signin_mock.webp')`,
+                    }}
+                  ></div>
+                  <div className='flex flex-col gap-3'>
                     <Dialog.Title
-                      as='h3'
-                      className='text-xl font-greycliff font-semibold leading-6 text-gray-900'
+                      as='h2'
+                      className='text-3xl xl:text-4xl font-greycliff font-semibold leading-6 text-gray-900'
                     >
-                      Simple Sign-In Required
+                      <h2>
+                        All that knowledge. <br />
+                        All in one location.
+                      </h2>
                     </Dialog.Title>
-                    <div className='mt-2'>
-                      <p className='text-sm text-gray-500'>
+                    <div>
+                      <p className='text-lg text-gray-500'>
                         Access all your favorited Packaging School content
                         including courses, articles, saved applications, and
                         more all in one convenient place. Use your LinkedIn or
                         Google accounts to get started.
                       </p>
                     </div>
+                    <div>
+                      <CTAButton
+                        text='Sign In with Google or LinkedIn'
+                        click={signInHandler}
+                      />
+                    </div>
+                    <div className='text-sm text-gray-600 mt-2'>
+                      Issues logging in? Email{' '}
+                      <a href='mailto:info@packagingschool.com'>
+                        info@packagingschool.com.
+                      </a>
+                    </div>
                   </div>
-                </div>
-                <div className='mt-5 sm:mt-6'>
-                  <button
-                    type='button'
-                    className='inline-flex w-full justify-center rounded-md bg-clemson px-3 py-3 text-lg font-semibold text-white shadow-sm hover:bg-clemson-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-clemson-dark'
-                    onClick={signInHandler}
-                  >
-                    Continue
-                  </button>
                 </div>
               </Dialog.Panel>
             </Transition.Child>
