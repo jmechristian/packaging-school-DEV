@@ -7,9 +7,9 @@ import {
 import { API } from 'aws-amplify';
 import CTAButton from '../../components/shared/CTAButton';
 import { useRouter } from 'next/router';
-import { useSelector } from 'react-redux';
 import FadeIn from '../../helpers/FadeIn';
 import ShortCourseCard from '../../components/shared/ShortCourseCard';
+import { UserIcon } from '@heroicons/react/24/outline';
 
 const Page = ({ collection, courses }) => {
   const router = useRouter();
@@ -21,10 +21,13 @@ const Page = ({ collection, courses }) => {
           <h1 className='text-4xl xl:text-5xl leading-tight max-w-3xl dark:text-white'>
             {collection && collection.title}
           </h1>
-          <h3 className='dark:text-white text-xl'>
+          <h3 className='dark:text-white text-xl max-w-3xl'>
             {collection && collection.subtitle}
           </h3>
-          <p className='dark:text-gray-400'>
+          <div className='dark:text-gray-400 flex gap-1 items-center'>
+            <div>
+              <UserIcon className='w-6 h-6' />
+            </div>
             <a
               href={collection && collection.instructorLink}
               target='_blank'
@@ -32,7 +35,7 @@ const Page = ({ collection, courses }) => {
             >
               {collection && collection.instructor}
             </a>
-          </p>
+          </div>
           <p className='text-base lg:text-lg dark:text-gray-500 text-gray-600 max-w-4xl'>
             {collection && collection.description}
           </p>
