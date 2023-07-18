@@ -27,4 +27,8 @@ export const categoryMenu = [
     name: 'Design',
     value: 'DESIGN',
   },
+  {
+    name: 'Collections',
+    value: 'COLLECTIONS',
+  },
 ];
