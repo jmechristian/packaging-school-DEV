@@ -16,6 +16,7 @@ import { setPreviewOpen } from '../../features/all_courses/courseFilterSlice';
 import { updateUser } from '../../src/graphql/mutations';
 import { useRouter } from 'next/router';
 import { toggleSignInModal } from '../../features/layout/layoutSlice';
+import Link from 'next/link';
 
 const CourseCard = ({
   title,
@@ -210,18 +211,18 @@ const CourseCard = ({
                   </div>
                 </div>
               )}
-              <div
-                className='w-9 h-9 rounded bg-black/80 flex justify-center items-center cursor-pointer'
-                onClick={() =>
-                  router.push(
-                    `/${
-                      type && type === 'COLLECTION' ? 'collections' : 'courses'
-                    }/${slug}`
-                  )
-                }
+              <Link
+                href={`/${
+                  type && type === 'COLLECTION' ? 'collections' : 'courses'
+                }/${slug}`}
+                passHref
               >
-                <ArrowSmallRightIcon className='w-5 h-5 text-white' />
-              </div>
+                <a target='_blank' rel='noreferrer'>
+                  <div className='w-9 h-9 rounded bg-black/80 flex justify-center items-center cursor-pointer'>
+                    <ArrowSmallRightIcon className='w-5 h-5 text-white' />
+                  </div>
+                </a>
+              </Link>
             </div>
           </div>
         </div>
