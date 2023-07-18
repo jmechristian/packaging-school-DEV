@@ -2270,6 +2270,7 @@ export const getLMSCollection = /* GraphQL */ `
       slug
       category
       collectionId
+      lmsLink
       createdAt
       updatedAt
     }
@@ -2297,6 +2298,7 @@ export const listLMSCollections = /* GraphQL */ `
         slug
         category
         collectionId
+        lmsLink
         createdAt
         updatedAt
       }
@@ -2334,6 +2336,7 @@ export const lMSCollectionsBySlug = /* GraphQL */ `
         slug
         category
         collectionId
+        lmsLink
         createdAt
         updatedAt
       }

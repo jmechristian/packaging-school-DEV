@@ -2892,6 +2892,7 @@ export const onCreateLMSCollection = /* GraphQL */ `
       slug
       category
       collectionId
+      lmsLink
       createdAt
       updatedAt
     }
@@ -2914,6 +2915,7 @@ export const onUpdateLMSCollection = /* GraphQL */ `
       slug
       category
       collectionId
+      lmsLink
       createdAt
       updatedAt
     }
@@ -2936,6 +2938,7 @@ export const onDeleteLMSCollection = /* GraphQL */ `
       slug
       category
       collectionId
+      lmsLink
       createdAt
       updatedAt
     }

@@ -36,7 +36,7 @@ const Page = ({ collection, courses }) => {
           <p className='text-base lg:text-lg dark:text-gray-500 text-gray-600 max-w-4xl'>
             {collection && collection.description}
           </p>
-          {collection.link && (
+          {collection.lmsLink && (
             <CTAButton
               text={'Enroll Now'}
               click={() =>
