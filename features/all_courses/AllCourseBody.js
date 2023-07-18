@@ -12,6 +12,8 @@ const AllCourseBody = () => {
   const coursesToShow = useMemo(() => {
     if (selectedFilter.name === 'All') {
       return allCourses;
+    } else if (selectedFilter.name === 'Collections') {
+      return allCourses.filter((o) => o.type === 'COLLECTION');
     } else {
       return allCourses.filter((o) => o.category === selectedFilter.value);
     }

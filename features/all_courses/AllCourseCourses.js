@@ -10,8 +10,13 @@ const AllCourseCourses = ({ selectedFilter, coursesToShow }) => {
     <div className=' flex flex-col gap-6'>
       <div className='flex justify-between items-end'>
         <div className='font-medium text-2xl font-greycliff dark:text-white'>
-          Browse <span className='font-bold'>{selectedFilter.name}&nbsp;</span>
-          Courses
+          Browse{' '}
+          <span className='font-bold'>
+            {selectedFilter.name === 'Collections'
+              ? 'Collections'
+              : `${selectedFilter.name} Courses`}
+            &nbsp;
+          </span>
         </div>
         <ScrollButtons />
       </div>
