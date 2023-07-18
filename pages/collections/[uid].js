@@ -38,7 +38,9 @@ const Page = ({ collection, courses }) => {
           </p>
           <CTAButton
             text={'Enroll Now'}
-            click={() => router.push(collection && collection.lmsLink)}
+            click={() =>
+              router.push(collection && collection.lmsLink, '_blank')
+            }
           />
         </div>
         <div className='flex flex-col gap-6'>

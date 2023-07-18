@@ -329,6 +329,7 @@ type LMSCollection @model @auth(rules: [{ allow: public }]) {
   slug: String! @index(name: "LMScollectionBySlug")
   category: CategoryType @default(value: "INDUSTRY")
   collectionId: String
+  lmsLink: String
 }
 
 type LMSLesson @model @auth(rules: [{ allow: public }]) {

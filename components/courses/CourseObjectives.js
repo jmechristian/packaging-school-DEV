@@ -6,9 +6,9 @@ import RotatingCaret from '../RotatingCaret';
 
 const CourseObjectives = ({ what, items }) => {
   const [showObjectives, setShowObjectives] = useState(false);
-  const half = Math.ceil(items.length / 2);
-  const firstHalf = items.slice(0, half);
-  const secondHalf = items.slice(half);
+  const half = items && Math.ceil(items.length / 2);
+  const firstHalf = items && items.slice(0, half);
+  const secondHalf = items && items.slice(half);
 
   return (
     <div className='flex flex-col gap-12 lg:max-w-prose pb-16'>
@@ -18,7 +18,7 @@ const CourseObjectives = ({ what, items }) => {
         </div>
         <div className='text-slate-500 dark:text-gray-400 text-lg'>{what}</div>
       </div>
-      {items.length > 1 && (
+      {items && items.length > 1 && (
         <div className='flex flex-col gap-6'>
           <div className='pb-3 flex gap-y-1 justify-between items-end flex-wrap cursor-pointer'>
             <div className='font-semibold font-greycliff text-2xl black__white '>
