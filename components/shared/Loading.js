@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import FadeIn from '../../helpers/FadeIn';
 
 const Loading = () => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
     // Used for page transition
     const start = () => {
