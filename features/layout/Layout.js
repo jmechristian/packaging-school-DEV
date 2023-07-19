@@ -4,6 +4,7 @@ import Footer from '../navigation/Footer/Footer';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   setAllCourses,
+  setAllLessons,
   setPreviewClosed,
 } from '../all_courses/courseFilterSlice';
 import { setUser } from '../auth/authslice';
@@ -67,6 +68,19 @@ const Layout = ({ children }) => {
   }, [user]);
 
   useEffect(() => {
+    const getLessons = /* GraphQL */ `
+      query MyQuery {
+        listLessons {
+          items {
+            title
+            subhead
+            slug
+            id
+          }
+        }
+      }
+    `;
+
     const getCourses = async () => {
       const courses = await API.graphql({
         query: listLMSCourses,
@@ -76,7 +90,13 @@ const Layout = ({ children }) => {
       dispatch(setAllCourses(courses.data.listLMSCourses.items));
     };
 
+    const setLessons = async () => {
+      const lessons = await API.graphql(graphqlOperation(getLessons));
+      dispatch(setAllLessons(lessons.data.listLessons.items));
+    };
+
     getCourses();
+    setLessons();
   }, [dispatch]);
 
   useEffect(() => {
