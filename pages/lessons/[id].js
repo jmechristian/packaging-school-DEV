@@ -22,7 +22,7 @@ export const LessonContext = createContext({
 const GRAPHQL_ENDPOINT = process.env.GRAPHQL_ENDPOINT;
 const GRAPHQL_API_KEY = process.env.GRAPHQL_API_KEY;
 
-const Index = ({ lesson, lessons }) => {
+const Page = ({ lesson, lessons }) => {
   const [unlocked, setUnlocked] = useState(false);
   const [isPage, setIsPage] = useState(0);
 
@@ -187,4 +187,4 @@ export async function getServerSideProps({ params }) {
   return { props: { lesson, lessons } };
 }
 
-export default Index;
+export default Page;
