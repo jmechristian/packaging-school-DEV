@@ -10,6 +10,7 @@ import { closeSearch } from '../../features/navigation/navigationSlice';
 import CertIcon from '../icons/CertIcon';
 import CourseIcon from '../icons/CourseIcon';
 import WorkshopIcon from '../icons/WorkshopIcon';
+import Link from 'next/link';
 import {
   Hits,
   Index,
@@ -142,6 +143,7 @@ export function CourseItem({ hit }) {
 }
 
 export function LOTMItem({ hit }) {
+  const dispatch = useDispatch();
   const setBackground = () => {
     switch (hit.title) {
       case 'Certificate of Mastery in Packaging Management':
@@ -156,36 +158,36 @@ export function LOTMItem({ hit }) {
   };
 
   return (
-    <a
-      href={`/lessons/${hit.slug}`}
-      className='aa-ItemLink hover:bg-slate-700 cursor-pointer'
-      target='_blank'
-      rel='noReferrer'
-    >
-      <div className='grid grid-cols-5 w-full'>
-        <div className='px-3 py-1.5 col-span-4'>
-          <div className='flex gap-3 w-full'>
-            <div>
-              <LotmIcon style='w-12 h-12 fill-white' />
-            </div>
-            <div className='flex flex-col '>
-              <div className='font-greycliff font-semibold leading-snug md:text-lg dark:text-white'>
-                <Highlight hit={hit} attribute='title' />
+    <Link href={`/lessons/${hit.slug}`} passHref>
+      <a
+        className='aa-ItemLink hover:bg-slate-700 cursor-pointer'
+        onClick={() => dispatch(closeSearch())}
+      >
+        <div className='grid grid-cols-5 w-full'>
+          <div className='px-3 py-1.5 col-span-4'>
+            <div className='flex gap-3 w-full'>
+              <div>
+                <LotmIcon style='w-12 h-12 fill-white' />
               </div>
-              <div className='aa-ItemTitle line-clamp-2 text-sm md:text-base text-slate-600 dark:text-slate-400'>
-                <Highlight hit={hit} attribute='subheadline' />
-              </div>
-              <div className='aa-ItemTitle line-clamp-2  text-sm md:text-base text-slate-600 dark:text-slate-400'>
-                <Highlight hit={hit} attribute='subhead' />
+              <div className='flex flex-col '>
+                <div className='font-greycliff font-semibold leading-snug md:text-lg dark:text-white'>
+                  <Highlight hit={hit} attribute='title' />
+                </div>
+                <div className='aa-ItemTitle line-clamp-2 text-sm md:text-base text-slate-600 dark:text-slate-400'>
+                  <Highlight hit={hit} attribute='subheadline' />
+                </div>
+                <div className='aa-ItemTitle line-clamp-2  text-sm md:text-base text-slate-600 dark:text-slate-400'>
+                  <Highlight hit={hit} attribute='subhead' />
+                </div>
               </div>
             </div>
           </div>
+          <div className='col-span-1 flex items-center justify-end'>
+            <ArrowUpRightIcon className='w-5 h-5 mr-2 stroke-white' />
+          </div>
         </div>
-        <div className='col-span-1 flex items-center justify-end'>
-          <ArrowUpRightIcon className='w-5 h-5 mr-2 stroke-white' />
-        </div>
-      </div>
-    </a>
+      </a>
+    </Link>
   );
 }
 

@@ -7,6 +7,7 @@ const nextConfig = {
       'res.cloudinary.com',
       'packschool.s3.amazonaws.com',
       'tailwindui.com',
+      'apsmedia.s3.amazonaws.com',
     ],
   },
   async redirects() {
