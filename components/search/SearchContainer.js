@@ -157,7 +157,7 @@ export function LOTMItem({ hit }) {
 
   return (
     <a
-      href={`https://library.packagingschool.com/lessons/${hit.slug}`}
+      href={`/lessons/${hit.slug}`}
       className='aa-ItemLink hover:bg-slate-700 cursor-pointer'
       target='_blank'
       rel='noReferrer'
