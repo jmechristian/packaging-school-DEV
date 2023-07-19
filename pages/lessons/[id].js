@@ -50,48 +50,50 @@ const Page = ({ lesson, lessons }) => {
           setPageContext: (val) => setIsPage(val),
         }}
       >
-        <div className='flex flex-col gap-12 pt-12 dark:bg-dark-dark'>
-          <LessonsHeader title={lesson.title} subhead={lesson.subhead} />
-          <div className='hidden'>
-            <Image
-              src={lesson?.seoImage}
-              width={200}
-              height={200}
-              alt={lesson?.title}
-            />
-          </div>
-          <div>
-            {lesson.mediaType === 'SLIDES' ? (
-              <LessonSlides slides={lesson.slides ? lesson.slides : []} />
-            ) : (
-              <LessonsMedia videoUrl={lesson.media} />
-            )}
-            {lesson.actionLinkTitle && (
-              <LessonActivity
-                actionCTA={lesson.actionCTA}
-                actionSubhead={lesson.actionSubhead}
-                actionLink={lesson.actionLink}
-                name={lesson.name}
-                actionTitle={lesson.actionLinkTitle}
-                actionExample={lesson.actionExample}
-                lessonTitle={lesson.title}
-                mediaType={lesson.mediaType && lesson.mediaType}
+        {lesson && (
+          <div className='flex flex-col gap-12 pt-12 dark:bg-dark-dark'>
+            <LessonsHeader title={lesson.title} subhead={lesson.subhead} />
+            <div className='hidden'>
+              <Image
+                src={lesson?.seoImage}
+                width={200}
+                height={200}
+                alt={lesson?.title}
               />
-            )}
+            </div>
+            <div>
+              {lesson.mediaType === 'SLIDES' ? (
+                <LessonSlides slides={lesson.slides ? lesson.slides : []} />
+              ) : (
+                <LessonsMedia videoUrl={lesson.media} />
+              )}
+              {lesson.actionLinkTitle && (
+                <LessonActivity
+                  actionCTA={lesson.actionCTA}
+                  actionSubhead={lesson.actionSubhead}
+                  actionLink={lesson.actionLink}
+                  name={lesson.name}
+                  actionTitle={lesson.actionLinkTitle}
+                  actionExample={lesson.actionExample}
+                  lessonTitle={lesson.title}
+                  mediaType={lesson.mediaType && lesson.mediaType}
+                />
+              )}
+            </div>
+            <LessonsContent
+              content={lesson.content}
+              objectives={lesson.objectives}
+            />
+            {/* <RelatedLessons relatedLessons={lessons} lessonId={lesson.id} /> */}
+            <SocialShare
+              title={lesson.title}
+              slug={lesson.slug}
+              subhead={lesson.subhead}
+              type={'lessons'}
+            />
+            <LinksButton sources={lesson.sources.items} />
           </div>
-          <LessonsContent
-            content={lesson.content}
-            objectives={lesson.objectives}
-          />
-          {/* <RelatedLessons relatedLessons={lessons} lessonId={lesson.id} /> */}
-          <SocialShare
-            title={lesson.title}
-            slug={lesson.slug}
-            subhead={lesson.subhead}
-            type={'lessons'}
-          />
-          <LinksButton sources={lesson.sources.items} />
-        </div>
+        )}
       </LessonContext.Provider>
     </>
   );
