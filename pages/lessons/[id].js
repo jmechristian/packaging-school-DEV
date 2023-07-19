@@ -26,31 +26,33 @@ const Page = ({ lesson, lessons }) => {
   const [unlocked, setUnlocked] = useState(false);
   const [isPage, setIsPage] = useState(0);
 
-  console.log(lesson);
-
   return (
-    <>
-      <Head>
-        <title>{lesson.title}</title>
-        <meta
-          name='image'
-          property='og:image'
-          content={lesson?.seoImage}
-          key='image'
-        />
-        <meta property='og:title' content={lesson.title} key='title' />
-        <meta property='og:description' content={lesson?.subhead} key='desc' />
-        <meta name='description' content={lesson?.subhead} key='desc' />
-      </Head>
-      <LessonContext.Provider
-        value={{
-          unlocked: unlocked,
-          toggleUnlocked: () => setUnlocked(true),
-          page: isPage,
-          setPageContext: (val) => setIsPage(val),
-        }}
-      >
-        {lesson && (
+    lesson && (
+      <>
+        <Head>
+          <title>{lesson.title}</title>
+          <meta
+            name='image'
+            property='og:image'
+            content={lesson?.seoImage}
+            key='image'
+          />
+          <meta property='og:title' content={lesson.title} key='title' />
+          <meta
+            property='og:description'
+            content={lesson?.subhead}
+            key='desc'
+          />
+          <meta name='description' content={lesson?.subhead} key='desc' />
+        </Head>
+        <LessonContext.Provider
+          value={{
+            unlocked: unlocked,
+            toggleUnlocked: () => setUnlocked(true),
+            page: isPage,
+            setPageContext: (val) => setIsPage(val),
+          }}
+        >
           <div className='flex flex-col gap-12 pt-12 dark:bg-dark-dark'>
             <LessonsHeader title={lesson.title} subhead={lesson.subhead} />
             <div className='hidden'>
@@ -93,9 +95,9 @@ const Page = ({ lesson, lessons }) => {
             />
             <LinksButton sources={lesson.sources.items} />
           </div>
-        )}
-      </LessonContext.Provider>
-    </>
+        </LessonContext.Provider>
+      </>
+    )
   );
 };
 
