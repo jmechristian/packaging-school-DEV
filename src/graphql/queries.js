@@ -907,6 +907,8 @@ export const getCompany = /* GraphQL */ `
           cmpmFormID
           cpsFormID
           savedCourses
+          savedLessons
+          savedArticles
           createdAt
           updatedAt
           userInstructorIdId
@@ -1010,6 +1012,8 @@ export const getUser = /* GraphQL */ `
           cmpmFormID
           cpsFormID
           savedCourses
+          savedLessons
+          savedArticles
           createdAt
           updatedAt
           userInstructorIdId
@@ -1060,6 +1064,8 @@ export const getUser = /* GraphQL */ `
           cmpmFormID
           cpsFormID
           savedCourses
+          savedLessons
+          savedArticles
           createdAt
           updatedAt
           userInstructorIdId
@@ -1111,6 +1117,8 @@ export const getUser = /* GraphQL */ `
           cmpmFormID
           cpsFormID
           savedCourses
+          savedLessons
+          savedArticles
           createdAt
           updatedAt
           userInstructorIdId
@@ -1140,6 +1148,8 @@ export const getUser = /* GraphQL */ `
           cmpmFormID
           cpsFormID
           savedCourses
+          savedLessons
+          savedArticles
           createdAt
           updatedAt
           userInstructorIdId
@@ -1152,6 +1162,8 @@ export const getUser = /* GraphQL */ `
         updatedAt
       }
       savedCourses
+      savedLessons
+      savedArticles
       createdAt
       updatedAt
       userInstructorIdId
@@ -1255,6 +1267,8 @@ export const listUsers = /* GraphQL */ `
           updatedAt
         }
         savedCourses
+        savedLessons
+        savedArticles
         createdAt
         updatedAt
         userInstructorIdId
@@ -1368,6 +1382,8 @@ export const usersByName = /* GraphQL */ `
           updatedAt
         }
         savedCourses
+        savedLessons
+        savedArticles
         createdAt
         updatedAt
         userInstructorIdId
@@ -1481,6 +1497,8 @@ export const usersByEmail = /* GraphQL */ `
           updatedAt
         }
         savedCourses
+        savedLessons
+        savedArticles
         createdAt
         updatedAt
         userInstructorIdId
@@ -1594,6 +1612,8 @@ export const usersByCompanyID = /* GraphQL */ `
           updatedAt
         }
         savedCourses
+        savedLessons
+        savedArticles
         createdAt
         updatedAt
         userInstructorIdId
@@ -1696,6 +1716,8 @@ export const getCMPMForm = /* GraphQL */ `
           updatedAt
         }
         savedCourses
+        savedLessons
+        savedArticles
         createdAt
         updatedAt
         userInstructorIdId
@@ -1754,6 +1776,8 @@ export const listCMPMForms = /* GraphQL */ `
           cmpmFormID
           cpsFormID
           savedCourses
+          savedLessons
+          savedArticles
           createdAt
           updatedAt
           userInstructorIdId
@@ -1883,6 +1907,8 @@ export const getCPSForm = /* GraphQL */ `
           updatedAt
         }
         savedCourses
+        savedLessons
+        savedArticles
         createdAt
         updatedAt
         userInstructorIdId
@@ -1942,6 +1968,8 @@ export const listCPSForms = /* GraphQL */ `
           cmpmFormID
           cpsFormID
           savedCourses
+          savedLessons
+          savedArticles
           createdAt
           updatedAt
           userInstructorIdId
@@ -2539,6 +2567,8 @@ export const getStudent = /* GraphQL */ `
           updatedAt
         }
         savedCourses
+        savedLessons
+        savedArticles
         createdAt
         updatedAt
         userInstructorIdId
@@ -2602,6 +2632,8 @@ export const listStudents = /* GraphQL */ `
           cmpmFormID
           cpsFormID
           savedCourses
+          savedLessons
+          savedArticles
           createdAt
           updatedAt
           userInstructorIdId
@@ -2711,6 +2743,8 @@ export const getInstructor = /* GraphQL */ `
           updatedAt
         }
         savedCourses
+        savedLessons
+        savedArticles
         createdAt
         updatedAt
         userInstructorIdId
@@ -2756,6 +2790,8 @@ export const listInstructors = /* GraphQL */ `
           cmpmFormID
           cpsFormID
           savedCourses
+          savedLessons
+          savedArticles
           createdAt
           updatedAt
           userInstructorIdId
@@ -3545,6 +3581,8 @@ export const getAPSUser = /* GraphQL */ `
           updatedAt
         }
         savedCourses
+        savedLessons
+        savedArticles
         createdAt
         updatedAt
         userInstructorIdId
@@ -3587,6 +3625,8 @@ export const listAPSUsers = /* GraphQL */ `
           cmpmFormID
           cpsFormID
           savedCourses
+          savedLessons
+          savedArticles
           createdAt
           updatedAt
           userInstructorIdId
@@ -3639,6 +3679,8 @@ export const aPSUsersByAPSId = /* GraphQL */ `
           cmpmFormID
           cpsFormID
           savedCourses
+          savedLessons
+          savedArticles
           createdAt
           updatedAt
           userInstructorIdId
@@ -3691,6 +3733,8 @@ export const aPSUsersByUserId = /* GraphQL */ `
           cmpmFormID
           cpsFormID
           savedCourses
+          savedLessons
+          savedArticles
           createdAt
           updatedAt
           userInstructorIdId
@@ -4406,6 +4450,8 @@ export const getCourseInstructors = /* GraphQL */ `
           cmpmFormID
           cpsFormID
           savedCourses
+          savedLessons
+          savedArticles
           createdAt
           updatedAt
           userInstructorIdId

@@ -54,7 +54,11 @@ const Page = ({ lesson, lessons }) => {
           }}
         >
           <div className='flex flex-col gap-12 pt-12 dark:bg-dark-dark'>
-            <LessonsHeader title={lesson.title} subhead={lesson.subhead} />
+            <LessonsHeader
+              title={lesson.title}
+              subhead={lesson.subhead}
+              id={lesson.id}
+            />
             <div className='hidden'>
               <Image
                 src={lesson?.seoImage}
