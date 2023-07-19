@@ -1,7 +1,7 @@
 import { Fragment, useRef, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
-import LessonActivityModal from '../Lessons/LessonActivityModal';
-import LessonActivityIntake from '../Lessons/LessonActivityIntake';
+import LessonActivityModal from '../lessons/LessonActivityModal';
+import LessonActivityIntake from '../lessons/LessonActivityIntake';
 
 export default function ModalWrapper({
   open,
