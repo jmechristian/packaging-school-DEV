@@ -37,7 +37,7 @@ const ScrollTop = () => {
 
   return (
     <motion.div
-      className='fixed z-50 right-5 bottom-9'
+      className='fixed z-50 right-5 bottom-20'
       variants={variants}
       initial={false}
       animate={showTopButton ? 'show' : 'hidden'}
