@@ -25,7 +25,9 @@ const LessonsHeader = ({ id, title, subhead, tags, author, date }) => {
     } else {
       if (!isSaved) {
         setIsSaved(true);
-        const currentSaved = [...user.savedLessons, id];
+        const currentSaved = user.savedLessons
+          ? [...user.savedLessons, id]
+          : id;
         console.log('curent', currentSaved);
         await API.graphql({
           query: updateUser,
@@ -35,7 +37,7 @@ const LessonsHeader = ({ id, title, subhead, tags, author, date }) => {
         });
       } else if (isSaved) {
         setIsSaved(false);
-        const currentSaved = [...user.savedLessons];
+        const currentSaved = user.savedLessons ? [...user.savedLessons] : [];
         const filteredSaved = currentSaved.filter((l) => l !== id);
         console.log(filteredSaved);
         await API.graphql({
