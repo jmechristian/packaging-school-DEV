@@ -136,8 +136,6 @@ export function LOTMItem({ hit, components }) {
     <a
       href={`/lessons/${hit.slug}`}
       className='aa-ItemLink hover:bg-slate-100 cursor-pointer'
-      target='_blank'
-      rel='noReferrer'
     >
       <div className='grid grid-cols-5 w-full'>
         <div className='px-3 py-1.5 col-span-5'>
