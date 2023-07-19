@@ -53,8 +53,8 @@ export default function SignInModal({ open, setOpen }) {
                       className='text-2xl xl:text-4xl font-greycliff font-semibold leading-6 text-gray-900'
                     >
                       <h2>
-                        All that knowledge. <br />
-                        All in one location.
+                        All that expertise. <br />
+                        All in one place.
                       </h2>
                     </Dialog.Title>
                     <div>
