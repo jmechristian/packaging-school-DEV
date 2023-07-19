@@ -377,7 +377,7 @@ const SearchContainer = () => {
                 ))}
               </div>
             </div>
-            <div className='px-6 flex flex-col gap-3 overflow-hidden'>
+            {/* <div className='px-6 flex flex-col gap-3 overflow-hidden'>
               <div className='font-greycliff font-semibold text-slate-500 dark:text-clemson text-lg'>
                 Popular Searches
               </div>
@@ -387,6 +387,7 @@ const SearchContainer = () => {
                   <div
                     className='flex items-center gap-1 bg-slate-200 dark:bg-slate-500 rounded-lg px-3 py-1.5'
                     key={tag.value}
+                    onClick={() => queryHook(tag.value)}
                   >
                     <div>
                       <MagnifyingGlassIcon className='w-4 h-4 text-slate-700 dark:text-white' />
@@ -395,7 +396,7 @@ const SearchContainer = () => {
                   </div>
                 ))}
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

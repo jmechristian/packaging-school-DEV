@@ -80,6 +80,29 @@
   #autocomplete-1-input {
     @apply text-xl h-16;
   }
+
+  .bad-html > p {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  .bad-html > h3 > span {
+    @apply font-bold text-gray-900 dark:text-white;
+  }
+
+  .bad-html > h3 {
+    @apply font-bold text-gray-900 dark:text-white;
+  }
+
+  .bad-html > h4 {
+    @apply font-bold text-gray-900 dark:text-white;
+  }
+
+  .bad-html > ul > li {
+    @apply py-3;
+  }
 }
 
 @tailwind components;

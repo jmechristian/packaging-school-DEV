@@ -144,13 +144,19 @@ export default function HeaderNew() {
 
                 <div className='space-y-6 border-t border-gray-200 px-4 py-6'>
                   {navigation.pages.map((page) => (
-                    <div key={page.name} className='flow-root'>
-                      <a
-                        href={page.href}
-                        className='-m-2 block p-2 font-medium text-gray-900 dark:text-white'
-                      >
-                        {page.name}
-                      </a>
+                    <div
+                      key={page.name}
+                      className='flow-root'
+                      onClick={() => setOpen(false)}
+                    >
+                      <Link href={page.href}>
+                        <a
+                          href={page.href}
+                          className='-m-2 block p-2 font-medium text-gray-900 dark:text-white'
+                        >
+                          {page.name}
+                        </a>
+                      </Link>
                     </div>
                   ))}
                 </div>
@@ -158,25 +164,25 @@ export default function HeaderNew() {
                 <div className='space-y-6 border-t border-gray-200 px-4 py-6'>
                   <div className='flow-root'>
                     {!user && (
-                      <a
-                        href={`/api/auth/login?returnTo=${currentPath}`}
-                        className='-m-2 block p-2 font-medium text-gray-900 dark:text-white'
-                      >
-                        Create a Free account
-                      </a>
+                      <Link href={`/api/auth/login?returnTo=${currentPath}`}>
+                        <a className='-m-2 block p-2 font-medium text-gray-900 dark:text-white'>
+                          Create a Free account
+                        </a>
+                      </Link>
                     )}
                   </div>
                   <div className='flow-root'>
-                    <a
+                    <Link
                       href={
                         user
                           ? '/api/auth/logout'
                           : `/api/auth/login?returnTo=${currentPath}`
                       }
-                      className='-m-2 block p-2 font-medium text-gray-900 dark:text-white'
                     >
-                      {user ? 'Sign Out' : 'Sign In'}
-                    </a>
+                      <a className='-m-2 block p-2 font-medium text-gray-900 dark:text-white'>
+                        {user ? 'Sign Out' : 'Sign In'}
+                      </a>
+                    </Link>
                   </div>
                 </div>
               </Dialog.Panel>
@@ -406,13 +412,11 @@ export default function HeaderNew() {
                           )}
                         </Popover>
                         {navigation.pages.map((page) => (
-                          <a
-                            key={page.name}
-                            href={page.href}
-                            className='flex items-center font-semibold font-greycliff text-slate-700 dark:hover:text-gray-500 hover:text-slate-800 dark:text-white/80'
-                          >
-                            {page.name}
-                          </a>
+                          <Link passHref href={page.href} key={page.name}>
+                            <a className='flex items-center font-semibold font-greycliff text-slate-700 dark:hover:text-gray-500 hover:text-slate-800 dark:text-white/80'>
+                              {page.name}
+                            </a>
+                          </Link>
                         ))}
                       </div>
                     </Popover.Group>
@@ -444,10 +448,12 @@ export default function HeaderNew() {
                   </div>
 
                   {/* Logo (lg-) */}
-                  <a href='/' className='lg:hidden'>
-                    <span className='sr-only'>Packaging School</span>
-                    <LogoSquare className='w-6 h-6' />
-                  </a>
+                  <Link href='/'>
+                    <a className='lg:hidden'>
+                      <span className='sr-only'>Packaging School</span>
+                      <LogoSquare className='w-6 h-6' />
+                    </a>
+                  </Link>
 
                   <div className='flex flex-1 items-center justify-end'>
                     <div className='flex items-center lg:ml-8'>

@@ -6,7 +6,8 @@ import CTAButton from '../shared/CTAButton';
 
 export default function SignInModal({ open, setOpen }) {
   const router = useRouter();
-  const currentPath = router.pathname;
+  const currentPath = router.asPath;
+  console.log('current', currentPath);
 
   const signInHandler = () => {
     router.push(`/api/auth/login?returnTo=${currentPath}`);
