@@ -23,7 +23,8 @@ const LinksButton = ({ sources }) => {
       >
         <div className='px-6 pb-8 pt-6 flex-col gap-4'>
           <div className='flex flex-col text-white gap-3'>
-            {sortedSources &&
+            {sources &&
+              sortedSources &&
               sortedSources.map((s, i) => (
                 <div key={s.name} className='flex gap-1'>
                   <div className='text-sm'>

@@ -1,6 +1,6 @@
 import React, { createContext, useState } from 'react';
 import Head from 'next/head';
-import { listLessons } from '../../src/graphql/queries';
+import { lessonsBySlug, listLessons } from '../../src/graphql/queries';
 import { API, graphqlOperation } from 'aws-amplify';
 import LessonActivity from '../../components/lessons/LessonActivity';
 import LessonsContent from '../../components/lessons/LessonsContent';
@@ -25,6 +25,8 @@ const GRAPHQL_API_KEY = process.env.GRAPHQL_API_KEY;
 const Page = ({ lesson, lessons }) => {
   const [unlocked, setUnlocked] = useState(false);
   const [isPage, setIsPage] = useState(0);
+
+  console.log(lesson);
 
   return (
     <>
@@ -81,7 +83,7 @@ const Page = ({ lesson, lessons }) => {
             content={lesson.content}
             objectives={lesson.objectives}
           />
-          <RelatedLessons relatedLessons={lessons} lessonId={lesson.id} />
+          {/* <RelatedLessons relatedLessons={lessons} lessonId={lesson.id} /> */}
           <SocialShare
             title={lesson.title}
             slug={lesson.slug}
@@ -96,15 +98,6 @@ const Page = ({ lesson, lessons }) => {
 };
 
 // export async function getStaticPaths() {
-//   const query = /* GraphQL */ `
-//     query LIST_LESSONS {
-//       listLessons {
-//         items {
-//           slug
-//         }
-//       }
-//     }
-//   `;
 
 //   const GRAPHQL_ENDPOINT = process.env.GRAPHQL_ENDPOINT;
 //   const GRAPHQL_API_KEY = process.env.GRAPHQL_API_KEY;
@@ -122,7 +115,83 @@ const Page = ({ lesson, lessons }) => {
 //   }
 // }
 
-export async function getServerSideProps({ params }) {
+// export async function getServerSideProps({ params }) {
+//   const { id } = params;
+
+//   const getLesson = /* GraphQL */ `
+//     query MyQuery($slug: String!) {
+//       lessonsBySlug(slug: $slug) {
+//         items {
+//           id
+//           links {
+//             items {
+//               name
+//               link
+//               lessonLinksId
+//             }
+//           }
+//           media
+//           mediaType
+//           content
+//           objectives
+//           seoImage
+//           slides
+//           slug
+//           actionCTA
+//           actionLink
+//           actionSubhead
+//           actionExample
+//           actionLinkTitle
+//           sources {
+//             items {
+//               name
+//               link
+//               lessonSourcesId
+//               position
+//             }
+//           }
+//           subhead
+//           tags {
+//             items {
+//               lessonTagsId
+//               tag
+//             }
+//           }
+//           title
+//           type
+//         }
+//       }
+//     }
+//   `;
+
+//   const GRAPHQL_ENDPOINT = process.env.GRAPHQL_ENDPOINT;
+//   const GRAPHQL_API_KEY = process.env.GRAPHQL_API_KEY;
+
+//   const variables = {
+//     slug: id, // key is "input" based on the mutation above
+//   };
+
+//   const res = await API.graphql(graphqlOperation(getLesson, variables));
+//   const lesson = await res.data.lessonsBySlug.items[0];
+
+//   const getLessons = await API.graphql({ query: listLessons });
+//   const lessons = getLessons.data.listLessons.items;
+
+//   return { props: { lesson, lessons } };
+// }
+
+export async function getStaticPaths() {
+  const res = await API.graphql({
+    query: listLessons,
+  });
+  const paths = res.data.listLessons.items.map((lesson) => ({
+    params: { id: lesson.slug },
+  }));
+
+  return { paths, fallback: true };
+}
+
+export async function getStaticProps({ params }) {
   const { id } = params;
 
   const getLesson = /* GraphQL */ `
@@ -179,7 +248,7 @@ export async function getServerSideProps({ params }) {
   };
 
   const res = await API.graphql(graphqlOperation(getLesson, variables));
-  const lesson = await res.data.lessonsBySlug.items[0];
+  const lesson = res.data.lessonsBySlug.items[0];
 
   const getLessons = await API.graphql({ query: listLessons });
   const lessons = getLessons.data.listLessons.items;
