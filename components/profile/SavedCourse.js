@@ -5,7 +5,6 @@ import { getLMSCourse } from '../../src/graphql/queries';
 
 const SavedCourse = ({ courseId, savedCourses }) => {
   const [savedCourse, setSavedCourse] = useState(null);
-  console.log(courseId);
   useEffect(() => {
     const getTheCourse = async () => {
       const res = await API.graphql({

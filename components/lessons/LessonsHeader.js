@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import BodyWrapper from '../shared/BodyWrapper';
 import { StarIcon } from '@heroicons/react/24/solid';
 import { useSelector, useDispatch } from 'react-redux';
@@ -7,6 +8,7 @@ import { updateUser } from '../../src/graphql/mutations';
 import { toggleSignInModal } from '../../features/layout/layoutSlice';
 
 const LessonsHeader = ({ id, title, subhead, tags, author, date }) => {
+  const dynamicRoute = useRouter().asPath;
   const dispatch = useDispatch();
   const newDate = new Date(date).toDateString();
   const [isSaved, setIsSaved] = useState(false);
@@ -16,8 +18,10 @@ const LessonsHeader = ({ id, title, subhead, tags, author, date }) => {
   useEffect(() => {
     if (user && user.savedLessons && user.savedLessons.includes(id)) {
       setIsSaved(true);
+    } else {
+      setIsSaved(false);
     }
-  }, [user, id]);
+  }, [dynamicRoute]);
 
   const savedLesson = async () => {
     if (!user) {

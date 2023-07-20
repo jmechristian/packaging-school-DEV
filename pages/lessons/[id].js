@@ -90,7 +90,7 @@ const Page = ({ lesson, lessons }) => {
               content={lesson.content}
               objectives={lesson.objectives}
             />
-            {/* <RelatedLessons relatedLessons={lessons} lessonId={lesson.id} /> */}
+            <RelatedLessons relatedLessons={lessons} lessonId={lesson.id} />
             <SocialShare
               title={lesson.title}
               slug={lesson.slug}

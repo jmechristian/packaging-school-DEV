@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import Link from 'next/link';
 import React from 'react';
 
 const RelatedLessons = ({ relatedLessons, lessonId }) => {
@@ -32,19 +33,20 @@ const RelatedLessons = ({ relatedLessons, lessonId }) => {
                   <div className='max-w-xl'>
                     <div className='group relative'>
                       <h3 className='mt-6 text-xl font-greycliff font-semibold leading-6 text-gray-900 dark:text-base-brand group-hover:text-base-dark'>
-                        <a
-                          href={`/lessons/${course.slug}`}
-                          onClick={() =>
-                            gtag('event', 'related_lesson_click', {
-                              lesson_title: course.title,
-                            })
-                          }
-                        >
-                          <span className='absolute inset-0' />
-                          {course.title}
-                        </a>
+                        <Link href={`/lessons/${course.slug}`} prefetch={false}>
+                          <a
+                            onClick={() =>
+                              gtag('event', 'related_lesson_click', {
+                                lesson_title: course.title,
+                              })
+                            }
+                          >
+                            <span className='absolute inset-0' />
+                            {course.title}
+                          </a>
+                        </Link>
                       </h3>
-                      <p className='mt-5 text-sm leading-6 text-gray-600 dark:text-white/60 line-clamp-3'>
+                      <p className='mt-5 leading-6 text-gray-600 dark:text-white/60 line-clamp-3'>
                         {course.subhead}
                       </p>
                     </div>

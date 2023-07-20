@@ -57,10 +57,19 @@ export default function ProfileStats({ user }) {
                     id={it.id}
                     title={it.title}
                     desc={it.subhead}
-                    slug={it.slug}
+                    slug={`/lessons/${it.slug}`}
                   />
                 </div>
               ))}
+
+          {user && user.savedCourses && user.savedCourses.length === 0 && (
+            <div className='text-gray-500'>
+              No lessons saved,{' '}
+              <Link href={'/library'}>
+                <a className='font-semibold'>start browsing.</a>
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </div>
