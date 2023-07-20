@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useRouter } from 'next/router';
 import BodyWrapper from '../shared/BodyWrapper';
 import { StarIcon } from '@heroicons/react/24/solid';
@@ -8,20 +8,19 @@ import { updateUser } from '../../src/graphql/mutations';
 import { toggleSignInModal } from '../../features/layout/layoutSlice';
 
 const LessonsHeader = ({ id, title, subhead, tags, author, date }) => {
+  const { user } = useSelector((state) => state.auth);
   const dynamicRoute = useRouter().asPath;
+  const isFavorited = useMemo(
+    () => user && user.savedLessons && user.savedLessons.includes(id),
+    [user, id]
+  );
   const dispatch = useDispatch();
   const newDate = new Date(date).toDateString();
   const [isSaved, setIsSaved] = useState(false);
 
-  const { user } = useSelector((state) => state.auth);
-
   useEffect(() => {
-    if (user && user.savedLessons && user.savedLessons.includes(id)) {
-      setIsSaved(true);
-    } else {
-      setIsSaved(false);
-    }
-  }, [dynamicRoute]);
+    user && setIsSaved(user.savedLessons && user.savedLessons.includes(id));
+  }, [user, id]);
 
   const savedLesson = async () => {
     if (!user) {
@@ -73,11 +72,13 @@ const LessonsHeader = ({ id, title, subhead, tags, author, date }) => {
               {title}
             </h1>
             <div onClick={savedLesson}>
-              <StarIcon
-                className={`w-6 h-6 lg:w-7 lg:h-7 ${
-                  isSaved ? 'fill-yellow-500' : 'fill-gray-600'
-                }`}
-              />
+              {user && (
+                <StarIcon
+                  className={`w-6 h-6 lg:w-7 lg:h-7 ${
+                    isSaved ? 'fill-yellow-500' : 'fill-gray-600'
+                  }`}
+                />
+              )}
             </div>
           </div>
           {date && (
