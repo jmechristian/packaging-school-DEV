@@ -63,7 +63,7 @@ const FormStat = ({
         </span>{' '}
         <span className='text-slate-100 text-sm'>{label}</span>
       </div>
-      <div className='flex flex-col gap-2 py-16 border-r border-r-slate-300 bg-slate-200 dark:bg-neutral-600 h-full justify-center items-center'>
+      <div className='flex flex-col gap-2 py-16 border-r border-r-slate-300 dark:border-r-gray-900 bg-slate-200 dark:bg-neutral-700 h-full justify-center items-center'>
         <div className='text-slate-700 text-sm'>
           {!updated ? (
             'No Applications Found'

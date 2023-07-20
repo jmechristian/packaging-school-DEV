@@ -49,7 +49,7 @@ export default function ProfileDetails({ user, isEditing, toggleEditing }) {
           <h3 className='text-lg font-bold font-greycliff leading-7 text-slate-900 dark:text-white'>
             Your Information
           </h3>
-          <p className='mt-1 max-w-2xl  leading-6 text-slate-500'>
+          <p className='mt-1 max-w-2xl  leading-6 text-slate-500 dark:text-gray-400'>
             Personal details and bio.
           </p>
         </div>
