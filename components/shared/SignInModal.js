@@ -53,13 +53,13 @@ export default function SignInModal({ open, setOpen }) {
                       className='text-2xl xl:text-4xl font-greycliff font-semibold leading-6 text-gray-900'
                     >
                       <h2>
-                        All that expertise. <br />
-                        All in one place.
+                        All that expertise, <br />
+                        all in one place.
                       </h2>
                     </Dialog.Title>
                     <div>
                       <p className='lg:text-lg text-gray-500 leading-snug'>
-                        Access all your favorited Packaging School content
+                        Access all your favorite Packaging School content
                         including courses, articles, saved applications, and
                         more all in one convenient place. Use your LinkedIn or
                         Google accounts to get started.

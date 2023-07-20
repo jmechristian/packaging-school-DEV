@@ -72,13 +72,11 @@ const LessonsHeader = ({ id, title, subhead, tags, author, date }) => {
               {title}
             </h1>
             <div onClick={savedLesson}>
-              {user && (
-                <StarIcon
-                  className={`w-6 h-6 lg:w-7 lg:h-7 ${
-                    isSaved ? 'fill-yellow-500' : 'fill-gray-600'
-                  }`}
-                />
-              )}
+              <StarIcon
+                className={`w-6 h-6 lg:w-7 lg:h-7 ${
+                  isSaved ? 'fill-yellow-500' : 'fill-gray-600'
+                }`}
+              />
             </div>
           </div>
           {date && (
