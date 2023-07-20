@@ -103,6 +103,10 @@
   .bad-html > ul > li {
     @apply py-3;
   }
+
+  .wp-content > p {
+    @apply py-6;
+  }
 }
 
 @tailwind components;

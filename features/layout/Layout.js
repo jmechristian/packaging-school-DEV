@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Footer from '../navigation/Footer/Footer';
 import { useSelector, useDispatch } from 'react-redux';
 import {
+  setAllArticles,
   setAllCourses,
   setAllLessons,
   setPreviewClosed,
@@ -81,6 +82,20 @@ const Layout = ({ children }) => {
       }
     `;
 
+    const getArticles = /* GraphQL */ `
+      query MyQuery {
+        listBlogs {
+          items {
+            id
+            slug
+            title
+            content
+            date
+          }
+        }
+      }
+    `;
+
     const getCourses = async () => {
       const courses = await API.graphql({
         query: listLMSCourses,
@@ -95,8 +110,14 @@ const Layout = ({ children }) => {
       dispatch(setAllLessons(lessons.data.listLessons.items));
     };
 
+    const setArticles = async () => {
+      const articles = await API.graphql(graphqlOperation(getArticles));
+      dispatch(setAllArticles(articles.data.listBlogs.items));
+    };
+
     getCourses();
     setLessons();
+    setArticles();
   }, [dispatch]);
 
   useEffect(() => {

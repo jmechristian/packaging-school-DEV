@@ -8,6 +8,7 @@ const nextConfig = {
       'packschool.s3.amazonaws.com',
       'tailwindui.com',
       'apsmedia.s3.amazonaws.com',
+      'packagingschool.com',
     ],
   },
   async redirects() {

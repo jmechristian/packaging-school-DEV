@@ -10,6 +10,7 @@ const initialState = {
   },
   allCourses: null,
   allLessons: null,
+  allArticles: null,
   preview: false,
   embedId: '',
 };
@@ -33,6 +34,9 @@ export const courseFilterSlice = createSlice({
     setAllLessons: (state, action) => {
       state.allLessons = action.payload;
     },
+    setAllArticles: (state, action) => {
+      state.allArticles = action.payload;
+    },
     setPreviewOpen: (state, action) => {
       state.preview = true;
       state.embedId = action.payload;
@@ -52,6 +56,7 @@ export const {
   setPreviewOpen,
   setPreviewClosed,
   setAllLessons,
+  setAllArticles,
 } = courseFilterSlice.actions;
 
 export default courseFilterSlice.reducer;
