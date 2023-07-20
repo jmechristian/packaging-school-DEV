@@ -17,28 +17,29 @@ const HomeFree = ({ courses }) => {
   }, [setFreeCourses, allCourses]);
 
   return (
-    <div className='flex flex-col bg-slate-200 rounded-lg lg:items-start gap-9 py-12 px-6 lg:max-w-7xl lg:mx-auto w-full'>
+    <div className='relative lg:overflow-hidden flex flex-col bg-gray-200 rounded-lg lg:items-start gap-9 py-12 lg:max-w-7xl lg:mx-auto w-full'>
+      <div className='absolute lg:hidden top-0 bottom-0 right-0 w-6 z-10 bg-gradient-to-l from-gray-200 via-gray-200' />
       <div className='flex w-full flex-col lg:flex-row lg:justify-between gap-3'>
-        <div className='flex flex-row justify-between w-full items-center'>
+        <div className='flex flex-row justify-between w-full items-center  px-6'>
           <div className='flex flex-col gap-3'>
             <div className='text-lg text-center lg:text-left gap-2 flex flex-col'>
               <div className='font-greycliff font-bold text-2xl md:text-3xl'>
                 Get Started for Free Today!
               </div>
-              <div className='text-slate-600'>
-                <span className='underline font-semibold text-slate-700'>
+              <div className='text-gray-600'>
+                <span className='underline font-semibold text-gray-700'>
                   Create Your Free Account
                 </span>{' '}
                 and take your first step to becoming a knowledge leader.
               </div>
             </div>
           </div>
-          <div className='bg-white border border-slate-600 rounded-lg p-3 font-greycliff hidden lg:block font-semibold'>
+          <div className='bg-white border border-gray-600 rounded-lg p-3 font-greycliff hidden lg:block font-semibold'>
             <Link href={'/all_courses'}>Create Free Account</Link>
           </div>
         </div>
       </div>
-      <div className='lg:grid grid-cols-4 gap-4 hidden'>
+      <div className='lg:grid grid-cols-4 gap-4 hidden px-6'>
         {freeCourses &&
           freeCourses.map((course, i) => (
             <div key={course.id} className='inline-block'>
@@ -78,7 +79,7 @@ const HomeFree = ({ courses }) => {
             ))}
         </Scroller>
       </div>
-      <div className='flex w-full text-slate-700 flex-col gap-1 items-center lg:text-center mt-3 font-bold font-greycliff text-xl'>
+      <div className='flex w-full text-gray-700 flex-col gap-1 items-center lg:text-center mt-3 font-bold font-greycliff text-xl'>
         <Link href='/all_courses'>Explore All Courses</Link>
       </div>
     </div>

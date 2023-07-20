@@ -157,8 +157,8 @@ const CourseCard = ({
 
   return (
     <>
-      <motion.div className='w-full max-w-[300px] lg:max-w-[350px] dark:bg-dark-mid text-white bg-slate-200 rounded-xl shadow-lg aspect-1'>
-        <div className='p-4 flex flex-col justify-between h-full'>
+      <motion.div className='w-full h-full max-w-[330px] dark:bg-dark-mid text-white bg-slate-200 rounded-xl shadow-lg'>
+        <div className='p-4 flex flex-col justify-between h-full gap-6'>
           <div className='flex flex-col gap-4'>
             <div className='flex justify-between'>
               <div

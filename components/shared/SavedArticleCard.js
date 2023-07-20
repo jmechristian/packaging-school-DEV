@@ -16,7 +16,7 @@ import { updateUser } from '../../src/graphql/mutations';
 import { useRouter } from 'next/router';
 import { toggleSignInModal } from '../../features/layout/layoutSlice';
 
-const SavedContentCard = ({ id, title, desc, slug }) => {
+const SavedArticleCard = ({ id, title, desc, slug }) => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
 
@@ -25,7 +25,7 @@ const SavedContentCard = ({ id, title, desc, slug }) => {
   const [isSaved, setIsSaved] = useState(false);
 
   useEffect(() => {
-    if (user && user.savedLessons && user.savedLessons.includes(id)) {
+    if (user && user.savedArticles && user.savedArticles.includes(id)) {
       setIsSaved(true);
     }
   }, [user, id]);
@@ -36,25 +36,25 @@ const SavedContentCard = ({ id, title, desc, slug }) => {
     } else {
       if (!isSaved) {
         setIsSaved(true);
-        const currentSaved = user.savedLessons
-          ? [...user.savedLessons, id]
+        const currentSaved = user.savedArticles
+          ? [...user.savedArticles, id]
           : id;
         console.log('curent', currentSaved);
         await API.graphql({
           query: updateUser,
           variables: {
-            input: { id: user.id, savedLessons: currentSaved },
+            input: { id: user.id, savedArticles: currentSaved },
           },
         });
       } else if (isSaved) {
         setIsSaved(false);
-        const currentSaved = user.savedLessons ? [...user.savedLessons] : [];
+        const currentSaved = user.savedArticles ? [...user.savedArticles] : [];
         const filteredSaved = currentSaved.filter((l) => l !== id);
         console.log(filteredSaved);
         await API.graphql({
           query: updateUser,
           variables: {
-            input: { id: user.id, savedLessons: filteredSaved },
+            input: { id: user.id, savedArticles: filteredSaved },
           },
         });
       }
@@ -102,4 +102,4 @@ const SavedContentCard = ({ id, title, desc, slug }) => {
   );
 };
 
-export default SavedContentCard;
+export default SavedArticleCard;
