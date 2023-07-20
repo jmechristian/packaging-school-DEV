@@ -30,22 +30,23 @@ const searchClient = algoliasearch(
 );
 
 export function ProductItem({ hit }) {
+  const dispatch = useDispatch();
   return (
     <div className='flex justify-between items-center w-full'>
-      <a
-        href={`https://library.packagingschool.com/blog/${hit.slug}`}
-        className='aa-ItemLink hover:bg-slate-700 cursor-pointer w-full'
-        target='_blank'
-        rel='noReferrer'
-      >
-        <div className='font-greycliff font-semibold leading-snug lg:text-lg dark:text-white w-full'>
-          <Highlight hit={hit} attribute='title' />
-        </div>
+      <Link href={`/articles/${hit.slug}`} passHref>
+        <a
+          className='aa-ItemLink hover:bg-slate-700 cursor-pointer w-full'
+          onClick={() => dispatch(closeSearch())}
+        >
+          <div className='font-greycliff font-semibold leading-snug lg:text-lg dark:text-white w-full'>
+            <Highlight hit={hit} attribute='title' />
+          </div>
 
-        <div className='col-span-1 flex items-center justify-end w-full'>
-          <ArrowUpRightIcon className='w-5 h-5 mr-2 stroke-white' />
-        </div>
-      </a>
+          <div className='col-span-1 flex items-center justify-end w-full'>
+            <ArrowUpRightIcon className='w-5 h-5 mr-2 stroke-white' />
+          </div>
+        </a>
+      </Link>
     </div>
   );
 }
@@ -97,6 +98,7 @@ export function CertItem({ hit }) {
 }
 
 export function CourseItem({ hit }) {
+  const dispatch = useDispatch();
   const setBackground = () => {
     switch (hit.title) {
       case 'Certificate of Mastery in Packaging Management':
@@ -111,34 +113,36 @@ export function CourseItem({ hit }) {
   };
 
   return (
-    <a
-      href={`/courses/${hit.slug}`}
-      className='aa-ItemLink hover:bg-slate-700 cursor-pointer'
-    >
-      <div className='grid grid-cols-5 w-full'>
-        <div className='px-3 py-1.5 col-span-4'>
-          <div className='flex gap-3 w-full'>
-            <div>
-              <GlobalMaterialsIcon scale={12} background={setBackground()} />
-            </div>
-            <div className='flex flex-col '>
-              <div className='font-greycliff font-semibold leading-snug md:text-lg dark:text-white'>
-                <Highlight hit={hit} attribute='title' />
+    <Link passHref href={`/courses/${hit.slug}`}>
+      <a
+        className='aa-ItemLink hover:bg-slate-700 cursor-pointer'
+        onClick={() => dispatch(closeSearch())}
+      >
+        <div className='grid grid-cols-5 w-full'>
+          <div className='px-3 py-1.5 col-span-4'>
+            <div className='flex gap-3 w-full'>
+              <div>
+                <GlobalMaterialsIcon scale={12} background={setBackground()} />
               </div>
-              <div className='aa-ItemTitle line-clamp-2 text-sm md:text-base text-slate-600 dark:text-slate-400'>
-                <Highlight hit={hit} attribute='subheadline' />
-              </div>
-              <div className='aa-ItemTitle line-clamp-2  text-sm md:text-base text-slate-600 dark:text-slate-400'>
-                <Highlight hit={hit} attribute='subhead' />
+              <div className='flex flex-col '>
+                <div className='font-greycliff font-semibold leading-snug md:text-lg dark:text-white'>
+                  <Highlight hit={hit} attribute='title' />
+                </div>
+                <div className='aa-ItemTitle line-clamp-2 text-sm md:text-base text-slate-600 dark:text-slate-400'>
+                  <Highlight hit={hit} attribute='subheadline' />
+                </div>
+                <div className='aa-ItemTitle line-clamp-2  text-sm md:text-base text-slate-600 dark:text-slate-400'>
+                  <Highlight hit={hit} attribute='subhead' />
+                </div>
               </div>
             </div>
           </div>
+          <div className='col-span-1 flex items-center justify-end'>
+            <ArrowUpRightIcon className='w-5 h-5 mr-2 stroke-white' />
+          </div>
         </div>
-        <div className='col-span-1 flex items-center justify-end'>
-          <ArrowUpRightIcon className='w-5 h-5 mr-2 stroke-white' />
-        </div>
-      </div>
-    </a>
+      </a>
+    </Link>
   );
 }
 

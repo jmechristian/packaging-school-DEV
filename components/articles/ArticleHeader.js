@@ -6,14 +6,14 @@ import { API } from 'aws-amplify';
 import { updateUser } from '../../src/graphql/mutations';
 import { toggleSignInModal } from '../../features/layout/layoutSlice';
 
-const LessonsHeader = ({ id, title, subhead, tags, author, date }) => {
+const ArticleHeader = ({ id, title, subhead, tags, author, date }) => {
   const { user } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const newDate = new Date(date).toDateString();
   const [isSaved, setIsSaved] = useState(false);
 
   useEffect(() => {
-    user && setIsSaved(user.savedLessons && user.savedLessons.includes(id));
+    user && setIsSaved(user.savedArticles && user.savedArticles.includes(id));
   }, [user, id]);
 
   const savedLesson = async () => {
@@ -22,25 +22,24 @@ const LessonsHeader = ({ id, title, subhead, tags, author, date }) => {
     } else {
       if (!isSaved) {
         setIsSaved(true);
-        const currentSaved = user.savedLessons
-          ? [...user.savedLessons, id]
+        const currentSaved = user.savedArticles
+          ? [...user.savedArticles, id]
           : id;
-        console.log('curent', currentSaved);
         await API.graphql({
           query: updateUser,
           variables: {
-            input: { id: user.id, savedLessons: currentSaved },
+            input: { id: user.id, savedArticles: currentSaved },
           },
         });
       } else if (isSaved) {
         setIsSaved(false);
-        const currentSaved = user.savedLessons ? [...user.savedLessons] : [];
+        const currentSaved = user.savedArticles ? [...user.savedArticles] : [];
         const filteredSaved = currentSaved.filter((l) => l !== id);
         console.log(filteredSaved);
         await API.graphql({
           query: updateUser,
           variables: {
-            input: { id: user.id, savedLessons: filteredSaved },
+            input: { id: user.id, savedArticles: filteredSaved },
           },
         });
       }
@@ -86,4 +85,4 @@ const LessonsHeader = ({ id, title, subhead, tags, author, date }) => {
   );
 };
 
-export default LessonsHeader;
+export default ArticleHeader;

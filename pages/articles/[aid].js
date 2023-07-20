@@ -8,7 +8,7 @@ Amplify.configure(awsExports);
 
 const GRAPHQL_ENDPOINT = process.env.GRAPHQL_ENDPOINT;
 const GRAPHQL_API_KEY = process.env.GRAPHQL_API_KEY;
-
+import ArticleHeader from '../../components/articles/ArticleHeader';
 import LessonsHeader from '../../components/lessons/LessonsHeader';
 import SocialShare from '../../components/shared/SocialShare';
 import ArticleContent from '../../components/articles/ArticleContent';
@@ -24,11 +24,12 @@ const Index = ({ article }) => {
         <meta property='og:title' content={article.title} />
       </Head>
       <div className='flex flex-col gap-12 pt-12 dark:bg-dark-dark'>
-        <LessonsHeader
+        <ArticleHeader
           title={article.title}
           subhead={''}
           date={article.date}
           author={article.author}
+          id={article.id}
         />
         {article.media && (
           <div>
@@ -96,6 +97,7 @@ export async function getStaticProps({ params }) {
           media
           slug
           title
+          id
         }
       }
     }
