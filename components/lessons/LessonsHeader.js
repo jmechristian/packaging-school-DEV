@@ -60,7 +60,7 @@ const LessonsHeader = ({ id, title, subhead, tags, author, date }) => {
         </div>
       )}
       <div>
-        <div className='flex justify-between w-full'>
+        <div className='flex justify-between w-full gap-4'>
           <h1 className='text-4xl font-bold tracking-tight sm:text-5xl font-greycliff dark:text-white'>
             {title}
           </h1>
