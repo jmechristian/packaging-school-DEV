@@ -63,12 +63,12 @@ const FormStat = ({
         </span>{' '}
         <span className='text-slate-100 text-sm'>{label}</span>
       </div>
-      <div className='flex flex-col gap-2 py-16 border-r border-r-slate-300 bg-slate-200 h-full justify-center items-center'>
+      <div className='flex flex-col gap-2 py-16 border-r border-r-slate-300 bg-slate-200 dark:bg-neutral-600 h-full justify-center items-center'>
         <div className='text-slate-700 text-sm'>
           {!updated ? (
             'No Applications Found'
           ) : (
-            <div className='flex flex-col gap-1 items-center'>
+            <div className='flex flex-col gap-1 items-center dark:text-white'>
               <div className='font-semibold'>Last Updated:</div>
               <div>{updated && newDate}</div>
             </div>
@@ -80,8 +80,8 @@ const FormStat = ({
             className={`flex items-center justify-center rounded-md cursor-pointer ${
               !updated
                 ? 'bg-clemson hover:bg-clemson-dark'
-                : 'bg-base-brand hover:bg-base-mid'
-            } text-white px-4 py-3 text-sm font-semibold shadow-sm ring-1 ring-inset ring-slate-300 font-greycliff`}
+                : 'bg-base-brand dark:bg-base-dark hover:bg-base-mid'
+            } text-white px-4 py-3 text-sm font-semibold shadow-sm ring-1 ring-inset ring-slate-300 dark:ring-neutral-700 font-greycliff`}
           >
             {updated ? 'View' : 'Start'} Application
           </button>

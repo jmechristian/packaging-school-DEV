@@ -16,9 +16,9 @@ export default function ProfileStats({ user }) {
     (state) => state.course_filter
   );
   return (
-    <div className='lg:px-16 pb-16 flex flex-col gap-16'>
+    <div className='lg:px-16 pb-16 py-16 flex flex-col gap-16 dark:bg-neutral-800'>
       <div>
-        <h3 className='text-lg font-bold leading-6 text-gray-900 font-greycliff px-8 lg:px-0 mb-6'>
+        <h3 className='text-lg font-bold leading-6 text-gray-900 dark:text-white font-greycliff px-8 lg:px-0 mb-6'>
           Your Saved Courses
         </h3>
         <div className='hidden lg:grid  lg:grid-cols-3 gap-3'>
@@ -58,7 +58,7 @@ export default function ProfileStats({ user }) {
         </div>
       </div>
       <div>
-        <h3 className='text-lg font-bold leading-6 text-gray-900 font-greycliff px-8 lg:px-0 mb-6'>
+        <h3 className='text-lg font-bold leading-6 text-gray-900 dark:text-white font-greycliff px-8 lg:px-0 mb-6'>
           Your Saved Lessons
         </h3>
         <div className='hidden lg:grid lg:grid-cols-3 gap-3'>
@@ -115,7 +115,7 @@ export default function ProfileStats({ user }) {
         </div>
       </div>
       <div>
-        <h3 className='text-lg font-bold leading-6 text-gray-900 font-greycliff mb-6 px-8'>
+        <h3 className='text-lg font-bold leading-6 text-gray-900 dark:text-white font-greycliff px-8 lg:px-0 mb-6'>
           Your Saved Articles
         </h3>
         <div className='hidden lg:grid lg:grid-cols-3 gap-3'>

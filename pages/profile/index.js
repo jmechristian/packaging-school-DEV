@@ -25,7 +25,7 @@ export default withPageAuthRequired(function Page() {
   return (
     <div className='bg-slate-100 dark:bg-dark-dark min-h-screen'>
       <div className='md:py-16'>
-        <div className='mx-auto max-w-6xl shadow-xl my-16 rounded-lg flex flex-col gap-6'>
+        <div className='mx-auto max-w-6xl shadow-xl my-16 rounded-lg flex flex-col'>
           {currentUser && (
             <>
               <ProfileHead

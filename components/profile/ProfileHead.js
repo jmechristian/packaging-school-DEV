@@ -48,12 +48,12 @@ export default function ProfileHead({ user }) {
           </div>
         </div>
       </div>
-      <div className='grid grid-cols-1 lg:grid-cols-3'>
-        <div className='col-span-1 bg-slate-300 flex flex-col gap-6 py-3 px-9'>
-          <div className='font-greycliff text-lg text-slate-600 font-semibold'>
+      <div className='grid grid-cols-1 lg:grid-cols-2'>
+        {/* <div className='col-span-1 bg-slate-300 dark:bg-neutral-700 flex flex-col gap-6 py-3 px-9'>
+          <div className='font-greycliff text-lg text-slate-600 dark:text-white font-semibold'>
             Badges Earned
           </div>
-        </div>
+        </div> */}
         <div className='lg:col-span-2 grid lg:grid-cols-2'>
           <div className='sm:col-span-2 py-2.5 w-full bg-base-dark'>
             <div className='font-greycliff text-center font-semibold text-lg text-white'>
