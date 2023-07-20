@@ -8,11 +8,11 @@ import {
 
 export default function ProfileHead({ user }) {
   return (
-    <div className='overflow-hidden rounded-t-lg bg-white box-shadow-lg'>
+    <div className='overflow-hidden rounded-t-lg bg-white dark:bg-dark-mid box-shadow-lg'>
       <h2 className='sr-only' id='profile-overview-title'>
         Profile Overview
       </h2>
-      <div className='bg-white p-9'>
+      <div className='bg-white dark:bg-dark-mid p-9'>
         <div className='sm:flex sm:items-center sm:justify-between'>
           <div className='sm:flex sm:space-x-5'>
             <div className='flex-shrink-0'>
@@ -23,13 +23,13 @@ export default function ProfileHead({ user }) {
               />
             </div>
             <div className='mt-4 text-center sm:mt-0 sm:pt-1 sm:text-left flex flex-col justify-center'>
-              <p className='text-lg font-medium text-slate-600'>
+              <p className='text-lg font-medium text-slate-600 dark:text-white/60'>
                 Welcome back,
               </p>
-              <div className='text-xl font-bold text-slate-900 sm:text-4xl'>
+              <div className='text-xl font-bold text-slate-900 dark:text-white sm:text-4xl'>
                 {user.name}
               </div>
-              <p className=' font-medium text-slate-600 flex justify-center gap-1.5'>
+              <p className=' font-medium text-slate-600 dark:text-white flex justify-center gap-1.5'>
                 {user.title ? (
                   user.title
                 ) : (
