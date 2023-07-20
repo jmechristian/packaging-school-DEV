@@ -124,8 +124,10 @@ const Layout = ({ children }) => {
     if (window.matchMedia) {
       if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
         dispatch(setDark());
+        document.body.classList.add('dark');
       } else {
         dispatch(setLight());
+        document.body.classList.remove('dark');
       }
 
       if (!window.matchMedia) {
