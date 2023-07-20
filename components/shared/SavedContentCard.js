@@ -66,7 +66,7 @@ const SavedContentCard = ({ id, title, desc, slug }) => {
       <motion.div className='w-full h-full max-w-[330px] dark:bg-dark-mid text-white bg-slate-200 rounded-xl shadow-lg'>
         <div className='p-6 flex flex-col gap-6 justify-between h-full'>
           <div className='flex flex-col gap-4'>
-            <div className='flex justify-between'>
+            <div className='flex justify-between gap-3'>
               <div className='font-semibold text-xl font-greycliff leading-tight line-clamp-2 text-slate-900 dark:text-white'>
                 {title}
               </div>
