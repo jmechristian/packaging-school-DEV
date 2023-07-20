@@ -18,7 +18,6 @@ const AllCourseCourses = ({ selectedFilter, coursesToShow }) => {
             &nbsp;
           </span>
         </div>
-        <ScrollButtons />
       </div>
       <div className='relative flex flex-col gap-6 lg:grid lg:grid-cols-3'>
         {coursesToShow.map((course, i) => (

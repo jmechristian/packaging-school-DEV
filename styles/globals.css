@@ -6,7 +6,7 @@
   }
 
   .container-7xl {
-    @apply w-full max-w-7xl mx-auto px-6 lg:px-0;
+    @apply w-full max-w-7xl mx-auto px-4 md:px-8 xl:px-0;
   }
 
   .container__inner {

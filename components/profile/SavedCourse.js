@@ -22,7 +22,7 @@ const SavedCourse = ({ courseId, savedCourses }) => {
   }, [courseId]);
 
   return (
-    <div className='h-full'>
+    <div className='h-full w-full'>
       {savedCourse && (
         <CourseCard
           courseId={savedCourse.id}

@@ -69,10 +69,10 @@ export default function ProfileDetails({ user, isEditing, toggleEditing }) {
       {isEditing ? (
         <div className='mt-6'>
           <form
-            className='grid grid-cols-1 sm:grid-cols-2 gap-x-16'
+            className='md:grid md:grid-cols-2 md:gap-x-16'
             onSubmit={updateUserProfile}
           >
-            <div className='border-t border-slate-300 px-4 py-7 sm:col-span-1 sm:px-0'>
+            <div className='border-t border-slate-300 py-7 sm:col-span-1 sm:px-0'>
               <dt className='font-medium leading-6 font-greycliff text-slate-500'>
                 Full name
               </dt>
@@ -87,7 +87,7 @@ export default function ProfileDetails({ user, isEditing, toggleEditing }) {
                 />
               </div>
             </div>
-            <div className='border-t border-slate-300 px-4 py-7 sm:col-span-1 sm:px-0'>
+            <div className='border-t border-slate-300  py-7 sm:col-span-1 sm:px-0'>
               <dt className=' font-medium leading-6 text-slate-500 font-greycliff'>
                 Company
               </dt>
@@ -101,7 +101,7 @@ export default function ProfileDetails({ user, isEditing, toggleEditing }) {
                 onChange={(e) => setCompany(e.target.value)}
               />
             </div>
-            <div className='border-t border-slate-300 px-4 py-7 sm:col-span-1 sm:px-0'>
+            <div className='border-t border-slate-300  py-7 sm:col-span-1 sm:px-0'>
               <dt className=' font-medium leading-6 text-slate-500 font-greycliff'>
                 Email address
               </dt>
@@ -115,7 +115,7 @@ export default function ProfileDetails({ user, isEditing, toggleEditing }) {
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
-            <div className='border-t border-slate-300 px-4 py-7 sm:col-span-1 sm:px-0'>
+            <div className='border-t border-slate-300  py-7 sm:col-span-1 sm:px-0'>
               <dt className=' font-medium leading-6 text-slate-500 font-greycliff'>
                 Title
               </dt>
@@ -129,7 +129,7 @@ export default function ProfileDetails({ user, isEditing, toggleEditing }) {
                 onChange={(e) => setTitle(e.target.value)}
               />
             </div>
-            <div className='border-t border-slate-300 px-4 py-7 sm:col-span-2 sm:px-0'>
+            <div className='border-t border-slate-300  py-7 sm:col-span-2 sm:px-0'>
               <dt className=' font-medium leading-6 text-slate-500 font-greycliff'>
                 LinkedIn
               </dt>
@@ -143,7 +143,7 @@ export default function ProfileDetails({ user, isEditing, toggleEditing }) {
                 onChange={(e) => setLinkedIn(e.target.value)}
               />
             </div>
-            <div className='border-t border-slate-300 px-4 py-7 sm:col-span-2 sm:px-0'>
+            <div className='border-t border-slate-300  py-7 sm:col-span-2 sm:px-0'>
               <dt className=' font-medium leading-6 text-slate-500 font-greycliff'>
                 Bio
               </dt>

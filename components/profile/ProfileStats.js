@@ -16,12 +16,12 @@ export default function ProfileStats({ user }) {
     (state) => state.course_filter
   );
   return (
-    <div className='md:px-16 pb-16 flex flex-col gap-16'>
+    <div className='lg:px-16 pb-16 flex flex-col gap-16'>
       <div>
-        <h3 className='text-lg font-bold leading-6 text-gray-900 font-greycliff mb-6 px-6 md:px-0'>
+        <h3 className='text-lg font-bold leading-6 text-gray-900 font-greycliff px-8 lg:px-0 mb-6'>
           Your Saved Courses
         </h3>
-        <div className='hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-3'>
+        <div className='hidden lg:grid  lg:grid-cols-3 gap-3'>
           {user && user.savedCourses && user.savedCourses.length > 0 ? (
             user.savedCourses.map((it, i) => (
               <div key={i} className='h-full'>
@@ -37,8 +37,8 @@ export default function ProfileStats({ user }) {
             </div>
           )}
         </div>
-        <div className='md:hidden relative w-full h-full'>
-          <div className='absolute right-0 top-0 bottom-0 w-6 bg-gradient-to-l  from-slate-100' />
+        <div className='lg:hidden relative w-full h-full pt-3'>
+          <div className='absolute right-0 top-0 bottom-0 w-6 md:w-12 bg-gradient-to-l via-slate-100  from-slate-100' />
           <Scroller rows='2' scroll={scrollRef}>
             {user && user.savedCourses && user.savedCourses.length > 0 ? (
               user.savedCourses.map((it, i) => (
@@ -58,10 +58,10 @@ export default function ProfileStats({ user }) {
         </div>
       </div>
       <div>
-        <h3 className='text-lg font-bold leading-6 text-gray-900 font-greycliff px-6 lg:px-0 mb-6'>
+        <h3 className='text-lg font-bold leading-6 text-gray-900 font-greycliff px-8 lg:px-0 mb-6'>
           Your Saved Lessons
         </h3>
-        <div className='hidden md:grid md:grid-cols-2 lg:grid-cols-3  gap-3'>
+        <div className='hidden lg:grid lg:grid-cols-3 gap-3'>
           {user &&
             user.savedLessons &&
             allLessons &&
@@ -87,7 +87,7 @@ export default function ProfileStats({ user }) {
             </div>
           )}
         </div>
-        <div className='md:hidden relative w-full h-full'>
+        <div className='lg:hidden relative w-full h-full'>
           <div className='absolute right-0 top-0 bottom-0 w-6 bg-gradient-to-l  from-slate-100' />
           <Scroller rows='2' scroll={scrollRef}>
             {user && user.savedLessons && user.savedLessons.length > 0 ? (
@@ -115,10 +115,10 @@ export default function ProfileStats({ user }) {
         </div>
       </div>
       <div>
-        <h3 className='text-lg font-bold leading-6 text-gray-900 font-greycliff px-6 lg:px-0 mb-6'>
+        <h3 className='text-lg font-bold leading-6 text-gray-900 font-greycliff mb-6 px-8'>
           Your Saved Articles
         </h3>
-        <div className='hidden md:grid md:grid-cols-2 lg:grid-cols-3  gap-3'>
+        <div className='hidden lg:grid lg:grid-cols-3 gap-3'>
           {user &&
             user.savedArticles &&
             allArticles &&
@@ -144,7 +144,7 @@ export default function ProfileStats({ user }) {
             </div>
           )}
         </div>
-        <div className='md:hidden relative w-full h-full'>
+        <div className='lg:hidden relative w-full h-full'>
           <div className='absolute right-0 top-0 bottom-0 w-6 bg-gradient-to-l  from-slate-100' />
           <Scroller rows='2' scroll={scrollRef}>
             {user && user.savedArticles && user.savedArticles.length > 0 ? (
