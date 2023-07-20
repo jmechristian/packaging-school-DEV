@@ -33,7 +33,7 @@ const RelatedLessons = ({ relatedLessons, lessonId }) => {
                   <div className='max-w-xl'>
                     <div className='group relative'>
                       <h3 className='mt-6 text-xl font-greycliff font-semibold leading-6 text-gray-900 dark:text-base-brand group-hover:text-base-dark'>
-                        <Link href={`/lessons/${course.slug}`} passHref>
+                        <Link href={`/lessons/${course.slug}`}>
                           <a
                             onClick={() =>
                               gtag('event', 'related_lesson_click', {
