@@ -14,7 +14,7 @@ const AllCourseBodyDesktop = ({ coursesToShow }) => {
           <AllCourseMenu />
         </div>
       </div>
-      <div className='flex max-w-4xl flex-col gap-16'>
+      <div className='flex max-w-5xl flex-col gap-16'>
         <AllCourseCert />
         <AllCourseCourses
           coursesToShow={coursesToShow}
