@@ -48,11 +48,11 @@ const AllCourseCertMobile = () => {
   ];
 
   return (
-    <div className='flex flex-col gap-6'>
-      <div className='text-2xl font-semibold font-greycliff dark:text-slate-400 leading-tight col-span-4 container__inner mb-2'>
-        Certificate Programs
+    <div className='flex flex-col gap-6 mt-4'>
+      <div className='text-xl font-semibold font-greycliff dark:text-slate-400 leading-tight col-span-4 px-6  md:px-8 mb-2'>
+        Find Your Learning Path
       </div>
-      <div className='relative grid lg:grid-cols-2 gap-6 px-6'>
+      <div className='relative grid md:grid-cols-2 lg:grid-cols-2 gap-6 px-6  md:px-8'>
         {certs.map((c) => (
           <div className='w-full' key={c.title}>
             <CertificateCard
