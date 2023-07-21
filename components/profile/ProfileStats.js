@@ -38,7 +38,7 @@ export default function ProfileStats({ user }) {
           )}
         </div>
         <div className='lg:hidden relative w-full h-full pt-3'>
-          <div className='absolute right-0 top-0 bottom-0 w-6 md:w-12 bg-gradient-to-l via-slate-100  from-slate-100' />
+          <div className='absolute right-0 top-0 bottom-0 w-6 md:w-12 bg-gradient-to-l via-slate-100 dark:via-neutral-800 dark:from-neutral-800 from-slate-100' />
           <Scroller rows='2' scroll={scrollRef}>
             {user && user.savedCourses && user.savedCourses.length > 0 ? (
               user.savedCourses.map((it, i) => (
@@ -88,7 +88,7 @@ export default function ProfileStats({ user }) {
           )}
         </div>
         <div className='lg:hidden relative w-full h-full'>
-          <div className='absolute right-0 top-0 bottom-0 w-6 bg-gradient-to-l  from-slate-100' />
+          <div className='absolute right-0 top-0 bottom-0 w-6 bg-gradient-to-l  from-slate-100 dark:via-neutral-800 dark:from-neutral-800' />
           <Scroller rows='2' scroll={scrollRef}>
             {user && user.savedLessons && user.savedLessons.length > 0 ? (
               allLessons &&
@@ -146,7 +146,7 @@ export default function ProfileStats({ user }) {
           )}
         </div>
         <div className='lg:hidden relative w-full h-full'>
-          <div className='absolute right-0 top-0 bottom-0 w-6 bg-gradient-to-l  from-slate-100' />
+          <div className='absolute right-0 top-0 bottom-0 w-6 bg-gradient-to-l  from-slate-100 dark:via-neutral-800 dark:from-neutral-800' />
           <Scroller rows='2' scroll={scrollRef}>
             {user && user.savedArticles && user.savedArticles.length > 0 ? (
               allArticles &&
