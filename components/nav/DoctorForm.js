@@ -16,8 +16,14 @@ const DoctorForm = ({ close }) => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = async (data) => {
-    const res = await fetch('/api/send-suggs-email');
+  const onSubmit = (data) => {
+    fetch('http://localhost:3000/api/send-suggs-email', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+    });
   };
 
   return (
@@ -59,7 +65,7 @@ const DoctorForm = ({ close }) => {
         {...register('message', { required: true })}
         defaultValue={isMessage}
         onChange={(e) => setIsMessage(e.target.value)}
-        rows={4}
+        rows={3}
         placeholder='Your message to Dr. Suggs*'
         className='block w-full rounded-md border-0 py-2 px-3 text-slate-900 ring-1 ring-inset ring-slate-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm md:text-base sm:leading-6'
       />
@@ -74,7 +80,9 @@ const DoctorForm = ({ close }) => {
           type='submit'
           className='w-full py-2 text-center font-semibold bg-clemson hover:bg-clemson-dark text-white rounded-lg text-lg'
         >
-          Submit
+          {!isLoading && !isSubmitted && 'Submit'}
+          {isLoading && !isSubmitted && 'Sending...'}
+          {!isLoading && isSubmitted && 'Message'}
         </button>
       </div>
     </form>
