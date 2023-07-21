@@ -16,8 +16,9 @@ const DoctorForm = ({ close }) => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    fetch('http://localhost:3000/api/send-suggs-email', {
+  const onSubmit = async (data) => {
+    setIsLoading(true);
+    await fetch('http://localhost:3000/api/send-suggs-email', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -27,6 +28,12 @@ const DoctorForm = ({ close }) => {
         ...data,
       }),
     });
+    setIsLoading(false);
+    setIsSubmitted(true);
+    setIsFullName('');
+    setIsEmail('');
+    setIsPhone('');
+    setIsMessage('');
   };
 
   return (
@@ -85,7 +92,7 @@ const DoctorForm = ({ close }) => {
         >
           {!isLoading && !isSubmitted && 'Submit'}
           {isLoading && !isSubmitted && 'Sending...'}
-          {!isLoading && isSubmitted && 'Message'}
+          {!isLoading && isSubmitted && 'Sent!'}
         </button>
       </div>
     </form>
