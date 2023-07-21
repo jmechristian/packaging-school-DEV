@@ -63,9 +63,9 @@ const CourseCard = ({
       case 'DESIGN':
         return 'bg-clemson';
       case 'FOODANDBEVERAGE':
-        return 'bg-base-light text-slate-900';
+        return 'bg-base-light text-gray-900';
       case 'Food & Beverage':
-        return 'bg-base-light text-slate-900';
+        return 'bg-base-light text-gray-900';
       case 'Supply Chain & Logistics':
         return 'bg-clemson-dark text-white';
       case 'SUPPLYCHAIN':
@@ -157,7 +157,7 @@ const CourseCard = ({
 
   return (
     <>
-      <motion.div className='w-full h-full max-w-[300px] lg:max-w-[330px] dark:bg-dark-mid text-white bg-slate-200 rounded-xl shadow-lg'>
+      <motion.div className='w-full h-full max-w-[300px] lg:max-w-[330px] dark:bg-dark-mid text-white bg-gray-200 rounded-xl shadow-lg'>
         <div className='p-4 flex flex-col justify-between h-full gap-6'>
           <div className='flex flex-col gap-4'>
             <div className='flex justify-between'>
@@ -172,16 +172,16 @@ const CourseCard = ({
                   className={`w-6 h-6 cursor-pointer ${
                     isFavorited
                       ? 'text-yellow-500'
-                      : 'text-slate-400 dark:text-neutral-600'
+                      : 'text-gray-400 dark:text-neutral-600'
                   } `}
                 />
               </div>
             </div>
-            <div className='font-semibold text-xl font-greycliff leading-tight line-clamp-2 text-slate-900 dark:text-white'>
+            <div className='font-semibold text-xl font-greycliff leading-tight line-clamp-2 text-gray-900 dark:text-white'>
               {title}
             </div>
             <div
-              className='line-clamp-3 text-sm desc dark:text-white/60 text-slate-700'
+              className='line-clamp-3 text-sm desc dark:text-white/60 text-gray-700'
               data-tooltip-content={desc}
             >
               {desc}
@@ -192,10 +192,10 @@ const CourseCard = ({
           </div>
           <div className='flex justify-between items-end'>
             <div className='flex flex-col'>
-              <div className='text-sm dark:text-white/50 text-slate-700'>
+              <div className='text-sm dark:text-white/50 text-gray-700'>
                 {hours} hours
               </div>
-              <div className='font-greycliff text-2xl font-semibold text-slate-900 dark:text-white'>
+              <div className='font-greycliff text-2xl font-semibold text-gray-900 dark:text-white'>
                 {price === 'FREE' ? 'Free' : '$' + price}
               </div>
             </div>

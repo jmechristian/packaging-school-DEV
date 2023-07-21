@@ -3,7 +3,7 @@ import React from 'react';
 
 const RelatedCourses = ({ relatedCourses }) => {
   return (
-    <div className='bg-slate-100 dark:bg-dark py-24 sm:py-32'>
+    <div className='bg-gray-100 dark:bg-dark py-24 sm:py-32'>
       <div className='mx-auto max-w-7xl px-6 lg:px-8'>
         <div className='mx-auto max-w-4xl lg:mx-0'>
           <h2 className='text-3xl font-bold font-greycliff tracking-tight text-gray-900 dark:text-white sm:text-5xl'>
@@ -14,7 +14,7 @@ const RelatedCourses = ({ relatedCourses }) => {
             subject-matter experts.
           </p>
         </div>
-        <div className='mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-y-16 gap-x-8 border-t border-slate-300 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3'>
+        <div className='mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-y-16 gap-x-8 border-t border-gray-300 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3'>
           {relatedCourses &&
             relatedCourses.map((course, i) => (
               <article

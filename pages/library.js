@@ -12,6 +12,8 @@ import { useSelector } from 'react-redux';
 import SavedContentCard from '../components/shared/SavedContentCard';
 import SavedArticleCard from '../components/shared/SavedArticleCard';
 import { useRouter } from 'next/router';
+import GradientCTA from '../components/GradientCTA';
+import { ArrowSmallRightIcon } from '@heroicons/react/24/outline';
 
 const searchClient = algoliasearch(
   process.env.NEXT_PUBLIC_ALGOLIA_ID,
@@ -196,14 +198,14 @@ const Page = () => {
       <FadeIn>
         <div className='container-7xl flex justify-center items-center lg:text-center flex-col gap-6 py-16 lg:py-24'>
           <div className='flex flex-col gap-2'>
-            <div className='uppercase tracking-widest font-bold text-lg text-base-mid'>
+            <div className='uppercase tracking-widest font-bold text-lg text-base-mid md:text-center'>
               Welcome To The
             </div>
             <div className='text-4xl xl:text-6xl'>
               <h1 className='font-bold'>Packaging School Library</h1>
             </div>
           </div>
-          <div className='text-gray-600 text-lg xl:text-xl max-w-4xl'>
+          <div className='text-gray-600 text-lg xl:text-xl max-w-4xl md:text-center'>
             Here you will find a robust collection of information from the
             packaging industry&apos;s leading educator. Be sure to check back
             frequently as new content and features are added.
@@ -303,15 +305,15 @@ const Page = () => {
         </div>
       </FadeIn>
       <FadeIn>
-        <div className='container-7xl flex flex-col gap-6'>
-          <div className='w-full flex flex-col gap-6 lg:grid lg:grid-cols-6 lg:gap-12'>
+        <div className='container-7xl flex flex-col gap-6 pb-24'>
+          <div className='w-full flex flex-col gap-6 lg:grid lg:grid-cols-6 lg:gap-16'>
             <div className='flex flex-col lg:col-span-4'>
               <div className='font-semibold text-lg'>Latest Lessons</div>
               <div className='border-t border-t-gray-900 mt-1 py-6'>
-                <div className='flex flex-col gap-4 md:grid md:grid-cols-2'>
+                <div className='flex flex-col gap-4 md:grid md:grid-cols-2 xl:grid-cols-3'>
                   {allLessons &&
                     allLessons
-                      .slice(0, 5)
+                      .slice(0, 6)
                       .map((les) => (
                         <SavedContentCard
                           key={les.id}
@@ -327,37 +329,31 @@ const Page = () => {
             <div className='flex flex-col lg:col-span-2'>
               <div className='font-semibold text-lg'>Latest Articles</div>
               <div className='border-t border-t-gray-900 mt-1 py-6'>
-                <div className='flex flex-col md:grid md:grid-cols-2 gap-3 w-full'>
+                <div className='flex flex-col gap-3 w-full'>
                   {allArticles &&
-                    allArticles
-                      .slice(0, 4)
-                      .map((art) => (
-                        <SavedArticleCard
-                          id={art.id}
-                          title={art.title}
-                          key={art.id}
-                        />
-                      ))}
+                    allArticles.slice(0, 10).map((art) => (
+                      <div key={art.id} className='flex justify-between gap-2'>
+                        <div className='font-semibold text-gray-800 text-lg w-fit'>
+                          {art.title}
+                        </div>
+                        <div className='w-6 h-6 bg-gray-900 flex justify-center items-center rounded-full cursor-pointer'>
+                          <ArrowSmallRightIcon className='w-4 h-4 stroke-white' />
+                        </div>
+                      </div>
+                    ))}
                 </div>
               </div>
             </div>
           </div>
-          <div className='w-full flex flex-col gap-6 lg:grid lg:grid-cols-5'>
-            <div className='flex flex-col'>
-              <div className='font-semibold text-lg'>Latest Lessons</div>
-              <div className='border-t border-t-gray-900 mt-1 py-6'>
-                Lessons
-              </div>
-            </div>
-            <div className='flex flex-col'>
-              <div className='font-semibold text-lg'>
-                Comprehensive Certificates
-              </div>
-              <div className='border-t border-t-gray-900 mt-1 py-6'>Certs</div>
-            </div>
-          </div>
         </div>
       </FadeIn>
+      <GradientCTA
+        headline='Ready to Elevate Your Career?'
+        subheadline='Try a demo, risk-free.'
+        buttonText='Get Started For Free'
+        secondaryButtonText='Need More Info?'
+        buttonLink={'/all_courses'}
+      />
     </div>
   );
 };
