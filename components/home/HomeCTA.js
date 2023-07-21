@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const HomeCTA = () => {
   return (
@@ -16,12 +17,12 @@ const HomeCTA = () => {
               and use the search bar to find your solution.
             </p>
             <div className='mt-10 flex'>
-              <a
-                href='#'
-                className='rounded-md bg-clemson font-greycliff px-4 py-2.5 font-bold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-clemson text-lg'
-              >
-                Create Your Free Account <span aria-hidden='true'>&rarr;</span>
-              </a>
+              <Link href='/api/auth/login?returnTo=/'>
+                <a className='rounded-md bg-clemson font-greycliff px-4 py-2.5 font-bold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-clemson text-lg'>
+                  Create Your Free Account{' '}
+                  <span aria-hidden='true'>&rarr;</span>
+                </a>
+              </Link>
             </div>
           </div>
           <div className='flex flex-wrap items-start justify-end gap-6 sm:gap-8 lg:contents'>
