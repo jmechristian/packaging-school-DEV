@@ -58,18 +58,22 @@ const CertMenuItem = ({
         </div>
       </div>
       <div className='flex items-center gap-1 h-full'>
-        <div
-          className='rounded-lg px-3 py-1.5 font-greycliff text-sm w-fit  text-clemson font-bold'
-          onClick={() => onClose()}
-        >
-          <Link href={apply}>Apply Now</Link>
-        </div>
-        <div
-          className='rounded-lg px-3 py-1.5 font-greycliff text-sm  text-slate-500 font-semibold'
-          onClick={() => onClose()}
-        >
-          <Link href={learnMore}>Learn More</Link>
-        </div>
+        {apply && (
+          <div
+            className='rounded-lg px-3 py-1.5 font-greycliff text-sm w-fit  text-clemson font-bold'
+            onClick={() => onClose()}
+          >
+            <Link href={apply}>Apply Now</Link>
+          </div>
+        )}
+        {learnMore && (
+          <div
+            className='rounded-lg px-3 py-1.5 font-greycliff text-sm  text-slate-500 font-semibold'
+            onClick={() => onClose()}
+          >
+            <Link href={learnMore}>Learn More</Link>
+          </div>
+        )}
       </div>
     </div>
   );

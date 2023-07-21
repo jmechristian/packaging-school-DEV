@@ -340,10 +340,9 @@ export default function HeaderNew() {
                                           />
                                           <CertMenuItem
                                             title='Food Packaging Certificate'
-                                            apply='/'
                                             onClose={() => close()}
                                             bgColor='bg-gradient-to-br from-green-500 to-slate-900'
-                                            learnMore='/'
+                                            learnMore='/food-packaging'
                                             content='In Development! Want to be a part? Interested In Sponsoring? Leave your mark on the packaging industry. Click below to apply or reach out to our Academic Director Dr. Julie Suggs'
                                             // icon='food'
                                           />

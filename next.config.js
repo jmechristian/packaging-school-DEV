@@ -19,6 +19,21 @@ const nextConfig = {
         destination: 'https://library.packagingschool.com/packdesign-workshop',
         permanent: true,
       },
+      {
+        source: '/get-to-know-cmpm',
+        destination: 'certifications/get-to-know-cmpm',
+        permanent: true,
+      },
+      {
+        source: '/get-to-know-cps',
+        destination: '/certifications/get-to-know-cps',
+        permanent: true,
+      },
+      {
+        source: '/get-to-know-apc',
+        destination: '/certifications/get-to-know-apc',
+        permanent: true,
+      },
     ];
   },
 };
