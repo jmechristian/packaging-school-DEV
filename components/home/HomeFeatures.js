@@ -2,25 +2,27 @@ import {
   CloudArrowUpIcon,
   LockClosedIcon,
   ServerIcon,
+  AcademicCapIcon,
+  UserGroupIcon,
 } from '@heroicons/react/20/solid';
 
 const features = [
   {
-    name: 'Push to deploy.',
+    name: 'Subject Matter Experts',
     description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-    icon: CloudArrowUpIcon,
+      'We combine with the leading experts in their fields with the leading educator in the packaging industry.',
+    icon: AcademicCapIcon,
   },
   {
-    name: 'SSL certificates.',
+    name: 'Everyone on One Page',
     description:
-      'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.',
-    icon: LockClosedIcon,
+      'Keep your teams out of silos and current on industry best practices.',
+    icon: UserGroupIcon,
   },
   {
-    name: 'Database backups.',
+    name: '100% Online',
     description:
-      'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
+      'Convenient access, 24/7, so your team can learn at their pace, in an environment of their choosing.',
     icon: ServerIcon,
   },
 ];
@@ -38,9 +40,10 @@ export default function HomeFeatures() {
               What&apos;s the cost of an untrained workforce?
             </p>
             <p className='mt-6 text-lg leading-8 text-gray-600'>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores
-              impedit perferendis suscipit eaque, iste dolor cupiditate
-              blanditiis ratione.
+              Invest in your team&mdash;invest in your company&apos;s future.
+              Training is key to systematic improvement of your organization and
+              for the personal growth of your employees. Packaging School can
+              get your teams up-to-speed and ready to innovate.
             </p>
             <dl className='mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none'>
               {features.map((feature) => (
