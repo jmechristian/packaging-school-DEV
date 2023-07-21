@@ -21,16 +21,16 @@ const AllCourseCertMobile = () => {
     },
     {
       name: 'Certificate of Packaging Science',
-      link: 'certifications/get-to-know-cmpm',
+      link: 'certifications/get-to-know-cps',
       apply: '/certificate-of-packaging-science-application',
       body: 'The Certificate of Packaging Science is a one year online program that teaches the materials, processes, and influences shaping the advancement of the industry. From design conception to production and end-of-life, learn how to speak the language of packaging and utilize it as a key differentiator for you and your company.',
       image:
         'https://packschool.s3.amazonaws.com/certifications/Packaging-School-Blank-CPS-Julie-Suggs.png',
       backgroundColor: 'bg-gradient-to-br from-base-dark to-slate-900',
       ring: 'slate-900',
-      video: '',
-      callout: '',
-      calloutValue: '',
+      video: 'https://www.youtube.com/watch?v=wjRIwFK8YTo',
+      callout: 'Time to Complete',
+      calloutValue: '12 Months',
     },
     {
       name: 'Automotive Packaging Certificate',
@@ -41,9 +41,9 @@ const AllCourseCertMobile = () => {
         'https://packschool.s3.amazonaws.com/certifications/NEW-Packaging-School-Blank-APC-Julie-Suggs.png',
       backgroundColor: 'bg-gradient-to-br from-clemson to-orange-800',
       ring: 'clemson',
-      video: '',
-      callout: '',
-      calloutValue: '',
+      video: 'https://vimeo.com/358392462',
+      callout: 'Limited!',
+      calloutValue: `Workbook \nIncluded`,
     },
   ];
 
@@ -64,6 +64,7 @@ const AllCourseCertMobile = () => {
               desc={c.body}
               callout={c.callout}
               calloutValue={c.calloutValue}
+              video={c.video}
             />
           </div>
         ))}

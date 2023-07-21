@@ -92,7 +92,7 @@ export function Autocomplete(props) {
       placeholder: 'What do you want to learn today?',
       openOnFocus: true,
       classNames: {
-        input: 'dark:bg-white px-4 mx-4',
+        input: 'dark:bg-white md:px-4 md:mx-4',
       },
       insights: true,
       renderer: { createElement, Fragment, render: () => {} },
@@ -178,25 +178,6 @@ export function Autocomplete(props) {
                   ))}
                 </div>
               </div>
-              {/* <div className='px-6 flex flex-col gap-3 overflow-hidden'>
-                <div className='font-greycliff font-semibold text-slate-500 text-lg'>
-                  Popular Searches
-                </div>
-                <hr />
-                <div className='flex flex-wrap items-center gap-3 mt-3'>
-                  {tags.map((tag) => (
-                    <div
-                      className='flex items-center gap-1 bg-slate-200 rounded-lg px-3 py-1.5'
-                      key={tag.value}
-                    >
-                      <div>
-                        <MagnifyingGlassIcon className='w-4 h-4 text-slate-600' />
-                      </div>
-                      <div className='text-sm'>{tag.value}</div>
-                    </div>
-                  ))}
-                </div>
-              </div> */}
             </div>
           </div>
         );

@@ -190,7 +190,7 @@ const CertificateCard = ({
                   />
                 </div>
               </div>
-              <div className='max-w-xs font-semibold text-2xl font-greycliff leading-tight line-clamp-2 text-slate-900 dark:text-white'>
+              <div className='max-w-xs font-semibold text-xl md:text-2xl font-greycliff leading-tight line-clamp-2 text-slate-900 dark:text-white'>
                 {title}
               </div>
             </div>
@@ -209,7 +209,7 @@ const CertificateCard = ({
               <div className='text-sm dark:text-white/50 text-slate-700'>
                 {callout}
               </div>
-              <div className='font-greycliff text-2xl font-semibold whitespace-pre-wrap text-slate-900 dark:text-white'>
+              <div className='font-greycliff leading-tight text-2xl font-semibold whitespace-pre-wrap text-slate-900 dark:text-white'>
                 {calloutValue}
               </div>
             </div>

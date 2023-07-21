@@ -196,28 +196,6 @@ const HomeHero = () => {
           plugins={[recentSearchesPlugin, querySuggestionsPlugin]}
           elements={{ recentSearchesPlugin, querySuggestionsPlugin }}
           getSources={({ query }) => {
-            // if (!query) {
-            //   return [
-            //     {
-            //       sourceId: 'links',
-            //       getItems() {
-            //         return [
-            //           { label: 'Shipping', url: '#shipping' },
-            //           { label: 'Contact', url: '#contact' },
-            //         ];
-            //       },
-            //       getItemUrl({ item }) {
-            //         return item.url;
-            //       },
-            //       templates: {
-            //         item({ item }) {
-            //           return item.label;
-            //         },
-            //       },
-            //     },
-            //   ];
-            // }
-
             return [
               {
                 sourceId: 'COURSES',
