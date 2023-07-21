@@ -39,8 +39,8 @@ const Page = () => {
       <CMPMWhere />
       <CMPMReviews />
       <CMPMPDP
-        headline='Want to focus on a specific topic?'
-        subheadline="Let's make CMPM fit your requirements. Enter your information to let us know what you want to focus on. Our cirriculum team will work with you to shape a program that benefits you and your company's specific needs. "
+        headline='Looking to sharpen your expertise in a specific area?'
+        subheadline='This program has been expertly crafted to align with your unique goals. Share your information with us, and we’ll tailor the experience to your ambitions. Brace yourself for the remarkable ways this program will empower you to achieve your objectives like never before. '
         buttonText='Get My PDP Plan'
         buttonLink='/cmpm-custom-development-plan-registration'
       />

@@ -28,7 +28,7 @@ export default async function handler(req, res) {
         Body: {
           /* required */
           Html: {
-            Data: `<div>First Name: ${body.fullName}</div><br /><div>Email: ${body.email}</div><br /><div> Phone: ${body.phone}</div><br /><div>Message: ${body.message}</div>`,
+            Data: `<div>First Name: ${body.firstName}</div><br /><div>First Name: ${body.lastName}</div><br /><div>Email: ${body.email}</div><br /><div> Phone: ${body.phone}</div><br /><div>Message: ${body.message}</div>`,
           },
           Text: {
             Charset: 'UTF-8',
@@ -37,7 +37,7 @@ export default async function handler(req, res) {
         },
         Subject: {
           Charset: 'UTF-8',
-          Data: 'Doctor Is In Form',
+          Data: 'PDP Request',
         },
       },
       Source: fromAddress,
@@ -50,7 +50,7 @@ export default async function handler(req, res) {
   try {
     await sesClient.send(
       createSendEmailCommand(
-        'jamie@packagingschool.com',
+        'julie@packagingschool.com',
         'jamie@packagingschool.com'
       )
     );

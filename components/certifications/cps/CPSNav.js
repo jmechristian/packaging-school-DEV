@@ -45,7 +45,7 @@ const CPSNav = () => {
               className={clsx(
                 'relative flex items-center px-4 py-3',
                 !open &&
-                  'bg-white/95 dark:bg-white/40 shadow-sm [@supports(backdrop-filter:blur(0))]:bg-white/80 [@supports(backdrop-filter:blur(0))]:backdrop-blur'
+                  'bg-white/95 dark:bg-white/40 shadow-sm [@supports(backdrop-filter:blur(0))]:bg-white/80 [@supports(backdrop-filter:blur(0))]:dark:bg-dark-mid [@supports(backdrop-filter:blur(0))]:backdrop-blur'
               )}
             >
               {!open && (
@@ -56,7 +56,7 @@ const CPSNav = () => {
                   >
                     {(mobileActiveIndex + 1).toString().padStart(2, '0')}
                   </span>
-                  <span className='ml-4 text-base font-medium text-slate-900'>
+                  <span className='ml-4 text-base font-medium text-slate-900 dark:text-white'>
                     {sections[mobileActiveIndex].title}
                   </span>
                 </>
@@ -77,7 +77,7 @@ const CPSNav = () => {
                 <MenuIcon open={open} className='h-6 w-6 stroke-slate-700' />
               </Popover.Button>
             </div>
-            <Popover.Panel className='absolute inset-x-0 top-0 bg-white/95 py-3.5 shadow-sm [@supports(backdrop-filter:blur(0))]:bg-white/80 [@supports(backdrop-filter:blur(0))]:backdrop-blur'>
+            <Popover.Panel className='absolute inset-x-0 top-0 bg-white/95 py-3.5 shadow-sm [@supports(backdrop-filter:blur(0))]:bg-white/80 [@supports(backdrop-filter:blur(0))]:dark:bg-dark-mid [@supports(backdrop-filter:blur(0))]:backdrop-blur'>
               {sections.map((section, sectionIndex) => (
                 <Popover.Button
                   as={Link}
@@ -86,15 +86,17 @@ const CPSNav = () => {
                   scroll={false}
                   className='flex items-center px-4 py-1.5'
                 >
-                  <span
-                    aria-hidden='true'
-                    className='font-mono text-sm text-blue-600'
-                  >
-                    {(sectionIndex + 1).toString().padStart(2, '0')}
-                  </span>
-                  <span className='ml-4 text-base font-medium text-slate-900'>
-                    {section.title}
-                  </span>
+                  <a className='flex items-center px-4 py-3'>
+                    <span
+                      aria-hidden='true'
+                      className='font-mono text-sm text-base-brand'
+                    >
+                      {(sectionIndex + 1).toString().padStart(2, '0')}
+                    </span>
+                    <span className='ml-4 text-base font-medium text-slate-900 dark:text-white'>
+                      {section.title}
+                    </span>
+                  </a>
                 </Popover.Button>
               ))}
             </Popover.Panel>

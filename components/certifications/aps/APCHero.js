@@ -4,12 +4,18 @@ import FadeIn from '../../../helpers/FadeIn';
 import CertHeroImage from '../../../slices/CertificateHero/components/CertHeroImage';
 import Link from 'next/link';
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
+import Image from 'next/image';
 
 const APCHero = () => {
   return (
     <div className='grid lg:grid-cols-2 items-center gap-6 overflow-hidden py-12 md:py-24 container-7xl'>
       <div>
-        <CertHeroImage />
+        <Image
+          src={'https://packschool.s3.amazonaws.com/apc.png'}
+          width={600}
+          height={600}
+          alt='Automotive Packaging Certificate'
+        />
       </div>
       <div className='flex flex-col gap-9'>
         <div>
