@@ -5,7 +5,7 @@ import AllCourseSearch from './AllCourseSearch';
 
 const AllCourseBodyMobile = ({ coursesToShow }) => {
   return (
-    <div className='flex flex-col gap-10 py-8 relative lg:hidden'>
+    <div className='flex flex-col gap-16 py-8 relative lg:hidden'>
       <AllCourseCertMobile />
       <AllCourseCoursesMobile coursesToShow={coursesToShow} />
     </div>
