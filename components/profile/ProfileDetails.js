@@ -56,7 +56,7 @@ export default function ProfileDetails({ user, isEditing, toggleEditing }) {
         <div className='mt-5 flex justify-center sm:mt-0'>
           <div
             onClick={toggleEditing}
-            className='flex items-center justify-center rounded-md bg-white w-10 h-10 font-semibold text-slate-900 dark:text-white shadow-sm ring-1 ring-inset ring-slate-400 hover:bg-slate-50 font-greycliff'
+            className='flex items-center justify-center rounded-md bg-white dark:bg-dark-dark w-10 h-10 font-semibold text-slate-900 dark:text-white shadow-sm ring-1 ring-inset ring-slate-400 hover:bg-slate-50 font-greycliff'
           >
             {isEditing ? (
               <XMarkIcon className='w-5 h-5 text-slate-500' />
@@ -160,7 +160,7 @@ export default function ProfileDetails({ user, isEditing, toggleEditing }) {
             <div className='flex justify-end col-span-2'>
               <button
                 type='submit'
-                className='bg-transparent hover:bg-slate-300 border cursor-pointer border-slate-900 font-greycliff font-semibold px-4 py-2 rounded-lg w-fit text-right'
+                className='bg-transparent hover:bg-slate-300 dark:hover:bg-neutral-80 dark:text-white ring-1 ring-inset ring-gray-300 dark:bg-dark-dark border cursor-pointer border-slate-900 font-greycliff font-semibold px-4 py-2 rounded-lg w-fit text-right'
               >
                 {isSending
                   ? 'Sending...'

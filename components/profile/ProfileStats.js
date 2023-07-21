@@ -127,11 +127,11 @@ export default function ProfileStats({ user }) {
               .filter((les) => user.savedArticles.includes(les.id))
               .map((it, i) => (
                 <div key={i} className='w-full h-full'>
-                  <SavedContentCard
+                  <SavedArticleCard
                     id={it.id}
                     title={it.title}
                     desc={it.subhead}
-                    slug={`/lessons/${it.slug}`}
+                    slug={`/articles/${it.slug}`}
                   />
                 </div>
               ))}
@@ -154,11 +154,11 @@ export default function ProfileStats({ user }) {
                 .filter((les) => user.savedArticles.includes(les.id))
                 .map((it, i) => (
                   <div key={i} className='w-full h-full'>
-                    <SavedContentCard
+                    <SavedArticleCard
                       id={it.id}
                       title={it.title}
                       desc={it.subhead}
-                      slug={`/lessons/${it.slug}`}
+                      slug={`/articles/${it.slug}`}
                     />
                   </div>
                 ))

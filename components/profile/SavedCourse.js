@@ -32,7 +32,7 @@ const SavedCourse = ({ courseId, savedCourses }) => {
           hours={savedCourse.hours}
           lessons={savedCourse.lessons}
           price={savedCourse.price}
-          slug={savedCourse.title}
+          slug={savedCourse.slug}
           category={savedCourse?.category}
           savedCourses={savedCourses}
         />
