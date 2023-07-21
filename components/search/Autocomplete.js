@@ -91,6 +91,9 @@ export function Autocomplete(props) {
       container: containerRef.current,
       placeholder: 'What do you want to learn today?',
       openOnFocus: true,
+      classNames: {
+        input: 'dark:bg-white px-4 mx-4',
+      },
       insights: true,
       renderer: { createElement, Fragment, render: () => {} },
       render({ children, state, elements }, root) {
@@ -107,7 +110,7 @@ export function Autocomplete(props) {
               {!state.query ? (
                 elements.querySuggestionsPlugin
               ) : (
-                <div className='flex flex-col gap-3 h-full max-h-[660px] overflow-scroll'>
+                <div className='flex flex-col gap-3 h-full max-h-[660px] overflow-y-scroll overflow-x-hidden'>
                   {elements.CERTIFICATES && (
                     <div className='flex flex-col gap-2'>
                       <div className='w-full bg-slate-200 py-1.5 px-3 text-slate-600 uppercase text-sm font-semibold'>
