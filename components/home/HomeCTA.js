@@ -10,9 +10,10 @@ const HomeCTA = () => {
               Not Sure Where to Start?
             </h2>
             <p className='mt-6 text-xl leading-8 text-gray-600'>
-              Quasi est quaerat. Sit molestiae et. Provident ad dolorem
-              occaecati eos iste. Soluta rerum quidem minus ut molestiae velit
-              error quod. Excepturi quidem expedita molestias quas.
+              Whether your a packaging professional or just a hobbyist looking
+              for a project solution, Packaging School has the expertise
+              required to get you to the finish line. Create your free account
+              and use the search bar to find your solution.
             </p>
             <div className='mt-10 flex'>
               <a

@@ -33,7 +33,7 @@ const cirriculum = [
     link: '/certifications/get-to-know-cmpm',
     type: 'CERTIFICATE',
     icon: (
-      <CertIcon className='w-9 h-9 fill-transparent stroke-slate-400 stroke-2' />
+      <CertIcon className='w-9 h-9 fill-transparent stroke-gray-400 stroke-2' />
     ),
   },
   {
@@ -43,7 +43,7 @@ const cirriculum = [
     link: '/certifications/get-to-know-apc',
     type: 'CERTIFICATE',
     icon: (
-      <CertIcon className='w-9 h-9 fill-transparent stroke-slate-400 stroke-2' />
+      <CertIcon className='w-9 h-9 fill-transparent stroke-gray-400 stroke-2' />
     ),
   },
   {
@@ -53,7 +53,7 @@ const cirriculum = [
     link: '/courses/packaging-foundations',
     type: 'COURSE',
     icon: (
-      <CourseIcon className='w-9 h-9 fill-transparent stroke-slate-400 stroke-2' />
+      <CourseIcon className='w-9 h-9 fill-transparent stroke-gray-400 stroke-2' />
     ),
   },
   {
@@ -63,7 +63,7 @@ const cirriculum = [
     link: 'https://library.packagingschool.com/packdesign-workshop',
     type: 'WORKSHOP',
     icon: (
-      <WorkshopIcon className='w-9 h-9 fill-transparent stroke-slate-400 stroke-2' />
+      <WorkshopIcon className='w-9 h-9 fill-transparent stroke-gray-400 stroke-2' />
     ),
   },
 ];
@@ -92,7 +92,7 @@ export function Autocomplete(props) {
       placeholder: 'What do you want to learn today?',
       openOnFocus: true,
       classNames: {
-        input: 'dark:bg-white md:px-4 md:mx-4 text-gray-700 dark:text-gray-700',
+        input: 'md:px-4 md:mx-4 text-gray-700 dark:text-gray-700',
       },
       insights: true,
       renderer: { createElement, Fragment, render: () => {} },
@@ -105,7 +105,7 @@ export function Autocomplete(props) {
         }
 
         panelRootRef.current.render(
-          <div className='flex flex-col lg:grid lg:grid-cols-2'>
+          <div className='flex flex-col lg:grid lg:grid-cols-2 bg-white text-slate-700'>
             <div className='py-3'>
               {!state.query ? (
                 elements.querySuggestionsPlugin
@@ -113,7 +113,7 @@ export function Autocomplete(props) {
                 <div className='flex flex-col gap-3 h-full max-h-[660px] overflow-y-scroll overflow-x-hidden'>
                   {elements.CERTIFICATES && (
                     <div className='flex flex-col gap-2'>
-                      <div className='w-full bg-slate-200 py-1.5 px-3 text-slate-600 uppercase text-sm font-semibold'>
+                      <div className='w-full bg-gray-200 py-1.5 px-3 text-gray-600 uppercase text-sm font-semibold'>
                         Certificates
                       </div>
                       <div>{elements.CERTIFICATES}</div>
@@ -144,7 +144,7 @@ export function Autocomplete(props) {
             </div>
             <div className='flex flex-col gap-3 bg-slate-100 pb-9'>
               <div className='px-6 py-3 row-span-2 flex flex-col gap-3'>
-                <div className='font-greycliff font-semibold text-slate-500 text-lg'>
+                <div className='font-greycliff font-semibold text-gray-600 text-lg'>
                   Popular Content
                 </div>
                 <hr />
@@ -155,12 +155,12 @@ export function Autocomplete(props) {
                       key={item.link}
                     >
                       <div>
-                        {/* <div className='w-10 h-10 auto bg-slate-400' /> */}
+                        {/* <div className='w-10 h-10 auto bg-gray-400' /> */}
                         {item.icon}
                       </div>
                       <div className='flex flex-col gap-1'>
                         <div
-                          className='font-semibold font-greycliff leading-tight'
+                          className='font-semibold font-greycliff leading-tight text-gray-700'
                           onClick={() => {
                             router.push(item.link);
                             document
@@ -170,7 +170,7 @@ export function Autocomplete(props) {
                         >
                           {item.title}
                         </div>
-                        <div className='text-sm line-clamp-2 text-slate-600'>
+                        <div className='text-sm line-clamp-2 text-gray-600'>
                           {item.subtitle}
                         </div>
                       </div>
