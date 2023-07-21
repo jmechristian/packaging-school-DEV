@@ -55,7 +55,7 @@ const Page = ({ collection, courses }) => {
             </h3>
           </FadeIn>
           <FadeIn>
-            <div className='grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'>
+            <div className='grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'>
               {courses &&
                 courses.map((course) => (
                   <div key={course.id}>
