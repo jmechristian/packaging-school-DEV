@@ -15,9 +15,9 @@ const AllCourseCertMobile = () => {
         'https://packschool.s3.amazonaws.com/certifications/Packaging-School-Blank-CMPM-1.png',
       backgroundColor: 'bg-gradient-to-br from-base-brand to-slate-700',
       ring: 'slate-400',
-      video: '',
+      video: 'https://youtu.be/N_hYWvQO0Sg',
       callout: 'Deadline to Apply',
-      calloutValue: '',
+      calloutValue: 'July 28',
     },
     {
       name: 'Certificate of Packaging Science',

@@ -8,6 +8,7 @@ import { motion } from 'framer-motion';
 import {
   VideoCameraIcon,
   ArrowSmallRightIcon,
+  InformationCircleIcon,
   StarIcon,
 } from '@heroicons/react/24/solid';
 import { API } from 'aws-amplify';
@@ -33,6 +34,8 @@ const CertificateCard = ({
   slug,
   callout,
   calloutValue,
+  apply,
+  link,
 }) => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
@@ -187,7 +190,7 @@ const CertificateCard = ({
                   />
                 </div>
               </div>
-              <div className='max-w-xs font-semibold text-xl font-greycliff leading-tight line-clamp-2 text-slate-900 dark:text-white'>
+              <div className='max-w-xs font-semibold text-2xl font-greycliff leading-tight line-clamp-2 text-slate-900 dark:text-white'>
                 {title}
               </div>
             </div>
@@ -206,7 +209,7 @@ const CertificateCard = ({
               <div className='text-sm dark:text-white/50 text-slate-700'>
                 {callout}
               </div>
-              <div className='font-greycliff text-2xl font-semibold text-slate-900 dark:text-white'>
+              <div className='font-greycliff text-2xl font-semibold whitespace-pre-wrap text-slate-900 dark:text-white'>
                 {calloutValue}
               </div>
             </div>
@@ -221,17 +224,16 @@ const CertificateCard = ({
                   </div>
                 </div>
               )}
+              <div className='w-9 h-9 rounded bg-black/80 flex justify-center items-center cursor-pointer'>
+                <div onClick={() => router.push(link)}>
+                  <InformationCircleIcon className='w-5 h-5 text-white' />
+                </div>
+              </div>
               <div
-                className='w-9 h-9 rounded bg-black/80 flex justify-center items-center cursor-pointer'
-                onClick={() =>
-                  router.push(
-                    `/${
-                      type && type === 'COLLECTION' ? 'collections' : 'courses'
-                    }/${slug}`
-                  )
-                }
+                className='px-4 rounded bg-black/80 flex justify-center items-center cursor-pointer'
+                onClick={() => router.push(apply)}
               >
-                <ArrowSmallRightIcon className='w-5 h-5 text-white' />
+                <div className='text-white font-semibold'>Apply</div>
               </div>
             </div>
           </div>
