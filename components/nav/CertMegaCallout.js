@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 const CertMegaCallout = ({ close }) => {
   const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div className='rounded-lg relative'>
       <AnimatePresence>

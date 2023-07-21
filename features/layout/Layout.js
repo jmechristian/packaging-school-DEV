@@ -134,7 +134,7 @@ const Layout = ({ children }) => {
         dispatch(setLight());
       }
     }
-  }, [dispatch]);
+  }, []);
 
   return (
     <>

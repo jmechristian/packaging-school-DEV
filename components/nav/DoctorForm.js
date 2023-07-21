@@ -6,6 +6,8 @@ const DoctorForm = ({ close }) => {
   const [isEmail, setIsEmail] = useState('');
   const [isPhone, setIsPhone] = useState('');
   const [isMessage, setIsMessage] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const {
     register,
@@ -14,7 +16,9 @@ const DoctorForm = ({ close }) => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = async (data) => {
+    const res = await fetch('/api/send-suggs-email');
+  };
 
   return (
     <form

@@ -91,6 +91,7 @@ export default function ProfileStats({ user }) {
           <div className='absolute right-0 top-0 bottom-0 w-6 bg-gradient-to-l  from-slate-100' />
           <Scroller rows='2' scroll={scrollRef}>
             {user && user.savedLessons && user.savedLessons.length > 0 ? (
+              allLessons &&
               allLessons
                 .filter((les) => user.savedLessons.includes(les.id))
                 .map((it, i) => (
@@ -148,6 +149,7 @@ export default function ProfileStats({ user }) {
           <div className='absolute right-0 top-0 bottom-0 w-6 bg-gradient-to-l  from-slate-100' />
           <Scroller rows='2' scroll={scrollRef}>
             {user && user.savedArticles && user.savedArticles.length > 0 ? (
+              allArticles &&
               allArticles
                 .filter((les) => user.savedArticles.includes(les.id))
                 .map((it, i) => (
