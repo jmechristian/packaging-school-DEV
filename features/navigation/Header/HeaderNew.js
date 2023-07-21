@@ -347,7 +347,7 @@ export default function HeaderNew() {
                                             // icon='food'
                                           />
                                         </div>
-                                        <CertMegaCallout />
+                                        <CertMegaCallout close={close} />
                                       </div>
                                     </div>
                                   </div>

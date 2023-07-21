@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { ArrowLongRightIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
 import DoctorForm from './DoctorForm';
 import { AnimatePresence, motion } from 'framer-motion';
+import { useRouter } from 'next/router';
 
 const CertMegaCallout = ({ close }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
 
   return (
     <div className='rounded-lg relative'>
@@ -59,7 +61,13 @@ const CertMegaCallout = ({ close }) => {
           <div className='font-bold w-full dark:text-gray-200 text-slate-900 text-lg border-b border-b-slate-400 pb-2 font-greycliff'>
             Not Sure Where to Start?
           </div>
-          <div className='flex gap-2 justify-between items-center border-b border-b-slate-400 pb-2'>
+          <div
+            className='flex gap-2 justify-between items-center border-b border-b-slate-400 pb-2 cursor-pointer'
+            onClick={() => {
+              router.push('/certifications');
+              close();
+            }}
+          >
             <div className='text-sm text-slate-700 dark:text-gray-500'>
               Compare Certificates
             </div>
@@ -67,17 +75,26 @@ const CertMegaCallout = ({ close }) => {
               <ArrowLongRightIcon className='h-5 w-5 stroke-slate-700' />
             </div>
           </div>
-          <div className='flex gap-2 justify-between items-center border-b border-b-slate-400 pb-2'>
+          {/* <div className='flex gap-2 justify-between items-center border-b border-b-slate-400 pb-2'>
             <div className='text-sm text-slate-700 dark:text-gray-500'>
               Take our Skills Assessment
             </div>
             <div>
               <ArrowLongRightIcon className='h-5 w-5 stroke-slate-700' />
             </div>
-          </div>
+          </div> */}
           <div className='flex gap-2 justify-between items-center border-b border-b-slate-400 pb-2'>
-            <div className='text-sm text-slate-700 dark:text-gray-500'>
-              Contact Our Team
+            <div
+              className='text-sm text-slate-700 dark:text-gray-500'
+              onClick={() => close()}
+            >
+              <a
+                href='mailto:info@packagingschool.com'
+                target='_blank'
+                rel='noreferrer'
+              >
+                Contact Our Team
+              </a>
             </div>
             <div>
               <ArrowLongRightIcon className='h-5 w-5 stroke-slate-700' />
