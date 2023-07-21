@@ -82,9 +82,9 @@ const SavedArticleCard = ({ id, title, desc, slug }) => {
               </div>
             </div>
 
-            <div className='line-clamp-3 text-sm desc dark:text-white/60 text-slate-700'>
+            {/* <div className='line-clamp-3 text-sm desc dark:text-white/60 text-slate-700'>
               {desc}
-            </div>
+            </div> */}
           </div>
           <div className='flex justify-between items-end'>
             <div className='flex gap-2'>

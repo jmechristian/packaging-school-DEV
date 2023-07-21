@@ -55,7 +55,7 @@ export default function HeaderNew() {
       },
     ],
     pages: [
-      { name: 'Library', href: 'https://library.packagingschool.com' },
+      { name: 'Library', href: '/library' },
       { name: 'About', href: '/about' },
       // { name: 'Campus Store', href: '#' },
     ],
