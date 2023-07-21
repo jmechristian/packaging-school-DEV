@@ -39,6 +39,7 @@ export default function Home() {
         subheadline='Try a demo, risk-free.'
         buttonText='Get Started For Free'
         secondaryButtonText='Need More Info?'
+        buttonLink={'/all_courses'}
       />
     </div>
   );

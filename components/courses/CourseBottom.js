@@ -20,9 +20,9 @@ const CourseBottom = ({ category, id }) => {
           </div>
           <RelatedCourses category={category} id={id} />
         </div>
-        <div className='container__inner'>
+        {/* <div className='container__inner'>
           <SkillsCTA />
-        </div>
+        </div> */}
       </div>
     </section>
   );

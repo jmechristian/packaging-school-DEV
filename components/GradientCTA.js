@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const GradientCTA = ({
@@ -20,19 +21,17 @@ const GradientCTA = ({
           </div>
         </div>
         <div className='mt-10 flex items-center gap-x-6 lg:mt-0 lg:flex-shrink-0'>
-          <a
-            href={buttonLink}
-            className='rounded-md bg-clemson font-greycliff px-5 py-4 cursor-pointer text-base md:text-xl font-bold text-white shadow-sm hover:bg-clemson-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
-          >
-            {buttonText}
-          </a>
-          {secondaryButtonLink && (
-            <a
-              href={secondaryButtonLink}
-              className='text-base md:text-lg font-greycliff font-semibold cursor-pointer leading-6 text-white'
-            >
-              {secondaryButtonText} <span aria-hidden='true'>→</span>
+          <Link href={buttonLink}>
+            <a className='rounded-md bg-clemson font-greycliff px-5 py-4 cursor-pointer text-base md:text-xl font-bold text-white shadow-sm hover:bg-clemson-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'>
+              {buttonText}
             </a>
+          </Link>
+          {secondaryButtonLink && (
+            <Link href={secondaryButtonLink}>
+              <a className='text-base md:text-lg font-greycliff font-semibold cursor-pointer leading-6 text-white'>
+                {secondaryButtonText} <span aria-hidden='true'>→</span>
+              </a>
+            </Link>
           )}
         </div>
       </div>
