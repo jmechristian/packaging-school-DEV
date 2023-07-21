@@ -19,21 +19,18 @@ export function CertItem({ hit, components }) {
   const setBackground = () => {
     switch (hit.title) {
       case 'Certificate of Mastery in Packaging Management':
-        return 'bg-gradient-to-br from-base-brand to-slate-700';
+        return 'bg-gradient-to-br from-base-brand to-gray-700';
       case 'Certificate of Packaging Science':
-        return 'bg-gradient-to-br from-base-dark to-slate-900';
+        return 'bg-gradient-to-br from-base-dark to-gray-900';
       case 'Automotive Packaging Certificate':
         return 'bg-gradient-to-br from-clemson to-orange-800';
       default:
-        return 'bg-gradient-to-br from-base-brand to-slate-900';
+        return 'bg-gradient-to-br from-base-brand to-gray-900';
     }
   };
 
   return (
-    <a
-      href={hit.slug}
-      className='aa-ItemLink hover:bg-slate-100 cursor-pointer'
-    >
+    <a href={hit.slug} className='aa-ItemLink hover:bg-gray-100 cursor-pointer'>
       <div className='grid grid-cols-5 w-full'>
         <div className='lg:px-3 py-1.5 col-span-5'>
           <div className='flex gap-3 w-full'>
@@ -41,13 +38,13 @@ export function CertItem({ hit, components }) {
               <CMPMIcon scale={12} background={setBackground()} />
             </div>
             <div className='flex flex-col '>
-              <div className='font-greycliff font-semibold leading-snug dark:text-white'>
+              <div className='font-greycliff font-semibold leading-snug dark:text-gray-700'>
                 <components.Highlight hit={hit} attribute='title' />
               </div>
-              <div className='aa-ItemTitle text-sm line-clamp-2  text-slate-600 dark:text-slate-400'>
+              <div className='aa-ItemTitle text-sm line-clamp-2  text-gray-600 dark:text-gray-700'>
                 <components.Highlight hit={hit} attribute='subheadline' />
               </div>
-              <div className='aa-ItemTitle line-clamp-2   text-slate-600 dark:text-slate-400'>
+              <div className='aa-ItemTitle line-clamp-2   text-gray-600 dark:text-gray-700'>
                 <components.Highlight hit={hit} attribute='subhead' />
               </div>
             </div>
@@ -63,11 +60,11 @@ export function ProductItem({ hit, components }) {
     <div className='flex justify-between items-center w-full pl-6'>
       <a
         href={`https://library.packagingschool.com/blog/${hit.slug}`}
-        className='aa-ItemLink hover:bg-slate-100 cursor-pointer w-full'
+        className='aa-ItemLink hover:bg-gray-100 cursor-pointer w-full'
         target='_blank'
         rel='noReferrer'
       >
-        <div className='font-greycliff font-semibold leading-snug lg:text-lg dark:text-white w-full'>
+        <div className='font-greycliff font-semibold leading-snug lg:text-lg dark:text-gray-700 w-full'>
           <components.Highlight hit={hit} attribute='title' />
         </div>
       </a>
@@ -79,7 +76,7 @@ export function CourseItem({ hit, components }) {
   const setBackground = () => {
     switch (hit.title) {
       case 'Certificate of Mastery in Packaging Management':
-        return 'bg-gradient-to-br from-base-brand to-slate-700';
+        return 'bg-gradient-to-br from-base-brand to-gray-700';
       case 'Certificate of Packaging Science':
         return 'bg-gradient-to-br from-base-dark to-slate-900';
       case 'Automotive Packaging Certificate':
@@ -101,13 +98,13 @@ export function CourseItem({ hit, components }) {
               <GlobalMaterialsIcon scale={12} background={setBackground()} />
             </div>
             <div className='flex flex-col '>
-              <div className='font-greycliff font-semibold leading-snug dark:text-white'>
+              <div className='font-greycliff font-semibold leading-snug'>
                 <components.Highlight hit={hit} attribute='title' />
               </div>
-              <div className='aa-ItemTitle line-clamp-2 text-sm text-slate-600 dark:text-slate-400'>
+              <div className='aa-ItemTitle line-clamp-2 text-sm text-slate-600 dark:text-slate-700'>
                 <components.Highlight hit={hit} attribute='subheadline' />
               </div>
-              <div className='aa-ItemTitle line-clamp-2  text-sm md:text-base text-slate-600 dark:text-slate-400'>
+              <div className='aa-ItemTitle line-clamp-2  text-sm md:text-base text-slate-600 dark:text-slate-700'>
                 <components.Highlight hit={hit} attribute='subhead' />
               </div>
             </div>
@@ -144,13 +141,13 @@ export function LOTMItem({ hit, components }) {
               <LotmIcon style='w-12 h-12 fill-slate-900' />
             </div>
             <div className='flex flex-col '>
-              <div className='font-greycliff font-semibold leading-snug dark:text-white'>
+              <div className='font-greycliff font-semibold leading-snug '>
                 <components.Highlight hit={hit} attribute='title' />
               </div>
-              <div className='aa-ItemTitle line-clamp-2 text-sm text-slate-600 dark:text-slate-400'>
+              <div className='aa-ItemTitle line-clamp-2 text-sm text-gray-600 '>
                 <components.Highlight hit={hit} attribute='subheadline' />
               </div>
-              <div className='aa-ItemTitle line-clamp-2 text-sm text-slate-600 dark:text-slate-400'>
+              <div className='aa-ItemTitle line-clamp-2 text-sm text-gray-600 '>
                 <components.Highlight hit={hit} attribute='subhead' />
               </div>
             </div>
@@ -304,7 +301,7 @@ const HomeHero = () => {
             className='font-sans tracking-tight text-5xl font-bold md:text-6xl lg:text-8xl'
           />
         </div>
-        <div className='text-slate-600 text-lg md:text-xl lg:text-2xl lg:leading-normal font-greycliff font-medium'>
+        <div className='text-gray-600 text-lg md:text-xl lg:text-2xl lg:leading-normal font-greycliff font-medium'>
           Join the tens of thousands of people across the globe that have
           leveraged the expert-led curriculum of the Packaging School to stand
           out amongst their peers, accelerate their teams, and develop

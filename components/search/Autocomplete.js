@@ -92,7 +92,7 @@ export function Autocomplete(props) {
       placeholder: 'What do you want to learn today?',
       openOnFocus: true,
       classNames: {
-        input: 'dark:bg-white md:px-4 md:mx-4',
+        input: 'dark:bg-white md:px-4 md:mx-4 text-gray-700 dark:text-gray-700',
       },
       insights: true,
       renderer: { createElement, Fragment, render: () => {} },
