@@ -25,8 +25,24 @@ const FooterCopyright = () => {
         </div>
       </div>
       <div className='flex gap-3 text-xs text-gray-500 dark:text-gray-500 lg:col-span-4 lg:justify-end'>
-        <div>Privacy Policy</div>
-        <div>Terms of Service</div>
+        <div>
+          <a
+            href='http://localhost:3001/articles/privacy-policy'
+            target='_blank'
+            rel='noreferrer'
+          >
+            Privacy Policy
+          </a>
+        </div>
+        <div>
+          <a
+            href='http://localhost:3001/articles/academic-policies-and-prodecures'
+            target='_blank'
+            rel='noreferrer'
+          >
+            Terms of Service
+          </a>
+        </div>
       </div>
     </div>
   );
