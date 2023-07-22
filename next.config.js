@@ -34,6 +34,11 @@ const nextConfig = {
         destination: '/certifications/get-to-know-apc',
         permanent: true,
       },
+      {
+        source: '/faq',
+        destination: '/about',
+        permanent: true,
+      },
     ];
   },
 };
