@@ -319,7 +319,7 @@ const Page = () => {
                           key={les.id}
                           id={les.id}
                           title={les.title}
-                          slug={les.slug}
+                          slug={`/lessons/${les.slug}`}
                           desc={les.subhead}
                         />
                       ))}
@@ -332,7 +332,11 @@ const Page = () => {
                 <div className='flex flex-col gap-3 w-full'>
                   {allArticles &&
                     allArticles.slice(0, 10).map((art) => (
-                      <div key={art.id} className='flex justify-between gap-2'>
+                      <div
+                        key={art.id}
+                        className='flex justify-between gap-2 cursor-pointer'
+                        onClick={() => router.push(`/articles/${art.slug}`)}
+                      >
                         <div className='font-semibold text-gray-800 text-lg w-fit'>
                           {art.title}
                         </div>
