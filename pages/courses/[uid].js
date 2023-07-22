@@ -6,12 +6,21 @@ import { setPreviewClosed } from '../../features/all_courses/courseFilterSlice';
 import CourseContentMenu from '../../components/courses/CourseContentMenu';
 import { lMSCoursesBySlug, listLMSCourses } from '../../src/graphql/queries';
 import { API } from 'aws-amplify';
+import Head from 'next/head';
 
 const Page = ({ course }) => {
   const dispatch = useDispatch();
   const { preview } = useSelector((state) => state.course_filter);
   return (
     <div className='relative'>
+      <Head>
+        <title>Packaging School | {course.title}</title>
+        <meta
+          property='og:title'
+          content={`'Packaging School | ${course.title}`}
+          key='title'
+        />
+      </Head>
       <CourseMain data={course} />
       <CourseBottom
         category={course && course.category}
