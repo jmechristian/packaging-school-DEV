@@ -9,6 +9,7 @@ const nextConfig = {
       'tailwindui.com',
       'apsmedia.s3.amazonaws.com',
       'packagingschool.com',
+      'psupdatetemp.wpengine.com',
     ],
   },
   async redirects() {
