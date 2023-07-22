@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from 'next/head';
 import Staff from '../components/about/Staff';
 import Mission from '../components/about/Mission';
 import GradientCTA from '../components/GradientCTA';
@@ -11,6 +12,14 @@ Amplify.configure(awsExports);
 const Page = ({ pageData }) => {
   return (
     <>
+      <Head>
+        <title>Packaging School | About</title>
+        <meta
+          property='og:title'
+          content='Packaging School | About'
+          key='title'
+        />
+      </Head>
       <Mission />
       <Staff staff={pageData.listStaff.items} />
       <Timeline />

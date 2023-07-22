@@ -7,6 +7,7 @@ import CoursePreview from '../components/course-card/CoursePreview';
 import { API } from 'aws-amplify';
 import { gql } from '@apollo/client';
 import { listLMSCourses } from '../src/graphql/queries';
+import Head from 'next/head';
 
 const AllCourses = ({ courses }) => {
   const dispatch = useDispatch();
@@ -14,6 +15,14 @@ const AllCourses = ({ courses }) => {
 
   return (
     <>
+      <Head>
+        <title>Packaging School | All Course</title>
+        <meta
+          property='og:title'
+          content='Packaging School | All Courses'
+          key='title'
+        />
+      </Head>
       <AllCoursesMain courses={allCourses && allCourses} />
     </>
   );

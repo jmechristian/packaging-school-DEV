@@ -9,6 +9,7 @@ export default function Document() {
       }}
     >
       <Head>
+        <link rel='icon' type='image/svg' href='/favicon.png' />
         <link rel='stylesheet' href='https://use.typekit.net/qtr6hem.css' />
         <link rel='preconnect' href='https://fonts.googleapis.com' />
         <link
