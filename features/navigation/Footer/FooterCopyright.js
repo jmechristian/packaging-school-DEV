@@ -27,7 +27,7 @@ const FooterCopyright = () => {
       <div className='flex gap-3 text-xs text-gray-500 dark:text-gray-500 lg:col-span-4 lg:justify-end'>
         <div>
           <a
-            href='http://localhost:3001/articles/privacy-policy'
+            href='https://library.packagingschool.com/articles/privacy-policy'
             target='_blank'
             rel='noreferrer'
           >
@@ -36,7 +36,7 @@ const FooterCopyright = () => {
         </div>
         <div>
           <a
-            href='http://localhost:3001/articles/academic-policies-and-prodecures'
+            href='https://library.packagingschool.com/articles/academic-policies-and-prodecures'
             target='_blank'
             rel='noreferrer'
           >
