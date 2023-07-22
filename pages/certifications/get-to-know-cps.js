@@ -21,6 +21,7 @@ import CPSHow from '../../components/certifications/cps/CPSHow';
 import CPSWhere from '../../components/certifications/cps/CPSWhere';
 import Testimonial from '../../components/shared/Testimonial';
 import CPSReviews from '../../components/certifications/cps/CPSReviews';
+import Head from 'next/head';
 Amplify.configure(awsExports);
 
 const GRAPHQL_ENDPOINT = process.env.GRAPHQL_ENDPOINT;
@@ -87,32 +88,43 @@ const stats = [
 
 export const Page = () => {
   return (
-    <div className='flex flex-col dark:bg-dark-dark'>
-      <CPSHero />
-      <CPSNav />
-      <CPSWhat />
-      <CPSAbout />
-      <CPSHow />
-      <Testimonial
-        id='testimonial'
-        author={{
-          name: 'Gregory Cox',
-          role: 'Packaging and Containers Professional',
-          image: 'https://packschool.s3.amazonaws.com/greg_cox.jpeg',
-        }}
-      >
-        <p>
-          “If you’re looking to increase your Packaging IQ. Here’s a good start!
-          Despite having a degree in packaging and having worked in the industry
-          for nearly 10 years, I still learned quite a bit. Very proud to share
-          this achievement! Thank you Prof. Andrew Hurley, PhD, Julie Rice
-          Suggs, PhD, and everyone at The Packaging School for putting together
-          this program. It was a lot of fun and well designed! Cheers!”
-        </p>
-      </Testimonial>
-      <CPSWhere />
-      <CPSReviews />
-    </div>
+    <>
+      <Head>
+        <title>Packaging School | Certificate of Packaging Science</title>
+        <meta
+          property='og:title'
+          content={`Packaging School |  Certificate of Packaging Science`}
+          key='title'
+        />
+      </Head>
+      <div className='flex flex-col dark:bg-dark-dark'>
+        <CPSHero />
+        <CPSNav />
+        <CPSWhat />
+        <CPSAbout />
+        <CPSHow />
+        <Testimonial
+          id='testimonial'
+          author={{
+            name: 'Gregory Cox',
+            role: 'Packaging and Containers Professional',
+            image: 'https://packschool.s3.amazonaws.com/greg_cox.jpeg',
+          }}
+        >
+          <p>
+            “If you’re looking to increase your Packaging IQ. Here’s a good
+            start! Despite having a degree in packaging and having worked in the
+            industry for nearly 10 years, I still learned quite a bit. Very
+            proud to share this achievement! Thank you Prof. Andrew Hurley, PhD,
+            Julie Rice Suggs, PhD, and everyone at The Packaging School for
+            putting together this program. It was a lot of fun and well
+            designed! Cheers!”
+          </p>
+        </Testimonial>
+        <CPSWhere />
+        <CPSReviews />
+      </div>
+    </>
   );
 };
 
