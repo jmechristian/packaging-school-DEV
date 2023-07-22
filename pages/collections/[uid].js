@@ -10,72 +10,83 @@ import { useRouter } from 'next/router';
 import FadeIn from '../../helpers/FadeIn';
 import ShortCourseCard from '../../components/shared/ShortCourseCard';
 import { UserIcon } from '@heroicons/react/24/outline';
+import Head from 'next/head';
 
 const Page = ({ collection, courses }) => {
   const router = useRouter();
 
   return (
-    <div className='relative dark:bg-dark-dark py-24'>
-      <div className='flex flex-col gap-24  container-7xl'>
-        <div className='flex flex-col gap-6'>
-          <h1 className='text-4xl xl:text-5xl leading-tight max-w-3xl dark:text-white'>
-            {collection && collection.title}
-          </h1>
-          <h3 className='dark:text-white text-xl max-w-3xl'>
-            {collection && collection.subtitle}
-          </h3>
-          <div className='dark:text-gray-400 flex gap-1 items-center'>
-            <div>
-              <UserIcon className='w-6 h-6' />
-            </div>
-            <a
-              href={collection && collection.instructorLink}
-              target='_blank'
-              rel='noreferrer'
-            >
-              {collection && collection.instructor}
-            </a>
-          </div>
-          <p className='text-base lg:text-lg dark:text-gray-500 text-gray-600 max-w-4xl'>
-            {collection && collection.description}
-          </p>
-          {collection && collection.lmsLink && (
-            <CTAButton
-              text={'Enroll Now'}
-              click={() =>
-                router.push(collection && collection.lmsLink, '_blank')
-              }
-            />
-          )}
-        </div>
-        <div className='flex flex-col gap-6'>
-          <FadeIn>
-            <h3 className='dark:text-white text-xl lg:text-2xl'>
-              Courses Included
+    <>
+      <Head>
+        <title>Packaging School | {collection && collection.title}</title>
+        <meta
+          property='og:title'
+          content={`Packaging School | ${collection && collection.title}`}
+          key='title'
+        />
+      </Head>
+      <div className='relative dark:bg-dark-dark py-24'>
+        <div className='flex flex-col gap-24  container-7xl'>
+          <div className='flex flex-col gap-6'>
+            <h1 className='text-4xl xl:text-5xl leading-tight max-w-3xl dark:text-white'>
+              {collection && collection.title}
+            </h1>
+            <h3 className='dark:text-white text-xl max-w-3xl'>
+              {collection && collection.subtitle}
             </h3>
-          </FadeIn>
-          <FadeIn>
-            <div className='grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'>
-              {courses &&
-                courses.map((course) => (
-                  <div key={course.id}>
-                    <ShortCourseCard
-                      courseId={course.id}
-                      title={course.title}
-                      desc={course.subheadline}
-                      hours={course.hours}
-                      price={course.price}
-                      slug={course.slug}
-                      category={course.category}
-                      video={course.preview}
-                    />
-                  </div>
-                ))}
+            <div className='dark:text-gray-400 flex gap-1 items-center'>
+              <div>
+                <UserIcon className='w-6 h-6' />
+              </div>
+              <a
+                href={collection && collection.instructorLink}
+                target='_blank'
+                rel='noreferrer'
+              >
+                {collection && collection.instructor}
+              </a>
             </div>
-          </FadeIn>
+            <p className='text-base lg:text-lg dark:text-gray-500 text-gray-600 max-w-4xl'>
+              {collection && collection.description}
+            </p>
+            {collection && collection.lmsLink && (
+              <CTAButton
+                text={'Enroll Now'}
+                click={() =>
+                  router.push(collection && collection.lmsLink, '_blank')
+                }
+              />
+            )}
+          </div>
+          <div className='flex flex-col gap-6'>
+            <FadeIn>
+              <h3 className='dark:text-white text-xl lg:text-2xl'>
+                Courses Included
+              </h3>
+            </FadeIn>
+            <FadeIn>
+              <div className='grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'>
+                {courses &&
+                  courses.map((course) => (
+                    <div key={course.id}>
+                      <ShortCourseCard
+                        courseId={course.id}
+                        title={course.title}
+                        desc={course.subheadline}
+                        hours={course.hours}
+                        price={course.price}
+                        slug={course.slug}
+                        category={course.category}
+                        video={course.preview}
+                      />
+                    </div>
+                  ))}
+              </div>
+            </FadeIn>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
