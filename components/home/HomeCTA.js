@@ -28,7 +28,7 @@ const HomeCTA = () => {
           <div className='flex flex-wrap items-start justify-end gap-6 sm:gap-8 lg:contents'>
             <div className='w-0 flex-auto lg:ml-auto lg:w-auto lg:flex-none lg:self-end'>
               <img
-                src='https://packschool.s3.amazonaws.com/chris-marsh-psgrad02.jpeg'
+                src='https://packschool.s3.amazonaws.com/partner-1.jpeg'
                 alt=''
                 className='aspect-[7/5] w-[37rem] max-w-none rounded-2xl bg-gray-50 object-cover'
               />
@@ -50,9 +50,9 @@ const HomeCTA = () => {
               </div>
               <div className='hidden sm:block sm:w-0 sm:flex-auto lg:w-auto lg:flex-none'>
                 <img
-                  src='https://packschool.s3.amazonaws.com/partner-1.jpeg'
+                  src='https://packschool.s3.amazonaws.com/chris-marsh-psgrad02.jpeg'
                   alt=''
-                  className='aspect-[4/3] w-[24rem] max-w-none rounded-2xl bg-gray-50 object-cover'
+                  className='aspect-[4/4] w-[24rem] max-w-none rounded-2xl bg-gray-50 object-cover'
                 />
               </div>
             </div>
