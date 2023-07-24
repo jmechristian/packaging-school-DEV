@@ -46,12 +46,12 @@ export default function ProfileHead({ user }) {
               </p>
             </div>
           </div>
-          <div className='bg-green-600 px-4 py-2.5 rounded-lg text-center shadow-sm'>
+          <div className='bg-green-600  mt-6 lg:mt-0  px-4 py-2.5 rounded-lg text-center shadow-sm flex items-center justify-center'>
             <a
               href='https://learn.packagingschool.com'
               target='_blank'
               rel='noreferrer'
-              className='text-sm text-white font-semibold text-center mt-6 lg:mt-0 flex flex-col'
+              className='text-sm text-white font-semibold text-center flex flex-col'
             >
               <div className='text-lg'>Already a Student?</div>
               <div className='leading-none'>Go to your LMS Dashboard</div>
