@@ -196,7 +196,12 @@ export default function HeaderNew() {
           {/* Top navigation */}
           <div className='bg-gray-900 dark:bg-dark-dark flex items-center justify-center'>
             <div className='flex min-h-10 max-w-7xl items-center justify-between w-full px-8 xl:px-0 py-3'>
-              <div className='flex justify-center items-center text-center lg:flex-none'>
+              <div
+                className='flex justify-center items-center text-center lg:flex-none cursor-pointer'
+                onClick={() =>
+                  router.push('/courses/iadd-diecutting-academy-diemaking-101')
+                }
+              >
                 <div className='flex gap-1 items-center font-greycliff'>
                   <div>
                     <BoltIcon className='w-5 h-5 fill-white dark:fill-base-brand' />
