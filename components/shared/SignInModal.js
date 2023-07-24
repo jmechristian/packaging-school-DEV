@@ -7,7 +7,6 @@ import CTAButton from '../shared/CTAButton';
 export default function SignInModal({ open, setOpen }) {
   const router = useRouter();
   const currentPath = router.asPath;
-  console.log('current', currentPath);
 
   const signInHandler = () => {
     router.push(`/api/auth/login?returnTo=${currentPath}`);
@@ -40,34 +39,39 @@ export default function SignInModal({ open, setOpen }) {
               leaveTo='opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95'
             >
               <Dialog.Panel className='relative transform overflow-hidden rounded-lg bg-white px-5 pb-6 pt-6 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-3xl sm:p-9'>
-                <div className='flex flex-col lg:flex-row gap-6 lg:gap-12 text-center lg:text-left'>
+                <div className='flex flex-col lg:flex-row gap-9 lg:gap-12 text-center lg:text-left'>
                   <div
                     className='aspect-[4/2] lg:aspect-[3/4] w-full bg-black rounded-xl bg-cover bg-center'
                     style={{
                       backgroundImage: `url('https://packschool.s3.amazonaws.com/signin_mock.webp')`,
                     }}
                   ></div>
-                  <div className='flex flex-col gap-3'>
+                  <div className='flex flex-col gap-4'>
                     <Dialog.Title
                       as='h2'
-                      className='text-2xl xl:text-4xl font-greycliff font-semibold leading-6 text-gray-900'
+                      className='text-2xl xl:text-4xl font-greycliff font-semibold leading-7 text-gray-900'
                     >
-                      <h2>
-                        All that expertise, <br />
-                        all in one place.
-                      </h2>
+                      Save all your favorite PackagingSchool.com content!
                     </Dialog.Title>
                     <div>
                       <p className='lg:text-lg text-gray-500 leading-snug'>
-                        Access all your favorite Packaging School content
+                        Access all your starred PackagingSchool.com content
                         including courses, articles, saved applications, and
-                        more all in one convenient place. Use your LinkedIn or
-                        Google accounts to get started.
+                        more. Use your LinkedIn or Google accounts to get
+                        started.{' '}
+                        <span className='font-semibold'>
+                          Please Note: This is seperate login from your LMS
+                          Dashboard login.{' '}
+                        </span>
                       </p>
                     </div>
-                    <div>
+                    <div className='mt-3'>
+                      <button className='bg-green-600 text-white font-semibold rounded-lg py-3 w-full'>
+                        Already a Student?
+                        <br /> Go to your LMS Dashboard
+                      </button>
                       <CTAButton
-                        text='Sign In with Google or LinkedIn'
+                        text='Sign In to PackagingSchool.com with your Google or LinkedIn'
                         click={signInHandler}
                       />
                     </div>

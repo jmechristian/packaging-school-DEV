@@ -163,13 +163,21 @@ export default function HeaderNew() {
 
                 <div className='space-y-6 border-t border-gray-200 px-4 py-6'>
                   <div className='flow-root'>
-                    {!user && (
+                    <a
+                      href='https://learn.packagingschool.com'
+                      target='_blank'
+                      rel='noreferrer'
+                      className='dark:text-white font-semibold'
+                    >
+                      Go to My Learning Dashbooard
+                    </a>
+                    {/* {!user && (
                       <Link href={`/api/auth/login?returnTo=${currentPath}`}>
                         <a className='-m-2 block p-2 font-medium text-gray-900 dark:text-white'>
                           Create a Free account
                         </a>
                       </Link>
-                    )}
+                    )} */}
                   </div>
                   <div className='flow-root'>
                     <Link
@@ -180,7 +188,7 @@ export default function HeaderNew() {
                       }
                     >
                       <a className='-m-2 block p-2 font-medium text-gray-900 dark:text-white'>
-                        {user ? 'Sign Out' : 'Sign In'}
+                        {user ? 'Sign Out' : 'Sign In to Packagingschool.com'}
                       </a>
                     </Link>
                   </div>
@@ -213,7 +221,7 @@ export default function HeaderNew() {
               </div>
 
               <div className='hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6'>
-                {!user ? (
+                {/* {!user ? (
                   <>
                     <Link
                       href={`/api/auth/login?returnTo=${currentPath}`}
@@ -250,7 +258,15 @@ export default function HeaderNew() {
                       </a>
                     </Link>
                   </>
-                )}
+                )} */}
+                <a
+                  href='https://learn.packagingschool.com'
+                  target='_blank'
+                  rel='noreferrer'
+                  className='text-clemson font-semibold text-sm'
+                >
+                  Go To My Learning Dashboard
+                </a>
               </div>
             </div>
           </div>
