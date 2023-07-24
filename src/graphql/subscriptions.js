@@ -1047,6 +1047,7 @@ export const onCreateCompany = /* GraphQL */ `
           savedCourses
           savedLessons
           savedArticles
+          source
           createdAt
           updatedAt
           userInstructorIdId
@@ -1100,6 +1101,7 @@ export const onUpdateCompany = /* GraphQL */ `
           savedCourses
           savedLessons
           savedArticles
+          source
           createdAt
           updatedAt
           userInstructorIdId
@@ -1153,6 +1155,7 @@ export const onDeleteCompany = /* GraphQL */ `
           savedCourses
           savedLessons
           savedArticles
+          source
           createdAt
           updatedAt
           userInstructorIdId
@@ -1227,6 +1230,7 @@ export const onCreateUser = /* GraphQL */ `
           savedCourses
           savedLessons
           savedArticles
+          source
           createdAt
           updatedAt
           userInstructorIdId
@@ -1279,6 +1283,7 @@ export const onCreateUser = /* GraphQL */ `
           savedCourses
           savedLessons
           savedArticles
+          source
           createdAt
           updatedAt
           userInstructorIdId
@@ -1332,6 +1337,7 @@ export const onCreateUser = /* GraphQL */ `
           savedCourses
           savedLessons
           savedArticles
+          source
           createdAt
           updatedAt
           userInstructorIdId
@@ -1363,6 +1369,7 @@ export const onCreateUser = /* GraphQL */ `
           savedCourses
           savedLessons
           savedArticles
+          source
           createdAt
           updatedAt
           userInstructorIdId
@@ -1377,6 +1384,7 @@ export const onCreateUser = /* GraphQL */ `
       savedCourses
       savedLessons
       savedArticles
+      source
       createdAt
       updatedAt
       userInstructorIdId
@@ -1428,6 +1436,7 @@ export const onUpdateUser = /* GraphQL */ `
           savedCourses
           savedLessons
           savedArticles
+          source
           createdAt
           updatedAt
           userInstructorIdId
@@ -1480,6 +1489,7 @@ export const onUpdateUser = /* GraphQL */ `
           savedCourses
           savedLessons
           savedArticles
+          source
           createdAt
           updatedAt
           userInstructorIdId
@@ -1533,6 +1543,7 @@ export const onUpdateUser = /* GraphQL */ `
           savedCourses
           savedLessons
           savedArticles
+          source
           createdAt
           updatedAt
           userInstructorIdId
@@ -1564,6 +1575,7 @@ export const onUpdateUser = /* GraphQL */ `
           savedCourses
           savedLessons
           savedArticles
+          source
           createdAt
           updatedAt
           userInstructorIdId
@@ -1578,6 +1590,7 @@ export const onUpdateUser = /* GraphQL */ `
       savedCourses
       savedLessons
       savedArticles
+      source
       createdAt
       updatedAt
       userInstructorIdId
@@ -1629,6 +1642,7 @@ export const onDeleteUser = /* GraphQL */ `
           savedCourses
           savedLessons
           savedArticles
+          source
           createdAt
           updatedAt
           userInstructorIdId
@@ -1681,6 +1695,7 @@ export const onDeleteUser = /* GraphQL */ `
           savedCourses
           savedLessons
           savedArticles
+          source
           createdAt
           updatedAt
           userInstructorIdId
@@ -1734,6 +1749,7 @@ export const onDeleteUser = /* GraphQL */ `
           savedCourses
           savedLessons
           savedArticles
+          source
           createdAt
           updatedAt
           userInstructorIdId
@@ -1765,6 +1781,7 @@ export const onDeleteUser = /* GraphQL */ `
           savedCourses
           savedLessons
           savedArticles
+          source
           createdAt
           updatedAt
           userInstructorIdId
@@ -1779,6 +1796,7 @@ export const onDeleteUser = /* GraphQL */ `
       savedCourses
       savedLessons
       savedArticles
+      source
       createdAt
       updatedAt
       userInstructorIdId
@@ -1881,6 +1899,7 @@ export const onCreateCMPMForm = /* GraphQL */ `
         savedCourses
         savedLessons
         savedArticles
+        source
         createdAt
         updatedAt
         userInstructorIdId
@@ -2010,6 +2029,7 @@ export const onUpdateCMPMForm = /* GraphQL */ `
         savedCourses
         savedLessons
         savedArticles
+        source
         createdAt
         updatedAt
         userInstructorIdId
@@ -2139,6 +2159,7 @@ export const onDeleteCMPMForm = /* GraphQL */ `
         savedCourses
         savedLessons
         savedArticles
+        source
         createdAt
         updatedAt
         userInstructorIdId
@@ -2268,6 +2289,7 @@ export const onCreateCPSForm = /* GraphQL */ `
         savedCourses
         savedLessons
         savedArticles
+        source
         createdAt
         updatedAt
         userInstructorIdId
@@ -2398,6 +2420,7 @@ export const onUpdateCPSForm = /* GraphQL */ `
         savedCourses
         savedLessons
         savedArticles
+        source
         createdAt
         updatedAt
         userInstructorIdId
@@ -2528,6 +2551,7 @@ export const onDeleteCPSForm = /* GraphQL */ `
         savedCourses
         savedLessons
         savedArticles
+        source
         createdAt
         updatedAt
         userInstructorIdId
@@ -2683,6 +2707,42 @@ export const onDeleteAPSSpeaker = /* GraphQL */ `
       createdAt
       updatedAt
       aPSSpeakersId
+    }
+  }
+`;
+export const onCreateTourist = /* GraphQL */ `
+  subscription OnCreateTourist {
+    onCreateTourist {
+      id
+      fullName
+      email
+      phone
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateTourist = /* GraphQL */ `
+  subscription OnUpdateTourist {
+    onUpdateTourist {
+      id
+      fullName
+      email
+      phone
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteTourist = /* GraphQL */ `
+  subscription OnDeleteTourist {
+    onDeleteTourist {
+      id
+      fullName
+      email
+      phone
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -3283,6 +3343,7 @@ export const onCreateStudent = /* GraphQL */ `
         savedCourses
         savedLessons
         savedArticles
+        source
         createdAt
         updatedAt
         userInstructorIdId
@@ -3417,6 +3478,7 @@ export const onUpdateStudent = /* GraphQL */ `
         savedCourses
         savedLessons
         savedArticles
+        source
         createdAt
         updatedAt
         userInstructorIdId
@@ -3551,6 +3613,7 @@ export const onDeleteStudent = /* GraphQL */ `
         savedCourses
         savedLessons
         savedArticles
+        source
         createdAt
         updatedAt
         userInstructorIdId
@@ -3685,6 +3748,7 @@ export const onCreateInstructor = /* GraphQL */ `
         savedCourses
         savedLessons
         savedArticles
+        source
         createdAt
         updatedAt
         userInstructorIdId
@@ -3801,6 +3865,7 @@ export const onUpdateInstructor = /* GraphQL */ `
         savedCourses
         savedLessons
         savedArticles
+        source
         createdAt
         updatedAt
         userInstructorIdId
@@ -3917,6 +3982,7 @@ export const onDeleteInstructor = /* GraphQL */ `
         savedCourses
         savedLessons
         savedArticles
+        source
         createdAt
         updatedAt
         userInstructorIdId
@@ -4667,6 +4733,7 @@ export const onCreateAPSUser = /* GraphQL */ `
         savedCourses
         savedLessons
         savedArticles
+        source
         createdAt
         updatedAt
         userInstructorIdId
@@ -4792,6 +4859,7 @@ export const onUpdateAPSUser = /* GraphQL */ `
         savedCourses
         savedLessons
         savedArticles
+        source
         createdAt
         updatedAt
         userInstructorIdId
@@ -4917,6 +4985,7 @@ export const onDeleteAPSUser = /* GraphQL */ `
         savedCourses
         savedLessons
         savedArticles
+        source
         createdAt
         updatedAt
         userInstructorIdId
@@ -5506,6 +5575,7 @@ export const onCreateCourseInstructors = /* GraphQL */ `
           savedCourses
           savedLessons
           savedArticles
+          source
           createdAt
           updatedAt
           userInstructorIdId
@@ -5582,6 +5652,7 @@ export const onUpdateCourseInstructors = /* GraphQL */ `
           savedCourses
           savedLessons
           savedArticles
+          source
           createdAt
           updatedAt
           userInstructorIdId
@@ -5658,6 +5729,7 @@ export const onDeleteCourseInstructors = /* GraphQL */ `
           savedCourses
           savedLessons
           savedArticles
+          source
           createdAt
           updatedAt
           userInstructorIdId

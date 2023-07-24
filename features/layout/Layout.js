@@ -47,6 +47,7 @@ const Layout = ({ children }) => {
                 name: user.name,
                 email: user.email,
                 picture: user.picture,
+                source: 'website',
               },
             },
           });

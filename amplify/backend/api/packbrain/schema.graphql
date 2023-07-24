@@ -198,6 +198,7 @@ type User @model @auth(rules: [{ allow: public }]) {
   savedCourses: [String]
   savedLessons: [String]
   savedArticles: [String]
+  source: String
 }
 
 type CMPMForm
@@ -280,6 +281,13 @@ type APSSpeaker @model @auth(rules: [{ allow: public }]) {
 
 type RegistrationCode {
   code: String
+}
+
+type Tourist @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  fullName: String!
+  email: String! @index(name: "touristByEmail")
+  phone: String!
 }
 
 ######### LMS #########

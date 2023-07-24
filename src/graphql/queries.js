@@ -909,6 +909,7 @@ export const getCompany = /* GraphQL */ `
           savedCourses
           savedLessons
           savedArticles
+          source
           createdAt
           updatedAt
           userInstructorIdId
@@ -1014,6 +1015,7 @@ export const getUser = /* GraphQL */ `
           savedCourses
           savedLessons
           savedArticles
+          source
           createdAt
           updatedAt
           userInstructorIdId
@@ -1066,6 +1068,7 @@ export const getUser = /* GraphQL */ `
           savedCourses
           savedLessons
           savedArticles
+          source
           createdAt
           updatedAt
           userInstructorIdId
@@ -1119,6 +1122,7 @@ export const getUser = /* GraphQL */ `
           savedCourses
           savedLessons
           savedArticles
+          source
           createdAt
           updatedAt
           userInstructorIdId
@@ -1150,6 +1154,7 @@ export const getUser = /* GraphQL */ `
           savedCourses
           savedLessons
           savedArticles
+          source
           createdAt
           updatedAt
           userInstructorIdId
@@ -1164,6 +1169,7 @@ export const getUser = /* GraphQL */ `
       savedCourses
       savedLessons
       savedArticles
+      source
       createdAt
       updatedAt
       userInstructorIdId
@@ -1269,6 +1275,7 @@ export const listUsers = /* GraphQL */ `
         savedCourses
         savedLessons
         savedArticles
+        source
         createdAt
         updatedAt
         userInstructorIdId
@@ -1384,6 +1391,7 @@ export const usersByName = /* GraphQL */ `
         savedCourses
         savedLessons
         savedArticles
+        source
         createdAt
         updatedAt
         userInstructorIdId
@@ -1499,6 +1507,7 @@ export const usersByEmail = /* GraphQL */ `
         savedCourses
         savedLessons
         savedArticles
+        source
         createdAt
         updatedAt
         userInstructorIdId
@@ -1614,6 +1623,7 @@ export const usersByCompanyID = /* GraphQL */ `
         savedCourses
         savedLessons
         savedArticles
+        source
         createdAt
         updatedAt
         userInstructorIdId
@@ -1718,6 +1728,7 @@ export const getCMPMForm = /* GraphQL */ `
         savedCourses
         savedLessons
         savedArticles
+        source
         createdAt
         updatedAt
         userInstructorIdId
@@ -1778,6 +1789,7 @@ export const listCMPMForms = /* GraphQL */ `
           savedCourses
           savedLessons
           savedArticles
+          source
           createdAt
           updatedAt
           userInstructorIdId
@@ -1909,6 +1921,7 @@ export const getCPSForm = /* GraphQL */ `
         savedCourses
         savedLessons
         savedArticles
+        source
         createdAt
         updatedAt
         userInstructorIdId
@@ -1970,6 +1983,7 @@ export const listCPSForms = /* GraphQL */ `
           savedCourses
           savedLessons
           savedArticles
+          source
           createdAt
           updatedAt
           userInstructorIdId
@@ -2079,6 +2093,64 @@ export const listAPSSpeakers = /* GraphQL */ `
         createdAt
         updatedAt
         aPSSpeakersId
+      }
+      nextToken
+    }
+  }
+`;
+export const getTourist = /* GraphQL */ `
+  query GetTourist($id: ID!) {
+    getTourist(id: $id) {
+      id
+      fullName
+      email
+      phone
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listTourists = /* GraphQL */ `
+  query ListTourists(
+    $filter: ModelTouristFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listTourists(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        fullName
+        email
+        phone
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const touristsByEmail = /* GraphQL */ `
+  query TouristsByEmail(
+    $email: String!
+    $sortDirection: ModelSortDirection
+    $filter: ModelTouristFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    touristsByEmail(
+      email: $email
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        fullName
+        email
+        phone
+        createdAt
+        updatedAt
       }
       nextToken
     }
@@ -2569,6 +2641,7 @@ export const getStudent = /* GraphQL */ `
         savedCourses
         savedLessons
         savedArticles
+        source
         createdAt
         updatedAt
         userInstructorIdId
@@ -2634,6 +2707,7 @@ export const listStudents = /* GraphQL */ `
           savedCourses
           savedLessons
           savedArticles
+          source
           createdAt
           updatedAt
           userInstructorIdId
@@ -2745,6 +2819,7 @@ export const getInstructor = /* GraphQL */ `
         savedCourses
         savedLessons
         savedArticles
+        source
         createdAt
         updatedAt
         userInstructorIdId
@@ -2792,6 +2867,7 @@ export const listInstructors = /* GraphQL */ `
           savedCourses
           savedLessons
           savedArticles
+          source
           createdAt
           updatedAt
           userInstructorIdId
@@ -3583,6 +3659,7 @@ export const getAPSUser = /* GraphQL */ `
         savedCourses
         savedLessons
         savedArticles
+        source
         createdAt
         updatedAt
         userInstructorIdId
@@ -3627,6 +3704,7 @@ export const listAPSUsers = /* GraphQL */ `
           savedCourses
           savedLessons
           savedArticles
+          source
           createdAt
           updatedAt
           userInstructorIdId
@@ -3681,6 +3759,7 @@ export const aPSUsersByAPSId = /* GraphQL */ `
           savedCourses
           savedLessons
           savedArticles
+          source
           createdAt
           updatedAt
           userInstructorIdId
@@ -3735,6 +3814,7 @@ export const aPSUsersByUserId = /* GraphQL */ `
           savedCourses
           savedLessons
           savedArticles
+          source
           createdAt
           updatedAt
           userInstructorIdId
@@ -4452,6 +4532,7 @@ export const getCourseInstructors = /* GraphQL */ `
           savedCourses
           savedLessons
           savedArticles
+          source
           createdAt
           updatedAt
           userInstructorIdId
