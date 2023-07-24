@@ -51,10 +51,10 @@ export default function ProfileHead({ user }) {
               href='https://learn.packagingschool.com'
               target='_blank'
               rel='noreferrer'
-              className='text-sm text-white font-semibold text-center mt-6 lg:mt-0 leading-tight'
+              className='text-sm text-white font-semibold text-center mt-6 lg:mt-0 flex flex-col'
             >
-              Already a Student? <br />
-              Go to your Leanring Dashboard.
+              <div className='text-lg'>Already a Student?</div>
+              <div>Go to your Leanring Dashboard</div>
             </a>
           </div>
         </div>
