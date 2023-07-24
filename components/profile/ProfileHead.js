@@ -54,7 +54,7 @@ export default function ProfileHead({ user }) {
               className='text-sm text-white font-semibold text-center mt-6 lg:mt-0 flex flex-col'
             >
               <div className='text-lg'>Already a Student?</div>
-              <div>Go to your LMS Dashboard</div>
+              <div className='leading-none'>Go to your LMS Dashboard</div>
             </a>
           </div>
         </div>
