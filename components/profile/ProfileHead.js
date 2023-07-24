@@ -46,6 +46,16 @@ export default function ProfileHead({ user }) {
               </p>
             </div>
           </div>
+          <div className='bg-green-600 px-4 py-2.5 rounded-lg'>
+            <a
+              href='https://learn.packagingschool.com'
+              target='_blank'
+              rel='noreferrer'
+              className='text-sm text-white font-semibold'
+            >
+              Already a Student? Go to your Leanring Dashboard.
+            </a>
+          </div>
         </div>
       </div>
       <div className='grid grid-cols-1 lg:grid-cols-2'>
