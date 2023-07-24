@@ -66,7 +66,12 @@ export default function SignInModal({ open, setOpen }) {
                       </p>
                     </div>
                     <div className='mt-3'>
-                      <button className='bg-green-600 text-white font-semibold rounded-lg py-3 w-full'>
+                      <button
+                        className='bg-green-600 text-white font-semibold rounded-lg py-3 w-full'
+                        onClick={() =>
+                          router.push('https://learn.packagingschool.com')
+                        }
+                      >
                         Already a Student?
                         <br /> Go to your LMS Dashboard
                       </button>
