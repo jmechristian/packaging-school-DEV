@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const FooterLibrary = () => {
@@ -8,12 +9,20 @@ const FooterLibrary = () => {
       </div>
       <div className='grid grid-cols-2 gap-y-1 gap-x-8 lg:gap-x-4 justify-between'>
         <div className='flex flex-col gap-1'>
-          <p className='text-gray-500 dark:text-gray-500 w-fit'>Lessons</p>
-          <p className='text-gray-500 dark:text-gray-500 w-fit'>Videos</p>
+          <p className='text-gray-500 dark:text-gray-500 w-fit'>
+            <Link href={'/library'}>Lessons</Link>
+          </p>
+          <p className='text-gray-500 dark:text-gray-500 w-fit'>
+            <Link href={'/library'}>Articles</Link>
+          </p>
         </div>
         <div className='flex flex-col gap-1'>
-          <p className='text-gray-500 dark:text-gray-500 w-fit'>Free Tools</p>
-          <p className='text-gray-500 dark:text-gray-500 w-fit'>Glossary</p>
+          <p className='text-gray-500 dark:text-gray-500 w-fit'>
+            <Link href={'/library'}>Free Tools</Link>
+          </p>
+          <p className='text-gray-500 dark:text-gray-500 w-fit'>
+            <Link href={'/library'}>Glossary</Link>
+          </p>
         </div>
       </div>
     </div>
