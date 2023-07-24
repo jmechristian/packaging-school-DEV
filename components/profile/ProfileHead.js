@@ -46,7 +46,7 @@ export default function ProfileHead({ user }) {
               </p>
             </div>
           </div>
-          <div className='bg-green-600 px-4 py-2.5 rounded-lg'>
+          <div className='bg-green-600 px-4 py-2.5 rounded-lg shadow-sm'>
             <a
               href='https://learn.packagingschool.com'
               target='_blank'
