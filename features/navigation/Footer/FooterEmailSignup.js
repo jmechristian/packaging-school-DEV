@@ -63,7 +63,7 @@ const FooterEmailSignup = ({ header }) => {
             value={email}
             placeholder='you@email.com'
             onChange={(e) => setEmail(e.target.value)}
-            className='flex w-full border border-gray-500  bg-gray-300 rounded-l text-gray-300 focus:ring-base-light focus:border-none'
+            className='flex w-full border border-gray-500  bg-gray-300 rounded-l text-gray-700 focus:ring-base-light focus:border-none'
           />
           <button
             type='submit'
