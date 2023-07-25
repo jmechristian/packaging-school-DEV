@@ -2105,6 +2105,7 @@ export const getTourist = /* GraphQL */ `
       fullName
       email
       phone
+      tour
       createdAt
       updatedAt
     }
@@ -2122,6 +2123,7 @@ export const listTourists = /* GraphQL */ `
         fullName
         email
         phone
+        tour
         createdAt
         updatedAt
       }
@@ -2149,6 +2151,7 @@ export const touristsByEmail = /* GraphQL */ `
         fullName
         email
         phone
+        tour
         createdAt
         updatedAt
       }
