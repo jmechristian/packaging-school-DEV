@@ -9,7 +9,18 @@ import Head from 'next/head';
 const Page = () => {
   const methods = useForm();
   const router = useRouter();
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
+    await fetch('/api/send-certificate-start', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        ...data,
+        form: 'CPS',
+      }),
+    });
     router.push(
       `/continue-certificate-of-packaging-science?firstName=${data.firstName}&lastName=${data.lastName}&email=${data.email}&phone=${data.phone}`
     );

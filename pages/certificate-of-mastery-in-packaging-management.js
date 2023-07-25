@@ -9,7 +9,18 @@ import Head from 'next/head';
 const Page = () => {
   const methods = useForm();
   const router = useRouter();
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
+    await fetch('/api/send-certificate-start', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        ...data,
+        form: 'CMPM',
+      }),
+    });
     router.push(
       `/continue-certificate-of-mastery-in-packaging-management?firstName=${data.firstName}&lastName=${data.lastName}&email=${data.email}&phone=${data.phone}`
     );
@@ -33,7 +44,7 @@ const Page = () => {
         <div className='px-6 xl:px-0'>
           <FormProvider {...methods}>
             <form
-              className='md:grid flex flex-col gap-4 md:grid-cols-2 gap-6 lg:gap-12 max-w-4xl mx-auto'
+              className='md:grid flex flex-col gap-4 md:grid-cols-2 md:gap-6 lg:gap-12 max-w-4xl mx-auto'
               onSubmit={methods.handleSubmit(onSubmit)}
             >
               <TextInput
