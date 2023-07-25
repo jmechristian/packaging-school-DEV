@@ -231,7 +231,7 @@ export default async function handler(req, res) {
         CcAddresses: [
           /* more items */
         ],
-        ToAddresses: [toAddress],
+        ToAddresses: [toAddress, 'jamie@packagingschool.com'],
       },
       Message: {
         /* required */
@@ -260,8 +260,8 @@ export default async function handler(req, res) {
   try {
     await sesClient.send(
       createSendEmailCommand(
-        'jamie@packagingschool.com',
-        'jamie@packagingschool.com'
+        'info@packagingschool.com',
+        'info@packagingschool.com'
       )
     );
     return res.status(200).json({ message: 'Success' + res });
