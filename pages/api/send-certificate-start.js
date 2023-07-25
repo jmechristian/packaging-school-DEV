@@ -103,7 +103,7 @@ export default async function handler(req, res) {
     '                <tr>' +
     '                    <td align="center" valign="top" style="padding: 40px 10px 40px 10px;">' +
     '                        <a href="http://litmus.com" target="_blank">' +
-    '                            <img alt="Logo" src="https://packschool.s3.amazonaws.com/PS_com+LOGO+1.png" width="200" height="35" style="display: block; width: 200px; max-width: 200px; min-width: 40px; font-family: \'Lato\', Helvetica, Arial, sans-serif; color: #ffffff; font-size: 18px;" border="0">' +
+    '                            <img alt="Logo" src="https://packschool.s3.amazonaws.com/PS_com+LOGO+1.png" width="150" height="auto" style="display: block; width: 150px; max-width: 150px; min-width: 40px; font-family: \'Lato\', Helvetica, Arial, sans-serif; color: #ffffff; font-size: 18px;" border="0">' +
     '                        </a>' +
     '                    </td>' +
     '                </tr>' +
@@ -231,7 +231,7 @@ export default async function handler(req, res) {
         CcAddresses: [
           /* more items */
         ],
-        ToAddresses: [toAddress],
+        ToAddresses: [toAddress, 'info@packagingschool.com'],
       },
       Message: {
         /* required */
@@ -260,7 +260,7 @@ export default async function handler(req, res) {
   try {
     await sesClient.send(
       createSendEmailCommand(
-        ['info@packagingschool.com', 'jamie@packagingschool.com'],
+        'jamie@packagingschool.com',
         'jamie@packagingschool.com'
       )
     );
