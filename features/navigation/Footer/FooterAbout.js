@@ -6,7 +6,7 @@ const FooterAbout = () => {
   return (
     <div className='flex flex-col gap-8 lg:gap-10 xl:pr-8'>
       <FooterAboutDetail />
-      <FooterEmailSignup />
+      <FooterEmailSignup header={true} />
       <div className='border-b border-b-slate-500 w-full lg:hidden'></div>
     </div>
   );
