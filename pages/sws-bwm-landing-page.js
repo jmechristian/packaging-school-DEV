@@ -4,7 +4,7 @@ import BMWSteps from '../components/bmw/BMWSteps';
 
 const Page = () => {
   return (
-    <div className='flex flex-col gap-16 md:gap-24 pb-16'>
+    <div className='flex flex-col gap-16 md:gap-24 pb-16 lg:pb-24'>
       <BMWHero />
       <BMWSteps />
     </div>
