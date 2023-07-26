@@ -40,7 +40,7 @@ const BMWTraining = () => {
       <div className='mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-8 overflow-hidden'>
         <div className='px-6 pb-24 pt-16 sm:pb-24 lg:col-span-7 lg:px-0 lg:pb-40 lg:pt-28 xl:col-span-6'>
           <div className='mx-auto max-w-2xl lg:pl-6 xl:pl-0 pr-16'>
-            <p className='text-sm font-semibold mb-3'>In Partnership with</p>
+            <p className='text-sm font-semibold mb-3'>On Behalf Of</p>
             <img
               className='h-12'
               src='https://packschool.s3.amazonaws.com/bmw_group_logo.png'
