@@ -40,6 +40,16 @@ const nextConfig = {
         destination: '/about',
         permanent: true,
       },
+      {
+        source: '/about-packaging-school',
+        destination: '/about',
+        permanent: true,
+      },
+      {
+        source: '/automotive',
+        destination: '/certifications/get-to-know-apc',
+        permanent: true,
+      },
     ];
   },
 };
