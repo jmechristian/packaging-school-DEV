@@ -4,8 +4,10 @@ import FadeIn from '../../../helpers/FadeIn';
 import CertHeroImage from '../../../slices/CertificateHero/components/CertHeroImage';
 import Link from 'next/link';
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
+import { useRouter } from 'next/router';
 
 const CertificateHero = () => {
+  const router = useRouter();
   return (
     <div className='grid lg:grid-cols-2 items-center gap-6 overflow-hidden py-12 md:py-24 container-7xl'>
       <div>
@@ -32,10 +34,18 @@ const CertificateHero = () => {
         <div>
           <FadeIn>
             <div className='flex flex-col md:flex-row items-center gap-6 mt-4'>
-              <button className='w-full md:w-fit px-9 bg-clemson rounded-lg py-4 text-white font-semibold font-greycliff text-xl'>
+              <button
+                className='w-full md:w-fit px-9 bg-clemson rounded-lg py-4 text-white font-semibold font-greycliff text-xl'
+                onClick={() =>
+                  router.push('/certificate-of-mastery-in-packaging-management')
+                }
+              >
                 Apply Now
               </button>
-              <div className='flex gap-1.5 items-center'>
+              <div
+                className='flex gap-1.5 items-center cursor-pointer'
+                onClick={() => router.push('/cmpm-vs-cps')}
+              >
                 <div className='font-semibold text-xl font-greycliff dark:text-white'>
                   Compare Certificates
                 </div>
