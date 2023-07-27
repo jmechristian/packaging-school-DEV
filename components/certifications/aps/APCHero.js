@@ -5,8 +5,10 @@ import CertHeroImage from '../../../slices/CertificateHero/components/CertHeroIm
 import Link from 'next/link';
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 const APCHero = () => {
+  const router = useRouter();
   return (
     <div className='grid lg:grid-cols-2 items-center gap-6 overflow-hidden py-12 md:py-24 container-7xl'>
       <div>
@@ -41,7 +43,12 @@ const APCHero = () => {
         <div>
           <FadeIn>
             <div className='flex flex-col md:flex-row items-center gap-6 mt-4'>
-              <button className='w-full md:w-fit px-9 bg-clemson rounded-lg py-4 text-white font-semibold font-greycliff text-xl'>
+              <button
+                className='w-full md:w-fit px-9 bg-clemson rounded-lg py-4 text-white font-semibold font-greycliff text-xl'
+                onClick={() =>
+                  router.push('https://learn.packagingschool.com/enroll/735516')
+                }
+              >
                 Enroll Now
               </button>
             </div>
