@@ -16,7 +16,17 @@ const nextConfig = {
     return [
       // Path Matching - will match `/old-blog/a`, but not `/old-blog/a/b`
       {
-        source: '/courses/packdesign-workshop',
+        source: '/pack-design-camp',
+        destination: 'https://library.packagingschool.com/packdesign-workshop',
+        permanent: true,
+      },
+      {
+        source: '/packcamp',
+        destination: 'https://library.packagingschool.com/packdesign-workshop',
+        permanent: true,
+      },
+      {
+        source: '/pack-design-workshop',
         destination: 'https://library.packagingschool.com/packdesign-workshop',
         permanent: true,
       },
