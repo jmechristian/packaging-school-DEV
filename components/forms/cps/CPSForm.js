@@ -239,8 +239,23 @@ const CPSForm = ({ methods }) => {
     }
   };
 
+  const sendSubmitNotification = async (data) => {
+    await fetch('/api/send-certificate-submit', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        ...data,
+        form: 'CPS',
+      }),
+    });
+  };
+
   const onSubmit = async (data) => {
-    submitFormToAWS(data);
+    await submitFormToAWS(data);
+    sendSubmitNotification(data);
   };
 
   const onError = (errors, e) => console.log(errors, e);

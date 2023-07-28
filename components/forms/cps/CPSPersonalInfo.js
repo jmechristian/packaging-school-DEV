@@ -29,6 +29,7 @@ const CPSPersonalInfo = () => {
         name={'phone'}
         placeholder={'Enter Phone Number'}
         label={'Phone Number'}
+        required
       />
       <TextInput
         name={'streetAddress'}
