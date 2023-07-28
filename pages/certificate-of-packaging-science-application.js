@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CenteredTextHeader from '../components/layout/CenteredTextHeader';
 import TextInput from '../components/forms/TextInput';
 import { useForm, FormProvider, useFormContext } from 'react-hook-form';
@@ -7,9 +7,11 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 
 const Page = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const methods = useForm();
   const router = useRouter();
   const onSubmit = async (data) => {
+    setIsLoading(true);
     await fetch('/api/send-certificate-start', {
       method: 'POST',
       headers: {
@@ -21,6 +23,7 @@ const Page = () => {
         form: 'CPS',
       }),
     });
+    setIsLoading(false);
     router.push(
       `/continue-certificate-of-packaging-science?firstName=${data.firstName}&lastName=${data.lastName}&email=${data.email}&phone=${data.phone}`
     );
@@ -83,7 +86,7 @@ const Page = () => {
                   type='submit'
                   className='bg-clemson md:align-end w-full md:w-fit hover:bg-clemson-dark mt-2 text-white font-semibold items-center rounded-lg px-4 py-3 flex justify-center gap-1'
                 >
-                  Continue Application
+                  {isLoading ? 'Preparing...' : 'Continue Application'}
                   <div>
                     <ArrowLongRightIcon className='w-6 h-6 stroke-white' />
                   </div>
