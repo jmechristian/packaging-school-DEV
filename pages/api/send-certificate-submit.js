@@ -231,7 +231,7 @@ export default async function handler(req, res) {
         CcAddresses: [
           /* more items */
         ],
-        ToAddresses: [toAddress, 'info@packagingschoo.com'],
+        ToAddresses: [toAddress, 'info@packagingschool.com'],
       },
       Message: {
         /* required */
