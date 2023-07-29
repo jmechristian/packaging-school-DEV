@@ -60,6 +60,11 @@ const nextConfig = {
         destination: '/certifications/get-to-know-apc',
         permanent: true,
       },
+      {
+        source: '/learn-packaging-online-2',
+        destination: '/',
+        permanent: true,
+      },
     ];
   },
 };
