@@ -153,6 +153,7 @@ export default async function handler(req, res) {
     `                    <p style="margin: 0;">last Name: ${body.lastName}</p>` +
     `                     <p style="margin: 0;">Email: ${body.email}</p>` +
     `                    <p style="margin: 0;">Phone: ${body.phone}</p>` +
+    `                    <p style="margin: 0;">Stripe Confirmation: ${body.paymentConfirmation}</p>` +
     '                    <div style="height:40px;"></div>' +
     '                </td>' +
     '              </tr>' +
