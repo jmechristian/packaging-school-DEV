@@ -115,6 +115,67 @@ const nextConfig = {
         destination: '/courses/paperboard-cartons',
         permanent: true,
       },
+      {
+        source: '/corrugated-containers',
+        destination: '/courses/corrugated-containers',
+        permanent: true,
+      },
+      {
+        source: '/courses-corrugated-containers-101',
+        destination: '/courses/corrugated-containers',
+        permanent: true,
+      },
+      {
+        source: '/corrugated-design',
+        destination: '/courses/introduction-to-corrugated-design',
+        permanent: true,
+      },
+      {
+        source: '/courses-package-printing-101',
+        destination: '/courses/packaging-printing',
+        permanent: true,
+      },
+      {
+        source: '/courses-sustainable-packaging-101',
+        destination: '/courses/sustainable-packaging',
+        permanent: true,
+      },
+      {
+        source: '/hazmat-packaging',
+        destination:
+          '/courses/hazmat-packaging-certificate-for-automotive-applications',
+        permanent: true,
+      },
+      {
+        source: '/packaging-boot-camp',
+        destination: '/courses/packaging-boot-camp-101',
+        permanent: true,
+      },
+      {
+        source: '/packaging-design-workflow',
+        destination: '/courses/packdesign-workshop',
+        permanent: true,
+      },
+      {
+        source: '/packaging-foundations',
+        destination: '/courses/packaging-foundations',
+        permanent: true,
+      },
+      {
+        source: '/packaging-regulations',
+        destination: '/courses/packaging-laws-and-regulations',
+        permanent: true,
+      },
+      {
+        source: '/packaging-science-certificate',
+        destination: '/certifications/get-to-know-cps',
+        permanent: true,
+      },
+      {
+        source: '/packaging-science-certificate',
+        destination: '/certifications/get-to-know-cps',
+        permanent: true,
+      },
     ];
   },
 };
