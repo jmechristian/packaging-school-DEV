@@ -75,6 +75,46 @@ const nextConfig = {
         destination: '/',
         permanent: true,
       },
+      {
+        source: '/learn-packaging-online-2',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/about-us/',
+        destination: '/about',
+        permanent: true,
+      },
+      {
+        source: '/blog',
+        destination: '/library',
+        permanent: true,
+      },
+      {
+        source: '/author',
+        destination: '/library',
+        permanent: true,
+      },
+      {
+        source: '/author',
+        destination: '/library',
+        permanent: true,
+      },
+      {
+        source: '/shop/glass-packaging',
+        destination: '/courses/glass-metal-packaging',
+        permanent: true,
+      },
+      {
+        source: '/printing',
+        destination: '/courses/packaging-printing',
+        permanent: true,
+      },
+      {
+        source: '/paperboard-cartons',
+        destination: '/courses/paperboard-cartons',
+        permanent: true,
+      },
     ];
   },
 };
