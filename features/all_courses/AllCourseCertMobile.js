@@ -54,7 +54,7 @@ const AllCourseCertMobile = () => {
       </div>
       <div className='relative grid md:grid-cols-2 lg:grid-cols-2 gap-6 px-4 md:px-8'>
         {certs.map((c) => (
-          <div className='w-full' key={c.title}>
+          <div className='w-full' key={c.name}>
             <CertificateCard
               title={c.name}
               apply={c.link}

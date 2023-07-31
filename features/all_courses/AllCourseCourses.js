@@ -19,7 +19,10 @@ const AllCourseCourses = ({ selectedFilter, coursesToShow }) => {
           </span>
         </div>
       </div>
-      <div className='relative flex flex-col gap-6 lg:grid lg:grid-cols-3'>
+      <div
+        className='relative flex flex-col gap-6 lg:grid lg:grid-cols-3'
+        id='courses'
+      >
         {coursesToShow.map((course, i) => (
           <div className='block' key={course.id}>
             <CourseCard
