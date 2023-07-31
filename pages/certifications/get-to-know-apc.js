@@ -31,7 +31,7 @@ const Page = () => {
           id='tommy-stroman'
           author={{
             name: 'Lauren McDonald',
-            role: 'Packaging Engineer II / Nissan Motor Corp.',
+            role: 'Packaging Specialist / Volkswagen Group of America, Inc.',
           }}
         >
           <p>

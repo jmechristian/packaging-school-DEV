@@ -48,7 +48,7 @@ const testimonials = [
         body: 'I loved the fact that the CMPM program was an interactive online series that inspired my creativity and enabled my ability to use new tools to take back to Nissan North America, Inc. It allowed me to implement an effective and efficient packaging process to help not only me, but my colleagues in their everyday performance on the job.',
         author: {
           name: 'Lauren McDonald',
-          handle: 'Packaging Engineer II, Nissan Motor Corporation',
+          handle: 'Packaging Specialist, Volkswagen Group of America, Inc.',
           imageUrl:
             'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
         },
