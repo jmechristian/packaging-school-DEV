@@ -53,6 +53,7 @@ const CPSForm = ({ methods }) => {
             cpsGoals: methods.getValues('cpsGoals'),
             moreAboutYou: methods.getValues('moreAboutYou'),
             elective: methods.getValues('elective'),
+            paymentConfirmation: methods.getValues('paymentConfirmation'),
           },
         },
       });
@@ -89,6 +90,7 @@ const CPSForm = ({ methods }) => {
             cpsGoals: methods.getValues('cpsGoals'),
             moreAboutYou: methods.getValues('moreAboutYou'),
             elective: methods.getValues('elective'),
+            paymentConfirmation: methods.getValues('paymentConfirmation'),
           },
         },
       });
@@ -137,6 +139,7 @@ const CPSForm = ({ methods }) => {
             cpsGoals: methods.getValues('cpsGoals'),
             moreAboutYou: methods.getValues('moreAboutYou'),
             elective: methods.getValues('elective'),
+            paymentConfirmation: methods.getValues('paymentConfirmation'),
           },
         },
       });
@@ -174,6 +177,7 @@ const CPSForm = ({ methods }) => {
             cpsGoals: methods.getValues('cpsGoals'),
             moreAboutYou: methods.getValues('moreAboutYou'),
             elective: methods.getValues('elective'),
+            paymentConfirmation: methods.getValues('paymentConfirmation'),
           },
         },
       });
@@ -211,6 +215,7 @@ const CPSForm = ({ methods }) => {
             cpsGoals: methods.getValues('cpsGoals'),
             moreAboutYou: methods.getValues('moreAboutYou'),
             elective: methods.getValues('elective'),
+            paymentConfirmation: methods.getValues('paymentConfirmation'),
           },
         },
       });

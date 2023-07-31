@@ -31,6 +31,16 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/workshop',
+        destination: 'https://library.packagingschool.com/packdesign-workshop',
+        permanent: true,
+      },
+      {
+        source: '/workshops',
+        destination: 'https://library.packagingschool.com/packdesign-workshop',
+        permanent: true,
+      },
+      {
         source: '/get-to-know-cmpm',
         destination: 'certifications/get-to-know-cmpm',
         permanent: true,

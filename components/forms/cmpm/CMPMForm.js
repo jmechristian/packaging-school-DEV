@@ -55,6 +55,7 @@ const CMPMForm = ({ methods }) => {
             yearGoals: methods.getValues('yearGoals'),
             cmpmGoals: methods.getValues('cmpmGoals'),
             moreAboutYou: methods.getValues('moreAboutYou'),
+            paymentConfirmation: methods.getValues('paymentConfirmation'),
           },
         },
       });
@@ -91,6 +92,7 @@ const CMPMForm = ({ methods }) => {
             yearGoals: methods.getValues('yearGoals'),
             cmpmGoals: methods.getValues('cmpmGoals'),
             moreAboutYou: methods.getValues('moreAboutYou'),
+            paymentConfirmation: methods.getValues('paymentConfirmation'),
           },
         },
       });
@@ -139,6 +141,7 @@ const CMPMForm = ({ methods }) => {
             yearGoals: methods.getValues('yearGoals'),
             cmpmGoals: methods.getValues('cmpmGoals'),
             moreAboutYou: methods.getValues('moreAboutYou'),
+            paymentConfirmation: methods.getValues('paymentConfirmation'),
           },
         },
       });
@@ -176,6 +179,7 @@ const CMPMForm = ({ methods }) => {
             yearGoals: methods.getValues('yearGoals'),
             cmpmGoals: methods.getValues('cmpmGoals'),
             moreAboutYou: methods.getValues('moreAboutYou'),
+            paymentConfirmation: methods.getValues('paymentConfirmation'),
           },
         },
       });
@@ -213,6 +217,7 @@ const CMPMForm = ({ methods }) => {
             yearGoals: methods.getValues('yearGoals'),
             cmpmGoals: methods.getValues('cmpmGoals'),
             moreAboutYou: methods.getValues('moreAboutYou'),
+            paymentConfirmation: methods.getValues('paymentConfirmation'),
           },
         },
       });
