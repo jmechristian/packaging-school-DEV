@@ -176,6 +176,21 @@ const nextConfig = {
         destination: '/certifications/get-to-know-cps',
         permanent: true,
       },
+      {
+        source: '/sustainable-packaging',
+        destination: '/courses/sustainable-packaging',
+        permanent: true,
+      },
+      {
+        source: '/sustainability',
+        destination: '/courses/sustainable-packaging',
+        permanent: true,
+      },
+      {
+        source: '/sustainable',
+        destination: '/courses/sustainable-packaging',
+        permanent: true,
+      },
     ];
   },
 };
