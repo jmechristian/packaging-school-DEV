@@ -248,6 +248,31 @@ const nextConfig = {
         destination: 'https://library.packagingschool.com/packdesign-workshop',
         permanent: true,
       },
+      {
+        source: '/corrugated-design-scholarship-application/',
+        destination: '/forms/scholarship-application-form',
+        permanent: true,
+      },
+      {
+        source: '/courses-bmw-distribution-testing',
+        destination: '/courses/bmw-distribution-testing',
+        permanent: true,
+      },
+      {
+        source: '/courses-pet-preform-to-bottle/',
+        destination: '/courses/preform-design',
+        permanent: true,
+      },
+      {
+        source: '/courses-preform-heating/',
+        destination: '/courses/preform-heating',
+        permanent: true,
+      },
+      {
+        source: '/courses-solidworks-basics/',
+        destination: '/courses/solidworks-for-packaging-basic',
+        permanent: true,
+      },
     ];
   },
 };
