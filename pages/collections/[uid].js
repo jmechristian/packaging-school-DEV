@@ -16,7 +16,7 @@ import CTAButtonTrial from '../../components/CTAButtonTrial';
 
 const Page = ({ collection, courses }) => {
   const router = useRouter();
-
+  console.log('collection', collection);
   return (
     <>
       <Head>
@@ -89,7 +89,7 @@ const Page = ({ collection, courses }) => {
                         title={course.title}
                         desc={course.subheadline}
                         hours={course.hours}
-                        price={course.price}
+                        // price={course.price}
                         slug={course.slug}
                         category={course.category}
                         video={course.preview}
