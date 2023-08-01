@@ -1044,6 +1044,7 @@ export const getUser = /* GraphQL */ `
         moreAboutYou
         birthYear
         optOut
+        paymentConfirmation
         createdOn
         updatedOn
         cMPMFormUserId
@@ -1098,6 +1099,7 @@ export const getUser = /* GraphQL */ `
         moreAboutYou
         elective
         optOut
+        paymentConfirmation
         createdOn
         updatedOn
         cPSFormUserId
@@ -1225,6 +1227,7 @@ export const listUsers = /* GraphQL */ `
           moreAboutYou
           birthYear
           optOut
+          paymentConfirmation
           createdOn
           updatedOn
           cMPMFormUserId
@@ -1256,6 +1259,7 @@ export const listUsers = /* GraphQL */ `
           moreAboutYou
           elective
           optOut
+          paymentConfirmation
           createdOn
           updatedOn
           cPSFormUserId
@@ -1341,6 +1345,7 @@ export const usersByName = /* GraphQL */ `
           moreAboutYou
           birthYear
           optOut
+          paymentConfirmation
           createdOn
           updatedOn
           cMPMFormUserId
@@ -1372,6 +1377,7 @@ export const usersByName = /* GraphQL */ `
           moreAboutYou
           elective
           optOut
+          paymentConfirmation
           createdOn
           updatedOn
           cPSFormUserId
@@ -1457,6 +1463,7 @@ export const usersByEmail = /* GraphQL */ `
           moreAboutYou
           birthYear
           optOut
+          paymentConfirmation
           createdOn
           updatedOn
           cMPMFormUserId
@@ -1488,6 +1495,7 @@ export const usersByEmail = /* GraphQL */ `
           moreAboutYou
           elective
           optOut
+          paymentConfirmation
           createdOn
           updatedOn
           cPSFormUserId
@@ -1573,6 +1581,7 @@ export const usersByCompanyID = /* GraphQL */ `
           moreAboutYou
           birthYear
           optOut
+          paymentConfirmation
           createdOn
           updatedOn
           cMPMFormUserId
@@ -1604,6 +1613,7 @@ export const usersByCompanyID = /* GraphQL */ `
           moreAboutYou
           elective
           optOut
+          paymentConfirmation
           createdOn
           updatedOn
           cPSFormUserId
@@ -1678,6 +1688,7 @@ export const getCMPMForm = /* GraphQL */ `
           moreAboutYou
           birthYear
           optOut
+          paymentConfirmation
           createdOn
           updatedOn
           cMPMFormUserId
@@ -1709,6 +1720,7 @@ export const getCMPMForm = /* GraphQL */ `
           moreAboutYou
           elective
           optOut
+          paymentConfirmation
           createdOn
           updatedOn
           cPSFormUserId
@@ -1757,6 +1769,7 @@ export const getCMPMForm = /* GraphQL */ `
       moreAboutYou
       birthYear
       optOut
+      paymentConfirmation
       createdOn
       updatedOn
       cMPMFormUserId
@@ -1818,6 +1831,7 @@ export const listCMPMForms = /* GraphQL */ `
         moreAboutYou
         birthYear
         optOut
+        paymentConfirmation
         createdOn
         updatedOn
         cMPMFormUserId
@@ -1871,6 +1885,7 @@ export const getCPSForm = /* GraphQL */ `
           moreAboutYou
           birthYear
           optOut
+          paymentConfirmation
           createdOn
           updatedOn
           cMPMFormUserId
@@ -1902,6 +1917,7 @@ export const getCPSForm = /* GraphQL */ `
           moreAboutYou
           elective
           optOut
+          paymentConfirmation
           createdOn
           updatedOn
           cPSFormUserId
@@ -1951,6 +1967,7 @@ export const getCPSForm = /* GraphQL */ `
       moreAboutYou
       elective
       optOut
+      paymentConfirmation
       createdOn
       updatedOn
       cPSFormUserId
@@ -2013,6 +2030,7 @@ export const listCPSForms = /* GraphQL */ `
         moreAboutYou
         elective
         optOut
+        paymentConfirmation
         createdOn
         updatedOn
         cPSFormUserId
@@ -2106,6 +2124,7 @@ export const getTourist = /* GraphQL */ `
       email
       phone
       tour
+      company
       createdAt
       updatedAt
     }
@@ -2124,6 +2143,7 @@ export const listTourists = /* GraphQL */ `
         email
         phone
         tour
+        company
         createdAt
         updatedAt
       }
@@ -2152,6 +2172,7 @@ export const touristsByEmail = /* GraphQL */ `
         email
         phone
         tour
+        company
         createdAt
         updatedAt
       }
@@ -2594,6 +2615,7 @@ export const getStudent = /* GraphQL */ `
           moreAboutYou
           birthYear
           optOut
+          paymentConfirmation
           createdOn
           updatedOn
           cMPMFormUserId
@@ -2625,6 +2647,7 @@ export const getStudent = /* GraphQL */ `
           moreAboutYou
           elective
           optOut
+          paymentConfirmation
           createdOn
           updatedOn
           cPSFormUserId
@@ -2772,6 +2795,7 @@ export const getInstructor = /* GraphQL */ `
           moreAboutYou
           birthYear
           optOut
+          paymentConfirmation
           createdOn
           updatedOn
           cMPMFormUserId
@@ -2803,6 +2827,7 @@ export const getInstructor = /* GraphQL */ `
           moreAboutYou
           elective
           optOut
+          paymentConfirmation
           createdOn
           updatedOn
           cPSFormUserId
@@ -3612,6 +3637,7 @@ export const getAPSUser = /* GraphQL */ `
           moreAboutYou
           birthYear
           optOut
+          paymentConfirmation
           createdOn
           updatedOn
           cMPMFormUserId
@@ -3643,6 +3669,7 @@ export const getAPSUser = /* GraphQL */ `
           moreAboutYou
           elective
           optOut
+          paymentConfirmation
           createdOn
           updatedOn
           cPSFormUserId
