@@ -432,6 +432,16 @@ const nextConfig = {
           'https://packschool.s3.amazonaws.com/Sales-Bootcamp-Program-Outline.pdf',
         permanent: true,
       },
+      {
+        source: '/alumni',
+        destination: '/testimonials',
+        permanent: true,
+      },
+      {
+        source: '/testimonial',
+        destination: '/testimonials',
+        permanent: true,
+      },
     ];
   },
 };
