@@ -2,11 +2,11 @@ import { CheckIcon } from '@heroicons/react/20/solid';
 import Link from 'next/link';
 
 const schedule = [
-  {
-    session: 'Fall Session 1',
-    dates: `Aug. 7, 2023 - \nOct. 27, 2023`,
-    deadline: 'July 28, 2023',
-  },
+  // {
+  //   session: 'Fall Session 1',
+  //   dates: `Aug. 7, 2023 - \nOct. 27, 2023`,
+  //   deadline: 'July 28, 2023',
+  // },
   {
     session: 'Fall Session 2',
     dates: `Sept. 25, 2023 - \nDec. 15, 2023`,
