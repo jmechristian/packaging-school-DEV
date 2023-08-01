@@ -413,6 +413,25 @@ const nextConfig = {
         destination: '/articles/:slug',
         permanent: true,
       },
+      {
+        source: '/wp-content/uploads/2020/10/Overview-of-PDP-Phases-2020.pdf',
+        destination:
+          'https://packschool.s3.amazonaws.com/Overview-of-PDP-Phases-2020.pdf',
+        permanent: true,
+      },
+      {
+        source: '/wp-content/uploads/2021/03/Global-Packaging-Industry.pdf',
+        destination:
+          'https://packschool.s3.amazonaws.com/Global-Packaging-Industry.pdf',
+        permanent: true,
+      },
+      {
+        source:
+          '/wp-content/uploads/2022/04/Sales-Bootcamp-Program-Outline-Updated.pdf',
+        destination:
+          'https://packschool.s3.amazonaws.com/Sales-Bootcamp-Program-Outline.pdf',
+        permanent: true,
+      },
     ];
   },
 };
