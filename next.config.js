@@ -351,9 +351,31 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/packaging-sales',
+        source: '/packaging-glossary',
         destination:
-          '/courses/sales-operations-for-printing-and-packaging-professionals',
+          'https://library.packagingschool.com/articles/packaging-glossary',
+        permanent: true,
+      },
+      {
+        source: '/pharmaceutical',
+        destination:
+          'https://library.packagingschool.com/articles/pharmaceutical',
+        permanent: true,
+      },
+      {
+        source: '/plastic-folding-cartons-course',
+        destination: '/courses/plastic-folding-cartons',
+        permanent: true,
+      },
+      {
+        source: '/pressure-sensitive-labels-101/',
+        destination: '/courses/pressure-sensitive-labels-101',
+        permanent: true,
+      },
+      {
+        source: '/s/PAPERBOARD-GRADES-CHEAT-SHEET.pdf',
+        destination:
+          'https://packschool.s3.amazonaws.com/paperboard_grades_cheat_sheet_vv3.pdf',
         permanent: true,
       },
     ];
