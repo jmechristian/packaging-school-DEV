@@ -273,6 +273,21 @@ const nextConfig = {
         destination: '/courses/solidworks-for-packaging-basic',
         permanent: true,
       },
+      {
+        source: '/design',
+        destination: 'https://library.packagingschool.com/packdesign-workshop',
+        permanent: true,
+      },
+      {
+        source: '/flexographic-print-fundamentals/',
+        destination: '/courses/flexographic-print-fundamentals',
+        permanent: true,
+      },
+      {
+        source: '/human-factors-in-packaging-design',
+        destination: '/courses/human-factors-in-packaging-design',
+        permanent: true,
+      },
     ];
   },
 };
