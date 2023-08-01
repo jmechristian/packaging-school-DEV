@@ -78,7 +78,7 @@ const Page = ({ collection, courses }) => {
           <div className='flex flex-col gap-6'>
             <FadeIn>
               <h3 className='dark:text-white text-xl lg:text-2xl'>
-                {courses.length > 0 && 'Courses Included'}
+                {courses && courses.length > 0 && 'Courses Included'}
               </h3>
             </FadeIn>
             <FadeIn>
