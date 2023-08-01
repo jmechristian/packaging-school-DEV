@@ -228,6 +228,26 @@ const nextConfig = {
         destination: '/collections/beverage-institute-value-bundle',
         permanent: true,
       },
+      {
+        source: '/careers-in-packaging-packaging-compliance-specialist/',
+        destination: '/careers-in-packaging-consumer-behavior-analyst',
+        permanent: true,
+      },
+      {
+        source: '/certificates',
+        destination: '/certifications',
+        permanent: true,
+      },
+      {
+        source: '/cmpm-automotive',
+        destination: '/certifications',
+        permanent: true,
+      },
+      {
+        source: '/courses/packdesign-workshop',
+        destination: '/certifications',
+        permanent: true,
+      },
     ];
   },
 };
