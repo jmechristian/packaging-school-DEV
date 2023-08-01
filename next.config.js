@@ -245,7 +245,7 @@ const nextConfig = {
       },
       {
         source: '/courses/packdesign-workshop',
-        destination: '/certifications',
+        destination: 'https://library.packagingschool.com/packdesign-workshop',
         permanent: true,
       },
     ];
