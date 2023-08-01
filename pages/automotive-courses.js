@@ -56,7 +56,9 @@ const Index = () => {
               'This course is designed to provide basic information about common dangerous goods transported in the automotive industry. It will cover the many requirements associated with transporting dangerous goods.'
             }
             price={'99'}
-            slug={'/courses/hazmat-packaging'}
+            slug={
+              '/courses/hazmat-packaging-certificate-for-automotive-applications'
+            }
             category={'SUPPLYCHAIN'}
           />
           <CourseCard

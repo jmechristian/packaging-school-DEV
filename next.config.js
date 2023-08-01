@@ -81,6 +81,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/automotive-counter',
+        destination: '/certifications/get-to-know-apc',
+        permanent: true,
+      },
+      {
         source: '/learn-packaging-online-2',
         destination: '/',
         permanent: true,
@@ -205,6 +210,22 @@ const nextConfig = {
         source: '/beauty-and-health',
         destination:
           'https://library.packagingschool.com/articles/beauty-and-health',
+        permanent: true,
+      },
+      {
+        source: '/beauty-and-health',
+        destination:
+          'https://library.packagingschool.com/articles/beauty-and-health',
+        permanent: true,
+      },
+      {
+        source: '/bev-tech-fundamentals/',
+        destination: '/courses/fundamentals-of-beverage-technology',
+        permanent: true,
+      },
+      {
+        source: '/beverage-institute/',
+        destination: '/collections/beverage-institute-value-bundle',
         permanent: true,
       },
     ];
