@@ -293,6 +293,26 @@ const nextConfig = {
         destination: '/courses/leveraging-human-factors-in-packaging-design',
         permanent: true,
       },
+      {
+        source: '/project-management-essentials',
+        destination: '/courses/project-management-essentials',
+        permanent: true,
+      },
+      {
+        source: '/cannabis-packaging',
+        destination: '/courses/cannabis-packaging',
+        permanent: true,
+      },
+      {
+        source: '/cannabis-packaging',
+        destination: '/courses/cannabis-packaging',
+        permanent: true,
+      },
+      {
+        source: '/pressure-sensitive-labels-101',
+        destination: '/courses/pressure-sensitive-labels-101',
+        permanent: true,
+      },
     ];
   },
 };
