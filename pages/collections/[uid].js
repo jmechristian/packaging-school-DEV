@@ -54,7 +54,7 @@ const Page = ({ collection, courses }) => {
               </p>
             </div>
             <div className='lg:col-span-2 w-full flex justify-center items-center'>
-              <div className='flex flex-col gap-6 bg-dark-mid p-9 w-full rounded-lg'>
+              <div className='flex flex-col gap-6 bg-slate-100 dark:bg-dark-mid p-9 w-full rounded-lg'>
                 <div className='flex flex-col gap-2 w-full'>
                   <div className='font-medium black__white font-greycliff text-lg'>
                     Future Proof Your Skills
