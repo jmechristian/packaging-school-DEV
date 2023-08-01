@@ -60,7 +60,9 @@ const Page = ({ collection, courses }) => {
                     Future Proof Your Skills
                   </div>
                   <div className='font-semibold black__white text-5xl lg:text-6xl font-greycliff'>
-                    {collection.price && collection.price === 'FREE'
+                    {collection &&
+                    collection.price &&
+                    collection.price === 'FREE'
                       ? 'Free!'
                       : `$${collection.price}`}
                   </div>
