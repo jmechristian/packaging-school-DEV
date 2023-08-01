@@ -11,6 +11,8 @@ import FadeIn from '../../helpers/FadeIn';
 import ShortCourseCard from '../../components/shared/ShortCourseCard';
 import { UserIcon } from '@heroicons/react/24/outline';
 import Head from 'next/head';
+import CTAButtonLarge from '../../components/CTAButtonLarge';
+import CTAButtonTrial from '../../components/CTAButtonTrial';
 
 const Page = ({ collection, courses }) => {
   const router = useRouter();
@@ -27,41 +29,52 @@ const Page = ({ collection, courses }) => {
       </Head>
       <div className='relative dark:bg-dark-dark py-24'>
         <div className='flex flex-col gap-24  container-7xl'>
-          <div className='flex flex-col gap-6'>
-            <h1 className='text-4xl xl:text-5xl leading-tight max-w-3xl dark:text-white'>
-              {collection && collection.title}
-            </h1>
-            <h3 className='dark:text-white text-xl max-w-3xl'>
-              {collection && collection.subtitle}
-            </h3>
-            <div className='dark:text-gray-400 flex gap-1 items-center'>
-              <div>
-                <UserIcon className='w-6 h-6' />
+          <div className='grid grid-cols-1 lg:grid-cols-7 lg:gap-24'>
+            <div className='flex flex-col gap-6 max-w-3xl lg:col-span-5 w-full'>
+              <h1 className='text-4xl xl:text-5xl leading-tight max-w-3xl dark:text-white'>
+                {collection && collection.title}
+              </h1>
+              <h3 className='dark:text-white text-xl max-w-3xl'>
+                {collection && collection.subtitle}
+              </h3>
+              <div className='dark:text-gray-400 flex gap-1 items-center'>
+                <div>
+                  <UserIcon className='w-6 h-6' />
+                </div>
+                <a
+                  href={collection && collection.instructorLink}
+                  target='_blank'
+                  rel='noreferrer'
+                >
+                  {collection && collection.instructor}
+                </a>
               </div>
-              <a
-                href={collection && collection.instructorLink}
-                target='_blank'
-                rel='noreferrer'
-              >
-                {collection && collection.instructor}
-              </a>
+              <p className='text-base lg:text-lg dark:text-gray-500 text-gray-600 max-w-4xl'>
+                {collection && collection.description}
+              </p>
             </div>
-            <p className='text-base lg:text-lg dark:text-gray-500 text-gray-600 max-w-4xl'>
-              {collection && collection.description}
-            </p>
-            {collection && collection.lmsLink && (
-              <CTAButton
-                text={'Enroll Now'}
-                click={() =>
-                  router.push(collection && collection.lmsLink, '_blank')
-                }
-              />
-            )}
+            <div className='lg:col-span-2 w-full flex justify-center items-center'>
+              <div className='flex flex-col gap-6 bg-dark-mid p-9 w-full rounded-lg'>
+                <div className='flex flex-col gap-2 w-full'>
+                  <div className='font-medium black__white font-greycliff text-lg'>
+                    Future Proof Your Skills
+                  </div>
+                  <div className='font-semibold black__white text-5xl lg:text-6xl font-greycliff'>
+                    {collection.price === 'FREE'
+                      ? 'Free!'
+                      : `$${collection.price}`}
+                  </div>
+                </div>
+                <div className='flex flex-col gap-4'>
+                  <CTAButtonLarge link={collection.lmsLink} />
+                </div>
+              </div>
+            </div>
           </div>
           <div className='flex flex-col gap-6'>
             <FadeIn>
               <h3 className='dark:text-white text-xl lg:text-2xl'>
-                Courses Included
+                {courses.length > 0 && 'Courses Included'}
               </h3>
             </FadeIn>
             <FadeIn>
