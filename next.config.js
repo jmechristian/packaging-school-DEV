@@ -71,6 +71,16 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/automotive/:id',
+        destination: '/certifications/get-to-know-apc',
+        permanent: true,
+      },
+      {
+        source: '/automotive',
+        destination: '/certifications/get-to-know-apc',
+        permanent: true,
+      },
+      {
         source: '/learn-packaging-online-2',
         destination: '/',
         permanent: true,
@@ -189,6 +199,12 @@ const nextConfig = {
       {
         source: '/sustainable',
         destination: '/courses/sustainable-packaging',
+        permanent: true,
+      },
+      {
+        source: '/beauty-and-health',
+        destination:
+          'https://library.packagingschool.com/articles/beauty-and-health',
         permanent: true,
       },
     ];
