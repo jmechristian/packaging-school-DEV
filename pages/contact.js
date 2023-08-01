@@ -17,8 +17,17 @@ import {
   EnvelopeIcon,
   PhoneIcon,
 } from '@heroicons/react/24/outline';
+import { useForm } from 'react-hook-form';
 
 export default function Example() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => console.log(data);
+
   return (
     <div className='relative isolate bg-white'>
       <div className='mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2'>
@@ -101,15 +110,14 @@ export default function Example() {
           </div>
         </div>
         <form
-          action='#'
-          method='POST'
           className='px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48'
+          onSubmit={handleSubmit(onSubmit)}
         >
           <div className='mx-auto max-w-xl lg:mr-0 lg:max-w-lg'>
             <div className='grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2'>
               <div>
                 <label
-                  htmlFor='first-name'
+                  htmlFor='firstName'
                   className='block text-sm font-semibold leading-6 text-gray-900'
                 >
                   First name
@@ -117,10 +125,11 @@ export default function Example() {
                 <div className='mt-2.5'>
                   <input
                     type='text'
-                    name='first-name'
-                    id='first-name'
+                    name='firstName'
+                    id='firstName'
                     autoComplete='given-name'
                     className='block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
+                    {...register('firstName', { required: true })}
                   />
                 </div>
               </div>
