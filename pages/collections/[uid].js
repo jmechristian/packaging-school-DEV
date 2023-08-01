@@ -70,7 +70,7 @@ const Page = ({ collection, courses }) => {
                   </div>
                 </div>
                 <div className='flex flex-col gap-4'>
-                  <CTAButtonLarge link={collection.lmsLink} />
+                  <CTAButtonLarge link={collection && collection.lmsLink} />
                 </div>
               </div>
             </div>
