@@ -274,6 +274,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/solidworks-for-packaging-basic',
+        destination: '/courses/solidworks-for-packaging-basic',
+        permanent: true,
+      },
+      {
         source: '/design',
         destination: 'https://library.packagingschool.com/packdesign-workshop',
         permanent: true,
