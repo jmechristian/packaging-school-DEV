@@ -285,7 +285,7 @@ const nextConfig = {
       },
       {
         source: '/human-factors-in-packaging-design',
-        destination: '/courses/human-factors-in-packaging-design',
+        destination: '/courses/leveraging-human-factors-in-packaging-design',
         permanent: true,
       },
     ];
