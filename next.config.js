@@ -324,6 +324,38 @@ const nextConfig = {
         destination: '/courses/liquid-filling-with-john-henry',
         permanent: true,
       },
+      {
+        source: '/luxepack',
+        destination: '/courses/luxe-pack-exclusive-collection',
+        permanent: true,
+      },
+      {
+        source: '/our-brand/',
+        destination: '/about',
+        permanent: true,
+      },
+      {
+        source: '/packcamp',
+        destination: 'https://library.packagingschool.com/packdesign-workshop',
+        permanent: true,
+      },
+      {
+        source: '/packcamp-2020/',
+        destination: 'https://library.packagingschool.com/packdesign-workshop',
+        permanent: true,
+      },
+      {
+        source: '/packaging-sales',
+        destination:
+          '/courses/sales-operations-for-printing-and-packaging-professionals',
+        permanent: true,
+      },
+      {
+        source: '/packaging-sales',
+        destination:
+          '/courses/sales-operations-for-printing-and-packaging-professionals',
+        permanent: true,
+      },
     ];
   },
 };
