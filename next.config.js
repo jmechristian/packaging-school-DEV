@@ -313,6 +313,17 @@ const nextConfig = {
         destination: '/courses/pressure-sensitive-labels-101',
         permanent: true,
       },
+      {
+        source: '/bioplastics-for-packaging-with-dr-sandeep-kulkarni',
+        destination:
+          '/courses/bioplastics-for-packaging-with-dr-sandeep-kulkarni',
+        permanent: true,
+      },
+      {
+        source: '/liquid-filling-machinery-with-john-henry',
+        destination: '/courses/liquid-filling-with-john-henry',
+        permanent: true,
+      },
     ];
   },
 };
