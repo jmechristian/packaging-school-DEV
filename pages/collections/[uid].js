@@ -64,7 +64,9 @@ const Page = ({ collection, courses }) => {
                     collection.price &&
                     collection.price === 'FREE'
                       ? 'Free!'
-                      : `$${collection.price}`}
+                      : `$${
+                          collection && collection.price && collection.price
+                        }`}
                   </div>
                 </div>
                 <div className='flex flex-col gap-4'>
@@ -89,7 +91,7 @@ const Page = ({ collection, courses }) => {
                         title={course.title}
                         desc={course.subheadline}
                         hours={course.hours}
-                        // price={course.price}
+                        price={course.price}
                         slug={course.slug}
                         category={course.category}
                         video={course.preview}
