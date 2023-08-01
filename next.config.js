@@ -378,6 +378,41 @@ const nextConfig = {
           'https://packschool.s3.amazonaws.com/paperboard_grades_cheat_sheet_vv3.pdf',
         permanent: true,
       },
+      {
+        source: '/s/TAP-acknowledgments__overview10-lz3b.pdf',
+        destination:
+          'https://packschool.s3.amazonaws.com/TAP+Acknowledgments.pdf',
+        permanent: true,
+      },
+      {
+        source: '/software',
+        destination:
+          'https://packschool.s3.amazonaws.com/TAP+Acknowledgments.pdf',
+        permanent: true,
+      },
+      {
+        source: '/summer',
+        destination:
+          'https://library.packagingschool.com/articles/packaging-glossary',
+        permanent: true,
+      },
+      {
+        source: '/summer',
+        destination:
+          'https://library.packagingschool.com/articles/packaging-glossary',
+        permanent: true,
+      },
+      {
+        source: '/the-packaging-school-licensure',
+        destination:
+          'https://library.packagingschool.com/articles/packaging-glossary',
+        permanent: true,
+      },
+      {
+        source: '/blog/:year/:month/:day/:slug',
+        destination: '/articles/:slug',
+        permanent: true,
+      },
     ];
   },
 };
