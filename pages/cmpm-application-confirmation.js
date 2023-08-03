@@ -6,7 +6,7 @@ const Page = () => {
   return (
     <>
       <Head>
-        <title>Packaging School | CMPM Form</title>
+        <title>Packaging School | CMPM Confirmation</title>
         <meta
           property='og:title'
           content='Packaging School | CMPM Confirmation'
