@@ -9,7 +9,7 @@ const Page = () => {
         <title>Packaging School | CMPM Form</title>
         <meta
           property='og:title'
-          content='Packaging School | CMPM Form'
+          content='Packaging School | CMPM Confirmation'
           key='title'
         />
       </Head>
