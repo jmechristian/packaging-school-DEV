@@ -121,6 +121,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/package-printing',
+        destination: '/courses/packaging-printing',
+        permanent: true,
+      },
+      {
         source: '/printing',
         destination: '/courses/packaging-printing',
         permanent: true,
