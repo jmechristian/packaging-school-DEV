@@ -25,26 +25,10 @@ const CMPMSessionInfo = () => {
             <div className='flex items-center gap-x-3'>
               <input
                 {...register('sessionApplying', { required: true })}
-                id='aug2023'
-                name='sessionApplying'
-                value='aug2023'
-                type='radio'
-                className='h-4 w-4 border-slate-300 text-base-brand focus:ring-base-brand'
-              />
-              <label
-                htmlFor='aug2023'
-                className='block font-medium font-greycliff leading-6 text-slate-900'
-              >
-                August 2023
-              </label>
-            </div>
-            <div className='flex items-center gap-x-3'>
-              <input
-                {...register('sessionApplying', { required: true })}
                 id='sept2023'
                 name='sessionApplying'
-                type='radio'
                 value='sept2023'
+                type='radio'
                 className='h-4 w-4 border-slate-300 text-base-brand focus:ring-base-brand'
               />
               <label
@@ -52,6 +36,22 @@ const CMPMSessionInfo = () => {
                 className='block font-medium font-greycliff leading-6 text-slate-900'
               >
                 Sept 2023
+              </label>
+            </div>
+            <div className='flex items-center gap-x-3'>
+              <input
+                {...register('sessionApplying', { required: true })}
+                id='dec2023'
+                name='sessionApplying'
+                type='radio'
+                value='dec2023'
+                className='h-4 w-4 border-slate-300 text-base-brand focus:ring-base-brand'
+              />
+              <label
+                htmlFor='dec2023'
+                className='block font-medium font-greycliff leading-6 text-slate-900'
+              >
+                Dec 2023
               </label>
             </div>
           </div>
