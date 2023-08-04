@@ -35,7 +35,7 @@ const CourseCard = ({
   const router = useRouter();
   // const [isFavorited, setIsFavorite] = useState(false);
   const [userArray, setUserArray] = useState([]);
-  const [isCleanCategory, setIsCleanCategory] = useState();
+  const [isEntered, setIsEntered] = useState();
 
   const isFavorited = useMemo(
     () => user && user.savedCourses && user.savedCourses.includes(courseId),
@@ -157,41 +157,62 @@ const CourseCard = ({
 
   return (
     <>
-      <motion.div className='w-full h-full max-w-[300px] lg:max-w-[330px] dark:bg-dark-mid text-white bg-gray-200 rounded-xl shadow-lg'>
-        <div className='p-4 flex flex-col justify-between h-full gap-6'>
-          <div className='flex flex-col gap-4'>
-            <div className='flex justify-between'>
+      <motion.div
+        className=' dark:hover:bg-neutral-800 hover:bg-gray-300 w-full h-full max-w-[300px] lg:max-w-[330px] dark:bg-dark-mid text-white bg-gray-200 rounded-xl shadow-lg relative'
+        onMouseEnter={() => setIsEntered(true)}
+        onMouseLeave={() => setIsEntered(false)}
+      >
+        <div onClick={toggleFavorite} className='absolute z-20 top-4 right-4'>
+          <StarIcon
+            className={`w-6 h-6 cursor-pointer ${
+              isFavorited
+                ? 'text-yellow-500'
+                : 'text-gray-400 dark:text-neutral-600'
+            } `}
+          />
+        </div>
+        <div className='flex flex-col justify-between h-full gap-6'>
+          <div
+            className='flex flex-col gap-4 px-4 pt-4 cursor-pointer'
+            onClick={() =>
+              router.push(
+                `/${
+                  type && type === 'COLLECTION' ? 'collections' : 'courses'
+                }/${slug}`
+              )
+            }
+          >
+            <div className='flex justify-between relative'>
               <div
                 className={`${textColor()} uppercase text-xs font-bold py-1.5 rounded px-2 tracking-wide`}
               >
                 {categoryText()}
               </div>
-
-              <div onClick={toggleFavorite}>
-                <StarIcon
-                  className={`w-6 h-6 cursor-pointer ${
-                    isFavorited
-                      ? 'text-yellow-500'
-                      : 'text-gray-400 dark:text-neutral-600'
-                  } `}
-                />
-              </div>
             </div>
-            <div className='font-semibold text-xl font-greycliff leading-tight line-clamp-2 text-gray-900 dark:text-white'>
+            <div className='font-semibold text-xl font-greycliff cursor-pointer leading-tight line-clamp-2 text-gray-900 dark:text-white'>
               {title}
             </div>
             <div
-              className='line-clamp-3 text-sm desc dark:text-white/60 text-gray-700'
+              className='line-clamp-3 text-sm desc cursor-pointer dark:text-white/60 text-gray-700'
               data-tooltip-content={desc}
             >
               {desc}
             </div>
           </div>
-          <div>
-            <hr />
+          <div className='px-4'>
+            <hr className='dark:border-neutral-600' />
           </div>
-          <div className='flex justify-between items-end'>
-            <div className='flex flex-col'>
+          <div className='flex justify-between items-end p-4'>
+            <div
+              className='flex flex-col cursor-pointer'
+              onClick={() =>
+                router.push(
+                  `/${
+                    type && type === 'COLLECTION' ? 'collections' : 'courses'
+                  }/${slug}`
+                )
+              }
+            >
               <div className='text-sm dark:text-white/50 text-gray-700'>
                 {hours} hours
               </div>
@@ -202,7 +223,7 @@ const CourseCard = ({
             <div className='flex gap-2'>
               {video && (
                 <div
-                  className='w-9 h-9 rounded bg-black/80 flex justify-center items-center cursor-pointer'
+                  className='w-9 h-9 rounded bg-black/80 flex justify-center items-center cursor-pointer hover:bg-base-brand'
                   onClick={openPreview}
                 >
                   <div>
@@ -211,7 +232,9 @@ const CourseCard = ({
                 </div>
               )}
               <div
-                className='w-9 h-9 rounded bg-black/80 flex justify-center items-center cursor-pointer'
+                className={`w-9 h-9 rounded ${
+                  isEntered ? 'bg-clemson' : 'bg-black/80'
+                } flex justify-center items-center cursor-pointer hover:bg-clemson`}
                 onClick={() =>
                   router.push(
                     `/${
