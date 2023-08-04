@@ -14,7 +14,7 @@ const Index = () => {
         buttonText='View Application'
         buttonLink='https://docs.google.com/forms/d/e/1FAIpQLSfQRoIUCyXDpjN1-aw7-Y7MLbPVBuiDC4sfOfGMPfdI_x5ijQ/viewform'
         secondaryText='Essay Grading Rubric'
-        secondaryLink='/#rubric'
+        secondaryLink='/forms/scholarship-application-form#rubric'
       />
       <Rubric />
       <WhyUs />
