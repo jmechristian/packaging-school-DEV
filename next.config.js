@@ -447,6 +447,11 @@ const nextConfig = {
         destination: '/testimonials',
         permanent: true,
       },
+      {
+        source: '/scholarship-application-form',
+        destination: '/forms/scholarship-application-form',
+        permanent: true,
+      },
     ];
   },
 };
