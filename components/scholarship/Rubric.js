@@ -13,7 +13,7 @@ const benefits = [
 
 const Rubric = () => {
   return (
-    <div className='bg-gray-900 py-24 sm:py-32'>
+    <div className='bg-gray-900 py-24 sm:py-32' id='#rubric'>
       <div className='relative isolate'>
         <div className='mx-auto max-w-7xl sm:px-6 lg:px-8'>
           <div className='mx-auto flex max-w-2xl flex-col gap-16 bg-white/5 py-16 px-6 ring-1 ring-white/10 sm:rounded-3xl sm:p-8 lg:mx-0 lg:max-w-none lg:flex-row lg:items-center lg:py-20 xl:gap-x-20 xl:px-20'>
@@ -32,11 +32,12 @@ const Rubric = () => {
                 time but all decisions will go out at once.
               </p>
               <div className='mt-10 flex cursor-pointer'>
-                <Link href='/about'>
-                  <a className='text-lg font-greycliff font-bold leading-6 text-clemson'>
-                    Download Rubric <span aria-hidden='true'>&rarr;</span>
-                  </a>
-                </Link>
+                <a
+                  href='https://packschool.s3.amazonaws.com/Essay-Grading-Rubric.png'
+                  className='text-lg font-greycliff font-bold leading-6 text-clemson'
+                >
+                  Download Rubric <span aria-hidden='true'>&rarr;</span>
+                </a>
               </div>
             </div>
           </div>
