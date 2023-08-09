@@ -533,6 +533,42 @@ const nextConfig = {
         destination: '/courses/polymer-to-preform',
         permanent: true,
       },
+      {
+        source: '/plastic-folding-cartons',
+        destination: '/courses/plastic-folding-cartons',
+        permanent: true,
+      },
+      {
+        source: '/courses-pet-recycling',
+        destination: '/courses/pet-recycling',
+        permanent: true,
+      },
+      {
+        source: '/courses-pet-preform-to-bottle',
+        destination: '/courses/pet-preform-to-bottle',
+        permanent: true,
+      },
+      {
+        source: '/courses-pet-industry-overview-manufacture-and-properties',
+        destination:
+          '/courses/pet-industry-overview-manufacture-and-properties',
+        permanent: true,
+      },
+      {
+        source: '/courses-packaging-regulations-101',
+        destination: '/courses/packaging-laws-and-regulations',
+        permanent: true,
+      },
+      {
+        source: '/courses-packaging-regulations-101',
+        destination: '/courses/packaging-laws-and-regulations',
+        permanent: true,
+      },
+      {
+        source: '/courses-packaging-machinery-101',
+        destination: '/courses/packaging-machinery',
+        permanent: true,
+      },
     ];
   },
 };
