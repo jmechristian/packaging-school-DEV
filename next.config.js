@@ -720,6 +720,12 @@ const nextConfig = {
         destination: '/certifications',
         permanent: true,
       },
+      {
+        source: '/women',
+        destination:
+          'https://library.packagingschool.com/articles/women-in-packaging',
+        permanent: true,
+      },
     ];
   },
 };
