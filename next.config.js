@@ -736,6 +736,11 @@ const nextConfig = {
         destination: '/collections/beverage-institute-value-bundle',
         permanent: true,
       },
+      {
+        source: '/automotive-form',
+        destination: '/certifications/get-to-know-apc',
+        permanent: true,
+      },
     ];
   },
 };
