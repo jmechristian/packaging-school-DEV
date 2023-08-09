@@ -569,6 +569,16 @@ const nextConfig = {
         destination: '/courses/packaging-machinery',
         permanent: true,
       },
+      {
+        source: '/courses-material-handling-and-drying',
+        destination: '/courses/material-handling-and-drying',
+        permanent: true,
+      },
+      {
+        source: '/liquid-filling-machinery',
+        destination: '/courses/liquid-filling-with-john-henry',
+        permanent: true,
+      },
     ];
   },
 };
