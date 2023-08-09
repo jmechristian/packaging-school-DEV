@@ -22,21 +22,21 @@ const features = [
   {
     name: 'Learning of the Months.',
     description:
-      "Monthly, free lessons and resources from the industry leader's in packaging education.",
+      'Monthly, free lessons and resources from the industry leaders in packaging education.',
     icon: LightBulbIcon,
     link: '/library',
   },
   {
     name: 'Robust Knowledge Library.',
     description:
-      'An ever-growing collection of tools to help you navigate your own packaging design solutions.',
+      'An ever-growing collection of tools to help you navigate your packaging design solutions.',
     icon: BookmarkSquareIcon,
     link: '/library',
   },
   {
     name: 'Powerful Community.',
     description:
-      'Join a diverse set of packaging professionals commited to accessible and applicable online packaging education.',
+      'Join a diverse set of packaging professionals committed to accessible and applicable online packaging education.',
     icon: UsersIcon,
     link: 'https://www.linkedin.com/school/the-packaging-school-llc',
   },
