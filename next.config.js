@@ -483,6 +483,56 @@ const nextConfig = {
         destination: '/forms/scholarship-application-form',
         permanent: true,
       },
+      {
+        source: '/aws-and-regs-ad',
+        destination: '/courses/packaging-laws-and-regulations',
+        permanent: true,
+      },
+      {
+        source: '/john-henry',
+        destination: '/courses/liquid-filling-with-john-henry',
+        permanent: true,
+      },
+      {
+        source: '/center-for-corporate-learning',
+        destination: '/certifications/get-to-know-cmpm',
+        permanent: true,
+      },
+      {
+        source: '/isbt-i06-water-and-wastewater-treatment-technology',
+        destination: '/courses/water-and-wastewater-treatment-technology',
+        permanent: true,
+      },
+      {
+        source: '/temperature-assurance-packaging-fundamentals',
+        destination: '/courses/temperature-assurance-packaging-fundamentals',
+        permanent: true,
+      },
+      {
+        source: '/isbt-i02-sanitation-for-fountain-beverages',
+        destination: '/courses/sanitation-for-fountain-beverages',
+        permanent: true,
+      },
+      {
+        source: '/isbt-i02-sanitation-for-fountain-beverages',
+        destination: '/courses/sanitation-for-fountain-beverages',
+        permanent: true,
+      },
+      {
+        source: '/courses-preform-heating',
+        destination: '/courses/preform-heating',
+        permanent: true,
+      },
+      {
+        source: '/courses-preform-design',
+        destination: '/courses/preform-design',
+        permanent: true,
+      },
+      {
+        source: '/courses-polymer-to-preform/',
+        destination: '/courses/polymer-to-preform',
+        permanent: true,
+      },
     ];
   },
 };
