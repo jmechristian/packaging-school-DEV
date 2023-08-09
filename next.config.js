@@ -579,6 +579,41 @@ const nextConfig = {
         destination: '/courses/liquid-filling-with-john-henry',
         permanent: true,
       },
+      {
+        source: '/courses-introduction-to-polymers-and-pet',
+        destination: '/courses/introduction-to-polymers-and-pet',
+        permanent: true,
+      },
+      {
+        source: '/isbt-i05-introduction-to-microbiology',
+        destination: '/courses/introduction-to-microbiology',
+        permanent: true,
+      },
+      {
+        source: '/isbt-i05-introduction-to-microbiology',
+        destination: '/courses/introduction-to-microbiology',
+        permanent: true,
+      },
+      {
+        source: '/human-factors',
+        destination: '/courses/leveraging-human-factors-in-packaging-design',
+        permanent: true,
+      },
+      {
+        source: '/human-factors',
+        destination: '/courses/leveraging-human-factors-in-packaging-design',
+        permanent: true,
+      },
+      {
+        source: '/metal-packaging',
+        destination: '/courses/glass-metal-packaging',
+        permanent: true,
+      },
+      {
+        source: '/glass-packaging',
+        destination: '/courses/glass-metal-packaging',
+        permanent: true,
+      },
     ];
   },
 };
