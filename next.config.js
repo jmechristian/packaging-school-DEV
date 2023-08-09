@@ -132,6 +132,37 @@ const nextConfig = {
       },
       {
         source: '/paperboard-cartons',
+        destination: '/courses/packaging-foundations',
+        permanent: true,
+      },
+      {
+        source: '/packaging-distribution',
+        destination: '/courses/packaging-distribution',
+        permanent: true,
+      },
+      {
+        source: '/packaging-machinery',
+        destination: '/courses/packaging-machinery',
+        permanent: true,
+      },
+      {
+        source: '/polymers-in-packaging',
+        destination: '/courses/polymers-in-packaging',
+        permanent: true,
+      },
+      {
+        source: '/glass-metal-packaging',
+        destination: '/courses/glass-metal-packaging',
+        permanent: true,
+      },
+
+      {
+        source: '/packaging-foundations',
+        destination: '/courses/paperboard-cartons',
+        permanent: true,
+      },
+      {
+        source: '/paperboard-cartons-course',
         destination: '/courses/paperboard-cartons',
         permanent: true,
       },

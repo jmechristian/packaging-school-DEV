@@ -15,7 +15,7 @@ const features = [
   {
     name: 'Comprehensive Curriculum.',
     description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit aute id magna.',
+      'Accelarate your packaging knowledge. Learn industry-standard best-practices. Differientiate yourself from your peers.',
     icon: AcademicCapIcon,
     link: '/certifications',
   },

@@ -16,7 +16,7 @@ const AllCourseFilter = () => {
 
   return (
     <>
-      <div className='grid grid-cols-6 items-center container-7xl'>
+      <div className='grid grid-cols-6 items-center container-7xl' id='courses'>
         <div className='font-semibold text-lg font-greycliff col-span-4 dark:text-gray-400'>
           Browse <span className='font-bold'>{selectedFilter.name}&nbsp;</span>
           Courses
