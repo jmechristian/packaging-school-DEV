@@ -741,6 +741,11 @@ const nextConfig = {
         destination: '/certifications/get-to-know-apc',
         permanent: true,
       },
+      {
+        source: '/food-packaging-certificate-interest-form',
+        destination: '/food-packaging',
+        permanent: true,
+      },
     ];
   },
 };
