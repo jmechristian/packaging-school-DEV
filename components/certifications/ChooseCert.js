@@ -10,7 +10,7 @@ const tiers = [
   {
     name: 'Certificate of Packaging Science',
     id: 'tier-freelancer',
-    href: '/certifications/get-to-know-cps',
+    href: '/certificate-of-packaging-science-application',
     price: { monthly: '$349', full: '$3,999' },
     description:
       'The Certificate of Packaging Science is a one year online program that teaches the materials, processes, and influences shaping the advancement of the industry.',
@@ -27,8 +27,8 @@ const tiers = [
   {
     name: 'Certificate of Mastery in Packaging Management',
     id: 'tier-startup',
-    href: '/certifications/get-to-know-cmpm',
-    price: { monthly: '$xx', full: '$7,000' },
+    href: '/certificate-of-mastery-in-packaging-management',
+    price: { monthly: 'Multiple Options', full: '$7,000' },
     description:
       'An online executive education program that can level up your career in the space of packaging development, material procurement, and organizational management.',
     features: [
@@ -43,7 +43,7 @@ const tiers = [
   {
     name: 'Automotive Packaging Certificate',
     id: 'tier-enterprise',
-    href: '/certifications/get-to-know-aps',
+    href: 'https://learn.packagingschool.com/enroll/735516',
     price: { monthly: '$287', full: '$2,400' },
     description:
       'The first and only 100% online academic program that will enable you to develop the professional skill set you need to be successful in the automotive packaging field.',

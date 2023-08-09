@@ -690,6 +690,36 @@ const nextConfig = {
         destination: '/careers/careers-in-packaging-account-manager',
         permanent: true,
       },
+      {
+        source: '/clemson-mba-apply',
+        destination: '/certifications/get-to-know-cmpm',
+        permanent: true,
+      },
+      {
+        source: '/trainings-workshops',
+        destination: 'https://library.packagingschool.com/packdesign-workshop',
+        permanent: true,
+      },
+      {
+        source: '/pti-online-academy-collection',
+        destination: '/collections/pti-online-academy-collection',
+        permanent: true,
+      },
+      {
+        source: '/pti-online-academy-collection',
+        destination: '/collections/pti-online-academy-collection',
+        permanent: true,
+      },
+      {
+        source: '/packaging-mini-mba-application',
+        destination: '/certificate-of-mastery-in-packaging-management',
+        permanent: true,
+      },
+      {
+        source: '/make-a-change',
+        destination: '/certifications',
+        permanent: true,
+      },
     ];
   },
 };
