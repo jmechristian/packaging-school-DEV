@@ -726,6 +726,16 @@ const nextConfig = {
           'https://library.packagingschool.com/articles/women-in-packaging',
         permanent: true,
       },
+      {
+        source: '/food-packaging-sponsor-form',
+        destination: '/food-packaging',
+        permanent: true,
+      },
+      {
+        source: '/beverage-institute',
+        destination: '/collections/beverage-institute-value-bundle',
+        permanent: true,
+      },
     ];
   },
 };
