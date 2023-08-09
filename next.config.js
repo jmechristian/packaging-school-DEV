@@ -614,6 +614,82 @@ const nextConfig = {
         destination: '/courses/glass-metal-packaging',
         permanent: true,
       },
+      {
+        source: '/isbt-i01-fundamentals-of-beverage-technology',
+        destination: '/courses/fundamentals-of-beverage-technology',
+        permanent: true,
+      },
+      {
+        source: '/bev-tech-fundamentals',
+        destination: '/courses/fundamentals-of-beverage-technology',
+        permanent: true,
+      },
+      {
+        source: '/flexographic-print-fundamentals',
+        destination: '/courses/flexographic-print-fundamentals',
+        permanent: true,
+      },
+      {
+        source: '/courses-solidworks-basics',
+        destination: '/courses/solidworks-for-packaging-basic',
+        permanent: true,
+      },
+      {
+        source: '/courses-container-design-and-development',
+        destination: '/courses/container-design-and-development',
+        permanent: true,
+      },
+      {
+        source: '/courses-blow-molding',
+        destination: '/courses/blow-molding-processing',
+        permanent: true,
+      },
+      {
+        source: '/isbt-i03-beverage-ingredients-bundle',
+        destination: '/collections/isbt-ingredients',
+        permanent: true,
+      },
+      {
+        source: '/isbt-i04-beverage-gases-argon-oxygen-and-nitrogen',
+        destination: '/courses/beverage-gases-argon-oxygen-and-nitrogen',
+        permanent: true,
+      },
+      {
+        source: '/augmented-reality',
+        destination: '/courses/augmented-reality-for-packaging',
+        permanent: true,
+      },
+      {
+        source: '/careers-in-packaging-packaging-operator',
+        destination: '/careers/careers-in-packaging-packaging-operator',
+        permanent: true,
+      },
+      {
+        source: '/careers-in-packaging-packaging-operator',
+        destination: '/careers/careers-in-packaging-packaging-engineer',
+        permanent: true,
+      },
+      {
+        source: '/careers-in-packaging-packaging-compliance-specialist',
+        destination:
+          '/careers/careers-in-packaging-packaging-compliance-specialist',
+        permanent: true,
+      },
+      {
+        source: '/careers-in-packaging-logistics-coordinator',
+        destination: '/careers/careers-in-packaging-logistics-coordinator',
+        permanent: true,
+      },
+      {
+        source: '/careers-in-packaging-graphic-designer',
+        destination: '/careers/careers-in-packaging-graphic-designer',
+        permanent: true,
+      },
+      {
+        source: '/careers-in-packaging-account-manager',
+        destination: '/careers/careers-in-packaging-account-manager',
+        permanent: true,
+      },
     ];
   },
 };
