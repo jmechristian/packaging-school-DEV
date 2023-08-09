@@ -15,28 +15,28 @@ const features = [
   {
     name: 'Comprehensive Curriculum.',
     description:
-      'Accelarate your packaging knowledge. Learn industry-standard best-practices. Differientiate yourself from your peers.',
+      'Accelarate your packaging knowledge and differientiate yourself from your peers.',
     icon: AcademicCapIcon,
     link: '/certifications',
   },
   {
     name: 'Learning of the Months.',
     description:
-      'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus.',
+      "Monthly, free lessons and resources from the industry leader's in packaging education.",
     icon: LightBulbIcon,
     link: '/library',
   },
   {
     name: 'Robust Knowledge Library.',
     description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit aute id magna.',
+      'An ever-growing collection of tools to help you navigate your own packaging design solutions.',
     icon: BookmarkSquareIcon,
     link: '/library',
   },
   {
     name: 'Powerful Community.',
     description:
-      'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.',
+      'Join a diverse set of packaging professionals commited to accessible and applicable online packaging education.',
     icon: UsersIcon,
     link: 'https://www.linkedin.com/school/the-packaging-school-llc',
   },
