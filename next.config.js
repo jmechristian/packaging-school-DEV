@@ -742,8 +742,50 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/food-packaging-certificate-interest-form',
-        destination: '/food-packaging',
+        source: '/women-in-packaging/',
+        destination:
+          'https://library.packagingschool.com/articles/women-in-packaging',
+        permanent: true,
+      },
+      {
+        source: '/the-packaging-school-licensure/',
+        destination:
+          'https://library.packagingschool.com/articles/the-packaging-school-licensure',
+        permanent: true,
+      },
+      {
+        source: '/privacy-policy',
+        destination:
+          'https://library.packagingschool.com/articles/privacy-policy',
+        permanent: true,
+      },
+      {
+        source: '/academic-policies-and-prodecures',
+        destination:
+          'https://library.packagingschool.com/articles/academic-policies-and-prodecures',
+        permanent: true,
+      },
+      {
+        source: '/removal-request',
+        destination:
+          'https://library.packagingschool.com/articles/removal-request',
+        permanent: true,
+      },
+      {
+        source: '/poy-2022-press-release',
+        destination:
+          'https://library.packagingschool.com/articles/poy-2022-press-release',
+        permanent: true,
+      },
+      {
+        source: '/worldwide-packaging-degrees',
+        destination:
+          'https://library.packagingschool.com/articles/poy-2022-press-release',
+        permanent: true,
+      },
+      {
+        source: '/what-is-the-packaging-industry',
+        destination: '/courses/packaging-boot-camp-101',
         permanent: true,
       },
     ];
