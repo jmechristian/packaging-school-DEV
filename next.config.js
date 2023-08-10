@@ -788,6 +788,21 @@ const nextConfig = {
         destination: '/courses/packaging-boot-camp-101',
         permanent: true,
       },
+      {
+        source: '/solidworks',
+        destination: '/courses/solidworks-for-packaging-basic',
+        permanent: true,
+      },
+      {
+        source: '/request-info',
+        destination: '/subscribe',
+        permanent: true,
+      },
+      {
+        source: '/regulations',
+        destination: 'https://library.packagingschool.com/articles/regulations',
+        permanent: true,
+      },
     ];
   },
 };

@@ -86,7 +86,7 @@ export default function Example() {
           <p className='mt-6 text-lg leading-8 text-gray-600'>
             We are grateful you have chosen to be a part of the Packaging
             School. We hope you take advantage and explore the comprehensive
-            library of expertly-currated cirriculum.
+            library of expertly-currated curriculum.
           </p>
         </div>
       </div>
@@ -119,7 +119,7 @@ export default function Example() {
               className='text-base text-center'
               onClick={() => setIsOpen(true)}
             >
-              Don&apos;t want to be a part?{' '}
+              Didn&apos;t mean to subscribe?{' '}
               <strong>Click here to unsubscribe.</strong>
             </div>
           )}
