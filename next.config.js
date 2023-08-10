@@ -894,6 +894,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/cmpm-tuition',
+        destination: '/certifications/get-to-know-cmpm',
+        permanent: true,
+      },
+      {
         source: '/courses-project-management-essentials',
         destination: '/courses/project-management-essentials',
         permanent: true,
@@ -924,6 +929,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/business',
+        destination: '/all_courses',
+        permanent: true,
+      },
+      {
         source: '/course-catalog',
         destination: '/course-catalog_v3',
         permanent: true,
@@ -931,6 +941,62 @@ const nextConfig = {
       {
         source: '/brochure',
         destination: '/certifications/get-to-know-cmpm',
+        permanent: true,
+      },
+      {
+        source: '/cannabis',
+        destination: '/courses/cannabis-packaging',
+        permanent: true,
+      },
+      {
+        source: '/box-design',
+        destination: 'https://library.packagingschool.com/packdesign-workshop',
+        permanent: true,
+      },
+      {
+        source: '/bioplastics-for-packaging',
+        destination:
+          '/courses/bioplastics-for-packaging-with-dr-sandeep-kulkarni',
+        permanent: true,
+      },
+      {
+        source: '/beverage',
+        destination: 'https://library.packagingschool.com/articles/beverages',
+        permanent: true,
+      },
+      {
+        source: '/apc-enroll',
+        destination: 'https://learn.packagingschool.com/enroll/735516',
+        permanent: true,
+      },
+      {
+        source: '/about-us',
+        destination: '/about',
+        permanent: true,
+      },
+      {
+        source: '/courses/diecutting-academy-diemaking-101',
+        destination: '/courses/iadd-diecutting-academy-diemaking-101',
+        permanent: true,
+      },
+      {
+        source: '/courses/diecutting-academy-diemaking-101',
+        destination: '/courses/iadd-diecutting-academy-diemaking-101',
+        permanent: true,
+      },
+      {
+        source: '/courses/diecutting-101',
+        destination: '/courses/iadd-diecutting-academy-diemaking-101',
+        permanent: true,
+      },
+      {
+        source: '/cmpm-apply',
+        destination: '/certificate-of-mastery-in-packaging-management',
+        permanent: true,
+      },
+      {
+        source: '/cmpm-apply',
+        destination: '/certificate-of-mastery-in-packaging-management',
         permanent: true,
       },
     ];
