@@ -803,6 +803,76 @@ const nextConfig = {
         destination: 'https://library.packagingschool.com/articles/regulations',
         permanent: true,
       },
+      {
+        source: '/register',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/psl',
+        destination: '/courses/pressure-sensitive-labels-101',
+        permanent: true,
+      },
+      {
+        source: '/prospecting-series',
+        destination: '/sales-bootcamp',
+        permanent: true,
+      },
+      {
+        source: '/prospecting-series-registration-page',
+        destination: '/sales-bootcamp',
+        permanent: true,
+      },
+      {
+        source: '/pricing',
+        destination: '/certifications',
+        permanent: true,
+      },
+      {
+        source: '/our-brand',
+        destination: '/about',
+        permanent: true,
+      },
+      {
+        source: '/newsletter',
+        destination: '/subscribe',
+        permanent: true,
+      },
+      {
+        source: '/my-account',
+        destination: '/profile',
+        permanent: true,
+      },
+      {
+        source: '/members',
+        destination: '/profile',
+        permanent: true,
+      },
+      {
+        source: '/materials',
+        destination: '/all_courses',
+        permanent: true,
+      },
+      {
+        source: '/luxe-pack-exclusive-collection',
+        destination: '/courses/luxe-pack-exclusive-collection',
+        permanent: true,
+      },
+      {
+        source: '/level-up',
+        destination: '/certifications',
+        permanent: true,
+      },
+      {
+        source: '/intro',
+        destination: '/courses/packaging-boot-camp-101',
+        permanent: true,
+      },
+      {
+        source: '/courses/package-printing',
+        destination: '/courses/packaging-printing',
+        permanent: true,
+      },
     ];
   },
 };
