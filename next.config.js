@@ -285,7 +285,7 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/corrugated-design-scholarship-application/',
+        source: '/corrugated-design-scholarship-application',
         destination: '/forms/scholarship-application-form',
         permanent: true,
       },
@@ -295,17 +295,17 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/courses-pet-preform-to-bottle/',
+        source: '/courses-pet-preform-to-bottle',
         destination: '/courses/preform-design',
         permanent: true,
       },
       {
-        source: '/courses-preform-heating/',
+        source: '/courses-preform-heating',
         destination: '/courses/preform-heating',
         permanent: true,
       },
       {
-        source: '/courses-solidworks-basics/',
+        source: '/courses-solidworks-basics',
         destination: '/courses/solidworks-for-packaging-basic',
         permanent: true,
       },
@@ -320,7 +320,7 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/flexographic-print-fundamentals/',
+        source: '/flexographic-print-fundamentals',
         destination: '/courses/flexographic-print-fundamentals',
         permanent: true,
       },
@@ -366,7 +366,7 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/our-brand/',
+        source: '/our-brand',
         destination: '/about',
         permanent: true,
       },
@@ -376,7 +376,7 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/packcamp-2020/',
+        source: '/packcamp-2020',
         destination: 'https://library.packagingschool.com/packdesign-workshop',
         permanent: true,
       },
@@ -404,7 +404,7 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/pressure-sensitive-labels-101/',
+        source: '/pressure-sensitive-labels-101',
         destination: '/courses/pressure-sensitive-labels-101',
         permanent: true,
       },
@@ -529,7 +529,7 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/courses-polymer-to-preform/',
+        source: '/courses-polymer-to-preform',
         destination: '/courses/polymer-to-preform',
         permanent: true,
       },
@@ -742,13 +742,13 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/women-in-packaging/',
+        source: '/women-in-packaging',
         destination:
           'https://library.packagingschool.com/articles/women-in-packaging',
         permanent: true,
       },
       {
-        source: '/the-packaging-school-licensure/',
+        source: '/the-packaging-school-licensure',
         destination:
           'https://library.packagingschool.com/articles/the-packaging-school-licensure',
         permanent: true,
@@ -921,6 +921,11 @@ const nextConfig = {
       {
         source: '/course-catalog',
         destination: '/all_courses',
+        permanent: true,
+      },
+      {
+        source: '/course-catalog',
+        destination: '/course-catalog_v3',
         permanent: true,
       },
       {
