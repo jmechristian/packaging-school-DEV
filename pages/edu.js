@@ -8,9 +8,9 @@ const Page = () => {
     <div className='container-7xl py-20'>
       <div className='flex flex-col gap-16'>
         <div className='grid lg:grid-cols-12'>
-          <div className='p-9 flex flex-col gap-6 lg:col-span-7 max-w-prose'>
+          <div className='py-9 flex flex-col gap-6 lg:col-span-7 max-w-prose'>
             <div className='flex gap-6 items-center mb-6'>
-              <div className='h-auto w-48'>
+              <div className='h-auto w-24 md:w-48'>
                 <Image
                   src={
                     'https://packschool.s3.amazonaws.com/AICC-Header-logo.png'
@@ -21,7 +21,7 @@ const Page = () => {
                   alt='AICC'
                 />
               </div>
-              <div className='h-auto w-40'>
+              <div className='h-auto w-20 md:w-40'>
                 <Image
                   src={
                     'https://packschool.s3.amazonaws.com/PS_com+LOGO+Transparent.png'
@@ -41,11 +41,11 @@ const Page = () => {
             </p>
             <p className='text-gray-700 text-lg my-1.5'>
               If you are a student or a faculty member of higher education
-              studying wood, paper, or packaging; you qualify for these FREE
-              online courses:
+              studying wood, paper, or packaging; you qualify for FREE online
+              courses:
             </p>
           </div>
-          <div className='lg:col-span-5 p-9'>
+          <div className='lg:col-span-5 py-9'>
             <div className='bg-gray-100 p-6 rounded-lg shadow-md'>
               <div class='_form_6'></div>
               <Script
