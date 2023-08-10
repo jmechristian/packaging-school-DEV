@@ -873,6 +873,61 @@ const nextConfig = {
         destination: '/courses/packaging-printing',
         permanent: true,
       },
+      {
+        source: '/cps-may-1',
+        destination: '/certifications/get-to-know-cmpm',
+        permanent: true,
+      },
+      {
+        source: '/cps-may-2',
+        destination: '/certifications/get-to-know-cmpm',
+        permanent: true,
+      },
+      {
+        source: '/cps-may-3',
+        destination: '/certifications/get-to-know-cmpm',
+        permanent: true,
+      },
+      {
+        source: '/cpm',
+        destination: '/certifications/get-to-know-cmpm',
+        permanent: true,
+      },
+      {
+        source: '/courses-project-management-essentials',
+        destination: '/courses/project-management-essentials',
+        permanent: true,
+      },
+      {
+        source: '/courses-solidworks-advanced',
+        destination: '/courses/solidworks-for-packaging-basic',
+        permanent: true,
+      },
+      {
+        source: '/courses-polymers-in-packaging-101',
+        destination: '/courses/polymers-in-packaging',
+        permanent: true,
+      },
+      {
+        source: '/courses-metal-packaging-101',
+        destination: '/courses/glass-metal-packaging',
+        permanent: true,
+      },
+      {
+        source: '/courses-luxe-pack-exclusive-collection',
+        destination: '/courses/luxe-pack-exclusive-collection',
+        permanent: true,
+      },
+      {
+        source: '/course-catalog',
+        destination: '/all_courses',
+        permanent: true,
+      },
+      {
+        source: '/brochure',
+        destination: '/certifications/get-to-know-cmpm',
+        permanent: true,
+      },
     ];
   },
 };
