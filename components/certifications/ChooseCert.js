@@ -21,8 +21,7 @@ const tiers = [
       'Instructor email access',
     ],
     mostPopular: false,
-    bottom:
-      'Application Required. Summer Session 2023: May 22 - Aug 11. Application deadline: May 5th',
+    bottom: 'Open enrollment. Apply anytime.',
   },
   {
     name: 'Certificate of Mastery in Packaging Management',
@@ -38,7 +37,9 @@ const tiers = [
       'Practical knowledge and rigorous examination',
     ],
     mostPopular: true,
-    bottom: 'Open enrollment. Apply anytime.',
+
+    bottom:
+      'Application Required. Summer Session 2023: May 22 - Aug 11. Application deadline: May 5th',
   },
   {
     name: 'Automotive Packaging Certificate',
