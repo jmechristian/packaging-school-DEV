@@ -2746,6 +2746,54 @@ export const deleteCPSForm = /* GraphQL */ `
     }
   }
 `;
+export const createAppStart = /* GraphQL */ `
+  mutation CreateAppStart(
+    $input: CreateAppStartInput!
+    $condition: ModelAppStartConditionInput
+  ) {
+    createAppStart(input: $input, condition: $condition) {
+      firstName
+      lastName
+      email
+      phone
+      id
+      createdOn
+      updatedOn
+    }
+  }
+`;
+export const updateAppStart = /* GraphQL */ `
+  mutation UpdateAppStart(
+    $input: UpdateAppStartInput!
+    $condition: ModelAppStartConditionInput
+  ) {
+    updateAppStart(input: $input, condition: $condition) {
+      firstName
+      lastName
+      email
+      phone
+      id
+      createdOn
+      updatedOn
+    }
+  }
+`;
+export const deleteAppStart = /* GraphQL */ `
+  mutation DeleteAppStart(
+    $input: DeleteAppStartInput!
+    $condition: ModelAppStartConditionInput
+  ) {
+    deleteAppStart(input: $input, condition: $condition) {
+      firstName
+      lastName
+      email
+      phone
+      id
+      createdOn
+      updatedOn
+    }
+  }
+`;
 export const createAPSSpeaker = /* GraphQL */ `
   mutation CreateAPSSpeaker(
     $input: CreateAPSSpeakerInput!

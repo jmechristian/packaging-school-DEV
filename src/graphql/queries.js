@@ -2039,6 +2039,67 @@ export const listCPSForms = /* GraphQL */ `
     }
   }
 `;
+export const getAppStart = /* GraphQL */ `
+  query GetAppStart($id: ID!) {
+    getAppStart(id: $id) {
+      firstName
+      lastName
+      email
+      phone
+      id
+      createdOn
+      updatedOn
+    }
+  }
+`;
+export const listAppStarts = /* GraphQL */ `
+  query ListAppStarts(
+    $filter: ModelAppStartFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listAppStarts(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        firstName
+        lastName
+        email
+        phone
+        id
+        createdOn
+        updatedOn
+      }
+      nextToken
+    }
+  }
+`;
+export const appStartsByEmail = /* GraphQL */ `
+  query AppStartsByEmail(
+    $email: String!
+    $sortDirection: ModelSortDirection
+    $filter: ModelAppStartFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    appStartsByEmail(
+      email: $email
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        firstName
+        lastName
+        email
+        phone
+        id
+        createdOn
+        updatedOn
+      }
+      nextToken
+    }
+  }
+`;
 export const getAPSSpeaker = /* GraphQL */ `
   query GetAPSSpeaker($id: ID!) {
     getAPSSpeaker(id: $id) {

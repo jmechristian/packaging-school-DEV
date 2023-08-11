@@ -1,4 +1,6 @@
 import { SESClient, SendEmailCommand } from '@aws-sdk/client-ses';
+import { API } from 'aws-amplify';
+import { createAppStart } from '../../src/graphql/mutations';
 const REGION = 'us-east-1';
 const creds = {
   accessKeyId: process.env.AWSACCESSKEYID,
@@ -231,7 +233,7 @@ export default async function handler(req, res) {
         CcAddresses: [
           /* more items */
         ],
-        ToAddresses: [toAddress, 'info@packagingschool.com'],
+        ToAddresses: [toAddress],
       },
       Message: {
         /* required */
@@ -264,6 +266,19 @@ export default async function handler(req, res) {
         'jamie@packagingschool.com'
       )
     );
+
+    await API.graphql({
+      query: createAppStart,
+      variables: {
+        input: {
+          firstName: body.firstName,
+          lastName: body.lastName,
+          email: body.email,
+          phone: body.phone,
+          source: body.form,
+        },
+      },
+    });
     return res.status(200).json({ message: 'Success' + res });
   } catch (error) {
     console.log(error);

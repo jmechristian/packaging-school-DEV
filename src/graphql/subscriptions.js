@@ -2611,6 +2611,45 @@ export const onDeleteCPSForm = /* GraphQL */ `
     }
   }
 `;
+export const onCreateAppStart = /* GraphQL */ `
+  subscription OnCreateAppStart {
+    onCreateAppStart {
+      firstName
+      lastName
+      email
+      phone
+      id
+      createdOn
+      updatedOn
+    }
+  }
+`;
+export const onUpdateAppStart = /* GraphQL */ `
+  subscription OnUpdateAppStart {
+    onUpdateAppStart {
+      firstName
+      lastName
+      email
+      phone
+      id
+      createdOn
+      updatedOn
+    }
+  }
+`;
+export const onDeleteAppStart = /* GraphQL */ `
+  subscription OnDeleteAppStart {
+    onDeleteAppStart {
+      firstName
+      lastName
+      email
+      phone
+      id
+      createdOn
+      updatedOn
+    }
+  }
+`;
 export const onCreateAPSSpeaker = /* GraphQL */ `
   subscription OnCreateAPSSpeaker {
     onCreateAPSSpeaker {
