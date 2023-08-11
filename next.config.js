@@ -939,7 +939,7 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/course-catalog_v4',
+        source: '/course-catalog-v4',
         destination: '/all_courses',
         permanent: true,
       },
