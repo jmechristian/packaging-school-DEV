@@ -934,8 +934,13 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/course-catalog',
-        destination: '/course-catalog_v3',
+        source: '/course-catalog_v3',
+        destination: '/all_courses',
+        permanent: true,
+      },
+      {
+        source: '/course-catalog_v4',
+        destination: '/all_courses',
         permanent: true,
       },
       {
