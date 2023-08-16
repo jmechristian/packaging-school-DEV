@@ -1,6 +1,6 @@
 import React from 'react';
-import BMWHero from '../components/bmw/BMWHero';
-import BMWSteps from '../components/bmw/BMWSteps';
+import BMWHero from '../bmw/BMWHero';
+import BMWSteps from '../bmw/BMWSteps';
 
 const Page = () => {
   return (
