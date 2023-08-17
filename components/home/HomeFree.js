@@ -1,11 +1,13 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { client } from '../../helpers/apollo-client';
+import { useDispatch } from 'react-redux';
 import CourseCard from '../course-card/CourseCard';
 import { useSelector } from 'react-redux';
 import Scroller from '../Scroller';
 import Link from 'next/link';
+import { toggleSignInModal } from '../../features/layout/layoutSlice';
 
 const HomeFree = ({ courses }) => {
+  const dispatch = useDispatch();
   const [freeCourses, setFreeCourses] = useState([]);
 
   const { allCourses } = useSelector((state) => state.course_filter);
@@ -27,15 +29,21 @@ const HomeFree = ({ courses }) => {
                 Get Started for Free Today!
               </div>
               <div className='text-gray-600'>
-                <span className='underline font-semibold text-gray-700'>
+                <span
+                  className='underline font-semibold text-gray-700 cursor-pointer'
+                  onClick={() => dispatch(toggleSignInModal())}
+                >
                   Create Your Free Account
                 </span>{' '}
                 and take your first step to becoming a knowledge leader.
               </div>
             </div>
           </div>
-          <div className='bg-white border border-gray-600 rounded-lg p-3 font-greycliff hidden lg:block font-semibold'>
-            <Link href={'/all_courses'}>Create Free Account</Link>
+          <div
+            className='bg-white border border-gray-600 rounded-lg p-3 cursor-pointer font-greycliff hidden lg:block font-semibold'
+            onClick={() => dispatch(toggleSignInModal())}
+          >
+            Create Free Account
           </div>
         </div>
       </div>
