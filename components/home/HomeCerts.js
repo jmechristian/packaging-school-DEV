@@ -27,7 +27,7 @@ const certs = [
     name: 'Automotive Packaging Certificate',
     link: 'certifications/get-to-know-apc',
     apply: 'https://learn.packagingschool.com/enroll/735516',
-    body: 'The first and only 100% online academic program that will enable you to develop the professional skill set you need to be successful in the automotive packaging field We’ve collaborated with subject matter experts and state-of-the-art facilities so you’ll understand the unique roles of Tier 1s, OEMs, and packaging suppliers.',
+    body: 'The first and only 100% online academic program that will enable you to develop the professional skill set you need to be successful in the automotive packaging field. We’ve collaborated with subject matter experts and state-of-the-art facilities so you’ll understand the unique roles of Tier 1s, OEMs, and packaging suppliers.',
     image:
       'https://packschool.s3.amazonaws.com/certifications/NEW-Packaging-School-Blank-APC-Julie-Suggs.png',
     background: 'bg-gradient-to-br from-clemson to-orange-800',

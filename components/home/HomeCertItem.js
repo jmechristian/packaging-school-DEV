@@ -34,7 +34,9 @@ const HomeCertItem = ({ cert }) => {
                 isHover ? 'bg-clemson-dark shadow-lg' : 'bg-clemson'
               } cursor-pointer text-white font-greycliff font-semibold rounded-lg p-2`}
             >
-              Apply Now
+              {cert.link === 'certifications/get-to-know-apc'
+                ? 'Enroll Now'
+                : 'Apply Now'}
             </div>
           </Link>
           <Link href={cert.link}>

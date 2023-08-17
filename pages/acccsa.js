@@ -127,9 +127,9 @@ const courses = [
 
 const Page = () => {
   return (
-    <>
-      <div
-        className='w-full flex justify-center items-center bg-base-mid overflow-scroll relative z-20'
+    <div className='relative z-0'>
+      {/* <div
+        className='w-full flex justify-center items-center bg-base-mid overflow-scroll'
         id='scrollers'
       >
         <div className='flex gap-12 max-w-7xl mx-auto py-4'>
@@ -145,7 +145,7 @@ const Page = () => {
             <Link href='#Registrese'>Registrese</Link>
           </div>
         </div>
-      </div>
+      </div> */}
       <AcccsaHero />
       <AcccsaCourses courses={courses} />
       <div className='relative flex bg-slate-200 rounded-lg py-9 px-6'>
@@ -174,7 +174,7 @@ const Page = () => {
           ></Script>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
