@@ -13,6 +13,10 @@ const FooterAboutDetail = () => {
           packaging so you can lead projects, optimize supply chains, increase
           margins, and develop sustainable solutions.
         </p>
+        <p className='text-sm text-gray-500 dark:text-gray-500 mt-2'>
+          Our company headquarters are located in Greenville, SC. Please reach
+          out to us at 864-412-5000 or info@packagingschool.com.
+        </p>
       </div>
       <div className='flex gap-3'>
         <div>
