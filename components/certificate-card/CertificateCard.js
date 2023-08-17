@@ -43,6 +43,7 @@ const CertificateCard = ({
   // const [isFavorited, setIsFavorite] = useState(false);
   const [userArray, setUserArray] = useState([]);
   const [isCleanCategory, setIsCleanCategory] = useState();
+  const [isHover, setIsHover] = useState(false);
 
   // const isFavorited = useMemo(
   //   () => user && user.savedCourses && user.savedCourses.includes(courseId),
@@ -165,7 +166,13 @@ const CertificateCard = ({
   return (
     <>
       <motion.div
-        className={`w-full h-full ring-1 ring-${ring} dark:bg-dark-mid text-white bg-slate-200 rounded-xl shadow-lg`}
+        className={`w-full h-full ring-1 ring-${ring} ${
+          isHover
+            ? 'dark:bg-neutral-800 text-white bg-slate-300'
+            : 'dark:bg-dark-mid text-white bg-slate-200'
+        } rounded-xl shadow-lg cursor-pointer`}
+        onMouseEnter={() => setIsHover(true)}
+        onMouseLeave={() => setIsHover(false)}
       >
         <div className='p-4 flex flex-col justify-between h-full gap-9'>
           <div className='flex flex-col gap-4'>
@@ -230,7 +237,9 @@ const CertificateCard = ({
                 </div>
               </div>
               <div
-                className='px-4 rounded bg-black/80 flex justify-center items-center cursor-pointer'
+                className={`px-4 rounded ${
+                  isHover ? 'bg-clemson' : 'bg-black/80'
+                } flex justify-center items-center cursor-pointer`}
                 onClick={() => router.push(apply)}
               >
                 <div className='text-white font-semibold'>Apply</div>
