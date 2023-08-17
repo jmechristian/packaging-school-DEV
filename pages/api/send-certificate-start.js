@@ -267,18 +267,6 @@ export default async function handler(req, res) {
       )
     );
 
-    await API.graphql({
-      query: createAppStart,
-      variables: {
-        input: {
-          firstName: body.firstName,
-          lastName: body.lastName,
-          email: body.email,
-          phone: body.phone,
-          source: body.form,
-        },
-      },
-    });
     return res.status(200).json({ message: 'Success' + res });
   } catch (error) {
     console.log(error);

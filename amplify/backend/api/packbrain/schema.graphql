@@ -272,6 +272,7 @@ type AppStart
   email: String! @index(name: "appStartByEmail")
   phone: String
   source: String
+  sourceUrl: String
 }
 
 type APSSpeaker @model @auth(rules: [{ allow: public }]) {

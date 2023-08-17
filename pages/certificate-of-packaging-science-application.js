@@ -5,6 +5,8 @@ import { useForm, FormProvider, useFormContext } from 'react-hook-form';
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
+import { API } from 'aws-amplify';
+import { createAppStart } from '../src/graphql/mutations';
 
 const Page = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -12,6 +14,20 @@ const Page = () => {
   const router = useRouter();
   const onSubmit = async (data) => {
     setIsLoading(true);
+    await API.graphql({
+      query: createAppStart,
+      variables: {
+        input: {
+          firstName: data.firstName,
+          lastName: data.lastName,
+          email: data.email,
+          phone: data.phone,
+          source: 'CPS',
+          sourceUrl: router && router.asPath,
+        },
+      },
+    });
+
     await fetch('/api/send-certificate-start', {
       method: 'POST',
       headers: {
