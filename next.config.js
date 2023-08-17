@@ -1006,22 +1006,23 @@ const nextConfig = {
       },
       {
         source: '/sws-bmw-landing-page',
-        destination: 'https://sws-bmw.vercel.app',
+        destination: 'https://bmw.packagingschool.com',
         permanent: true,
       },
       {
         source: '/sws-bmw-start-survey',
-        destination: 'https://sws-bmw.vercel.app/sws-bmw-start-survey',
+        destination: 'https://bmw.packagingschool.com/sws-bmw-start-survey',
         permanent: true,
       },
       {
         source: '/sws-bmw-overview-training',
-        destination: 'https://sws-bmw.vercel.app/sws-bmw-overview-training',
+        destination:
+          'https://bmw.packagingschool.com/sws-bmw-overview-training',
         permanent: true,
       },
       {
         source: '/sws-bmw-survey',
-        destination: 'https://sws-bmw.vercel.app/sws-bmw-survey',
+        destination: 'https://bmw.packagingschool.com/sws-bmw-survey',
         permanent: true,
       },
     ];
