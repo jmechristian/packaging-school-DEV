@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import CertIcon from '../icons/CertIcon';
+import { AnimatePresence, motion } from 'framer-motion';
+import HomeCertItem from './HomeCertItem';
 
 const certs = [
   {
@@ -14,7 +16,7 @@ const certs = [
   },
   {
     name: 'Certificate of Packaging Science',
-    link: 'certifications/get-to-know-cmpm',
+    link: 'certifications/get-to-know-cps',
     apply: '/certificate-of-packaging-science-application',
     body: 'The Certificate of Packaging Science is a one year online program that teaches the materials, processes, and influences shaping the advancement of the industry. From design conception to production and end-of-life, learn how to speak the language of packaging and utilize it as a key differentiator for you and your company.',
     image:
@@ -44,32 +46,9 @@ const HomeCerts = () => {
         </div>
       </div>
       <div className='grid grid-cols-1 lg:grid-cols-3 gap-6'>
-        {certs.map((cert) => (
-          <div
-            className='bg-slate-200 rounded-lg py-9 px-6 h-full'
-            key={cert.name}
-          >
-            <div className='flex flex-col justify-between gap-4 h-full'>
-              <div className='flex flex-col gap-4'>
-                <div
-                  className={`w-20 h-20 rounded-full ${cert.background} flex items-center justify-center shadow-lg mb-4`}
-                >
-                  <CertIcon className='w-10 h-10 stroke-white fill-transparent stroke-2' />
-                </div>
-                <div className='font-semibold text-2xl font-greycliff'>
-                  {cert.name}
-                </div>
-                <div className='text-slate-600'>{cert.body}</div>
-              </div>
-              <div className='flex gap-4'>
-                <div className='bg-clemson cursor-pointer text-white font-greycliff font-semibold rounded-lg p-2'>
-                  <Link href={cert.apply}>Apply Now</Link>
-                </div>
-                <div className='border cursor-pointer border-slate-600 text-slate-800 font-greycliff font-semibold rounded-lg p-2'>
-                  <Link href={cert.link}>More Info</Link>
-                </div>
-              </div>
-            </div>
+        {certs.map((cert, i) => (
+          <div key={cert.name}>
+            <HomeCertItem cert={cert} />
           </div>
         ))}
       </div>
