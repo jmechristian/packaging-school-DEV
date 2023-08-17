@@ -242,7 +242,11 @@ const CertificateCard = ({
                 } flex justify-center items-center cursor-pointer`}
                 onClick={() => router.push(apply)}
               >
-                <div className='text-white font-semibold'>Apply</div>
+                <div className='text-white font-semibold'>
+                  {title === 'Automotive Packaging Certificate'
+                    ? 'Enroll'
+                    : 'Apply'}
+                </div>
               </div>
             </div>
           </div>

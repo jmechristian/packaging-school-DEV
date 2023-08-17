@@ -63,7 +63,11 @@ const CertMenuItem = ({
             className='rounded-lg px-3 py-1.5 font-greycliff text-sm w-fit  text-clemson font-bold'
             onClick={() => onClose()}
           >
-            <Link href={apply}>Apply Now</Link>
+            <Link href={apply}>
+              {title === 'Automotive Packaging Certificate'
+                ? 'Enroll Now'
+                : 'Apply Now'}
+            </Link>
           </div>
         )}
         {learnMore && (
