@@ -35,11 +35,11 @@ const RelatedLessons = ({ relatedLessons, lessonId }) => {
                       <h3 className='mt-6 text-xl font-greycliff font-semibold leading-6 text-gray-900 dark:text-base-brand group-hover:text-base-dark'>
                         <Link href={`/lessons/${course.slug}`}>
                           <a
-                            onClick={() =>
-                              gtag('event', 'related_lesson_click', {
-                                lesson_title: course.title,
-                              })
-                            }
+                          // onClick={() =>
+                          //   gtag('event', 'related_lesson_click', {
+                          //     lesson_title: course.title,
+                          //   })
+                          // }
                           >
                             <span className='absolute inset-0' />
                             {course.title}

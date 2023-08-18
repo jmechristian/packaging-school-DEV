@@ -16,10 +16,10 @@ const LessonActivityIntake = ({ toggleSubmit, title }) => {
 
   const subscribeFormHandler = async (data) => {
     setIsSending(true);
-    gtag('event', 'resource_click', {
-      resource: 'resource_download',
-      lesson: title,
-    });
+    // gtag('event', 'resource_click', {
+    //   resource: 'resource_download',
+    //   lesson: title,
+    // });
     const formData = new FormData(formRef.current);
 
     // Hidden field key/values.

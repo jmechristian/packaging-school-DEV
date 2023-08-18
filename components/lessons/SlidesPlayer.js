@@ -14,9 +14,9 @@ const SlidesPlayer = ({ images, title }) => {
 
   const isVisible = usePageVisibility();
 
-  if (!isVisible) {
-    gtag('event', 'slide_exit', { slide: page, lesson_title: title });
-  }
+  // if (!isVisible) {
+  //   gtag('event', 'slide_exit', { slide: page, lesson_title: title });
+  // }
 
   useEffect(() => {
     setPageContext(page);
@@ -55,7 +55,7 @@ const SlidesPlayer = ({ images, title }) => {
 
     if (newDirection === 1 && page === images.length - 2) {
       toggleUnlocked(true);
-      gtag('event', 'slide_completion');
+      // gtag('event', 'slide_completion');
     }
   };
 

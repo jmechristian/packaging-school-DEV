@@ -60,7 +60,7 @@ export default function SignInModal({ open, setOpen }) {
                         more. Use your LinkedIn or Google accounts to get
                         started.{' '}
                         <span className='font-semibold'>
-                          Please Note: This is seperate login from your LMS
+                          Please Note: This is a separate login from your LMS
                           Dashboard login.{' '}
                         </span>
                       </p>
@@ -76,7 +76,7 @@ export default function SignInModal({ open, setOpen }) {
                         <br /> Go to your LMS Dashboard
                       </button>
                       <CTAButton
-                        text='Sign In to PackagingSchool.com with your Google or LinkedIn'
+                        text='Sign in to PackagingSchool.com with your Google or LinkedIn'
                         click={signInHandler}
                       />
                     </div>
