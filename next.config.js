@@ -1025,6 +1025,11 @@ const nextConfig = {
         destination: 'https://bmw.packagingschool.com/sws-bmw-survey',
         permanent: true,
       },
+      {
+        source: '/courses/sales-bootcamp',
+        destination: '/sales-bootcamp',
+        permanent: true,
+      },
     ];
   },
 };
