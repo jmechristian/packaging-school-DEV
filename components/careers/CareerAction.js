@@ -47,7 +47,7 @@ const CareerAction = ({
       <div className='mx-auto max-w-6xl px-6 lg:px-8'>
         <div className='mx-auto max-w-4xl text-center'>
           <h2 className='text-base md:text-lg font-semibold leading-7 text-base-brand font-greycliff'>
-            Expert-Led Cirriculum
+            Expert-Led Curriculum
           </h2>
           <p className='mt-2 text-4xl font-semibold tracking-tight max-w-3xl mx-auto text-white sm:text-5xl font-greycliff'>
             How can the Packaging School Elevate my Career?

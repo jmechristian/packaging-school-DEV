@@ -50,7 +50,7 @@ export default function Example({ isOpen, onClose, unSub, loading }) {
                     <div className='mt-2 py-3'>
                       <p className=' text-gray-500'>
                         Are you sure you want to unsubscribe your email? You
-                        will no longer receive the latest cirriculum and content
+                        will no longer receive the latest curriculum and content
                         updates.
                       </p>
                     </div>
