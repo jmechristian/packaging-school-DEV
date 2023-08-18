@@ -8,19 +8,19 @@ const LessonActivityModal = ({
   actionExample,
   lessonTitle,
 }) => {
-  const sendActionDownloadEvent = () => {
-    gtag('event', 'resource_click', {
-      resource: 'action_download',
-      lesson: lessonTitle,
-    });
-  };
+  // const sendActionDownloadEvent = () => {
+  //   gtag('event', 'resource_click', {
+  //     resource: 'action_download',
+  //     lesson: lessonTitle,
+  //   });
+  // };
 
-  const sendExampleDownloadEvent = () => {
-    gtag('event', 'resource_click', {
-      resource: 'example_download',
-      lesson: lessonTitle,
-    });
-  };
+  // const sendExampleDownloadEvent = () => {
+  //   gtag('event', 'resource_click', {
+  //     resource: 'example_download',
+  //     lesson: lessonTitle,
+  //   });
+  // };
 
   return (
     <div className='relative isolate overflow-hidden bg-gray-900 px-6 py-12 md:py-24 text-center shadow-2xl sm:rounded-3xl sm:px-16'>
@@ -58,13 +58,8 @@ const LessonActivityModal = ({
               <div>
                 <ArrowDownTrayIcon className='w-5 h-5 fill-slate-800' />
               </div>
-              <div onClick={sendActionDownloadEvent}>
-                <a
-                  href={actionLink}
-                  className='font-medium'
-                  target='_blank'
-                  rel='noreferrer'
-                >
+              <div>
+                <a href={actionLink} className='font-medium' target='_blank'>
                   Get Resource
                 </a>
               </div>
