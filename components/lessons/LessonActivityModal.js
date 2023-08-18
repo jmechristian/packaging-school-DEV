@@ -59,7 +59,12 @@ const LessonActivityModal = ({
                 <ArrowDownTrayIcon className='w-5 h-5 fill-slate-800' />
               </div>
               <div>
-                <a href={actionLink} className='font-medium' target='_blank'>
+                <a
+                  href={actionLink}
+                  className='font-medium'
+                  target='_blank'
+                  rel='noreferrer'
+                >
                   Get Resource
                 </a>
               </div>
