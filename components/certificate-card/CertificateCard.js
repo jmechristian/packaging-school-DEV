@@ -44,6 +44,7 @@ const CertificateCard = ({
   const [userArray, setUserArray] = useState([]);
   const [isCleanCategory, setIsCleanCategory] = useState();
   const [isHover, setIsHover] = useState(false);
+  const [isShow, setIsShow] = useState(false);
 
   // const isFavorited = useMemo(
   //   () => user && user.savedCourses && user.savedCourses.includes(courseId),
@@ -202,8 +203,9 @@ const CertificateCard = ({
               </div>
             </div>
             <div
-              className='line-clamp-4 text-sm lg:text-base desc dark:text-white/60 text-slate-700'
-              data-tooltip-content={desc}
+              className={`${
+                !isHover ? 'line-clamp-4' : ''
+              } text-sm lg:text-base desc dark:text-white/60 text-slate-700`}
             >
               {desc}
             </div>
