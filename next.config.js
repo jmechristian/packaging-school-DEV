@@ -16,6 +16,11 @@ const nextConfig = {
     return [
       // Path Matching - will match `/old-blog/a`, but not `/old-blog/a/b`
       {
+        source: '/courses/sales-bootcamp',
+        destination: '/sales-bootcamp',
+        permanent: true,
+      },
+      {
         source: '/pack-design-camp',
         destination: 'https://library.packagingschool.com/packdesign-workshop',
         permanent: true,
@@ -1023,11 +1028,6 @@ const nextConfig = {
       {
         source: '/sws-bmw-survey',
         destination: 'https://bmw.packagingschool.com/sws-bmw-survey',
-        permanent: true,
-      },
-      {
-        source: '/courses/sales-bootcamp',
-        destination: '/sales-bootcamp',
         permanent: true,
       },
     ];
