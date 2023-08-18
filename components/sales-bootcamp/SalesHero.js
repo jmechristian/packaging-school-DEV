@@ -3,7 +3,7 @@ import { ChevronRightIcon } from '@heroicons/react/20/solid';
 export default function SalesHero() {
   return (
     <div className='bg-white'>
-      <div className='relative isolate overflow-hidden bg-gradient-to-b from-indigo-100/20'>
+      <div className='relative isolate bg-gradient-to-b from-indigo-100/20'>
         <div className='mx-auto max-w-7xl pb-24 pt-10 sm:pb-32 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:px-8 lg:py-24'>
           <div className='px-6 lg:px-0'>
             <div className='mx-auto max-w-2xl'>
