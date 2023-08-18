@@ -12,15 +12,6 @@ const nextConfig = {
       'psupdatetemp.wpengine.com',
     ],
   },
-  async rewrites() {
-    return [
-      // Path Matching - will match `/old-blog/a`, but not `/old-blog/a/b`
-      {
-        source: '/pack-design-camp',
-        destination: 'https://library.packagingschool.com/packdesign-workshop',
-      },
-    ];
-  },
   async redirects() {
     return [
       // Path Matching - will match `/old-blog/a`, but not `/old-blog/a/b`
@@ -1032,6 +1023,11 @@ const nextConfig = {
       {
         source: '/sws-bmw-survey',
         destination: 'https://bmw.packagingschool.com/sws-bmw-survey',
+        permanent: true,
+      },
+      {
+        source: '/courses/sales-bootcamp',
+        destination: '/sales-bootcamp',
         permanent: true,
       },
     ];
