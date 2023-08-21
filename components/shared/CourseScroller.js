@@ -27,7 +27,7 @@ const CourseScroller = ({
 
   const courses = [
     {
-      uid: 'paperboard-cartons-course',
+      uid: 'paperboard-cartons',
       title: 'Paperboard Cartons',
       subtitle:
         'Explore the capabilities of paperboard cartons in this course, and comprehend why it’s widely used across the packaging industry.',
