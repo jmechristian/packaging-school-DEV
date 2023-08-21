@@ -14,6 +14,8 @@ const AllCourseBody = () => {
       return allCourses;
     } else if (selectedFilter.name === 'Collections') {
       return allCourses.filter((o) => o.type === 'COLLECTION');
+    } else if (selectedFilter.value === 'ELECTIVE') {
+      return allCourses.filter((o) => o.type === 'ELECTIVE');
     } else {
       return allCourses.filter((o) => o.category === selectedFilter.value);
     }

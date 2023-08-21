@@ -31,4 +31,8 @@ export const categoryMenu = [
     name: 'Collections',
     value: 'COLLECTIONS',
   },
+  {
+    name: 'CPS Electives',
+    value: 'ELECTIVE',
+  },
 ];

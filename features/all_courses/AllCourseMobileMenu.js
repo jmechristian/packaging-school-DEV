@@ -5,6 +5,7 @@ import { setMobileFilterClosed } from './courseFilterSlice';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { XCircleIcon } from '@heroicons/react/24/solid';
+import Logo from '../../components/layout/Logo';
 
 const AllCourseMobileMenu = () => {
   const dispatch = useDispatch();
@@ -44,7 +45,7 @@ const AllCourseMobileMenu = () => {
   return (
     <>
       <motion.div
-        className='fixed top-0 right-0 bottom-0 left-0 bg-slate-900 opacity-90 z-40'
+        className='fixed top-0 right-0 bottom-0 left-0 bg-neutral-800 backdrop-blur-sm opacity-70 z-40'
         initial='hide'
         variants={backdropVariants}
         animate={mobileCourseFilter ? 'show' : 'hide'}
@@ -52,7 +53,7 @@ const AllCourseMobileMenu = () => {
         onClick={() => dispatch(setMobileFilterClosed())}
       ></motion.div>
       <motion.div
-        className='w-3/4 md:w-1/2 bg-slate-200 fixed top-0 left-0 z-50 h-screen drop-shadow-md'
+        className='w-3/4 md:w-1/2 bg-slate-200 dark:bg-dark-mid fixed top-0 left-0 z-50 h-screen drop-shadow-md'
         variants={menuVariants}
         initial='closed'
         animate={mobileCourseFilter ? 'open' : 'closed'}
@@ -60,20 +61,14 @@ const AllCourseMobileMenu = () => {
       >
         <div className='pt-6 pb-8 px-5 flex flex-col gap-8 h-full'>
           <div className='flex justify-between items-start'>
-            <div className='w-3/5'>
-              <Image
-                src='https://res.cloudinary.com/dno7xxmmy/image/upload/v1664295580/pschool/logo_dark_craqzu.svg'
-                width='511'
-                height='117'
-                layout='responsive'
-                alt='The Packaging School'
-              />
+            <div className='h-full w-44'>
+              <Logo />
             </div>
             <button onClick={() => dispatch(setMobileFilterClosed())}>
-              <XCircleIcon className='fill-slate-900 h-7 w-7' />
+              <XCircleIcon className='fill-slate-900 dark:fill-white/40 h-8 w-8' />
             </button>
           </div>
-          <AllCourseMenu />
+          <AllCourseMenu click={() => {}} />
         </div>
       </motion.div>
     </>
