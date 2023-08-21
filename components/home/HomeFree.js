@@ -19,7 +19,7 @@ const HomeFree = ({ courses }) => {
   }, [setFreeCourses, allCourses]);
 
   return (
-    <div className='relative lg:overflow-hidden flex flex-col bg-gray-200 rounded-lg lg:items-start gap-9 py-12 lg:max-w-7xl lg:mx-auto w-full'>
+    <div className='relative lg:overflow-hidden flex flex-col bg-gray-100 rounded-lg lg:items-start gap-9 py-12 lg:max-w-7xl lg:mx-auto w-full'>
       <div className='absolute lg:hidden top-0 bottom-0 right-0 w-6 z-10 bg-gradient-to-l from-gray-200 via-gray-200' />
       <div className='flex w-full flex-col lg:flex-row lg:justify-between gap-3'>
         <div className='flex flex-row justify-between w-full items-center  px-6'>
