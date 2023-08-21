@@ -17,7 +17,7 @@ const Page = ({ course }) => {
         <title>Packaging School | {course && course.title}</title>
         <meta
           property='og:title'
-          content={`'Packaging School | ${course && course.title}`}
+          content={`Packaging School | ${course && course.title}`}
           key='title'
         />
       </Head>

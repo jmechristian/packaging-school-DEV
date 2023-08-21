@@ -296,7 +296,12 @@ const nextConfig = {
       },
       {
         source: '/courses-bmw-distribution-testing',
-        destination: '/courses/bmw-distribution-testing',
+        destination: '/courses/transportation-damage-testing',
+        permanent: true,
+      },
+      {
+        source: '/courses/bmw-distribution-testing',
+        destination: '/courses/transportation-damage-testing',
         permanent: true,
       },
       {
