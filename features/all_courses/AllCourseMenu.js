@@ -6,13 +6,14 @@ import { categoryMenu } from '../../data/CategoryMenu';
 import { certMenu } from '../../data/CertMenu';
 import AssessmentCTA from '../../components/AssessmentCTA';
 
-const AllCourseMenu = () => {
+const AllCourseMenu = ({ click }) => {
   const dispatch = useDispatch();
   const { selectedFilter } = useSelector((state) => state.course_filter);
 
   const filterClickHandler = (name, value) => {
     dispatch(setSelectedFilter({ name, value }));
     dispatch(setMobileFilterClosed());
+    click();
   };
 
   return (

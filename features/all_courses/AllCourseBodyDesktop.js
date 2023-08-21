@@ -17,11 +17,15 @@ const AllCourseBodyDesktop = ({ coursesToShow }) => {
     }
   }, [router]);
 
+  const scrollToCourses = () => {
+    coursesRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className='w-full h-full relative hidden lg:flex gap-16 container-7xl py-20'>
       <div className='w-fit'>
         <div className='w-full sticky top-32'>
-          <AllCourseMenu />
+          <AllCourseMenu click={scrollToCourses} />
         </div>
       </div>
       <div className='flex max-w-5xl flex-col gap-16'>
