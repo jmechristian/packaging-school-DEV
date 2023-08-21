@@ -4,7 +4,7 @@ import AllCourseHeaderDesktop from './AllCourseHeaderDesktop';
 
 const AllCourseHeader = () => {
   return (
-    <div className='bg-slate-900 relative overflow-y-hidden'>
+    <div className='bg-slate-900 relative'>
       <AllCourseHeaderMobile />
       <AllCourseHeaderDesktop />
     </div>

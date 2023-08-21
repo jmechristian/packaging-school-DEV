@@ -7,7 +7,7 @@ const AllCourseCourses = ({ selectedFilter, coursesToShow }) => {
   // console.log(coursesToShow);
   const { user } = useSelector((state) => state.auth);
   return (
-    <div className=' flex flex-col gap-6 scroll-mt-12'>
+    <div className=' flex flex-col gap-6'>
       <div className='flex justify-between items-end'>
         <div className='font-medium text-2xl font-greycliff dark:text-white'>
           Browse{' '}
