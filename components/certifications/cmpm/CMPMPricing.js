@@ -40,7 +40,7 @@ export default function CMPMPricing() {
           business days.
         </div>
         <div
-          className='w-fit py-2 pl-6 pr-9 bg-base-brand cursor-pointer rounded-lg mt-9 flex gap-2 items-center'
+          className='w-full lg:w-fit py-2 lg:pl-6 lg:pr-9 bg-base-brand cursor-pointer rounded-lg mt-9 flex gap-2 items-center'
           onClick={() =>
             window.open(
               'https://calendar.app.google/LQVXpmyZ6vESm5wB6',
