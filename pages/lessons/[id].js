@@ -276,7 +276,7 @@ export async function getStaticProps({ params }) {
   const getLessons = await API.graphql({ query: listLessons });
   const lessons = getLessons.data.listLessons.items;
 
-  return { props: { lesson, lessons } };
+  return { props: { lesson, lessons }, revalidate: 10 };
 }
 
 export default Page;
