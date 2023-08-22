@@ -1,4 +1,4 @@
-import { CheckIcon } from '@heroicons/react/20/solid';
+import { CheckIcon, QuestionMarkCircleIcon } from '@heroicons/react/20/solid';
 import Link from 'next/link';
 
 const schedule = [
@@ -38,6 +38,27 @@ export default function CMPMPricing() {
           you. You will receive both a confirmation of receipt soon after
           submission and personal response regarding your application within 1-3
           business days.
+        </div>
+        <div
+          className='w-fit py-2 pl-6 pr-9 bg-base-brand cursor-pointer rounded-lg mt-9 flex gap-2 items-center'
+          onClick={() =>
+            window.open(
+              'https://calendar.app.google/LQVXpmyZ6vESm5wB6',
+              '_blank'
+            )
+          }
+        >
+          <div>
+            <QuestionMarkCircleIcon className='w-16 h-16 fill-white/70' />
+          </div>
+          <div className='flex flex-col'>
+            <div className='font-bold text-xl text-white'>
+              Questions about CMPM?
+            </div>
+            <div className='text-white leading-tight'>
+              Schedule a FREE live demo today!
+            </div>
+          </div>
         </div>
       </div>
       <div className='mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none'>

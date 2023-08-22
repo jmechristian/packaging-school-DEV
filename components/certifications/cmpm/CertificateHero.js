@@ -3,7 +3,7 @@ import HeadlineMotion from '../../../helpers/HeadlineMotion';
 import FadeIn from '../../../helpers/FadeIn';
 import CertHeroImage from '../../../slices/CertificateHero/components/CertHeroImage';
 import Link from 'next/link';
-import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
+import { ArrowLongRightIcon, BoltIcon } from '@heroicons/react/24/outline';
 import { useRouter } from 'next/router';
 
 const CertificateHero = () => {
@@ -31,6 +31,7 @@ const CertificateHero = () => {
             </p>
           </FadeIn>
         </div>
+
         <div>
           <FadeIn>
             <div className='flex flex-col md:flex-row items-center gap-6 mt-4'>
@@ -44,13 +45,18 @@ const CertificateHero = () => {
               </button>
               <div
                 className='flex gap-1.5 items-center cursor-pointer'
-                onClick={() => router.push('/cmpm-vs-cps')}
+                onClick={() =>
+                  window.open(
+                    'https://calendar.app.google/LQVXpmyZ6vESm5wB6',
+                    '_blank'
+                  )
+                }
               >
-                <div className='font-semibold text-xl font-greycliff dark:text-white'>
-                  Compare Certificates
+                <div className='font-semibold text-xl font-greycliff dark:text-base-brand'>
+                  Schedule a FREE Live Demo
                 </div>
                 <div>
-                  <ArrowLongRightIcon className='w-6 h-6 stroke-slate-900 dark:stroke-white' />
+                  <ArrowLongRightIcon className='w-6 h-6 stroke-slate-900 dark:stroke-base-brand' />
                 </div>
               </div>
             </div>
