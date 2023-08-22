@@ -2046,6 +2046,8 @@ export const getAppStart = /* GraphQL */ `
       lastName
       email
       phone
+      source
+      sourceUrl
       id
       createdOn
       updatedOn
@@ -2064,6 +2066,8 @@ export const listAppStarts = /* GraphQL */ `
         lastName
         email
         phone
+        source
+        sourceUrl
         id
         createdOn
         updatedOn
@@ -2092,6 +2096,8 @@ export const appStartsByEmail = /* GraphQL */ `
         lastName
         email
         phone
+        source
+        sourceUrl
         id
         createdOn
         updatedOn
@@ -2177,6 +2183,43 @@ export const listAPSSpeakers = /* GraphQL */ `
     }
   }
 `;
+export const getAPSTicket = /* GraphQL */ `
+  query GetAPSTicket($id: ID!) {
+    getAPSTicket(id: $id) {
+      name
+      email
+      company
+      title
+      phone
+      paymentConfirmation
+      id
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listAPSTickets = /* GraphQL */ `
+  query ListAPSTickets(
+    $filter: ModelAPSTicketFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listAPSTickets(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        name
+        email
+        company
+        title
+        phone
+        paymentConfirmation
+        id
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
 export const getTourist = /* GraphQL */ `
   query GetTourist($id: ID!) {
     getTourist(id: $id) {
@@ -2245,7 +2288,9 @@ export const getLMSCirriculum = /* GraphQL */ `
   query GetLMSCirriculum($id: ID!) {
     getLMSCirriculum(id: $id) {
       id
+      shorthand
       title
+      slug
       Courses {
         items {
           id
@@ -2270,7 +2315,9 @@ export const listLMSCirriculums = /* GraphQL */ `
     listLMSCirriculums(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
+        shorthand
         title
+        slug
         Courses {
           nextToken
         }
@@ -4105,7 +4152,9 @@ export const getCirriculumCourses = /* GraphQL */ `
       lMSCourseId
       lMSCirriculum {
         id
+        shorthand
         title
+        slug
         Courses {
           nextToken
         }
@@ -4168,7 +4217,9 @@ export const listCirriculumCourses = /* GraphQL */ `
         lMSCourseId
         lMSCirriculum {
           id
+          shorthand
           title
+          slug
           createdAt
           updatedAt
         }
@@ -4225,7 +4276,9 @@ export const cirriculumCoursesByLMSCirriculumId = /* GraphQL */ `
         lMSCourseId
         lMSCirriculum {
           id
+          shorthand
           title
+          slug
           createdAt
           updatedAt
         }
@@ -4282,7 +4335,9 @@ export const cirriculumCoursesByLMSCourseId = /* GraphQL */ `
         lMSCourseId
         lMSCirriculum {
           id
+          shorthand
           title
+          slug
           createdAt
           updatedAt
         }

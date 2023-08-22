@@ -2756,6 +2756,8 @@ export const createAppStart = /* GraphQL */ `
       lastName
       email
       phone
+      source
+      sourceUrl
       id
       createdOn
       updatedOn
@@ -2772,6 +2774,8 @@ export const updateAppStart = /* GraphQL */ `
       lastName
       email
       phone
+      source
+      sourceUrl
       id
       createdOn
       updatedOn
@@ -2788,6 +2792,8 @@ export const deleteAppStart = /* GraphQL */ `
       lastName
       email
       phone
+      source
+      sourceUrl
       id
       createdOn
       updatedOn
@@ -2926,6 +2932,60 @@ export const deleteAPSSpeaker = /* GraphQL */ `
     }
   }
 `;
+export const createAPSTicket = /* GraphQL */ `
+  mutation CreateAPSTicket(
+    $input: CreateAPSTicketInput!
+    $condition: ModelAPSTicketConditionInput
+  ) {
+    createAPSTicket(input: $input, condition: $condition) {
+      name
+      email
+      company
+      title
+      phone
+      paymentConfirmation
+      id
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateAPSTicket = /* GraphQL */ `
+  mutation UpdateAPSTicket(
+    $input: UpdateAPSTicketInput!
+    $condition: ModelAPSTicketConditionInput
+  ) {
+    updateAPSTicket(input: $input, condition: $condition) {
+      name
+      email
+      company
+      title
+      phone
+      paymentConfirmation
+      id
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteAPSTicket = /* GraphQL */ `
+  mutation DeleteAPSTicket(
+    $input: DeleteAPSTicketInput!
+    $condition: ModelAPSTicketConditionInput
+  ) {
+    deleteAPSTicket(input: $input, condition: $condition) {
+      name
+      email
+      company
+      title
+      phone
+      paymentConfirmation
+      id
+      createdAt
+      updatedAt
+    }
+  }
+`;
 export const createTourist = /* GraphQL */ `
   mutation CreateTourist(
     $input: CreateTouristInput!
@@ -2984,7 +3044,9 @@ export const createLMSCirriculum = /* GraphQL */ `
   ) {
     createLMSCirriculum(input: $input, condition: $condition) {
       id
+      shorthand
       title
+      slug
       Courses {
         items {
           id
@@ -3007,7 +3069,9 @@ export const updateLMSCirriculum = /* GraphQL */ `
   ) {
     updateLMSCirriculum(input: $input, condition: $condition) {
       id
+      shorthand
       title
+      slug
       Courses {
         items {
           id
@@ -3030,7 +3094,9 @@ export const deleteLMSCirriculum = /* GraphQL */ `
   ) {
     deleteLMSCirriculum(input: $input, condition: $condition) {
       id
+      shorthand
       title
+      slug
       Courses {
         items {
           id
@@ -5538,7 +5604,9 @@ export const createCirriculumCourses = /* GraphQL */ `
       lMSCourseId
       lMSCirriculum {
         id
+        shorthand
         title
+        slug
         Courses {
           nextToken
         }
@@ -5595,7 +5663,9 @@ export const updateCirriculumCourses = /* GraphQL */ `
       lMSCourseId
       lMSCirriculum {
         id
+        shorthand
         title
+        slug
         Courses {
           nextToken
         }
@@ -5652,7 +5722,9 @@ export const deleteCirriculumCourses = /* GraphQL */ `
       lMSCourseId
       lMSCirriculum {
         id
+        shorthand
         title
+        slug
         Courses {
           nextToken
         }
