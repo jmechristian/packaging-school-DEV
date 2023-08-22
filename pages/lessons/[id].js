@@ -72,6 +72,8 @@ const Page = ({ lesson, lessons }) => {
               title={lesson.title}
               subhead={lesson.subhead}
               id={lesson.id}
+              author={lesson.author}
+              date={lesson.updatedAt}
             />
             <div className='hidden'>
               <Image
@@ -229,6 +231,13 @@ export async function getStaticProps({ params }) {
               lessonLinksId
             }
           }
+          author {
+            id
+            linkedIn
+            name
+            title
+            company
+          }
           media
           mediaType
           content
@@ -258,6 +267,7 @@ export async function getStaticProps({ params }) {
           }
           title
           type
+          updatedAt
         }
       }
     }

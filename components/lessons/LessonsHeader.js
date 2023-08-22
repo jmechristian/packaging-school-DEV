@@ -74,8 +74,14 @@ const LessonsHeader = ({ id, title, subhead, tags, author, date }) => {
         </div>
         {date && (
           <div className='flex gap-2 text-sm mt-2'>
-            <div className='text-gray-700 dark:text-white/60'>{newDate} /</div>
-            <div className='text-clemson'>{author}</div>
+            <div className='text-gray-700 dark:text-white/60'>{newDate}</div>
+            {author && (
+              <div className='text-clemson'>
+                <a href={author.linkedIn} rel='noreferrer' target='_blank'>
+                  {'/' + ' ' + author.name + ',' + ' ' + author.title}
+                </a>
+              </div>
+            )}
           </div>
         )}
         <p className='mt-8 text-lg md:text-xl  text-gray-700 dark:text-white/60'>
