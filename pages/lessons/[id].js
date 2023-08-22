@@ -11,6 +11,7 @@ import SocialShare from '../../components/shared/SocialShare';
 import LessonSlides from '../../components/lessons/LessonSlides';
 import RelatedLessons from '../../components/shared/RelatedLessons';
 import Image from 'next/image';
+import LessonHero from '../../components/lessons/LessonHero';
 
 export const LessonContext = createContext({
   unlocked: Boolean,
@@ -25,6 +26,21 @@ const GRAPHQL_API_KEY = process.env.GRAPHQL_API_KEY;
 const Page = ({ lesson, lessons }) => {
   const [unlocked, setUnlocked] = useState(false);
   const [isPage, setIsPage] = useState(0);
+
+  const { mediaType } = lesson;
+
+  const setMedia = () => {
+    switch (mediaType) {
+      case 'IMAGE':
+        return <LessonHero url={lesson.media} />;
+      case 'VIDEO':
+        return <LessonsMedia videoUrl={lesson.media} />;
+      case 'SLIDES':
+        return <LessonSlides slides={lesson.slides ? lesson.slides : []} />;
+      default:
+        return <LessonHero url={lesson.media} />;
+    }
+  };
 
   return (
     lesson && (
@@ -68,7 +84,7 @@ const Page = ({ lesson, lessons }) => {
               />
             </div>
             <div>
-              {lesson.mediaType === 'SLIDES' ? (
+              {/* {lesson.mediaType === 'SLIDES' ? (
                 <LessonSlides slides={lesson.slides ? lesson.slides : []} />
               ) : (
                 <LessonsMedia videoUrl={lesson.media} />
@@ -84,7 +100,8 @@ const Page = ({ lesson, lessons }) => {
                   lessonTitle={lesson.title}
                   mediaType={lesson.mediaType && lesson.mediaType}
                 />
-              )}
+              )} */}
+              {setMedia()}
             </div>
             <LessonsContent
               content={lesson.content}
