@@ -27,10 +27,8 @@ const Page = ({ lesson, lessons }) => {
   const [unlocked, setUnlocked] = useState(false);
   const [isPage, setIsPage] = useState(0);
 
-  const { mediaType } = lesson;
-
   const setMedia = () => {
-    switch (mediaType) {
+    switch (lesson.mediaType) {
       case 'IMAGE':
         return <LessonHero url={lesson.media} />;
       case 'VIDEO':
@@ -101,7 +99,7 @@ const Page = ({ lesson, lessons }) => {
                   mediaType={lesson.mediaType && lesson.mediaType}
                 />
               )} */}
-              {setMedia()}
+              {lesson && setMedia()}
             </div>
             <LessonsContent
               content={lesson.content}
