@@ -99,6 +99,14 @@ type Lesson @model @auth(rules: [{ allow: public }]) {
   actionLink: String
   actionLinkTitle: String
   actionExample: String
+  author: Author @hasOne
+}
+
+type Author @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  name: String!
+  headshot: String
+  linkedIn: String
 }
 
 type Blog @model @auth(rules: [{ allow: public }]) {

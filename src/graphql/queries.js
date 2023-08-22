@@ -391,6 +391,14 @@ export const getLesson = /* GraphQL */ `
       actionLink
       actionLinkTitle
       actionExample
+      author {
+        id
+        name
+        headshot
+        linkedIn
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
     }
@@ -429,6 +437,14 @@ export const listLessons = /* GraphQL */ `
         actionLink
         actionLinkTitle
         actionExample
+        author {
+          id
+          name
+          headshot
+          linkedIn
+          createdAt
+          updatedAt
+        }
         createdAt
         updatedAt
       }
@@ -477,6 +493,45 @@ export const lessonsBySlug = /* GraphQL */ `
         actionLink
         actionLinkTitle
         actionExample
+        author {
+          id
+          name
+          headshot
+          linkedIn
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getAuthor = /* GraphQL */ `
+  query GetAuthor($id: ID!) {
+    getAuthor(id: $id) {
+      id
+      name
+      headshot
+      linkedIn
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listAuthors = /* GraphQL */ `
+  query ListAuthors(
+    $filter: ModelAuthorFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listAuthors(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        name
+        headshot
+        linkedIn
         createdAt
         updatedAt
       }

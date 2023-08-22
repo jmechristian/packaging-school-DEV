@@ -50,13 +50,18 @@ const CPSHero = () => {
               </button>
               <div
                 className='flex gap-1.5 items-center cursor-pointer'
-                onClick={() => router.push('/cmpm-vs-cps')}
+                onClick={() =>
+                  window.open(
+                    'https://calendar.app.google/LQVXpmyZ6vESm5wB6',
+                    '_blank'
+                  )
+                }
               >
-                <div className='font-semibold text-xl font-greycliff dark:text-white'>
-                  Compare Certificates
+                <div className='font-semibold text-xl font-greycliff dark:text-base-brand'>
+                  Schedule a FREE Live Demo
                 </div>
                 <div>
-                  <ArrowLongRightIcon className='w-6 h-6 stroke-slate-900 dark:stroke-white' />
+                  <ArrowLongRightIcon className='w-6 h-6 stroke-slate-900 dark:stroke-base-brand' />
                 </div>
               </div>
             </div>

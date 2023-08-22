@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckIcon } from '@heroicons/react/20/solid';
+import { CheckIcon, QuestionMarkCircleIcon } from '@heroicons/react/20/solid';
 import {
   RocketLaunchIcon,
   DocumentPlusIcon,
@@ -43,10 +43,31 @@ const CPSPricing = () => {
           Director, is available to schedule a call with you to address all your
           questions and concerns.
         </div>
+        <div
+          className='w-full lg:w-fit py-2 lg:pl-6 lg:pr-9 bg-base-brand cursor-pointer rounded-lg mt-9 flex gap-2 items-center'
+          onClick={() =>
+            window.open(
+              'https://calendar.app.google/LQVXpmyZ6vESm5wB6',
+              '_blank'
+            )
+          }
+        >
+          <div>
+            <QuestionMarkCircleIcon className='w-16 h-16 fill-white/70' />
+          </div>
+          <div className='flex flex-col'>
+            <div className='font-bold text-xl text-white'>
+              Questions about CPS?
+            </div>
+            <div className='text-white leading-tight'>
+              Schedule a FREE live demo today!
+            </div>
+          </div>
+        </div>
       </div>
       <div className='mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none'>
         <div className='p-8 sm:p-10 lg:flex-col'>
-          <div className='lg:grid lg:grid-cols-3 gap-6 mt-6 flex flex-col gap-6'>
+          <div className='lg:grid lg:grid-cols-3 mt-6 flex flex-col gap-6'>
             <StatCard
               stat={
                 <RocketLaunchIcon className='w-12 h-12 stroke-white dark:stroke-clemson' />

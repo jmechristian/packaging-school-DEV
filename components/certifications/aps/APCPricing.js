@@ -7,6 +7,7 @@ import {
   CalendarDaysIcon,
   BookOpenIcon,
 } from '@heroicons/react/24/outline';
+import { QuestionMarkCircleIcon } from '@heroicons/react/20/solid';
 
 const APCPricing = () => {
   return (
@@ -22,6 +23,27 @@ const APCPricing = () => {
               click to enroll. If you have any inquiries, Diana Whitaker, our
               Student Engagement Director, is available to schedule a call with
               you to address all your questions and concerns.
+            </div>
+            <div
+              className='w-full lg:w-fit py-2 px-2 lg:pl-6 lg:pr-9 bg-base-brand cursor-pointer rounded-lg mt-9 flex gap-2 items-center'
+              onClick={() =>
+                window.open(
+                  'https://calendar.app.google/LQVXpmyZ6vESm5wB6',
+                  '_blank'
+                )
+              }
+            >
+              <div>
+                <QuestionMarkCircleIcon className='w-16 h-16 fill-white/70' />
+              </div>
+              <div className='flex flex-col'>
+                <div className='font-bold text-lg lg:text-xl text-white'>
+                  Questions about CPS?
+                </div>
+                <div className='text-white leading-tight text-sm lg:text-base'>
+                  Schedule a FREE live demo today!
+                </div>
+              </div>
             </div>
           </div>
           <div className='lg:grid lg:grid-cols-3 mt-6 flex flex-col gap-6'>

@@ -406,6 +406,14 @@ export const onCreateLesson = /* GraphQL */ `
       actionLink
       actionLinkTitle
       actionExample
+      author {
+        id
+        name
+        headshot
+        linkedIn
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
     }
@@ -465,6 +473,14 @@ export const onUpdateLesson = /* GraphQL */ `
       actionLink
       actionLinkTitle
       actionExample
+      author {
+        id
+        name
+        headshot
+        linkedIn
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
     }
@@ -524,6 +540,50 @@ export const onDeleteLesson = /* GraphQL */ `
       actionLink
       actionLinkTitle
       actionExample
+      author {
+        id
+        name
+        headshot
+        linkedIn
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateAuthor = /* GraphQL */ `
+  subscription OnCreateAuthor {
+    onCreateAuthor {
+      id
+      name
+      headshot
+      linkedIn
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateAuthor = /* GraphQL */ `
+  subscription OnUpdateAuthor {
+    onUpdateAuthor {
+      id
+      name
+      headshot
+      linkedIn
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteAuthor = /* GraphQL */ `
+  subscription OnDeleteAuthor {
+    onDeleteAuthor {
+      id
+      name
+      headshot
+      linkedIn
       createdAt
       updatedAt
     }

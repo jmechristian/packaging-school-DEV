@@ -454,6 +454,14 @@ export const createLesson = /* GraphQL */ `
       actionLink
       actionLinkTitle
       actionExample
+      author {
+        id
+        name
+        headshot
+        linkedIn
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
     }
@@ -516,6 +524,14 @@ export const updateLesson = /* GraphQL */ `
       actionLink
       actionLinkTitle
       actionExample
+      author {
+        id
+        name
+        headshot
+        linkedIn
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
     }
@@ -578,6 +594,59 @@ export const deleteLesson = /* GraphQL */ `
       actionLink
       actionLinkTitle
       actionExample
+      author {
+        id
+        name
+        headshot
+        linkedIn
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createAuthor = /* GraphQL */ `
+  mutation CreateAuthor(
+    $input: CreateAuthorInput!
+    $condition: ModelAuthorConditionInput
+  ) {
+    createAuthor(input: $input, condition: $condition) {
+      id
+      name
+      headshot
+      linkedIn
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateAuthor = /* GraphQL */ `
+  mutation UpdateAuthor(
+    $input: UpdateAuthorInput!
+    $condition: ModelAuthorConditionInput
+  ) {
+    updateAuthor(input: $input, condition: $condition) {
+      id
+      name
+      headshot
+      linkedIn
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteAuthor = /* GraphQL */ `
+  mutation DeleteAuthor(
+    $input: DeleteAuthorInput!
+    $condition: ModelAuthorConditionInput
+  ) {
+    deleteAuthor(input: $input, condition: $condition) {
+      id
+      name
+      headshot
+      linkedIn
       createdAt
       updatedAt
     }
