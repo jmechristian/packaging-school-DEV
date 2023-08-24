@@ -228,3 +228,11 @@ h3,
 h4 {
   @apply font-sans tracking-tight font-semibold leading-tight;
 }
+
+.shadow-fix {
+  box-shadow: 0 14px 40px rgb(0 0 0 / 60%);
+}
+
+.shadow-fix-fix {
+  -webkit-mask-image: -webkit-radial-gradient(#fff, #000);
+}

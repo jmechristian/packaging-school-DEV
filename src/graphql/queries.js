@@ -396,11 +396,14 @@ export const getLesson = /* GraphQL */ `
         name
         headshot
         linkedIn
+        title
+        company
         createdAt
         updatedAt
       }
       createdAt
       updatedAt
+      lessonAuthorId
     }
   }
 `;
@@ -442,11 +445,14 @@ export const listLessons = /* GraphQL */ `
           name
           headshot
           linkedIn
+          title
+          company
           createdAt
           updatedAt
         }
         createdAt
         updatedAt
+        lessonAuthorId
       }
       nextToken
     }
@@ -498,11 +504,14 @@ export const lessonsBySlug = /* GraphQL */ `
           name
           headshot
           linkedIn
+          title
+          company
           createdAt
           updatedAt
         }
         createdAt
         updatedAt
+        lessonAuthorId
       }
       nextToken
     }
@@ -515,6 +524,8 @@ export const getAuthor = /* GraphQL */ `
       name
       headshot
       linkedIn
+      title
+      company
       createdAt
       updatedAt
     }
@@ -532,6 +543,8 @@ export const listAuthors = /* GraphQL */ `
         name
         headshot
         linkedIn
+        title
+        company
         createdAt
         updatedAt
       }
@@ -2346,6 +2359,7 @@ export const getLMSCirriculum = /* GraphQL */ `
       shorthand
       title
       slug
+      description
       Courses {
         items {
           id
@@ -2373,6 +2387,7 @@ export const listLMSCirriculums = /* GraphQL */ `
         shorthand
         title
         slug
+        description
         Courses {
           nextToken
         }
@@ -2436,6 +2451,7 @@ export const getLMSCourse = /* GraphQL */ `
       percentComplete
       slug
       collection
+      demo
       createdAt
       updatedAt
       studentCourseEnrolledId
@@ -2479,6 +2495,7 @@ export const listLMSCourses = /* GraphQL */ `
         percentComplete
         slug
         collection
+        demo
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -2532,6 +2549,7 @@ export const lMSCoursesBySlug = /* GraphQL */ `
         percentComplete
         slug
         collection
+        demo
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -2858,6 +2876,7 @@ export const getStudent = /* GraphQL */ `
           percentComplete
           slug
           collection
+          demo
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -4210,6 +4229,7 @@ export const getCirriculumCourses = /* GraphQL */ `
         shorthand
         title
         slug
+        description
         Courses {
           nextToken
         }
@@ -4246,6 +4266,7 @@ export const getCirriculumCourses = /* GraphQL */ `
         percentComplete
         slug
         collection
+        demo
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -4275,6 +4296,7 @@ export const listCirriculumCourses = /* GraphQL */ `
           shorthand
           title
           slug
+          description
           createdAt
           updatedAt
         }
@@ -4299,6 +4321,7 @@ export const listCirriculumCourses = /* GraphQL */ `
           percentComplete
           slug
           collection
+          demo
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -4334,6 +4357,7 @@ export const cirriculumCoursesByLMSCirriculumId = /* GraphQL */ `
           shorthand
           title
           slug
+          description
           createdAt
           updatedAt
         }
@@ -4358,6 +4382,7 @@ export const cirriculumCoursesByLMSCirriculumId = /* GraphQL */ `
           percentComplete
           slug
           collection
+          demo
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -4393,6 +4418,7 @@ export const cirriculumCoursesByLMSCourseId = /* GraphQL */ `
           shorthand
           title
           slug
+          description
           createdAt
           updatedAt
         }
@@ -4417,6 +4443,7 @@ export const cirriculumCoursesByLMSCourseId = /* GraphQL */ `
           percentComplete
           slug
           collection
+          demo
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -4464,6 +4491,7 @@ export const getCourseLessons = /* GraphQL */ `
         percentComplete
         slug
         collection
+        demo
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -4530,6 +4558,7 @@ export const listCourseLessons = /* GraphQL */ `
           percentComplete
           slug
           collection
+          demo
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -4591,6 +4620,7 @@ export const courseLessonsByLMSCourseId = /* GraphQL */ `
           percentComplete
           slug
           collection
+          demo
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -4652,6 +4682,7 @@ export const courseLessonsByLMSLessonId = /* GraphQL */ `
           percentComplete
           slug
           collection
+          demo
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -4709,6 +4740,7 @@ export const getCourseInstructors = /* GraphQL */ `
         percentComplete
         slug
         collection
+        demo
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -4786,6 +4818,7 @@ export const listCourseInstructors = /* GraphQL */ `
           percentComplete
           slug
           collection
+          demo
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -4843,6 +4876,7 @@ export const courseInstructorsByLMSCourseId = /* GraphQL */ `
           percentComplete
           slug
           collection
+          demo
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -4900,6 +4934,7 @@ export const courseInstructorsByInstructorId = /* GraphQL */ `
           percentComplete
           slug
           collection
+          demo
           createdAt
           updatedAt
           studentCourseEnrolledId
