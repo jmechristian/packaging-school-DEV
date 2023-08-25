@@ -3017,7 +3017,7 @@ export const onCreateLMSCourse = /* GraphQL */ `
       courseId
       category
       type
-      Cirriculum {
+      cirriculum {
         items {
           id
           lMSCirriculumId
@@ -3027,7 +3027,7 @@ export const onCreateLMSCourse = /* GraphQL */ `
         }
         nextToken
       }
-      Lessons {
+      lmsLessons {
         items {
           id
           lMSCourseId
@@ -3037,7 +3037,7 @@ export const onCreateLMSCourse = /* GraphQL */ `
         }
         nextToken
       }
-      Instructors {
+      instructors {
         items {
           id
           lMSCourseId
@@ -3077,7 +3077,7 @@ export const onUpdateLMSCourse = /* GraphQL */ `
       courseId
       category
       type
-      Cirriculum {
+      cirriculum {
         items {
           id
           lMSCirriculumId
@@ -3087,7 +3087,7 @@ export const onUpdateLMSCourse = /* GraphQL */ `
         }
         nextToken
       }
-      Lessons {
+      lmsLessons {
         items {
           id
           lMSCourseId
@@ -3097,7 +3097,7 @@ export const onUpdateLMSCourse = /* GraphQL */ `
         }
         nextToken
       }
-      Instructors {
+      instructors {
         items {
           id
           lMSCourseId
@@ -3137,7 +3137,7 @@ export const onDeleteLMSCourse = /* GraphQL */ `
       courseId
       category
       type
-      Cirriculum {
+      cirriculum {
         items {
           id
           lMSCirriculumId
@@ -3147,7 +3147,7 @@ export const onDeleteLMSCourse = /* GraphQL */ `
         }
         nextToken
       }
-      Lessons {
+      lmsLessons {
         items {
           id
           lMSCourseId
@@ -3157,7 +3157,7 @@ export const onDeleteLMSCourse = /* GraphQL */ `
         }
         nextToken
       }
-      Instructors {
+      instructors {
         items {
           id
           lMSCourseId
@@ -3264,11 +3264,21 @@ export const onCreateLMSLesson = /* GraphQL */ `
     onCreateLMSLesson {
       id
       title
-      Course {
+      course {
         items {
           id
           lMSCourseId
           lMSLessonId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      modules {
+        items {
+          id
+          lMSLessonId
+          lMSModuleId
           createdAt
           updatedAt
         }
@@ -3283,6 +3293,7 @@ export const onCreateLMSLesson = /* GraphQL */ `
           createdAt
           updatedAt
           lMSLessonObjectivesId
+          lMSModuleObjectivesId
         }
         nextToken
       }
@@ -3295,32 +3306,15 @@ export const onCreateLMSLesson = /* GraphQL */ `
           createdAt
           updatedAt
           lMSLessonSlidesId
+          lMSModuleSlidesId
         }
         nextToken
       }
-      video {
-        id
-        timestamps {
-          nextToken
-        }
-        lessonId
-        lesson {
-          id
-          title
-          subheadline
-          mediaType
-          percentComplete
-          createdAt
-          updatedAt
-          lMSLessonVideoId
-        }
-        createdAt
-        updatedAt
-      }
+      media
       percentComplete
+      content
       createdAt
       updatedAt
-      lMSLessonVideoId
     }
   }
 `;
@@ -3329,11 +3323,21 @@ export const onUpdateLMSLesson = /* GraphQL */ `
     onUpdateLMSLesson {
       id
       title
-      Course {
+      course {
         items {
           id
           lMSCourseId
           lMSLessonId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      modules {
+        items {
+          id
+          lMSLessonId
+          lMSModuleId
           createdAt
           updatedAt
         }
@@ -3348,6 +3352,7 @@ export const onUpdateLMSLesson = /* GraphQL */ `
           createdAt
           updatedAt
           lMSLessonObjectivesId
+          lMSModuleObjectivesId
         }
         nextToken
       }
@@ -3360,32 +3365,15 @@ export const onUpdateLMSLesson = /* GraphQL */ `
           createdAt
           updatedAt
           lMSLessonSlidesId
+          lMSModuleSlidesId
         }
         nextToken
       }
-      video {
-        id
-        timestamps {
-          nextToken
-        }
-        lessonId
-        lesson {
-          id
-          title
-          subheadline
-          mediaType
-          percentComplete
-          createdAt
-          updatedAt
-          lMSLessonVideoId
-        }
-        createdAt
-        updatedAt
-      }
+      media
       percentComplete
+      content
       createdAt
       updatedAt
-      lMSLessonVideoId
     }
   }
 `;
@@ -3394,11 +3382,21 @@ export const onDeleteLMSLesson = /* GraphQL */ `
     onDeleteLMSLesson {
       id
       title
-      Course {
+      course {
         items {
           id
           lMSCourseId
           lMSLessonId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      modules {
+        items {
+          id
+          lMSLessonId
+          lMSModuleId
           createdAt
           updatedAt
         }
@@ -3413,6 +3411,7 @@ export const onDeleteLMSLesson = /* GraphQL */ `
           createdAt
           updatedAt
           lMSLessonObjectivesId
+          lMSModuleObjectivesId
         }
         nextToken
       }
@@ -3425,32 +3424,162 @@ export const onDeleteLMSLesson = /* GraphQL */ `
           createdAt
           updatedAt
           lMSLessonSlidesId
+          lMSModuleSlidesId
         }
         nextToken
       }
-      video {
-        id
-        timestamps {
-          nextToken
-        }
-        lessonId
-        lesson {
-          id
-          title
-          subheadline
-          mediaType
-          percentComplete
-          createdAt
-          updatedAt
-          lMSLessonVideoId
-        }
-        createdAt
-        updatedAt
-      }
+      media
       percentComplete
+      content
       createdAt
       updatedAt
-      lMSLessonVideoId
+    }
+  }
+`;
+export const onCreateLMSModule = /* GraphQL */ `
+  subscription OnCreateLMSModule {
+    onCreateLMSModule {
+      id
+      title
+      lessons {
+        items {
+          id
+          lMSLessonId
+          lMSModuleId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      subheadline
+      objectives {
+        items {
+          id
+          objective
+          completed
+          createdAt
+          updatedAt
+          lMSLessonObjectivesId
+          lMSModuleObjectivesId
+        }
+        nextToken
+      }
+      mediaType
+      slides {
+        items {
+          id
+          slideSource
+          description
+          createdAt
+          updatedAt
+          lMSLessonSlidesId
+          lMSModuleSlidesId
+        }
+        nextToken
+      }
+      media
+      percentComplete
+      content
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateLMSModule = /* GraphQL */ `
+  subscription OnUpdateLMSModule {
+    onUpdateLMSModule {
+      id
+      title
+      lessons {
+        items {
+          id
+          lMSLessonId
+          lMSModuleId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      subheadline
+      objectives {
+        items {
+          id
+          objective
+          completed
+          createdAt
+          updatedAt
+          lMSLessonObjectivesId
+          lMSModuleObjectivesId
+        }
+        nextToken
+      }
+      mediaType
+      slides {
+        items {
+          id
+          slideSource
+          description
+          createdAt
+          updatedAt
+          lMSLessonSlidesId
+          lMSModuleSlidesId
+        }
+        nextToken
+      }
+      media
+      percentComplete
+      content
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteLMSModule = /* GraphQL */ `
+  subscription OnDeleteLMSModule {
+    onDeleteLMSModule {
+      id
+      title
+      lessons {
+        items {
+          id
+          lMSLessonId
+          lMSModuleId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      subheadline
+      objectives {
+        items {
+          id
+          objective
+          completed
+          createdAt
+          updatedAt
+          lMSLessonObjectivesId
+          lMSModuleObjectivesId
+        }
+        nextToken
+      }
+      mediaType
+      slides {
+        items {
+          id
+          slideSource
+          description
+          createdAt
+          updatedAt
+          lMSLessonSlidesId
+          lMSModuleSlidesId
+        }
+        nextToken
+      }
+      media
+      percentComplete
+      content
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -4234,6 +4363,7 @@ export const onCreateObjective = /* GraphQL */ `
       createdAt
       updatedAt
       lMSLessonObjectivesId
+      lMSModuleObjectivesId
     }
   }
 `;
@@ -4246,6 +4376,7 @@ export const onUpdateObjective = /* GraphQL */ `
       createdAt
       updatedAt
       lMSLessonObjectivesId
+      lMSModuleObjectivesId
     }
   }
 `;
@@ -4258,6 +4389,7 @@ export const onDeleteObjective = /* GraphQL */ `
       createdAt
       updatedAt
       lMSLessonObjectivesId
+      lMSModuleObjectivesId
     }
   }
 `;
@@ -4270,6 +4402,7 @@ export const onCreateSlide = /* GraphQL */ `
       createdAt
       updatedAt
       lMSLessonSlidesId
+      lMSModuleSlidesId
     }
   }
 `;
@@ -4282,6 +4415,7 @@ export const onUpdateSlide = /* GraphQL */ `
       createdAt
       updatedAt
       lMSLessonSlidesId
+      lMSModuleSlidesId
     }
   }
 `;
@@ -4294,144 +4428,7 @@ export const onDeleteSlide = /* GraphQL */ `
       createdAt
       updatedAt
       lMSLessonSlidesId
-    }
-  }
-`;
-export const onCreateLessonVideo = /* GraphQL */ `
-  subscription OnCreateLessonVideo {
-    onCreateLessonVideo {
-      id
-      timestamps {
-        items {
-          id
-          time
-          description
-          createdAt
-          updatedAt
-          lessonVideoTimestampsId
-        }
-        nextToken
-      }
-      lessonId
-      lesson {
-        id
-        title
-        Course {
-          nextToken
-        }
-        subheadline
-        objectives {
-          nextToken
-        }
-        mediaType
-        slides {
-          nextToken
-        }
-        video {
-          id
-          lessonId
-          createdAt
-          updatedAt
-        }
-        percentComplete
-        createdAt
-        updatedAt
-        lMSLessonVideoId
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onUpdateLessonVideo = /* GraphQL */ `
-  subscription OnUpdateLessonVideo {
-    onUpdateLessonVideo {
-      id
-      timestamps {
-        items {
-          id
-          time
-          description
-          createdAt
-          updatedAt
-          lessonVideoTimestampsId
-        }
-        nextToken
-      }
-      lessonId
-      lesson {
-        id
-        title
-        Course {
-          nextToken
-        }
-        subheadline
-        objectives {
-          nextToken
-        }
-        mediaType
-        slides {
-          nextToken
-        }
-        video {
-          id
-          lessonId
-          createdAt
-          updatedAt
-        }
-        percentComplete
-        createdAt
-        updatedAt
-        lMSLessonVideoId
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onDeleteLessonVideo = /* GraphQL */ `
-  subscription OnDeleteLessonVideo {
-    onDeleteLessonVideo {
-      id
-      timestamps {
-        items {
-          id
-          time
-          description
-          createdAt
-          updatedAt
-          lessonVideoTimestampsId
-        }
-        nextToken
-      }
-      lessonId
-      lesson {
-        id
-        title
-        Course {
-          nextToken
-        }
-        subheadline
-        objectives {
-          nextToken
-        }
-        mediaType
-        slides {
-          nextToken
-        }
-        video {
-          id
-          lessonId
-          createdAt
-          updatedAt
-        }
-        percentComplete
-        createdAt
-        updatedAt
-        lMSLessonVideoId
-      }
-      createdAt
-      updatedAt
+      lMSModuleSlidesId
     }
   }
 `;
@@ -4443,7 +4440,6 @@ export const onCreateTimestamp = /* GraphQL */ `
       description
       createdAt
       updatedAt
-      lessonVideoTimestampsId
     }
   }
 `;
@@ -4455,7 +4451,6 @@ export const onUpdateTimestamp = /* GraphQL */ `
       description
       createdAt
       updatedAt
-      lessonVideoTimestampsId
     }
   }
 `;
@@ -4467,7 +4462,6 @@ export const onDeleteTimestamp = /* GraphQL */ `
       description
       createdAt
       updatedAt
-      lessonVideoTimestampsId
     }
   }
 `;
@@ -5394,13 +5388,13 @@ export const onCreateCirriculumCourses = /* GraphQL */ `
         courseId
         category
         type
-        Cirriculum {
+        cirriculum {
           nextToken
         }
-        Lessons {
+        lmsLessons {
           nextToken
         }
-        Instructors {
+        instructors {
           nextToken
         }
         price
@@ -5452,13 +5446,13 @@ export const onUpdateCirriculumCourses = /* GraphQL */ `
         courseId
         category
         type
-        Cirriculum {
+        cirriculum {
           nextToken
         }
-        Lessons {
+        lmsLessons {
           nextToken
         }
-        Instructors {
+        instructors {
           nextToken
         }
         price
@@ -5510,13 +5504,13 @@ export const onDeleteCirriculumCourses = /* GraphQL */ `
         courseId
         category
         type
-        Cirriculum {
+        cirriculum {
           nextToken
         }
-        Lessons {
+        lmsLessons {
           nextToken
         }
-        Instructors {
+        instructors {
           nextToken
         }
         price
@@ -5556,13 +5550,13 @@ export const onCreateCourseLessons = /* GraphQL */ `
         courseId
         category
         type
-        Cirriculum {
+        cirriculum {
           nextToken
         }
-        Lessons {
+        lmsLessons {
           nextToken
         }
-        Instructors {
+        instructors {
           nextToken
         }
         price
@@ -5589,7 +5583,10 @@ export const onCreateCourseLessons = /* GraphQL */ `
       lMSLesson {
         id
         title
-        Course {
+        course {
+          nextToken
+        }
+        modules {
           nextToken
         }
         subheadline
@@ -5600,16 +5597,11 @@ export const onCreateCourseLessons = /* GraphQL */ `
         slides {
           nextToken
         }
-        video {
-          id
-          lessonId
-          createdAt
-          updatedAt
-        }
+        media
         percentComplete
+        content
         createdAt
         updatedAt
-        lMSLessonVideoId
       }
       createdAt
       updatedAt
@@ -5627,13 +5619,13 @@ export const onUpdateCourseLessons = /* GraphQL */ `
         courseId
         category
         type
-        Cirriculum {
+        cirriculum {
           nextToken
         }
-        Lessons {
+        lmsLessons {
           nextToken
         }
-        Instructors {
+        instructors {
           nextToken
         }
         price
@@ -5660,7 +5652,10 @@ export const onUpdateCourseLessons = /* GraphQL */ `
       lMSLesson {
         id
         title
-        Course {
+        course {
+          nextToken
+        }
+        modules {
           nextToken
         }
         subheadline
@@ -5671,16 +5666,11 @@ export const onUpdateCourseLessons = /* GraphQL */ `
         slides {
           nextToken
         }
-        video {
-          id
-          lessonId
-          createdAt
-          updatedAt
-        }
+        media
         percentComplete
+        content
         createdAt
         updatedAt
-        lMSLessonVideoId
       }
       createdAt
       updatedAt
@@ -5698,13 +5688,13 @@ export const onDeleteCourseLessons = /* GraphQL */ `
         courseId
         category
         type
-        Cirriculum {
+        cirriculum {
           nextToken
         }
-        Lessons {
+        lmsLessons {
           nextToken
         }
-        Instructors {
+        instructors {
           nextToken
         }
         price
@@ -5731,7 +5721,10 @@ export const onDeleteCourseLessons = /* GraphQL */ `
       lMSLesson {
         id
         title
-        Course {
+        course {
+          nextToken
+        }
+        modules {
           nextToken
         }
         subheadline
@@ -5742,16 +5735,11 @@ export const onDeleteCourseLessons = /* GraphQL */ `
         slides {
           nextToken
         }
-        video {
-          id
-          lessonId
-          createdAt
-          updatedAt
-        }
+        media
         percentComplete
+        content
         createdAt
         updatedAt
-        lMSLessonVideoId
       }
       createdAt
       updatedAt
@@ -5769,13 +5757,13 @@ export const onCreateCourseInstructors = /* GraphQL */ `
         courseId
         category
         type
-        Cirriculum {
+        cirriculum {
           nextToken
         }
-        Lessons {
+        lmsLessons {
           nextToken
         }
-        Instructors {
+        instructors {
           nextToken
         }
         price
@@ -5847,13 +5835,13 @@ export const onUpdateCourseInstructors = /* GraphQL */ `
         courseId
         category
         type
-        Cirriculum {
+        cirriculum {
           nextToken
         }
-        Lessons {
+        lmsLessons {
           nextToken
         }
-        Instructors {
+        instructors {
           nextToken
         }
         price
@@ -5925,13 +5913,13 @@ export const onDeleteCourseInstructors = /* GraphQL */ `
         courseId
         category
         type
-        Cirriculum {
+        cirriculum {
           nextToken
         }
-        Lessons {
+        lmsLessons {
           nextToken
         }
-        Instructors {
+        instructors {
           nextToken
         }
         price
@@ -5984,6 +5972,168 @@ export const onDeleteCourseInstructors = /* GraphQL */ `
         coursesTaught {
           nextToken
         }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateLessonModules = /* GraphQL */ `
+  subscription OnCreateLessonModules {
+    onCreateLessonModules {
+      id
+      lMSLessonId
+      lMSModuleId
+      lMSLesson {
+        id
+        title
+        course {
+          nextToken
+        }
+        modules {
+          nextToken
+        }
+        subheadline
+        objectives {
+          nextToken
+        }
+        mediaType
+        slides {
+          nextToken
+        }
+        media
+        percentComplete
+        content
+        createdAt
+        updatedAt
+      }
+      lMSModule {
+        id
+        title
+        lessons {
+          nextToken
+        }
+        subheadline
+        objectives {
+          nextToken
+        }
+        mediaType
+        slides {
+          nextToken
+        }
+        media
+        percentComplete
+        content
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateLessonModules = /* GraphQL */ `
+  subscription OnUpdateLessonModules {
+    onUpdateLessonModules {
+      id
+      lMSLessonId
+      lMSModuleId
+      lMSLesson {
+        id
+        title
+        course {
+          nextToken
+        }
+        modules {
+          nextToken
+        }
+        subheadline
+        objectives {
+          nextToken
+        }
+        mediaType
+        slides {
+          nextToken
+        }
+        media
+        percentComplete
+        content
+        createdAt
+        updatedAt
+      }
+      lMSModule {
+        id
+        title
+        lessons {
+          nextToken
+        }
+        subheadline
+        objectives {
+          nextToken
+        }
+        mediaType
+        slides {
+          nextToken
+        }
+        media
+        percentComplete
+        content
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteLessonModules = /* GraphQL */ `
+  subscription OnDeleteLessonModules {
+    onDeleteLessonModules {
+      id
+      lMSLessonId
+      lMSModuleId
+      lMSLesson {
+        id
+        title
+        course {
+          nextToken
+        }
+        modules {
+          nextToken
+        }
+        subheadline
+        objectives {
+          nextToken
+        }
+        mediaType
+        slides {
+          nextToken
+        }
+        media
+        percentComplete
+        content
+        createdAt
+        updatedAt
+      }
+      lMSModule {
+        id
+        title
+        lessons {
+          nextToken
+        }
+        subheadline
+        objectives {
+          nextToken
+        }
+        mediaType
+        slides {
+          nextToken
+        }
+        media
+        percentComplete
+        content
         createdAt
         updatedAt
       }

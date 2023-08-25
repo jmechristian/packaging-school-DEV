@@ -3209,7 +3209,7 @@ export const createLMSCourse = /* GraphQL */ `
       courseId
       category
       type
-      Cirriculum {
+      cirriculum {
         items {
           id
           lMSCirriculumId
@@ -3219,7 +3219,7 @@ export const createLMSCourse = /* GraphQL */ `
         }
         nextToken
       }
-      Lessons {
+      lmsLessons {
         items {
           id
           lMSCourseId
@@ -3229,7 +3229,7 @@ export const createLMSCourse = /* GraphQL */ `
         }
         nextToken
       }
-      Instructors {
+      instructors {
         items {
           id
           lMSCourseId
@@ -3272,7 +3272,7 @@ export const updateLMSCourse = /* GraphQL */ `
       courseId
       category
       type
-      Cirriculum {
+      cirriculum {
         items {
           id
           lMSCirriculumId
@@ -3282,7 +3282,7 @@ export const updateLMSCourse = /* GraphQL */ `
         }
         nextToken
       }
-      Lessons {
+      lmsLessons {
         items {
           id
           lMSCourseId
@@ -3292,7 +3292,7 @@ export const updateLMSCourse = /* GraphQL */ `
         }
         nextToken
       }
-      Instructors {
+      instructors {
         items {
           id
           lMSCourseId
@@ -3335,7 +3335,7 @@ export const deleteLMSCourse = /* GraphQL */ `
       courseId
       category
       type
-      Cirriculum {
+      cirriculum {
         items {
           id
           lMSCirriculumId
@@ -3345,7 +3345,7 @@ export const deleteLMSCourse = /* GraphQL */ `
         }
         nextToken
       }
-      Lessons {
+      lmsLessons {
         items {
           id
           lMSCourseId
@@ -3355,7 +3355,7 @@ export const deleteLMSCourse = /* GraphQL */ `
         }
         nextToken
       }
-      Instructors {
+      instructors {
         items {
           id
           lMSCourseId
@@ -3474,11 +3474,21 @@ export const createLMSLesson = /* GraphQL */ `
     createLMSLesson(input: $input, condition: $condition) {
       id
       title
-      Course {
+      course {
         items {
           id
           lMSCourseId
           lMSLessonId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      modules {
+        items {
+          id
+          lMSLessonId
+          lMSModuleId
           createdAt
           updatedAt
         }
@@ -3493,6 +3503,7 @@ export const createLMSLesson = /* GraphQL */ `
           createdAt
           updatedAt
           lMSLessonObjectivesId
+          lMSModuleObjectivesId
         }
         nextToken
       }
@@ -3505,32 +3516,15 @@ export const createLMSLesson = /* GraphQL */ `
           createdAt
           updatedAt
           lMSLessonSlidesId
+          lMSModuleSlidesId
         }
         nextToken
       }
-      video {
-        id
-        timestamps {
-          nextToken
-        }
-        lessonId
-        lesson {
-          id
-          title
-          subheadline
-          mediaType
-          percentComplete
-          createdAt
-          updatedAt
-          lMSLessonVideoId
-        }
-        createdAt
-        updatedAt
-      }
+      media
       percentComplete
+      content
       createdAt
       updatedAt
-      lMSLessonVideoId
     }
   }
 `;
@@ -3542,11 +3536,21 @@ export const updateLMSLesson = /* GraphQL */ `
     updateLMSLesson(input: $input, condition: $condition) {
       id
       title
-      Course {
+      course {
         items {
           id
           lMSCourseId
           lMSLessonId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      modules {
+        items {
+          id
+          lMSLessonId
+          lMSModuleId
           createdAt
           updatedAt
         }
@@ -3561,6 +3565,7 @@ export const updateLMSLesson = /* GraphQL */ `
           createdAt
           updatedAt
           lMSLessonObjectivesId
+          lMSModuleObjectivesId
         }
         nextToken
       }
@@ -3573,32 +3578,15 @@ export const updateLMSLesson = /* GraphQL */ `
           createdAt
           updatedAt
           lMSLessonSlidesId
+          lMSModuleSlidesId
         }
         nextToken
       }
-      video {
-        id
-        timestamps {
-          nextToken
-        }
-        lessonId
-        lesson {
-          id
-          title
-          subheadline
-          mediaType
-          percentComplete
-          createdAt
-          updatedAt
-          lMSLessonVideoId
-        }
-        createdAt
-        updatedAt
-      }
+      media
       percentComplete
+      content
       createdAt
       updatedAt
-      lMSLessonVideoId
     }
   }
 `;
@@ -3610,11 +3598,21 @@ export const deleteLMSLesson = /* GraphQL */ `
     deleteLMSLesson(input: $input, condition: $condition) {
       id
       title
-      Course {
+      course {
         items {
           id
           lMSCourseId
           lMSLessonId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      modules {
+        items {
+          id
+          lMSLessonId
+          lMSModuleId
           createdAt
           updatedAt
         }
@@ -3629,6 +3627,7 @@ export const deleteLMSLesson = /* GraphQL */ `
           createdAt
           updatedAt
           lMSLessonObjectivesId
+          lMSModuleObjectivesId
         }
         nextToken
       }
@@ -3641,32 +3640,171 @@ export const deleteLMSLesson = /* GraphQL */ `
           createdAt
           updatedAt
           lMSLessonSlidesId
+          lMSModuleSlidesId
         }
         nextToken
       }
-      video {
-        id
-        timestamps {
-          nextToken
-        }
-        lessonId
-        lesson {
-          id
-          title
-          subheadline
-          mediaType
-          percentComplete
-          createdAt
-          updatedAt
-          lMSLessonVideoId
-        }
-        createdAt
-        updatedAt
-      }
+      media
       percentComplete
+      content
       createdAt
       updatedAt
-      lMSLessonVideoId
+    }
+  }
+`;
+export const createLMSModule = /* GraphQL */ `
+  mutation CreateLMSModule(
+    $input: CreateLMSModuleInput!
+    $condition: ModelLMSModuleConditionInput
+  ) {
+    createLMSModule(input: $input, condition: $condition) {
+      id
+      title
+      lessons {
+        items {
+          id
+          lMSLessonId
+          lMSModuleId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      subheadline
+      objectives {
+        items {
+          id
+          objective
+          completed
+          createdAt
+          updatedAt
+          lMSLessonObjectivesId
+          lMSModuleObjectivesId
+        }
+        nextToken
+      }
+      mediaType
+      slides {
+        items {
+          id
+          slideSource
+          description
+          createdAt
+          updatedAt
+          lMSLessonSlidesId
+          lMSModuleSlidesId
+        }
+        nextToken
+      }
+      media
+      percentComplete
+      content
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateLMSModule = /* GraphQL */ `
+  mutation UpdateLMSModule(
+    $input: UpdateLMSModuleInput!
+    $condition: ModelLMSModuleConditionInput
+  ) {
+    updateLMSModule(input: $input, condition: $condition) {
+      id
+      title
+      lessons {
+        items {
+          id
+          lMSLessonId
+          lMSModuleId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      subheadline
+      objectives {
+        items {
+          id
+          objective
+          completed
+          createdAt
+          updatedAt
+          lMSLessonObjectivesId
+          lMSModuleObjectivesId
+        }
+        nextToken
+      }
+      mediaType
+      slides {
+        items {
+          id
+          slideSource
+          description
+          createdAt
+          updatedAt
+          lMSLessonSlidesId
+          lMSModuleSlidesId
+        }
+        nextToken
+      }
+      media
+      percentComplete
+      content
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteLMSModule = /* GraphQL */ `
+  mutation DeleteLMSModule(
+    $input: DeleteLMSModuleInput!
+    $condition: ModelLMSModuleConditionInput
+  ) {
+    deleteLMSModule(input: $input, condition: $condition) {
+      id
+      title
+      lessons {
+        items {
+          id
+          lMSLessonId
+          lMSModuleId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      subheadline
+      objectives {
+        items {
+          id
+          objective
+          completed
+          createdAt
+          updatedAt
+          lMSLessonObjectivesId
+          lMSModuleObjectivesId
+        }
+        nextToken
+      }
+      mediaType
+      slides {
+        items {
+          id
+          slideSource
+          description
+          createdAt
+          updatedAt
+          lMSLessonSlidesId
+          lMSModuleSlidesId
+        }
+        nextToken
+      }
+      media
+      percentComplete
+      content
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -4471,6 +4609,7 @@ export const createObjective = /* GraphQL */ `
       createdAt
       updatedAt
       lMSLessonObjectivesId
+      lMSModuleObjectivesId
     }
   }
 `;
@@ -4486,6 +4625,7 @@ export const updateObjective = /* GraphQL */ `
       createdAt
       updatedAt
       lMSLessonObjectivesId
+      lMSModuleObjectivesId
     }
   }
 `;
@@ -4501,6 +4641,7 @@ export const deleteObjective = /* GraphQL */ `
       createdAt
       updatedAt
       lMSLessonObjectivesId
+      lMSModuleObjectivesId
     }
   }
 `;
@@ -4516,6 +4657,7 @@ export const createSlide = /* GraphQL */ `
       createdAt
       updatedAt
       lMSLessonSlidesId
+      lMSModuleSlidesId
     }
   }
 `;
@@ -4531,6 +4673,7 @@ export const updateSlide = /* GraphQL */ `
       createdAt
       updatedAt
       lMSLessonSlidesId
+      lMSModuleSlidesId
     }
   }
 `;
@@ -4546,153 +4689,7 @@ export const deleteSlide = /* GraphQL */ `
       createdAt
       updatedAt
       lMSLessonSlidesId
-    }
-  }
-`;
-export const createLessonVideo = /* GraphQL */ `
-  mutation CreateLessonVideo(
-    $input: CreateLessonVideoInput!
-    $condition: ModelLessonVideoConditionInput
-  ) {
-    createLessonVideo(input: $input, condition: $condition) {
-      id
-      timestamps {
-        items {
-          id
-          time
-          description
-          createdAt
-          updatedAt
-          lessonVideoTimestampsId
-        }
-        nextToken
-      }
-      lessonId
-      lesson {
-        id
-        title
-        Course {
-          nextToken
-        }
-        subheadline
-        objectives {
-          nextToken
-        }
-        mediaType
-        slides {
-          nextToken
-        }
-        video {
-          id
-          lessonId
-          createdAt
-          updatedAt
-        }
-        percentComplete
-        createdAt
-        updatedAt
-        lMSLessonVideoId
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const updateLessonVideo = /* GraphQL */ `
-  mutation UpdateLessonVideo(
-    $input: UpdateLessonVideoInput!
-    $condition: ModelLessonVideoConditionInput
-  ) {
-    updateLessonVideo(input: $input, condition: $condition) {
-      id
-      timestamps {
-        items {
-          id
-          time
-          description
-          createdAt
-          updatedAt
-          lessonVideoTimestampsId
-        }
-        nextToken
-      }
-      lessonId
-      lesson {
-        id
-        title
-        Course {
-          nextToken
-        }
-        subheadline
-        objectives {
-          nextToken
-        }
-        mediaType
-        slides {
-          nextToken
-        }
-        video {
-          id
-          lessonId
-          createdAt
-          updatedAt
-        }
-        percentComplete
-        createdAt
-        updatedAt
-        lMSLessonVideoId
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const deleteLessonVideo = /* GraphQL */ `
-  mutation DeleteLessonVideo(
-    $input: DeleteLessonVideoInput!
-    $condition: ModelLessonVideoConditionInput
-  ) {
-    deleteLessonVideo(input: $input, condition: $condition) {
-      id
-      timestamps {
-        items {
-          id
-          time
-          description
-          createdAt
-          updatedAt
-          lessonVideoTimestampsId
-        }
-        nextToken
-      }
-      lessonId
-      lesson {
-        id
-        title
-        Course {
-          nextToken
-        }
-        subheadline
-        objectives {
-          nextToken
-        }
-        mediaType
-        slides {
-          nextToken
-        }
-        video {
-          id
-          lessonId
-          createdAt
-          updatedAt
-        }
-        percentComplete
-        createdAt
-        updatedAt
-        lMSLessonVideoId
-      }
-      createdAt
-      updatedAt
+      lMSModuleSlidesId
     }
   }
 `;
@@ -4707,7 +4704,6 @@ export const createTimestamp = /* GraphQL */ `
       description
       createdAt
       updatedAt
-      lessonVideoTimestampsId
     }
   }
 `;
@@ -4722,7 +4718,6 @@ export const updateTimestamp = /* GraphQL */ `
       description
       createdAt
       updatedAt
-      lessonVideoTimestampsId
     }
   }
 `;
@@ -4737,7 +4732,6 @@ export const deleteTimestamp = /* GraphQL */ `
       description
       createdAt
       updatedAt
-      lessonVideoTimestampsId
     }
   }
 `;
@@ -5712,13 +5706,13 @@ export const createCirriculumCourses = /* GraphQL */ `
         courseId
         category
         type
-        Cirriculum {
+        cirriculum {
           nextToken
         }
-        Lessons {
+        lmsLessons {
           nextToken
         }
-        Instructors {
+        instructors {
           nextToken
         }
         price
@@ -5773,13 +5767,13 @@ export const updateCirriculumCourses = /* GraphQL */ `
         courseId
         category
         type
-        Cirriculum {
+        cirriculum {
           nextToken
         }
-        Lessons {
+        lmsLessons {
           nextToken
         }
-        Instructors {
+        instructors {
           nextToken
         }
         price
@@ -5834,13 +5828,13 @@ export const deleteCirriculumCourses = /* GraphQL */ `
         courseId
         category
         type
-        Cirriculum {
+        cirriculum {
           nextToken
         }
-        Lessons {
+        lmsLessons {
           nextToken
         }
-        Instructors {
+        instructors {
           nextToken
         }
         price
@@ -5883,13 +5877,13 @@ export const createCourseLessons = /* GraphQL */ `
         courseId
         category
         type
-        Cirriculum {
+        cirriculum {
           nextToken
         }
-        Lessons {
+        lmsLessons {
           nextToken
         }
-        Instructors {
+        instructors {
           nextToken
         }
         price
@@ -5916,7 +5910,10 @@ export const createCourseLessons = /* GraphQL */ `
       lMSLesson {
         id
         title
-        Course {
+        course {
+          nextToken
+        }
+        modules {
           nextToken
         }
         subheadline
@@ -5927,16 +5924,11 @@ export const createCourseLessons = /* GraphQL */ `
         slides {
           nextToken
         }
-        video {
-          id
-          lessonId
-          createdAt
-          updatedAt
-        }
+        media
         percentComplete
+        content
         createdAt
         updatedAt
-        lMSLessonVideoId
       }
       createdAt
       updatedAt
@@ -5957,13 +5949,13 @@ export const updateCourseLessons = /* GraphQL */ `
         courseId
         category
         type
-        Cirriculum {
+        cirriculum {
           nextToken
         }
-        Lessons {
+        lmsLessons {
           nextToken
         }
-        Instructors {
+        instructors {
           nextToken
         }
         price
@@ -5990,7 +5982,10 @@ export const updateCourseLessons = /* GraphQL */ `
       lMSLesson {
         id
         title
-        Course {
+        course {
+          nextToken
+        }
+        modules {
           nextToken
         }
         subheadline
@@ -6001,16 +5996,11 @@ export const updateCourseLessons = /* GraphQL */ `
         slides {
           nextToken
         }
-        video {
-          id
-          lessonId
-          createdAt
-          updatedAt
-        }
+        media
         percentComplete
+        content
         createdAt
         updatedAt
-        lMSLessonVideoId
       }
       createdAt
       updatedAt
@@ -6031,13 +6021,13 @@ export const deleteCourseLessons = /* GraphQL */ `
         courseId
         category
         type
-        Cirriculum {
+        cirriculum {
           nextToken
         }
-        Lessons {
+        lmsLessons {
           nextToken
         }
-        Instructors {
+        instructors {
           nextToken
         }
         price
@@ -6064,7 +6054,10 @@ export const deleteCourseLessons = /* GraphQL */ `
       lMSLesson {
         id
         title
-        Course {
+        course {
+          nextToken
+        }
+        modules {
           nextToken
         }
         subheadline
@@ -6075,16 +6068,11 @@ export const deleteCourseLessons = /* GraphQL */ `
         slides {
           nextToken
         }
-        video {
-          id
-          lessonId
-          createdAt
-          updatedAt
-        }
+        media
         percentComplete
+        content
         createdAt
         updatedAt
-        lMSLessonVideoId
       }
       createdAt
       updatedAt
@@ -6105,13 +6093,13 @@ export const createCourseInstructors = /* GraphQL */ `
         courseId
         category
         type
-        Cirriculum {
+        cirriculum {
           nextToken
         }
-        Lessons {
+        lmsLessons {
           nextToken
         }
-        Instructors {
+        instructors {
           nextToken
         }
         price
@@ -6186,13 +6174,13 @@ export const updateCourseInstructors = /* GraphQL */ `
         courseId
         category
         type
-        Cirriculum {
+        cirriculum {
           nextToken
         }
-        Lessons {
+        lmsLessons {
           nextToken
         }
-        Instructors {
+        instructors {
           nextToken
         }
         price
@@ -6267,13 +6255,13 @@ export const deleteCourseInstructors = /* GraphQL */ `
         courseId
         category
         type
-        Cirriculum {
+        cirriculum {
           nextToken
         }
-        Lessons {
+        lmsLessons {
           nextToken
         }
-        Instructors {
+        instructors {
           nextToken
         }
         price
@@ -6326,6 +6314,177 @@ export const deleteCourseInstructors = /* GraphQL */ `
         coursesTaught {
           nextToken
         }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createLessonModules = /* GraphQL */ `
+  mutation CreateLessonModules(
+    $input: CreateLessonModulesInput!
+    $condition: ModelLessonModulesConditionInput
+  ) {
+    createLessonModules(input: $input, condition: $condition) {
+      id
+      lMSLessonId
+      lMSModuleId
+      lMSLesson {
+        id
+        title
+        course {
+          nextToken
+        }
+        modules {
+          nextToken
+        }
+        subheadline
+        objectives {
+          nextToken
+        }
+        mediaType
+        slides {
+          nextToken
+        }
+        media
+        percentComplete
+        content
+        createdAt
+        updatedAt
+      }
+      lMSModule {
+        id
+        title
+        lessons {
+          nextToken
+        }
+        subheadline
+        objectives {
+          nextToken
+        }
+        mediaType
+        slides {
+          nextToken
+        }
+        media
+        percentComplete
+        content
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateLessonModules = /* GraphQL */ `
+  mutation UpdateLessonModules(
+    $input: UpdateLessonModulesInput!
+    $condition: ModelLessonModulesConditionInput
+  ) {
+    updateLessonModules(input: $input, condition: $condition) {
+      id
+      lMSLessonId
+      lMSModuleId
+      lMSLesson {
+        id
+        title
+        course {
+          nextToken
+        }
+        modules {
+          nextToken
+        }
+        subheadline
+        objectives {
+          nextToken
+        }
+        mediaType
+        slides {
+          nextToken
+        }
+        media
+        percentComplete
+        content
+        createdAt
+        updatedAt
+      }
+      lMSModule {
+        id
+        title
+        lessons {
+          nextToken
+        }
+        subheadline
+        objectives {
+          nextToken
+        }
+        mediaType
+        slides {
+          nextToken
+        }
+        media
+        percentComplete
+        content
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteLessonModules = /* GraphQL */ `
+  mutation DeleteLessonModules(
+    $input: DeleteLessonModulesInput!
+    $condition: ModelLessonModulesConditionInput
+  ) {
+    deleteLessonModules(input: $input, condition: $condition) {
+      id
+      lMSLessonId
+      lMSModuleId
+      lMSLesson {
+        id
+        title
+        course {
+          nextToken
+        }
+        modules {
+          nextToken
+        }
+        subheadline
+        objectives {
+          nextToken
+        }
+        mediaType
+        slides {
+          nextToken
+        }
+        media
+        percentComplete
+        content
+        createdAt
+        updatedAt
+      }
+      lMSModule {
+        id
+        title
+        lessons {
+          nextToken
+        }
+        subheadline
+        objectives {
+          nextToken
+        }
+        mediaType
+        slides {
+          nextToken
+        }
+        media
+        percentComplete
+        content
         createdAt
         updatedAt
       }

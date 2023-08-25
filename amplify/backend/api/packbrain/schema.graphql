@@ -341,9 +341,9 @@ type LMSCourse @model @auth(rules: [{ allow: public }]) {
   courseId: String
   category: CategoryType @default(value: "MATERIALS")
   type: String
-  Cirriculum: [LMSCirriculum] @manyToMany(relationName: "CirriculumCourses")
-  Lessons: [LMSLesson] @manyToMany(relationName: "CourseLessons")
-  Instructors: [Instructor] @manyToMany(relationName: "CourseInstructors")
+  cirriculum: [LMSCirriculum] @manyToMany(relationName: "CirriculumCourses")
+  lmsLessons: [LMSLesson] @manyToMany(relationName: "CourseLessons")
+  instructors: [Instructor] @manyToMany(relationName: "CourseInstructors")
   price: String
   hours: String
   lessons: String
@@ -384,7 +384,21 @@ type LMSCollection @model @auth(rules: [{ allow: public }]) {
 type LMSLesson @model @auth(rules: [{ allow: public }]) {
   id: ID!
   title: String
-  Course: [LMSCourse] @manyToMany(relationName: "CourseLessons")
+  course: [LMSCourse] @manyToMany(relationName: "CourseLessons")
+  modules: [LMSModule] @manyToMany(relationName: "LessonModules")
+  subheadline: String
+  objectives: [Objective] @hasMany
+  mediaType: MediaType
+  slides: [Slide] @hasMany
+  media: String
+  percentComplete: Int
+  content: String
+}
+
+type LMSModule @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  title: String
+  lessons: [LMSLesson] @manyToMany(relationName: "LessonModules")
   subheadline: String
   objectives: [Objective] @hasMany
   mediaType: MediaType
@@ -420,12 +434,12 @@ type Slide @model @auth(rules: [{ allow: public }]) {
   description: String
 }
 
-type LessonVideo @model @auth(rules: [{ allow: public }]) {
-  id: ID!
-  timestamps: [Timestamp] @hasMany
-  lessonId: ID
-  lesson: LMSLesson @belongsTo(fields: ["lessonId"])
-}
+# type LessonVideo @model @auth(rules: [{ allow: public }]) {
+#   id: ID!
+#   timestamps: [Timestamp] @hasMany
+#   lessonId: ID
+#   lesson: LMSLesson @belongsTo(fields: ["lessonId"])
+# }
 
 type Timestamp @model @auth(rules: [{ allow: public }]) {
   id: ID!
