@@ -2352,6 +2352,97 @@ export const touristsByEmail = /* GraphQL */ `
     }
   }
 `;
+export const getLMSCollection = /* GraphQL */ `
+  query GetLMSCollection($id: ID!) {
+    getLMSCollection(id: $id) {
+      id
+      description
+      title
+      subtitle
+      instructor
+      instructorImage
+      instructorDescription
+      instructorLink
+      courses
+      hours
+      price
+      slug
+      category
+      collectionId
+      lmsLink
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listLMSCollections = /* GraphQL */ `
+  query ListLMSCollections(
+    $filter: ModelLMSCollectionFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listLMSCollections(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        description
+        title
+        subtitle
+        instructor
+        instructorImage
+        instructorDescription
+        instructorLink
+        courses
+        hours
+        price
+        slug
+        category
+        collectionId
+        lmsLink
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const lMSCollectionsBySlug = /* GraphQL */ `
+  query LMSCollectionsBySlug(
+    $slug: String!
+    $sortDirection: ModelSortDirection
+    $filter: ModelLMSCollectionFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    lMSCollectionsBySlug(
+      slug: $slug
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        description
+        title
+        subtitle
+        instructor
+        instructorImage
+        instructorDescription
+        instructorLink
+        courses
+        hours
+        price
+        slug
+        category
+        collectionId
+        lmsLink
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
 export const getLMSCirriculum = /* GraphQL */ `
   query GetLMSCirriculum($id: ID!) {
     getLMSCirriculum(id: $id) {
@@ -2558,97 +2649,6 @@ export const lMSCoursesBySlug = /* GraphQL */ `
     }
   }
 `;
-export const getLMSCollection = /* GraphQL */ `
-  query GetLMSCollection($id: ID!) {
-    getLMSCollection(id: $id) {
-      id
-      description
-      title
-      subtitle
-      instructor
-      instructorImage
-      instructorDescription
-      instructorLink
-      courses
-      hours
-      price
-      slug
-      category
-      collectionId
-      lmsLink
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const listLMSCollections = /* GraphQL */ `
-  query ListLMSCollections(
-    $filter: ModelLMSCollectionFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listLMSCollections(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        description
-        title
-        subtitle
-        instructor
-        instructorImage
-        instructorDescription
-        instructorLink
-        courses
-        hours
-        price
-        slug
-        category
-        collectionId
-        lmsLink
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
-export const lMSCollectionsBySlug = /* GraphQL */ `
-  query LMSCollectionsBySlug(
-    $slug: String!
-    $sortDirection: ModelSortDirection
-    $filter: ModelLMSCollectionFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    lMSCollectionsBySlug(
-      slug: $slug
-      sortDirection: $sortDirection
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-    ) {
-      items {
-        id
-        description
-        title
-        subtitle
-        instructor
-        instructorImage
-        instructorDescription
-        instructorLink
-        courses
-        hours
-        price
-        slug
-        category
-        collectionId
-        lmsLink
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
 export const getLMSLesson = /* GraphQL */ `
   query GetLMSLesson($id: ID!) {
     getLMSLesson(id: $id) {
@@ -2687,22 +2687,10 @@ export const getLMSLesson = /* GraphQL */ `
         }
         nextToken
       }
-      mediaType
-      slides {
-        items {
-          id
-          slideSource
-          description
-          createdAt
-          updatedAt
-          lMSLessonSlidesId
-          lMSModuleSlidesId
-        }
-        nextToken
-      }
       media
       percentComplete
       content
+      slug
       createdAt
       updatedAt
     }
@@ -2728,13 +2716,49 @@ export const listLMSLessons = /* GraphQL */ `
         objectives {
           nextToken
         }
-        mediaType
-        slides {
+        media
+        percentComplete
+        content
+        slug
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const lMSLessonsBySlug = /* GraphQL */ `
+  query LMSLessonsBySlug(
+    $slug: String!
+    $sortDirection: ModelSortDirection
+    $filter: ModelLMSLessonFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    lMSLessonsBySlug(
+      slug: $slug
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        title
+        course {
+          nextToken
+        }
+        modules {
+          nextToken
+        }
+        subheadline
+        objectives {
           nextToken
         }
         media
         percentComplete
         content
+        slug
         createdAt
         updatedAt
       }
@@ -2778,16 +2802,38 @@ export const getLMSModule = /* GraphQL */ `
           description
           createdAt
           updatedAt
-          lMSLessonSlidesId
           lMSModuleSlidesId
         }
         nextToken
       }
       media
-      percentComplete
+      quiz {
+        id
+        module {
+          id
+          title
+          subheadline
+          mediaType
+          media
+          content
+          createdAt
+          updatedAt
+          lMSModuleQuizId
+        }
+        prompt
+        answer1
+        answer2
+        answer3
+        answer4
+        correctAnswer
+        createdAt
+        updatedAt
+        lMSQuizModuleId
+      }
       content
       createdAt
       updatedAt
+      lMSModuleQuizId
     }
   }
 `;
@@ -2813,10 +2859,104 @@ export const listLMSModules = /* GraphQL */ `
           nextToken
         }
         media
-        percentComplete
+        quiz {
+          id
+          prompt
+          answer1
+          answer2
+          answer3
+          answer4
+          correctAnswer
+          createdAt
+          updatedAt
+          lMSQuizModuleId
+        }
         content
         createdAt
         updatedAt
+        lMSModuleQuizId
+      }
+      nextToken
+    }
+  }
+`;
+export const getLMSQuiz = /* GraphQL */ `
+  query GetLMSQuiz($id: ID!) {
+    getLMSQuiz(id: $id) {
+      id
+      module {
+        id
+        title
+        lessons {
+          nextToken
+        }
+        subheadline
+        objectives {
+          nextToken
+        }
+        mediaType
+        slides {
+          nextToken
+        }
+        media
+        quiz {
+          id
+          prompt
+          answer1
+          answer2
+          answer3
+          answer4
+          correctAnswer
+          createdAt
+          updatedAt
+          lMSQuizModuleId
+        }
+        content
+        createdAt
+        updatedAt
+        lMSModuleQuizId
+      }
+      prompt
+      answer1
+      answer2
+      answer3
+      answer4
+      correctAnswer
+      createdAt
+      updatedAt
+      lMSQuizModuleId
+    }
+  }
+`;
+export const listLMSQuizs = /* GraphQL */ `
+  query ListLMSQuizs(
+    $filter: ModelLMSQuizFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listLMSQuizs(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        module {
+          id
+          title
+          subheadline
+          mediaType
+          media
+          content
+          createdAt
+          updatedAt
+          lMSModuleQuizId
+        }
+        prompt
+        answer1
+        answer2
+        answer3
+        answer4
+        correctAnswer
+        createdAt
+        updatedAt
+        lMSQuizModuleId
       }
       nextToken
     }
@@ -3206,7 +3346,6 @@ export const getSlide = /* GraphQL */ `
       description
       createdAt
       updatedAt
-      lMSLessonSlidesId
       lMSModuleSlidesId
     }
   }
@@ -3224,7 +3363,6 @@ export const listSlides = /* GraphQL */ `
         description
         createdAt
         updatedAt
-        lMSLessonSlidesId
         lMSModuleSlidesId
       }
       nextToken
@@ -4507,13 +4645,10 @@ export const getCourseLessons = /* GraphQL */ `
         objectives {
           nextToken
         }
-        mediaType
-        slides {
-          nextToken
-        }
         media
         percentComplete
         content
+        slug
         createdAt
         updatedAt
       }
@@ -4563,10 +4698,10 @@ export const listCourseLessons = /* GraphQL */ `
           id
           title
           subheadline
-          mediaType
           media
           percentComplete
           content
+          slug
           createdAt
           updatedAt
         }
@@ -4626,10 +4761,10 @@ export const courseLessonsByLMSCourseId = /* GraphQL */ `
           id
           title
           subheadline
-          mediaType
           media
           percentComplete
           content
+          slug
           createdAt
           updatedAt
         }
@@ -4689,10 +4824,10 @@ export const courseLessonsByLMSLessonId = /* GraphQL */ `
           id
           title
           subheadline
-          mediaType
           media
           percentComplete
           content
+          slug
           createdAt
           updatedAt
         }
@@ -4970,13 +5105,10 @@ export const getLessonModules = /* GraphQL */ `
         objectives {
           nextToken
         }
-        mediaType
-        slides {
-          nextToken
-        }
         media
         percentComplete
         content
+        slug
         createdAt
         updatedAt
       }
@@ -4995,10 +5127,22 @@ export const getLessonModules = /* GraphQL */ `
           nextToken
         }
         media
-        percentComplete
+        quiz {
+          id
+          prompt
+          answer1
+          answer2
+          answer3
+          answer4
+          correctAnswer
+          createdAt
+          updatedAt
+          lMSQuizModuleId
+        }
         content
         createdAt
         updatedAt
+        lMSModuleQuizId
       }
       createdAt
       updatedAt
@@ -5020,10 +5164,10 @@ export const listLessonModules = /* GraphQL */ `
           id
           title
           subheadline
-          mediaType
           media
           percentComplete
           content
+          slug
           createdAt
           updatedAt
         }
@@ -5033,10 +5177,10 @@ export const listLessonModules = /* GraphQL */ `
           subheadline
           mediaType
           media
-          percentComplete
           content
           createdAt
           updatedAt
+          lMSModuleQuizId
         }
         createdAt
         updatedAt
@@ -5068,10 +5212,10 @@ export const lessonModulesByLMSLessonId = /* GraphQL */ `
           id
           title
           subheadline
-          mediaType
           media
           percentComplete
           content
+          slug
           createdAt
           updatedAt
         }
@@ -5081,10 +5225,10 @@ export const lessonModulesByLMSLessonId = /* GraphQL */ `
           subheadline
           mediaType
           media
-          percentComplete
           content
           createdAt
           updatedAt
+          lMSModuleQuizId
         }
         createdAt
         updatedAt
@@ -5116,10 +5260,10 @@ export const lessonModulesByLMSModuleId = /* GraphQL */ `
           id
           title
           subheadline
-          mediaType
           media
           percentComplete
           content
+          slug
           createdAt
           updatedAt
         }
@@ -5129,10 +5273,10 @@ export const lessonModulesByLMSModuleId = /* GraphQL */ `
           subheadline
           mediaType
           media
-          percentComplete
           content
           createdAt
           updatedAt
+          lMSModuleQuizId
         }
         createdAt
         updatedAt

@@ -3,22 +3,31 @@ import Timestamp from '../shared/Timestamp';
 import VideoHeading from './VideoHeading';
 import NextLesson from '../shared/NextLesson';
 
-const VideoBody = () => {
+const VideoBody = ({
+  content,
+  title,
+  id,
+  objectives,
+  quiz,
+  nextLesson,
+  nextLessonLink,
+}) => {
   return (
     <>
-      <VideoHeading />
+      <VideoHeading title={title} quiz={quiz} id={id} />
       <div className='w-full h-full pb-24'>
         <div className='relative px-6 lg:px-8 py-20 space-y-12'>
           <div className='mx-auto max-w-prose text-lg'>
-            <div className='flex gap-2 items-center'>
+            {/* <div className='flex gap-2 items-center'>
               <h1>
                 <span className='mt-2 block text-3xl font-bold leading-8 tracking-tight dark:text-white sm:text-4xl'>
                   Introduction
                 </span>
               </h1>
               <Timestamp time='00:00' />
-            </div>
-            <p className='mt-8 text-xl leading-8 dark:text-white'>
+            </div> */}
+            {content}
+            {/* <p className='mt-8 text-xl leading-8 dark:text-white'>
               Aliquet nec orci mattis amet quisque ullamcorper neque, nibh sem.
               At arcu, sit dui mi, nibh dui, diam eget aliquam. Quisque id at
               vitae feugiat egestas ac. Diam nulla orci at in viverra
@@ -30,9 +39,9 @@ const VideoBody = () => {
               diam eget aliquam. Quisque id at vitae feugiat egestas ac. Diam
               nulla orci at in viverra scelerisque eget. Eleifend egestas
               fringilla sapien.
-            </p>
+            </p> */}
           </div>
-          <div className='mx-auto max-w-prose text-lg'>
+          {/* <div className='mx-auto max-w-prose text-lg'>
             <div className='flex gap-2 items-center'>
               <h1>
                 <span className='mt-2 block text-3xl font-bold leading-8 tracking-tight dark:text-white sm:text-4xl'>
@@ -129,9 +138,9 @@ const VideoBody = () => {
               vitae feugiat egestas ac. Diam nulla orci at in viverra
               scelerisque eget. Eleifend egestas fringilla sapien.
             </p>
-          </div>
+          </div> */}
         </div>
-        <NextLesson />
+        <NextLesson nextLesson={nextLesson} nextLessonLink={nextLessonLink} />
       </div>
     </>
   );

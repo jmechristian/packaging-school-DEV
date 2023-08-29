@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Page = () => {
-  return <div>Course</div>;
+  return <div>Trademark and copyright</div>;
 };
 
 export default Page;

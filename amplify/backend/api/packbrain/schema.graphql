@@ -327,6 +327,24 @@ type Tourist @model @auth(rules: [{ allow: public }]) {
 
 ######### LMS #########
 
+type LMSCollection @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  description: String
+  title: String!
+  subtitle: String
+  instructor: String
+  instructorImage: String
+  instructorDescription: String
+  instructorLink: String
+  courses: [String]
+  hours: String
+  price: Int
+  slug: String! @index(name: "LMScollectionBySlug")
+  category: CategoryType @default(value: "INDUSTRY")
+  collectionId: String
+  lmsLink: String
+}
+
 type LMSCirriculum @model @auth(rules: [{ allow: public }]) {
   id: ID!
   shorthand: String
@@ -363,49 +381,42 @@ type LMSCourse @model @auth(rules: [{ allow: public }]) {
   demo: Boolean @default(value: "false")
 }
 
-type LMSCollection @model @auth(rules: [{ allow: public }]) {
-  id: ID!
-  description: String
-  title: String!
-  subtitle: String
-  instructor: String
-  instructorImage: String
-  instructorDescription: String
-  instructorLink: String
-  courses: [String]
-  hours: String
-  price: Int
-  slug: String! @index(name: "LMScollectionBySlug")
-  category: CategoryType @default(value: "INDUSTRY")
-  collectionId: String
-  lmsLink: String
-}
-
 type LMSLesson @model @auth(rules: [{ allow: public }]) {
   id: ID!
   title: String
   course: [LMSCourse] @manyToMany(relationName: "CourseLessons")
-  modules: [LMSModule] @manyToMany(relationName: "LessonModules")
+  modules: [LMSModule] @hasMany
   subheadline: String
-  objectives: [Objective] @hasMany
-  mediaType: MediaType
-  slides: [Slide] @hasMany
+  objectives: [String]
   media: String
   percentComplete: Int
   content: String
+  slug: String! @index(name: "LMSLessonBySlug")
 }
 
 type LMSModule @model @auth(rules: [{ allow: public }]) {
   id: ID!
   title: String
-  lessons: [LMSLesson] @manyToMany(relationName: "LessonModules")
+  lesson: LMSLesson @belongsTo
   subheadline: String
-  objectives: [Objective] @hasMany
+  objectives: [String]
   mediaType: MediaType
   slides: [Slide] @hasMany
   media: String
-  percentComplete: Int
+  quiz: LMSQuiz @hasOne
   content: String
+  slug: String! @index(name: "LMSModuleBySlug")
+}
+
+type LMSQuiz @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  module: LMSModule @belongsTo
+  prompt: String
+  answer1: String
+  answer2: String
+  answer3: String
+  answer4: String
+  correctAnswer: String
 }
 
 type Student @model @auth(rules: [{ allow: public }]) {
