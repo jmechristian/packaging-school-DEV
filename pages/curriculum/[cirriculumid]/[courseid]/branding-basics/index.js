@@ -8,6 +8,8 @@ import {
   PlayIcon,
 } from '@heroicons/react/24/solid';
 import { useRouter } from 'next/router';
+import brandingAnimation from '../../../../../src/brandingg.json';
+import Lottie from 'lottie-react';
 
 const Page = () => {
   const router = useRouter();
@@ -58,22 +60,21 @@ const Page = () => {
   ];
 
   return (
-    <div className='  bg-white bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-base-mid via-neutral-100 dark:via-neutral-900 dark:to-dark-dark '>
+    <div className='  bg-white bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-base-light via-indigo-100 dark:via-neutral-900  dark:to-dark-dark '>
       <div className='grid grid-cols-2 gap-24 max-w-6xl mx-auto py-16'>
-        <div className='dark:text-white flex flex-col gap-6'>
+        <div className='dark:text-white flex flex-col justify-center gap-6 w-full h-full'>
           <h2 className='text-5xl'>Branding Basics</h2>
-          <p className='dark:text-neutral-400 text-lg text-gray-600'>
+          <p className='dark:text-neutral-400 text-lg text-gray-700'>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec
             purus eu felis interdum bibendum. Sed dictum tristique lacus
-            sagittis euismod. Cras congue felis quis augue tempor, non maximus
-            justo tincidunt. Aliquam eu pharetra lacus.
+            sagittis euismod.
           </p>
-          <div className='border-t-neutral-400 border-t my-6' />
+          <Lottie animationData={brandingAnimation} loop={true} />
         </div>
         <div className='flex flex-col gap-3 bg-neutral-100/30 dark:bg-white/10 backdrop-blur px-9 py-6 rounded-xl shadow-lg'>
           {modules.map((mod, i) => (
             <div
-              className='flex items-center cursor-pointer justify-between gap-3 bg-neutral-200/70 dark:bg-white/10 backdrop-blur shadow-xl rounded-xl px-6 py-3'
+              className='flex items-center cursor-pointer justify-between gap-3 bg-white/50 dark:bg-white/10 hover:bg-base-brand/40 dark:hover:bg-black transition hover:ease-in backdrop-blur shadow-xl rounded-xl px-6 py-3'
               key={mod.link}
               onClick={() => {
                 router.push(
