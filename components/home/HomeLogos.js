@@ -64,7 +64,7 @@ export default function HomeLogos() {
           </a>
         </div>
       </div>
-      <div className='mx-auto mt-12 grid grid-cols-4 items-center gap-x-4 gap-y-10  sm:grid-cols-2 lg:mx-0'>
+      <div className='mx-auto mt-12 grid grid-cols-2 items-center gap-x-4 gap-y-10  sm:grid-cols-2 lg:mx-0'>
         <div className='flex flex-col items-center justify-center gap-4'>
           <img
             className='col-span-2 max-h-40 w-full object-contain lg:col-span-1'
@@ -73,7 +73,7 @@ export default function HomeLogos() {
             width={400}
             height={400}
           />
-          <div className='text-sm font-semibold'>
+          <div className='text-sm text-center font-semibold'>
             Best Advance in Custom Content
           </div>
         </div>
@@ -85,7 +85,7 @@ export default function HomeLogos() {
             width={400}
             height={400}
           />
-          <div className='text-sm font-semibold'>
+          <div className='text-sm font-semibold text-center'>
             Best Advance in Competencies and Skill Development
           </div>
         </div>
