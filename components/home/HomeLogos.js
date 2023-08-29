@@ -65,20 +65,30 @@ export default function HomeLogos() {
         </div>
       </div>
       <div className='mx-auto mt-12 grid grid-cols-4 items-center gap-x-4 gap-y-10  sm:grid-cols-2 lg:mx-0'>
-        <img
-          className='col-span-2 max-h-40 w-full object-contain lg:col-span-1'
-          src='https://packschool.s3.amazonaws.com/2023_L%26D+Silver.png'
-          alt='Silver Brandon Hall Group Excellence Award'
-          width={400}
-          height={400}
-        />
-        <img
-          className='col-span-2 max-h-40 w-full object-contain lg:col-span-1'
-          src='https://packschool.s3.amazonaws.com/2023_L%26D+Bronze.png'
-          alt='Bronze Brandon Hall Group Excellence Award'
-          width={400}
-          height={400}
-        />
+        <div className='flex flex-col items-center justify-center gap-4'>
+          <img
+            className='col-span-2 max-h-40 w-full object-contain lg:col-span-1'
+            src='https://packschool.s3.amazonaws.com/2023_L%26D+Silver.png'
+            alt='Silver Brandon Hall Group Excellence Award'
+            width={400}
+            height={400}
+          />
+          <div className='text-sm font-semibold'>
+            Best Advance in Custom Content
+          </div>
+        </div>
+        <div className='flex flex-col items-center gap-4'>
+          <img
+            className='col-span-2 max-h-40 w-full object-contain lg:col-span-1'
+            src='https://packschool.s3.amazonaws.com/2023_L%26D+Bronze.png'
+            alt='Bronze Brandon Hall Group Excellence Award'
+            width={400}
+            height={400}
+          />
+          <div className='text-sm font-semibold'>
+            Best Advance in Competencies and Skill Development
+          </div>
+        </div>
       </div>
     </div>
   );
