@@ -2667,26 +2667,22 @@ export const getLMSLesson = /* GraphQL */ `
       modules {
         items {
           id
-          lMSLessonId
-          lMSModuleId
+          title
+          subheadline
+          objectives
+          mediaType
+          media
+          content
+          slug
           createdAt
           updatedAt
+          lMSLessonModulesId
+          lMSModuleQuizId
         }
         nextToken
       }
       subheadline
-      objectives {
-        items {
-          id
-          objective
-          completed
-          createdAt
-          updatedAt
-          lMSLessonObjectivesId
-          lMSModuleObjectivesId
-        }
-        nextToken
-      }
+      objectives
       media
       percentComplete
       content
@@ -2713,9 +2709,7 @@ export const listLMSLessons = /* GraphQL */ `
           nextToken
         }
         subheadline
-        objectives {
-          nextToken
-        }
+        objectives
         media
         percentComplete
         content
@@ -2752,9 +2746,7 @@ export const lMSLessonsBySlug = /* GraphQL */ `
           nextToken
         }
         subheadline
-        objectives {
-          nextToken
-        }
+        objectives
         media
         percentComplete
         content
@@ -2771,29 +2763,26 @@ export const getLMSModule = /* GraphQL */ `
     getLMSModule(id: $id) {
       id
       title
-      lessons {
-        items {
-          id
-          lMSLessonId
-          lMSModuleId
-          createdAt
-          updatedAt
+      lesson {
+        id
+        title
+        course {
+          nextToken
         }
-        nextToken
+        modules {
+          nextToken
+        }
+        subheadline
+        objectives
+        media
+        percentComplete
+        content
+        slug
+        createdAt
+        updatedAt
       }
       subheadline
-      objectives {
-        items {
-          id
-          objective
-          completed
-          createdAt
-          updatedAt
-          lMSLessonObjectivesId
-          lMSModuleObjectivesId
-        }
-        nextToken
-      }
+      objectives
       mediaType
       slides {
         items {
@@ -2813,11 +2802,14 @@ export const getLMSModule = /* GraphQL */ `
           id
           title
           subheadline
+          objectives
           mediaType
           media
           content
+          slug
           createdAt
           updatedAt
+          lMSLessonModulesId
           lMSModuleQuizId
         }
         prompt
@@ -2831,8 +2823,10 @@ export const getLMSModule = /* GraphQL */ `
         lMSQuizModuleId
       }
       content
+      slug
       createdAt
       updatedAt
+      lMSLessonModulesId
       lMSModuleQuizId
     }
   }
@@ -2847,13 +2841,20 @@ export const listLMSModules = /* GraphQL */ `
       items {
         id
         title
-        lessons {
-          nextToken
+        lesson {
+          id
+          title
+          subheadline
+          objectives
+          media
+          percentComplete
+          content
+          slug
+          createdAt
+          updatedAt
         }
         subheadline
-        objectives {
-          nextToken
-        }
+        objectives
         mediaType
         slides {
           nextToken
@@ -2872,8 +2873,70 @@ export const listLMSModules = /* GraphQL */ `
           lMSQuizModuleId
         }
         content
+        slug
         createdAt
         updatedAt
+        lMSLessonModulesId
+        lMSModuleQuizId
+      }
+      nextToken
+    }
+  }
+`;
+export const lMSModulesBySlug = /* GraphQL */ `
+  query LMSModulesBySlug(
+    $slug: String!
+    $sortDirection: ModelSortDirection
+    $filter: ModelLMSModuleFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    lMSModulesBySlug(
+      slug: $slug
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        title
+        lesson {
+          id
+          title
+          subheadline
+          objectives
+          media
+          percentComplete
+          content
+          slug
+          createdAt
+          updatedAt
+        }
+        subheadline
+        objectives
+        mediaType
+        slides {
+          nextToken
+        }
+        media
+        quiz {
+          id
+          prompt
+          answer1
+          answer2
+          answer3
+          answer4
+          correctAnswer
+          createdAt
+          updatedAt
+          lMSQuizModuleId
+        }
+        content
+        slug
+        createdAt
+        updatedAt
+        lMSLessonModulesId
         lMSModuleQuizId
       }
       nextToken
@@ -2887,13 +2950,20 @@ export const getLMSQuiz = /* GraphQL */ `
       module {
         id
         title
-        lessons {
-          nextToken
+        lesson {
+          id
+          title
+          subheadline
+          objectives
+          media
+          percentComplete
+          content
+          slug
+          createdAt
+          updatedAt
         }
         subheadline
-        objectives {
-          nextToken
-        }
+        objectives
         mediaType
         slides {
           nextToken
@@ -2912,8 +2982,10 @@ export const getLMSQuiz = /* GraphQL */ `
           lMSQuizModuleId
         }
         content
+        slug
         createdAt
         updatedAt
+        lMSLessonModulesId
         lMSModuleQuizId
       }
       prompt
@@ -2941,11 +3013,14 @@ export const listLMSQuizs = /* GraphQL */ `
           id
           title
           subheadline
+          objectives
           mediaType
           media
           content
+          slug
           createdAt
           updatedAt
+          lMSLessonModulesId
           lMSModuleQuizId
         }
         prompt
@@ -3313,8 +3388,6 @@ export const getObjective = /* GraphQL */ `
       completed
       createdAt
       updatedAt
-      lMSLessonObjectivesId
-      lMSModuleObjectivesId
     }
   }
 `;
@@ -3331,8 +3404,6 @@ export const listObjectives = /* GraphQL */ `
         completed
         createdAt
         updatedAt
-        lMSLessonObjectivesId
-        lMSModuleObjectivesId
       }
       nextToken
     }
@@ -4642,9 +4713,7 @@ export const getCourseLessons = /* GraphQL */ `
           nextToken
         }
         subheadline
-        objectives {
-          nextToken
-        }
+        objectives
         media
         percentComplete
         content
@@ -4698,6 +4767,7 @@ export const listCourseLessons = /* GraphQL */ `
           id
           title
           subheadline
+          objectives
           media
           percentComplete
           content
@@ -4761,6 +4831,7 @@ export const courseLessonsByLMSCourseId = /* GraphQL */ `
           id
           title
           subheadline
+          objectives
           media
           percentComplete
           content
@@ -4824,6 +4895,7 @@ export const courseLessonsByLMSLessonId = /* GraphQL */ `
           id
           title
           subheadline
+          objectives
           media
           percentComplete
           content
@@ -5078,205 +5150,6 @@ export const courseInstructorsByInstructorId = /* GraphQL */ `
           userId
           createdAt
           updatedAt
-        }
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
-export const getLessonModules = /* GraphQL */ `
-  query GetLessonModules($id: ID!) {
-    getLessonModules(id: $id) {
-      id
-      lMSLessonId
-      lMSModuleId
-      lMSLesson {
-        id
-        title
-        course {
-          nextToken
-        }
-        modules {
-          nextToken
-        }
-        subheadline
-        objectives {
-          nextToken
-        }
-        media
-        percentComplete
-        content
-        slug
-        createdAt
-        updatedAt
-      }
-      lMSModule {
-        id
-        title
-        lessons {
-          nextToken
-        }
-        subheadline
-        objectives {
-          nextToken
-        }
-        mediaType
-        slides {
-          nextToken
-        }
-        media
-        quiz {
-          id
-          prompt
-          answer1
-          answer2
-          answer3
-          answer4
-          correctAnswer
-          createdAt
-          updatedAt
-          lMSQuizModuleId
-        }
-        content
-        createdAt
-        updatedAt
-        lMSModuleQuizId
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const listLessonModules = /* GraphQL */ `
-  query ListLessonModules(
-    $filter: ModelLessonModulesFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listLessonModules(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        lMSLessonId
-        lMSModuleId
-        lMSLesson {
-          id
-          title
-          subheadline
-          media
-          percentComplete
-          content
-          slug
-          createdAt
-          updatedAt
-        }
-        lMSModule {
-          id
-          title
-          subheadline
-          mediaType
-          media
-          content
-          createdAt
-          updatedAt
-          lMSModuleQuizId
-        }
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
-export const lessonModulesByLMSLessonId = /* GraphQL */ `
-  query LessonModulesByLMSLessonId(
-    $lMSLessonId: ID!
-    $sortDirection: ModelSortDirection
-    $filter: ModelLessonModulesFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    lessonModulesByLMSLessonId(
-      lMSLessonId: $lMSLessonId
-      sortDirection: $sortDirection
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-    ) {
-      items {
-        id
-        lMSLessonId
-        lMSModuleId
-        lMSLesson {
-          id
-          title
-          subheadline
-          media
-          percentComplete
-          content
-          slug
-          createdAt
-          updatedAt
-        }
-        lMSModule {
-          id
-          title
-          subheadline
-          mediaType
-          media
-          content
-          createdAt
-          updatedAt
-          lMSModuleQuizId
-        }
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
-export const lessonModulesByLMSModuleId = /* GraphQL */ `
-  query LessonModulesByLMSModuleId(
-    $lMSModuleId: ID!
-    $sortDirection: ModelSortDirection
-    $filter: ModelLessonModulesFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    lessonModulesByLMSModuleId(
-      lMSModuleId: $lMSModuleId
-      sortDirection: $sortDirection
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-    ) {
-      items {
-        id
-        lMSLessonId
-        lMSModuleId
-        lMSLesson {
-          id
-          title
-          subheadline
-          media
-          percentComplete
-          content
-          slug
-          createdAt
-          updatedAt
-        }
-        lMSModule {
-          id
-          title
-          subheadline
-          mediaType
-          media
-          content
-          createdAt
-          updatedAt
-          lMSModuleQuizId
         }
         createdAt
         updatedAt

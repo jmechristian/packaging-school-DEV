@@ -3487,26 +3487,22 @@ export const createLMSLesson = /* GraphQL */ `
       modules {
         items {
           id
-          lMSLessonId
-          lMSModuleId
+          title
+          subheadline
+          objectives
+          mediaType
+          media
+          content
+          slug
           createdAt
           updatedAt
+          lMSLessonModulesId
+          lMSModuleQuizId
         }
         nextToken
       }
       subheadline
-      objectives {
-        items {
-          id
-          objective
-          completed
-          createdAt
-          updatedAt
-          lMSLessonObjectivesId
-          lMSModuleObjectivesId
-        }
-        nextToken
-      }
+      objectives
       media
       percentComplete
       content
@@ -3537,26 +3533,22 @@ export const updateLMSLesson = /* GraphQL */ `
       modules {
         items {
           id
-          lMSLessonId
-          lMSModuleId
+          title
+          subheadline
+          objectives
+          mediaType
+          media
+          content
+          slug
           createdAt
           updatedAt
+          lMSLessonModulesId
+          lMSModuleQuizId
         }
         nextToken
       }
       subheadline
-      objectives {
-        items {
-          id
-          objective
-          completed
-          createdAt
-          updatedAt
-          lMSLessonObjectivesId
-          lMSModuleObjectivesId
-        }
-        nextToken
-      }
+      objectives
       media
       percentComplete
       content
@@ -3587,26 +3579,22 @@ export const deleteLMSLesson = /* GraphQL */ `
       modules {
         items {
           id
-          lMSLessonId
-          lMSModuleId
+          title
+          subheadline
+          objectives
+          mediaType
+          media
+          content
+          slug
           createdAt
           updatedAt
+          lMSLessonModulesId
+          lMSModuleQuizId
         }
         nextToken
       }
       subheadline
-      objectives {
-        items {
-          id
-          objective
-          completed
-          createdAt
-          updatedAt
-          lMSLessonObjectivesId
-          lMSModuleObjectivesId
-        }
-        nextToken
-      }
+      objectives
       media
       percentComplete
       content
@@ -3624,29 +3612,26 @@ export const createLMSModule = /* GraphQL */ `
     createLMSModule(input: $input, condition: $condition) {
       id
       title
-      lessons {
-        items {
-          id
-          lMSLessonId
-          lMSModuleId
-          createdAt
-          updatedAt
+      lesson {
+        id
+        title
+        course {
+          nextToken
         }
-        nextToken
+        modules {
+          nextToken
+        }
+        subheadline
+        objectives
+        media
+        percentComplete
+        content
+        slug
+        createdAt
+        updatedAt
       }
       subheadline
-      objectives {
-        items {
-          id
-          objective
-          completed
-          createdAt
-          updatedAt
-          lMSLessonObjectivesId
-          lMSModuleObjectivesId
-        }
-        nextToken
-      }
+      objectives
       mediaType
       slides {
         items {
@@ -3666,11 +3651,14 @@ export const createLMSModule = /* GraphQL */ `
           id
           title
           subheadline
+          objectives
           mediaType
           media
           content
+          slug
           createdAt
           updatedAt
+          lMSLessonModulesId
           lMSModuleQuizId
         }
         prompt
@@ -3684,8 +3672,10 @@ export const createLMSModule = /* GraphQL */ `
         lMSQuizModuleId
       }
       content
+      slug
       createdAt
       updatedAt
+      lMSLessonModulesId
       lMSModuleQuizId
     }
   }
@@ -3698,29 +3688,26 @@ export const updateLMSModule = /* GraphQL */ `
     updateLMSModule(input: $input, condition: $condition) {
       id
       title
-      lessons {
-        items {
-          id
-          lMSLessonId
-          lMSModuleId
-          createdAt
-          updatedAt
+      lesson {
+        id
+        title
+        course {
+          nextToken
         }
-        nextToken
+        modules {
+          nextToken
+        }
+        subheadline
+        objectives
+        media
+        percentComplete
+        content
+        slug
+        createdAt
+        updatedAt
       }
       subheadline
-      objectives {
-        items {
-          id
-          objective
-          completed
-          createdAt
-          updatedAt
-          lMSLessonObjectivesId
-          lMSModuleObjectivesId
-        }
-        nextToken
-      }
+      objectives
       mediaType
       slides {
         items {
@@ -3740,11 +3727,14 @@ export const updateLMSModule = /* GraphQL */ `
           id
           title
           subheadline
+          objectives
           mediaType
           media
           content
+          slug
           createdAt
           updatedAt
+          lMSLessonModulesId
           lMSModuleQuizId
         }
         prompt
@@ -3758,8 +3748,10 @@ export const updateLMSModule = /* GraphQL */ `
         lMSQuizModuleId
       }
       content
+      slug
       createdAt
       updatedAt
+      lMSLessonModulesId
       lMSModuleQuizId
     }
   }
@@ -3772,29 +3764,26 @@ export const deleteLMSModule = /* GraphQL */ `
     deleteLMSModule(input: $input, condition: $condition) {
       id
       title
-      lessons {
-        items {
-          id
-          lMSLessonId
-          lMSModuleId
-          createdAt
-          updatedAt
+      lesson {
+        id
+        title
+        course {
+          nextToken
         }
-        nextToken
+        modules {
+          nextToken
+        }
+        subheadline
+        objectives
+        media
+        percentComplete
+        content
+        slug
+        createdAt
+        updatedAt
       }
       subheadline
-      objectives {
-        items {
-          id
-          objective
-          completed
-          createdAt
-          updatedAt
-          lMSLessonObjectivesId
-          lMSModuleObjectivesId
-        }
-        nextToken
-      }
+      objectives
       mediaType
       slides {
         items {
@@ -3814,11 +3803,14 @@ export const deleteLMSModule = /* GraphQL */ `
           id
           title
           subheadline
+          objectives
           mediaType
           media
           content
+          slug
           createdAt
           updatedAt
+          lMSLessonModulesId
           lMSModuleQuizId
         }
         prompt
@@ -3832,8 +3824,10 @@ export const deleteLMSModule = /* GraphQL */ `
         lMSQuizModuleId
       }
       content
+      slug
       createdAt
       updatedAt
+      lMSLessonModulesId
       lMSModuleQuizId
     }
   }
@@ -3848,13 +3842,20 @@ export const createLMSQuiz = /* GraphQL */ `
       module {
         id
         title
-        lessons {
-          nextToken
+        lesson {
+          id
+          title
+          subheadline
+          objectives
+          media
+          percentComplete
+          content
+          slug
+          createdAt
+          updatedAt
         }
         subheadline
-        objectives {
-          nextToken
-        }
+        objectives
         mediaType
         slides {
           nextToken
@@ -3873,8 +3874,10 @@ export const createLMSQuiz = /* GraphQL */ `
           lMSQuizModuleId
         }
         content
+        slug
         createdAt
         updatedAt
+        lMSLessonModulesId
         lMSModuleQuizId
       }
       prompt
@@ -3899,13 +3902,20 @@ export const updateLMSQuiz = /* GraphQL */ `
       module {
         id
         title
-        lessons {
-          nextToken
+        lesson {
+          id
+          title
+          subheadline
+          objectives
+          media
+          percentComplete
+          content
+          slug
+          createdAt
+          updatedAt
         }
         subheadline
-        objectives {
-          nextToken
-        }
+        objectives
         mediaType
         slides {
           nextToken
@@ -3924,8 +3934,10 @@ export const updateLMSQuiz = /* GraphQL */ `
           lMSQuizModuleId
         }
         content
+        slug
         createdAt
         updatedAt
+        lMSLessonModulesId
         lMSModuleQuizId
       }
       prompt
@@ -3950,13 +3962,20 @@ export const deleteLMSQuiz = /* GraphQL */ `
       module {
         id
         title
-        lessons {
-          nextToken
+        lesson {
+          id
+          title
+          subheadline
+          objectives
+          media
+          percentComplete
+          content
+          slug
+          createdAt
+          updatedAt
         }
         subheadline
-        objectives {
-          nextToken
-        }
+        objectives
         mediaType
         slides {
           nextToken
@@ -3975,8 +3994,10 @@ export const deleteLMSQuiz = /* GraphQL */ `
           lMSQuizModuleId
         }
         content
+        slug
         createdAt
         updatedAt
+        lMSLessonModulesId
         lMSModuleQuizId
       }
       prompt
@@ -4791,8 +4812,6 @@ export const createObjective = /* GraphQL */ `
       completed
       createdAt
       updatedAt
-      lMSLessonObjectivesId
-      lMSModuleObjectivesId
     }
   }
 `;
@@ -4807,8 +4826,6 @@ export const updateObjective = /* GraphQL */ `
       completed
       createdAt
       updatedAt
-      lMSLessonObjectivesId
-      lMSModuleObjectivesId
     }
   }
 `;
@@ -4823,8 +4840,6 @@ export const deleteObjective = /* GraphQL */ `
       completed
       createdAt
       updatedAt
-      lMSLessonObjectivesId
-      lMSModuleObjectivesId
     }
   }
 `;
@@ -6097,9 +6112,7 @@ export const createCourseLessons = /* GraphQL */ `
           nextToken
         }
         subheadline
-        objectives {
-          nextToken
-        }
+        objectives
         media
         percentComplete
         content
@@ -6166,9 +6179,7 @@ export const updateCourseLessons = /* GraphQL */ `
           nextToken
         }
         subheadline
-        objectives {
-          nextToken
-        }
+        objectives
         media
         percentComplete
         content
@@ -6235,9 +6246,7 @@ export const deleteCourseLessons = /* GraphQL */ `
           nextToken
         }
         subheadline
-        objectives {
-          nextToken
-        }
+        objectives
         media
         percentComplete
         content
@@ -6487,204 +6496,6 @@ export const deleteCourseInstructors = /* GraphQL */ `
         }
         createdAt
         updatedAt
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const createLessonModules = /* GraphQL */ `
-  mutation CreateLessonModules(
-    $input: CreateLessonModulesInput!
-    $condition: ModelLessonModulesConditionInput
-  ) {
-    createLessonModules(input: $input, condition: $condition) {
-      id
-      lMSLessonId
-      lMSModuleId
-      lMSLesson {
-        id
-        title
-        course {
-          nextToken
-        }
-        modules {
-          nextToken
-        }
-        subheadline
-        objectives {
-          nextToken
-        }
-        media
-        percentComplete
-        content
-        slug
-        createdAt
-        updatedAt
-      }
-      lMSModule {
-        id
-        title
-        lessons {
-          nextToken
-        }
-        subheadline
-        objectives {
-          nextToken
-        }
-        mediaType
-        slides {
-          nextToken
-        }
-        media
-        quiz {
-          id
-          prompt
-          answer1
-          answer2
-          answer3
-          answer4
-          correctAnswer
-          createdAt
-          updatedAt
-          lMSQuizModuleId
-        }
-        content
-        createdAt
-        updatedAt
-        lMSModuleQuizId
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const updateLessonModules = /* GraphQL */ `
-  mutation UpdateLessonModules(
-    $input: UpdateLessonModulesInput!
-    $condition: ModelLessonModulesConditionInput
-  ) {
-    updateLessonModules(input: $input, condition: $condition) {
-      id
-      lMSLessonId
-      lMSModuleId
-      lMSLesson {
-        id
-        title
-        course {
-          nextToken
-        }
-        modules {
-          nextToken
-        }
-        subheadline
-        objectives {
-          nextToken
-        }
-        media
-        percentComplete
-        content
-        slug
-        createdAt
-        updatedAt
-      }
-      lMSModule {
-        id
-        title
-        lessons {
-          nextToken
-        }
-        subheadline
-        objectives {
-          nextToken
-        }
-        mediaType
-        slides {
-          nextToken
-        }
-        media
-        quiz {
-          id
-          prompt
-          answer1
-          answer2
-          answer3
-          answer4
-          correctAnswer
-          createdAt
-          updatedAt
-          lMSQuizModuleId
-        }
-        content
-        createdAt
-        updatedAt
-        lMSModuleQuizId
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const deleteLessonModules = /* GraphQL */ `
-  mutation DeleteLessonModules(
-    $input: DeleteLessonModulesInput!
-    $condition: ModelLessonModulesConditionInput
-  ) {
-    deleteLessonModules(input: $input, condition: $condition) {
-      id
-      lMSLessonId
-      lMSModuleId
-      lMSLesson {
-        id
-        title
-        course {
-          nextToken
-        }
-        modules {
-          nextToken
-        }
-        subheadline
-        objectives {
-          nextToken
-        }
-        media
-        percentComplete
-        content
-        slug
-        createdAt
-        updatedAt
-      }
-      lMSModule {
-        id
-        title
-        lessons {
-          nextToken
-        }
-        subheadline
-        objectives {
-          nextToken
-        }
-        mediaType
-        slides {
-          nextToken
-        }
-        media
-        quiz {
-          id
-          prompt
-          answer1
-          answer2
-          answer3
-          answer4
-          correctAnswer
-          createdAt
-          updatedAt
-          lMSQuizModuleId
-        }
-        content
-        createdAt
-        updatedAt
-        lMSModuleQuizId
       }
       createdAt
       updatedAt
