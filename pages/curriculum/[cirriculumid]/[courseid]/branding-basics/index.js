@@ -7,6 +7,11 @@ import {
   BoltSlashIcon,
   PlayIcon,
 } from '@heroicons/react/24/solid';
+import {
+  AcademicCapIcon,
+  RocketLaunchIcon,
+  LightBulbIcon,
+} from '@heroicons/react/24/outline';
 import { useRouter } from 'next/router';
 import brandingAnimation from '../../../../../src/brandingg.json';
 import Lottie from 'lottie-react';
@@ -59,19 +64,47 @@ const Page = () => {
     },
   ];
 
+  const objectives = [
+    {
+      obj: 'Learn design terminology, key design theories, and materials',
+      icon: <AcademicCapIcon className='w-6 h-6 stroke-clemson' />,
+    },
+    {
+      obj: 'Optimize your design efforts for efficiency',
+      icon: <RocketLaunchIcon className='w-6 h-6 stroke-clemson' />,
+    },
+    {
+      obj: 'Define methodology and understand design criteria',
+      icon: <LightBulbIcon className='w-6 h-6 stroke-clemson' />,
+    },
+  ];
+
   return (
-    <div className='  bg-white bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-base-light via-indigo-100 dark:via-neutral-900  dark:to-dark-dark '>
-      <div className='grid grid-cols-2 gap-24 max-w-6xl mx-auto py-16'>
-        <div className='dark:text-white flex flex-col justify-center gap-6 w-full h-full'>
+    <div className='bg-white dark:bg-dark-mid '>
+      <div className='grid grid-cols-2 lg:grid-cols-12 max-w-6xl mx-auto py-16'>
+        <div className='dark:text-white flex flex-col justify-center gap-6 w-full h-full col-span-7'>
           <h2 className='text-5xl'>Branding Basics</h2>
-          <p className='dark:text-neutral-400 text-lg text-gray-700'>
+          <p className='dark:text-neutral-400 text-lg text-gray-700 max-w-prose'>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec
             purus eu felis interdum bibendum. Sed dictum tristique lacus
-            sagittis euismod.
+            sagittis euismod. Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit. Duis nec purus eu felis interdum bibendum. Sed dictum
+            tristique lacus sagittis euismod.
           </p>
-          <Lottie animationData={brandingAnimation} loop={true} />
+          <h3 className='text-xl mt-3'>Learning Objectives</h3>
+          <div className='flex flex-col gap-2'>
+            {objectives.map((obj) => (
+              <div className='flex gap-2 items-center' key={obj.obj}>
+                <div>{obj.icon}</div>
+                <div className='dark:text-neutral-400 text-gray-700 text-lg'>
+                  {obj.obj}
+                </div>
+              </div>
+            ))}
+          </div>
+          {/* <Lottie animationData={brandingAnimation} loop={true} /> */}
         </div>
-        <div className='flex flex-col gap-3 bg-neutral-100/30 dark:bg-white/10 backdrop-blur px-9 py-6 rounded-xl shadow-lg'>
+        {/* <div className='flex flex-col gap-3 bg-neutral-100/30 dark:bg-white/10 backdrop-blur px-9 py-6 rounded-xl shadow-lg'>
           {modules.map((mod, i) => (
             <div
               className='flex items-center cursor-pointer justify-between gap-3 bg-white/50 dark:bg-white/10 hover:bg-base-brand/40 dark:hover:bg-black transition hover:ease-in backdrop-blur shadow-xl rounded-xl px-6 py-3'
@@ -98,6 +131,14 @@ const Page = () => {
               </div>
             </div>
           ))}
+        </div> */}
+        <div className='w-fit col-span-5 ml-auto'>
+          <div class='relative'>
+            <div class='absolute -inset-3 rounded-full bg-gradient-to-r from-yellow-600 via-base-brand to-clemson opacity-75 blur'></div>
+            <div class='relative flex h-64 w-64 rounded-full items-center justify-center border-white border bg-slate-900 text-slate-300'>
+              Gradient shadowss
+            </div>
+          </div>
         </div>
       </div>
     </div>
