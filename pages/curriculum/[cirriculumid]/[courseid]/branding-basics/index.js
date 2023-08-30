@@ -8,6 +8,7 @@ import {
   LockClosedIcon,
   LockOpenIcon,
   PlayIcon,
+  CheckIcon,
 } from '@heroicons/react/24/solid';
 import {
   AcademicCapIcon,
@@ -28,42 +29,55 @@ const Page = () => {
       link: 'introduction-to-branding-basics',
       sub: 'Video - 2 Min',
       unlocked: true,
+      complete: true,
     },
     {
       title: 'Trademark and Copyright',
       icons: <DocumentIcon className='fill-white w-6 h-6' />,
       link: 'trademark-and-copyright',
       sub: 'PDF',
+      unlocked: true,
+      complete: false,
     },
     {
       title: 'Color Theory and Symbolism',
       icons: <VideoCameraIcon className='fill-white w-6 h-6' />,
       link: 'color-theory-and-symbolism',
       sub: 'Video - 19 Min',
+      unlocked: false,
+      complete: false,
     },
     {
       title: 'Typography',
       icons: <CursorArrowRippleIcon className='fill-white w-6 h-6' />,
       link: 'typography',
       sub: 'Interactive',
+      unlocked: false,
+      complete: false,
     },
     {
       title: 'Brand Development Lab',
       icons: <CursorArrowRippleIcon className='fill-white w-6 h-6' />,
       link: 'brand-development-lab',
       sub: 'Interactive',
+      unlocked: false,
+      complete: false,
     },
     {
       title: 'Style Guide Lab',
       icons: <CursorArrowRippleIcon className='fill-white w-6 h-6' />,
       link: 'style-guide-lab',
       sub: 'Interactive',
+      unlocked: false,
+      complete: false,
     },
     {
       title: 'Conclusion and Bonus Content',
       icons: <BoltIcon className='fill-white w-6 h-6' />,
       link: 'conclusion-and-bonus-content',
       sub: 'Bonus Content',
+      unlocked: false,
+      complete: false,
     },
   ];
 
@@ -112,14 +126,18 @@ const Page = () => {
           </div>
         </div>
         <div className='w-full h-full max-w-6xl mx-auto pb-24'>
-          <div className='flex flex-1 p-4 bg-base-dark dark:bg-clemson-dark backdrop-blur-lg rounded-b-lg'>
+          <div className='flex flex-1 p-4 bg-base-dark backdrop-blur-lg rounded-b-lg'>
             <div className='flex flex-1'>
               <div className='grid grid-cols-7 gap-3 w-full items-center justify-center'>
                 {modules.map((mod, i) => (
                   <div
                     className={`${
-                      mod.unlocked ? 'bg-clemson' : 'bg-neutral-200'
-                    } aspect-[1/1] w-full shadow-md rounded-lg relative cursor-pointer`}
+                      mod.unlocked && !mod.complete
+                        ? 'bg-clemson hover:bg-base-brand'
+                        : mod.unlocked && mod.complete
+                        ? 'bg-green-600 hover:bg-green-800'
+                        : 'bg-neutral-200'
+                    } aspect-[1/1] w-full shadow-md rounded-lg relative cursor-pointer transition-colors ease-linear`}
                     key={mod.link}
                     onClick={() =>
                       router.push(
@@ -130,8 +148,15 @@ const Page = () => {
                     <div className='flex flex-col justify-between h-full py-1.5 px-3'>
                       <div className='w-full flex justify-between items-start'>
                         <div>
-                          {mod.unlocked ? (
+                          {mod.unlocked && !mod.complete ? (
                             <LockOpenIcon className='w-5 h-5 fill-white/70' />
+                          ) : mod.unlocked && mod.complete ? (
+                            <div className='flex items-center gap-1.5'>
+                              <div className='w-8 h-8 bg-green-700 rounded-full flex items-center justify-center'>
+                                <CheckIcon className='fill-white w-5 h-5' />
+                              </div>
+                              <div className='text-white text-lg'>+1</div>
+                            </div>
                           ) : (
                             <LockClosedIcon className='w-5 h-5 fill-neutral-400' />
                           )}
