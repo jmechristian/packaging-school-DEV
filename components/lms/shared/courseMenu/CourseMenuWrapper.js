@@ -14,7 +14,7 @@ const CourseMenuWrapper = () => {
       },
     },
     closed: {
-      x: -460,
+      x: -440,
       opacity: 1,
     },
   };
@@ -24,15 +24,17 @@ const CourseMenuWrapper = () => {
   };
 
   return (
-    <motion.div
-      className='fixed z-30 left-5 top-28 bottom-10 overflow-auto'
-      id='scrollers'
-      variants={variants}
-      initial='closed'
-      animate={isOpen ? 'open' : 'closed'}
-    >
-      <CourseMenu toggle={toggleMenu} />
-    </motion.div>
+    <>
+      <motion.div
+        className='fixed z-30 left-0 top-28 bottom-10 overflow-auto'
+        id='scrollers'
+        variants={variants}
+        initial='closed'
+        animate={isOpen ? 'open' : 'closed'}
+      >
+        <CourseMenu toggle={toggleMenu} />
+      </motion.div>
+    </>
   );
 };
 
