@@ -133,7 +133,7 @@ const Page = () => {
                   <div
                     className={`${
                       mod.unlocked && !mod.complete
-                        ? 'bg-clemson hover:bg-base-brand'
+                        ? 'bg-clemson hover:bg-clemson-dark'
                         : mod.unlocked && mod.complete
                         ? 'bg-green-600 hover:bg-green-800'
                         : 'bg-neutral-200'
