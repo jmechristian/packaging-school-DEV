@@ -126,7 +126,7 @@ const Page = () => {
           </div>
         </div>
         <div className='w-full h-full max-w-6xl mx-auto pb-24'>
-          <div className='flex flex-1 p-4 bg-base-dark backdrop-blur-lg rounded-b-lg'>
+          <div className='flex flex-1 p-4 bg-base-dark dark:bg-black/70 backdrop-blur-lg rounded-b-lg'>
             <div className='flex flex-1'>
               <div className='grid grid-cols-7 gap-3 w-full items-center justify-center'>
                 {modules.map((mod, i) => (
