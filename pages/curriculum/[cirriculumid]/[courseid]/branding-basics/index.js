@@ -97,7 +97,7 @@ const Page = () => {
   ];
 
   return (
-    <div className='bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] bg-no-repeat from-white dark:from-clemson dark:via-dark-dark dark:to-neutral-900 via-base-light  to-white flex flex-col pt-24'>
+    <div className='bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] bg-no-repeat from-white dark:from-clemson dark:via-dark-dark dark:to-neutral-900 via-base-light  to-white flex flex-col pt-24 pb-9'>
       <div className='w-full h-full'>
         <div className='grid grid-cols-2 lg:grid-cols-12 max-w-6xl mx-auto bg-white dark:bg-black/40 backdrop-blur-xl p-16 rounded-t-lg shadow-xl'>
           <div className='dark:text-white flex flex-col justify-center gap-6 w-full h-full col-span-7'>
