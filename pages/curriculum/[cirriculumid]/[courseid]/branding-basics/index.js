@@ -99,7 +99,7 @@ const Page = () => {
   return (
     <div className='bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] bg-no-repeat from-white dark:from-dark-dark dark:via-dark-mid dark:to-base-dark via-base-light  to-white flex flex-col pt-24'>
       <div className='w-full h-full'>
-        <div className='grid grid-cols-2 lg:grid-cols-12 max-w-6xl mx-auto bg-white dark:bg-black/40 backdrop-blur-xl p-16 rounded-t-lg'>
+        <div className='grid grid-cols-2 lg:grid-cols-12 max-w-6xl mx-auto bg-white dark:bg-black/40 backdrop-blur-xl p-16 rounded-t-lg shadow-xl'>
           <div className='dark:text-white flex flex-col justify-center gap-6 w-full h-full col-span-7'>
             <h2 className='text-5xl'>Branding Basics</h2>
             <p className='dark:text-neutral-400 text-lg text-gray-700 max-w-prose'>
@@ -133,9 +133,9 @@ const Page = () => {
                   <div
                     className={`${
                       mod.unlocked && !mod.complete
-                        ? 'bg-clemson hover:bg-base-brand'
+                        ? 'bg-base-brand hover:bg-indigo-500'
                         : mod.unlocked && mod.complete
-                        ? 'bg-green-600 hover:bg-green-800'
+                        ? 'bg-green-500 hover:bg-green-600'
                         : 'bg-neutral-200'
                     } aspect-[1/1] w-full shadow-md rounded-lg relative cursor-pointer transition-colors ease-linear`}
                     key={mod.link}
