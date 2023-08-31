@@ -14,7 +14,13 @@ const VideoBody = ({
 }) => {
   return (
     <>
-      <VideoHeading title={title} quiz={quiz} id={id} />
+      <VideoHeading
+        title={title}
+        quiz={quiz}
+        id={id}
+        nextLesson={nextLesson}
+        nextLessonLink={nextLessonLink}
+      />
       <div className='w-full h-full pb-24'>
         <div className='relative px-6 lg:px-8 py-20 space-y-12'>
           <div className='mx-auto max-w-prose text-lg'>
@@ -140,7 +146,6 @@ const VideoBody = ({
             </p>
           </div> */}
         </div>
-        <NextLesson nextLesson={nextLesson} nextLessonLink={nextLessonLink} />
       </div>
     </>
   );

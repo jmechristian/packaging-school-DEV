@@ -17,14 +17,13 @@ const Page = () => {
           webkitallowfullscreen='true'
         ></iframe>
       </div>
-      <VideoHeading id={'CPS-12.04'} title={'Typography'} />
+      <VideoHeading
+        id={'CPS-12.04'}
+        title={'Typography'}
+        nextLesson={'Brand Development Lab'}
+        nextLessonLink={'brand-development-lab'}
+      />
       <CourseMenuWrapper />
-      <div className='py-24'>
-        <NextLesson
-          nextLesson={'Brand Development Lab'}
-          nextLessonLink={'brand-development-lab'}
-        />
-      </div>
     </div>
   );
 };

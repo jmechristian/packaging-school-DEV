@@ -1,12 +1,13 @@
 import React from 'react';
 import {
   BoltIcon,
-  ChatBubbleLeftRightIcon,
   CheckCircleIcon,
+  LockClosedIcon,
 } from '@heroicons/react/24/solid';
-import Timestamp from '../shared/Timestamp';
+import { useRouter } from 'next/router';
 
-const VideoHeading = ({ id, title, quiz }) => {
+const VideoHeading = ({ id, title, quiz, nextLesson, nextLessonLink }) => {
+  const router = useRouter();
   return (
     <div className='relative w-full'>
       <div className='bg-base-mid max-w-6xl w-full mx-auto rounded-b-lg'>
@@ -58,7 +59,7 @@ const VideoHeading = ({ id, title, quiz }) => {
               </ol>
             </div>
           </div>
-          <div className='py-16 px-12 bg-base-dark rounded-l-xl rounded-br-lg flex flex-col gap-10'>
+          <div className='py-16 px-12 bg-base-dark rounded-l-xl rounded-br-lg flex flex-col gap-16'>
             <div className='flex flex-col gap-3'>
               <div className='flex gap-2 items-center'>
                 <div>
@@ -74,21 +75,28 @@ const VideoHeading = ({ id, title, quiz }) => {
                 Take the Quiz
               </div>
             </div>
-            {/* <div className='flex flex-col gap-3'>
+            <div
+              className='flex flex-col gap-3 cursor-pointer'
+              onClick={() => {
+                router.push(
+                  `/curriculum/cps/cps-12/branding-basics/${nextLessonLink}`
+                );
+              }}
+            >
               <div className='flex gap-2 items-center'>
                 <div>
-                  <ChatBubbleLeftRightIcon className='fill-white h-5 w-5' />
-                </div>
-                <div>
                   <h3 className='text-white font-greycliff font-semibold text-xl'>
-                    Join The Conversation
+                    Next Lesson: {nextLesson}
                   </h3>
                 </div>
               </div>
-              <div className='text-white bg-white/40 shadow-2xl w-fit px-6 py-3 rounded-lg font-bold font-greycliff'>
-                PackChat
+              <div className='text-white bg-white/40 flex gap-2 shadow-2xl w-fit px-6 py-3 rounded-lg font-bold font-greycliff'>
+                <div>
+                  <LockClosedIcon className='w-5 h-5 fill-white/60' />
+                </div>
+                <div>Complete & Continue</div>
               </div>
-            </div> */}
+            </div>
           </div>
         </div>
       </div>
