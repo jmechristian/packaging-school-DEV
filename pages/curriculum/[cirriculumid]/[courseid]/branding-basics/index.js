@@ -18,7 +18,6 @@ import {
 import { useRouter } from 'next/router';
 import brandingAnimation from '../../../../../src/brandingg.json';
 import Lottie from 'lottie-react';
-import DonutChart from 'react-donut-chart';
 
 const Page = () => {
   const router = useRouter();
