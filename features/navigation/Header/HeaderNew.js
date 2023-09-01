@@ -207,7 +207,7 @@ export default function HeaderNew() {
               <div
                 className='flex justify-center items-center text-center lg:flex-none cursor-pointer'
                 onClick={() =>
-                  router.push('/courses/iadd-diecutting-academy-diemaking-101')
+                  router.push('/certificate-of-mastery-in-packaging-management')
                 }
               >
                 <div className='flex gap-1 items-center font-greycliff'>
@@ -215,7 +215,7 @@ export default function HeaderNew() {
                     <BoltIcon className='w-5 h-5 fill-white dark:fill-base-brand' />
                   </div>
                   <div className='text-white text-sm md:text-base leading-tight'>
-                    New Course! IADD Diecutting Academy: Die Making 101
+                    Deadline Alart! CMPM registration for Fall 2 ends Sept. 15
                   </div>
                 </div>
               </div>
