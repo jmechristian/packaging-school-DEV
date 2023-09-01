@@ -22,6 +22,26 @@ import Lottie from 'lottie-react';
 const Page = () => {
   const router = useRouter();
 
+  const data = {
+    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+    datasets: [
+      {
+        label: '# of Votes',
+        data: [1, 1, 1, 1, 1, 1, 1],
+        backgroundColor: ['#333', '#333', '#333', '#333', '#333', '#333'],
+        borderColor: [
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+        ],
+        borderWidth: 0,
+      },
+    ],
+  };
+
   const modules = [
     {
       title: 'Introduction to Branding Basics',
@@ -29,7 +49,7 @@ const Page = () => {
       link: 'introduction-to-branding-basics',
       sub: 'Video - 2 Min',
       unlocked: true,
-      complete: true,
+      complete: false,
     },
     {
       title: 'Trademark and Copyright',
@@ -44,7 +64,7 @@ const Page = () => {
       icons: <VideoCameraIcon className='fill-white w-6 h-6' />,
       link: 'color-theory-and-symbolism',
       sub: 'Video - 19 Min',
-      unlocked: false,
+      unlocked: true,
       complete: false,
     },
     {
@@ -52,7 +72,7 @@ const Page = () => {
       icons: <CursorArrowRippleIcon className='fill-white w-6 h-6' />,
       link: 'typography',
       sub: 'Interactive',
-      unlocked: false,
+      unlocked: true,
       complete: false,
     },
     {
@@ -60,7 +80,7 @@ const Page = () => {
       icons: <CursorArrowRippleIcon className='fill-white w-6 h-6' />,
       link: 'brand-development-lab',
       sub: 'Interactive',
-      unlocked: false,
+      unlocked: true,
       complete: false,
     },
     {
@@ -68,7 +88,7 @@ const Page = () => {
       icons: <CursorArrowRippleIcon className='fill-white w-6 h-6' />,
       link: 'style-guide-lab',
       sub: 'Interactive',
-      unlocked: false,
+      unlocked: true,
       complete: false,
     },
     {
@@ -76,7 +96,7 @@ const Page = () => {
       icons: <BoltIcon className='fill-white w-6 h-6' />,
       link: 'conclusion-and-bonus-content',
       sub: 'Bonus Content',
-      unlocked: false,
+      unlocked: true,
       complete: false,
     },
   ];
@@ -100,7 +120,7 @@ const Page = () => {
     <div className='bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] bg-no-repeat from-white dark:from-base-brand dark:via-dark-dark dark:to-neutral-900 via-base-light  to-white flex flex-col pt-24 pb-9'>
       <div className='w-full h-full'>
         <div className='grid grid-cols-2 lg:grid-cols-12 max-w-6xl mx-auto bg-white dark:bg-black/40 backdrop-blur-xl p-16 rounded-t-lg shadow-xl'>
-          <div className='dark:text-white flex flex-col justify-center gap-6 w-full h-full col-span-7'>
+          <div className='dark:text-white flex flex-col justify-center gap-6 w-full h-full col-span-6'>
             <h2 className='text-5xl'>Branding Basics</h2>
             <p className='dark:text-neutral-400 text-lg text-gray-700 max-w-prose'>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec
@@ -121,7 +141,7 @@ const Page = () => {
               ))}
             </div>
           </div>
-          <div className='w-full col-span-5'>
+          <div className='w-full col-span-6'>
             <Lottie animationData={brandingAnimation} loop={true} />
           </div>
         </div>

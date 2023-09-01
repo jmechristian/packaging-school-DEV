@@ -18,13 +18,13 @@ const CourseItem = ({ title, link, type, time, unlocked }) => {
     >
       <div className='flex justify-between items-center gap-6'>
         <div className='flex items-center gap-4'>
-          <div>
+          {/* <div>
             <CheckCircleIcon
               className={`${
                 unlocked ? 'fill-green-500' : 'fill-neutral-500'
               } w-7 h-7`}
             />
-          </div>
+          </div> */}
           <div className='flex flex-col'>
             <div className='dark:text-white/70 font-semibold'>{title}</div>
             <div className='text-xs text-neutral-600 dark:text-neutral-500 uppercase'>

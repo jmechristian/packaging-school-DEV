@@ -8,13 +8,13 @@ const CourseHeader = ({ course, id }) => {
     <div className='w-full py-5 pl-6 pr-4 bg-base-brand dark:bg-neutral-800 rounded-r-lg'>
       <div className='flex justify-between gap-3 items-center'>
         <div className='flex gap-3 items-center'>
-          <div className='w-12 h-12 rounded-full border-4 border-light-yellow inline-block'>
+          {/* <div className='w-12 h-12 rounded-full border-4 border-light-yellow inline-block'>
             <div className='flex h-full justify-center items-center'>
               <div className='dark:text-green-600 text-green-400 font-semibold font-greycliff'>
                 1/7
               </div>
             </div>
-          </div>
+          </div> */}
           <div className='flex flex-col gap-0'>
             <div className='font-semibold text-neutral-200 dark:text-white leading-tight'>
               {id}

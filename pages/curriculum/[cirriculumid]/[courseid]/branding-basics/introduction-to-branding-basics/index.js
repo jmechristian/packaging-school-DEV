@@ -5,7 +5,7 @@ import { BrandingBasics } from '../../../../../../data/Content';
 
 const Page = () => {
   return (
-    <div className='w-full h-full bg-white dark:bg-dark-mid dark:text-white relative pb-24'>
+    <div className='w-full h-full bg-white dark:bg-dark-mid dark:text-white relative'>
       <VideoMain
         url={'https://player.vimeo.com/video/241550959'}
         title={'Introduction to Branding Basics'}
@@ -13,6 +13,7 @@ const Page = () => {
         content={<BrandingBasics />}
         nextLesson={'Trademark and Copyright'}
         nextLessonLink={'trademark-and-copyright'}
+        quiz={false}
       />
       <CourseMenuWrapper />
     </div>
