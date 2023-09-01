@@ -9,7 +9,7 @@ const CertificateCirriculum = () => {
         <div className='flex flex-col gap-16'>
           <div className='lg:text-center text-4xl lg:text-5xl dark:text-white'>
             <h2 className='leading-tight font-bold'>
-              Comprehensive Cirriculum
+              Comprehensive Curriculum
             </h2>
           </div>
           <div className='grid lg:grid-cols-4 gap-9 overflow-hidden'>
