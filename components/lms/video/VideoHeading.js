@@ -93,9 +93,9 @@ const VideoHeading = ({ id, title, quiz, nextLesson, nextLessonLink }) => {
                 </div>
               </div>
               <div className='text-white bg-white/40 flex gap-2 shadow-2xl w-fit px-6 py-3 rounded-lg font-bold font-greycliff'>
-                <div>
+                {/* <div>
                   <LockClosedIcon className='w-5 h-5 fill-white/60' />
-                </div>
+                </div> */}
                 <div>Complete & Continue</div>
               </div>
             </div>

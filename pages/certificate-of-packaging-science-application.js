@@ -7,6 +7,7 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { API } from 'aws-amplify';
 import { createAppStart } from '../src/graphql/mutations';
+import { CalendarDaysIcon } from '@heroicons/react/24/solid';
 
 const Page = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -60,6 +61,27 @@ const Page = () => {
           heading='Student Application'
           subhead='Empower yourself with the essential tools for success in the packaging profession, providing 24/7 access to review relevant content on-demand. Set your employees up for success, supporting their career advancement, and utilize this program for effective onboarding and retention strategies.'
         />
+        <div
+          className='bg-indigo-100 w-full text-center max-w-xs md:max-w-2xl mx-auto rounded-lg py-4 mb-6 cursor-pointer'
+          onClick={() =>
+            window.open(
+              'https://calendar.app.google/LQVXpmyZ6vESm5wB6',
+              '_blank'
+            )
+          }
+        >
+          <div className='flex flex-col md:flex-row gap-2 justify-center items-center'>
+            <div>
+              <CalendarDaysIcon className='w-8 h-8 items-center' />
+            </div>
+            <div>
+              Questions about CPS?{' '}
+              <span className='font-bold underline'>
+                Schedule a meeting with a counselor.
+              </span>
+            </div>
+          </div>
+        </div>
         <div className='px-6 xl:px-0 w-full'>
           <FormProvider {...methods}>
             <form

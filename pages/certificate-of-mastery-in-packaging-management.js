@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 import CenteredTextHeader from '../components/layout/CenteredTextHeader';
 import TextInput from '../components/forms/TextInput';
 import { useForm, FormProvider, useFormContext } from 'react-hook-form';
-import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
+import {
+  ArrowLongRightIcon,
+  CalendarDaysIcon,
+} from '@heroicons/react/24/outline';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { API } from 'aws-amplify';
@@ -62,6 +65,27 @@ const Page = () => {
           heading='Student Application'
           subhead='Distinguish yourself from your colleagues by acquiring a tangible solution that can be presented to both management and peers. Take your first step below and tell us a little bit about yourself to proceed with your application. You will receive a confirmation email within 1-3 business days of your complete application submission. We are looking forward to getting to know you better and can not wait to share our perspective with you on how packaging is an awesome industry full of opportunity.'
         />
+        <div
+          className='bg-indigo-100 w-full text-center max-w-xs md:max-w-2xl mx-auto rounded-lg py-4 mb-6 cursor-pointer'
+          onClick={() =>
+            window.open(
+              'https://calendar.app.google/LQVXpmyZ6vESm5wB6',
+              '_blank'
+            )
+          }
+        >
+          <div className='flex flex-col md:flex-row gap-2 justify-center items-center'>
+            <div>
+              <CalendarDaysIcon className='w-8 h-8 items-center' />
+            </div>
+            <div>
+              Questions about CMPM?{' '}
+              <span className='font-bold underline'>
+                Schedule a meeting with a counselor.
+              </span>
+            </div>
+          </div>
+        </div>
         <div className='px-6 xl:px-0'>
           <FormProvider {...methods}>
             <form
