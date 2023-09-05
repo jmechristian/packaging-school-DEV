@@ -65,6 +65,46 @@ const Page = () => {
               </div>
             </div>
           </div>
+          <div className='col-span-12'>
+            <div className='flex flex-col gap-6  max-w-2xl mx-auto w-full'>
+              <div
+                className='w-full flex justify-between items-center shadow-lg bg-white dark:bg-neutral-700 rounded-lg px-6 py-6'
+                onClick={() =>
+                  router.push(
+                    'https://import.cdn.thinkific.com/2896/CabelasStyleGuide-1507035919260.pdf'
+                  )
+                }
+              >
+                <div className='flex flex-col'>
+                  <div className='font-bold text-lg'>
+                    Cabela&apos;s Style Guide
+                  </div>
+                  <div className='text-sm text-neutral-400'>4.44 MB</div>
+                </div>
+                <div className='w-40 text-center text-sm font-bold bg-base-brand hover:bg-base-mid px-2 py-2 cursor-pointer rounded-lg shadow-lg'>
+                  DOWNLOAD
+                </div>
+              </div>
+              <div className='w-full flex justify-between items-center shadow-lg bg-white dark:bg-neutral-700 rounded-lg px-6 py-6'>
+                <div className='flex flex-col'>
+                  <div className='font-bold text-lg'>
+                    Walmart&apos;s Style Guide
+                  </div>
+                  <div className='text-sm text-neutral-400'>4.57 MB</div>
+                </div>
+                <div
+                  className='w-40 text-center text-sm font-bold bg-base-brand hover:bg-base-mid px-2 py-2 cursor-pointer rounded-lg shadow-lg'
+                  onClick={() =>
+                    router.push(
+                      'https://import.cdn.thinkific.com/2896/WalmartStyleGuide-1507035919258.pdf'
+                    )
+                  }
+                >
+                  DOWNLOAD
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         {/* <div className='flex flex-col gap-24 items-center'>
           <div className='flex flex-col gap-6'>
@@ -92,43 +132,7 @@ const Page = () => {
               />
             </div>
           </div>
-          <div className='flex flex-col gap-6  max-w-2xl mx-auto w-full'>
-            <div
-              className='w-full flex justify-between items-center shadow-lg bg-white dark:bg-neutral-700 rounded-lg px-6 py-6'
-              onClick={() =>
-                router.push(
-                  'https://import.cdn.thinkific.com/2896/CabelasStyleGuide-1507035919260.pdf'
-                )
-              }
-            >
-              <div className='flex flex-col'>
-                <div className='font-bold text-lg'>
-                  Cabela&apos;s Style Guide
-                </div>
-                <div className='text-sm text-neutral-400'>4.44 MB</div>
-              </div>
-              <div className='w-40 text-center text-sm font-bold bg-base-brand hover:bg-base-mid px-2 py-2 cursor-pointer rounded-lg shadow-lg'>
-                DOWNLOAD
-              </div>
-            </div>
-            <div className='w-full flex justify-between items-center shadow-lg bg-white dark:bg-neutral-700 rounded-lg px-6 py-6'>
-              <div className='flex flex-col'>
-                <div className='font-bold text-lg'>
-                  Walmart&apos;s Style Guide
-                </div>
-                <div className='text-sm text-neutral-400'>4.57 MB</div>
-              </div>
-              <div
-                className='w-40 text-center text-sm font-bold bg-base-brand hover:bg-base-mid px-2 py-2 cursor-pointer rounded-lg shadow-lg'
-                onClick={() =>
-                  router.push(
-                    'https://import.cdn.thinkific.com/2896/WalmartStyleGuide-1507035919258.pdf'
-                  )
-                }
-              >
-                DOWNLOAD
-              </div>
-            </div>
+          
           </div>
         </div> */}
       </div>
