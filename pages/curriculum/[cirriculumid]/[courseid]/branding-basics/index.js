@@ -103,15 +103,19 @@ const Page = () => {
 
   const objectives = [
     {
-      obj: 'Learn design terminology, key design theories, and materials',
-      icon: <AcademicCapIcon className='w-6 h-6 stroke-clemson' />,
+      obj: 'Acquire a deep understanding of critical branding concepts, theories, legal considerations, and resources.',
+      icon: <LightBulbIcon className='w-6 h-6 stroke-clemson' />,
     },
     {
-      obj: 'Optimize your design efforts for efficiency',
-      icon: <RocketLaunchIcon className='w-6 h-6 stroke-clemson' />,
+      obj: 'Systematically organize your brand’s color palette and typography selections.',
+      icon: <LightBulbIcon className='w-6 h-6 stroke-clemson' />,
     },
     {
-      obj: 'Define methodology and understand design criteria',
+      obj: 'Construct a comprehensive style guide to maintain consistency and cohesiveness in your brand’s visual identity.',
+      icon: <LightBulbIcon className='w-6 h-6 stroke-clemson' />,
+    },
+    {
+      obj: 'Create a compelling visual representation of your package design, seamlessly incorporating your market research findings (next step after market research / Frankenstein).',
       icon: <LightBulbIcon className='w-6 h-6 stroke-clemson' />,
     },
   ];
@@ -123,11 +127,13 @@ const Page = () => {
           <div className='dark:text-white flex flex-col justify-center gap-6 w-full h-full col-span-6'>
             <h2 className='text-5xl'>Branding Basics</h2>
             <p className='dark:text-neutral-400 text-lg text-gray-700 max-w-prose'>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec
-              purus eu felis interdum bibendum. Sed dictum tristique lacus
-              sagittis euismod. Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit. Duis nec purus eu felis interdum bibendum. Sed
-              dictum tristique lacus sagittis euismod.
+              Having thoroughly analyzed your competition, you’re now prepared
+              to embark on the journey of crafting your unique brand identity.
+              In this chapter, we will lay the foundation for your brand,
+              equipping you with essential assets needed to nurture and develop
+              your brand. By the end of this chapter, you will be well-equipped
+              to translate the valuable insights gleaned from your market
+              research into a visually captivating package design.
             </p>
             <h3 className='text-xl mt-3'>Learning Objectives</h3>
             <div className='flex flex-col gap-2'>
