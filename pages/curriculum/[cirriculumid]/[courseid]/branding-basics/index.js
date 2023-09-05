@@ -121,9 +121,9 @@ const Page = () => {
   ];
 
   return (
-    <div className='bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] bg-no-repeat from-white dark:from-base-brand dark:via-dark-dark dark:to-neutral-900 via-base-light  to-white flex flex-col pt-24 pb-9'>
-      <div className='w-full h-full'>
-        <div className='grid grid-cols-2 lg:grid-cols-12 max-w-6xl mx-auto bg-white dark:bg-black/40 backdrop-blur-xl p-16 rounded-t-lg shadow-xl'>
+    <div className='bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] bg-no-repeat from-white dark:from-base-brand dark:via-dark-dark dark:to-neutral-900 via-base-light  to-white flex flex-col pt-24 pb-24'>
+      <div className='w-full h-full  max-w-6xl mx-auto bg-white dark:bg-black/40 backdrop-blur-xl '>
+        <div className='grid grid-cols-2 lg:grid-cols-12 p-16 rounded-t-lg shadow-xl'>
           <div className='dark:text-white flex flex-col justify-center gap-6 w-full h-full col-span-6'>
             <h2 className='text-5xl'>Branding Basics</h2>
             <p className='dark:text-neutral-400 text-lg text-gray-700 max-w-prose'>
@@ -135,7 +135,14 @@ const Page = () => {
               to translate the valuable insights gleaned from your market
               research into a visually captivating package design.
             </p>
-            <h3 className='text-xl mt-3'>Learning Objectives</h3>
+          </div>
+          <div className='w-full col-span-6'>
+            <Lottie animationData={brandingAnimation} loop={true} />
+          </div>
+          <div className='w-full h-full max-w-prose mx-auto col-span-12 flex flex-col gap-6 mt-12'>
+            <h3 className='text-2xl mt-3 dark:text-white'>
+              Learning Objectives
+            </h3>
             <div className='flex flex-col gap-2'>
               {objectives.map((obj) => (
                 <div className='flex gap-2 items-center' key={obj.obj}>
@@ -147,11 +154,8 @@ const Page = () => {
               ))}
             </div>
           </div>
-          <div className='w-full col-span-6'>
-            <Lottie animationData={brandingAnimation} loop={true} />
-          </div>
         </div>
-        <div className='w-full h-full max-w-6xl mx-auto pb-24'>
+        <div className='w-full h-full max-w-6xl mx-auto'>
           <div className='flex flex-1 p-4 bg-base-dark dark:bg-black/70 backdrop-blur-lg rounded-b-lg'>
             <div className='flex flex-1'>
               <div className='grid grid-cols-7 gap-3 w-full items-center justify-center'>
