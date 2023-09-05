@@ -139,7 +139,7 @@ const Page = () => {
           <div className='w-full col-span-6'>
             <Lottie animationData={brandingAnimation} loop={true} />
           </div>
-          <div className='w-full h-full max-w-prose mx-auto col-span-12 flex flex-col gap-6 mt-12'>
+          <div className='w-full h-full max-w-prose col-span-12 flex flex-col gap-6 mt-12'>
             <h3 className='text-2xl mt-3 dark:text-white'>
               Learning Objectives
             </h3>
