@@ -11,7 +11,7 @@ const Page = () => {
   const router = useRouter();
 
   return (
-    <div className='w-full h-full bg-white dark:bg-dark-mid dark:text-white relative'>
+    <div className='w-full h-full bg-white dark:bg-dark-mid dark:text-white relative pb-16'>
       <div className='dark:bg-dark-dark bg-neutral-100 max-w-6xl mx-auto w-full py-16'>
         <div className='grid grid-cols-12 gap-24 px-12'>
           <div className='flex flex-col gap-6 col-span-7'>
@@ -106,35 +106,6 @@ const Page = () => {
             </div>
           </div>
         </div>
-        {/* <div className='flex flex-col gap-24 items-center'>
-          <div className='flex flex-col gap-6'>
-            <div className='text-base-brand font-bold text-4xl text-center'>
-              Bonus Content
-            </div>
-            <div className='max-w-2xl mx-auto text-2xl text-center'>
-              Now that you are ready to create your very own unique style guide,
-              take a look at how{' '}
-              <span className='font-bold text-clemson'>Walmart</span> and{' '}
-              <span className='font-bold text-clemson'>Cabela&apos;s</span>{' '}
-              handle their corporate identity and brand standards.
-            </div>
-          </div>
-          <div className='relative'>
-            <div className='absolute -inset-3 rounded-lg bg-gradient-to-r from-clemson dark:from-base-brand dark:via-base-light via-orange-500 to-clemson-dark dark:to-base-mid opacity-75 blur'></div>
-            <div className='relative flex h-72 w-80 p-6 items-center justify-center rounded-lg bg-white dark:bg-slate-900 text-slate-300'>
-              <Image
-                src={
-                  'https://packschool.s3.amazonaws.com/Brand_Guide_Covers.png'
-                }
-                width={552}
-                height={285}
-                alt='Brand Guide Covers'
-              />
-            </div>
-          </div>
-          
-          </div>
-        </div> */}
       </div>
       <VideoBody
         title='Conclusion & Bonus Content'

@@ -21,10 +21,11 @@ const VideoBody = ({
         nextLesson={nextLesson}
         nextLessonLink={nextLessonLink}
       />
-      <div className='w-full h-full pb-24'>
-        <div className='relative px-6 lg:px-8 py-20 space-y-12'>
-          <div className='mx-auto max-w-prose text-lg'>
-            {/* <div className='flex gap-2 items-center'>
+      {content && (
+        <div className='w-full h-full pb-24'>
+          <div className='relative px-6 lg:px-8 py-20 space-y-12'>
+            <div className='mx-auto max-w-prose text-lg'>
+              {/* <div className='flex gap-2 items-center'>
               <h1>
                 <span className='mt-2 block text-3xl font-bold leading-8 tracking-tight dark:text-white sm:text-4xl'>
                   Introduction
@@ -32,8 +33,8 @@ const VideoBody = ({
               </h1>
               <Timestamp time='00:00' />
             </div> */}
-            {content}
-            {/* <p className='mt-8 text-xl leading-8 dark:text-white'>
+              {content}
+              {/* <p className='mt-8 text-xl leading-8 dark:text-white'>
               Aliquet nec orci mattis amet quisque ullamcorper neque, nibh sem.
               At arcu, sit dui mi, nibh dui, diam eget aliquam. Quisque id at
               vitae feugiat egestas ac. Diam nulla orci at in viverra
@@ -46,8 +47,8 @@ const VideoBody = ({
               nulla orci at in viverra scelerisque eget. Eleifend egestas
               fringilla sapien.
             </p> */}
-          </div>
-          {/* <div className='mx-auto max-w-prose text-lg'>
+            </div>
+            {/* <div className='mx-auto max-w-prose text-lg'>
             <div className='flex gap-2 items-center'>
               <h1>
                 <span className='mt-2 block text-3xl font-bold leading-8 tracking-tight dark:text-white sm:text-4xl'>
@@ -145,8 +146,9 @@ const VideoBody = ({
               scelerisque eget. Eleifend egestas fringilla sapien.
             </p>
           </div> */}
+          </div>
         </div>
-      </div>
+      )}
     </>
   );
 };
