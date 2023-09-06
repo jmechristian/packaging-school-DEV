@@ -11,10 +11,10 @@ const Page = () => {
   const router = useRouter();
 
   return (
-    <div className='w-full h-full bg-white dark:bg-dark-mid dark:text-white relative pb-16'>
+    <div className='w-full h-full bg-white dark:bg-dark-mid dark:text-white relative lg:mb-16'>
       <div className='dark:bg-dark-dark bg-neutral-100 max-w-6xl mx-auto w-full py-16'>
-        <div className='grid grid-cols-12 gap-24 px-12'>
-          <div className='flex flex-col gap-6 col-span-7'>
+        <div className='grid lg:grid-cols-12 gap-24 px-6 lg:px-12'>
+          <div className='flex flex-col gap-6 lg:col-span-7'>
             <h2 className='text-5xl'>Student Assignment:</h2>
             <div className='text-3xl dark:text-neutral-400'>
               Market Research Elemental Analysis with Branding Enhancement
@@ -34,13 +34,13 @@ const Page = () => {
               </div>
             </div>
           </div>
-          <div className='col-span-5 flex justify-center items-start mr-12'>
+          <div className='hidden lg:col-span-5 lg:flex justify-center items-start mr-12'>
             <Lottie animationData={bonusAnimation} loop={false} />
           </div>
-          <div className='bg-neutral-700 w-full h-full p-12 rounded-lg col-span-12'>
+          <div className='bg-neutral-700 w-full h-full p-6 lg:p-12 rounded-lg lg:col-span-12'>
             <ActivitySteps />
           </div>
-          <div className='flex flex-col gap-6 col-span-7'>
+          <div className='flex flex-col gap-6 lg:col-span-7'>
             <h2 className='text-5xl mt-6'>Bonus Content:</h2>
             <div className='text-2xl dark:text-neutral-400'>
               Now that you are ready to create your very own unique style guide,
@@ -50,7 +50,7 @@ const Page = () => {
               handle their corporate identity and brand standards.
             </div>
           </div>
-          <div className='col-span-5 flex justify-center items-center py-12'>
+          <div className='lg:col-span-5 flex justify-center items-center py-12'>
             <div className='relative'>
               <div className='absolute -inset-3 rounded-lg bg-gradient-to-r from-clemson dark:from-base-brand dark:via-base-light via-orange-500 to-clemson-dark dark:to-base-mid opacity-75 blur'></div>
               <div className='relative flex h-60 w-72 p-9 items-center justify-center rounded-lg bg-white dark:bg-slate-900 text-slate-300'>
@@ -65,7 +65,7 @@ const Page = () => {
               </div>
             </div>
           </div>
-          <div className='col-span-12'>
+          <div className='lg:col-span-12'>
             <div className='flex flex-col gap-6  max-w-2xl mx-auto w-full'>
               <div
                 className='w-full flex justify-between items-center shadow-lg bg-white dark:bg-neutral-700 rounded-lg px-6 py-6'

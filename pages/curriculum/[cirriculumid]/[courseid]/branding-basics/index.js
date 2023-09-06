@@ -121,9 +121,9 @@ const Page = () => {
   ];
 
   return (
-    <div className='bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] bg-no-repeat from-white dark:from-base-brand dark:via-dark-dark dark:to-neutral-900 via-base-light  to-white flex flex-col pt-24 pb-24'>
-      <div className='w-full h-full  max-w-6xl mx-auto bg-white dark:bg-black/40 backdrop-blur-xl '>
-        <div className='grid grid-cols-2 lg:grid-cols-12 p-16 rounded-t-lg shadow-xl'>
+    <div className='bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] bg-no-repeat from-white dark:from-base-brand dark:via-dark-dark dark:to-neutral-900 via-base-light  to-white flex flex-col lg:pt-24 pb-24'>
+      <div className='w-full h-full  max-w-6xl mx-auto bg-white dark:bg-black/40 backdrop-blur-xl rounded-lg'>
+        <div className='grid lg:grid-cols-12 p-6 xl:p-16 rounded-t-lg shadow-xl overflow-hidden'>
           <div className='dark:text-white flex flex-col justify-center gap-6 w-full h-full col-span-6'>
             <h2 className='text-5xl'>Branding Basics</h2>
             <p className='dark:text-neutral-400 text-lg text-gray-700 max-w-prose'>
@@ -136,7 +136,7 @@ const Page = () => {
               research into a visually captivating package design.
             </p>
           </div>
-          <div className='w-full col-span-6'>
+          <div className='w-full col-span-6 hidden md:block'>
             <Lottie animationData={brandingAnimation} loop={true} />
           </div>
           <div className='w-full h-full max-w-prose col-span-12 flex flex-col gap-6 mt-12'>
@@ -158,7 +158,7 @@ const Page = () => {
         <div className='w-full h-full max-w-6xl mx-auto'>
           <div className='flex flex-1 p-4 bg-base-dark dark:bg-black/70 backdrop-blur-lg rounded-b-lg'>
             <div className='flex flex-1'>
-              <div className='grid grid-cols-7 gap-3 w-full items-center justify-center'>
+              <div className='grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3 w-full items-center justify-center'>
                 {modules.map((mod, i) => (
                   <div
                     className={`${

@@ -19,7 +19,7 @@ const VideoHeading = ({
   return (
     <div className='relative w-full'>
       <div className='bg-base-mid max-w-6xl w-full mx-auto rounded-b-lg'>
-        <div className='grid grid-cols-2'>
+        <div className='grid md:grid-cols-2'>
           <div className='px-12 py-20 flex flex-col'>
             <div className='bg-clemson w-fit px-2.5 py-1 rounded-lg mb-1'>
               <h4 className='text-white font-greycliff'>{id}</h4>

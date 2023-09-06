@@ -95,7 +95,7 @@ const activity = [
     date: '2h ago',
   },
   {
-    id: 10,
+    id: 11,
     type: 'comment',
     person: { name: 'Submission', href: '#' },
     imageUrl:
