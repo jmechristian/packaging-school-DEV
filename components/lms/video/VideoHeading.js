@@ -2,11 +2,19 @@ import React from 'react';
 import {
   BoltIcon,
   CheckCircleIcon,
-  LockClosedIcon,
+  ArrowDownCircleIcon,
 } from '@heroicons/react/24/solid';
 import { useRouter } from 'next/router';
 
-const VideoHeading = ({ id, title, quiz, nextLesson, nextLessonLink }) => {
+const VideoHeading = ({
+  id,
+  title,
+  quiz,
+  nextLesson,
+  nextLessonLink,
+  download,
+  downloadCopy,
+}) => {
   const router = useRouter();
   return (
     <div className='relative w-full'>
@@ -99,6 +107,25 @@ const VideoHeading = ({ id, title, quiz, nextLesson, nextLessonLink }) => {
                 <div>Complete & Continue</div>
               </div>
             </div>
+            {download && (
+              <div
+                className='flex gap-3 cursor-pointer'
+                onClick={() => {
+                  router.push(`${download}`);
+                }}
+              >
+                <div className='flex gap-2 items-center'>
+                  <div>
+                    <h3 className='text-white font-greycliff font-semibold text-xl'>
+                      {downloadCopy}
+                    </h3>
+                  </div>
+                </div>
+                <div>
+                  <ArrowDownCircleIcon className='w-7 h-7 fill-white/60' />
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
