@@ -40,8 +40,8 @@ const CPSPricing = () => {
             application fee.
           </span>{' '}
           If you have any inquiries, a counselor is available to schedule a call
-          with you to address all your questions and concerns. Just click below
-          to get started.
+          with you to address all your questions and concerns. Click below to
+          get started.
         </div>
         <div
           className='w-full lg:w-fit py-2 lg:pl-6 lg:pr-9 bg-base-brand cursor-pointer rounded-lg mt-9 flex gap-2 items-center'
