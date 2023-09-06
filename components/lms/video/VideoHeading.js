@@ -111,7 +111,7 @@ const VideoHeading = ({
               <div
                 className='flex gap-3 cursor-pointer'
                 onClick={() => {
-                  router.push(`${download}`);
+                  window.open(`${download}`, '_blank');
                 }}
               >
                 <div className='flex gap-2 items-center'>
