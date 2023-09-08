@@ -21,6 +21,7 @@ enum ModuleType {
   LOTM
   MICROLESSON
   REGULATORY
+  ARTICLE
 }
 
 enum CategoryType {

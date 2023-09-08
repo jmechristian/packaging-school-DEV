@@ -333,7 +333,7 @@ export default function HeaderNew() {
                                             title='Certificate of Mastery in Packaging Management'
                                             apply='/certificate-of-mastery-in-packaging-management'
                                             learnMore='/certifications/get-to-know-cmpm'
-                                            content='A 12-month, PhD-led program teaching you the latest technologies accelerating the packaging field in the space of packaging development, material procurement, and organizational management.'
+                                            content='A 12-week, PhD-led program teaching you the latest technologies accelerating the packaging field in the space of packaging development, material procurement, and organizational management.'
                                             bgColor='bg-gradient-to-br from-base-brand to-slate-700'
                                             onClose={() => close()}
                                             // icon={'academicHat'}
