@@ -38,7 +38,7 @@ const APCPricing = () => {
               </div>
               <div className='flex flex-col'>
                 <div className='font-bold text-lg lg:text-xl text-white'>
-                  Questions about CPS?
+                  Questions about APS?
                 </div>
                 <div className='text-white leading-tight text-sm lg:text-base'>
                   Schedule a FREE live demo today!
