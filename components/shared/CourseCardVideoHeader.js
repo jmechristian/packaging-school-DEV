@@ -29,7 +29,7 @@ const CourseCardVideoHeader = ({ link }) => {
           href={link.href}
           className='text-base font-medium text-neutral-700 hover:text-indigo-600'
         >
-          Purchase Course<span aria-hidden='true'> &rarr;</span>
+          Select Course<span aria-hidden='true'> &rarr;</span>
         </a>
       </div>
     </div>
