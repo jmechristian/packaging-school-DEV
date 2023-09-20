@@ -97,7 +97,7 @@
   }
 
   .bad-html > h2 {
-    @apply font-bold text-gray-900 dark:text-clemson text-2xl;
+    @apply font-bold text-gray-900 dark:text-clemson text-2xl mt-3;
   }
 
   .bad-html > h3 > span {
@@ -113,7 +113,11 @@
   }
 
   .bad-html > ul > li {
-    @apply py-3;
+    @apply py-3 pl-3 list-disc;
+  }
+
+  .bad-html > ul > li > a {
+    @apply underline text-clemson;
   }
 
   .bad-html > ol > li {
@@ -125,7 +129,7 @@
   }
 
   .wp-content > p {
-    @apply py-6;
+    @apply py-9;
   }
 }
 
