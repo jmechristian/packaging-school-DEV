@@ -184,7 +184,7 @@ export default function Page() {
                   y={0}
                   width={4}
                   height={4}
-                  className='text-indigo-300'
+                  className='text-neutral-300'
                   fill='currentColor'
                 />
               </pattern>
@@ -193,7 +193,7 @@ export default function Page() {
               y={72}
               width={640}
               height={640}
-              className='text-indigo-50'
+              className='text-neutral-50'
               fill='currentColor'
             />
             <rect
@@ -211,7 +211,7 @@ export default function Page() {
             alt=''
           /> */}
           <div
-            className='absolute inset-0 bg-indigo-600 mix-blend-multiply'
+            className='absolute inset-0 bg-neutral-600 mix-blend-multiply'
             aria-hidden='true'
           />
         </div>
