@@ -101,7 +101,7 @@ type Lesson @model @auth(rules: [{ allow: public }]) {
   actionLink: String
   actionLinkTitle: String
   actionExample: String
-  author: Author @hasOne
+  author: [Author] @manyToMany(relationName: "AuthorLessons")
 }
 
 type Author @model @auth(rules: [{ allow: public }]) {
@@ -111,6 +111,7 @@ type Author @model @auth(rules: [{ allow: public }]) {
   linkedIn: String
   title: String
   company: String
+  lessons: [Lesson] @manyToMany(relationName: "AuthorLessons")
 }
 
 type Blog @model @auth(rules: [{ allow: public }]) {

@@ -72,7 +72,7 @@ const Page = ({ lesson, lessons }) => {
               title={lesson.title}
               subhead={lesson.subhead}
               id={lesson.id}
-              author={lesson.author}
+              // author={lesson.author}
               date={lesson.updatedAt}
             />
             <div className='hidden'>
@@ -83,26 +83,7 @@ const Page = ({ lesson, lessons }) => {
                 alt={lesson?.title}
               />
             </div>
-            <div>
-              {/* {lesson.mediaType === 'SLIDES' ? (
-                <LessonSlides slides={lesson.slides ? lesson.slides : []} />
-              ) : (
-                <LessonsMedia videoUrl={lesson.media} />
-              )}
-              {lesson.actionLinkTitle && (
-                <LessonActivity
-                  actionCTA={lesson.actionCTA}
-                  actionSubhead={lesson.actionSubhead}
-                  actionLink={lesson.actionLink}
-                  name={lesson.name}
-                  actionTitle={lesson.actionLinkTitle}
-                  actionExample={lesson.actionExample}
-                  lessonTitle={lesson.title}
-                  mediaType={lesson.mediaType && lesson.mediaType}
-                />
-              )} */}
-              {lesson && setMedia()}
-            </div>
+            <div>{lesson && setMedia()}</div>
             <LessonsContent
               content={lesson.content}
               objectives={lesson.objectives}
@@ -114,96 +95,17 @@ const Page = ({ lesson, lessons }) => {
               subhead={lesson.subhead}
               type={'lessons'}
             />
-            <LinksButton sources={lesson.sources.items} />
+            {lesson.sources.items ? (
+              <LinksButton sources={lesson.sources.items} />
+            ) : (
+              ''
+            )}
           </div>
         </LessonContext.Provider>
       </>
     )
   );
 };
-
-// export async function getStaticPaths() {
-
-//   const GRAPHQL_ENDPOINT = process.env.GRAPHQL_ENDPOINT;
-//   const GRAPHQL_API_KEY = process.env.GRAPHQL_API_KEY;
-
-//   try {
-//     const res = await API.graphql(graphqlOperation(query));
-//     const lessons = await res.data.listLessons.items;
-//     const paths = lessons.map((less) => ({
-//       params: { id: `${less.slug}` },
-//     }));
-
-//     return { paths, fallback: false };
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }
-
-// export async function getServerSideProps({ params }) {
-//   const { id } = params;
-
-//   const getLesson = /* GraphQL */ `
-//     query MyQuery($slug: String!) {
-//       lessonsBySlug(slug: $slug) {
-//         items {
-//           id
-//           links {
-//             items {
-//               name
-//               link
-//               lessonLinksId
-//             }
-//           }
-//           media
-//           mediaType
-//           content
-//           objectives
-//           seoImage
-//           slides
-//           slug
-//           actionCTA
-//           actionLink
-//           actionSubhead
-//           actionExample
-//           actionLinkTitle
-//           sources {
-//             items {
-//               name
-//               link
-//               lessonSourcesId
-//               position
-//             }
-//           }
-//           subhead
-//           tags {
-//             items {
-//               lessonTagsId
-//               tag
-//             }
-//           }
-//           title
-//           type
-//         }
-//       }
-//     }
-//   `;
-
-//   const GRAPHQL_ENDPOINT = process.env.GRAPHQL_ENDPOINT;
-//   const GRAPHQL_API_KEY = process.env.GRAPHQL_API_KEY;
-
-//   const variables = {
-//     slug: id, // key is "input" based on the mutation above
-//   };
-
-//   const res = await API.graphql(graphqlOperation(getLesson, variables));
-//   const lesson = await res.data.lessonsBySlug.items[0];
-
-//   const getLessons = await API.graphql({ query: listLessons });
-//   const lessons = getLessons.data.listLessons.items;
-
-//   return { props: { lesson, lessons } };
-// }
 
 export async function getStaticPaths() {
   const res = await API.graphql({
@@ -231,13 +133,17 @@ export async function getStaticProps({ params }) {
               lessonLinksId
             }
           }
-          author {
-            id
-            linkedIn
-            name
-            title
-            company
-          }
+          # author {
+          #   items {
+          #     id
+          #     headshot
+          #     company
+          #     name
+          #     title
+          #     linkedIn
+          #     lessonAuthorId
+          #   }
+          # }
           media
           mediaType
           content

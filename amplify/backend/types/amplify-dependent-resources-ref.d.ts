@@ -60,11 +60,5 @@ export type AmplifyDependentResourcesAttributes = {
             "LambdaExecutionRole": "string",
             "LambdaExecutionRoleArn": "string"
         }
-    },
-    "storage": {
-        "pschooladmin": {
-            "BucketName": "string",
-            "Region": "string"
-        }
     }
 }

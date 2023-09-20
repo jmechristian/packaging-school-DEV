@@ -455,18 +455,17 @@ export const createLesson = /* GraphQL */ `
       actionLinkTitle
       actionExample
       author {
-        id
-        name
-        headshot
-        linkedIn
-        title
-        company
-        createdAt
-        updatedAt
+        items {
+          id
+          lessonId
+          authorId
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
       createdAt
       updatedAt
-      lessonAuthorId
     }
   }
 `;
@@ -528,18 +527,17 @@ export const updateLesson = /* GraphQL */ `
       actionLinkTitle
       actionExample
       author {
-        id
-        name
-        headshot
-        linkedIn
-        title
-        company
-        createdAt
-        updatedAt
+        items {
+          id
+          lessonId
+          authorId
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
       createdAt
       updatedAt
-      lessonAuthorId
     }
   }
 `;
@@ -601,18 +599,17 @@ export const deleteLesson = /* GraphQL */ `
       actionLinkTitle
       actionExample
       author {
-        id
-        name
-        headshot
-        linkedIn
-        title
-        company
-        createdAt
-        updatedAt
+        items {
+          id
+          lessonId
+          authorId
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
       createdAt
       updatedAt
-      lessonAuthorId
     }
   }
 `;
@@ -628,6 +625,16 @@ export const createAuthor = /* GraphQL */ `
       linkedIn
       title
       company
+      lessons {
+        items {
+          id
+          lessonId
+          authorId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -645,6 +652,16 @@ export const updateAuthor = /* GraphQL */ `
       linkedIn
       title
       company
+      lessons {
+        items {
+          id
+          lessonId
+          authorId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -662,6 +679,16 @@ export const deleteAuthor = /* GraphQL */ `
       linkedIn
       title
       company
+      lessons {
+        items {
+          id
+          lessonId
+          authorId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -5316,6 +5343,183 @@ export const deleteArticleRelatedCourses = /* GraphQL */ `
           nextToken
         }
         relatedCourses {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createAuthorLessons = /* GraphQL */ `
+  mutation CreateAuthorLessons(
+    $input: CreateAuthorLessonsInput!
+    $condition: ModelAuthorLessonsConditionInput
+  ) {
+    createAuthorLessons(input: $input, condition: $condition) {
+      id
+      lessonId
+      authorId
+      lesson {
+        id
+        slug
+        title
+        subhead
+        type
+        media
+        mediaType
+        slides
+        seoImage
+        content
+        sources {
+          nextToken
+        }
+        links {
+          nextToken
+        }
+        tags {
+          nextToken
+        }
+        objectives
+        actionCTA
+        actionSubhead
+        actionLink
+        actionLinkTitle
+        actionExample
+        author {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      author {
+        id
+        name
+        headshot
+        linkedIn
+        title
+        company
+        lessons {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateAuthorLessons = /* GraphQL */ `
+  mutation UpdateAuthorLessons(
+    $input: UpdateAuthorLessonsInput!
+    $condition: ModelAuthorLessonsConditionInput
+  ) {
+    updateAuthorLessons(input: $input, condition: $condition) {
+      id
+      lessonId
+      authorId
+      lesson {
+        id
+        slug
+        title
+        subhead
+        type
+        media
+        mediaType
+        slides
+        seoImage
+        content
+        sources {
+          nextToken
+        }
+        links {
+          nextToken
+        }
+        tags {
+          nextToken
+        }
+        objectives
+        actionCTA
+        actionSubhead
+        actionLink
+        actionLinkTitle
+        actionExample
+        author {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      author {
+        id
+        name
+        headshot
+        linkedIn
+        title
+        company
+        lessons {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteAuthorLessons = /* GraphQL */ `
+  mutation DeleteAuthorLessons(
+    $input: DeleteAuthorLessonsInput!
+    $condition: ModelAuthorLessonsConditionInput
+  ) {
+    deleteAuthorLessons(input: $input, condition: $condition) {
+      id
+      lessonId
+      authorId
+      lesson {
+        id
+        slug
+        title
+        subhead
+        type
+        media
+        mediaType
+        slides
+        seoImage
+        content
+        sources {
+          nextToken
+        }
+        links {
+          nextToken
+        }
+        tags {
+          nextToken
+        }
+        objectives
+        actionCTA
+        actionSubhead
+        actionLink
+        actionLinkTitle
+        actionExample
+        author {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      author {
+        id
+        name
+        headshot
+        linkedIn
+        title
+        company
+        lessons {
           nextToken
         }
         createdAt

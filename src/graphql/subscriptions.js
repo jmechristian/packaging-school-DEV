@@ -407,18 +407,17 @@ export const onCreateLesson = /* GraphQL */ `
       actionLinkTitle
       actionExample
       author {
-        id
-        name
-        headshot
-        linkedIn
-        title
-        company
-        createdAt
-        updatedAt
+        items {
+          id
+          lessonId
+          authorId
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
       createdAt
       updatedAt
-      lessonAuthorId
     }
   }
 `;
@@ -477,18 +476,17 @@ export const onUpdateLesson = /* GraphQL */ `
       actionLinkTitle
       actionExample
       author {
-        id
-        name
-        headshot
-        linkedIn
-        title
-        company
-        createdAt
-        updatedAt
+        items {
+          id
+          lessonId
+          authorId
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
       createdAt
       updatedAt
-      lessonAuthorId
     }
   }
 `;
@@ -547,18 +545,17 @@ export const onDeleteLesson = /* GraphQL */ `
       actionLinkTitle
       actionExample
       author {
-        id
-        name
-        headshot
-        linkedIn
-        title
-        company
-        createdAt
-        updatedAt
+        items {
+          id
+          lessonId
+          authorId
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
       createdAt
       updatedAt
-      lessonAuthorId
     }
   }
 `;
@@ -571,6 +568,16 @@ export const onCreateAuthor = /* GraphQL */ `
       linkedIn
       title
       company
+      lessons {
+        items {
+          id
+          lessonId
+          authorId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -585,6 +592,16 @@ export const onUpdateAuthor = /* GraphQL */ `
       linkedIn
       title
       company
+      lessons {
+        items {
+          id
+          lessonId
+          authorId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -599,6 +616,16 @@ export const onDeleteAuthor = /* GraphQL */ `
       linkedIn
       title
       company
+      lessons {
+        items {
+          id
+          lessonId
+          authorId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -5010,6 +5037,174 @@ export const onDeleteArticleRelatedCourses = /* GraphQL */ `
           nextToken
         }
         relatedCourses {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateAuthorLessons = /* GraphQL */ `
+  subscription OnCreateAuthorLessons {
+    onCreateAuthorLessons {
+      id
+      lessonId
+      authorId
+      lesson {
+        id
+        slug
+        title
+        subhead
+        type
+        media
+        mediaType
+        slides
+        seoImage
+        content
+        sources {
+          nextToken
+        }
+        links {
+          nextToken
+        }
+        tags {
+          nextToken
+        }
+        objectives
+        actionCTA
+        actionSubhead
+        actionLink
+        actionLinkTitle
+        actionExample
+        author {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      author {
+        id
+        name
+        headshot
+        linkedIn
+        title
+        company
+        lessons {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateAuthorLessons = /* GraphQL */ `
+  subscription OnUpdateAuthorLessons {
+    onUpdateAuthorLessons {
+      id
+      lessonId
+      authorId
+      lesson {
+        id
+        slug
+        title
+        subhead
+        type
+        media
+        mediaType
+        slides
+        seoImage
+        content
+        sources {
+          nextToken
+        }
+        links {
+          nextToken
+        }
+        tags {
+          nextToken
+        }
+        objectives
+        actionCTA
+        actionSubhead
+        actionLink
+        actionLinkTitle
+        actionExample
+        author {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      author {
+        id
+        name
+        headshot
+        linkedIn
+        title
+        company
+        lessons {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteAuthorLessons = /* GraphQL */ `
+  subscription OnDeleteAuthorLessons {
+    onDeleteAuthorLessons {
+      id
+      lessonId
+      authorId
+      lesson {
+        id
+        slug
+        title
+        subhead
+        type
+        media
+        mediaType
+        slides
+        seoImage
+        content
+        sources {
+          nextToken
+        }
+        links {
+          nextToken
+        }
+        tags {
+          nextToken
+        }
+        objectives
+        actionCTA
+        actionSubhead
+        actionLink
+        actionLinkTitle
+        actionExample
+        author {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      author {
+        id
+        name
+        headshot
+        linkedIn
+        title
+        company
+        lessons {
           nextToken
         }
         createdAt

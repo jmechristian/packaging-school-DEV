@@ -2,9 +2,13 @@ import React from 'react';
 import dynamic from 'next/dynamic';
 const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false });
 
-const VideoPlayer = ({ videoEmbedLink, light }) => {
+const VideoPlayer = ({ videoEmbedLink, light, rounded }) => {
   return (
-    <div className='w-full h-full overflow-hidden'>
+    <div
+      className={`w-full h-full overflow-hidden ${
+        rounded ? 'rounded-t-xl' : ''
+      }`}
+    >
       <ReactPlayer
         url={videoEmbedLink}
         width={'100%'}

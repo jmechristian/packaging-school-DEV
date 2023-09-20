@@ -215,7 +215,7 @@ export default function HeaderNew() {
                     <BoltIcon className='w-5 h-5 fill-white dark:fill-base-brand' />
                   </div>
                   <div className='text-white text-sm md:text-base leading-tight'>
-                    Deadline Alert! CMPM registration for Fall 2 ends Sept. 15
+                    Deadline Alert! CMPM registration for Winter ends Nov. 24
                   </div>
                 </div>
               </div>
