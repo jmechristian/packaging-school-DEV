@@ -12,6 +12,8 @@ const LessonsHeader = ({ id, title, subhead, tags, author, date }) => {
   const newDate = new Date(date).toDateString();
   const [isSaved, setIsSaved] = useState(false);
 
+  console.log(author);
+
   useEffect(() => {
     user && setIsSaved(user.savedLessons && user.savedLessons.includes(id));
   }, [user, id]);
@@ -75,13 +77,14 @@ const LessonsHeader = ({ id, title, subhead, tags, author, date }) => {
         {date && (
           <div className='flex gap-2 text-sm mt-2'>
             <div className='text-gray-700 dark:text-white/60'>{newDate}</div>
-            {author && (
-              <div className='text-clemson'>
-                <a href={author.linkedIn} rel='noreferrer' target='_blank'>
-                  {'/' + ' ' + author.name + ',' + ' ' + author.title}
-                </a>
-              </div>
-            )}
+            {author.length > 0 &&
+              author.map((a) => (
+                <div className='text-clemson' key={a.author.name}>
+                  <a href={a.author.linkedIn} rel='noreferrer' target='_blank'>
+                    {'/' + ' ' + a.author.name + ',' + ' ' + a.author.title}
+                  </a>
+                </div>
+              ))}
           </div>
         )}
         <p className='mt-8 text-lg md:text-xl  text-gray-700 dark:text-white/60'>

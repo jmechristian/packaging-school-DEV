@@ -72,7 +72,7 @@ const Page = ({ lesson, lessons }) => {
               title={lesson.title}
               subhead={lesson.subhead}
               id={lesson.id}
-              // author={lesson.author}
+              author={lesson.author.items}
               date={lesson.updatedAt}
             />
             <div className='hidden'>
@@ -133,17 +133,16 @@ export async function getStaticProps({ params }) {
               lessonLinksId
             }
           }
-          # author {
-          #   items {
-          #     id
-          #     headshot
-          #     company
-          #     name
-          #     title
-          #     linkedIn
-          #     lessonAuthorId
-          #   }
-          # }
+          author {
+            items {
+              author {
+                headshot
+                linkedIn
+                name
+                title
+              }
+            }
+          }
           media
           mediaType
           content
