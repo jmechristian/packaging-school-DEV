@@ -47,7 +47,7 @@ const CertificateHero = () => {
                 className='flex gap-1.5 items-center cursor-pointer'
                 onClick={() =>
                   window.open(
-                    'https://calendar.app.google/LQVXpmyZ6vESm5wB6',
+                    'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ35Hm4GpLbs5oMIYuUcefaOcrSb_F1jFkU_9mCus2H5P9gIObXySikly5zZxVPXuiw-Ou5wZwfg',
                     '_blank'
                   )
                 }

@@ -65,7 +65,7 @@ const Page = () => {
           className='bg-indigo-100 w-full text-center max-w-xs md:max-w-2xl mx-auto rounded-lg py-4 mb-6 cursor-pointer'
           onClick={() =>
             window.open(
-              'https://calendar.app.google/LQVXpmyZ6vESm5wB6',
+              'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ35Hm4GpLbs5oMIYuUcefaOcrSb_F1jFkU_9mCus2H5P9gIObXySikly5zZxVPXuiw-Ou5wZwfg',
               '_blank'
             )
           }
