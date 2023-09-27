@@ -12,8 +12,6 @@ const LessonsHeader = ({ id, title, subhead, tags, author, date }) => {
   const newDate = new Date(date).toDateString();
   const [isSaved, setIsSaved] = useState(false);
 
-  console.log(author);
-
   useEffect(() => {
     user && setIsSaved(user.savedLessons && user.savedLessons.includes(id));
   }, [user, id]);

@@ -11,6 +11,7 @@ export const getLessonSource = /* GraphQL */ `
       createdAt
       updatedAt
       lessonSourcesId
+      lessonDraftSourcesId
     }
   }
 `;
@@ -29,6 +30,7 @@ export const listLessonSources = /* GraphQL */ `
         createdAt
         updatedAt
         lessonSourcesId
+        lessonDraftSourcesId
       }
       nextToken
     }
@@ -43,6 +45,7 @@ export const getLessonLink = /* GraphQL */ `
       createdAt
       updatedAt
       lessonLinksId
+      lessonDraftLinksId
     }
   }
 `;
@@ -60,6 +63,7 @@ export const listLessonLinks = /* GraphQL */ `
         createdAt
         updatedAt
         lessonLinksId
+        lessonDraftLinksId
       }
       nextToken
     }
@@ -73,6 +77,7 @@ export const getTags = /* GraphQL */ `
       createdAt
       updatedAt
       lessonTagsId
+      lessonDraftTagsId
       blogTagsId
       articleTagsId
     }
@@ -91,6 +96,7 @@ export const listTags = /* GraphQL */ `
         createdAt
         updatedAt
         lessonTagsId
+        lessonDraftTagsId
         blogTagsId
         articleTagsId
       }
@@ -359,6 +365,7 @@ export const getLesson = /* GraphQL */ `
           createdAt
           updatedAt
           lessonSourcesId
+          lessonDraftSourcesId
         }
         nextToken
       }
@@ -370,6 +377,7 @@ export const getLesson = /* GraphQL */ `
           createdAt
           updatedAt
           lessonLinksId
+          lessonDraftLinksId
         }
         nextToken
       }
@@ -380,6 +388,7 @@ export const getLesson = /* GraphQL */ `
           createdAt
           updatedAt
           lessonTagsId
+          lessonDraftTagsId
           blogTagsId
           articleTagsId
         }
@@ -500,6 +509,176 @@ export const lessonsBySlug = /* GraphQL */ `
     }
   }
 `;
+export const getLessonDraft = /* GraphQL */ `
+  query GetLessonDraft($id: ID!) {
+    getLessonDraft(id: $id) {
+      id
+      slug
+      title
+      subhead
+      type
+      media
+      mediaType
+      slides
+      seoImage
+      content
+      sources {
+        items {
+          id
+          name
+          link
+          position
+          createdAt
+          updatedAt
+          lessonSourcesId
+          lessonDraftSourcesId
+        }
+        nextToken
+      }
+      links {
+        items {
+          id
+          name
+          link
+          createdAt
+          updatedAt
+          lessonLinksId
+          lessonDraftLinksId
+        }
+        nextToken
+      }
+      tags {
+        items {
+          id
+          tag
+          createdAt
+          updatedAt
+          lessonTagsId
+          lessonDraftTagsId
+          blogTagsId
+          articleTagsId
+        }
+        nextToken
+      }
+      objectives
+      actionCTA
+      actionSubhead
+      actionLink
+      actionLinkTitle
+      actionExample
+      author {
+        items {
+          id
+          name
+          headshot
+          linkedIn
+          title
+          company
+          createdAt
+          updatedAt
+          lessonDraftAuthorId
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listLessonDrafts = /* GraphQL */ `
+  query ListLessonDrafts(
+    $filter: ModelLessonDraftFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listLessonDrafts(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        slug
+        title
+        subhead
+        type
+        media
+        mediaType
+        slides
+        seoImage
+        content
+        sources {
+          nextToken
+        }
+        links {
+          nextToken
+        }
+        tags {
+          nextToken
+        }
+        objectives
+        actionCTA
+        actionSubhead
+        actionLink
+        actionLinkTitle
+        actionExample
+        author {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const lessonDraftsBySlug = /* GraphQL */ `
+  query LessonDraftsBySlug(
+    $slug: String!
+    $sortDirection: ModelSortDirection
+    $filter: ModelLessonDraftFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    lessonDraftsBySlug(
+      slug: $slug
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        slug
+        title
+        subhead
+        type
+        media
+        mediaType
+        slides
+        seoImage
+        content
+        sources {
+          nextToken
+        }
+        links {
+          nextToken
+        }
+        tags {
+          nextToken
+        }
+        objectives
+        actionCTA
+        actionSubhead
+        actionLink
+        actionLinkTitle
+        actionExample
+        author {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
 export const getAuthor = /* GraphQL */ `
   query GetAuthor($id: ID!) {
     getAuthor(id: $id) {
@@ -521,6 +700,7 @@ export const getAuthor = /* GraphQL */ `
       }
       createdAt
       updatedAt
+      lessonDraftAuthorId
     }
   }
 `;
@@ -543,6 +723,7 @@ export const listAuthors = /* GraphQL */ `
         }
         createdAt
         updatedAt
+        lessonDraftAuthorId
       }
       nextToken
     }
@@ -564,6 +745,7 @@ export const getBlog = /* GraphQL */ `
           createdAt
           updatedAt
           lessonTagsId
+          lessonDraftTagsId
           blogTagsId
           articleTagsId
         }
@@ -650,6 +832,7 @@ export const getArticle = /* GraphQL */ `
           createdAt
           updatedAt
           lessonTagsId
+          lessonDraftTagsId
           blogTagsId
           articleTagsId
         }
@@ -4007,6 +4190,7 @@ export const getAuthorLessons = /* GraphQL */ `
         }
         createdAt
         updatedAt
+        lessonDraftAuthorId
       }
       createdAt
       updatedAt
@@ -4053,6 +4237,7 @@ export const listAuthorLessons = /* GraphQL */ `
           company
           createdAt
           updatedAt
+          lessonDraftAuthorId
         }
         createdAt
         updatedAt
@@ -4109,6 +4294,7 @@ export const authorLessonsByLessonId = /* GraphQL */ `
           company
           createdAt
           updatedAt
+          lessonDraftAuthorId
         }
         createdAt
         updatedAt
@@ -4165,6 +4351,7 @@ export const authorLessonsByAuthorId = /* GraphQL */ `
           company
           createdAt
           updatedAt
+          lessonDraftAuthorId
         }
         createdAt
         updatedAt

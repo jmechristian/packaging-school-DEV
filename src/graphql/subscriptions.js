@@ -11,6 +11,7 @@ export const onCreateLessonSource = /* GraphQL */ `
       createdAt
       updatedAt
       lessonSourcesId
+      lessonDraftSourcesId
     }
   }
 `;
@@ -24,6 +25,7 @@ export const onUpdateLessonSource = /* GraphQL */ `
       createdAt
       updatedAt
       lessonSourcesId
+      lessonDraftSourcesId
     }
   }
 `;
@@ -37,6 +39,7 @@ export const onDeleteLessonSource = /* GraphQL */ `
       createdAt
       updatedAt
       lessonSourcesId
+      lessonDraftSourcesId
     }
   }
 `;
@@ -49,6 +52,7 @@ export const onCreateLessonLink = /* GraphQL */ `
       createdAt
       updatedAt
       lessonLinksId
+      lessonDraftLinksId
     }
   }
 `;
@@ -61,6 +65,7 @@ export const onUpdateLessonLink = /* GraphQL */ `
       createdAt
       updatedAt
       lessonLinksId
+      lessonDraftLinksId
     }
   }
 `;
@@ -73,6 +78,7 @@ export const onDeleteLessonLink = /* GraphQL */ `
       createdAt
       updatedAt
       lessonLinksId
+      lessonDraftLinksId
     }
   }
 `;
@@ -84,6 +90,7 @@ export const onCreateTags = /* GraphQL */ `
       createdAt
       updatedAt
       lessonTagsId
+      lessonDraftTagsId
       blogTagsId
       articleTagsId
     }
@@ -97,6 +104,7 @@ export const onUpdateTags = /* GraphQL */ `
       createdAt
       updatedAt
       lessonTagsId
+      lessonDraftTagsId
       blogTagsId
       articleTagsId
     }
@@ -110,6 +118,7 @@ export const onDeleteTags = /* GraphQL */ `
       createdAt
       updatedAt
       lessonTagsId
+      lessonDraftTagsId
       blogTagsId
       articleTagsId
     }
@@ -374,6 +383,7 @@ export const onCreateLesson = /* GraphQL */ `
           createdAt
           updatedAt
           lessonSourcesId
+          lessonDraftSourcesId
         }
         nextToken
       }
@@ -385,6 +395,7 @@ export const onCreateLesson = /* GraphQL */ `
           createdAt
           updatedAt
           lessonLinksId
+          lessonDraftLinksId
         }
         nextToken
       }
@@ -395,6 +406,7 @@ export const onCreateLesson = /* GraphQL */ `
           createdAt
           updatedAt
           lessonTagsId
+          lessonDraftTagsId
           blogTagsId
           articleTagsId
         }
@@ -443,6 +455,7 @@ export const onUpdateLesson = /* GraphQL */ `
           createdAt
           updatedAt
           lessonSourcesId
+          lessonDraftSourcesId
         }
         nextToken
       }
@@ -454,6 +467,7 @@ export const onUpdateLesson = /* GraphQL */ `
           createdAt
           updatedAt
           lessonLinksId
+          lessonDraftLinksId
         }
         nextToken
       }
@@ -464,6 +478,7 @@ export const onUpdateLesson = /* GraphQL */ `
           createdAt
           updatedAt
           lessonTagsId
+          lessonDraftTagsId
           blogTagsId
           articleTagsId
         }
@@ -512,6 +527,7 @@ export const onDeleteLesson = /* GraphQL */ `
           createdAt
           updatedAt
           lessonSourcesId
+          lessonDraftSourcesId
         }
         nextToken
       }
@@ -523,6 +539,7 @@ export const onDeleteLesson = /* GraphQL */ `
           createdAt
           updatedAt
           lessonLinksId
+          lessonDraftLinksId
         }
         nextToken
       }
@@ -533,6 +550,7 @@ export const onDeleteLesson = /* GraphQL */ `
           createdAt
           updatedAt
           lessonTagsId
+          lessonDraftTagsId
           blogTagsId
           articleTagsId
         }
@@ -551,6 +569,234 @@ export const onDeleteLesson = /* GraphQL */ `
           authorId
           createdAt
           updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateLessonDraft = /* GraphQL */ `
+  subscription OnCreateLessonDraft {
+    onCreateLessonDraft {
+      id
+      slug
+      title
+      subhead
+      type
+      media
+      mediaType
+      slides
+      seoImage
+      content
+      sources {
+        items {
+          id
+          name
+          link
+          position
+          createdAt
+          updatedAt
+          lessonSourcesId
+          lessonDraftSourcesId
+        }
+        nextToken
+      }
+      links {
+        items {
+          id
+          name
+          link
+          createdAt
+          updatedAt
+          lessonLinksId
+          lessonDraftLinksId
+        }
+        nextToken
+      }
+      tags {
+        items {
+          id
+          tag
+          createdAt
+          updatedAt
+          lessonTagsId
+          lessonDraftTagsId
+          blogTagsId
+          articleTagsId
+        }
+        nextToken
+      }
+      objectives
+      actionCTA
+      actionSubhead
+      actionLink
+      actionLinkTitle
+      actionExample
+      author {
+        items {
+          id
+          name
+          headshot
+          linkedIn
+          title
+          company
+          createdAt
+          updatedAt
+          lessonDraftAuthorId
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateLessonDraft = /* GraphQL */ `
+  subscription OnUpdateLessonDraft {
+    onUpdateLessonDraft {
+      id
+      slug
+      title
+      subhead
+      type
+      media
+      mediaType
+      slides
+      seoImage
+      content
+      sources {
+        items {
+          id
+          name
+          link
+          position
+          createdAt
+          updatedAt
+          lessonSourcesId
+          lessonDraftSourcesId
+        }
+        nextToken
+      }
+      links {
+        items {
+          id
+          name
+          link
+          createdAt
+          updatedAt
+          lessonLinksId
+          lessonDraftLinksId
+        }
+        nextToken
+      }
+      tags {
+        items {
+          id
+          tag
+          createdAt
+          updatedAt
+          lessonTagsId
+          lessonDraftTagsId
+          blogTagsId
+          articleTagsId
+        }
+        nextToken
+      }
+      objectives
+      actionCTA
+      actionSubhead
+      actionLink
+      actionLinkTitle
+      actionExample
+      author {
+        items {
+          id
+          name
+          headshot
+          linkedIn
+          title
+          company
+          createdAt
+          updatedAt
+          lessonDraftAuthorId
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteLessonDraft = /* GraphQL */ `
+  subscription OnDeleteLessonDraft {
+    onDeleteLessonDraft {
+      id
+      slug
+      title
+      subhead
+      type
+      media
+      mediaType
+      slides
+      seoImage
+      content
+      sources {
+        items {
+          id
+          name
+          link
+          position
+          createdAt
+          updatedAt
+          lessonSourcesId
+          lessonDraftSourcesId
+        }
+        nextToken
+      }
+      links {
+        items {
+          id
+          name
+          link
+          createdAt
+          updatedAt
+          lessonLinksId
+          lessonDraftLinksId
+        }
+        nextToken
+      }
+      tags {
+        items {
+          id
+          tag
+          createdAt
+          updatedAt
+          lessonTagsId
+          lessonDraftTagsId
+          blogTagsId
+          articleTagsId
+        }
+        nextToken
+      }
+      objectives
+      actionCTA
+      actionSubhead
+      actionLink
+      actionLinkTitle
+      actionExample
+      author {
+        items {
+          id
+          name
+          headshot
+          linkedIn
+          title
+          company
+          createdAt
+          updatedAt
+          lessonDraftAuthorId
         }
         nextToken
       }
@@ -580,6 +826,7 @@ export const onCreateAuthor = /* GraphQL */ `
       }
       createdAt
       updatedAt
+      lessonDraftAuthorId
     }
   }
 `;
@@ -604,6 +851,7 @@ export const onUpdateAuthor = /* GraphQL */ `
       }
       createdAt
       updatedAt
+      lessonDraftAuthorId
     }
   }
 `;
@@ -628,6 +876,7 @@ export const onDeleteAuthor = /* GraphQL */ `
       }
       createdAt
       updatedAt
+      lessonDraftAuthorId
     }
   }
 `;
@@ -647,6 +896,7 @@ export const onCreateBlog = /* GraphQL */ `
           createdAt
           updatedAt
           lessonTagsId
+          lessonDraftTagsId
           blogTagsId
           articleTagsId
         }
@@ -674,6 +924,7 @@ export const onUpdateBlog = /* GraphQL */ `
           createdAt
           updatedAt
           lessonTagsId
+          lessonDraftTagsId
           blogTagsId
           articleTagsId
         }
@@ -701,6 +952,7 @@ export const onDeleteBlog = /* GraphQL */ `
           createdAt
           updatedAt
           lessonTagsId
+          lessonDraftTagsId
           blogTagsId
           articleTagsId
         }
@@ -729,6 +981,7 @@ export const onCreateArticle = /* GraphQL */ `
           createdAt
           updatedAt
           lessonTagsId
+          lessonDraftTagsId
           blogTagsId
           articleTagsId
         }
@@ -766,6 +1019,7 @@ export const onUpdateArticle = /* GraphQL */ `
           createdAt
           updatedAt
           lessonTagsId
+          lessonDraftTagsId
           blogTagsId
           articleTagsId
         }
@@ -803,6 +1057,7 @@ export const onDeleteArticle = /* GraphQL */ `
           createdAt
           updatedAt
           lessonTagsId
+          lessonDraftTagsId
           blogTagsId
           articleTagsId
         }
@@ -5097,6 +5352,7 @@ export const onCreateAuthorLessons = /* GraphQL */ `
         }
         createdAt
         updatedAt
+        lessonDraftAuthorId
       }
       createdAt
       updatedAt
@@ -5153,6 +5409,7 @@ export const onUpdateAuthorLessons = /* GraphQL */ `
         }
         createdAt
         updatedAt
+        lessonDraftAuthorId
       }
       createdAt
       updatedAt
@@ -5209,6 +5466,7 @@ export const onDeleteAuthorLessons = /* GraphQL */ `
         }
         createdAt
         updatedAt
+        lessonDraftAuthorId
       }
       createdAt
       updatedAt

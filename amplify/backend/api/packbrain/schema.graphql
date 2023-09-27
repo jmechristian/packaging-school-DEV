@@ -104,6 +104,29 @@ type Lesson @model @auth(rules: [{ allow: public }]) {
   author: [Author] @manyToMany(relationName: "AuthorLessons")
 }
 
+type LessonDraft @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  slug: String! @index(name: "lessonsDraftByTitle")
+  title: String!
+  subhead: String
+  type: ModuleType
+  media: String
+  mediaType: MediaType
+  slides: [String]
+  seoImage: String
+  content: String
+  sources: [LessonSource] @hasMany
+  links: [LessonLink] @hasMany
+  tags: [Tags] @hasMany
+  objectives: [String]
+  actionCTA: String
+  actionSubhead: String
+  actionLink: String
+  actionLinkTitle: String
+  actionExample: String
+  author: [Author] @hasMany
+}
+
 type Author @model @auth(rules: [{ allow: public }]) {
   id: ID!
   name: String!
