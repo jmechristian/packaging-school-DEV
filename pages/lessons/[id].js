@@ -111,9 +111,11 @@ export async function getStaticPaths() {
   const res = await API.graphql({
     query: listLessons,
   });
-  const paths = res.data.listLessons.items.map((lesson) => ({
-    params: { id: lesson.slug },
-  }));
+  const paths = res.data.listLessons.items
+    .filter((it) => it.status != 'DRAFT')
+    .map((lesson) => ({
+      params: { id: lesson.slug },
+    }));
 
   return { paths, fallback: true };
 }
