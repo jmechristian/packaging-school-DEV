@@ -10,6 +10,7 @@ const nextConfig = {
       'apsmedia.s3.amazonaws.com',
       'packagingschool.com',
       'psupdatetemp.wpengine.com',
+      'psadmin.s3.amazonaws.com',
     ],
   },
   async redirects() {

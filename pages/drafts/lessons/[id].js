@@ -6,6 +6,7 @@ import LessonsHeader from '../../../components/lessons/LessonsHeader';
 import LessonHero from '../../../components/lessons/LessonHero';
 import LessonsMedia from '../../../components/lessons/LessonsMedia';
 import LessonSlides from '../../../components/lessons/LessonSlides';
+import Image from 'next/image';
 
 const Page = ({ draft }) => {
   const setMedia = () => {
@@ -72,22 +73,36 @@ const Page = ({ draft }) => {
 
   const paragraphHandler = (item) => {
     let para = [];
-    return item.content.map((pa, i) => (
-      <span
-        key={pa.text}
-        className={`inline  ${
-          pa.marks && pa.marks.map((mark) => markHandler(mark))
-        }`}
-      >
-        {pa.text}
-      </span>
-    ));
+    return (
+      item.content &&
+      item.content.map((pa, i) => (
+        <span
+          key={pa.text}
+          className={`inline  ${
+            pa.marks && pa.marks.map((mark) => markHandler(mark))
+          }`}
+        >
+          {pa.text}
+        </span>
+      ))
+    );
   };
 
   const bodyCotentHandler = (item) => {
     switch (item.type) {
       case 'heading':
         return <div>{headingHandler(item)}</div>;
+      case 'image':
+        return (
+          <div className='w-full h-full object-contain py-12'>
+            <Image
+              src={item.attrs.src}
+              alt='image'
+              width={1920}
+              height={1080}
+            />
+          </div>
+        );
       case 'paragraph':
         return (
           <div className='text-lg dark:text-white'>
@@ -113,9 +128,7 @@ const Page = ({ draft }) => {
           </blockquote>
         );
       default:
-        return (
-          <p className='dark:text-white text-lg'>{item.content[0].text}</p>
-        );
+        return <p className='dark:text-white text-lg'>NOT HANDLED</p>;
     }
   };
 
