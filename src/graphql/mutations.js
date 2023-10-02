@@ -694,14 +694,10 @@ export const createLessonDraft = /* GraphQL */ `
       author {
         items {
           id
-          name
-          headshot
-          linkedIn
-          title
-          company
+          lessonDraftId
+          draftAuthorId
           createdAt
           updatedAt
-          lessonDraftAuthorId
         }
         nextToken
       }
@@ -773,14 +769,10 @@ export const updateLessonDraft = /* GraphQL */ `
       author {
         items {
           id
-          name
-          headshot
-          linkedIn
-          title
-          company
+          lessonDraftId
+          draftAuthorId
           createdAt
           updatedAt
-          lessonDraftAuthorId
         }
         nextToken
       }
@@ -852,14 +844,10 @@ export const deleteLessonDraft = /* GraphQL */ `
       author {
         items {
           id
-          name
-          headshot
-          linkedIn
-          title
-          company
+          lessonDraftId
+          draftAuthorId
           createdAt
           updatedAt
-          lessonDraftAuthorId
         }
         nextToken
       }
@@ -892,7 +880,6 @@ export const createAuthor = /* GraphQL */ `
       }
       createdAt
       updatedAt
-      lessonDraftAuthorId
     }
   }
 `;
@@ -920,7 +907,6 @@ export const updateAuthor = /* GraphQL */ `
       }
       createdAt
       updatedAt
-      lessonDraftAuthorId
     }
   }
 `;
@@ -948,7 +934,87 @@ export const deleteAuthor = /* GraphQL */ `
       }
       createdAt
       updatedAt
-      lessonDraftAuthorId
+    }
+  }
+`;
+export const createDraftAuthor = /* GraphQL */ `
+  mutation CreateDraftAuthor(
+    $input: CreateDraftAuthorInput!
+    $condition: ModelDraftAuthorConditionInput
+  ) {
+    createDraftAuthor(input: $input, condition: $condition) {
+      id
+      name
+      headshot
+      linkedIn
+      title
+      company
+      draftLessons {
+        items {
+          id
+          lessonDraftId
+          draftAuthorId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateDraftAuthor = /* GraphQL */ `
+  mutation UpdateDraftAuthor(
+    $input: UpdateDraftAuthorInput!
+    $condition: ModelDraftAuthorConditionInput
+  ) {
+    updateDraftAuthor(input: $input, condition: $condition) {
+      id
+      name
+      headshot
+      linkedIn
+      title
+      company
+      draftLessons {
+        items {
+          id
+          lessonDraftId
+          draftAuthorId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteDraftAuthor = /* GraphQL */ `
+  mutation DeleteDraftAuthor(
+    $input: DeleteDraftAuthorInput!
+    $condition: ModelDraftAuthorConditionInput
+  ) {
+    deleteDraftAuthor(input: $input, condition: $condition) {
+      id
+      name
+      headshot
+      linkedIn
+      title
+      company
+      draftLessons {
+        items {
+          id
+          lessonDraftId
+          draftAuthorId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -5670,7 +5736,6 @@ export const createAuthorLessons = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        lessonDraftAuthorId
       }
       createdAt
       updatedAt
@@ -5730,7 +5795,6 @@ export const updateAuthorLessons = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        lessonDraftAuthorId
       }
       createdAt
       updatedAt
@@ -5790,7 +5854,183 @@ export const deleteAuthorLessons = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        lessonDraftAuthorId
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createDraftLessonAuthor = /* GraphQL */ `
+  mutation CreateDraftLessonAuthor(
+    $input: CreateDraftLessonAuthorInput!
+    $condition: ModelDraftLessonAuthorConditionInput
+  ) {
+    createDraftLessonAuthor(input: $input, condition: $condition) {
+      id
+      lessonDraftId
+      draftAuthorId
+      lessonDraft {
+        id
+        slug
+        title
+        subhead
+        type
+        media
+        mediaType
+        slides
+        seoImage
+        content
+        sources {
+          nextToken
+        }
+        links {
+          nextToken
+        }
+        tags {
+          nextToken
+        }
+        objectives
+        actionCTA
+        actionSubhead
+        actionLink
+        actionLinkTitle
+        actionExample
+        author {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      draftAuthor {
+        id
+        name
+        headshot
+        linkedIn
+        title
+        company
+        draftLessons {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateDraftLessonAuthor = /* GraphQL */ `
+  mutation UpdateDraftLessonAuthor(
+    $input: UpdateDraftLessonAuthorInput!
+    $condition: ModelDraftLessonAuthorConditionInput
+  ) {
+    updateDraftLessonAuthor(input: $input, condition: $condition) {
+      id
+      lessonDraftId
+      draftAuthorId
+      lessonDraft {
+        id
+        slug
+        title
+        subhead
+        type
+        media
+        mediaType
+        slides
+        seoImage
+        content
+        sources {
+          nextToken
+        }
+        links {
+          nextToken
+        }
+        tags {
+          nextToken
+        }
+        objectives
+        actionCTA
+        actionSubhead
+        actionLink
+        actionLinkTitle
+        actionExample
+        author {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      draftAuthor {
+        id
+        name
+        headshot
+        linkedIn
+        title
+        company
+        draftLessons {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteDraftLessonAuthor = /* GraphQL */ `
+  mutation DeleteDraftLessonAuthor(
+    $input: DeleteDraftLessonAuthorInput!
+    $condition: ModelDraftLessonAuthorConditionInput
+  ) {
+    deleteDraftLessonAuthor(input: $input, condition: $condition) {
+      id
+      lessonDraftId
+      draftAuthorId
+      lessonDraft {
+        id
+        slug
+        title
+        subhead
+        type
+        media
+        mediaType
+        slides
+        seoImage
+        content
+        sources {
+          nextToken
+        }
+        links {
+          nextToken
+        }
+        tags {
+          nextToken
+        }
+        objectives
+        actionCTA
+        actionSubhead
+        actionLink
+        actionLinkTitle
+        actionExample
+        author {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      draftAuthor {
+        id
+        name
+        headshot
+        linkedIn
+        title
+        company
+        draftLessons {
+          nextToken
+        }
+        createdAt
+        updatedAt
       }
       createdAt
       updatedAt

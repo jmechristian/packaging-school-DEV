@@ -637,14 +637,10 @@ export const onCreateLessonDraft = /* GraphQL */ `
       author {
         items {
           id
-          name
-          headshot
-          linkedIn
-          title
-          company
+          lessonDraftId
+          draftAuthorId
           createdAt
           updatedAt
-          lessonDraftAuthorId
         }
         nextToken
       }
@@ -713,14 +709,10 @@ export const onUpdateLessonDraft = /* GraphQL */ `
       author {
         items {
           id
-          name
-          headshot
-          linkedIn
-          title
-          company
+          lessonDraftId
+          draftAuthorId
           createdAt
           updatedAt
-          lessonDraftAuthorId
         }
         nextToken
       }
@@ -789,14 +781,10 @@ export const onDeleteLessonDraft = /* GraphQL */ `
       author {
         items {
           id
-          name
-          headshot
-          linkedIn
-          title
-          company
+          lessonDraftId
+          draftAuthorId
           createdAt
           updatedAt
-          lessonDraftAuthorId
         }
         nextToken
       }
@@ -826,7 +814,6 @@ export const onCreateAuthor = /* GraphQL */ `
       }
       createdAt
       updatedAt
-      lessonDraftAuthorId
     }
   }
 `;
@@ -851,7 +838,6 @@ export const onUpdateAuthor = /* GraphQL */ `
       }
       createdAt
       updatedAt
-      lessonDraftAuthorId
     }
   }
 `;
@@ -876,7 +862,78 @@ export const onDeleteAuthor = /* GraphQL */ `
       }
       createdAt
       updatedAt
-      lessonDraftAuthorId
+    }
+  }
+`;
+export const onCreateDraftAuthor = /* GraphQL */ `
+  subscription OnCreateDraftAuthor {
+    onCreateDraftAuthor {
+      id
+      name
+      headshot
+      linkedIn
+      title
+      company
+      draftLessons {
+        items {
+          id
+          lessonDraftId
+          draftAuthorId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateDraftAuthor = /* GraphQL */ `
+  subscription OnUpdateDraftAuthor {
+    onUpdateDraftAuthor {
+      id
+      name
+      headshot
+      linkedIn
+      title
+      company
+      draftLessons {
+        items {
+          id
+          lessonDraftId
+          draftAuthorId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteDraftAuthor = /* GraphQL */ `
+  subscription OnDeleteDraftAuthor {
+    onDeleteDraftAuthor {
+      id
+      name
+      headshot
+      linkedIn
+      title
+      company
+      draftLessons {
+        items {
+          id
+          lessonDraftId
+          draftAuthorId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -5352,7 +5409,6 @@ export const onCreateAuthorLessons = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        lessonDraftAuthorId
       }
       createdAt
       updatedAt
@@ -5409,7 +5465,6 @@ export const onUpdateAuthorLessons = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        lessonDraftAuthorId
       }
       createdAt
       updatedAt
@@ -5466,7 +5521,174 @@ export const onDeleteAuthorLessons = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        lessonDraftAuthorId
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateDraftLessonAuthor = /* GraphQL */ `
+  subscription OnCreateDraftLessonAuthor {
+    onCreateDraftLessonAuthor {
+      id
+      lessonDraftId
+      draftAuthorId
+      lessonDraft {
+        id
+        slug
+        title
+        subhead
+        type
+        media
+        mediaType
+        slides
+        seoImage
+        content
+        sources {
+          nextToken
+        }
+        links {
+          nextToken
+        }
+        tags {
+          nextToken
+        }
+        objectives
+        actionCTA
+        actionSubhead
+        actionLink
+        actionLinkTitle
+        actionExample
+        author {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      draftAuthor {
+        id
+        name
+        headshot
+        linkedIn
+        title
+        company
+        draftLessons {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateDraftLessonAuthor = /* GraphQL */ `
+  subscription OnUpdateDraftLessonAuthor {
+    onUpdateDraftLessonAuthor {
+      id
+      lessonDraftId
+      draftAuthorId
+      lessonDraft {
+        id
+        slug
+        title
+        subhead
+        type
+        media
+        mediaType
+        slides
+        seoImage
+        content
+        sources {
+          nextToken
+        }
+        links {
+          nextToken
+        }
+        tags {
+          nextToken
+        }
+        objectives
+        actionCTA
+        actionSubhead
+        actionLink
+        actionLinkTitle
+        actionExample
+        author {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      draftAuthor {
+        id
+        name
+        headshot
+        linkedIn
+        title
+        company
+        draftLessons {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteDraftLessonAuthor = /* GraphQL */ `
+  subscription OnDeleteDraftLessonAuthor {
+    onDeleteDraftLessonAuthor {
+      id
+      lessonDraftId
+      draftAuthorId
+      lessonDraft {
+        id
+        slug
+        title
+        subhead
+        type
+        media
+        mediaType
+        slides
+        seoImage
+        content
+        sources {
+          nextToken
+        }
+        links {
+          nextToken
+        }
+        tags {
+          nextToken
+        }
+        objectives
+        actionCTA
+        actionSubhead
+        actionLink
+        actionLinkTitle
+        actionExample
+        author {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      draftAuthor {
+        id
+        name
+        headshot
+        linkedIn
+        title
+        company
+        draftLessons {
+          nextToken
+        }
+        createdAt
+        updatedAt
       }
       createdAt
       updatedAt

@@ -1,5 +1,5 @@
 import React from 'react';
-import { API, Amplify } from 'aws-amplify';
+import { API, Amplify, graphqlOperation } from 'aws-amplify';
 import { getLessonDraft } from '../../../src/graphql/queries';
 import Head from 'next/head';
 import LessonsHeader from '../../../components/lessons/LessonsHeader';
@@ -7,6 +7,7 @@ import LessonHero from '../../../components/lessons/LessonHero';
 import LessonsMedia from '../../../components/lessons/LessonsMedia';
 import LessonSlides from '../../../components/lessons/LessonSlides';
 import Image from 'next/image';
+import DraftLessonsHeader from '../../../components/lessons/DraftLessonsheader';
 
 const Page = ({ draft }) => {
   const setMedia = () => {
@@ -23,7 +24,7 @@ const Page = ({ draft }) => {
   };
 
   const bodyContent = JSON.parse(draft.content);
-  console.log(bodyContent);
+  console.log(draft);
 
   const headingHandler = (item) => {
     switch (item.attrs.level) {
@@ -147,7 +148,7 @@ const Page = ({ draft }) => {
         <meta name='description' content={draft?.subhead} key='desc' />
       </Head>
       <main className='flex flex-col gap-12 py-12 dark:bg-dark-dark'>
-        <LessonsHeader
+        <DraftLessonsHeader
           title={draft.title}
           subhead={draft.subhead}
           id={draft.id}
@@ -170,10 +171,63 @@ const Page = ({ draft }) => {
 export default Page;
 
 export async function getServerSideProps({ params }) {
-  const res = await API.graphql({
-    query: getLessonDraft,
-    variables: { id: params.id },
-  });
+  const getLesson = /* GraphQL */ `
+    query MyQuery($id: ID!) {
+      getLessonDraft(id: $id) {
+        actionCTA
+        actionExample
+        actionLink
+        actionLinkTitle
+        actionSubhead
+        author {
+          items {
+            draftAuthor {
+              company
+              headshot
+              id
+              linkedIn
+              name
+              title
+            }
+          }
+        }
+        content
+        createdAt
+        id
+        links {
+          items {
+            id
+            link
+            name
+          }
+        }
+        media
+        mediaType
+        objectives
+        seoImage
+        slides
+        slug
+        sources {
+          items {
+            id
+            link
+            name
+            position
+          }
+        }
+        subhead
+        title
+        type
+        updatedAt
+      }
+    }
+  `;
+
+  const variables = {
+    id: params.id, // key is "input" based on the mutation above
+  };
+
+  const res = await API.graphql(graphqlOperation(getLesson, variables));
   const draft = await res.data.getLessonDraft;
   return { props: { draft } };
 }

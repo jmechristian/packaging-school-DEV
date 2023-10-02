@@ -124,7 +124,7 @@ type LessonDraft @model @auth(rules: [{ allow: public }]) {
   actionLink: String
   actionLinkTitle: String
   actionExample: String
-  author: [Author] @hasMany
+  author: [DraftAuthor] @manyToMany(relationName: "DraftLessonAuthor")
 }
 
 type Author @model @auth(rules: [{ allow: public }]) {
@@ -135,6 +135,16 @@ type Author @model @auth(rules: [{ allow: public }]) {
   title: String
   company: String
   lessons: [Lesson] @manyToMany(relationName: "AuthorLessons")
+}
+
+type DraftAuthor @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  name: String!
+  headshot: String
+  linkedIn: String
+  title: String
+  company: String
+  draftLessons: [LessonDraft] @manyToMany(relationName: "DraftLessonAuthor")
 }
 
 type Blog @model @auth(rules: [{ allow: public }]) {

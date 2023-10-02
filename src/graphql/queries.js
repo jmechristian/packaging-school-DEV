@@ -569,14 +569,10 @@ export const getLessonDraft = /* GraphQL */ `
       author {
         items {
           id
-          name
-          headshot
-          linkedIn
-          title
-          company
+          lessonDraftId
+          draftAuthorId
           createdAt
           updatedAt
-          lessonDraftAuthorId
         }
         nextToken
       }
@@ -700,7 +696,6 @@ export const getAuthor = /* GraphQL */ `
       }
       createdAt
       updatedAt
-      lessonDraftAuthorId
     }
   }
 `;
@@ -723,7 +718,54 @@ export const listAuthors = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        lessonDraftAuthorId
+      }
+      nextToken
+    }
+  }
+`;
+export const getDraftAuthor = /* GraphQL */ `
+  query GetDraftAuthor($id: ID!) {
+    getDraftAuthor(id: $id) {
+      id
+      name
+      headshot
+      linkedIn
+      title
+      company
+      draftLessons {
+        items {
+          id
+          lessonDraftId
+          draftAuthorId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listDraftAuthors = /* GraphQL */ `
+  query ListDraftAuthors(
+    $filter: ModelDraftAuthorFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listDraftAuthors(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        name
+        headshot
+        linkedIn
+        title
+        company
+        draftLessons {
+          nextToken
+        }
+        createdAt
+        updatedAt
       }
       nextToken
     }
@@ -4190,7 +4232,6 @@ export const getAuthorLessons = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        lessonDraftAuthorId
       }
       createdAt
       updatedAt
@@ -4237,7 +4278,6 @@ export const listAuthorLessons = /* GraphQL */ `
           company
           createdAt
           updatedAt
-          lessonDraftAuthorId
         }
         createdAt
         updatedAt
@@ -4294,7 +4334,6 @@ export const authorLessonsByLessonId = /* GraphQL */ `
           company
           createdAt
           updatedAt
-          lessonDraftAuthorId
         }
         createdAt
         updatedAt
@@ -4351,7 +4390,226 @@ export const authorLessonsByAuthorId = /* GraphQL */ `
           company
           createdAt
           updatedAt
-          lessonDraftAuthorId
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getDraftLessonAuthor = /* GraphQL */ `
+  query GetDraftLessonAuthor($id: ID!) {
+    getDraftLessonAuthor(id: $id) {
+      id
+      lessonDraftId
+      draftAuthorId
+      lessonDraft {
+        id
+        slug
+        title
+        subhead
+        type
+        media
+        mediaType
+        slides
+        seoImage
+        content
+        sources {
+          nextToken
+        }
+        links {
+          nextToken
+        }
+        tags {
+          nextToken
+        }
+        objectives
+        actionCTA
+        actionSubhead
+        actionLink
+        actionLinkTitle
+        actionExample
+        author {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      draftAuthor {
+        id
+        name
+        headshot
+        linkedIn
+        title
+        company
+        draftLessons {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listDraftLessonAuthors = /* GraphQL */ `
+  query ListDraftLessonAuthors(
+    $filter: ModelDraftLessonAuthorFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listDraftLessonAuthors(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        lessonDraftId
+        draftAuthorId
+        lessonDraft {
+          id
+          slug
+          title
+          subhead
+          type
+          media
+          mediaType
+          slides
+          seoImage
+          content
+          objectives
+          actionCTA
+          actionSubhead
+          actionLink
+          actionLinkTitle
+          actionExample
+          createdAt
+          updatedAt
+        }
+        draftAuthor {
+          id
+          name
+          headshot
+          linkedIn
+          title
+          company
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const draftLessonAuthorsByLessonDraftId = /* GraphQL */ `
+  query DraftLessonAuthorsByLessonDraftId(
+    $lessonDraftId: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelDraftLessonAuthorFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    draftLessonAuthorsByLessonDraftId(
+      lessonDraftId: $lessonDraftId
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        lessonDraftId
+        draftAuthorId
+        lessonDraft {
+          id
+          slug
+          title
+          subhead
+          type
+          media
+          mediaType
+          slides
+          seoImage
+          content
+          objectives
+          actionCTA
+          actionSubhead
+          actionLink
+          actionLinkTitle
+          actionExample
+          createdAt
+          updatedAt
+        }
+        draftAuthor {
+          id
+          name
+          headshot
+          linkedIn
+          title
+          company
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const draftLessonAuthorsByDraftAuthorId = /* GraphQL */ `
+  query DraftLessonAuthorsByDraftAuthorId(
+    $draftAuthorId: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelDraftLessonAuthorFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    draftLessonAuthorsByDraftAuthorId(
+      draftAuthorId: $draftAuthorId
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        lessonDraftId
+        draftAuthorId
+        lessonDraft {
+          id
+          slug
+          title
+          subhead
+          type
+          media
+          mediaType
+          slides
+          seoImage
+          content
+          objectives
+          actionCTA
+          actionSubhead
+          actionLink
+          actionLinkTitle
+          actionExample
+          createdAt
+          updatedAt
+        }
+        draftAuthor {
+          id
+          name
+          headshot
+          linkedIn
+          title
+          company
+          createdAt
+          updatedAt
         }
         createdAt
         updatedAt
