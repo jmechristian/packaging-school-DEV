@@ -102,29 +102,7 @@ type Lesson @model @auth(rules: [{ allow: public }]) {
   actionLinkTitle: String
   actionExample: String
   author: [Author] @manyToMany(relationName: "AuthorLessons")
-}
-
-type LessonDraft @model @auth(rules: [{ allow: public }]) {
-  id: ID!
-  slug: String! @index(name: "lessonsDraftByTitle")
-  title: String!
-  subhead: String
-  type: ModuleType
-  media: String
-  mediaType: MediaType
-  slides: [String]
-  seoImage: String
-  content: String
-  sources: [LessonSource] @hasMany
-  links: [LessonLink] @hasMany
-  tags: [Tags] @hasMany
-  objectives: [String]
-  actionCTA: String
-  actionSubhead: String
-  actionLink: String
-  actionLinkTitle: String
-  actionExample: String
-  author: [DraftAuthor] @manyToMany(relationName: "DraftLessonAuthor")
+  status: String @default(value: "DRAFT")
 }
 
 type Author @model @auth(rules: [{ allow: public }]) {
@@ -135,16 +113,6 @@ type Author @model @auth(rules: [{ allow: public }]) {
   title: String
   company: String
   lessons: [Lesson] @manyToMany(relationName: "AuthorLessons")
-}
-
-type DraftAuthor @model @auth(rules: [{ allow: public }]) {
-  id: ID!
-  name: String!
-  headshot: String
-  linkedIn: String
-  title: String
-  company: String
-  draftLessons: [LessonDraft] @manyToMany(relationName: "DraftLessonAuthor")
 }
 
 type Blog @model @auth(rules: [{ allow: public }]) {

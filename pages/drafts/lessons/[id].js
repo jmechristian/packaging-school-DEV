@@ -148,7 +148,7 @@ const Page = ({ draft }) => {
         <meta name='description' content={draft?.subhead} key='desc' />
       </Head>
       <main className='flex flex-col gap-12 py-12 dark:bg-dark-dark'>
-        <DraftLessonsHeader
+        <LessonsHeader
           title={draft.title}
           subhead={draft.subhead}
           id={draft.id}
@@ -173,7 +173,7 @@ export default Page;
 export async function getServerSideProps({ params }) {
   const getLesson = /* GraphQL */ `
     query MyQuery($id: ID!) {
-      getLessonDraft(id: $id) {
+      getLesson(id: $id) {
         actionCTA
         actionExample
         actionLink
@@ -181,7 +181,7 @@ export async function getServerSideProps({ params }) {
         actionSubhead
         author {
           items {
-            draftAuthor {
+            author {
               company
               headshot
               id
@@ -228,6 +228,6 @@ export async function getServerSideProps({ params }) {
   };
 
   const res = await API.graphql(graphqlOperation(getLesson, variables));
-  const draft = await res.data.getLessonDraft;
+  const draft = await res.data.getLesson;
   return { props: { draft } };
 }

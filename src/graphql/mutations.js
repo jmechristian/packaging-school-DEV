@@ -14,7 +14,6 @@ export const createLessonSource = /* GraphQL */ `
       createdAt
       updatedAt
       lessonSourcesId
-      lessonDraftSourcesId
     }
   }
 `;
@@ -31,7 +30,6 @@ export const updateLessonSource = /* GraphQL */ `
       createdAt
       updatedAt
       lessonSourcesId
-      lessonDraftSourcesId
     }
   }
 `;
@@ -48,7 +46,6 @@ export const deleteLessonSource = /* GraphQL */ `
       createdAt
       updatedAt
       lessonSourcesId
-      lessonDraftSourcesId
     }
   }
 `;
@@ -64,7 +61,6 @@ export const createLessonLink = /* GraphQL */ `
       createdAt
       updatedAt
       lessonLinksId
-      lessonDraftLinksId
     }
   }
 `;
@@ -80,7 +76,6 @@ export const updateLessonLink = /* GraphQL */ `
       createdAt
       updatedAt
       lessonLinksId
-      lessonDraftLinksId
     }
   }
 `;
@@ -96,7 +91,6 @@ export const deleteLessonLink = /* GraphQL */ `
       createdAt
       updatedAt
       lessonLinksId
-      lessonDraftLinksId
     }
   }
 `;
@@ -111,7 +105,6 @@ export const createTags = /* GraphQL */ `
       createdAt
       updatedAt
       lessonTagsId
-      lessonDraftTagsId
       blogTagsId
       articleTagsId
     }
@@ -128,7 +121,6 @@ export const updateTags = /* GraphQL */ `
       createdAt
       updatedAt
       lessonTagsId
-      lessonDraftTagsId
       blogTagsId
       articleTagsId
     }
@@ -145,7 +137,6 @@ export const deleteTags = /* GraphQL */ `
       createdAt
       updatedAt
       lessonTagsId
-      lessonDraftTagsId
       blogTagsId
       articleTagsId
     }
@@ -431,7 +422,6 @@ export const createLesson = /* GraphQL */ `
           createdAt
           updatedAt
           lessonSourcesId
-          lessonDraftSourcesId
         }
         nextToken
       }
@@ -443,7 +433,6 @@ export const createLesson = /* GraphQL */ `
           createdAt
           updatedAt
           lessonLinksId
-          lessonDraftLinksId
         }
         nextToken
       }
@@ -454,7 +443,6 @@ export const createLesson = /* GraphQL */ `
           createdAt
           updatedAt
           lessonTagsId
-          lessonDraftTagsId
           blogTagsId
           articleTagsId
         }
@@ -476,6 +464,7 @@ export const createLesson = /* GraphQL */ `
         }
         nextToken
       }
+      status
       createdAt
       updatedAt
     }
@@ -506,7 +495,6 @@ export const updateLesson = /* GraphQL */ `
           createdAt
           updatedAt
           lessonSourcesId
-          lessonDraftSourcesId
         }
         nextToken
       }
@@ -518,7 +506,6 @@ export const updateLesson = /* GraphQL */ `
           createdAt
           updatedAt
           lessonLinksId
-          lessonDraftLinksId
         }
         nextToken
       }
@@ -529,7 +516,6 @@ export const updateLesson = /* GraphQL */ `
           createdAt
           updatedAt
           lessonTagsId
-          lessonDraftTagsId
           blogTagsId
           articleTagsId
         }
@@ -551,6 +537,7 @@ export const updateLesson = /* GraphQL */ `
         }
         nextToken
       }
+      status
       createdAt
       updatedAt
     }
@@ -581,7 +568,6 @@ export const deleteLesson = /* GraphQL */ `
           createdAt
           updatedAt
           lessonSourcesId
-          lessonDraftSourcesId
         }
         nextToken
       }
@@ -593,7 +579,6 @@ export const deleteLesson = /* GraphQL */ `
           createdAt
           updatedAt
           lessonLinksId
-          lessonDraftLinksId
         }
         nextToken
       }
@@ -604,7 +589,6 @@ export const deleteLesson = /* GraphQL */ `
           createdAt
           updatedAt
           lessonTagsId
-          lessonDraftTagsId
           blogTagsId
           articleTagsId
         }
@@ -626,231 +610,7 @@ export const deleteLesson = /* GraphQL */ `
         }
         nextToken
       }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const createLessonDraft = /* GraphQL */ `
-  mutation CreateLessonDraft(
-    $input: CreateLessonDraftInput!
-    $condition: ModelLessonDraftConditionInput
-  ) {
-    createLessonDraft(input: $input, condition: $condition) {
-      id
-      slug
-      title
-      subhead
-      type
-      media
-      mediaType
-      slides
-      seoImage
-      content
-      sources {
-        items {
-          id
-          name
-          link
-          position
-          createdAt
-          updatedAt
-          lessonSourcesId
-          lessonDraftSourcesId
-        }
-        nextToken
-      }
-      links {
-        items {
-          id
-          name
-          link
-          createdAt
-          updatedAt
-          lessonLinksId
-          lessonDraftLinksId
-        }
-        nextToken
-      }
-      tags {
-        items {
-          id
-          tag
-          createdAt
-          updatedAt
-          lessonTagsId
-          lessonDraftTagsId
-          blogTagsId
-          articleTagsId
-        }
-        nextToken
-      }
-      objectives
-      actionCTA
-      actionSubhead
-      actionLink
-      actionLinkTitle
-      actionExample
-      author {
-        items {
-          id
-          lessonDraftId
-          draftAuthorId
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const updateLessonDraft = /* GraphQL */ `
-  mutation UpdateLessonDraft(
-    $input: UpdateLessonDraftInput!
-    $condition: ModelLessonDraftConditionInput
-  ) {
-    updateLessonDraft(input: $input, condition: $condition) {
-      id
-      slug
-      title
-      subhead
-      type
-      media
-      mediaType
-      slides
-      seoImage
-      content
-      sources {
-        items {
-          id
-          name
-          link
-          position
-          createdAt
-          updatedAt
-          lessonSourcesId
-          lessonDraftSourcesId
-        }
-        nextToken
-      }
-      links {
-        items {
-          id
-          name
-          link
-          createdAt
-          updatedAt
-          lessonLinksId
-          lessonDraftLinksId
-        }
-        nextToken
-      }
-      tags {
-        items {
-          id
-          tag
-          createdAt
-          updatedAt
-          lessonTagsId
-          lessonDraftTagsId
-          blogTagsId
-          articleTagsId
-        }
-        nextToken
-      }
-      objectives
-      actionCTA
-      actionSubhead
-      actionLink
-      actionLinkTitle
-      actionExample
-      author {
-        items {
-          id
-          lessonDraftId
-          draftAuthorId
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const deleteLessonDraft = /* GraphQL */ `
-  mutation DeleteLessonDraft(
-    $input: DeleteLessonDraftInput!
-    $condition: ModelLessonDraftConditionInput
-  ) {
-    deleteLessonDraft(input: $input, condition: $condition) {
-      id
-      slug
-      title
-      subhead
-      type
-      media
-      mediaType
-      slides
-      seoImage
-      content
-      sources {
-        items {
-          id
-          name
-          link
-          position
-          createdAt
-          updatedAt
-          lessonSourcesId
-          lessonDraftSourcesId
-        }
-        nextToken
-      }
-      links {
-        items {
-          id
-          name
-          link
-          createdAt
-          updatedAt
-          lessonLinksId
-          lessonDraftLinksId
-        }
-        nextToken
-      }
-      tags {
-        items {
-          id
-          tag
-          createdAt
-          updatedAt
-          lessonTagsId
-          lessonDraftTagsId
-          blogTagsId
-          articleTagsId
-        }
-        nextToken
-      }
-      objectives
-      actionCTA
-      actionSubhead
-      actionLink
-      actionLinkTitle
-      actionExample
-      author {
-        items {
-          id
-          lessonDraftId
-          draftAuthorId
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
+      status
       createdAt
       updatedAt
     }
@@ -937,87 +697,6 @@ export const deleteAuthor = /* GraphQL */ `
     }
   }
 `;
-export const createDraftAuthor = /* GraphQL */ `
-  mutation CreateDraftAuthor(
-    $input: CreateDraftAuthorInput!
-    $condition: ModelDraftAuthorConditionInput
-  ) {
-    createDraftAuthor(input: $input, condition: $condition) {
-      id
-      name
-      headshot
-      linkedIn
-      title
-      company
-      draftLessons {
-        items {
-          id
-          lessonDraftId
-          draftAuthorId
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const updateDraftAuthor = /* GraphQL */ `
-  mutation UpdateDraftAuthor(
-    $input: UpdateDraftAuthorInput!
-    $condition: ModelDraftAuthorConditionInput
-  ) {
-    updateDraftAuthor(input: $input, condition: $condition) {
-      id
-      name
-      headshot
-      linkedIn
-      title
-      company
-      draftLessons {
-        items {
-          id
-          lessonDraftId
-          draftAuthorId
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const deleteDraftAuthor = /* GraphQL */ `
-  mutation DeleteDraftAuthor(
-    $input: DeleteDraftAuthorInput!
-    $condition: ModelDraftAuthorConditionInput
-  ) {
-    deleteDraftAuthor(input: $input, condition: $condition) {
-      id
-      name
-      headshot
-      linkedIn
-      title
-      company
-      draftLessons {
-        items {
-          id
-          lessonDraftId
-          draftAuthorId
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
 export const createBlog = /* GraphQL */ `
   mutation CreateBlog(
     $input: CreateBlogInput!
@@ -1037,7 +716,6 @@ export const createBlog = /* GraphQL */ `
           createdAt
           updatedAt
           lessonTagsId
-          lessonDraftTagsId
           blogTagsId
           articleTagsId
         }
@@ -1068,7 +746,6 @@ export const updateBlog = /* GraphQL */ `
           createdAt
           updatedAt
           lessonTagsId
-          lessonDraftTagsId
           blogTagsId
           articleTagsId
         }
@@ -1099,7 +776,6 @@ export const deleteBlog = /* GraphQL */ `
           createdAt
           updatedAt
           lessonTagsId
-          lessonDraftTagsId
           blogTagsId
           articleTagsId
         }
@@ -1131,7 +807,6 @@ export const createArticle = /* GraphQL */ `
           createdAt
           updatedAt
           lessonTagsId
-          lessonDraftTagsId
           blogTagsId
           articleTagsId
         }
@@ -1172,7 +847,6 @@ export const updateArticle = /* GraphQL */ `
           createdAt
           updatedAt
           lessonTagsId
-          lessonDraftTagsId
           blogTagsId
           articleTagsId
         }
@@ -1213,7 +887,6 @@ export const deleteArticle = /* GraphQL */ `
           createdAt
           updatedAt
           lessonTagsId
-          lessonDraftTagsId
           blogTagsId
           articleTagsId
         }
@@ -5721,6 +5394,7 @@ export const createAuthorLessons = /* GraphQL */ `
         author {
           nextToken
         }
+        status
         createdAt
         updatedAt
       }
@@ -5780,6 +5454,7 @@ export const updateAuthorLessons = /* GraphQL */ `
         author {
           nextToken
         }
+        status
         createdAt
         updatedAt
       }
@@ -5839,6 +5514,7 @@ export const deleteAuthorLessons = /* GraphQL */ `
         author {
           nextToken
         }
+        status
         createdAt
         updatedAt
       }
@@ -5850,183 +5526,6 @@ export const deleteAuthorLessons = /* GraphQL */ `
         title
         company
         lessons {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const createDraftLessonAuthor = /* GraphQL */ `
-  mutation CreateDraftLessonAuthor(
-    $input: CreateDraftLessonAuthorInput!
-    $condition: ModelDraftLessonAuthorConditionInput
-  ) {
-    createDraftLessonAuthor(input: $input, condition: $condition) {
-      id
-      lessonDraftId
-      draftAuthorId
-      lessonDraft {
-        id
-        slug
-        title
-        subhead
-        type
-        media
-        mediaType
-        slides
-        seoImage
-        content
-        sources {
-          nextToken
-        }
-        links {
-          nextToken
-        }
-        tags {
-          nextToken
-        }
-        objectives
-        actionCTA
-        actionSubhead
-        actionLink
-        actionLinkTitle
-        actionExample
-        author {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      draftAuthor {
-        id
-        name
-        headshot
-        linkedIn
-        title
-        company
-        draftLessons {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const updateDraftLessonAuthor = /* GraphQL */ `
-  mutation UpdateDraftLessonAuthor(
-    $input: UpdateDraftLessonAuthorInput!
-    $condition: ModelDraftLessonAuthorConditionInput
-  ) {
-    updateDraftLessonAuthor(input: $input, condition: $condition) {
-      id
-      lessonDraftId
-      draftAuthorId
-      lessonDraft {
-        id
-        slug
-        title
-        subhead
-        type
-        media
-        mediaType
-        slides
-        seoImage
-        content
-        sources {
-          nextToken
-        }
-        links {
-          nextToken
-        }
-        tags {
-          nextToken
-        }
-        objectives
-        actionCTA
-        actionSubhead
-        actionLink
-        actionLinkTitle
-        actionExample
-        author {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      draftAuthor {
-        id
-        name
-        headshot
-        linkedIn
-        title
-        company
-        draftLessons {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const deleteDraftLessonAuthor = /* GraphQL */ `
-  mutation DeleteDraftLessonAuthor(
-    $input: DeleteDraftLessonAuthorInput!
-    $condition: ModelDraftLessonAuthorConditionInput
-  ) {
-    deleteDraftLessonAuthor(input: $input, condition: $condition) {
-      id
-      lessonDraftId
-      draftAuthorId
-      lessonDraft {
-        id
-        slug
-        title
-        subhead
-        type
-        media
-        mediaType
-        slides
-        seoImage
-        content
-        sources {
-          nextToken
-        }
-        links {
-          nextToken
-        }
-        tags {
-          nextToken
-        }
-        objectives
-        actionCTA
-        actionSubhead
-        actionLink
-        actionLinkTitle
-        actionExample
-        author {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      draftAuthor {
-        id
-        name
-        headshot
-        linkedIn
-        title
-        company
-        draftLessons {
           nextToken
         }
         createdAt
