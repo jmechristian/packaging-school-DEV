@@ -6,6 +6,7 @@ import LessonsHeader from '../../../components/lessons/LessonsHeader';
 import LessonHero from '../../../components/lessons/LessonHero';
 import LessonsMedia from '../../../components/lessons/LessonsMedia';
 import LessonSlides from '../../../components/lessons/LessonSlides';
+import LearningObjectives from '../../../components/lessons/LearningObjectives';
 import Image from 'next/image';
 import DraftLessonsHeader from '../../../components/lessons/DraftLessonsheader';
 
@@ -95,13 +96,12 @@ const Page = ({ draft }) => {
         return <div>{headingHandler(item)}</div>;
       case 'image':
         return (
-          <div className='w-full h-full object-contain py-12'>
-            <Image
-              src={item.attrs.src}
-              alt='image'
-              width={1920}
-              height={1080}
-            />
+          <div className='w-full h-full my-12'>
+            {/* <div
+              className='aspect-[16/9] w-full h-full bg-contain bg-center bg-no-repeat mx-auto'
+              style={{ backgroundImage: `url(${item.attrs.src})` }}
+            ></div> */}
+            <img src={item.attrs.src} alt='alt' />
           </div>
         );
       case 'paragraph':
@@ -147,7 +147,7 @@ const Page = ({ draft }) => {
         <meta property='og:description' content={draft?.subhead} key='desc' />
         <meta name='description' content={draft?.subhead} key='desc' />
       </Head>
-      <main className='flex flex-col gap-12 py-12 dark:bg-dark-dark'>
+      <main className='flex flex-col gap-16 py-12 dark:bg-dark-dark'>
         <LessonsHeader
           title={draft.title}
           subhead={draft.subhead}
@@ -156,11 +156,16 @@ const Page = ({ draft }) => {
           date={draft.updatedAt}
         />
         <div>{draft && setMedia()}</div>
-        <div className='relative px-6 lg:px-8 max-w-4xl mx-auto'>
-          <div className='tiptap'>
-            {bodyContent.map((item, i) => (
-              <div key={i}>{bodyCotentHandler(item)}</div>
-            ))}
+        <div className=' px-6 lg:px-8 max-w-3xl mx-auto flex flex-col gap-12'>
+          <div className='lg:py-4'>
+            <LearningObjectives objectives={draft.objectives} />
+          </div>
+          <div className='relative'>
+            <div className='tiptap'>
+              {bodyContent.map((item, i) => (
+                <div key={i}>{bodyCotentHandler(item)}</div>
+              ))}
+            </div>
           </div>
         </div>
       </main>

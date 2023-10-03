@@ -60,7 +60,7 @@ const LessonsHeader = ({ id, title, subhead, tags, author, date }) => {
         </div>
       )}
       <div>
-        <div className='flex justify-between w-full gap-4'>
+        <div className='flex justify-between  w-full gap-4'>
           <h1 className='text-4xl font-semibold tracking-tight sm:text-5xl font-greycliff dark:text-white'>
             {title}
           </h1>
@@ -73,7 +73,7 @@ const LessonsHeader = ({ id, title, subhead, tags, author, date }) => {
           </div>
         </div>
         {date && (
-          <div className='flex gap-2 text-sm mt-2'>
+          <div className='flex flex-col md:flex-row gap-1 text-sm mt-2'>
             <div className='text-gray-700 dark:text-white/60'>{newDate}</div>
             {author.length > 0 &&
               author.map((a) => (
@@ -85,7 +85,7 @@ const LessonsHeader = ({ id, title, subhead, tags, author, date }) => {
               ))}
           </div>
         )}
-        <p className='mt-8 text-lg md:text-xl  text-gray-700 dark:text-white/60'>
+        <p className='mt-8 text-lg md:text-2xl  text-gray-700 dark:text-white/60'>
           {subhead}
         </p>
       </div>
