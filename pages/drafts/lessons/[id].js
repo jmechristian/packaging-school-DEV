@@ -1,14 +1,12 @@
-import React from 'react';
-import { API, Amplify, graphqlOperation } from 'aws-amplify';
-import { getLessonDraft } from '../../../src/graphql/queries';
+import React, { Suspense } from 'react';
+import { API, graphqlOperation } from 'aws-amplify';
 import Head from 'next/head';
 import LessonsHeader from '../../../components/lessons/LessonsHeader';
 import LessonHero from '../../../components/lessons/LessonHero';
 import LessonsMedia from '../../../components/lessons/LessonsMedia';
 import LessonSlides from '../../../components/lessons/LessonSlides';
 import LearningObjectives from '../../../components/lessons/LearningObjectives';
-import Image from 'next/image';
-import DraftLessonsHeader from '../../../components/lessons/DraftLessonsheader';
+import RelatedLesson from '../../../components/lessons/RelatedLesson';
 
 const Page = ({ draft }) => {
   const setMedia = () => {
@@ -137,17 +135,17 @@ const Page = ({ draft }) => {
     <div className='flex flex-col'>
       <Head>
         <title>{draft?.title}</title>
-        {/* <meta
-            name='image'
-            property='og:image'
-            content={draft?.seoImage}
-            key='image'
-          /> */}
+        <meta
+          name='image'
+          property='og:image'
+          content={draft?.seoImage}
+          key='image'
+        />
         <meta property='og:title' content={draft?.title} key='title' />
         <meta property='og:description' content={draft?.subhead} key='desc' />
         <meta name='description' content={draft?.subhead} key='desc' />
       </Head>
-      <main className='flex flex-col gap-16 py-12 dark:bg-dark-dark'>
+      <main className='flex flex-col gap-20 pb-24 py-6 dark:bg-dark-dark bg-white'>
         <LessonsHeader
           title={draft.title}
           subhead={draft.subhead}
@@ -156,17 +154,34 @@ const Page = ({ draft }) => {
           date={draft.updatedAt}
         />
         <div>{draft && setMedia()}</div>
-        <div className=' px-6 lg:px-8 max-w-3xl mx-auto flex flex-col gap-12'>
-          <div className='lg:py-4'>
-            <LearningObjectives objectives={draft.objectives} />
-          </div>
-          <div className='relative'>
-            <div className='tiptap'>
-              {bodyContent.map((item, i) => (
-                <div key={i}>{bodyCotentHandler(item)}</div>
-              ))}
+        <div className='w-fill grid grid-cols-12 max-w-6xl mx-auto gap-12'>
+          <div className='flex flex-col gap-12 col-span-12 lg:col-span-9 pr-12'>
+            {/* <div className='grid grid-cols-12'></div> */}
+            <div>
+              <LearningObjectives objectives={draft.objectives} />
+            </div>
+            <div className='relative'>
+              <div className='tiptap'>
+                {bodyContent.map((item, i) => (
+                  <div key={i}>{bodyCotentHandler(item)}</div>
+                ))}
+              </div>
             </div>
           </div>
+          {draft.related && draft.related.length > 0 && (
+            <div className='col-span-12 lg:col-span-3 w-full'>
+              <div className='border-4 w-full rounded-lg shadow-sm border-neutral-900 dark:border-neutral-900 py-4 flex flex-col gap-4'>
+                <div className='font-bold uppercase text-sm dark:text-white px-4'>
+                  Related Lessons
+                </div>
+                <div className='flex flex-col'>
+                  <RelatedLesson id={draft.related[0]} />
+                  <RelatedLesson id={draft.related[1]} />
+                  <RelatedLesson id={draft.related[2]} />
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </main>
     </div>
@@ -223,6 +238,7 @@ export async function getServerSideProps({ params }) {
         subhead
         title
         type
+        related
         updatedAt
       }
     }

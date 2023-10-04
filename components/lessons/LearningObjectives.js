@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import { CheckCircleIcon, LightBulbIcon } from '@heroicons/react/20/solid';
+import { CheckCircleIcon } from '@heroicons/react/20/solid';
+import { LightBulbIcon } from '@heroicons/react/24/outline';
 
 const IconLabel = ({ name, isComplete }) => {
   return (
-    <div className='flex py-3 gap-1 items-start text-lg text-gray-700 dark:text-white/60 pl-0'>
+    <div className='flex py-3 gap-1 items-start text-lg text-neutral-500 dark:text-neutral-400 pl-0'>
       <LightBulbIcon
         className={`mr-4 h-7 w-7  md:flex-shrink-0 ${
-          isComplete ? 'text-green-400' : 'text-yellow-500'
+          isComplete ? 'stroke-green-400' : 'stroke-yellow-500'
         } `}
         aria-hidden='true'
       />
@@ -38,7 +39,7 @@ const LearningObjectives = ({ objectives }) => {
   return (
     objectives && (
       <div className='flex flex-col gap-6'>
-        <div className='text-clemson dark:text-white text-xl lg:text-2xl font-bold mt-3'>
+        <div className='text-neutral-900 dark:text-white text-xl lg:text-3xl font-bold'>
           Learning Objectives
         </div>
         <ul role='list' className='divide-y divide-gray-200 p-0'>
