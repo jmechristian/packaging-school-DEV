@@ -52,7 +52,7 @@ const APCHow = () => {
                 </div>
                 <div className='text-xl text-gray-700 dark:text-gray-500 max-w-prose'>
                   There is no school or program that enables professionals to
-                  work within the field of Automotive Packaging . Use this
+                  work within the field of Automotive Packaging. Use this
                   program for onboarding of new hires, as a resources for
                   current employees, for strategic launch preparations and as a
                   tool for continued education for your logistics, packaging and
