@@ -64,11 +64,12 @@ const CMPMHow = () => {
           </div>
           <div className='flex flex-col gap-3'>
             <div
-              className='w-full aspect-[3/4] lg:aspect-[3/2] relative bg-center bg-cover rounded-lg'
+              className='w-full aspect-[3/4] lg:aspect-[4/3] relative bg-center bg-cover rounded-lg'
               style={{
-                backgroundImage: `url('https://packschool.s3.amazonaws.com/Julie-Suggs-callout.webp')`,
+                backgroundImage: `url('https://packschool.s3.amazonaws.com/JULIE-2018-sm.jpg')`,
               }}
             >
+              <div className='absolute inset-0 bg-gradient-to-tr from-base-brand/80 to-clemson/40 z-5 rounded-lg'></div>
               <div className='absolute bottom-0 left-0 right-0 p-2'>
                 <div className='grid grid-cols-2 lg:grid-cols-4 gap-2 w-full h-full text-center'>
                   {item.map((it) => (
