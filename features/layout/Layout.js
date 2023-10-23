@@ -149,6 +149,10 @@ const Layout = ({ children }) => {
         />
         <meta name='keywords' content='packaging, sustainability' />
         <meta name='robots' content='index, follow' />
+        <meta
+          name='google-site-verification'
+          content='0J1SRWS-xIM_nHRIochuPhFVG-Yfa3lPy3Y7qoAsx8Y'
+        />
       </Head>
       <div className={`${darkMode ? 'dark' : ''} `}>
         <div className='relative flex flex-col justify-between'>
