@@ -7,6 +7,7 @@ import LessonsMedia from '../../../components/lessons/LessonsMedia';
 import LessonSlides from '../../../components/lessons/LessonSlides';
 import LearningObjectives from '../../../components/lessons/LearningObjectives';
 import RelatedLesson from '../../../components/lessons/RelatedLesson';
+import LinksButton from '../../../components/shared/LinksButton';
 
 const Page = ({ draft }) => {
   const setMedia = () => {
@@ -66,6 +67,10 @@ const Page = ({ draft }) => {
         return 'font-bold';
       case 'italic':
         return 'italic';
+      case 'underline':
+        return 'underline';
+      case 'link':
+        return 'dark:text-indigo-500 text-indigo-600 underline';
       default:
         return;
     }
@@ -77,7 +82,7 @@ const Page = ({ draft }) => {
       item.content &&
       item.content.map((pa, i) => (
         <span
-          key={pa.text}
+          key={i}
           className={`inline  ${
             pa.marks && pa.marks.map((mark) => markHandler(mark))
           }`}
@@ -157,11 +162,13 @@ const Page = ({ draft }) => {
         <div className='w-fill grid grid-cols-12 max-w-6xl mx-auto gap-12'>
           <div className='flex flex-col gap-12 col-span-12 lg:col-span-9 pr-12'>
             {/* <div className='grid grid-cols-12'></div> */}
-            <div>
-              <LearningObjectives objectives={draft.objectives} />
-            </div>
+            {draft.objectives.length > 0 && (
+              <div>
+                <LearningObjectives objectives={draft.objectives} />
+              </div>
+            )}
             <div className='relative'>
-              <div className='tiptap'>
+              <div className='tiptap flex flex-col gap-12'>
                 {bodyContent.map((item, i) => (
                   <div key={i}>{bodyCotentHandler(item)}</div>
                 ))}
@@ -183,6 +190,11 @@ const Page = ({ draft }) => {
             </div>
           )}
         </div>
+        {draft.sources.items ? (
+          <LinksButton sources={draft.sources.items} />
+        ) : (
+          ''
+        )}
       </main>
     </div>
   );
