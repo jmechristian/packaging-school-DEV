@@ -42,7 +42,10 @@ const LearningObjectives = ({ objectives }) => {
         <div className='text-neutral-900 dark:text-white text-xl lg:text-3xl font-bold'>
           Learning Objectives
         </div>
-        <ul role='list' className='divide-y divide-gray-200 p-0'>
+        <ul
+          role='list'
+          className='divide-y divide-gray-300 dark:divide-neutral-800  p-0'
+        >
           {objectives.map((obj) => (
             <li key={obj} className='list-none p-0'>
               <IconLabel name={obj} isComplete={false} />

@@ -163,8 +163,8 @@ const Page = ({ draft }) => {
         >
           <div className='flex flex-col gap-12 col-span-12 lg:col-span-9 xl:pr-12 w-full max-w-prose mx-auto'>
             {/* <div className='grid grid-cols-12'></div> */}
-            {draft.objectives.length > 0 && (
-              <div className='border-b border-b-neutral-300 pb-4'>
+            {draft.objectives && draft.objectives.length > 0 && (
+              <div className='border-b-8 border-b-neutral-400 dark:border-b-neutral-600 pb-4'>
                 <LearningObjectives objectives={draft.objectives} />
               </div>
             )}

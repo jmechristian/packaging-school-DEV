@@ -120,7 +120,7 @@ const Page = ({ lesson, lessons }) => {
               <div className='flex flex-col gap-12 col-span-12 lg:col-span-8 xl:pr-12 w-full max-w-prose mx-auto'>
                 {/* <div className='grid grid-cols-12'></div> */}
                 {lesson.objectives && lesson.objectives.length > 0 && (
-                  <div className='border-b border-b-neutral-300 pb-4'>
+                  <div className='border-b border-b-neutral-300 dark:border-b-neutral-500 pb-4'>
                     <LearningObjectives objectives={lesson.objectives} />
                   </div>
                 )}
