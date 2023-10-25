@@ -8,6 +8,7 @@ import LessonSlides from '../../../components/lessons/LessonSlides';
 import LearningObjectives from '../../../components/lessons/LearningObjectives';
 import RelatedLesson from '../../../components/lessons/RelatedLesson';
 import LinksButton from '../../../components/shared/LinksButton';
+import SocialShare from '../../../components/shared/SocialShare';
 
 const Page = ({ draft }) => {
   const setMedia = () => {
@@ -23,7 +24,6 @@ const Page = ({ draft }) => {
     }
   };
 
-  const bodyContent = JSON.parse(draft.content);
   console.log(draft);
 
   const headingHandler = (item) => {
@@ -77,7 +77,6 @@ const Page = ({ draft }) => {
   };
 
   const paragraphHandler = (item) => {
-    let para = [];
     return (
       item.content &&
       item.content.map((pa, i) => (
@@ -109,13 +108,13 @@ const Page = ({ draft }) => {
         );
       case 'paragraph':
         return (
-          <div className='text-lg dark:text-white'>
+          <div className='text-lg dark:text-white mt-12'>
             {paragraphHandler(item)}
           </div>
         );
       case 'bulletList':
         return (
-          <ul className='text-lg dark:text-white py-4'>
+          <ul className='text-lg dark:text-white'>
             {item.content.map((it, i) => (
               <li key={i}>
                 <p>{it.content[0].content[0].text}</p>
@@ -150,7 +149,7 @@ const Page = ({ draft }) => {
         <meta property='og:description' content={draft?.subhead} key='desc' />
         <meta name='description' content={draft?.subhead} key='desc' />
       </Head>
-      <main className='flex flex-col gap-20 pb-24 py-6 dark:bg-dark-dark bg-white'>
+      <main className='flex flex-col gap-20 pb-24 pt-12 dark:bg-dark-dark bg-white'>
         <LessonsHeader
           title={draft.title}
           subhead={draft.subhead}
@@ -159,37 +158,66 @@ const Page = ({ draft }) => {
           date={draft.updatedAt}
         />
         <div>{draft && setMedia()}</div>
-        <div className='w-fill grid grid-cols-12 max-w-6xl mx-auto gap-12'>
-          <div className='flex flex-col gap-12 col-span-12 lg:col-span-9 pr-12'>
+        <div
+          className={`w-full flex flex-col md:max-w-5xl lg:grid lg:grid-cols-12 max-w-6xl mx-auto gap-12 px-3`}
+        >
+          <div className='flex flex-col gap-12 col-span-12 lg:col-span-9 xl:pr-12 w-full max-w-prose mx-auto'>
             {/* <div className='grid grid-cols-12'></div> */}
             {draft.objectives.length > 0 && (
-              <div>
+              <div className='border-b border-b-neutral-300 pb-4'>
                 <LearningObjectives objectives={draft.objectives} />
               </div>
             )}
             <div className='relative'>
-              <div className='tiptap flex flex-col gap-12'>
+              <div
+                dangerouslySetInnerHTML={{ __html: draft.content }}
+                className='tiptap max-w-prose mx-auto lg:text-lg'
+              ></div>
+              {/* <div className='tiptap flex flex-col'>
                 {bodyContent.map((item, i) => (
                   <div key={i}>{bodyCotentHandler(item)}</div>
                 ))}
+              </div> */}
+            </div>
+          </div>
+
+          <div className='col-span-12 lg:col-span-3 w-full max-w-prose mx-auto'>
+            <div className='border-4 w-full rounded-lg shadow-sm border-neutral-900 dark:border-neutral-900 py-4 flex flex-col gap-4'>
+              <div className='font-bold uppercase text-sm dark:text-white px-4'>
+                Related Lessons
+              </div>
+              <div className='flex flex-col gap-6'>
+                <RelatedLesson
+                  id={
+                    draft.related && draft.related.length > 0
+                      ? draft.related[0]
+                      : '66a95671-feb8-4d74-8a87-033d71431de8'
+                  }
+                />
+                <RelatedLesson
+                  id={
+                    draft.related && draft.related.length > 0
+                      ? draft.related[1]
+                      : 'e3658e91-82f3-4923-8a58-821ec8d5f0cf'
+                  }
+                />
+                <RelatedLesson
+                  id={
+                    draft.related && draft.related.length > 0
+                      ? draft.related[2]
+                      : '29468803-7b8f-48ee-8b04-7619633ab2de'
+                  }
+                />
               </div>
             </div>
           </div>
-          {draft.related && draft.related.length > 0 && (
-            <div className='col-span-12 lg:col-span-3 w-full'>
-              <div className='border-4 w-full rounded-lg shadow-sm border-neutral-900 dark:border-neutral-900 py-4 flex flex-col gap-4'>
-                <div className='font-bold uppercase text-sm dark:text-white px-4'>
-                  Related Lessons
-                </div>
-                <div className='flex flex-col'>
-                  <RelatedLesson id={draft.related[0]} />
-                  <RelatedLesson id={draft.related[1]} />
-                  <RelatedLesson id={draft.related[2]} />
-                </div>
-              </div>
-            </div>
-          )}
         </div>
+        <SocialShare
+          title={draft.title}
+          slug={draft.slug}
+          subhead={draft.subhead}
+          type={'lessons'}
+        />
         {draft.sources.items ? (
           <LinksButton sources={draft.sources.items} />
         ) : (

@@ -4,9 +4,9 @@ import { LightBulbIcon } from '@heroicons/react/24/outline';
 
 const IconLabel = ({ name, isComplete }) => {
   return (
-    <div className='flex py-3 gap-1 items-start text-lg text-neutral-500 dark:text-neutral-400 pl-0'>
+    <div className='flex py-3 gap-1 leading-snug items-start md:text-lg text-neutral-500 dark:text-neutral-400 pl-0'>
       <LightBulbIcon
-        className={`mr-4 h-7 w-7  md:flex-shrink-0 ${
+        className={`mr-4 h-7 w-7 mt-1  md:flex-shrink-0 ${
           isComplete ? 'stroke-green-400' : 'stroke-yellow-500'
         } `}
         aria-hidden='true'

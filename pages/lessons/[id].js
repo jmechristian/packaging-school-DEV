@@ -12,6 +12,8 @@ import LessonSlides from '../../components/lessons/LessonSlides';
 import RelatedLessons from '../../components/shared/RelatedLessons';
 import Image from 'next/image';
 import LessonHero from '../../components/lessons/LessonHero';
+import RelatedLesson from '../../components/lessons/RelatedLesson';
+import LearningObjectives from '../../components/lessons/LearningObjectives';
 
 export const LessonContext = createContext({
   unlocked: Boolean,
@@ -67,7 +69,7 @@ const Page = ({ lesson, lessons }) => {
             setPageContext: (val) => setIsPage(val),
           }}
         >
-          <div className='flex flex-col gap-12 pt-12 dark:bg-dark-dark'>
+          {/* <div className='flex flex-col gap-12 pt-12 dark:bg-dark-dark'>
             <LessonsHeader
               title={lesson.title}
               subhead={lesson.subhead}
@@ -100,7 +102,82 @@ const Page = ({ lesson, lessons }) => {
             ) : (
               ''
             )}
-          </div>
+          </div> */}
+          <main className='flex flex-col gap-20 pt-12 dark:bg-dark-dark bg-white'>
+            <LessonsHeader
+              title={lesson.title}
+              subhead={lesson.subhead}
+              id={lesson.id}
+              author={lesson.author.items}
+              date={lesson.updatedAt}
+            />
+            <div>{lesson && setMedia()}</div>
+            <div
+              className={`w-full flex flex-col md:max-w-5xl lg:grid lg:grid-cols-12 max-w-6xl mx-auto gap-12 px-3`}
+            >
+              <div className='flex flex-col gap-12 col-span-12 lg:col-span-8 xl:pr-12 w-full max-w-prose mx-auto'>
+                {/* <div className='grid grid-cols-12'></div> */}
+                {lesson.objectives && lesson.objectives.length > 0 && (
+                  <div className='border-b border-b-neutral-300 pb-4'>
+                    <LearningObjectives objectives={lesson.objectives} />
+                  </div>
+                )}
+                <div className='relative'>
+                  <div
+                    dangerouslySetInnerHTML={{ __html: lesson.content }}
+                    className='tiptap max-w-prose mx-auto lg:text-lg'
+                  ></div>
+                  {/* <div className='tiptap flex flex-col'>
+                {bodyContent.map((item, i) => (
+                  <div key={i}>{bodyCotentHandler(item)}</div>
+                ))}
+              </div> */}
+                </div>
+              </div>
+
+              <div className='col-span-12 lg:col-span-4 w-full max-w-prose mx-auto'>
+                <div className='border-4 w-full rounded-lg shadow-sm border-neutral-900 dark:border-neutral-900 py-4 flex flex-col gap-4'>
+                  <div className='font-bold uppercase text-sm dark:text-white px-4'>
+                    Related Lessons
+                  </div>
+                  <div className='flex flex-col gap-6'>
+                    <RelatedLesson
+                      id={
+                        lesson.related && lesson.related.length > 0
+                          ? lesson.related[0]
+                          : '66a95671-feb8-4d74-8a87-033d71431de8'
+                      }
+                    />
+                    <RelatedLesson
+                      id={
+                        lesson.related && lesson.related.length > 0
+                          ? lesson.related[1]
+                          : 'e3658e91-82f3-4923-8a58-821ec8d5f0cf'
+                      }
+                    />
+                    <RelatedLesson
+                      id={
+                        lesson.related && lesson.related.length > 0
+                          ? lesson.related[2]
+                          : '29468803-7b8f-48ee-8b04-7619633ab2de'
+                      }
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <SocialShare
+              title={lesson.title}
+              slug={lesson.slug}
+              subhead={lesson.subhead}
+              type={'lessons'}
+            />
+            {lesson.sources.items ? (
+              <LinksButton sources={lesson.sources.items} />
+            ) : (
+              ''
+            )}
+          </main>
         </LessonContext.Provider>
       </>
     )
