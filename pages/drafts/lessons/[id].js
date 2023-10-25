@@ -149,7 +149,7 @@ const Page = ({ draft }) => {
         <meta property='og:description' content={draft?.subhead} key='desc' />
         <meta name='description' content={draft?.subhead} key='desc' />
       </Head>
-      <main className='flex flex-col gap-20 pb-24 pt-12 dark:bg-dark-dark bg-white'>
+      <main className='flex flex-col gap-20 pt-12 dark:bg-dark-dark bg-white'>
         <LessonsHeader
           title={draft.title}
           subhead={draft.subhead}
