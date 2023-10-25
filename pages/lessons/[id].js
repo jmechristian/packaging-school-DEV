@@ -29,6 +29,8 @@ const Page = ({ lesson, lessons }) => {
   const [unlocked, setUnlocked] = useState(false);
   const [isPage, setIsPage] = useState(0);
 
+  console.log(lesson);
+
   const setMedia = () => {
     switch (lesson.mediaType) {
       case 'IMAGE':
@@ -250,6 +252,7 @@ export async function getStaticProps({ params }) {
             }
           }
           title
+          related
           type
           updatedAt
         }
