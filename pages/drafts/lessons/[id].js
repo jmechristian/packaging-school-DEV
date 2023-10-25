@@ -161,7 +161,7 @@ const Page = ({ draft }) => {
         <div
           className={`w-full flex flex-col md:max-w-5xl lg:grid lg:grid-cols-12 max-w-6xl mx-auto gap-12 px-3`}
         >
-          <div className='flex flex-col gap-12 col-span-12 lg:col-span-9 xl:pr-12 w-full max-w-prose mx-auto'>
+          <div className='flex flex-col gap-12 col-span-12 lg:col-span-8 xl:pr-12 w-full max-w-prose mx-auto'>
             {/* <div className='grid grid-cols-12'></div> */}
             {draft.objectives && draft.objectives.length > 0 && (
               <div className='border-b-8 border-b-neutral-400 dark:border-b-neutral-600 pb-4'>
@@ -181,7 +181,7 @@ const Page = ({ draft }) => {
             </div>
           </div>
 
-          <div className='col-span-12 lg:col-span-3 w-full max-w-prose mx-auto'>
+          <div className='col-span-12 lg:col-span-4 w-full max-w-prose mx-auto'>
             <div className='border-4 w-full rounded-lg shadow-sm border-neutral-900 dark:border-neutral-900 py-4 flex flex-col gap-4'>
               <div className='font-bold uppercase text-sm dark:text-white px-4'>
                 Related Lessons
