@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { API } from 'aws-amplify';
 import {
   updateCPSForm,
@@ -13,10 +13,17 @@ import { useRouter } from 'next/router';
 import CPSGoals from './CPSGoals';
 import CPSApply from './CPSApply';
 
-const CPSForm = ({ methods }) => {
+const CPSForm = ({ methods, email }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isUpdated, setIsUpdated] = useState(false);
+  const [isEmail, setIsEmail] = useState('');
   const router = useRouter();
+
+  useEffect(() => {
+    if (email) {
+      setIsEmail(email);
+    }
+  }, [email]);
 
   const { user } = useSelector((state) => state.auth);
 
@@ -43,7 +50,7 @@ const CPSForm = ({ methods }) => {
             birthYear: methods.getValues('birthYear'),
             companyName: methods.getValues('companyName'),
             companyTitle: methods.getValues('companyTitle'),
-            linkedin: methods.getValues('linkedin'),
+            linkedin: methods.getValues('linkedIn'),
             background: methods.getValues('background'),
             whyPackaging: methods.getValues('whyPackaging'),
             areaOfInterest: methods.getValues('areaOfInterest'),
@@ -80,7 +87,7 @@ const CPSForm = ({ methods }) => {
             birthYear: methods.getValues('birthYear'),
             companyName: methods.getValues('companyName'),
             companyTitle: methods.getValues('companyTitle'),
-            linkedin: methods.getValues('linkedin'),
+            linkedin: methods.getValues('linkedIn'),
             background: methods.getValues('background'),
             whyPackaging: methods.getValues('whyPackaging'),
             areaOfInterest: methods.getValues('areaOfInterest'),
@@ -129,7 +136,7 @@ const CPSForm = ({ methods }) => {
             birthYear: methods.getValues('birthYear'),
             companyName: methods.getValues('companyName'),
             companyTitle: methods.getValues('companyTitle'),
-            linkedin: methods.getValues('linkedin'),
+            linkedin: methods.getValues('linkedIn'),
             background: methods.getValues('background'),
             whyPackaging: methods.getValues('whyPackaging'),
             areaOfInterest: methods.getValues('areaOfInterest'),
@@ -167,7 +174,7 @@ const CPSForm = ({ methods }) => {
             birthYear: methods.getValues('birthYear'),
             companyName: methods.getValues('companyName'),
             companyTitle: methods.getValues('companyTitle'),
-            linkedin: methods.getValues('linkedin'),
+            linkedin: methods.getValues('linkedIn'),
             background: methods.getValues('background'),
             whyPackaging: methods.getValues('whyPackaging'),
             areaOfInterest: methods.getValues('areaOfInterest'),
@@ -205,7 +212,7 @@ const CPSForm = ({ methods }) => {
             birthYear: methods.getValues('birthYear'),
             companyName: methods.getValues('companyName'),
             companyTitle: methods.getValues('companyTitle'),
-            linkedin: methods.getValues('linkedin'),
+            linkedin: methods.getValues('linkedIn'),
             background: methods.getValues('background'),
             whyPackaging: methods.getValues('whyPackaging'),
             areaOfInterest: methods.getValues('areaOfInterest'),
@@ -245,7 +252,7 @@ const CPSForm = ({ methods }) => {
   };
 
   const sendSubmitNotification = async (data) => {
-    await fetch('/api/send-certificate-submit', {
+    await fetch('/api/send-cps-submit', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -277,7 +284,7 @@ const CPSForm = ({ methods }) => {
         <div className='text-xl lg:text-2xl lg:mb-4 font-greycliff font-semibold'>
           Personal Information
         </div>
-        <CPSPersonalInfo />
+        <CPSPersonalInfo setEmail={(val) => setIsEmail(val)} />
       </div>
       <div
         id='professional'
@@ -301,7 +308,7 @@ const CPSForm = ({ methods }) => {
         <div className='text-xl lg:text-2xl lg:mb-4 font-greycliff font-semibold'>
           Session Info
         </div>
-        <CPSApply />
+        <CPSApply email={isEmail} />
       </div>
       <div className='flex justify-between items-center bg-slate-300 dark:bg-dark-dark px-6 py-4 rounded-t sticky z-50 bottom-0 gap-3 lg:gap-6 border-t border-t-slate-300 text-sm md:text-base'>
         <div className='w-fit font-greycliff font-semibold h-full text-green-600 text-lg'>

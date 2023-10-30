@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useStripe, useElements, CardElement } from '@stripe/react-stripe-js';
 import { useFormContext } from 'react-hook-form';
 
-export default function CheckoutForm({ setConfirmation }) {
+export default function CheckoutForm({ setConfirmation, email, type }) {
   const stripe = useStripe();
   const elements = useElements();
   const { setValue } = useFormContext();
@@ -25,16 +25,26 @@ export default function CheckoutForm({ setConfirmation }) {
 
     setLoading(true);
     setButtonText('Loading...');
-    const response = await fetch('/api/create-payment-intent');
+    const response = await fetch('/api/create-payment-intent', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        type: type,
+      }),
+    });
     const { clientSecret } = await response.json();
 
     const result = await stripe.confirmCardPayment(clientSecret, {
       payment_method: {
         card: elements.getElement(CardElement),
+        billing_details: {
+          email: email,
+        },
       },
     });
-
-    console.log(result);
 
     if (result.error) {
       // Show error to your customer (for example, insufficient funds)

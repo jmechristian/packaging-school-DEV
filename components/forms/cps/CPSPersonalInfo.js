@@ -2,7 +2,7 @@ import React from 'react';
 import TextInput from '../TextInput';
 import { useForm, FormProvider, useFormContext } from 'react-hook-form';
 
-const CPSPersonalInfo = () => {
+const CPSPersonalInfo = ({ setEmail, email }) => {
   const { formState, register } = useFormContext();
 
   return (
@@ -19,12 +19,37 @@ const CPSPersonalInfo = () => {
         label={'Last Name'}
         required
       />
-      <TextInput
-        name={'email'}
-        placeholder={'Enter Email'}
-        label={'Email'}
-        required
-      />
+      <div className='w-full'>
+        <div className='flex justify-between'>
+          <label
+            htmlFor='email'
+            className='block text-sm md:text-base font-greycliff font-semibold leading-6 text-slate-700'
+          >
+            Email
+          </label>
+          <span className='text-sm leading-6 text-red-500' id='email-optional'>
+            Required
+          </span>
+        </div>
+        <div className='mt-1 md:mt-2 w-full'>
+          <input
+            type='email'
+            {...register(`email`, { required: true })}
+            name='email'
+            id='email'
+            className='block w-full rounded-md border-0 py-2 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm md:text-base sm:leading-6'
+            placeholder={'Enter Email'}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
+        <div className='w-full'>
+          {formState.errors.hasOwnProperty('email') && (
+            <div className='text-sm text-red-600 mt-1 mb-2'>
+              Please fill out field.
+            </div>
+          )}
+        </div>
+      </div>
       <TextInput
         name={'phone'}
         placeholder={'Enter Phone Number'}

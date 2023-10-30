@@ -11,7 +11,7 @@ const includedFeatures = [
   'Official member t-shirt',
 ];
 
-const CMPMPricing = () => {
+const CMPMPricing = ({ email }) => {
   const [stripePromise, setStripePromise] = useState(() =>
     loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
   );
@@ -43,6 +43,8 @@ const CMPMPricing = () => {
                     setConfirmation={(val) =>
                       setPaymentConfirmation(val && val)
                     }
+                    type={'CMPM'}
+                    email={email}
                   />
                 </Elements>
                 <div>

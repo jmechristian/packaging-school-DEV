@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm, FormProvider } from 'react-hook-form';
 
 import CPSNav from './CPSNav';
@@ -10,6 +10,7 @@ function classNames(...classes) {
 
 const CPSWrapper = ({ params }) => {
   const methods = useForm();
+  const [paramsEmail, setIsParamsEmail] = useState(undefined);
 
   useEffect(() => {
     if (params) {
@@ -17,13 +18,17 @@ const CPSWrapper = ({ params }) => {
         methods.setValue(`${property}`, `${params[property]}`);
       }
     }
+
+    if (params && params.email) {
+      setIsParamsEmail(params.email);
+    }
   }, [params, methods]);
 
   return (
     <div className='w-full max-w-4xl mx-auto sm:px-0 pb-24'>
       <FormProvider {...methods}>
         <CPSNav />
-        <CPSForm methods={methods} />
+        <CPSForm methods={methods} email={paramsEmail} />
       </FormProvider>
     </div>
   );

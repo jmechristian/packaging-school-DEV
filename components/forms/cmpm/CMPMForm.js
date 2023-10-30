@@ -14,13 +14,22 @@ import { useRouter } from 'next/router';
 import CMPMGoals from './CMPMGoals';
 import CMPMSessionInfo from './CMPMSessionInfo';
 
-const CMPMForm = ({ methods }) => {
+const CMPMForm = ({ methods, email }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isUpdated, setIsUpdated] = useState(false);
   const [cookieData, setCookieData] = useState(undefined);
+  const [isEmail, setIsEmail] = useState('');
   const router = useRouter();
 
+  useEffect(() => {
+    if (email) {
+      setIsEmail(email);
+    }
+  }, [email]);
+
   const { user } = useSelector((state) => state.auth);
+
+  const captureEmail = (val) => setIsEmail(val);
 
   const dispatch = useDispatch();
 
@@ -282,7 +291,7 @@ const CMPMForm = ({ methods }) => {
         <div className='text-xl lg:text-2xl lg:mb-4 font-greycliff font-semibold'>
           Personal Information
         </div>
-        <CMPMPersonalInfo />
+        <CMPMPersonalInfo getEmail={(val) => captureEmail(val)} />
       </div>
       <div
         id='professional'
@@ -306,7 +315,7 @@ const CMPMForm = ({ methods }) => {
         <div className='text-xl lg:text-2xl lg:mb-4 font-greycliff font-semibold'>
           Session Info
         </div>
-        <CMPMSessionInfo />
+        <CMPMSessionInfo email={isEmail} />
       </div>
       <div className='flex justify-between items-center bg-slate-300 dark:bg-dark-dark px-6 py-4 rounded-t sticky z-50 bottom-0 gap-3 lg:gap-6 border-t border-t-slate-300 text-sm md:text-base'>
         <div className='w-fit font-greycliff font-semibold h-full text-green-600 text-lg'>

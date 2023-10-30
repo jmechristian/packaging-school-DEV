@@ -17,14 +17,14 @@ export default async function handler(req, res) {
     '  <head>' +
     '   <link rel="preload" as="image" href="https://packschool.s3.amazonaws.com/email-logo.png" />' +
     '   <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />' +
-    '   <title>CMPM Application Submission</title>' +
+    '   <title>CPS Application Submission</title>' +
     ' </head>' +
     '  <body style="background-color:rgb(212,212,212);font-family:ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;">' +
-    '   <table align="center" width="100%" border="0" cellPadding="0" cellSpacing="0" role="presentation" style="max-width:37.5em;background-color:rgb(255,255,255);width:600px">' +
+    '   <table align="center" width="100%" border="0" cellPadding="0" cellSpacing="0" role="presentation" style="max-width:37.5em;background-color:rgb(255,255,255);width:600px;margin-top:2rem;margin-bottom:2rem;">' +
     '     <tbody>' +
     '       <tr style="width:100%">' +
     '         <td>' +
-    '           <table align="center" width="100%" border="0" cellPadding="0" cellSpacing="0" role="presentation" style="background-color:rgb(23,23,23);padding-left:1rem;padding-right:1rem;padding-top:0.5rem;padding-bottom:0.5rem">' +
+    '           <table align="center" width="100%" border="0" cellPadding="0" cellSpacing="0" role="presentation" style="background-color:rgb(23,23,23);padding-left:1rem;padding-right:1rem;padding-top:0.5rem;padding-bottom:0.5rem;">' +
     '             <tbody>' +
     '               <tr>' +
     '                 <td>' +
@@ -32,7 +32,7 @@ export default async function handler(req, res) {
     '                     <tbody style="width:100%">' +
     '                       <tr style="width:100%">' +
     '                         <td data-id="__react-email-column">' +
-    '                           <p style="font-size:1.125rem;line-height:1.25;margin:16px 0;font-weight:700;color:rgb(255,255,255)">CMPM Application Submission</p>' +
+    '                           <p style="font-size:1.125rem;line-height:1.25;margin:16px 0;font-weight:700;color:rgb(255,255,255)">CPS Application Submission</p>' +
     '                         </td>' +
     '                         <td align="right" data-id="__react-email-column"><img height="50" src="https://packschool.s3.amazonaws.com/email-logo.png" style="display:block;outline:none;border:none;text-decoration:none" /></td>' +
     '                       </tr>' +
@@ -87,7 +87,7 @@ export default async function handler(req, res) {
     `                           <p style="font-size:14px;line-height:24px;margin:16px 0">${body.companyTitle}</p>` +
     '                           <hr style="width:100%;border:none;border-top:1px solid #eaeaea" />' +
     '                           <p style="font-size:14px;line-height:24px;margin:16px 0;font-weight:700">LinkedIn Profile</p>' +
-    `                           <p style="font-size:14px;line-height:24px;margin:16px 0">${body.linkedin}</p>` +
+    `                           <p style="font-size:14px;line-height:24px;margin:16px 0">${body.linkedIn}</p>` +
     '                           <hr style="width:100%;border:none;border-top:1px solid #eaeaea" />' +
     '                           <p style="font-size:14px;line-height:24px;margin:16px 0;font-weight:700">Your Background</p>' +
     `                           <p style="font-size:14px;line-height:24px;margin:16px 0">${body.background}</p>` +
@@ -102,13 +102,13 @@ export default async function handler(req, res) {
     `                           <p style="font-size:14px;line-height:24px;margin:16px 0">${body.yearGoals}</p>` +
     '                           <hr style="width:100%;border:none;border-top:1px solid #eaeaea" />' +
     '                           <p style="font-size:14px;line-height:24px;margin:16px 0;font-weight:700">How do you see The Certificate of Mastery in Packaging Management helping you achieve those goals?</p>' +
-    `                           <p style="font-size:14px;line-height:24px;margin:16px 0">${body.cmpmGoals}</p>` +
+    `                           <p style="font-size:14px;line-height:24px;margin:16px 0">${body.cpsGoals}</p>` +
     '                           <hr style="width:100%;border:none;border-top:1px solid #eaeaea" />' +
     '                           <p style="font-size:14px;line-height:24px;margin:16px 0;font-weight:700">We know written applications can only capture so much. As we review your application, what more would you like us to know?</p>' +
     `                           <p style="font-size:14px;line-height:24px;margin:16px 0">${body.moreAboutYou}</p>` +
     '                           <hr style="width:100%;border:none;border-top:1px solid #eaeaea" />' +
-    '                           <p style="font-size:14px;line-height:24px;margin:16px 0;font-weight:700">Session Applying</p>' +
-    `                           <p style="font-size:14px;line-height:24px;margin:16px 0">${body.sessionApplying}</p>` +
+    '                           <p style="font-size:14px;line-height:24px;margin:16px 0;font-weight:700">Elective</p>' +
+    `                           <p style="font-size:14px;line-height:24px;margin:16px 0">${body.elective}</p>` +
     '                           <hr style="width:100%;border:none;border-top:1px solid #eaeaea" />' +
     '                           <p style="font-size:14px;line-height:24px;margin:16px 0;font-weight:700">Where did you hear about the Certificate of Mastery in Packaging Management?</p>' +
     `                           <p style="font-size:14px;line-height:24px;margin:16px 0">${body.referral}</p>` +
@@ -141,7 +141,7 @@ export default async function handler(req, res) {
         CcAddresses: [
           /* more items */
         ],
-        ToAddresses: [toAddress, 'info@packagingschool.com'],
+        ToAddresses: [toAddress],
       },
       Message: {
         /* required */

@@ -4,7 +4,7 @@ import { useFormContext } from 'react-hook-form';
 import TextInput from '../TextInput';
 import Link from 'next/link';
 
-const CMPMSessionInfo = () => {
+const CMPMSessionInfo = ({ email }) => {
   const { register, formState } = useFormContext();
   return (
     <div className='flex flex-col gap-12'>
@@ -277,7 +277,7 @@ const CMPMSessionInfo = () => {
           </div>
         )}
       </fieldset>
-      <CMPMPricing />
+      <CMPMPricing email={email} />
     </div>
   );
 };

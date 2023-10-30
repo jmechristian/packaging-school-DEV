@@ -4,7 +4,7 @@ import { useFormContext } from 'react-hook-form';
 import TextInput from '../TextInput';
 import Link from 'next/link';
 
-const CPSApply = () => {
+const CPSApply = ({ email }) => {
   const { register, formState } = useFormContext();
   return (
     <div className='flex flex-col gap-12'>
@@ -254,7 +254,7 @@ const CPSApply = () => {
           .
         </div>
       </div>
-      <CPSPricing />
+      <CPSPricing email={email} />
     </div>
   );
 };

@@ -4,7 +4,7 @@ import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 import { useFormContext } from 'react-hook-form';
 
-const CPSPricing = () => {
+const CPSPricing = ({ email }) => {
   const [stripePromise, setStripePromise] = useState(() =>
     loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
   );
@@ -36,6 +36,8 @@ const CPSPricing = () => {
                     setConfirmation={(val) =>
                       setPaymentConfirmation(val && val)
                     }
+                    email={email}
+                    type={'CPS'}
                   />
                 </Elements>
                 <div>
