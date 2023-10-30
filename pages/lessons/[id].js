@@ -174,7 +174,7 @@ const Page = ({ lesson, lessons }) => {
               subhead={lesson.subhead}
               type={'lessons'}
             />
-            {lesson.sources.items ? (
+            {lesson.sources.items.length > 0 ? (
               <LinksButton sources={lesson.sources.items} />
             ) : (
               ''
