@@ -138,21 +138,25 @@ const Page = () => {
             </div>
           </div>
         </div>
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:col-span-2 bg-neutral-100 rounded-lg px-6 py-6 overflow-hidden'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:col-span-2 bg-neutral-100 rounded-lg px-6 py-12 overflow-hidden'>
           <div className='text-2xl lg:text-3xl font-bold font-etna tracking-tight max-w-sm md:col-span-2 lg:col-span-5 xl:col-span-1'>
             Course Objectives
           </div>
-          <div className='border p-3 text-lg'>
-            Research competitive packaging in your market category.
+          <div className='border px-3 py-6 text-lg bg-white shadow-lg'>
+            <span className='font-bold text-clemson'>Research</span> competitive
+            packaging in your market category.
           </div>
-          <div className='border p-3 text-lg'>
-            Develop prototypes through ideation and experimentation.
+          <div className='p-3 text-lg border px-3 py-6  bg-white shadow-lg'>
+            <span className='font-bold text-clemson'>Develop</span> prototypes
+            through ideation and experimentation.
           </div>
-          <div className='border p-3 text-lg'>
-            Create a strong package by applying design theories and techniques.
+          <div className='p-3 text-lg border px-3 py-6  bg-white shadow-lg'>
+            <span className='font-bold text-clemson'>Create</span> a strong
+            package by applying design theories and techniques.
           </div>
-          <div className='border p-3 text-lg'>
-            Generate a digital prototype of your package design.
+          <div className='p-3 text-lg border px-3 py-6  bg-white shadow-lg'>
+            <span className='font-bold text-clemson'>Generate</span> a digital
+            prototype of your package design.
           </div>
         </div>
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 border-t border-t-neutral-600 pt-10 overflow-hidden'>
