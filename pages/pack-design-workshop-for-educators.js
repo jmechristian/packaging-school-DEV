@@ -383,7 +383,7 @@ const Page = () => {
             </div>
           </div>
         </div>
-        <div className='bg-indigo-100 rounded-lg'>
+        <div className='bg-indigo-100 rounded-xl'>
           <div className='mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:justify-between lg:px-8'>
             <h2 className='text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'>
               Ready to get hands on?
@@ -404,6 +404,24 @@ const Page = () => {
                 Need Invoicing?
               </a>
             </div>
+          </div>
+        </div>
+        <div className='text-sm text-neutral-600 flex flex-col gap-3'>
+          <div>
+            *Educator discount applied to a minimum of however many licenses. If
+            you need fewer than that, please order through our non-educator{' '}
+            <a
+              href='https://library.packagingschool.com/packdesign-workshop'
+              target='_blank'
+              rel='noreferrer'
+            >
+              website.
+            </a>
+          </div>
+          <div>
+            **Discounts do not stack; only one discount will be applied to your
+            purchase. If a coupon code from an event is entered into the
+            educator discount form, the greater discount will be applied.
           </div>
         </div>
       </div>
