@@ -20,7 +20,7 @@ const Page = () => {
       <div className='max-w-7xl mx-auto flex flex-col gap-24'>
         <div className='grid lg:grid-cols-2 w-full gap-4 overflow-hidden'>
           <div className='flex flex-col gap-4 '>
-            <div className='flex flex-col gap-12 lg:gap-20 bg-indigo-300 rounded-xl px-6 md:px-9 lg:px-6 pt-12 pb-16'>
+            <div className='flex flex-col gap-12 lg:gap-20 bg-gradient-to-b from-base-brand to-base-light rounded-xl px-6 md:px-9 lg:px-6 pt-12 pb-16'>
               <div className='flex flex-col gap-3'>
                 <div className='flex flex-wrap gap-x-6 gap-y-3 mb-3'>
                   <div className='flex gap-1 items-center'>
@@ -59,12 +59,12 @@ const Page = () => {
                 <div className='text-4xl lg:text-5xl font-semibold tracking-tight max-w-sm'>
                   Pack Design Workshop for Educators
                 </div>
-                <div className='text-3xl  text-white'>
-                  <span className='font-medium'>$399</span>
+                <div className='text-xl  text-white'>
+                  <span className='font-medium'>$399 / License</span>
                 </div>
               </div>
               <div>
-                <p className='leading-normal'>
+                <p className='leading-normal text-lg'>
                   Master the fundamentals of packaging design in this immersive,
                   online workshop. Work through the design process from research
                   to building your own digital prototypes. Completing this
@@ -383,9 +383,9 @@ const Page = () => {
             </div>
           </div>
         </div>
-        <div className='bg-indigo-100 rounded-xl'>
+        <div className=' bg-gradient-to-tr from-base-brand via-base-mid to-clemson rounded-xl'>
           <div className='mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:justify-between lg:px-8'>
-            <h2 className='text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'>
+            <h2 className='text-3xl font-bold  text-white sm:text-5xl font-etna'>
               Ready to get hands on?
               <br />
               Purchase your Class Pack.
@@ -393,7 +393,7 @@ const Page = () => {
             <div className='mt-10 flex items-center gap-x-6 lg:mt-0 lg:flex-shrink-0'>
               <a
                 href='#'
-                className='rounded-md bg-clemson px-3.5 py-2.5 text-lg font-semibold text-white shadow-sm hover:bg-clemson-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-clemson'
+                className='rounded-md bg-neutral-800 px-5 py-3 text-lg font-semibold text-white shadow-sm hover:bg-clemson-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-clemson'
               >
                 Buy Now
               </a>
