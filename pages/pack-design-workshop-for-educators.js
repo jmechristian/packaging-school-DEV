@@ -21,12 +21,12 @@ const Page = () => {
       <div className='max-w-7xl mx-auto flex flex-col gap-20'>
         <div className='grid lg:grid-cols-2 w-full gap-4 overflow-hidden'>
           <div className='flex flex-col gap-4 '>
-            <div className='flex flex-col gap-12 lg:gap-20 bg-gradient-to-tl from-base-brand/70 to-base-light rounded-xl px-6 md:px-9 lg:px-6 py-9'>
+            <div className='flex flex-col gap-12 lg:gap-20 bg-base-light rounded-xl px-6 md:px-9 lg:px-6 py-9'>
               <div className='flex flex-col gap-3'>
                 <div className='flex flex-wrap gap-x-6 gap-y-3 mb-3'>
                   <div className='flex gap-1 items-center'>
                     <div>
-                      <BoltIcon className='w-5 h-5 stroke-white' />
+                      <BoltIcon className='w-5 h-5 stroke-neutral-500' />
                     </div>
                     <div className='font-medium text-slate-900 text-sm'>
                       Newly Released!
@@ -34,7 +34,7 @@ const Page = () => {
                   </div>
                   <div className='flex gap-1 items-center'>
                     <div>
-                      <ComputerDesktopIcon className='w-5 h-5 stroke-white' />
+                      <ComputerDesktopIcon className='w-5 h-5 stroke-neutral-500' />
                     </div>
                     <div className='font-medium text-slate-900 text-sm'>
                       Online
@@ -42,7 +42,7 @@ const Page = () => {
                   </div>
                   <div className='flex gap-1 items-center'>
                     <div>
-                      <HandRaisedIcon className='w-5 h-5 stroke-white' />
+                      <HandRaisedIcon className='w-5 h-5 stroke-neutral-500' />
                     </div>
                     <div className='font-medium text-slate-900 text-sm'>
                       Hands-On
@@ -50,7 +50,7 @@ const Page = () => {
                   </div>
                   <div className='flex gap-1 items-center'>
                     <div>
-                      <CodeBracketIcon className='w-5 h-5 stroke-white' />
+                      <CodeBracketIcon className='w-5 h-5 stroke-neutral-500' />
                     </div>
                     <div className='font-medium text-slate-900 text-sm'>
                       Software Provided
@@ -60,7 +60,7 @@ const Page = () => {
                 <div className='text-4xl lg:text-6xl font-semibold tracking-tighter max-w-sm'>
                   Pack Design Workshop for Educators
                 </div>
-                <div className='text-xl  text-white'>
+                <div className='text-xl  text-neutral-500'>
                   <span className='font-medium'>$399 / License</span>
                 </div>
               </div>
@@ -83,12 +83,12 @@ const Page = () => {
               onMouseLeave={() => setIsHover(false)}
             >
               <div className=' bg-base-dark rounded-xl w-full h-full flex py-9 lg:p-6 items-center justify-center'>
-                <div className='flex flex-col gap-2 items-center'>
+                <div className='flex flex-col gap-1 items-center'>
                   <div className='font-etna text-center text-3xl md:text-4xl leading-none text-clemson'>
                     Be a Packaging Hero!
                   </div>
                   <div className='text-white leading-tight text-center px-6'>
-                    Purchase a Class Pack of 30 licenses for your students.
+                    Purchase a Class Pack<sup>*</sup> of licenses today.
                   </div>
                 </div>
               </div>
@@ -124,10 +124,10 @@ const Page = () => {
           </div>
           <div className='flex flex-col gap-6'>
             <div className='text-lg lg:text-xl leading-normal'>
-              This program is ideal for high school, home schooling, community
-              college, exceptional student programs, educational camp programs,
-              and more. Order a class set* of licenses for your students and
-              take advantage of the educator discount!**
+              This program is ideal for anyone with a group of students who want
+              to learn about designing a package. Order a class set<sup>*</sup>{' '}
+              of licenses for your students and take advantage of the educator
+              discount!<sup>**</sup>
             </div>
             <div className='text-lg lg:text-xl leading-normal'>
               Educators of all varieties can easily use this in their classroom
@@ -143,16 +143,16 @@ const Page = () => {
             Course Objectives
           </div>
           <div className='border p-3 text-lg'>
-            Research competitive packaging within your market.
+            Research competitive packaging in your market category.
           </div>
           <div className='border p-3 text-lg'>
-            Develop a process for ideation and experimentation.
+            Develop prototypes through ideation and experimentation.
           </div>
           <div className='border p-3 text-lg'>
-            Understand and apply design best practices through prototyping.
+            Create a strong package by applying design theories and techniques.
           </div>
           <div className='border p-3 text-lg'>
-            Digitally develop a final rendering of your prototype.
+            Generate a digital prototype of your package design.
           </div>
         </div>
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 border-t border-t-neutral-600 pt-10 overflow-hidden'>
@@ -390,9 +390,9 @@ const Page = () => {
         <div className=' bg-gradient-to-tr from-base-brand via-base-mid to-clemson rounded-xl'>
           <div className='mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:justify-between lg:px-8'>
             <h2 className='text-3xl font-bold  text-white sm:text-5xl font-etna'>
-              Ready to get hands on?
+              Ready to get hands-on?
               <br />
-              Purchase your Class Pack.
+              Puchase your Class Pack today!
             </h2>
             <div className='mt-10 flex items-center gap-x-6 lg:mt-0 lg:flex-shrink-0'>
               <a
@@ -405,15 +405,15 @@ const Page = () => {
                 href='#'
                 className='text-lg font-semibold leading-6 text-gray-900'
               >
-                Need Invoicing?
+                Questions?
               </a>
             </div>
           </div>
         </div>
         <div className='text-sm text-neutral-600 flex flex-col gap-3'>
           <div>
-            *Educator discount applied to a minimum of however many licenses. If
-            you need fewer than that, please order through our non-educator{' '}
+            *Educator discount applied to a minimum of 30 licenses. If you need
+            fewer than that, please order through our non-educator{' '}
             <a
               href='https://library.packagingschool.com/packdesign-workshop'
               target='_blank'
