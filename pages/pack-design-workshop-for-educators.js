@@ -56,7 +56,7 @@ const Page = () => {
                     </div>
                   </div>
                 </div>
-                <div className='text-4xl lg:text-5xl font-semibold tracking-tight max-w-sm'>
+                <div className='text-4xl lg:text-6xl font-bold tracking-tighter max-w-sm'>
                   Pack Design Workshop for Educators
                 </div>
                 <div className='text-xl  text-white'>
@@ -115,7 +115,7 @@ const Page = () => {
           </div>
         </div>
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 border-t border-t-neutral-600 pt-10 overflow-hidden md:px-9 lg:px-6'>
-          <div className='text-2xl lg:text-3xl font-bold tracking-tight max-w-sm'>
+          <div className='text-2xl lg:text-4xl font-bold tracking-tight max-w-sm font-etna'>
             Who is this workshop intended for?
           </div>
           <div className='flex flex-col gap-6'>
@@ -135,7 +135,7 @@ const Page = () => {
           </div>
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:col-span-2 bg-neutral-100 rounded-lg px-6 py-6 overflow-hidden'>
-          <div className='text-2xl lg:text-3xl font-bold tracking-tight max-w-sm md:col-span-2 lg:col-span-5 xl:col-span-1'>
+          <div className='text-2xl lg:text-3xl font-bold font-etna tracking-tight max-w-sm md:col-span-2 lg:col-span-5 xl:col-span-1'>
             Course Objectives
           </div>
           <div className='border p-3 text-lg'>
@@ -152,7 +152,7 @@ const Page = () => {
           </div>
         </div>
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 border-t border-t-neutral-600 pt-10 overflow-hidden'>
-          <div className='text-2xl lg:text-3xl font-bold tracking-tight max-w-sm'>
+          <div className='text-2xl lg:text-3xl font-bold tracking-tight max-w-sm font-etna'>
             Syllabus
           </div>
           <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-12 lg:col-span-2'>
@@ -162,7 +162,7 @@ const Page = () => {
                   /* Use the `open` state to conditionally change the direction of an icon. */
                   <>
                     <Disclosure.Button className='bg-base-mid grid grid-cols-6 rounded-t-lg w-full p-3'>
-                      <div className='col-span-5  text-left text-white font-etna text-xl'>
+                      <div className='col-span-5  text-left text-white  text-xl'>
                         <span className='text-orange-300 font-bold font-sans tracking-tighter mr-1'>
                           01
                         </span>{' '}
@@ -202,7 +202,7 @@ const Page = () => {
                   /* Use the `open` state to conditionally change the direction of an icon. */
                   <>
                     <Disclosure.Button className='bg-base-mid grid grid-cols-6 rounded-t-lg w-full p-3'>
-                      <div className='col-span-5  text-left text-white font-etna text-xl'>
+                      <div className='col-span-5  text-left text-white text-xl'>
                         <span className='text-orange-300 font-bold font-sans tracking-tighter mr-1'>
                           02
                         </span>{' '}
@@ -237,7 +237,7 @@ const Page = () => {
                   /* Use the `open` state to conditionally change the direction of an icon. */
                   <>
                     <Disclosure.Button className='bg-base-mid grid grid-cols-6 rounded-t-lg w-full p-3'>
-                      <div className='col-span-5  text-left text-white font-etna text-xl'>
+                      <div className='col-span-5  text-left text-white text-xl'>
                         <span className='text-orange-300 font-bold font-sans tracking-tighter mr-1'>
                           03
                         </span>{' '}
@@ -273,7 +273,7 @@ const Page = () => {
                   /* Use the `open` state to conditionally change the direction of an icon. */
                   <>
                     <Disclosure.Button className='bg-base-mid grid grid-cols-6 rounded-t-lg w-full p-3'>
-                      <div className='col-span-5  text-left text-white font-etna text-xl'>
+                      <div className='col-span-5  text-left text-white text-xl'>
                         <span className='text-orange-300 font-bold font-sans tracking-tighter mr-1'>
                           04
                         </span>{' '}
@@ -309,7 +309,7 @@ const Page = () => {
                   /* Use the `open` state to conditionally change the direction of an icon. */
                   <>
                     <Disclosure.Button className='bg-base-mid grid grid-cols-6 rounded-t-lg w-full p-3'>
-                      <div className='col-span-5  text-left text-white font-etna text-xl'>
+                      <div className='col-span-5  text-left text-white text-xl'>
                         <span className='text-orange-300 font-bold font-sans tracking-tighter mr-1'>
                           05
                         </span>{' '}
@@ -352,7 +352,7 @@ const Page = () => {
                   /* Use the `open` state to conditionally change the direction of an icon. */
                   <>
                     <Disclosure.Button className='bg-base-mid grid grid-cols-6 rounded-t-lg w-full p-3'>
-                      <div className='col-span-5  text-left text-white font-etna text-xl'>
+                      <div className='col-span-5  text-left text-white text-xl'>
                         <span className='text-orange-300 font-bold font-sans tracking-tighter mr-1'>
                           06
                         </span>{' '}

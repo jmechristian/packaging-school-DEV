@@ -1,50 +1,60 @@
 import React from 'react';
-import CertificateHero from '../components/certifications/cmpm/CertificateHero';
-import CertificateAbout from '../components/certifications/cmpm/CertificateAbout';
-import CertificateWhat from '../components/certifications/cmpm/CertificateWhat';
-import CertificateNavigation from '../components/certifications/cmpm/CertificateNavigation';
-import CMPMHow from '../components/certifications/cmpm/CMPMHow';
-import CMPMReviews from '../components/certifications/cmpm/CMPMReviews';
-import CMPMWhere from '../components/certifications/cmpm/CMPMWhere';
-import CMPMApply from '../components/certifications/cmpm/CMPMApply';
-import CertificateCirriculum from '../components/certifications/cmpm/CertificateCirriculum';
-import Testimonial from '../components/shared/Testimonial';
-import GradientCTA from '../components/GradientCTA';
+import { loadStripe } from '@stripe/stripe-js';
 
-const Sandbox = () => {
+// Make sure to call `loadStripe` outside of a component’s render to avoid
+// recreating the `Stripe` object on every render.
+const stripePromise = loadStripe(
+  process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
+);
+export default function Page() {
+  React.useEffect(() => {
+    // Check to see if this is a redirect back from Checkout
+    const query = new URLSearchParams(window.location.search);
+    if (query.get('success')) {
+      console.log('Order placed! You will receive an email confirmation.');
+    }
+
+    if (query.get('canceled')) {
+      console.log(
+        'Order canceled -- continue to shop around and checkout when you’re ready.'
+      );
+    }
+  }, []);
+
   return (
-    <div className='flex flex-col dark:bg-dark-dark'>
-      <CertificateHero />
-      <CertificateNavigation />
-      <CertificateAbout />
-      <CertificateWhat />
-      <CMPMHow />
-      <CertificateCirriculum />
-      <Testimonial
-        id='testimonial-from-tommy-stroman'
-        author={{
-          name: 'Sheridyn Gasser',
-          role: 'Structural / Graphic Designer',
-          image: 'https://packschool.s3.amazonaws.com/sharw.jpeg',
-        }}
-      >
-        <p>
-          “I have greatly broadened my knowledge of the packaging industry as a
-          whole, which was exactly what I hoped to gain from this program. I
-          highly recommend this program to anyone who wants to take a deeper
-          dive into the industry!”
-        </p>
-      </Testimonial>
-      <CMPMWhere />
-      <CMPMReviews />
-      <GradientCTA
-        headline='Not Ready to Apply?'
-        subheadline='Fill out our form to get your Package Development Plan and get a taste of this amazing certificate program'
-        buttonText='Get My PDP Plan'
-        buttonLink='/cmpm-custom-development-plan-registration'
-      />
-    </div>
+    <form action='/api/checkout_sessions' method='POST'>
+      <section>
+        <button type='submit' role='link'>
+          Checkout
+        </button>
+      </section>
+      <style jsx>
+        {`
+          section {
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+            height: 112px;
+            border-radius: 6px;
+            justify-content: space-between;
+          }
+          button {
+            height: 36px;
+            background: #556cd6;
+            border-radius: 4px;
+            color: white;
+            border: 0;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0px 4px 5.5px 0px rgba(0, 0, 0, 0.07);
+          }
+          button:hover {
+            opacity: 0.8;
+          }
+        `}
+      </style>
+    </form>
   );
-};
-
-export default Sandbox;
+}
