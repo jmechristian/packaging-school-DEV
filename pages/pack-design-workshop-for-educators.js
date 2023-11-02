@@ -81,7 +81,7 @@ const Page = () => {
               onMouseEnter={() => setIsHover(true)}
               onMouseLeave={() => setIsHover(false)}
             >
-              <div className=' bg-indigo-900 rounded-xl w-full h-full flex py-9 lg:p-6 items-center justify-center'>
+              <div className=' bg-base-dark rounded-xl w-full h-full flex py-9 lg:p-6 items-center justify-center'>
                 <div className='flex flex-col gap-2 items-center'>
                   <div className='font-etna text-center text-3xl md:text-4xl leading-none text-clemson'>
                     Be a Packaging Hero!
