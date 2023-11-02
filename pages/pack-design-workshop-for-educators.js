@@ -16,7 +16,7 @@ const Page = () => {
   const [isHover, setIsHover] = useState(false);
 
   return (
-    <div className='w-full h-full xl:py-24 p-3 md:p-6'>
+    <div className='w-full h-full xl:py-12 p-3 md:p-6'>
       <div className='max-w-7xl mx-auto flex flex-col gap-24'>
         <div className='grid lg:grid-cols-2 w-full gap-4 overflow-hidden'>
           <div className='flex flex-col gap-4 '>
@@ -383,7 +383,29 @@ const Page = () => {
             </div>
           </div>
         </div>
-        <div className='w-full border'>Some CTA?</div>
+        <div className='bg-indigo-100 rounded-lg'>
+          <div className='mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:justify-between lg:px-8'>
+            <h2 className='text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'>
+              Ready to get hands on?
+              <br />
+              Purchase your Class Pack.
+            </h2>
+            <div className='mt-10 flex items-center gap-x-6 lg:mt-0 lg:flex-shrink-0'>
+              <a
+                href='#'
+                className='rounded-md bg-clemson px-3.5 py-2.5 text-lg font-semibold text-white shadow-sm hover:bg-clemson-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-clemson'
+              >
+                Buy Now
+              </a>
+              <a
+                href='#'
+                className='text-lg font-semibold leading-6 text-gray-900'
+              >
+                Need Invoicing?
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
