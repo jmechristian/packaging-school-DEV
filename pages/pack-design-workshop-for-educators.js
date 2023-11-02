@@ -56,7 +56,7 @@ const Page = () => {
                     </div>
                   </div>
                 </div>
-                <div className='text-4xl lg:text-6xl font-bold tracking-tighter max-w-sm'>
+                <div className='text-4xl lg:text-6xl font-semibold tracking-tighter max-w-sm'>
                   Pack Design Workshop for Educators
                 </div>
                 <div className='text-xl  text-white'>
