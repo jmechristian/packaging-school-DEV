@@ -11,6 +11,7 @@ import {
 } from '@heroicons/react/24/outline';
 import { Disclosure } from '@headlessui/react';
 import { ChevronRightIcon } from '@heroicons/react/20/solid';
+import Image from 'next/image';
 
 const Page = () => {
   const [isHover, setIsHover] = useState(false);
@@ -105,11 +106,14 @@ const Page = () => {
             </div>
           </div>
           <div className='flex justify-center md:justify-end items-center bg-neutral-800 rounded-xl'>
-            <div>
-              <img
+            <div className='object-fit w-full h-full'>
+              <Image
                 src='https://packschool.s3.amazonaws.com/packtest.png'
-                className='w-full h-full'
+                className='w-full h-full object-fit'
                 alt='Packaging Design Workshop'
+                layout='responsive'
+                width={632}
+                height={699}
               />
             </div>
           </div>
