@@ -17,7 +17,7 @@ const Page = () => {
 
   return (
     <div className='w-full h-full xl:py-12 p-3 md:p-6'>
-      <div className='max-w-7xl mx-auto flex flex-col gap-24'>
+      <div className='max-w-7xl mx-auto flex flex-col gap-20'>
         <div className='grid lg:grid-cols-2 w-full gap-4 overflow-hidden'>
           <div className='flex flex-col gap-4 '>
             <div className='flex flex-col gap-12 lg:gap-20 bg-gradient-to-tl from-base-brand/70 to-base-light rounded-xl px-6 md:px-9 lg:px-6 py-12'>
