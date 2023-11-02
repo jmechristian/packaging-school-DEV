@@ -20,7 +20,7 @@ const Page = () => {
       <div className='max-w-7xl mx-auto flex flex-col gap-24'>
         <div className='grid lg:grid-cols-2 w-full gap-4 overflow-hidden'>
           <div className='flex flex-col gap-4 '>
-            <div className='flex flex-col gap-12 lg:gap-20 bg-gradient-to-tl from-base-brand/50 to-base-light rounded-xl px-6 md:px-9 lg:px-6 py-12'>
+            <div className='flex flex-col gap-12 lg:gap-20 bg-gradient-to-tl from-base-brand/70 to-base-light rounded-xl px-6 md:px-9 lg:px-6 py-12'>
               <div className='flex flex-col gap-3'>
                 <div className='flex flex-wrap gap-x-6 gap-y-3 mb-3'>
                   <div className='flex gap-1 items-center'>
