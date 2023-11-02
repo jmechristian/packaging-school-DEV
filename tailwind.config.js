@@ -31,6 +31,8 @@ module.exports = {
       fontFamily: {
         roboto: 'Inter, sans-serif',
         greycliff: 'Inter, sans-serif',
+        nickel: 'nickel-gothic-variable, sans-serif',
+        etna: 'etna, sans-serif',
       },
       colors: {
         'base-brand': '#1f97bf',

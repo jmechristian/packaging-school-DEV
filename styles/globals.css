@@ -85,6 +85,10 @@
     @apply dark:bg-white dark:text-white !important;
   }
 
+  .variable-base {
+    font-variation-settings: 'slnt' 0, 'wdth' 60;
+  }
+
   .bad-html > p {
     margin-top: 0;
     margin-bottom: 0;
