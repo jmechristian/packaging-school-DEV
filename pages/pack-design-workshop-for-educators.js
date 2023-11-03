@@ -42,9 +42,9 @@ const Page = () => {
           {/* The actual dialog panel  */}
           <Dialog.Panel className='mx-auto w-full max-w-3xl rounded-lg bg-white'>
             <Dialog.Title>
-              <div className='bg-neutral-100 p-12 flex flex-col lg:flex-row gap-6 justify-center items-center rounded-lg'>
+              <div className='bg-neutral-100 p-6 lg:p-12 flex flex-col lg:flex-row gap-6 justify-center items-center rounded-lg'>
                 <div className='flex flex-col gap-3 justify-center items-center'>
-                  <div className='font-etna text-3xl'>
+                  <div className='font-etna text-xl text-center lg:text-3xl'>
                     Questions? Speak to one of our counselors.
                   </div>
                 </div>
@@ -139,6 +139,12 @@ const Page = () => {
               </div>
               <div
                 className={`bg-clemson rounded-xl h-full w-full pr-1.5 lg:max-w-[20%] lg:aspect-[1/1] flex justify-center items-center`}
+                onClick={() =>
+                  window.open(
+                    'https://buy.stripe.com/5kA5lg9g29HG6JOfYY',
+                    '_blank'
+                  )
+                }
               >
                 <div>
                   <ArrowSmallRightIcon
@@ -164,7 +170,7 @@ const Page = () => {
           </div>
         </div>
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 border-t border-t-neutral-600 pt-10 overflow-hidden md:px-9 lg:px-6'>
-          <div className='text-2xl lg:text-4xl font-bold tracking-tight max-w-sm font-etna'>
+          <div className='text-3xl lg:text-4xl font-bold tracking-tight max-w-sm font-etna'>
             Who is this workshop intended for?
           </div>
           <div className='flex flex-col gap-6'>
@@ -183,8 +189,8 @@ const Page = () => {
             </div>
           </div>
         </div>
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:col-span-2 bg-neutral-100 rounded-lg px-6 py-12 overflow-hidden'>
-          <div className='text-2xl lg:text-3xl font-bold font-etna tracking-tight max-w-sm md:col-span-2 lg:col-span-5 xl:col-span-1'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-12 lg:col-span-2 bg-neutral-100 rounded-lg px-6 py-12 overflow-hidden'>
+          <div className='text-3xl lg:text-4xl font-bold font-etna tracking-tight max-w-sm md:col-span-2 lg:col-span-5 xl:col-span-1'>
             Course Objectives
           </div>
           <div className='border px-3 py-6 text-lg bg-white shadow-lg'>
@@ -205,7 +211,7 @@ const Page = () => {
           </div>
         </div>
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 border-t border-t-neutral-600 pt-10 overflow-hidden'>
-          <div className='text-2xl lg:text-3xl font-bold tracking-tight max-w-sm font-etna'>
+          <div className='text-3xl lg:text-4xl font-bold tracking-tight max-w-sm font-etna'>
             Syllabus
           </div>
           <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-12 lg:col-span-2'>

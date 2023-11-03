@@ -57,7 +57,7 @@ const ClassPackForm = () => {
 
   return (
     <form
-      className='flex flex-col gap-6 max-w-2xl mx-auto w-full h-full pt-6 pb-12'
+      className='flex flex-col gap-3 lg:gap-6 px-4 lg:px-0 max-w-2xl mx-auto w-full h-full pt-6 pb-6 lg:pb-12'
       onSubmit={handleSubmit(onSubmit)}
       ref={formRef}
     >
@@ -175,7 +175,7 @@ const ClassPackForm = () => {
       <button
         className={`${
           isSubmitted ? 'bg-neutral-400' : 'bg-base-brand'
-        } text-white font-bold text-lg py-2 rounded-lg`}
+        } text-white font-bold text-lg py-2 rounded-lg mt-4 lg:mt-0`}
         type='submit'
         disabled={isSubmitted}
       >
