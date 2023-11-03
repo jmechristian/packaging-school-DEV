@@ -29,7 +29,7 @@ const Page = () => {
       <div className='max-w-7xl mx-auto flex flex-col gap-20'>
         <div className='grid lg:grid-cols-2 w-full gap-4 overflow-hidden'>
           <div className='flex flex-col gap-4 '>
-            <div className='flex flex-col gap-12 lg:gap-20 bg-base-light rounded-xl px-6 md:px-9 lg:px-6 py-9'>
+            <div className='flex flex-col gap-12 lg:gap-20 bg-base-light rounded-xl px-6 md:px-9 lg:px-9 py-9'>
               <div className='flex flex-col gap-3'>
                 <div className='flex flex-wrap gap-x-6 gap-y-3 mb-3'>
                   <div className='flex gap-1 items-center'>
