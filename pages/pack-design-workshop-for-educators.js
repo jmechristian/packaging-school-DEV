@@ -65,10 +65,10 @@ const Page = () => {
                     </div>
                   </div>
                 </div>
-                <div className='text-4xl lg:text-5xl font-semibold tracking-tight max-w-sm'>
+                <div className='text-4xl lg:text-6xl font-semibold tracking-tight max-w-sm'>
                   Pack Design Workshop for Educators
                 </div>
-                <div className='text-xl  text-neutral-500'>
+                <div className='text-lg  text-neutral-600'>
                   <span className='font-medium'>$399 / License</span>
                 </div>
               </div>
@@ -414,12 +414,21 @@ const Page = () => {
               <br />
               Puchase your Class Pack today!
             </h2>
-            <div
-              className='aspect-[1/1] w-40 bg-white ring-clemson ring-4 rounded-lg shadow-lg bg-contain bg-center'
-              style={{
-                backgroundImage: `url('https://packschool.s3.amazonaws.com/teachqr.png')`,
-              }}
-            ></div>
+            <div className='flex flex-col justify-center items-center gap-3 cursor-pointer'>
+              <div
+                className='aspect-[1/1] w-40 bg-white ring-clemson ring-4 rounded-lg shadow-lg bg-contain bg-center'
+                style={{
+                  backgroundImage: `url('https://packschool.s3.amazonaws.com/teachqr.png')`,
+                }}
+                onClick={() =>
+                  window.open(
+                    'https://buy.stripe.com/5kA5lg9g29HG6JOfYY',
+                    '_blank'
+                  )
+                }
+              ></div>
+              <div className='text-sm'>Click or Scan</div>
+            </div>
           </div>
         </div>
         <div className='text-sm text-neutral-600 flex flex-col gap-3'>
