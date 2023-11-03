@@ -12,9 +12,11 @@ import {
 import { Disclosure } from '@headlessui/react';
 import { ChevronRightIcon } from '@heroicons/react/20/solid';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 const Page = () => {
   const [isHover, setIsHover] = useState(false);
+  const router = useRouter();
 
   const classPackHandler = () => {
     fetch('/api/checkout_sessions', {
@@ -63,7 +65,7 @@ const Page = () => {
                     </div>
                   </div>
                 </div>
-                <div className='text-4xl lg:text-6xl font-semibold tracking-tighter max-w-sm'>
+                <div className='text-4xl lg:text-5xl font-semibold tracking-tight max-w-sm'>
                   Pack Design Workshop for Educators
                 </div>
                 <div className='text-xl  text-neutral-500'>
@@ -83,37 +85,41 @@ const Page = () => {
                 </p>
               </div>
             </div>
-            <form action='/api/checkout_sessions' method='POST'>
-              <button
-                type='submit'
-                role='link'
-                className='flex flex-col lg:flex-row gap-4 w-full h-full cursor-pointer'
-                onMouseEnter={() => setIsHover(true)}
-                onMouseLeave={() => setIsHover(false)}
+            <div
+              className='flex flex-col lg:flex-row gap-4 w-full h-full cursor-pointer'
+              onMouseEnter={() => setIsHover(true)}
+              onMouseLeave={() => setIsHover(false)}
+            >
+              <div
+                className=' bg-base-dark rounded-xl w-full h-full flex py-9 lg:p-6 items-center justify-center'
+                onClick={() =>
+                  window.open(
+                    'https://buy.stripe.com/5kA5lg9g29HG6JOfYY',
+                    '_blank'
+                  )
+                }
               >
-                <div className=' bg-base-dark rounded-xl w-full h-full flex py-9 lg:p-6 items-center justify-center'>
-                  <div className='flex flex-col gap-1 items-center'>
-                    <div className='font-etna text-center text-3xl md:text-4xl leading-none text-clemson'>
-                      Be a Packaging Hero!
-                    </div>
-                    <div className='text-white leading-tight text-center px-6'>
-                      Purchase a Class Pack<sup>*</sup> of licenses today.
-                    </div>
+                <div className='flex flex-col gap-1 items-center'>
+                  <div className='font-etna text-center text-3xl md:text-4xl leading-none text-clemson'>
+                    Be a Packaging Hero!
+                  </div>
+                  <div className='text-white leading-tight text-center px-6'>
+                    Purchase a Class Pack<sup>*</sup> of licenses today.
                   </div>
                 </div>
-                <div
-                  className={`bg-clemson rounded-xl h-full w-full pr-1.5 lg:max-w-[20%] lg:aspect-[1/1] flex justify-center items-center`}
-                >
-                  <div>
-                    <ArrowSmallRightIcon
-                      className={`stroke-white stroke-4 transition-all ease-in w-24 h-24 ${
-                        isHover ? 'scale-125' : ''
-                      }`}
-                    />
-                  </div>
+              </div>
+              <div
+                className={`bg-clemson rounded-xl h-full w-full pr-1.5 lg:max-w-[20%] lg:aspect-[1/1] flex justify-center items-center`}
+              >
+                <div>
+                  <ArrowSmallRightIcon
+                    className={`stroke-white stroke-4 transition-all ease-in w-24 h-24 ${
+                      isHover ? 'scale-125' : ''
+                    }`}
+                  />
                 </div>
-              </button>
-            </form>
+              </div>
+            </div>
           </div>
           <div className='flex justify-center md:justify-end items-center bg-neutral-800 rounded-xl'>
             <div className='object-fit w-full h-full'>
@@ -402,26 +408,18 @@ const Page = () => {
           </div>
         </div>
         <div className=' bg-gradient-to-tr from-base-brand via-base-mid to-clemson rounded-xl'>
-          <div className='mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:justify-between lg:px-8'>
-            <h2 className='text-3xl font-bold  text-white sm:text-5xl font-etna'>
+          <div className='mx-auto max-w-7xl px-6 text-center lg:text-left py-12 lg:py-20 flex flex-col gap-12 lg:flex-row items-center justify-center lg:justify-between w-full lg:px-16'>
+            <h2 className='text-4xl font-bold  text-white sm:text-5xl font-etna'>
               Ready to get hands-on?
               <br />
               Puchase your Class Pack today!
             </h2>
-            <div className='mt-10 flex items-center gap-x-6 lg:mt-0 lg:flex-shrink-0'>
-              <a
-                href='#'
-                className='rounded-md bg-neutral-800 px-5 py-3 text-lg font-semibold text-white shadow-sm hover:bg-clemson-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-clemson'
-              >
-                Buy Now
-              </a>
-              <a
-                href='#'
-                className='text-lg font-semibold leading-6 text-gray-900'
-              >
-                Questions?
-              </a>
-            </div>
+            <div
+              className='aspect-[1/1] w-40 bg-white ring-clemson ring-4 rounded-lg shadow-lg bg-contain bg-center'
+              style={{
+                backgroundImage: `url('https://packschool.s3.amazonaws.com/teachqr.png')`,
+              }}
+            ></div>
           </div>
         </div>
         <div className='text-sm text-neutral-600 flex flex-col gap-3'>
