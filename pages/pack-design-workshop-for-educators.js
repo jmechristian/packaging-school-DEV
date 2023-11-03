@@ -414,7 +414,7 @@ const Page = () => {
               <br />
               Purchase your Class Pack today!
             </h2>
-            <div className='flex flex-col justify-center items-center gap-3 cursor-pointer'>
+            <div className='flex flex-col justify-center items-center gap-3 '>
               <div
                 className='aspect-[1/1] w-40 bg-white ring-clemson ring-4 rounded-lg shadow-lg bg-contain bg-center cursor-pointer'
                 style={{
