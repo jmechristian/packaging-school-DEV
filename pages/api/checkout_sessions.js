@@ -16,7 +16,7 @@ export default async function handler(req, res) {
           ],
           mode: 'payment',
           allow_promotion_codes: true,
-          success_url: `${req.headers.origin}/registration-confirmation?success=true&name=${req.body.name}&title=${req.body.title}&company=${req.body.company}&email=${req.body.email}&phone=${req.body.phone}`,
+          success_url: `${req.headers.origin}/registration-confirmation?success=true`,
           cancel_url: `${req.headers.origin}/registration-confirmation?canceled=true`,
         });
 

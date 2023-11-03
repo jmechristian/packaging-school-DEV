@@ -16,6 +16,12 @@ import Image from 'next/image';
 const Page = () => {
   const [isHover, setIsHover] = useState(false);
 
+  const classPackHandler = () => {
+    fetch('/api/checkout_sessions', {
+      method: 'POST',
+    });
+  };
+
   return (
     <div className='w-full h-full xl:py-12 p-3 md:p-6'>
       <div className='max-w-7xl mx-auto flex flex-col gap-20'>
@@ -77,33 +83,36 @@ const Page = () => {
                 </p>
               </div>
             </div>
-            <div
-              className='flex flex-col lg:flex-row gap-4 w-full h-full cursor-pointer'
-              onMouseEnter={() => setIsHover(true)}
-              onMouseLeave={() => setIsHover(false)}
-            >
-              <div className=' bg-base-dark rounded-xl w-full h-full flex py-9 lg:p-6 items-center justify-center'>
-                <div className='flex flex-col gap-1 items-center'>
-                  <div className='font-etna text-center text-3xl md:text-4xl leading-none text-clemson'>
-                    Be a Packaging Hero!
-                  </div>
-                  <div className='text-white leading-tight text-center px-6'>
-                    Purchase a Class Pack<sup>*</sup> of licenses today.
-                  </div>
-                </div>
-              </div>
-              <div
-                className={`bg-clemson rounded-xl h-full w-full pr-1.5 lg:max-w-[20%] lg:aspect-[1/1] flex justify-center items-center`}
+            <form action='/api/checkout_sessions' method='POST'>
+              <button
+                type='submit'
+                className='flex flex-col lg:flex-row gap-4 w-full h-full cursor-pointer'
+                onMouseEnter={() => setIsHover(true)}
+                onMouseLeave={() => setIsHover(false)}
               >
-                <div>
-                  <ArrowSmallRightIcon
-                    className={`stroke-white stroke-4 transition-all ease-in w-24 h-24 ${
-                      isHover ? 'scale-125' : ''
-                    }`}
-                  />
+                <div className=' bg-base-dark rounded-xl w-full h-full flex py-9 lg:p-6 items-center justify-center'>
+                  <div className='flex flex-col gap-1 items-center'>
+                    <div className='font-etna text-center text-3xl md:text-4xl leading-none text-clemson'>
+                      Be a Packaging Hero!
+                    </div>
+                    <div className='text-white leading-tight text-center px-6'>
+                      Purchase a Class Pack<sup>*</sup> of licenses today.
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
+                <div
+                  className={`bg-clemson rounded-xl h-full w-full pr-1.5 lg:max-w-[20%] lg:aspect-[1/1] flex justify-center items-center`}
+                >
+                  <div>
+                    <ArrowSmallRightIcon
+                      className={`stroke-white stroke-4 transition-all ease-in w-24 h-24 ${
+                        isHover ? 'scale-125' : ''
+                      }`}
+                    />
+                  </div>
+                </div>
+              </button>
+            </form>
           </div>
           <div className='flex justify-center md:justify-end items-center bg-neutral-800 rounded-xl'>
             <div className='object-fit w-full h-full'>
