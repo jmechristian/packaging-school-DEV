@@ -86,6 +86,7 @@ const Page = () => {
             <form action='/api/checkout_sessions' method='POST'>
               <button
                 type='submit'
+                role='link'
                 className='flex flex-col lg:flex-row gap-4 w-full h-full cursor-pointer'
                 onMouseEnter={() => setIsHover(true)}
                 onMouseLeave={() => setIsHover(false)}
