@@ -412,7 +412,7 @@ const Page = () => {
             <h2 className='text-4xl font-bold  text-white sm:text-5xl font-etna'>
               Ready to get hands-on?
               <br />
-              Puchase your Class Pack today!
+              Purchase your Class Pack today!
             </h2>
             <div className='flex flex-col justify-center items-center gap-3 cursor-pointer'>
               <div
