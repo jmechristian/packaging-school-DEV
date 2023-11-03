@@ -9,14 +9,17 @@ import {
   ArrowSmallRightIcon,
   TrophyIcon,
 } from '@heroicons/react/24/outline';
-import { Disclosure } from '@headlessui/react';
+import { Disclosure, Dialog } from '@headlessui/react';
 import { ChevronRightIcon } from '@heroicons/react/20/solid';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 
+import ClassPackForm from '../components/forms/ClassPackForm';
+
 const Page = () => {
   const [isHover, setIsHover] = useState(false);
   const router = useRouter();
+  const [isOpen, setIsOpen] = useState(false);
 
   const classPackHandler = () => {
     fetch('/api/checkout_sessions', {
@@ -25,7 +28,33 @@ const Page = () => {
   };
 
   return (
-    <div className='w-full h-full xl:py-12 p-3 md:p-6'>
+    <div className='w-full h-full xl:py-12 p-3 md:p-6 relative'>
+      <Dialog
+        open={isOpen}
+        onClose={() => setIsOpen(false)}
+        className='relative z-50 w-full'
+      >
+        {/* The backdrop, rendered as a fixed sibling to the panel container */}
+        <div className='fixed inset-0 bg-black/70' aria-hidden='true' />
+
+        {/* Full-screen container to center the panel */}
+        <div className='fixed inset-0 flex w-screen items-center justify-center p-4'>
+          {/* The actual dialog panel  */}
+          <Dialog.Panel className='mx-auto w-full max-w-3xl rounded-lg bg-white'>
+            <Dialog.Title>
+              <div className='bg-neutral-100 p-12 flex flex-col lg:flex-row gap-6 justify-center items-center rounded-lg'>
+                <div className='flex flex-col gap-3 justify-center items-center'>
+                  <div className='font-etna text-3xl'>
+                    Questions? Speak to one of our counselors.
+                  </div>
+                </div>
+              </div>
+            </Dialog.Title>
+
+            <ClassPackForm />
+          </Dialog.Panel>
+        </div>
+      </Dialog>
       <div className='max-w-7xl mx-auto flex flex-col gap-20'>
         <div className='grid lg:grid-cols-2 w-full gap-4 overflow-hidden'>
           <div className='flex flex-col gap-4 '>
@@ -430,6 +459,23 @@ const Page = () => {
               <div className='text-sm text-white cursor-pointer'>
                 Click or Scan
               </div>
+            </div>
+          </div>
+        </div>
+        <div className='bg-neutral-100 p-12 flex flex-col lg:flex-row gap-6 justify-center items-center rounded-lg'>
+          <div className='flex flex-col gap-3 justify-center items-center'>
+            <div className='font-etna text-3xl'>
+              Questions? Speak to one of our counselors.
+            </div>
+            <div className='text-lg'>
+              Fill out the required form to get more information regarding Class
+              Packs.
+            </div>
+            <div
+              className='bg-base-brand font-bold text-white text-lg rounded-lg py-4 px-6 mt-2 cursor-pointer'
+              onClick={() => setIsOpen(true)}
+            >
+              <div>Get More Info</div>
             </div>
           </div>
         </div>
