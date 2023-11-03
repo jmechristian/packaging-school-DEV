@@ -416,7 +416,7 @@ const Page = () => {
             </h2>
             <div className='flex flex-col justify-center items-center gap-3 cursor-pointer'>
               <div
-                className='aspect-[1/1] w-40 bg-white ring-clemson ring-4 rounded-lg shadow-lg bg-contain bg-center'
+                className='aspect-[1/1] w-40 bg-white ring-clemson ring-4 rounded-lg shadow-lg bg-contain bg-center cursor-pointer'
                 style={{
                   backgroundImage: `url('https://packschool.s3.amazonaws.com/teachqr.png')`,
                 }}
@@ -427,20 +427,24 @@ const Page = () => {
                   )
                 }
               ></div>
-              <div className='text-sm'>Click or Scan</div>
+              <div className='text-sm text-white cursor-pointer'>
+                Click or Scan
+              </div>
             </div>
           </div>
         </div>
         <div className='text-sm text-neutral-600 flex flex-col gap-3'>
           <div>
             *Educator discount applied to a minimum of 30 licenses. If you need
-            fewer than that, please order through our non-educator{' '}
+            fewer than that, please order through our{' '}
             <a
               href='https://library.packagingschool.com/packdesign-workshop'
               target='_blank'
               rel='noreferrer'
+              className='underline'
             >
-              website.
+              {' '}
+              non-educator website.
             </a>
           </div>
           <div>
