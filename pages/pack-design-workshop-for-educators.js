@@ -32,11 +32,16 @@ const Page = () => {
       <Dialog
         open={isOpen}
         onClose={() => setIsOpen(false)}
-        className='relative z-50 w-full'
+        className='relative z-[100] w-full'
       >
         {/* The backdrop, rendered as a fixed sibling to the panel container */}
         <div className='fixed inset-0 bg-black/70' aria-hidden='true' />
-
+        <div
+          className='fixed right-3 lg:right-6 lg:top-6 top-3 lg:w-12 lg:h-12 w-7 h-7 shadow-sm text-white lg:text-2xl rounded-full flex items-center justify-center cursor-pointer bg-clemson z-[110]'
+          onClick={() => setIsOpen(false)}
+        >
+          X
+        </div>
         {/* Full-screen container to center the panel */}
         <div className='fixed inset-0 flex w-screen items-center justify-center p-4'>
           {/* The actual dialog panel  */}

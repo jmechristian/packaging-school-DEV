@@ -295,3 +295,8 @@ h4 {
 .tiptap > p > a {
   @apply font-medium underline text-indigo-500;
 }
+
+.cc-revoke,
+.cc-window {
+  z-index: 90 !important;
+}

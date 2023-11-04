@@ -57,11 +57,11 @@ const ClassPackForm = () => {
 
   return (
     <form
-      className='flex flex-col gap-3 lg:gap-6 px-4 lg:px-0 max-w-2xl mx-auto w-full h-full pt-6 pb-6 lg:pb-12'
+      className='flex flex-col gap-1.5 lg:gap-6 px-4 lg:px-0 max-w-2xl mx-auto w-full h-full pt-4 pb-4 lg:pb-12'
       onSubmit={handleSubmit(onSubmit)}
       ref={formRef}
     >
-      <div className='grid lg:grid-cols-2 gap-6 overflow-hidden'>
+      <div className='grid lg:grid-cols-2 gap-1.5 lg:gap-6 overflow-hidden'>
         <div>
           <label
             htmlFor='fullname'
@@ -69,7 +69,7 @@ const ClassPackForm = () => {
           >
             Full Name*
           </label>
-          <div className='mt-2'>
+          <div className='mt-1 lg:mt-2'>
             <input
               {...register('fullname', { required: true })}
               type='text'
@@ -87,7 +87,7 @@ const ClassPackForm = () => {
           >
             Email*
           </label>
-          <div className='mt-2'>
+          <div className='mt-1 lg:mt-2'>
             <input
               {...register('email', { required: true })}
               type='email'
@@ -106,7 +106,7 @@ const ClassPackForm = () => {
         >
           Educational Facility*
         </label>
-        <div className='mt-2'>
+        <div className='mt-1 lg:mt-2'>
           <input
             {...register('field[91]', { required: true })}
             type='text'
@@ -124,7 +124,7 @@ const ClassPackForm = () => {
         >
           Facility Mailing Address*
         </label>
-        <div className='mt-2'>
+        <div className='mt-1 lg:mt-2'>
           <input
             {...register('field[94]', { required: true })}
             type='text'
@@ -134,7 +134,7 @@ const ClassPackForm = () => {
           />
         </div>
       </div>
-      <div className='grid lg:grid-cols-2 gap-6 overflow-hidden'>
+      <div className='grid lg:grid-cols-2 gap-1.5 lg:gap-6 overflow-hidden'>
         <div>
           <label
             htmlFor='field[92]'
@@ -142,7 +142,7 @@ const ClassPackForm = () => {
           >
             Number of Students*
           </label>
-          <div className='mt-2'>
+          <div className='mt-1 lg:mt-2'>
             <input
               {...register('field[92]', { required: true })}
               type='text'
@@ -160,7 +160,7 @@ const ClassPackForm = () => {
           >
             Subject Matter Taught*
           </label>
-          <div className='mt-2'>
+          <div className='mt-1 lg:mt-2'>
             <input
               {...register('field[93]', { required: true })}
               type='text'
