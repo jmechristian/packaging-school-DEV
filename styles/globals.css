@@ -281,11 +281,11 @@ h4 {
 }
 
 .tiptap blockquote {
-  @apply p-4 my-9 border-l-8 border-orange-500 bg-gray-50  dark:bg-gray-800;
+  @apply px-4 py-12 my-9 border-l-8 border-orange-500 bg-neutral-200 dark:bg-gray-800 flex flex-col gap-4;
 }
 
 .tiptap blockquote p {
-  @apply text-white text-2xl font-bold mx-6 tracking-tight;
+  @apply dark:text-white text-2xl font-bold mx-6 mb-0 font-etna;
 }
 
 .tiptap img {
