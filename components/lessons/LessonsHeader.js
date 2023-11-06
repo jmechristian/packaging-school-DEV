@@ -87,7 +87,7 @@ const LessonsHeader = ({ id, title, subhead, tags, author, date }) => {
               ))}
           </div>
         )}
-        <div className='text-lg md:text-xl mt-6  text-neutral-500 dark:text-white/60 max-w-5xl'>
+        <div className='text-lg md:text-2xl mt-6  text-neutral-500 dark:text-white/60 max-w-5xl'>
           {subhead}
         </div>
       </div>

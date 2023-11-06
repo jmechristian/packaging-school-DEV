@@ -94,7 +94,7 @@ const DraftLessonsHeader = ({ id, title, subhead, tags, author, date }) => {
               ))}
           </div>
         )}
-        <p className='mt-8 text-lg md:text-xl  text-gray-700 dark:text-white/60'>
+        <p className='mt-8 text-lg md:text-2xl  text-gray-700 dark:text-white/60'>
           {subhead}
         </p>
       </div>
