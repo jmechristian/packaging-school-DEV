@@ -45,6 +45,13 @@ module.exports = {
         dark: '#0e1424',
         'dark-mid': '#1a1a1a',
         'dark-dark': '#0E0E0E',
+        'unilever-blue': '#1f36c7',
+        'unilever-darkblue': '#001f82',
+        'unilever-lightblue': '#005eff',
+        'unilever-salmon': '#fea29a',
+        'unilever-green': '#008651',
+        'unilever-purple': '#7705bc',
+        'unilever-lavendar': '#e2bee8',
       },
       backgroundImage: {
         'dark-mobile':
