@@ -78,6 +78,9 @@ const Layout = ({ children }) => {
             subhead
             slug
             id
+            seoImage
+            type
+            createdAt
           }
         }
       }

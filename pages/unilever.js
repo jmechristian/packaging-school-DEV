@@ -16,6 +16,7 @@ import {
   ChevronRightIcon,
 } from '@heroicons/react/24/solid';
 import { Disclosure } from '@headlessui/react';
+import { useSelector } from 'react-redux';
 
 import Unilever from '../components/icons/Unilever';
 import CourseCardVideoHeader from '../components/shared/CourseCardVideoHeader';
@@ -163,6 +164,16 @@ const supportLinks = [
 ];
 
 const Page = () => {
+  const { allLessons } = useSelector((state) => state.course_filter);
+
+  const createDate = (date) => {
+    const newDate = new Date(date);
+    return newDate.toLocaleDateString('en-US', {
+      month: 'long',
+      year: 'numeric',
+    });
+  };
+
   return (
     <div className='w-full max-w-7xl px-3 md:px-6 flex flex-col gap-4 md:gap-6 py-6 lg:py-9 mx-auto'>
       {/* MAIN */}
@@ -223,8 +234,8 @@ const Page = () => {
       </div>
 
       {/* COURSES */}
-      <div className='w-full bg-neutral-300  h-full rounded-lg mx-auto max-w-7xl px-6 flex flex-col gap-6 py-9 '>
-        <Disclosure>
+      <div className='w-full bg-neutral-300  h-full rounded-lg mx-auto max-w-7xl px-6 lg:px-12 flex flex-col gap-6 py-9 '>
+        <Disclosure defaultOpen>
           {({ open }) => (
             /* Use the `open` state to conditionally change the direction of an icon. */
             <div className='w-full flex flex-col gap-12 items-center'>
@@ -277,17 +288,48 @@ const Page = () => {
                   }
                 />
               </Disclosure.Button>
-              <Disclosure.Panel>
+              <Disclosure.Panel className='w-full'>
                 <section
                   className='z-10 lg:px-6'
                   aria-labelledby='contact-heading'
                 >
-                  <div className='grid grid-cols-1 gap-y-6 md:grid-cols-2 md:gap-9 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-20'>
-                    {supportLinks.map((link) => (
-                      <div key={link.name}>
-                        <CourseCardVideoHeader link={link} />
-                      </div>
-                    ))}
+                  <div className='grid grid-cols-1 gap-y-6 md:grid-cols-2 md:gap-9 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-20 w-full'>
+                    {allLessons &&
+                      allLessons
+                        .filter((less) => less.type === 'LOTM')
+                        .sort((a, b) => {
+                          if (a.createdAt < b.createdAt) {
+                            return 1;
+                          }
+                          if (a.createdAt > b.createdAt) {
+                            return -1;
+                          }
+                        })
+                        .map((link) => (
+                          <div
+                            key={link.name}
+                            className='flex flex-col rounded-2xl h-full bg-neutral-100/70 shadow-lg w-full cursor-pointer'
+                            onClick={() => window.open(`/lessons/${link.slug}`)}
+                          >
+                            <div
+                              className='w-full aspect-[16/9] bg-black rounded-t-xl bg-cover bg-center'
+                              style={{
+                                backgroundImage: `url(${link.seoImage})`,
+                              }}
+                            ></div>
+                            <div className='p-4 md:p-6 w-full'>
+                              <div className='text-sm uppercase font-medium text-unilever-blue mb-1.5'>
+                                {createDate(link.createdAt)}
+                              </div>
+                              <h3 className='text-lg md:text-xl font-medium text-neutral-900 md:leading-tight'>
+                                {link.title}
+                              </h3>
+                              <p className=' mt-3 md:mt-4 text-sm text-neutral-600 leading-tight line-clamp-3 mb-3'>
+                                {link.subhead}
+                              </p>
+                            </div>
+                          </div>
+                        ))}
                   </div>
                 </section>
               </Disclosure.Panel>
