@@ -8,7 +8,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
-const CPSWrapper = ({ params }) => {
+const CPSWrapper = ({ params, free }) => {
   const methods = useForm();
   const [paramsEmail, setIsParamsEmail] = useState(undefined);
 
@@ -28,7 +28,7 @@ const CPSWrapper = ({ params }) => {
     <div className='w-full max-w-4xl mx-auto sm:px-0 pb-24'>
       <FormProvider {...methods}>
         <CPSNav />
-        <CPSForm methods={methods} email={paramsEmail} />
+        <CPSForm methods={methods} email={paramsEmail} free={free} />
       </FormProvider>
     </div>
   );

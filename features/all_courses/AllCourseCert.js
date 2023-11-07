@@ -15,7 +15,7 @@ const AllCoursesCert = () => {
       ring: 'slate-400',
       video: 'https://youtu.be/N_hYWvQO0Sg',
       callout: 'Deadline to Apply',
-      calloutValue: 'Sept 15',
+      calloutValue: 'Nov. 24',
     },
     {
       name: 'Certificate of Packaging Science',

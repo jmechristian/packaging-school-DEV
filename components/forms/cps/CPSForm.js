@@ -13,7 +13,7 @@ import { useRouter } from 'next/router';
 import CPSGoals from './CPSGoals';
 import CPSApply from './CPSApply';
 
-const CPSForm = ({ methods, email }) => {
+const CPSForm = ({ methods, email, free }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isUpdated, setIsUpdated] = useState(false);
   const [isEmail, setIsEmail] = useState('');
@@ -60,7 +60,9 @@ const CPSForm = ({ methods, email }) => {
             cpsGoals: methods.getValues('cpsGoals'),
             moreAboutYou: methods.getValues('moreAboutYou'),
             elective: methods.getValues('elective'),
-            paymentConfirmation: methods.getValues('paymentConfirmation'),
+            paymentConfirmation: free
+              ? 'WAIVED'
+              : methods.getValues('paymentConfirmation'),
           },
         },
       });
@@ -97,7 +99,9 @@ const CPSForm = ({ methods, email }) => {
             cpsGoals: methods.getValues('cpsGoals'),
             moreAboutYou: methods.getValues('moreAboutYou'),
             elective: methods.getValues('elective'),
-            paymentConfirmation: methods.getValues('paymentConfirmation'),
+            paymentConfirmation: free
+              ? 'WAIVED'
+              : methods.getValues('paymentConfirmation'),
           },
         },
       });
@@ -146,7 +150,9 @@ const CPSForm = ({ methods, email }) => {
             cpsGoals: methods.getValues('cpsGoals'),
             moreAboutYou: methods.getValues('moreAboutYou'),
             elective: methods.getValues('elective'),
-            paymentConfirmation: methods.getValues('paymentConfirmation'),
+            paymentConfirmation: free
+              ? 'WAIVED'
+              : methods.getValues('paymentConfirmation'),
           },
         },
       });
@@ -184,7 +190,9 @@ const CPSForm = ({ methods, email }) => {
             cpsGoals: methods.getValues('cpsGoals'),
             moreAboutYou: methods.getValues('moreAboutYou'),
             elective: methods.getValues('elective'),
-            paymentConfirmation: methods.getValues('paymentConfirmation'),
+            paymentConfirmation: free
+              ? 'WAIVED'
+              : methods.getValues('paymentConfirmation'),
           },
         },
       });
@@ -222,7 +230,9 @@ const CPSForm = ({ methods, email }) => {
             cpsGoals: methods.getValues('cpsGoals'),
             moreAboutYou: methods.getValues('moreAboutYou'),
             elective: methods.getValues('elective'),
-            paymentConfirmation: methods.getValues('paymentConfirmation'),
+            paymentConfirmation: free
+              ? 'WAIVED'
+              : methods.getValues('paymentConfirmation'),
           },
         },
       });
@@ -308,7 +318,7 @@ const CPSForm = ({ methods, email }) => {
         <div className='text-xl lg:text-2xl lg:mb-4 font-greycliff font-semibold'>
           Session Info
         </div>
-        <CPSApply email={isEmail} />
+        <CPSApply email={isEmail} free={free} />
       </div>
       <div className='flex justify-between items-center bg-slate-300 dark:bg-dark-dark px-6 py-4 rounded-t sticky z-50 bottom-0 gap-3 lg:gap-6 border-t border-t-slate-300 text-sm md:text-base'>
         <div className='w-fit font-greycliff font-semibold h-full text-green-600 text-lg'>

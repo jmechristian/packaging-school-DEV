@@ -4,7 +4,7 @@ import { useFormContext } from 'react-hook-form';
 import TextInput from '../TextInput';
 import Link from 'next/link';
 
-const CPSApply = ({ email }) => {
+const CPSApply = ({ email, free }) => {
   const { register, formState } = useFormContext();
   return (
     <div className='flex flex-col gap-12'>

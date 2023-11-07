@@ -240,7 +240,7 @@ const Page = () => {
             /* Use the `open` state to conditionally change the direction of an icon. */
             <div className='w-full flex flex-col gap-12 items-center'>
               <Disclosure.Button className='flex w-full justify-between items-center'>
-                <div className='font-etna text-2xl md:text-3xl lg:text-4xl text-left text-unilever-purple'>
+                <div className=' text-2xl md:text-3xl  font-bold text-left text-neutral-700'>
                   Your Courses
                 </div>
                 <ChevronRightIcon
@@ -271,13 +271,13 @@ const Page = () => {
       </div>
 
       {/* LOTM */}
-      <div className='w-full bg-unilever-salmon h-full rounded-lg mx-auto max-w-7xl px-6 lg:px-12 flex flex-col gap-6 py-9'>
+      <div className='w-full bg-base-brand h-full rounded-lg mx-auto max-w-7xl px-6 lg:px-12 flex flex-col gap-6 py-9'>
         <Disclosure>
           {({ open }) => (
             /* Use the `open` state to conditionally change the direction of an icon. */
             <div className='w-full flex flex-col gap-12 items-center'>
               <Disclosure.Button className='flex w-full justify-between items-center'>
-                <div className='font-etna text-2xl md:text-3xl lg:text-4xl text-left text-unilever-purple'>
+                <div className='text-2xl md:text-3xl text-left text-white font-bold'>
                   Learning of the Month
                 </div>
                 <ChevronRightIcon
