@@ -254,7 +254,7 @@ const CPSApply = ({ email, free }) => {
           .
         </div>
       </div>
-      <CPSPricing email={email} />
+      <CPSPricing email={email} free={free} />
     </div>
   );
 };

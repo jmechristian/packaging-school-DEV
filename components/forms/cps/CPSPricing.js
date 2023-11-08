@@ -4,7 +4,7 @@ import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 import { useFormContext } from 'react-hook-form';
 
-const CPSPricing = ({ email }) => {
+const CPSPricing = ({ email, free }) => {
   const [stripePromise, setStripePromise] = useState(() =>
     loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
   );
@@ -25,25 +25,31 @@ const CPSPricing = ({ email }) => {
                 </p>
                 <p className='mt-6 flex items-baseline justify-center gap-x-2 mb-6'>
                   <span className='text-5xl font-bold tracking-tight text-slate-900'>
-                    $25
+                    {free ? 'WAIVED' : '$25'}
                   </span>
-                  <span className='text-sm font-semibold leading-6 tracking-wide text-slate-600'>
-                    USD
-                  </span>
+                  {!free && (
+                    <span className='text-sm font-semibold leading-6 tracking-wide text-slate-600'>
+                      USD
+                    </span>
+                  )}
                 </p>
-                <Elements stripe={stripePromise}>
-                  <CheckoutForm
-                    setConfirmation={(val) =>
-                      setPaymentConfirmation(val && val)
-                    }
-                    email={email}
-                    type={'CPS'}
-                  />
-                </Elements>
+                {!free ? (
+                  <Elements stripe={stripePromise}>
+                    <CheckoutForm
+                      setConfirmation={(val) =>
+                        setPaymentConfirmation(val && val)
+                      }
+                      type={'CPS'}
+                      email={email}
+                    />
+                  </Elements>
+                ) : (
+                  () => setPaymentConfirmation('WAIVED')
+                )}
                 <div>
                   <input
                     type='hidden'
-                    value={paymentConfirmation}
+                    value={free ? 'WAIVED' : paymentConfirmation}
                     name='paymentConfirmation'
                     {...register('paymentConfirmation', {
                       required: true,

@@ -9,7 +9,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
-const CMPMWrapper = ({ params, free }) => {
+const CMPMWrapperFree = ({ params, free }) => {
   const methods = useForm();
   const [paramsEmail, setIsParamsEmail] = useState(undefined);
 
@@ -47,10 +47,10 @@ const CMPMWrapper = ({ params, free }) => {
     <div className='w-full max-w-4xl mx-auto sm:px-0 pb-24'>
       <FormProvider {...methods}>
         <CMPMNav />
-        <CMPMForm methods={methods} email={paramsEmail} />
+        <CMPMForm methods={methods} email={paramsEmail} free={true} />
       </FormProvider>
     </div>
   );
 };
 
-export default CMPMWrapper;
+export default CMPMWrapperFree;

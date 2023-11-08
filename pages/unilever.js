@@ -2,7 +2,9 @@ import React from 'react';
 import {
   ArrowTopRightOnSquareIcon,
   ArrowLongRightIcon,
+  AcademicCapIcon,
   ArchiveBoxIcon,
+  BoltIcon,
   BriefcaseIcon,
   Cog6ToothIcon,
   SwatchIcon,
@@ -10,16 +12,14 @@ import {
   InformationCircleIcon,
 } from '@heroicons/react/24/outline';
 
-import {
-  AcademicCapIcon,
-  BookOpenIcon,
-  ChevronRightIcon,
-} from '@heroicons/react/24/solid';
+import { ChevronRightIcon } from '@heroicons/react/24/solid';
 import { Disclosure } from '@headlessui/react';
 import { useSelector } from 'react-redux';
+import { motion, AnimatePresence } from 'framer-motion';
 
 import Unilever from '../components/icons/Unilever';
 import CourseCardVideoHeader from '../components/shared/CourseCardVideoHeader';
+import FullWidthDropDown from '../components/shared/FullWidthDropDown';
 
 const supportLinks = [
   {
@@ -174,6 +174,35 @@ const Page = () => {
     });
   };
 
+  const highlightItems = [];
+
+  const HighlightContent = ({ link }) => {
+    return (
+      <motion.div className='px-6 w-full grid lg:grid-cols-3 gap-12 pb-3 my-9 overflow-hidden'>
+        <motion.div className='w-full min-h-[250px] bg-unilever-lightblue rounded-lg shadow-lg'></motion.div>
+        <motion.div className='w-full min-h-[250px] bg-unilever-lightblue rounded-lg shadow-lg'></motion.div>
+        <motion.div className='w-full min-h-[250px] bg-unilever-lightblue rounded-lg shadow-lg'></motion.div>
+      </motion.div>
+    );
+  };
+
+  const CourseContent = () => {
+    return (
+      <motion.section
+        className='z-10 lg:px-6'
+        aria-labelledby='contact-heading'
+      >
+        <div className='grid grid-cols-1 gap-y-6 md:grid-cols-2 md:gap-9 lg:grid-cols-3 lg:gap-10 pb-16'>
+          {supportLinks.map((link) => (
+            <div key={link.name}>
+              <CourseCardVideoHeader link={link} />
+            </div>
+          ))}
+        </div>
+      </motion.section>
+    );
+  };
+
   return (
     <div className='w-full max-w-7xl px-3 md:px-6 flex flex-col gap-4 md:gap-6 py-6 lg:py-9 mx-auto'>
       {/* MAIN */}
@@ -233,51 +262,37 @@ const Page = () => {
         </div>
       </div>
 
+      {/* HIGHLIGHT */}
+
+      <FullWidthDropDown
+        title={'featured'}
+        Icon={BoltIcon}
+        bg='bg-unilever-blue'
+        bgdark='bg-unilever-darkblue'
+        highlight={'bg-unilever-lightblue'}
+        content={<HighlightContent />}
+      />
+
       {/* COURSES */}
-      <div className='w-full bg-neutral-300  h-full rounded-lg mx-auto max-w-7xl px-6 lg:px-12 flex flex-col gap-6 py-9 '>
-        <Disclosure defaultOpen>
-          {({ open }) => (
-            /* Use the `open` state to conditionally change the direction of an icon. */
-            <div className='w-full flex flex-col gap-12 items-center'>
-              <Disclosure.Button className='flex w-full justify-between items-center'>
-                <div className=' text-2xl md:text-3xl  font-bold text-left text-neutral-700'>
-                  Your Courses
-                </div>
-                <ChevronRightIcon
-                  className={
-                    open
-                      ? 'rotate-90 transform w-7 md:w-9 h-7 md:h-9'
-                      : 'w-7 md:w-9 h-7 md:h-9'
-                  }
-                />
-              </Disclosure.Button>
-              <Disclosure.Panel>
-                <section
-                  className='z-10 lg:px-6'
-                  aria-labelledby='contact-heading'
-                >
-                  <div className='grid grid-cols-1 gap-y-6 md:grid-cols-2 md:gap-9 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-20'>
-                    {supportLinks.map((link) => (
-                      <div key={link.name}>
-                        <CourseCardVideoHeader link={link} />
-                      </div>
-                    ))}
-                  </div>
-                </section>
-              </Disclosure.Panel>
-            </div>
-          )}
-        </Disclosure>
-      </div>
+
+      <FullWidthDropDown
+        title={'Your Courses'}
+        Icon={AcademicCapIcon}
+        bg='bg-base-mid'
+        bgdark='bg-base-dark'
+        content={<CourseContent />}
+        highlight={'bg-clemson'}
+        bgContent={'bg-neutral-200 border'}
+      />
 
       {/* LOTM */}
-      <div className='w-full bg-base-brand h-full rounded-lg mx-auto max-w-7xl px-6 lg:px-12 flex flex-col gap-6 py-9'>
-        <Disclosure>
+      <div className='w-full bg-base-brand h-full rounded-lg mx-auto max-w-7xl px-6 lg:px-12 flex flex-col gap-6 py-6'>
+        <Disclosure key={'2'}>
           {({ open }) => (
             /* Use the `open` state to conditionally change the direction of an icon. */
             <div className='w-full flex flex-col gap-12 items-center'>
               <Disclosure.Button className='flex w-full justify-between items-center'>
-                <div className='text-2xl md:text-3xl text-left text-white font-bold'>
+                <div className='text-2xl md:text-3xl text-left text-white font-bold tracking-tight'>
                   Learning of the Month
                 </div>
                 <ChevronRightIcon

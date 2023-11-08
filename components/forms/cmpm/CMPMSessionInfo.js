@@ -4,7 +4,7 @@ import { useFormContext } from 'react-hook-form';
 import TextInput from '../TextInput';
 import Link from 'next/link';
 
-const CMPMSessionInfo = ({ email }) => {
+const CMPMSessionInfo = ({ email, free }) => {
   const { register, formState } = useFormContext();
   return (
     <div className='flex flex-col gap-12'>
@@ -25,26 +25,10 @@ const CMPMSessionInfo = ({ email }) => {
             <div className='flex items-center gap-x-3'>
               <input
                 {...register('sessionApplying', { required: true })}
-                id='sept2023'
-                name='sessionApplying'
-                value='sept2023'
-                type='radio'
-                className='h-4 w-4 border-slate-300 text-base-brand focus:ring-base-brand'
-              />
-              <label
-                htmlFor='sept2023'
-                className='block font-medium font-greycliff leading-6 text-slate-900'
-              >
-                Sept 2023
-              </label>
-            </div>
-            <div className='flex items-center gap-x-3'>
-              <input
-                {...register('sessionApplying', { required: true })}
                 id='dec2023'
                 name='sessionApplying'
-                type='radio'
                 value='dec2023'
+                type='radio'
                 className='h-4 w-4 border-slate-300 text-base-brand focus:ring-base-brand'
               />
               <label
@@ -52,6 +36,22 @@ const CMPMSessionInfo = ({ email }) => {
                 className='block font-medium font-greycliff leading-6 text-slate-900'
               >
                 Dec 2023
+              </label>
+            </div>
+            <div className='flex items-center gap-x-3'>
+              <input
+                {...register('sessionApplying', { required: true })}
+                id='March 2024'
+                name='sessionApplying'
+                type='radio'
+                value='March 2024'
+                className='h-4 w-4 border-slate-300 text-base-brand focus:ring-base-brand'
+              />
+              <label
+                htmlFor='March 2024'
+                className='block font-medium font-greycliff leading-6 text-slate-900'
+              >
+                March 2024
               </label>
             </div>
           </div>
@@ -277,7 +277,7 @@ const CMPMSessionInfo = ({ email }) => {
           </div>
         )}
       </fieldset>
-      <CMPMPricing email={email} />
+      <CMPMPricing email={email} free={free} />
     </div>
   );
 };
