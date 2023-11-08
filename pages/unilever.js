@@ -178,8 +178,35 @@ const Page = () => {
 
   const HighlightContent = ({ link }) => {
     return (
-      <motion.div className='px-6 w-full grid lg:grid-cols-3 gap-12 pb-3 my-9 overflow-hidden'>
-        <motion.div className='w-full min-h-[250px] bg-unilever-lightblue rounded-lg shadow-lg'></motion.div>
+      <motion.div className=' px-0 lg:px-6 w-full grid lg:grid-cols-3 gap-12 pb-3 my-9 overflow-hidden'>
+        <motion.div className='w-full min-h-[250px] rounded-lg shadow-lg bg-cover bg-bottom bg-opacity-60 relative bg-black'>
+          <motion.div className='absolute z-[1] left-0 right-0 bottom-0 top-1/3 bg-gradient-to-t from-unilever-darkblue via-unilever-darkblue rounded-b-lg'></motion.div>
+          <motion.div
+            className='absolute z-0 left-0 right-0 top-0 bottom-1/3 bg-black bg-opacity-50 rounded-t-lg bg-cover'
+            style={{
+              backgroundImage: `url("https://packschool.s3.amazonaws.com/unilever-brands-1.png")`,
+            }}
+          ></motion.div>
+          <motion.div className='w-full h-12 backdrop-blur border-b border-b-neutral-200 rounded-t-lg flex items-center font-bold px-4 text-white relative z-[2]'>
+            Unilever Developed
+          </motion.div>
+          <motion.div className='aspect-[16/9] w-full h-auto relative z-[2]'></motion.div>
+          <motion.div className='pt-6  bg-white/50 backdrop-blur-lg shadow-lg rounded-b-lg mx-6 rounded-lg mb-6 relative z-[2]'>
+            <motion.div className='flex flex-col gap-3'>
+              <motion.div className='font-medium text-2xl tracking-tight leading-tight px-4'>
+                Unilever Packaging Bootcamp 101
+              </motion.div>
+              <motion.div className='leading-tight text-sm px-4 pb-6'>
+                This Boot Camp will serve as an introduction to the packaging
+                industry and provide the fundamental knowledge necessary to get
+                you up to speed.
+              </motion.div>
+            </motion.div>
+          </motion.div>
+          <motion.div className='bg-black w-full rounded-b-lg z-10 relative'>
+            <div className='text-white font-bold px-6 py-3'>Select Course</div>
+          </motion.div>
+        </motion.div>
         <motion.div className='w-full min-h-[250px] bg-unilever-lightblue rounded-lg shadow-lg'></motion.div>
         <motion.div className='w-full min-h-[250px] bg-unilever-lightblue rounded-lg shadow-lg'></motion.div>
       </motion.div>
