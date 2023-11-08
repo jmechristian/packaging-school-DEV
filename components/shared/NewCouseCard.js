@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { PlayCircleIcon } from '@heroicons/react/24/solid';
 
+import VideoPlayer from '../VideoPlayer';
+
 const NewCouseCard = ({
   background,
   Icon,
@@ -30,10 +32,8 @@ const NewCouseCard = ({
         <motion.div className=' font-bold text-white '>{callout}</motion.div>
       </motion.div>
       {isPlaying ? (
-        <motion.div className='aspect-[16/9] w-full h-auto relative z-[2] flex items-center justify-center bg-black'>
-          {/* <motion.div className='w-20 h-20 bg-white/40 backdrop-blur-lg hover:bg-clemson transition-colors ease-in rounded-full shadow-xl flex justify-center items-center cursor-pointer'>
-                <PlayCircleIcon className='w-20 h-20' />
-              </motion.div> */}
+        <motion.div className='aspect-[16/9] w-full h-auto relative z-[2] flex items-center justify-center bg-black transition-opacity ease-in'>
+          <VideoPlayer videoEmbedLink={video} light={false} playing={true} />
         </motion.div>
       ) : (
         <motion.div
