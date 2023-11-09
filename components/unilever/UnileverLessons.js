@@ -95,7 +95,7 @@ const UnileverLessons = ({ supportLinks }) => {
               <motion.div className='font-semibold text-2xl lg:text-3xl max-w-sm tracking-tight leading-none'>
                 {supportLinks[0].title}
               </motion.div>
-              <motion.div className='leading-snug text-lg line-clamp-4 text-neutral-600 max-w-md'>
+              <motion.div className='leading-snug lg:text-lg line-clamp-4 text-neutral-600 max-w-md'>
                 {supportLinks[0].subhead}
               </motion.div>
               <motion.div
@@ -139,7 +139,7 @@ const UnileverLessons = ({ supportLinks }) => {
         />
       </div>
       {isExpanded ? (
-        <div className='grid gap-y-6 md:grid-cols-2 md:gap-9 lg:grid-cols-3 lg:gap-10 pb-9 col-span-2'>
+        <div className='grid gap-y-16 md:grid-cols-2 md:gap-9 lg:grid-cols-3 lg:gap-10 pb-9 col-span-2'>
           {supportLinks.map((link) => (
             <NewCouseCard
               key={link.title}

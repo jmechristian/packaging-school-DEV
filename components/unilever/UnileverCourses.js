@@ -130,7 +130,7 @@ const UnileverCourses = ({ supportLinks }) => {
         />
       </div>
       {isExpanded ? (
-        <div className='grid grid-cols-1 gap-y-6 md:grid-cols-2 md:gap-9 lg:grid-cols-3 lg:gap-10 pb-9'>
+        <div className='grid grid-cols-1 gap-y-16 md:grid-cols-2 md:gap-9 lg:grid-cols-3 lg:gap-10 pb-9'>
           {supportLinks.map((link) => (
             <NewCouseCard
               key={link.name}
