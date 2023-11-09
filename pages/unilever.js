@@ -21,9 +21,10 @@ import { useSelector } from 'react-redux';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import Unilever from '../components/icons/Unilever';
-import CourseCardVideoHeader from '../components/shared/CourseCardVideoHeader';
+
 import FullWidthDropDown from '../components/shared/FullWidthDropDown';
 import NewCouseCard from '../components/shared/NewCouseCard';
+import UnileverCourses from '../components/unilever/UnileverCourses';
 
 const supportLinks = [
   {
@@ -183,7 +184,7 @@ const Page = () => {
 
   const HighlightContent = ({ link }) => {
     return (
-      <motion.div className=' px-0 lg:px-6 w-full grid lg:grid-cols-3 gap-12 pb-3 my-9 overflow-hidden'>
+      <motion.div className='px-0 lg:px-6 w-full grid lg:grid-cols-3 gap-12 pb-3 my-9 overflow-hidden'>
         <NewCouseCard
           title={'Uniliever Packaging Bootcamp 101'}
           description={
@@ -226,20 +227,7 @@ const Page = () => {
   };
 
   const CourseContent = () => {
-    return (
-      <motion.section
-        className='z-10 lg:px-6'
-        aria-labelledby='contact-heading'
-      >
-        <div className='grid grid-cols-1 gap-y-6 md:grid-cols-2 md:gap-9 lg:grid-cols-3 lg:gap-10 pb-16'>
-          {supportLinks.map((link) => (
-            <div key={link.name}>
-              <CourseCardVideoHeader link={link} />
-            </div>
-          ))}
-        </div>
-      </motion.section>
-    );
+    return <UnileverCourses supportLinks={supportLinks} />;
   };
 
   return (
