@@ -217,7 +217,95 @@ const faqs = [
   {
     question: 'Who else will be taking this course?',
     answer:
-      'The Packaging School is the Exclusive Licensee of a professional packaging curriculum developed at Clemson University. The courses are created in a collaborative process between academia and industry leveraging 600+ packaging professionals',
+      'Learners from Fortune 500 companies to startups are taking these courses. Age ranges from 18-71 years old.',
+  },
+  {
+    question:
+      'Is the Certificate of Mastery in Packaging Management a Master’s program?',
+    answer:
+      'The Certificate of Mastery in Packaging Management is not a Masters program. Our program takes 12 weeks to complete, whereas an online Masters takes on average 1-2 years to complete.',
+  },
+  {
+    question: 'Can I print materials from the courses?',
+    answer:
+      'We have created custom workbooks for our courses for students to print where you can take notes and keep infographics that may be harder to copy down. Additionally, you will be able to print our PDFs and cheat sheets.',
+  },
+  {
+    question: 'What are the technology requirements of The Packaging School?',
+    answer:
+      'The Packaging School requires all students have access to a computer and at least 3 mpbs of internet. The Packaging School recommends using Chrome as a web browser. Student services will give students suggestions as to how to get access to internet and/or a computer if requested. All other requirements to complete any course or assignment within The Packaging School are embedded into the course. Students will not be asked to purchase any other technology in order to receive the certificate. All study materials will be provided and released at the start of each week. You do not need to prepare anything in advance of the program start date. The Packaging School is accessible from any smartphone or tablet. At this time students may not download any material for offline viewing unless it is intuitive to do so.',
+  },
+  {
+    question: 'Can I print materials from the courses?',
+    answer:
+      'We have created custom workbooks for our courses for students to print where you can take notes and keep infographics that may be harder to copy down. Additionally, you will be able to print our PDFs and cheat sheets.',
+  },
+  {
+    question: 'What are the technology requirements of The Packaging School?',
+    answer:
+      'The Packaging School requires all students have access to a computer and at least 3 mpbs of internet. The Packaging School recommends using Chrome as a web browser. Student services will give students suggestions as to how to get access to internet and/or a computer if requested. All other requirements to complete any course or assignment within The Packaging School are embedded into the course. Students will not be asked to purchase any other technology in order to receive the certificate. All study materials will be provided and released at the start of each week. You do not need to prepare anything in advance of the program start date. The Packaging School is accessible from any smartphone or tablet. At this time students may not download any material for offline viewing unless it is intuitive to do so.',
+  },
+  {
+    question: 'Does The Packaging School accept transfer credits?',
+    answer:
+      'No, The Packaging School does not currently accept transfer credits.',
+  },
+  {
+    question: 'What is your grading policy?',
+    answer: 'You must obtain an 80% or greater to pass each course.',
+  },
+  {
+    question: 'Do you accept company purchase orders?',
+    answer:
+      'We accept purchase orders for enrollments totaling $500 and above.',
+  },
+  {
+    question: 'How long will I have access to my courses?',
+    answer:
+      'Unless otherwise noted, you will have access to your courses for 12 months.',
+  },
+  {
+    question: 'Can you send me a 1095-T form for my taxes?',
+    answer: (
+      <div className='flex flex-col gap-4'>
+        <div>
+          Continuing Professional Education are non-credit programs. As a
+          result, we do not provide 1098-T forms. However, continuing education
+          students may be eligible for the Lifetime Learning tax credit. There
+          is no limit on the number of years you can claim the credit. It is
+          worth up to $2,000 per tax return.
+        </div>
+        <div className='font-bold'>Lifetime Learning Tax Credit</div>
+        <div>
+          The Lifetime Learning tax credit is applicable to any level of
+          post-secondary education. It enables a taxpayer to claim a tax credit
+          of up to $2,000 per family for the cost of qualified tuition and
+          related expenses paid by the taxpayer during the tax year on behalf of
+          the taxpayer, the taxpayer’s spouse, or the taxpayer’s dependents. You
+          may qualify for educational tax credit for tuition and fees paid for
+          undergraduate, graduate and continuing education courses.
+        </div>
+        <div>
+          A family can claim on its tax return a credit up to $2,000 ($4,000 if
+          a student lives in a Midwestern disaster area) of educational
+          expenses. Eligible education expenses are offset by scholarships,
+          grants, and employer provided tax free educational assistance. The tax
+          credit is subject to income and other limitations. Taxpayers may file
+          IRS form 8863 Educational Credits with their tax returns to claim tax
+          credits.
+        </div>
+        <div>
+          For detailed information consult IRS Publication 970, Tax Benefits for
+          Higher Education, which describes the tax credits along with other tax
+          savings opportunities related to the higher cost of education. It may
+          be obtained at any IRS office, at
+          <a href='http://www.irs.gov/publications/p970/ch03.html'>
+            http://www.irs.gov/publications/p970/ch03.html
+          </a>
+          , or by calling 1-800-829-1040.
+        </div>
+      </div>
+    ),
   },
 ];
 
