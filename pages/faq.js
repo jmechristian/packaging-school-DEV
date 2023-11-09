@@ -312,7 +312,7 @@ const faqs = [
 const Page = () => {
   return (
     <div className='bg-white'>
-      <div className='mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40'>
+      <div className='mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40 flex flex-col gap-20'>
         <div className='mx-auto max-w-4xl divide-y divide-gray-900/10'>
           <h2 className='text-5xl font-bold leading-10 tracking-tight text-gray-900'>
             Frequently asked questions
@@ -352,6 +352,45 @@ const Page = () => {
               </Disclosure>
             ))}
           </dl>
+        </div>
+        <div className='flex flex-col gap-6'>
+          <div className=' bg-gradient-to-tr from-base-brand via-base-mid to-clemson rounded-xl'>
+            <div className='mx-auto max-w-7xl px-6 text-center lg:text-left py-12 lg:py-20 flex flex-col gap-12 lg:flex-row items-center justify-center lg:justify-between w-full lg:px-16'>
+              <h2 className='text-4xl font-bold  text-white sm:text-5xl font-etna'>
+                Ask any question.
+                <br />
+                Contact us today!
+              </h2>
+              <div className='flex flex-col justify-center items-center gap-3 '>
+                <div
+                  className='font-bold text-white cursor-pointer shadow-md bg-black rounded-lg px-8 py-3 text-xl'
+                  onClick
+                >
+                  <Link href={'/contact'} passHref>
+                    <a className='text-white font-bold'>Reach Out</a>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className='bg-neutral-100 p-6 lg:p-12 flex flex-col lg:flex-row gap-6 justify-center items-center rounded-lg'>
+            <div className='flex flex-col gap-3 justify-center items-center'>
+              <div className='text-xl text-center lg:text-xl'>
+                Have a question/concern about potential copyright infringement?
+              </div>
+              <div
+                className='bg-clemson font-bold  text-white hover:bg-clemson-dark px-4 py-2 rounded-lg cursor-pointer'
+                onClick={() =>
+                  window.open(
+                    'https://packagingschool.com/removal-request/',
+                    '_blank'
+                  )
+                }
+              >
+                Click Here
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
