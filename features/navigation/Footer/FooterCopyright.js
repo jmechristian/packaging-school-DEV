@@ -15,16 +15,16 @@ const FooterCopyright = () => {
           />
         </div>
         <div className='flex flex-col gap-2 lg:gap-1 col-span-9'>
-          <div className='text-gray-300 text-xs'>
+          <div className='dark:text-gray-300 text-xs'>
             South Carolina Commission on Higher Education License #5400
           </div>
-          <div className='text-gray-500 dark:text-gray-500 text-xs'>
+          <div className='text-gray-600 dark:text-gray-500 text-xs'>
             Copyright © 2015-2022 The Packaging School, LLC. All Rights
             Reserved.
           </div>
         </div>
       </div>
-      <div className='flex gap-3 text-xs text-gray-500 dark:text-gray-500 lg:col-span-4 lg:justify-end'>
+      <div className='flex gap-3 text-xs text-gray-600 dark:text-gray-500 lg:col-span-4 lg:justify-end'>
         <div>
           <a
             href='https://library.packagingschool.com/articles/privacy-policy'

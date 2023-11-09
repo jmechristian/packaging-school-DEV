@@ -46,10 +46,10 @@ const FooterEmailSignup = ({ header }) => {
     <div className='flex flex-col gap-4'>
       {header && (
         <div className='flex flex-col gap-1 text-sm'>
-          <div className='font-extrabold text-sm uppercase tracking-widest text-gray-200 font-greycliff'>
+          <div className='font-extrabold text-sm uppercase tracking-widest dark:text-gray-200 font-greycliff'>
             Stay Up To Date
           </div>
-          <p className='text-gray-500 dark:text-gray-500'>
+          <p className='text-gray-600 dark:text-gray-500'>
             Be the first to know about new classes and the latest tools to
             maximize your knowledge.
           </p>
@@ -74,7 +74,7 @@ const FooterEmailSignup = ({ header }) => {
             </div>
           </button>
         </form>
-        <p className='text-xs text-gray-500 dark:text-gray-500 max-w-prose'>
+        <p className='text-xs text-gray-600 dark:text-gray-500 max-w-prose'>
           By signing up you indicate you have read and agree to our Terms of
           Use. Packaging School will always respect your privacy.
         </p>
