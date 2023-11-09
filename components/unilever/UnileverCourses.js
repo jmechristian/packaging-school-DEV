@@ -52,9 +52,9 @@ const UnileverCourses = ({ supportLinks }) => {
         </div>
       </div>
 
-      <div className='w-full grid lg:grid-cols-3 gap-12 pb-3 my-9 overflow-hidden'>
-        <div className='col-span-3 grid lg:grid-cols-2 w-full bg-white rounded-lg shadow-lg'>
-          <div className='w-full rounded-lg'>
+      <div className='w-full grid lg:grid-cols-3 gap-12 pb-3 my-9 overflow-hidden col-span-2'>
+        <div className='lg:col-span-3 grid grid-cols-1 lg:grid-cols-2 bg-white rounded-lg shadow-lg'>
+          <div className='rounded-lg'>
             <div
               className='w-full aspect-[16/9] rounded-lg justify-center items-center flex bg-cover bg-center relative'
               style={{
@@ -76,12 +76,12 @@ const UnileverCourses = ({ supportLinks }) => {
               </motion.div>
             </div>
           </div>
-          <div className='w-full flex justify-center items-center'>
+          <div className='w-full flex justify-center items-center px-6 lg:px-0'>
             <motion.div className='flex flex-col gap-3 py-9'>
               <motion.div className='font-semibold text-2xl lg:text-3xl max-w-sm tracking-tight leading-none'>
-                Unilever Packaging Bootcamp 1010
+                Unilever Packaging Bootcamp 101
               </motion.div>
-              <motion.div className='leading-snug text-lg line-clamp-4 text-neutral-600 max-w-md'>
+              <motion.div className='leading-snug lg:text-lg line-clamp-4 text-neutral-600 max-w-md'>
                 This Boot Camp will serve as an introduction to the packaging
                 industry and provide the fundamental knowledge necessary to get
                 you up to speed.

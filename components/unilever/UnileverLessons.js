@@ -63,8 +63,8 @@ const UnileverLessons = ({ supportLinks }) => {
         </div>
       </div>
 
-      <div className='w-full grid lg:grid-cols-3 gap-12 pb-3 my-9 overflow-hidden'>
-        <div className='col-span-3 grid lg:grid-cols-2 w-full bg-white rounded-lg shadow-lg'>
+      <div className='w-full grid lg:grid-cols-3 gap-12 pb-3 my-9 overflow-hidden col-span-2'>
+        <div className='lg:col-span-3 grid lg:grid-cols-2 w-full bg-white rounded-lg shadow-lg'>
           <div className='w-full rounded-lg'>
             <div
               className='w-full aspect-[16/9] rounded-lg justify-center items-center flex bg-cover bg-center relative'
@@ -87,7 +87,7 @@ const UnileverLessons = ({ supportLinks }) => {
               </motion.div> */}
             </div>
           </div>
-          <div className='w-full flex justify-center items-center'>
+          <div className='w-full flex justify-center items-center px-6 lg:px-0'>
             <motion.div className='flex flex-col gap-3 py-9'>
               <motion.div className='font-semibold text-sm uppercase text-base-mid'>
                 {createDate(supportLinks[0].createdAt)}
@@ -139,7 +139,7 @@ const UnileverLessons = ({ supportLinks }) => {
         />
       </div>
       {isExpanded ? (
-        <div className='grid grid-cols-1 gap-y-6 md:grid-cols-2 md:gap-9 lg:grid-cols-3 lg:gap-10 pb-9'>
+        <div className='grid gap-y-6 md:grid-cols-2 md:gap-9 lg:grid-cols-3 lg:gap-10 pb-9 col-span-2'>
           {supportLinks.map((link) => (
             <NewCouseCard
               key={link.title}
