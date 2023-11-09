@@ -62,11 +62,6 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/faq',
-        destination: '/about',
-        permanent: true,
-      },
-      {
         source: '/about-packaging-school',
         destination: '/about',
         permanent: true,
