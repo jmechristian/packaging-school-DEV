@@ -11,8 +11,9 @@ const FullWidthDropDown = ({
   content,
   highlight,
   bgContent,
+  open,
 }) => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(open);
 
   return (
     <motion.div className={`w-full ${bg} rounded-lg flex flex-col`}>

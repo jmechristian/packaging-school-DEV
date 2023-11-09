@@ -13,6 +13,7 @@ import {
   RocketLaunchIcon,
   SparklesIcon,
   SignalIcon,
+  BookmarkSquareIcon,
 } from '@heroicons/react/24/outline';
 
 import { ChevronRightIcon, PlayCircleIcon } from '@heroicons/react/24/solid';
@@ -25,90 +26,91 @@ import Unilever from '../components/icons/Unilever';
 import FullWidthDropDown from '../components/shared/FullWidthDropDown';
 import NewCouseCard from '../components/shared/NewCouseCard';
 import UnileverCourses from '../components/unilever/UnileverCourses';
+import UnileverLessons from '../components/unilever/UnileverLessons';
 
 const supportLinks = [
-  {
-    name: 'Packaging Bootcamp 101',
-    href: '#',
-    description:
-      'This Boot Camp will serve as an introduction to the packaging industry and provide the fundamental knowledge necessary to get you up to speed.',
-    icon: ArchiveBoxIcon,
-    background: 'bg-base-dark',
-    video: 'https://www.youtube.com/watch?v=L4Q6sZlXoe4',
-  },
-  {
-    name: 'Corrugated Containers',
-    href: '#',
-    description:
-      'An informative course with easy to digest information that will teach you the art and science of corrugated containers.',
-    icon: ArchiveBoxIcon,
-    background: 'bg-base-dark',
-    video: 'https://www.youtube.com/watch?v=ABLmndzcET4',
-  },
+  // {
+  //   name: 'Packaging Bootcamp 101',
+  //   href: '#',
+  //   description:
+  //     'This Boot Camp will serve as an introduction to the packaging industry and provide the fundamental knowledge necessary to get you up to speed.',
+  //   icon: ArchiveBoxIcon,
+  //   background: 'bg-base-dark',
+  //   video: 'https://www.youtube.com/watch?v=L4Q6sZlXoe4',
+  // },
+  // {
+  //   name: 'Corrugated Containers',
+  //   href: '#',
+  //   description:
+  //     'An informative course with easy to digest information that will teach you the art and science of corrugated containers.',
+  //   icon: ArchiveBoxIcon,
+  //   background: 'bg-base-dark',
+  //   video: 'https://www.youtube.com/watch?v=ABLmndzcET4',
+  // },
   {
     name: 'Packaging Design Workflow',
-    href: '#',
+    href: 'https://learn.packagingschool.com/enroll/36830',
     description:
       'A course that provides the complete pathway of the design process from concept to manufacturing.',
     icon: BriefcaseIcon,
-    background: 'bg-green-600',
+    background: 'https://packschool.s3.amazonaws.com/design-workflow.png',
     video: 'https://www.youtube.com/watch?v=-5ubOGuqaGo',
   },
   {
     name: 'Sales Operations for Printing and Packaging Professionals',
-    href: '#',
+    href: 'https://learn.packagingschool.com/enroll/1774194',
     description:
       'Are you ready to have your front line sales people be your most powerful source of sustainably sourced revenue?',
     icon: BriefcaseIcon,
-    background: 'bg-green-600',
+    background: 'https://packschool.s3.amazonaws.com/sales-operations.png',
     light: false,
     video:
       'https://player.vimeo.com/video/648732063?h=0bbaabf710&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479',
   },
   {
     name: 'Packaging Foundations',
-    href: '#',
+    href: 'https://learn.packagingschool.com/enroll/35691',
     description:
       'An essential introduction to the art, science, and business of packaging.',
     icon: Cog6ToothIcon,
-    background: 'bg-base-brand',
+    background: 'https://packschool.s3.amazonaws.com/foundations.png',
     video: 'https://www.youtube.com/watch?v=L4Q6sZlXoe4',
   },
   {
     name: 'Introduction to Corrugated Design',
-    href: '#',
+    href: 'https://learn.packagingschool.com/enroll/1882214',
     description:
       'Learn the fundamentals of corrugated, how to identify corrugated board, and how to use it.',
     icon: SwatchIcon,
-    background: 'bg-clemson',
+    background: 'https://packschool.s3.amazonaws.com/scates.png',
     light: false,
     video: 'https://vimeo.com/556386520/0c6c7f3c26',
   },
   {
     name: 'Packaging Printing',
-    href: '#',
+    href: 'https://learn.packagingschool.com/enroll/36826',
     description:
       'This course provides an overview of different printing methods and ties in the graphic development workflow.',
     icon: SwatchIcon,
-    background: 'bg-clemson',
+    background: 'https://packschool.s3.amazonaws.com/packageprinting.png',
     video: 'https://www.youtube.com/watch?v=2UZ5hWzYZ9A',
   },
-  {
-    name: 'Sustainable Packaging',
-    href: 'https://learn.packagingschool.com/enroll/36829',
-    description:
-      'Have you ever wondered how grocery store produce ships from the farm to the grocery store?',
-    icon: ArchiveBoxIcon,
-    background: 'bg-base-dark',
-    video: 'https://www.youtube.com/watch?v=ynDhF_jYZn8',
-  },
+  // {
+  //   name: 'Sustainable Packaging',
+  //   href: 'https://learn.packagingschool.com/enroll/36829',
+  //   description:
+  //     'Have you ever wondered how grocery store produce ships from the farm to the grocery store?',
+  //   icon: ArchiveBoxIcon,
+  //   background: 'bg-base-dark',
+  //   video: 'https://www.youtube.com/watch?v=ynDhF_jYZn8',
+  // },
   {
     name: 'Paperboard Cartons',
-    href: '#',
+    href: 'paperboard-cartons',
     description:
       'Explore the capabilities of paperboard cartons in this course, and comprehend why it’s widely used across the packaging industry.',
     icon: ArchiveBoxIcon,
-    background: 'bg-base-dark',
+    background: 'https://packschool.s3.amazonaws.com/paperboardcartons.png',
     video: 'https://www.youtube.com/watch?v=YZ5tmiPh1Tw',
   },
   {
@@ -117,7 +119,7 @@ const supportLinks = [
     description:
       'Master how to produce and troubleshoot flexographic printing to produce high quality work.',
     icon: SwatchIcon,
-    background: 'bg-clemson',
+    background: 'https://packschool.s3.amazonaws.com/flexographic.png',
     video: 'https://youtu.be/nfznWqSAH4w',
   },
   {
@@ -126,7 +128,7 @@ const supportLinks = [
     description:
       'An online course that provides a thorough look at the machinery used to produce high volumes of quality packages.',
     icon: Cog6ToothIcon,
-    background: 'bg-base-brand',
+    background: 'https://packschool.s3.amazonaws.com/packagemachinery.png',
     video: 'https://www.youtube.com/watch?v=uvbv2gkIcZc',
   },
   {
@@ -135,7 +137,7 @@ const supportLinks = [
     description:
       'In this course, we map out the major regulatory agencies such as FDA, EPA, USDA, CFR, ASTM, and ISO. ',
     icon: TruckIcon,
-    background: 'bg-clemson-dark',
+    background: 'https://packschool.s3.amazonaws.com/regluations.png',
     video: 'https://www.youtube.com/watch?v=t5onp2Ey8Gg',
   },
   {
@@ -144,16 +146,16 @@ const supportLinks = [
     description:
       'Students completing the workshop will design and improve a paperboard carton or corrugated container and learn how to price and order production samples of their packaging. ',
     icon: SwatchIcon,
-    background: 'bg-clemson',
+    background: 'https://packschool.s3.amazonaws.com/packcdesigncamp-1.png',
     video: '',
   },
   {
-    name: 'Packaging Distribution',
+    name: 'Distribution Packaging',
     href: 'https://learn.packagingschool.com/enroll/36827',
     description:
       'An essential course that provides a thorough teaching of the distribution process and how to ensure packages remain intact through the duration of each stage. ',
     icon: TruckIcon,
-    background: 'bg-clemson-dark',
+    background: 'https://packschool.s3.amazonaws.com/distribution.png',
     video: 'https://www.youtube.com/watch?v=VS-pa7eRowg',
   },
   {
@@ -163,7 +165,7 @@ const supportLinks = [
       'Diecutting 101 covers the fundamentals of diecutting; starting with an overview of the practice of this fabrication process. ',
     icon: TruckIcon,
     light: false,
-    background: 'bg-clemson-dark',
+    background: 'https://packschool.s3.amazonaws.com/diecutting.png',
     video: 'https://player.vimeo.com/video/332036673',
   },
 ];
@@ -171,14 +173,6 @@ const supportLinks = [
 const Page = () => {
   const { allLessons } = useSelector((state) => state.course_filter);
   const [isPlaying, setIsPlaying] = useState(false);
-
-  const createDate = (date) => {
-    const newDate = new Date(date);
-    return newDate.toLocaleDateString('en-US', {
-      month: 'long',
-      year: 'numeric',
-    });
-  };
 
   const highlightItems = [];
 
@@ -228,6 +222,26 @@ const Page = () => {
 
   const CourseContent = () => {
     return <UnileverCourses supportLinks={supportLinks} />;
+  };
+
+  const LessonContent = () => {
+    return (
+      <UnileverLessons
+        supportLinks={
+          allLessons &&
+          allLessons
+            .filter((less) => less.type === 'LOTM')
+            .sort((a, b) => {
+              if (a.createdAt < b.createdAt) {
+                return 1;
+              }
+              if (a.createdAt > b.createdAt) {
+                return -1;
+              }
+            })
+        }
+      />
+    );
   };
 
   return (
@@ -298,6 +312,7 @@ const Page = () => {
         bgdark='bg-unilever-darkblue'
         highlight={'bg-unilever-lightblue'}
         content={<HighlightContent />}
+        open={true}
       />
 
       {/* COURSES */}
@@ -313,72 +328,15 @@ const Page = () => {
       />
 
       {/* LOTM */}
-      <div className='w-full bg-base-brand h-full rounded-lg mx-auto max-w-7xl px-6 lg:px-12 flex flex-col gap-6 py-6'>
-        <Disclosure key={'2'}>
-          {({ open }) => (
-            /* Use the `open` state to conditionally change the direction of an icon. */
-            <div className='w-full flex flex-col gap-12 items-center'>
-              <Disclosure.Button className='flex w-full justify-between items-center'>
-                <div className='text-2xl md:text-3xl text-left text-white font-bold tracking-tight'>
-                  Learning of the Month
-                </div>
-                <ChevronRightIcon
-                  className={
-                    open
-                      ? 'rotate-90 transform w-7 md:w-9 h-7 md:h-9'
-                      : 'w-7 md:w-9 h-7 md:h-9'
-                  }
-                />
-              </Disclosure.Button>
-              <Disclosure.Panel className='w-full'>
-                <section
-                  className='z-10 lg:px-6'
-                  aria-labelledby='contact-heading'
-                >
-                  <div className='grid grid-cols-1 gap-y-6 md:grid-cols-2 md:gap-9 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-20 w-full'>
-                    {allLessons &&
-                      allLessons
-                        .filter((less) => less.type === 'LOTM')
-                        .sort((a, b) => {
-                          if (a.createdAt < b.createdAt) {
-                            return 1;
-                          }
-                          if (a.createdAt > b.createdAt) {
-                            return -1;
-                          }
-                        })
-                        .map((link) => (
-                          <div
-                            key={link.name}
-                            className='flex flex-col rounded-2xl h-full bg-neutral-100/70 shadow-lg w-full cursor-pointer'
-                            onClick={() => window.open(`/lessons/${link.slug}`)}
-                          >
-                            <div
-                              className='w-full aspect-[16/9] bg-black rounded-t-xl bg-cover bg-center'
-                              style={{
-                                backgroundImage: `url(${link.seoImage})`,
-                              }}
-                            ></div>
-                            <div className='p-4 md:p-6 w-full'>
-                              <div className='text-sm uppercase font-medium text-unilever-blue mb-1.5'>
-                                {createDate(link.createdAt)}
-                              </div>
-                              <h3 className='text-lg md:text-xl font-medium text-neutral-900 md:leading-tight'>
-                                {link.title}
-                              </h3>
-                              <p className=' mt-3 md:mt-4 text-sm text-neutral-600 leading-tight line-clamp-3 mb-3'>
-                                {link.subhead}
-                              </p>
-                            </div>
-                          </div>
-                        ))}
-                  </div>
-                </section>
-              </Disclosure.Panel>
-            </div>
-          )}
-        </Disclosure>
-      </div>
+      <FullWidthDropDown
+        title={'Learning of the Month'}
+        Icon={BookmarkSquareIcon}
+        bg='bg-base-mid'
+        bgdark='bg-base-dark'
+        content={<LessonContent />}
+        highlight={'bg-clemson'}
+        bgContent={'bg-neutral-200 border'}
+      />
     </div>
   );
 };

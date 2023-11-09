@@ -13,6 +13,7 @@ import {
   RocketLaunchIcon,
   SparklesIcon,
   SignalIcon,
+  BookOpenIcon,
 } from '@heroicons/react/24/outline';
 
 import CourseCardVideoHeader from '../shared/CourseCardVideoHeader';
@@ -25,10 +26,20 @@ import {
   PlayCircleIcon,
   ChevronDoubleDownIcon,
   StarIcon,
+  BoltIcon as Bolt,
 } from '@heroicons/react/24/solid';
 
-const UnileverCourses = ({ supportLinks }) => {
+const createDate = (date) => {
+  const newDate = new Date(date);
+  return newDate.toLocaleDateString('en-US', {
+    month: 'long',
+    year: 'numeric',
+  });
+};
+
+const UnileverLessons = ({ supportLinks }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  console.log(supportLinks);
   return (
     <motion.section className='px-0 lg:px-6 w-full flex flex-col gap-6'>
       <div className='border-y border-y-neutral-400'>
@@ -58,94 +69,92 @@ const UnileverCourses = ({ supportLinks }) => {
             <div
               className='w-full aspect-[16/9] rounded-lg justify-center items-center flex bg-cover bg-center relative'
               style={{
-                backgroundImage: `url("https://packschool.s3.amazonaws.com/unilever-brands-1.png")`,
+                backgroundImage: `url(${supportLinks[0].seoImage})`,
               }}
             >
               <motion.div className='absolute left-4 top-4 w-fit z-[2] bg-neutral-600/40 backdrop-blur-md rounded-lg px-2 py-1.5 shadow'>
                 <motion.div className='flex items-center gap-2'>
                   <motion.div>
-                    <StarIcon className='w-5 h-5 fill-white' />
+                    <Bolt className='w-5 h-5 fill-white' />
                   </motion.div>
                   <motion.div className='text-white font-bold'>
-                    Featured Course
+                    Latest Release
                   </motion.div>
                 </motion.div>
               </motion.div>
-              <motion.div className='w-20 h-20 bg-white/40 backdrop-blur-lg hover:bg-clemson transition-colors ease-in rounded-full shadow-xl flex justify-center items-center cursor-pointer'>
+              {/* <motion.div className='w-20 h-20 bg-white/40 backdrop-blur-lg hover:bg-clemson transition-colors ease-in rounded-full shadow-xl flex justify-center items-center cursor-pointer'>
                 <PlayCircleIcon className='w-20 h-20' />
-              </motion.div>
+              </motion.div> */}
             </div>
           </div>
           <div className='w-full flex justify-center items-center'>
             <motion.div className='flex flex-col gap-3 py-9'>
+              <motion.div className='font-semibold text-sm uppercase text-base-mid'>
+                {createDate(supportLinks[0].createdAt)}
+              </motion.div>
               <motion.div className='font-semibold text-2xl lg:text-3xl max-w-sm tracking-tight leading-none'>
-                Unilever Packaging Bootcamp 1010
+                {supportLinks[0].title}
               </motion.div>
               <motion.div className='leading-snug text-lg line-clamp-4 text-neutral-600 max-w-md'>
-                This Boot Camp will serve as an introduction to the packaging
-                industry and provide the fundamental knowledge necessary to get
-                you up to speed.
+                {supportLinks[0].subhead}
               </motion.div>
-              <motion.div className='bg-black text-white font-bold w-fit rounded-lg px-6 py-2 mt-2 cursor-pointer'>
-                Select Course
+              <motion.div
+                className='bg-black text-white font-bold w-fit rounded-lg px-6 py-2 mt-2 cursor-pointer'
+                onClick={() =>
+                  window.open(`/lessons/${supportLinks[0].slug}`, '_blank')
+                }
+              >
+                View Lesson
               </motion.div>
             </motion.div>
           </div>
         </div>
         <NewCouseCard
-          title={'Sustainable Packaging'}
-          description={
-            'An in-depth look at sustainability as it relates to packaging, and ways to reduce a company’s environmental footprint.'
-          }
-          background={'https://packschool.s3.amazonaws.com/demo-video.png'}
-          link={'https://packagingschool.com/courses/sustainable-packaging'}
-          link_text={'Select Course'}
-          Icon={SparklesIcon}
-          callout={'Most Popular'}
-          video={'https://www.youtube.com/watch?v=ynDhF_jYZn8'}
+          title={supportLinks[1].title}
+          description={supportLinks[1].subhead}
+          background={supportLinks[1].seoImage}
+          link={`/lessons/${supportLinks[1].slug}`}
+          link_text={'View Lesson'}
+          callout={createDate(supportLinks[1].createdAt)}
+          Icon={BookOpenIcon}
         />
         <NewCouseCard
-          title={'Packaging Bootcamp 101'}
-          description={
-            'This Boot Camp will serve as an introduction to the packaging industry and provide the fundamental knowledge necessary to get you up to speed.'
-          }
-          background={'https://packschool.s3.amazonaws.com/bootcamp101.png'}
-          link={'https://packagingschool.com/courses/packaging-boot-camp-101'}
-          link_text={'Select Course'}
-          Icon={SparklesIcon}
-          callout={'Most Popular'}
-          video={'https://www.youtube.com/watch?v=L4Q6sZlXoe4'}
+          title={supportLinks[2].title}
+          description={supportLinks[2].subhead}
+          background={supportLinks[2].seoImage}
+          link={`/lessons/${supportLinks[2].slug}`}
+          link_text={'View Lesson'}
+          callout={createDate(supportLinks[2].createdAt)}
+          Icon={BookOpenIcon}
         />
         <NewCouseCard
-          title={'Corrugated Containers'}
-          description={
-            'An informative course with easy to digest information that will teach you the art and science of corrugated containers.'
-          }
-          background={'https://packschool.s3.amazonaws.com/corrugated.png'}
-          link={'https://learn.packagingschool.com/enroll/36818'}
-          link_text={'Select Course'}
-          Icon={SparklesIcon}
-          callout={'Most Popular'}
+          title={supportLinks[3].title}
+          description={supportLinks[3].subhead}
+          background={supportLinks[3].seoImage}
+          link={`/lessons/${supportLinks[3].slug}`}
+          link_text={'View Lesson'}
           video={'https://www.youtube.com/watch?v=ABLmndzcET4'}
+          callout={createDate(supportLinks[3].createdAt)}
+          Icon={BookOpenIcon}
         />
       </div>
       {isExpanded ? (
         <div className='grid grid-cols-1 gap-y-6 md:grid-cols-2 md:gap-9 lg:grid-cols-3 lg:gap-10 pb-9'>
           {supportLinks.map((link) => (
             <NewCouseCard
-              key={link.name}
-              title={link.name}
-              description={link.description}
-              background={link.background}
-              link={link.href}
-              link_text={'Select Course'}
-              Icon={SparklesIcon}
-              video={link.video}
+              key={link.title}
+              title={link.title}
+              description={link.subhead}
+              background={link.seoImage}
+              link={`/lessons/${link.slug}`}
+              link_text={'View Lesson'}
+              callout={createDate(link.createdAt)}
+              Icon={BookOpenIcon}
             />
           ))}
         </div>
       ) : (
-        <div></div>
+        ''
       )}
 
       <div
@@ -153,7 +162,7 @@ const UnileverCourses = ({ supportLinks }) => {
         onClick={() => setIsExpanded(!isExpanded)}
       >
         <div className='flex items-center gap-2 bg-clemson hover:bg-clemson-dark cursor-pointer text-white px-6 py-3 rounded-lg font-semibold shadow-md'>
-          <div>{isExpanded ? 'Hide Courses' : 'Show All Courses'}</div>
+          <div>{isExpanded ? 'Hide LOTMs' : 'Show All LOTMs'}</div>
           <div>
             <ChevronDoubleDownIcon
               className={`w-5 h-5 fill-white transition-all ease-in ${
@@ -167,4 +176,4 @@ const UnileverCourses = ({ supportLinks }) => {
   );
 };
 
-export default UnileverCourses;
+export default UnileverLessons;
