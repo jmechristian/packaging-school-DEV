@@ -236,16 +236,6 @@ const faqs = [
       'The Packaging School requires all students have access to a computer and at least 3 mpbs of internet. The Packaging School recommends using Chrome as a web browser. Student services will give students suggestions as to how to get access to internet and/or a computer if requested. All other requirements to complete any course or assignment within The Packaging School are embedded into the course. Students will not be asked to purchase any other technology in order to receive the certificate. All study materials will be provided and released at the start of each week. You do not need to prepare anything in advance of the program start date. The Packaging School is accessible from any smartphone or tablet. At this time students may not download any material for offline viewing unless it is intuitive to do so.',
   },
   {
-    question: 'Can I print materials from the courses?',
-    answer:
-      'We have created custom workbooks for our courses for students to print where you can take notes and keep infographics that may be harder to copy down. Additionally, you will be able to print our PDFs and cheat sheets.',
-  },
-  {
-    question: 'What are the technology requirements of The Packaging School?',
-    answer:
-      'The Packaging School requires all students have access to a computer and at least 3 mpbs of internet. The Packaging School recommends using Chrome as a web browser. Student services will give students suggestions as to how to get access to internet and/or a computer if requested. All other requirements to complete any course or assignment within The Packaging School are embedded into the course. Students will not be asked to purchase any other technology in order to receive the certificate. All study materials will be provided and released at the start of each week. You do not need to prepare anything in advance of the program start date. The Packaging School is accessible from any smartphone or tablet. At this time students may not download any material for offline viewing unless it is intuitive to do so.',
-  },
-  {
     question: 'Does The Packaging School accept transfer credits?',
     answer:
       'No, The Packaging School does not currently accept transfer credits.',
@@ -312,7 +302,7 @@ const faqs = [
 const Page = () => {
   return (
     <div className='bg-white'>
-      <div className='mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40 flex flex-col gap-20'>
+      <div className='mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-24 flex flex-col gap-20'>
         <div className='mx-auto max-w-4xl divide-y divide-gray-900/10'>
           <h2 className='text-5xl font-bold leading-10 tracking-tight text-gray-900'>
             Frequently asked questions

@@ -54,7 +54,7 @@ const NewCouseCard = ({
       ) : (
         <motion.div
           className='aspect-[16/9] w-full h-auto relative z-[2] flex items-center justify-center '
-          onClick={() => setIsPlaying(true)}
+          onClick={video ? () => setIsPlaying(true) : () => {}}
         >
           {video && isHover && (
             <motion.div className='w-20 h-20 bg-white/40 backdrop-blur-lg hover:bg-clemson transition-colors ease-in rounded-full shadow-xl flex justify-center items-center cursor-pointer'>

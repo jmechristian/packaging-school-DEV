@@ -174,8 +174,6 @@ const Page = () => {
   const { allLessons } = useSelector((state) => state.course_filter);
   const [isPlaying, setIsPlaying] = useState(false);
 
-  const highlightItems = [];
-
   const HighlightContent = ({ link }) => {
     return (
       <motion.div className='px-0 lg:px-6 w-full grid lg:grid-cols-3 gap-12 pb-3 my-9 overflow-hidden'>
