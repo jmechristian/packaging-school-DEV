@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { PlayCircleIcon } from '@heroicons/react/24/solid';
+import { useSelector } from 'react-redux';
 
 import VideoPlayer from '../VideoPlayer';
 
-const ApiCard = ({ id, Icon }) => {
+const ApiCard = ({ id, Icon, type }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isHover, setIsHovered] = useState(false);
   const [isCard, setIsCard] = useState(false);

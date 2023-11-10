@@ -4,6 +4,10 @@ import { PlayCircleIcon } from '@heroicons/react/24/solid';
 
 import VideoPlayer from '../VideoPlayer';
 
+const sendClickEvent = (event, action, params) => {
+  window.gtag(event, action, params);
+};
+
 const NewCouseCard = ({
   background,
   Icon,
