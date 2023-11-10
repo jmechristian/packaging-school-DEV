@@ -39,7 +39,6 @@ const createDate = (date) => {
 
 const UnileverLessons = ({ supportLinks }) => {
   const [isExpanded, setIsExpanded] = useState(false);
-  console.log(supportLinks);
   return (
     <motion.section className='px-0 lg:px-6 w-full flex flex-col gap-6'>
       <div className='border-y border-y-neutral-400'>

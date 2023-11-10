@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { PlayCircleIcon } from '@heroicons/react/24/solid';
+import {
+  BrowserView,
+  MobileView,
+  isBrowser,
+  isMobile,
+} from 'react-device-detect';
 
 import VideoPlayer from '../VideoPlayer';
-
-const sendClickEvent = (event, action, params) => {
-  window.gtag(event, action, params);
-};
 
 const NewCouseCard = ({
   background,
@@ -54,6 +56,17 @@ const NewCouseCard = ({
       {isPlaying ? (
         <motion.div className='aspect-[16/9] w-full h-auto relative z-[2] flex items-center justify-center bg-black transition-opacity ease-in'>
           <VideoPlayer videoEmbedLink={video} light={false} playing={true} />
+        </motion.div>
+      ) : isMobile ? (
+        <motion.div
+          className='aspect-[16/9] w-full h-auto relative z-[2] flex items-center justify-center '
+          onClick={video ? () => setIsPlaying(true) : () => {}}
+        >
+          {video && (
+            <motion.div className='w-20 h-20 bg-white/40 backdrop-blur-lg hover:bg-clemson transition-colors ease-in rounded-full shadow-xl flex justify-center items-center cursor-pointer'>
+              <PlayCircleIcon className='w-20 h-20' />
+            </motion.div>
+          )}
         </motion.div>
       ) : (
         <motion.div
