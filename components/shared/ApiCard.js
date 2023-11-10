@@ -4,7 +4,7 @@ import { PlayCircleIcon } from '@heroicons/react/24/solid';
 
 import VideoPlayer from '../VideoPlayer';
 
-const ApiCard = ({ id }) => {
+const ApiCard = ({ id, Icon }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isHover, setIsHovered] = useState(false);
   const [isCard, setIsCard] = useState(false);
