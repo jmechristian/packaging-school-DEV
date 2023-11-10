@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import {
   ArrowTopRightOnSquareIcon,
   ArrowLongRightIcon,
@@ -39,6 +39,18 @@ const createDate = (date) => {
 
 const UnileverLessons = ({ supportLinks }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isActiveSearch, setIsActiveSearch] = useState(false);
+  const [isSearchTerm, setIsSearchTerm] = useState('');
+  const [isSearchCourses, setIsSearchCourses] = useState('');
+
+  const coursesToShow = useMemo(() => {
+    return supportLinks.filter(
+      (o) =>
+        o.name.toLowerCase().includes(isSearchTerm.toLowerCase()) ||
+        o.description.toLowerCase().includes(isSearchTerm.toLowerCase())
+    );
+  }, [supportLinks, isSearchTerm]);
+
   return (
     <motion.section className='px-0 lg:px-6 w-full flex flex-col gap-6'>
       <div className='border-y border-y-neutral-400'>

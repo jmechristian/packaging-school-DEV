@@ -30,9 +30,10 @@ const CertMegaCallout = ({ close }) => {
           <div
             className='w-full aspect-[3/2] relative bg-center bg-cover rounded-lg'
             style={{
-              backgroundImage: `url('https://packschool.s3.amazonaws.com/Julie-Suggs-callout.webp')`,
+              backgroundImage: `url('https://packschool.s3.amazonaws.com/JULIE-2018-sm.jpg')`,
             }}
           >
+            <div className='absolute inset-0 bg-gradient-to-br from-base-dark-highlight/60 to-base-mid/60'></div>
             <div className='absolute bottom-0 left-0 right-0'>
               <div className='grid w-full justify-between px-3 py-3'>
                 <div className='flex flex-col gap-2'>
