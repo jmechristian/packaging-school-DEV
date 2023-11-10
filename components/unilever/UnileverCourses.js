@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import {
   ArrowTopRightOnSquareIcon,
   ArrowLongRightIcon,
@@ -15,7 +15,6 @@ import {
   SignalIcon,
 } from '@heroicons/react/24/outline';
 
-import CourseCardVideoHeader from '../shared/CourseCardVideoHeader';
 import NewCouseCard from '../shared/NewCouseCard';
 
 import { motion, AnimatePresence } from 'framer-motion';
@@ -25,42 +24,103 @@ import {
   PlayCircleIcon,
   ChevronDoubleDownIcon,
   StarIcon,
+  XMarkIcon,
 } from '@heroicons/react/24/solid';
 
 const UnileverCourses = ({ supportLinks }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isActiveSearch, setIsActiveSearch] = useState(false);
   const [isSearchTerm, setIsSearchTerm] = useState('');
+  const [isSearchCourses, setIsSearchCourses] = useState('');
+
+  const coursesToShow = useMemo(() => {
+    return supportLinks.filter(
+      (o) =>
+        o.name.toLowerCase().includes(isSearchTerm.toLowerCase()) ||
+        o.description.toLowerCase().includes(isSearchTerm.toLowerCase())
+    );
+  }, [supportLinks, isSearchTerm]);
+
   return (
     <motion.section className='px-0 lg:px-6 w-full flex flex-col gap-6'>
       <div className='border-y border-y-neutral-400'>
         <div className='flex justify-between items-center py-3'>
-          <div
-            className='flex items-center gap-1.5'
-            onClick={() => setIsActiveSearch(true)}
-          >
-            <div>
-              <MagnifyingGlassIcon className='w-5 h-5 fill-neutral-500' />
+          {isActiveSearch ? (
+            <div className='w-full'>
+              <input
+                type='text'
+                className='w-full bg-transparent border-none focus:border-none focus:ring-0 py-0 placeholder:text-neutral-400'
+                autoFocus
+                value={isSearchTerm}
+                onChange={(e) => setIsSearchTerm(e.target.value)}
+                id='search'
+                name='search'
+                placeholder='Enter search term'
+              />
             </div>
-            <div className='uppercase text-sm text-neutral-500 text-small font-semibold'>
-              Search
+          ) : (
+            <div
+              className='flex items-center gap-1.5 cursor-pointer'
+              onClick={() => setIsActiveSearch(true)}
+            >
+              <div>
+                <MagnifyingGlassIcon className='w-5 h-5 fill-neutral-500' />
+              </div>
+              <div className='uppercase text-sm text-neutral-500 text-small font-semibold'>
+                Search
+              </div>
             </div>
-          </div>
+          )}
+
           <div className='flex items-center gap-1.5'>
-            <div className='uppercase text-sm text-neutral-500 text-small font-semibold'>
+            <div
+              className={`uppercase text-sm text-neutral-500 text-small font-semibold ${
+                isActiveSearch ? 'hidden' : 'block'
+              }`}
+            >
               Sort
             </div>
-            <div>
-              <ArrowsUpDownIcon className='w-5 h-5 fill-neutral-500' />
-            </div>
+            {isActiveSearch ? (
+              <div onClick={() => setIsActiveSearch(false)}>
+                <XMarkIcon className='w-5 h-5 fill-neutral-500' />
+              </div>
+            ) : (
+              <div>
+                <ArrowsUpDownIcon className='w-5 h-5 fill-neutral-500' />
+              </div>
+            )}
           </div>
         </div>
       </div>
 
       {isActiveSearch ? (
-        <motion.div className='w-full aspect-[16/9] flex items-center justify-center'>
-          <div className='w-full h-full border-dashed border border-neutral-100 flex justify-center items-center'>
-            Hey
+        <motion.div className='w-full flex items-center justify-center'>
+          <div className='w-full h-full flex justify-center items-center'>
+            {isSearchTerm.trim() === '' || coursesToShow.length === 0 ? (
+              <div className='flex flex-col items-center py-3'>
+                <div className='font-bold text-neutral-800'>
+                  No Results Found.
+                </div>
+                <div className='text-neutral-600 text-center'>
+                  Please refine your search above.
+                </div>
+              </div>
+            ) : (
+              <div className='grid grid-cols-1 gap-y-16 md:grid-cols-2 md:gap-9 lg:grid-cols-3 lg:gap-10 pb-9'>
+                {coursesToShow.map((link) => (
+                  <NewCouseCard
+                    key={link.name}
+                    title={link.name}
+                    description={link.description}
+                    background={link.background}
+                    link={link.href}
+                    link_text={'Select Course'}
+                    Icon={SparklesIcon}
+                    video={link.video}
+                  />
+                ))}
+              </div>
+            )}
           </div>
         </motion.div>
       ) : (
@@ -143,20 +203,22 @@ const UnileverCourses = ({ supportLinks }) => {
         </div>
       )}
 
-      {isExpanded ? (
+      {!isActiveSearch && isExpanded ? (
         <div className='grid grid-cols-1 gap-y-16 md:grid-cols-2 md:gap-9 lg:grid-cols-3 lg:gap-10 pb-9'>
-          {supportLinks.map((link) => (
-            <NewCouseCard
-              key={link.name}
-              title={link.name}
-              description={link.description}
-              background={link.background}
-              link={link.href}
-              link_text={'Select Course'}
-              Icon={SparklesIcon}
-              video={link.video}
-            />
-          ))}
+          {supportLinks
+            .filter((cou) => cou.featured != true)
+            .map((link) => (
+              <NewCouseCard
+                key={link.name}
+                title={link.name}
+                description={link.description}
+                background={link.background}
+                link={link.href}
+                link_text={'Select Course'}
+                Icon={SparklesIcon}
+                video={link.video}
+              />
+            ))}
         </div>
       ) : (
         <div></div>

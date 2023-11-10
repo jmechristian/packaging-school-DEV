@@ -29,24 +29,26 @@ import UnileverCourses from '../components/unilever/UnileverCourses';
 import UnileverLessons from '../components/unilever/UnileverLessons';
 
 const supportLinks = [
-  // {
-  //   name: 'Packaging Bootcamp 101',
-  //   href: '#',
-  //   description:
-  //     'This Boot Camp will serve as an introduction to the packaging industry and provide the fundamental knowledge necessary to get you up to speed.',
-  //   icon: ArchiveBoxIcon,
-  //   background: 'bg-base-dark',
-  //   video: 'https://www.youtube.com/watch?v=L4Q6sZlXoe4',
-  // },
-  // {
-  //   name: 'Corrugated Containers',
-  //   href: '#',
-  //   description:
-  //     'An informative course with easy to digest information that will teach you the art and science of corrugated containers.',
-  //   icon: ArchiveBoxIcon,
-  //   background: 'bg-base-dark',
-  //   video: 'https://www.youtube.com/watch?v=ABLmndzcET4',
-  // },
+  {
+    name: 'Packaging Bootcamp 101',
+    href: '#',
+    description:
+      'This Boot Camp will serve as an introduction to the packaging industry and provide the fundamental knowledge necessary to get you up to speed.',
+    icon: ArchiveBoxIcon,
+    background: 'https://packschool.s3.amazonaws.com/bootcamp101.png',
+    video: 'https://www.youtube.com/watch?v=L4Q6sZlXoe4',
+    featured: true,
+  },
+  {
+    name: 'Corrugated Containers',
+    href: '#',
+    description:
+      'An informative course with easy to digest information that will teach you the art and science of corrugated containers.',
+    icon: ArchiveBoxIcon,
+    background: 'https://packschool.s3.amazonaws.com/corrugated.png',
+    video: 'https://www.youtube.com/watch?v=ABLmndzcET4',
+    featured: true,
+  },
   {
     name: 'Packaging Design Workflow',
     href: 'https://learn.packagingschool.com/enroll/36830',
@@ -95,15 +97,16 @@ const supportLinks = [
     background: 'https://packschool.s3.amazonaws.com/packageprinting.png',
     video: 'https://www.youtube.com/watch?v=2UZ5hWzYZ9A',
   },
-  // {
-  //   name: 'Sustainable Packaging',
-  //   href: 'https://learn.packagingschool.com/enroll/36829',
-  //   description:
-  //     'Have you ever wondered how grocery store produce ships from the farm to the grocery store?',
-  //   icon: ArchiveBoxIcon,
-  //   background: 'bg-base-dark',
-  //   video: 'https://www.youtube.com/watch?v=ynDhF_jYZn8',
-  // },
+  {
+    name: 'Sustainable Packaging',
+    href: 'https://learn.packagingschool.com/enroll/36829',
+    description:
+      'Have you ever wondered how grocery store produce ships from the farm to the grocery store?',
+    icon: ArchiveBoxIcon,
+    background: 'https://packschool.s3.amazonaws.com/demo-video.png',
+    video: 'https://www.youtube.com/watch?v=ynDhF_jYZn8',
+    featured: true,
+  },
   {
     name: 'Paperboard Cartons',
     href: 'paperboard-cartons',
