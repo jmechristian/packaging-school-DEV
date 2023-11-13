@@ -239,7 +239,7 @@ const UnileverLessons = ({ supportLinks }) => {
           onClick={() => setIsExpanded(!isExpanded)}
         >
           <div className='flex items-center gap-2 bg-clemson hover:bg-clemson-dark cursor-pointer text-white px-6 py-3 rounded-lg font-semibold shadow-md'>
-            <div>{isExpanded ? 'Hide Courses' : 'Show All Courses'}</div>
+            <div>{isExpanded ? 'Hide Courses' : 'Show All Lessons'}</div>
             <div>
               <ChevronDoubleDownIcon
                 className={`w-5 h-5 fill-white transition-all ease-in ${
