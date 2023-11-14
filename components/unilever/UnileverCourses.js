@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react';
+import { Amplify, Analytics } from 'aws-amplify';
 import {
   ArrowTopRightOnSquareIcon,
   ArrowLongRightIcon,
@@ -14,9 +15,6 @@ import {
   SparklesIcon,
   SignalIcon,
 } from '@heroicons/react/24/outline';
-
-import NewCouseCard from '../shared/NewCouseCard';
-
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   MagnifyingGlassIcon,
@@ -26,6 +24,8 @@ import {
   StarIcon,
   XMarkIcon,
 } from '@heroicons/react/24/solid';
+
+import NewCouseCard from '../shared/NewCouseCard';
 
 const UnileverCourses = ({ supportLinks }) => {
   const [isExpanded, setIsExpanded] = useState(false);

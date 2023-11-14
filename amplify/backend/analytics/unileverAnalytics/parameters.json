@@ -1,0 +1,21 @@
+{
+    "appName": "unileverAnalytics",
+    "roleName": "pinpointLambdaRolec5f2f4aa",
+    "cloudformationPolicyName": "cloudformationPolicyc5f2f4aa",
+    "cloudWatchPolicyName": "cloudWatchPolicyc5f2f4aa",
+    "pinpointPolicyName": "pinpointPolicyc5f2f4aa",
+    "authPolicyName": "pinpoint_amplify_c5f2f4aa",
+    "unauthPolicyName": "pinpoint_amplify_c5f2f4aa",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    }
+}

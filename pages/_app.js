@@ -17,25 +17,14 @@ Amplify.configure(awsExports);
 
 export default function App({ Component, pageProps }) {
   return (
-    <PrismicProvider
-      linkResolver={linkResolver}
-      internalLinkComponent={({ href, ...props }) => (
-        <Link href={href}>
-          <a {...props} />
-        </Link>
-      )}
-    >
-      <PrismicPreview repositoryName={repositoryName}>
-        <UserProvider>
-          <Authenticator.Provider>
-            <Provider store={store}>
-              <Layout>
-                <Component {...pageProps} />
-              </Layout>
-            </Provider>
-          </Authenticator.Provider>
-        </UserProvider>
-      </PrismicPreview>
-    </PrismicProvider>
+    <UserProvider>
+      <Authenticator.Provider>
+        <Provider store={store}>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </Provider>
+      </Authenticator.Provider>
+    </UserProvider>
   );
 }

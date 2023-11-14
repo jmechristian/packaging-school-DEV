@@ -471,3 +471,5 @@ type Staff @model @auth(rules: [{ allow: public }]) {
   image: String!
   linkedIn: String
 }
+
+######### Unilever #########

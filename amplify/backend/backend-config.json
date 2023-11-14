@@ -257,5 +257,11 @@
       ]
     }
   },
-  "storage": {}
+  "storage": {},
+  "analytics": {
+    "unileverAnalytics": {
+      "service": "Pinpoint",
+      "providerPlugin": "awscloudformation"
+    }
+  }
 }

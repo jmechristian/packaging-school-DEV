@@ -101,7 +101,7 @@ export default async function handler(req, res) {
     '                           <p style="font-size:14px;line-height:24px;margin:16px 0;font-weight:700">What goals do you have for yourself in the next 12 months?</p>' +
     `                           <p style="font-size:14px;line-height:24px;margin:16px 0">${body.yearGoals}</p>` +
     '                           <hr style="width:100%;border:none;border-top:1px solid #eaeaea" />' +
-    '                           <p style="font-size:14px;line-height:24px;margin:16px 0;font-weight:700">How do you see The Certificate of Mastery in Packaging Management helping you achieve those goals?</p>' +
+    '                           <p style="font-size:14px;line-height:24px;margin:16px 0;font-weight:700">How do you see The Certificate of Packaging Science helping you achieve those goals?</p>' +
     `                           <p style="font-size:14px;line-height:24px;margin:16px 0">${body.cpsGoals}</p>` +
     '                           <hr style="width:100%;border:none;border-top:1px solid #eaeaea" />' +
     '                           <p style="font-size:14px;line-height:24px;margin:16px 0;font-weight:700">We know written applications can only capture so much. As we review your application, what more would you like us to know?</p>' +
@@ -110,7 +110,7 @@ export default async function handler(req, res) {
     '                           <p style="font-size:14px;line-height:24px;margin:16px 0;font-weight:700">Elective</p>' +
     `                           <p style="font-size:14px;line-height:24px;margin:16px 0">${body.elective}</p>` +
     '                           <hr style="width:100%;border:none;border-top:1px solid #eaeaea" />' +
-    '                           <p style="font-size:14px;line-height:24px;margin:16px 0;font-weight:700">Where did you hear about the Certificate of Mastery in Packaging Management?</p>' +
+    '                           <p style="font-size:14px;line-height:24px;margin:16px 0;font-weight:700">Where did you hear about the Certificate of Packaging Science?</p>' +
     `                           <p style="font-size:14px;line-height:24px;margin:16px 0">${body.referral}</p>` +
     '                           <hr style="width:100%;border:none;border-top:1px solid #eaeaea" />' +
     '                           <p style="font-size:14px;line-height:24px;margin:16px 0;font-weight:700">How will you be paying for this program?</p>' +

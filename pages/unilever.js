@@ -22,7 +22,6 @@ import { useSelector } from 'react-redux';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import Unilever from '../components/icons/Unilever';
-
 import FullWidthDropDown from '../components/shared/FullWidthDropDown';
 import NewCouseCard from '../components/shared/NewCouseCard';
 import UnileverCourses from '../components/unilever/UnileverCourses';
