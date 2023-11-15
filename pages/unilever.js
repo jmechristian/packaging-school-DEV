@@ -16,7 +16,13 @@ import {
   BookmarkSquareIcon,
 } from '@heroicons/react/24/outline';
 import { API } from 'aws-amplify';
-import { ChevronRightIcon, PlayCircleIcon } from '@heroicons/react/24/solid';
+import {
+  ChevronRightIcon,
+  FilmIcon,
+  PlayCircleIcon,
+  Square3Stack3DIcon,
+  DocumentArrowDownIcon,
+} from '@heroicons/react/24/solid';
 import { Disclosure } from '@headlessui/react';
 import { useSelector } from 'react-redux';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -177,6 +183,7 @@ const Page = ({ unilever }) => {
   // console.log(unilever);
 
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isMediaType, setIsMediaType] = useState('VIDEO');
 
   const { allLessons } = useSelector((state) => state.course_filter);
 
@@ -271,12 +278,56 @@ const Page = ({ unilever }) => {
             </div>
           </div>
           <div className='flex w-full flex-col gap-4 p-6 lg:p-9 md:col-span-3 lg:col-span-3 lg:gap-x-16'>
-            <div className='w-full aspect-[16/9] bg-indigo-300 h-full' />
+            <div className='w-full aspect-[16/9] bg-indigo-300 h-full flex items-center justify-center text-2xl'>
+              {isMediaType}
+            </div>
 
-            <div className='w-full flex justify-center gap-1.5 items-center bg-unilever-lightblue hover:bg-unilever-darkblue shadow text-white rounded-lg py-4 font-bold cursor-pointer'>
-              Your Learning Dashboard
-              <div>
-                <ArrowTopRightOnSquareIcon className='w-4 h-4 stroke-white' />
+            <div className='w-full flex flex-col items-center gap-2 bg-unilever-lightblue  shadow text-white rounded-lg py-4 cursor-pointer'>
+              <div className='justify-center items-center flex gap-1.5'>
+                <div>
+                  <InformationCircleIcon className='w-6 h-6 stroke-white' />
+                </div>
+                <div className='text-xl font-bold'>How to Use This Library</div>
+              </div>
+              <div className='text-sm mb-1'>
+                Please choose your instruction method below.
+              </div>
+              <div className='w-fit grid grid-cols-3 gap-x-7 '>
+                <div
+                  className='w-16 h-16 rounded-full bg-unilever-blue hover:bg-unilever-darkblue shadow-md flex items-center justify-center'
+                  onClick={() => setIsMediaType('VIDEO')}
+                >
+                  <div className='flex flex-col items-center justify-center'>
+                    <div>
+                      <FilmIcon className='w-6 h-6 fill-white/80' />
+                    </div>
+                    <div className='text-xs font-bold text-white/80'>Video</div>
+                  </div>
+                </div>
+                <div
+                  className='w-16 h-16 rounded-full bg-unilever-blue hover:bg-unilever-darkblue cursor-pointer shadow-md flex items-center justify-center'
+                  onClick={() => setIsMediaType('SLIDES')}
+                >
+                  <div className='flex flex-col items-center justify-center'>
+                    <div>
+                      <Square3Stack3DIcon className='w-6 h-6 fill-white/80' />
+                    </div>
+                    <div className='text-xs font-bold text-white/80'>
+                      Slides
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className='w-16 h-16 rounded-full bg-unilever-blue hover:bg-unilever-darkblue cursor-pointer shadow-md flex items-center justify-center'
+                  onClick={() => setIsMediaType('PDF')}
+                >
+                  <div className='flex flex-col items-center justify-center'>
+                    <div>
+                      <DocumentArrowDownIcon className='w-6 h-6 fill-white/80' />
+                    </div>
+                    <div className='text-xs font-bold text-white/80'>PDF</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
