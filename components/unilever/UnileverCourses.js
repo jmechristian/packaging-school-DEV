@@ -241,7 +241,7 @@ const UnileverCourses = ({ supportLinks, id, courses }) => {
                 link={link.link}
                 link_text={'Select Course'}
                 Icon={SparklesIcon}
-                video={link.video}
+                video={link.preview}
                 courseId={link.id}
                 clicks={link.clicks}
                 targetedId={link.targetedId}
