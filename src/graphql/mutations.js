@@ -5011,6 +5011,150 @@ export const deleteStaff = /* GraphQL */ `
     }
   }
 `;
+export const createTrackedCourse = /* GraphQL */ `
+  mutation CreateTrackedCourse(
+    $input: CreateTrackedCourseInput!
+    $condition: ModelTrackedCourseConditionInput
+  ) {
+    createTrackedCourse(input: $input, condition: $condition) {
+      id
+      courseId
+      clicks
+      customer {
+        id
+        displayName
+        courses {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      customerId
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateTrackedCourse = /* GraphQL */ `
+  mutation UpdateTrackedCourse(
+    $input: UpdateTrackedCourseInput!
+    $condition: ModelTrackedCourseConditionInput
+  ) {
+    updateTrackedCourse(input: $input, condition: $condition) {
+      id
+      courseId
+      clicks
+      customer {
+        id
+        displayName
+        courses {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      customerId
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteTrackedCourse = /* GraphQL */ `
+  mutation DeleteTrackedCourse(
+    $input: DeleteTrackedCourseInput!
+    $condition: ModelTrackedCourseConditionInput
+  ) {
+    deleteTrackedCourse(input: $input, condition: $condition) {
+      id
+      courseId
+      clicks
+      customer {
+        id
+        displayName
+        courses {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      customerId
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createCustomer = /* GraphQL */ `
+  mutation CreateCustomer(
+    $input: CreateCustomerInput!
+    $condition: ModelCustomerConditionInput
+  ) {
+    createCustomer(input: $input, condition: $condition) {
+      id
+      displayName
+      courses {
+        items {
+          id
+          courseId
+          clicks
+          customerId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateCustomer = /* GraphQL */ `
+  mutation UpdateCustomer(
+    $input: UpdateCustomerInput!
+    $condition: ModelCustomerConditionInput
+  ) {
+    updateCustomer(input: $input, condition: $condition) {
+      id
+      displayName
+      courses {
+        items {
+          id
+          courseId
+          clicks
+          customerId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteCustomer = /* GraphQL */ `
+  mutation DeleteCustomer(
+    $input: DeleteCustomerInput!
+    $condition: ModelCustomerConditionInput
+  ) {
+    deleteCustomer(input: $input, condition: $condition) {
+      id
+      displayName
+      courses {
+        items {
+          id
+          courseId
+          clicks
+          customerId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
 export const createCertificateCourses = /* GraphQL */ `
   mutation CreateCertificateCourses(
     $input: CreateCertificateCoursesInput!

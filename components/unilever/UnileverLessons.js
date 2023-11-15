@@ -38,7 +38,7 @@ const createDate = (date) => {
   });
 };
 
-const UnileverLessons = ({ supportLinks }) => {
+const UnileverLessons = ({ supportLinks, id }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isActiveSearch, setIsActiveSearch] = useState(false);
   const [isSearchTerm, setIsSearchTerm] = useState('');

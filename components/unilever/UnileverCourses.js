@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { Amplify, Analytics } from 'aws-amplify';
+import { useSelector } from 'react-redux';
 import {
   ArrowTopRightOnSquareIcon,
   ArrowLongRightIcon,
@@ -27,19 +27,40 @@ import {
 
 import NewCouseCard from '../shared/NewCouseCard';
 
-const UnileverCourses = ({ supportLinks }) => {
+const UnileverCourses = ({ supportLinks, id, courses }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isActiveSearch, setIsActiveSearch] = useState(false);
   const [isSearchTerm, setIsSearchTerm] = useState('');
   const [isSearchCourses, setIsSearchCourses] = useState('');
 
+  const { allCourses } = useSelector((state) => state.course_filter);
+  /////////Forget all this, just pass the courses array, sort by clicks, populate the NewCourseCard inside each one
+
+  const initCourses = useMemo(() => {
+    // Filter allCourses by a sorted by click count Courses array
+    // const filtered = allCourses.filter((c) =>
+    //   courses.find((s) => s.courseId === c.id)
+    // );
+    const filtered = courses.map((c) => {
+      const matchedCourse = allCourses.find((ac) => ac.id === c.courseId);
+      return {
+        ...c,
+        ...matchedCourse,
+      };
+    });
+    return filtered;
+  }, [courses, allCourses]);
+
   const coursesToShow = useMemo(() => {
-    return supportLinks.filter(
-      (o) =>
-        o.name.toLowerCase().includes(isSearchTerm.toLowerCase()) ||
-        o.description.toLowerCase().includes(isSearchTerm.toLowerCase())
-    );
-  }, [supportLinks, isSearchTerm]);
+    // Switch Suport Links to Filtered after we have that set
+    return initCourses
+      .sort((a, b) => b.clicks - a.clicks)
+      .filter(
+        (o) =>
+          o.title.toLowerCase().includes(isSearchTerm.toLowerCase()) ||
+          o.subheadline.toLowerCase().includes(isSearchTerm.toLowerCase())
+      );
+  }, [initCourses, isSearchTerm]);
 
   return (
     <motion.section className='px-0 lg:px-6 w-full flex flex-col gap-6'>
@@ -109,14 +130,15 @@ const UnileverCourses = ({ supportLinks }) => {
               <div className='grid grid-cols-1 gap-y-16 md:grid-cols-2 md:gap-9 lg:grid-cols-3 lg:gap-10 pb-9'>
                 {coursesToShow.map((link) => (
                   <NewCouseCard
-                    key={link.name}
-                    title={link.name}
-                    description={link.description}
-                    background={link.background}
-                    link={link.href}
+                    key={link.id}
+                    title={link.title}
+                    description={link.subheadline}
+                    background={link.seoImage}
+                    link={link.link}
                     link_text={'Select Course'}
                     Icon={SparklesIcon}
-                    video={link.video}
+                    video={link.preview}
+                    courseId={link.id}
                   />
                 ))}
               </div>
@@ -165,58 +187,54 @@ const UnileverCourses = ({ supportLinks }) => {
             </div>
           </div>
           <NewCouseCard
-            title={'Sustainable Packaging'}
-            description={
-              'An in-depth look at sustainability as it relates to packaging, and ways to reduce a company’s environmental footprint.'
-            }
-            background={'https://packschool.s3.amazonaws.com/demo-video.png'}
-            link={'https://packagingschool.com/courses/sustainable-packaging'}
+            title={initCourses[0].title}
+            description={initCourses[0].subheadline}
+            background={initCourses[0].seoImage}
+            link={initCourses[0].link}
             link_text={'Select Course'}
             Icon={SparklesIcon}
             callout={'Most Popular'}
-            video={'https://www.youtube.com/watch?v=ynDhF_jYZn8'}
+            video={initCourses[0].preview}
           />
           <NewCouseCard
-            title={'Packaging Bootcamp 101'}
-            description={
-              'This Boot Camp will serve as an introduction to the packaging industry and provide the fundamental knowledge necessary to get you up to speed.'
-            }
-            background={'https://packschool.s3.amazonaws.com/bootcamp101.png'}
-            link={'https://packagingschool.com/courses/packaging-boot-camp-101'}
+            title={initCourses[1].title}
+            description={initCourses[1].subheadline}
+            background={initCourses[1].seoImage}
+            link={initCourses[1].link}
             link_text={'Select Course'}
             Icon={SparklesIcon}
             callout={'Most Popular'}
-            video={'https://www.youtube.com/watch?v=L4Q6sZlXoe4'}
+            video={initCourses[1].preview}
           />
           <NewCouseCard
-            title={'Corrugated Containers'}
-            description={
-              'An informative course with easy to digest information that will teach you the art and science of corrugated containers.'
-            }
-            background={'https://packschool.s3.amazonaws.com/corrugated.png'}
-            link={'https://learn.packagingschool.com/enroll/36818'}
+            title={initCourses[2].title}
+            description={initCourses[2].subheadline}
+            background={initCourses[2].seoImage}
+            link={initCourses[2].link}
             link_text={'Select Course'}
             Icon={SparklesIcon}
             callout={'Most Popular'}
-            video={'https://www.youtube.com/watch?v=ABLmndzcET4'}
+            video={initCourses[2].preview}
           />
         </div>
       )}
 
       {!isActiveSearch && isExpanded ? (
         <div className='grid grid-cols-1 gap-y-16 md:grid-cols-2 md:gap-9 lg:grid-cols-3 lg:gap-10 pb-9'>
-          {supportLinks
-            .filter((cou) => cou.featured != true)
+          {initCourses
+            .slice(3)
+            .sort((a, b) => a.courseId.localeCompare(b.courseId))
             .map((link) => (
               <NewCouseCard
-                key={link.name}
-                title={link.name}
-                description={link.description}
-                background={link.background}
-                link={link.href}
+                key={link.id}
+                title={link.title}
+                description={link.subheadline}
+                background={link.seoImage}
+                link={link.link}
                 link_text={'Select Course'}
                 Icon={SparklesIcon}
                 video={link.video}
+                courseId={link.id}
               />
             ))}
         </div>

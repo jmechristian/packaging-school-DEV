@@ -473,3 +473,18 @@ type Staff @model @auth(rules: [{ allow: public }]) {
 }
 
 ######### Unilever #########
+
+type TrackedCourse @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  courseId: String!
+  clicks: Int!
+  customer: Customer @belongsTo(fields: ["customerId"])
+  customerId: ID! @index(name: "trackedByCustomer", sortKeyFields: ["clicks"])
+}
+
+type Customer @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  displayName: String!
+  courses: [TrackedCourse]
+    @hasMany(indexName: "trackedByCustomer", fields: ["id"])
+}

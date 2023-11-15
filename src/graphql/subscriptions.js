@@ -4723,6 +4723,132 @@ export const onDeleteStaff = /* GraphQL */ `
     }
   }
 `;
+export const onCreateTrackedCourse = /* GraphQL */ `
+  subscription OnCreateTrackedCourse {
+    onCreateTrackedCourse {
+      id
+      courseId
+      clicks
+      customer {
+        id
+        displayName
+        courses {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      customerId
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateTrackedCourse = /* GraphQL */ `
+  subscription OnUpdateTrackedCourse {
+    onUpdateTrackedCourse {
+      id
+      courseId
+      clicks
+      customer {
+        id
+        displayName
+        courses {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      customerId
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteTrackedCourse = /* GraphQL */ `
+  subscription OnDeleteTrackedCourse {
+    onDeleteTrackedCourse {
+      id
+      courseId
+      clicks
+      customer {
+        id
+        displayName
+        courses {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      customerId
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateCustomer = /* GraphQL */ `
+  subscription OnCreateCustomer {
+    onCreateCustomer {
+      id
+      displayName
+      courses {
+        items {
+          id
+          courseId
+          clicks
+          customerId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateCustomer = /* GraphQL */ `
+  subscription OnUpdateCustomer {
+    onUpdateCustomer {
+      id
+      displayName
+      courses {
+        items {
+          id
+          courseId
+          clicks
+          customerId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteCustomer = /* GraphQL */ `
+  subscription OnDeleteCustomer {
+    onDeleteCustomer {
+      id
+      displayName
+      courses {
+        items {
+          id
+          courseId
+          clicks
+          customerId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
 export const onCreateCertificateCourses = /* GraphQL */ `
   subscription OnCreateCertificateCourses {
     onCreateCertificateCourses {

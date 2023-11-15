@@ -15,7 +15,7 @@ import {
   SignalIcon,
   BookmarkSquareIcon,
 } from '@heroicons/react/24/outline';
-
+import { API } from 'aws-amplify';
 import { ChevronRightIcon, PlayCircleIcon } from '@heroicons/react/24/solid';
 import { Disclosure } from '@headlessui/react';
 import { useSelector } from 'react-redux';
@@ -26,6 +26,7 @@ import FullWidthDropDown from '../components/shared/FullWidthDropDown';
 import NewCouseCard from '../components/shared/NewCouseCard';
 import UnileverCourses from '../components/unilever/UnileverCourses';
 import UnileverLessons from '../components/unilever/UnileverLessons';
+import { getCustomer, listUnilevers } from '../src/graphql/queries';
 
 const supportLinks = [
   {
@@ -172,9 +173,12 @@ const supportLinks = [
   },
 ];
 
-const Page = () => {
-  const { allLessons } = useSelector((state) => state.course_filter);
+const Page = ({ unilever }) => {
+  // console.log(unilever);
+
   const [isPlaying, setIsPlaying] = useState(false);
+
+  const { allLessons } = useSelector((state) => state.course_filter);
 
   const HighlightContent = ({ link }) => {
     return (
@@ -192,6 +196,7 @@ const Page = () => {
           Icon={RocketLaunchIcon}
           callout={'Unilever Developed'}
           video={'https://www.youtube.com/watch?v=ynDhF_jYZn8'}
+          id={'806c0e2e-c4db-4c13-94f9-b49d4e8b2239'}
         />
         <NewCouseCard
           title={'Sustainable Packaging'}
@@ -204,6 +209,7 @@ const Page = () => {
           Icon={SparklesIcon}
           callout={'Most Popular'}
           video={'https://www.youtube.com/watch?v=ynDhF_jYZn8'}
+          id={'806c0e2e-c4db-4c13-94f9-b49d4e8b2239'}
         />
         <NewCouseCard
           title={'Shoe Shopping From Home'}
@@ -215,18 +221,26 @@ const Page = () => {
           link_text={'View Lesson'}
           Icon={SignalIcon}
           callout={'Latest Lesson'}
+          id={'806c0e2e-c4db-4c13-94f9-b49d4e8b2239'}
         />
       </motion.div>
     );
   };
 
   const CourseContent = () => {
-    return <UnileverCourses supportLinks={supportLinks} />;
+    return (
+      <UnileverCourses
+        supportLinks={supportLinks}
+        id={'84558b1f-359a-4551-8832-c6c570171163'}
+        courses={unilever.courses.items}
+      />
+    );
   };
 
   const LessonContent = () => {
     return (
       <UnileverLessons
+        id={'84558b1f-359a-4551-8832-c6c570171163'}
         supportLinks={
           allLessons &&
           allLessons
@@ -340,5 +354,17 @@ const Page = () => {
     </div>
   );
 };
+
+export async function getStaticProps() {
+  const res = await API.graphql({
+    query: getCustomer,
+    variables: { id: '84558b1f-359a-4551-8832-c6c570171163' },
+  });
+  const unilever = res.data.getCustomer;
+
+  return {
+    props: { unilever },
+  };
+}
 
 export default Page;

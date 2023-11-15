@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { PlayCircleIcon } from '@heroicons/react/24/solid';
+import { useSelector } from 'react-redux';
 import {
   BrowserView,
   MobileView,
@@ -20,9 +21,20 @@ const NewCouseCard = ({
   description,
   link_text,
   date,
+  id,
+  courseId,
 }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isHover, setIsHovered] = useState(false);
+  const [isItem, setIsItem] = useState([]);
+  // console.log(courseId);
+
+  const { allLessons } = useSelector((state) => state.course_filter);
+  const { allCourses } = useSelector((state) => state.course_filter);
+
+  // useEffect(() => {
+  //   setIsItem(allCourses.filter((cou) => cou.id === courseId));
+  // }, [courseId, allCourses]);
 
   const createDate = (date) => {
     const newDate = new Date(date);

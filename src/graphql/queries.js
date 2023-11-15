@@ -3504,6 +3504,128 @@ export const listStaff = /* GraphQL */ `
     }
   }
 `;
+export const getTrackedCourse = /* GraphQL */ `
+  query GetTrackedCourse($id: ID!) {
+    getTrackedCourse(id: $id) {
+      id
+      courseId
+      clicks
+      customer {
+        id
+        displayName
+        courses {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      customerId
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listTrackedCourses = /* GraphQL */ `
+  query ListTrackedCourses(
+    $filter: ModelTrackedCourseFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listTrackedCourses(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        courseId
+        clicks
+        customer {
+          id
+          displayName
+          createdAt
+          updatedAt
+        }
+        customerId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const trackedCoursesByCustomerIdAndClicks = /* GraphQL */ `
+  query TrackedCoursesByCustomerIdAndClicks(
+    $customerId: ID!
+    $clicks: ModelIntKeyConditionInput
+    $sortDirection: ModelSortDirection
+    $filter: ModelTrackedCourseFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    trackedCoursesByCustomerIdAndClicks(
+      customerId: $customerId
+      clicks: $clicks
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        courseId
+        clicks
+        customer {
+          id
+          displayName
+          createdAt
+          updatedAt
+        }
+        customerId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getCustomer = /* GraphQL */ `
+  query GetCustomer($id: ID!) {
+    getCustomer(id: $id) {
+      id
+      displayName
+      courses {
+        items {
+          id
+          courseId
+          clicks
+          customerId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listCustomers = /* GraphQL */ `
+  query ListCustomers(
+    $filter: ModelCustomerFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listCustomers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        displayName
+        courses {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
 export const getCertificateCourses = /* GraphQL */ `
   query GetCertificateCourses($id: ID!) {
     getCertificateCourses(id: $id) {
