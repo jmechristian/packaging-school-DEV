@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { API } from 'aws-amplify';
 import { PlayCircleIcon } from '@heroicons/react/24/solid';
 import { useSelector } from 'react-redux';
 import {
@@ -8,6 +9,7 @@ import {
   isBrowser,
   isMobile,
 } from 'react-device-detect';
+import { updateTrackedCourse } from '../../src/graphql/mutations';
 
 import VideoPlayer from '../VideoPlayer';
 
@@ -20,28 +22,18 @@ const NewCouseCard = ({
   title,
   description,
   link_text,
-  date,
-  id,
-  courseId,
+  targetedId,
+  clicks,
 }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isHover, setIsHovered] = useState(false);
-  const [isItem, setIsItem] = useState([]);
-  // console.log(courseId);
 
-  const { allLessons } = useSelector((state) => state.course_filter);
-  const { allCourses } = useSelector((state) => state.course_filter);
-
-  // useEffect(() => {
-  //   setIsItem(allCourses.filter((cou) => cou.id === courseId));
-  // }, [courseId, allCourses]);
-
-  const createDate = (date) => {
-    const newDate = new Date(date);
-    return newDate.toLocaleDateString('en-US', {
-      month: 'long',
-      year: 'numeric',
+  const cardClickHandler = async () => {
+    await API.graphql({
+      query: updateTrackedCourse,
+      variables: { input: { id: targetedId, clicks: clicks + 1 } },
     });
+    window.open(link, '_blank');
   };
 
   return (
@@ -105,7 +97,7 @@ const NewCouseCard = ({
         </motion.div>
         <motion.div
           className='bg-black w-full rounded-b-lg z-10 relative text-center cursor-pointer'
-          onClick={() => window.open(link, '_blank')}
+          onClick={() => cardClickHandler()}
         >
           <div className='text-white font-bold px-6 py-3'>{link_text}</div>
         </motion.div>

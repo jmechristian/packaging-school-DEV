@@ -357,7 +357,7 @@ const Page = ({ unilever }) => {
   );
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const res = await API.graphql({
     query: getCustomer,
     variables: { id: '84558b1f-359a-4551-8832-c6c570171163' },

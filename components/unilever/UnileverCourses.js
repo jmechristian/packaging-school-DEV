@@ -46,6 +46,7 @@ const UnileverCourses = ({ supportLinks, id, courses }) => {
       return {
         ...c,
         ...matchedCourse,
+        targetedId: c.id,
       };
     });
     return filtered;
@@ -139,6 +140,7 @@ const UnileverCourses = ({ supportLinks, id, courses }) => {
                     Icon={SparklesIcon}
                     video={link.preview}
                     courseId={link.id}
+                    targetedId={link.targetedId}
                   />
                 ))}
               </div>
@@ -195,6 +197,8 @@ const UnileverCourses = ({ supportLinks, id, courses }) => {
             Icon={SparklesIcon}
             callout={'Most Popular'}
             video={initCourses[0].preview}
+            clicks={initCourses[0].clicks}
+            targetedId={initCourses[0].targetedId}
           />
           <NewCouseCard
             title={initCourses[1].title}
@@ -205,6 +209,8 @@ const UnileverCourses = ({ supportLinks, id, courses }) => {
             Icon={SparklesIcon}
             callout={'Most Popular'}
             video={initCourses[1].preview}
+            clicks={initCourses[1].clicks}
+            targetedId={initCourses[1].targetedId}
           />
           <NewCouseCard
             title={initCourses[2].title}
@@ -215,6 +221,8 @@ const UnileverCourses = ({ supportLinks, id, courses }) => {
             Icon={SparklesIcon}
             callout={'Most Popular'}
             video={initCourses[2].preview}
+            clicks={initCourses[2].clicks}
+            targetedId={initCourses[2].targetedId}
           />
         </div>
       )}
@@ -235,6 +243,8 @@ const UnileverCourses = ({ supportLinks, id, courses }) => {
                 Icon={SparklesIcon}
                 video={link.video}
                 courseId={link.id}
+                clicks={link.clicks}
+                targetedId={link.targetedId}
               />
             ))}
         </div>
