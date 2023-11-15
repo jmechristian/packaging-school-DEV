@@ -203,7 +203,9 @@ const Page = ({ unilever }) => {
           description={
             'Have you ever wondered how grocery store produce ships from the farm to the grocery store?'
           }
-          background={'https://packschool.s3.amazonaws.com/demo-video.png'}
+          background={
+            'https://packschool.s3.amazonaws.com/sustainable-seoImage.png'
+          }
           link={'#'}
           link_text={'Select Course'}
           Icon={SparklesIcon}
