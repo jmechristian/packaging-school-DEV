@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import dynamic from 'next/dynamic';
 import {
   MinusSmallIcon,
   PlusSmallIcon,
@@ -35,6 +36,10 @@ import NewCouseCard from '../components/shared/NewCouseCard';
 import UnileverCourses from '../components/unilever/UnileverCourses';
 import UnileverLessons from '../components/unilever/UnileverLessons';
 import { getCustomer, listUnilevers } from '../src/graphql/queries';
+
+const ReactGoogleSlides = dynamic(() => import('react-google-slides'), {
+  ssr: false,
+});
 
 const supportLinks = [
   {
@@ -308,7 +313,14 @@ const Page = ({ unilever }) => {
           </div>
           <div className='flex w-full flex-col gap-4 p-6 lg:p-9 md:col-span-3 lg:col-span-3 lg:gap-x-16'>
             <div className='w-full aspect-[16/9] bg-indigo-300 h-full flex items-center justify-center text-2xl'>
-              {isMediaType}
+              <ReactGoogleSlides
+                width={'100%'}
+                height={'100%'}
+                slidesLink='https://docs.google.com/presentation/d/1frh5qJEeQQ-kMIKpSi3MHaamjPUlSHKCudoPHX8vDXs'
+                position={1}
+                showControls
+                loop
+              />
             </div>
 
             <div className='w-full flex flex-col items-center gap-2 bg-unilever-lightblue  shadow text-white rounded-lg py-4 cursor-pointer'>
