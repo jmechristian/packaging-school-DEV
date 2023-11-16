@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import {
+  MinusSmallIcon,
+  PlusSmallIcon,
   ArrowTopRightOnSquareIcon,
   ArrowLongRightIcon,
   AcademicCapIcon,
@@ -179,6 +181,33 @@ const supportLinks = [
   },
 ];
 
+const faqs = [
+  {
+    id: 1,
+    question: 'How do you make holy water?',
+    answer:
+      'You boil the hell out of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.',
+  },
+  {
+    id: 2,
+    question: "What's the best thing about Switzerland?",
+    answer:
+      "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+  },
+  {
+    id: 3,
+    question: 'What do you call someone with no body and no nose?',
+    answer:
+      'Nobody knows. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.',
+  },
+  {
+    id: 4,
+    question: 'Why do you never see elephants hiding in trees?',
+    answer:
+      "Because they're so good at it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+  },
+];
+
 const Page = ({ unilever }) => {
   // console.log(unilever);
 
@@ -270,7 +299,7 @@ const Page = ({ unilever }) => {
   return (
     <div className='w-full max-w-7xl px-3 md:px-6 flex flex-col gap-4 md:gap-6 py-6 lg:py-9 mx-auto'>
       {/* MAIN */}
-      <div className='w-full bg-gradient-to-br from-unilever-blue via-unilever-blue to-unilever-lightblue h-full rounded-lg pt-6 shadow-xl'>
+      <div className='w-full bg-unilever-blue h-full rounded-lg pt-6 shadow-xl'>
         <div className='grid md:grid-cols-5 gap-4 md:gap-9 max-w-6xl lg:mx-auto'>
           <div className='flex justify-center w-full items-center md:col-span-2 lg:col-span-2'>
             <div>
@@ -404,6 +433,51 @@ const Page = ({ unilever }) => {
         highlight={'bg-clemson'}
         bgContent={'bg-neutral-200 border'}
       />
+
+      <div className='bg-neutral-100 rounded-xl'>
+        <div className='mx-auto max-w-7xl px-6 py-20 lg:px-8'>
+          <div className='mx-auto max-w-5xl divide-y divide-gray-900/10'>
+            <h2 className='text-2xl font-bold leading-10 tracking-tight text-gray-900'>
+              Frequently asked questions
+            </h2>
+            <dl className='mt-10 space-y-6 divide-y divide-gray-900/10'>
+              {faqs.map((faq) => (
+                <Disclosure as='div' key={faq.question} className='pt-6'>
+                  {({ open }) => (
+                    <>
+                      <dt>
+                        <Disclosure.Button className='flex w-full items-start justify-between text-left text-gray-900'>
+                          <span className='text-base font-semibold leading-7'>
+                            {faq.question}
+                          </span>
+                          <span className='ml-6 flex h-7 items-center'>
+                            {open ? (
+                              <MinusSmallIcon
+                                className='h-6 w-6'
+                                aria-hidden='true'
+                              />
+                            ) : (
+                              <PlusSmallIcon
+                                className='h-6 w-6'
+                                aria-hidden='true'
+                              />
+                            )}
+                          </span>
+                        </Disclosure.Button>
+                      </dt>
+                      <Disclosure.Panel as='dd' className='mt-2 pr-12'>
+                        <p className='text-base leading-7 text-gray-600'>
+                          {faq.answer}
+                        </p>
+                      </Disclosure.Panel>
+                    </>
+                  )}
+                </Disclosure>
+              ))}
+            </dl>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

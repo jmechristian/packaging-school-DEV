@@ -50,6 +50,7 @@ module.exports = {
         'unilever-lightblue': '#005eff',
         'unilever-salmon': '#fea29a',
         'unilever-green': '#008651',
+        'unilever-jade': '#00d7c4',
         'unilever-purple': '#7705bc',
         'unilever-lavendar': '#e2bee8',
       },
