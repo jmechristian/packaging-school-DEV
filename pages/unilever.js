@@ -305,25 +305,27 @@ const Page = ({ unilever }) => {
     <div className='w-full max-w-7xl px-3 md:px-6 flex flex-col gap-4 md:gap-6 py-6 lg:py-9 mx-auto'>
       {/* MAIN */}
       <div className='w-full bg-unilever-blue h-full rounded-lg pt-6 shadow-xl'>
-        <div className='grid md:grid-cols-5 gap-4 md:gap-9 max-w-6xl lg:mx-auto'>
+        <div className='grid md:grid-cols-5 gap-4 md:gap-9 lg:max-w-6xl lg:mx-auto overflow-hidden w-full h-full'>
           <div className='flex justify-center w-full items-center md:col-span-2 lg:col-span-2'>
             <div>
               <Unilever style={'w-40 lg:w-72 p-3 h-full fill-white'} />
             </div>
           </div>
-          <div className='flex w-full flex-col gap-4 p-6 lg:p-9 md:col-span-3 lg:col-span-3 lg:gap-x-16'>
-            <div className='w-full aspect-[16/9] bg-indigo-300 h-full flex items-center justify-center text-2xl'>
-              <ReactGoogleSlides
-                width={'100%'}
-                height={'100%'}
-                slidesLink='https://docs.google.com/presentation/d/1frh5qJEeQQ-kMIKpSi3MHaamjPUlSHKCudoPHX8vDXs'
-                position={1}
-                showControls
-                loop
-              />
+          <div className='flex w-full flex-col gap-4 p-3 md:p-6 lg:p-9 md:col-span-3 lg:col-span-3 lg:gap-x-16'>
+            <div className='md:w-full  aspect-[16/9] md:max-w-none max-w-xs mx-auto bg-indigo-300 h-full flex items-center justify-center text-2xl'>
+              <div className='w-full h-full '>
+                <ReactGoogleSlides
+                  width={'100%'}
+                  height={'100%'}
+                  slidesLink='https://docs.google.com/presentation/d/1frh5qJEeQQ-kMIKpSi3MHaamjPUlSHKCudoPHX8vDXs'
+                  position={1}
+                  showControls
+                  loop
+                />
+              </div>
             </div>
 
-            <div className='w-full flex flex-col items-center gap-2 bg-unilever-lightblue  shadow text-white rounded-lg py-4 cursor-pointer'>
+            <div className='w-full flex max-w-xs md:max-w-none mx-auto flex-col items-center gap-2 bg-unilever-lightblue  shadow text-white rounded-lg py-4 cursor-pointer'>
               {/* <div className='justify-center items-center flex gap-1.5'>
                 <div>
                   <InformationCircleIcon className='w-6 h-6 stroke-white' />
@@ -333,7 +335,7 @@ const Page = ({ unilever }) => {
               <div className='text-sm mb-1'>
                 Please choose your instruction method below.
               </div>
-              <div className='w-fit grid grid-cols-3 gap-x-7 '>
+              <div className='w-fit grid grid-cols-3 gap-x-7 overflow-hidden'>
                 <div
                   className='w-16 h-16 rounded-full bg-unilever-blue hover:bg-unilever-darkblue shadow-md flex items-center justify-center'
                   onClick={() => setIsMediaType('VIDEO')}
