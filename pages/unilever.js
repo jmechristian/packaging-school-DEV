@@ -324,12 +324,12 @@ const Page = ({ unilever }) => {
             </div>
 
             <div className='w-full flex flex-col items-center gap-2 bg-unilever-lightblue  shadow text-white rounded-lg py-4 cursor-pointer'>
-              <div className='justify-center items-center flex gap-1.5'>
+              {/* <div className='justify-center items-center flex gap-1.5'>
                 <div>
                   <InformationCircleIcon className='w-6 h-6 stroke-white' />
                 </div>
                 <div className='text-xl font-bold'>How to Use This Library</div>
-              </div>
+              </div> */}
               <div className='text-sm mb-1'>
                 Please choose your instruction method below.
               </div>
