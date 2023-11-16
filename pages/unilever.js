@@ -302,7 +302,7 @@ const Page = ({ unilever }) => {
   };
 
   return (
-    <div className='w-full max-w-7xl px-3 md:px-6 flex flex-col gap-4 md:gap-6 py-6 lg:py-9 mx-auto'>
+    <div className='w-full max-w-7xl px-3 md:px-6 flex flex-col gap-4 md:gap-6 py-3 md:py-6 lg:py-9 mx-auto'>
       {/* MAIN */}
       <div className='w-full bg-unilever-blue h-full rounded-lg pt-6 shadow-xl'>
         <div className='grid md:grid-cols-5 gap-4 md:gap-9 lg:max-w-6xl lg:mx-auto overflow-hidden w-full h-full'>
