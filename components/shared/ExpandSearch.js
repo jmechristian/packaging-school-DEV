@@ -2,8 +2,8 @@ import React from 'react';
 
 const ExpandSearch = () => {
   return (
-    <div className='relative sm:mx-auto sm:max-w-lg sm:px-10'>
-      <div className='mx-auto max-w-md'>
+    <div className='relative sm:mx-auto sm:max-w-3xl'>
+      <div className='mx-auto max-w-3xl'>
         <form action='' className='relative mx-auto w-max'>
           <input
             type='search'

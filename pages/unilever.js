@@ -428,7 +428,17 @@ const Page = ({ unilever }) => {
       {/* COURSES */}
 
       <FullWidthDropDown
-        title={'Your Courses'}
+        title={'Unilever Course Offerings'}
+        Icon={AcademicCapIcon}
+        bg='bg-unilever-blue'
+        bgdark='bg-unilever-darkblue'
+        content={<CourseContent />}
+        highlight={'bg-unilever-lightblue'}
+        bgContent={'bg-neutral-200 border'}
+      />
+
+      <FullWidthDropDown
+        title={'Packaging School Course Offerings'}
         Icon={AcademicCapIcon}
         bg='bg-base-mid'
         bgdark='bg-base-dark'
