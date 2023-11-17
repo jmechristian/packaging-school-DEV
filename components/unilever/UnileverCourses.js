@@ -27,7 +27,7 @@ import {
 
 import NewCouseCard from '../shared/NewCouseCard';
 
-const UnileverCourses = ({ supportLinks, id, courses }) => {
+const UnileverCourses = ({ courses }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isActiveSearch, setIsActiveSearch] = useState(false);
   const [isSearchTerm, setIsSearchTerm] = useState('');

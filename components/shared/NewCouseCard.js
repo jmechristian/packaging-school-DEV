@@ -38,11 +38,11 @@ const NewCouseCard = ({
 
   return (
     <motion.div
-      className='w-full min-h-[230px] rounded-lg shadow-lg bg-cover bg-bottom bg-opacity-60 relative bg-black'
+      className='w-full min-h-[230px] max-h-[455px] max-w-[320px] rounded-lg shadow-xl bg-cover bg-bottom bg-opacity-60 relative bg-black'
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <motion.div className='absolute z-[1] left-0 right-0 bottom-0 top-1/3 bg-gradient-to-t from-base-brand via-base-brand rounded-b-lg'></motion.div>
+      <motion.div className='absolute z-[1] left-0 right-0 bottom-0 top-1/3 bg-gradient-to-t from-neutral-900 via-base-mid rounded-b-lg'></motion.div>
       <motion.div
         className='absolute z-0 left-0 right-0 top-0 bottom-1/3 bg-black rounded-t-lg bg-cover bg-center bg-no-repeat w-full h-auto'
         style={{

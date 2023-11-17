@@ -47,6 +47,7 @@ module.exports = {
         'brand-indigo-light': '#7789df',
         'brand-red': '#ff4421',
         'brand-yellow': '#ffbe21',
+        'brand-yellow-light': '#ffca4b',
         clemson: '#ff9321',
         'clemson-dark': '#ca6800',
         dark: '#0e1424',
