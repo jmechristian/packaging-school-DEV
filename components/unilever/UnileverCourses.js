@@ -114,7 +114,7 @@ const UnileverCourses = ({ courses }) => {
           </div>
         </div>
       </div>
-
+      {/* SEARCH */}
       {isActiveSearch ? (
         <motion.div className='w-full flex items-center justify-center'>
           <div className='w-full h-full flex justify-center items-center'>
@@ -128,7 +128,7 @@ const UnileverCourses = ({ courses }) => {
                 </div>
               </div>
             ) : (
-              <div className='grid grid-cols-1 gap-y-16 md:grid-cols-2 md:gap-9 lg:grid-cols-3 lg:gap-10 pb-9'>
+              <div className='w-fit mx-auto grid gap-20 lg:grid-cols-3 pb-3 mt-9 overflow-hidden'>
                 {coursesToShow.map((link) => (
                   <NewCouseCard
                     key={link.id}
@@ -148,11 +148,11 @@ const UnileverCourses = ({ courses }) => {
           </div>
         </motion.div>
       ) : (
-        <div className='w-full grid lg:grid-cols-3 gap-12 pb-3 mt-9 overflow-hidden col-span-2'>
-          <div className='lg:col-span-3 grid grid-cols-1 lg:grid-cols-2 bg-white rounded-lg shadow-lg'>
+        <div className='w-fit lg:pb-9 mx-auto md:px-6 grid gap-12 md:gap-x-6 md:gap-y-12 lg:gap-16 md:grid-cols-2 lg:grid-cols-3 pb-3 my-9 overflow-hidden items-center'>
+          <div className='md:col-span-2 lg:col-span-3 grid overflow-hidden grid-cols-1 md:grid-cols-2 bg-white rounded-lg shadow-lg max-w-[300px] md:max-w-none'>
             <div className='rounded-lg'>
               <div
-                className='w-full aspect-[16/9] rounded-lg justify-center items-center flex bg-cover bg-center relative'
+                className='w-full aspect-[16/9] md:aspect-[4/3] rounded-lg justify-center items-center flex bg-cover bg-center relative'
                 style={{
                   backgroundImage: `url("https://packschool.s3.amazonaws.com/unilever-brands-1.png")`,
                 }}
@@ -173,8 +173,8 @@ const UnileverCourses = ({ courses }) => {
               </div>
             </div>
             <div className='w-full flex justify-center items-center px-6 lg:px-0'>
-              <motion.div className='flex flex-col gap-3 py-9'>
-                <motion.div className='font-semibold text-2xl lg:text-3xl max-w-sm tracking-tight leading-none'>
+              <motion.div className='flex flex-col gap-3 py-9 md:py-3'>
+                <motion.div className='font-semibold text-xl lg:text-3xl max-w-sm tracking-tight leading-none'>
                   Unilever Packaging Bootcamp 101
                 </motion.div>
                 <motion.div className='leading-snug lg:text-lg line-clamp-4 text-neutral-600 max-w-md'>
@@ -228,7 +228,7 @@ const UnileverCourses = ({ courses }) => {
       )}
 
       {!isActiveSearch && isExpanded ? (
-        <div className='grid grid-cols-1 gap-y-16 md:grid-cols-2 md:gap-9 lg:grid-cols-3 lg:gap-10 pb-9'>
+        <div className='w-fit mx-auto grid gap-12 md:gap-6 lg:gap-16 md:grid-cols-2 lg:grid-cols-3 pb-3 mb-9 overflow-hidden lg:pb-9'>
           {initCourses
             .slice(3)
             .sort((a, b) => a.courseId.localeCompare(b.courseId))

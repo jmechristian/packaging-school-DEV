@@ -223,7 +223,7 @@ const Page = ({ unilever }) => {
 
   const HighlightContent = ({ link }) => {
     return (
-      <motion.div className='px-0 lg:px-6 w-full grid lg:grid-cols-3 gap-12 pb-3 my-9 overflow-hidden'>
+      <motion.div className='px-0 lg:px-6 w-fit mx-auto grid gap-12 md:gap-6 lg:gap-16 md:grid-cols-2 lg:grid-cols-3 pb-3 my-9 overflow-hidden'>
         <NewCouseCard
           title={'Uniliever Packaging Bootcamp 101'}
           description={

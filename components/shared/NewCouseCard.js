@@ -38,7 +38,7 @@ const NewCouseCard = ({
 
   return (
     <motion.div
-      className='w-full min-h-[230px] max-h-[455px] max-w-[320px] rounded-lg shadow-xl bg-cover bg-bottom bg-opacity-60 relative bg-black'
+      className='w-full min-h-[230px] max-h-[455px] max-w-[300px] rounded-lg shadow-xl bg-cover bg-bottom bg-opacity-60 relative bg-black'
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -90,7 +90,7 @@ const NewCouseCard = ({
             <motion.div className='font-semibold text-lg tracking-tight leading-none px-4'>
               {title}
             </motion.div>
-            <motion.div className='text-sm leading-tight px-4 line-clamp-4 text-neutral-600'>
+            <motion.div className='text-sm leading-tight px-4 line-clamp-3 text-neutral-600'>
               {description}
             </motion.div>
           </motion.div>
