@@ -186,7 +186,7 @@ const Page = () => {
           </div>
         </div>
       </div>
-      <div className='max-w-7xl w-full mx-auto flex flex-col gap-6 mt-3 mb-16'>
+      <div className='max-w-7xl w-full mx-auto flex flex-col gap-6 mt-3'>
         <div className='flex justify-between items-center'>
           <div className='w-full font-bold lg:text-3xl text-base-dark'>
             ISBT<sup>&reg;</sup> Courses
@@ -316,6 +316,32 @@ const Page = () => {
             video={'https://www.youtube.com/watch?v=ynDhF_jYZn8'}
             id={'806c0e2e-c4db-4c13-94f9-b49d4e8b2239'}
           />
+        </div>
+      </div>
+      <div className='w-full bg-gradient-to-tr from-base-brand via-base-mid to-clemson rounded-xl max-w-7xl mx-auto mt-2 mb-12'>
+        <div className='mx-auto max-w-7xl px-6 text-center lg:text-left py-12 lg:py-20 flex flex-col gap-12 lg:flex-row items-center justify-center lg:justify-between w-full lg:px-16'>
+          <h2 className='text-4xl font-bold  text-white sm:text-5xl font-etna'>
+            Ready to get hands-on?
+            <br />
+            Purchase your Class Pack today!
+          </h2>
+          <div className='flex flex-col justify-center items-center gap-3 '>
+            <div
+              className='aspect-[1/1] w-40 bg-white ring-clemson ring-4 rounded-lg shadow-lg bg-contain bg-center cursor-pointer'
+              style={{
+                backgroundImage: `url('https://packschool.s3.amazonaws.com/teachqr.png')`,
+              }}
+              onClick={() =>
+                window.open(
+                  'https://buy.stripe.com/5kA5lg9g29HG6JOfYY',
+                  '_blank'
+                )
+              }
+            ></div>
+            <div className='text-sm text-white cursor-pointer'>
+              Click or Scan
+            </div>
+          </div>
         </div>
       </div>
     </div>

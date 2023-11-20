@@ -301,97 +301,21 @@ h4 {
   z-index: 90 !important;
 }
 
-/* GEMS */
+/* MARQUEE */
 
-/* Legendary */
+.marquee {
+  position: relative;
+  width: 100vw;
+  max-width: 100%;
+  height: 100px;
+  overflow-x: hidden;
+}
 
-/* .legendary0 {
-  fill: url(#SVGID_1_);
+.track {
+  position: absolute;
+  white-space: nowrap;
+  will-change: transform;
 }
-.legendary1 {
-  fill: url(#SVGID_00000052822025465407115400000009062740244784977082_);
-}
-.legendary2 {
-  fill: #c76400;
-}
-.legendary3 {
-  fill: #774400;
-}
-.legendary4 {
-  fill: #fbeeb1;
-}
-.legendary5 {
-  fill: #be6000;
-}
-.legendary6 {
-  fill: #67563f;
-}
-.legendary7 {
-  fill: #778083;
-}
-.legendary8 {
-  fill: #008492;
-}
-.legendary9 {
-  fill: #aa5b00;
-}
-.legendary10 {
-  fill: #111212;
-}
-.legendary11 {
-  fill: url(#SVGID_00000104683014700996365850000001028665205429439913_);
-}
-.legendary12 {
-  fill: url(#SVGID_00000008126370832776797060000016629748313897377724_);
-}
-.legendary13 {
-  fill: #383023;
-}
-.legendary14 {
-  fill: #2997ab;
-}
-.legendary15 {
-  fill: #ad5800;
-}
-.legendary16 {
-  fill: #98c1b5;
-}
-.legendary17 {
-  fill: #47351c;
-}
-.legendary18 {
-  fill: url(#SVGID_00000101813709754083167520000013375467855975899821_);
-}
-.legendary19 {
-  fill: #776851;
-}
-.legendary20 {
-  fill: #ffe03b;
-}
-.legendary21 {
-  fill: url(#SVGID_00000052788430828895082300000017492306580430768314_);
-}
-.legendary22 {
-  fill: url(#SVGID_00000016762424892101011270000016440948898263193535_);
-}
-.legendary23 {
-  fill: url(#SVGID_00000144318950027129603140000011321139526445150896_);
-}
-.legendary24 {
-  fill: #ffdf43;
-}
-.legendary25 {
-  fill: #cfc9af;
-}
-.legendary26 {
-  fill: #d28215;
-}
-.legendary27 {
-  fill: #a4ba90;
-}
-.legendary28 {
-  fill: #ffdd2c;
-} */
 
 /* Cards */
 

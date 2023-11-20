@@ -141,6 +141,7 @@ const UnileverCourses = ({ courses }) => {
                     video={link.preview}
                     courseId={link.id}
                     targetedId={link.targetedId}
+                    tracked={true}
                   />
                 ))}
               </div>
@@ -199,6 +200,7 @@ const UnileverCourses = ({ courses }) => {
             video={initCourses[0].preview}
             clicks={initCourses[0].clicks}
             targetedId={initCourses[0].targetedId}
+            tracked={true}
           />
           <NewCouseCard
             title={initCourses[1].title}
@@ -211,6 +213,7 @@ const UnileverCourses = ({ courses }) => {
             video={initCourses[1].preview}
             clicks={initCourses[1].clicks}
             targetedId={initCourses[1].targetedId}
+            tracked={true}
           />
           <NewCouseCard
             title={initCourses[2].title}
@@ -223,6 +226,7 @@ const UnileverCourses = ({ courses }) => {
             video={initCourses[2].preview}
             clicks={initCourses[2].clicks}
             targetedId={initCourses[2].targetedId}
+            tracked={true}
           />
         </div>
       )}
@@ -245,6 +249,7 @@ const UnileverCourses = ({ courses }) => {
                 courseId={link.id}
                 clicks={link.clicks}
                 targetedId={link.targetedId}
+                tracked={true}
               />
             ))}
         </div>

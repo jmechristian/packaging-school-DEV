@@ -24,16 +24,21 @@ const NewCouseCard = ({
   link_text,
   targetedId,
   clicks,
+  tracked,
 }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isHover, setIsHovered] = useState(false);
 
   const cardClickHandler = async () => {
-    await API.graphql({
-      query: updateTrackedCourse,
-      variables: { input: { id: targetedId, clicks: clicks + 1 } },
-    });
-    window.open(link, '_blank');
+    if (tracked) {
+      await API.graphql({
+        query: updateTrackedCourse,
+        variables: { input: { id: targetedId, clicks: clicks + 1 } },
+      });
+      window.open(link, '_blank');
+    } else {
+      window.open(link, '_blank');
+    }
   };
 
   return (
@@ -84,13 +89,13 @@ const NewCouseCard = ({
           )}
         </motion.div>
       )}
-      <motion.div className='flex flex-col justify-between h-[242px]'>
-        <motion.div className='py-4 mt-4 min-h-[150px] bg-white/70 backdrop-blur shadow-lg rounded-b-lg mx-4 rounded-lg mb-6 relative z-[2] flex flex-col justify-between'>
-          <motion.div className='flex flex-col gap-3'>
+      <motion.div className='flex flex-col justify-center items-center h-[242px]'>
+        <motion.div className='mt-4 h-full min-h-[150px] bg-white/70 backdrop-blur shadow-lg rounded-b-lg mx-4 rounded-lg mb-4 relative z-[2] flex flex-col flex-1 '>
+          <motion.div className='flex flex-col gap-3 h-full pt-4'>
             <motion.div className='font-semibold text-lg tracking-tight leading-none px-4'>
               {title}
             </motion.div>
-            <motion.div className='text-sm leading-tight px-4 line-clamp-3 text-neutral-600'>
+            <motion.div className='text-sm leading-tight px-4 line-clamp-4 text-neutral-600'>
               {description}
             </motion.div>
           </motion.div>
