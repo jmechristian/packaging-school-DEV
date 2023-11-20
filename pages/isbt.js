@@ -12,6 +12,7 @@ import { motion } from 'framer-motion';
 
 import NewCouseCard from '../components/shared/NewCouseCard';
 import ExpandSearch from '../components/shared/ExpandSearch';
+import VideoPlayer from '../components/VideoPlayer';
 
 const Page = () => {
   const HighlightContent = ({ link }) => {
@@ -100,11 +101,19 @@ const Page = () => {
           </div>
         </div>
         <div className='w-full h-full'>
-          <div className='aspect-[16/9] bg-neutral-500'>Video</div>
+          <div className='aspect-[16/9] bg-neutral-500'>
+            <VideoPlayer
+              videoEmbedLink={
+                'https://www.youtube.com/embed/IWL8R7Xk8cU?si=bifvut2F-qRq6Igr'
+              }
+              light={false}
+              playing={false}
+            />
+          </div>
         </div>
       </div>
-      <div className='flex flex-col bg-base-mid w-full mt-6 pb-3'>
-        <div className='max-w-7xl w-full mx-auto flex flex-col gap-4 py-20 shadow-inner-xl'>
+      <div className='flex flex-col bg-base-mid w-full pb-3 max-w-[1400px] mx-auto lg:rounded-xl shadow-lg'>
+        <div className='max-w-7xl w-full mx-auto flex flex-col gap-4 py-16'>
           <div className='flex flex-col gap-3 justify-center text-center text-white mb-9'>
             <h2 className='w-full font-bold lg:text-4xl text-white text-center'>
               <span className='text-brand-yellow-light'>Featured</span> Learning
