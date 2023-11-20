@@ -17,8 +17,6 @@ import Marquee from '../components/shared/Marquee';
 import Link from 'next/link';
 
 const Page = ({ customer }) => {
-  console.log(customer);
-
   const { allCourses } = useSelector((state) => state.course_filter);
 
   const initCourses = useMemo(() => {
@@ -35,7 +33,7 @@ const Page = ({ customer }) => {
   }, [customer, allCourses]);
 
   return (
-    <div className='w-full mx-auto max-w-6xl mt-6 px-6 xl:px-0 bg-[#1b1b1b]'>
+    <div className='w-full mx-auto max-w-6xl rounded-b-xl lg:mt-6  bg-[#1b1b1b] shadow-lg'>
       <div>
         <Image
           alt='Cyber Monday Black Friday Sales 20 Percent Off All Courses and Certificates'
@@ -45,23 +43,23 @@ const Page = ({ customer }) => {
           layout='responsive'
         />
       </div>
-      <div className='w-full mt-1'>
+      <div className='w-full mt-3'>
         <Marquee />
       </div>
-      <div className='max-w-4xl mx-auto flex flex-col gap-10 items-center text-center pt-20 pb-28'>
-        <div className='text-2xl font-bold  bg-base-mid px-8 py-3 text-white'>
+      <div className='max-w-4xl mx-auto flex flex-col gap-10 items-center text-center pt-9 md:pt-20 pb-12 md:pb-28'>
+        <div className='w-full md:w-fit text-xl md:text-2xl font-bold  bg-base-mid px-8 py-3 text-white'>
           November 24<sup>nd</sup> - December 1<sup>st</sup>
         </div>
-        <div className='text-3xl text-white leading-normal'>
+        <div className='text-xl lg:text-3xl text-white leading-normal px-6 lg:px-0'>
           Master more for less! Take advantage of 25% of all Courses and
           Certificate Programs (if applied by Dec 1). This is a great time to
           enroll in that program you&apos;ve been eyeing all year!
         </div>
       </div>
       <div className='flex flex-col bg-base-mid w-full pb-3 max-w-[1400px] mx-auto lg:rounded-t-xl shadow-lg'>
-        <div className='max-w-7xl w-full mx-auto flex flex-col gap-4 py-24'>
-          <div className='flex flex-col gap-3 justify-center text-center text-white mb-9'>
-            <h2 className='w-full font-bold lg:text-4xl text-white text-center'>
+        <div className='max-w-7xl w-full mx-auto flex flex-col gap-4 py-12 md:py-24'>
+          <div className='flex flex-col gap-3 justify-center text-center text-white mb-9 px-6 lg:px-0'>
+            <h2 className='w-full font-bold text-3xl lg:text-4xl text-white text-center'>
               <span className='text-brand-yellow-light'>Comprehensive</span>{' '}
               Certificate Programs
             </h2>
@@ -118,9 +116,9 @@ const Page = ({ customer }) => {
           </div>
         </div>
       </div>
-      <div className='bg-neutral-100 pt-24 pb-12 mb-24'>
+      <div className='bg-neutral-100 pt-12 md:pt-24 pb-12 mb-24'>
         <div className='flex flex-col gap-3 justify-center mb-9'>
-          <h2 className='w-full font-bold lg:text-4xl text-center'>
+          <h2 className='w-full font-bold text-3xl lg:text-4xl px-6 lg:px-0 text-center'>
             <span className='text-clemson'>Industry Leading</span> Courses
           </h2>
           <div className='text-lg max-w-3xl mx-auto text-center'>
@@ -129,21 +127,24 @@ const Page = ({ customer }) => {
           </div>
           <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-9 max-w-6xl mx-auto mt-9'>
             {allCourses &&
-              initCourses.map((link) => (
-                <NewCouseCard
-                  key={link.id}
-                  title={link.title}
-                  description={link.subheadline}
-                  background={link.seoImage}
-                  link={link.link}
-                  link_text={'Select Course'}
-                  Icon={SparklesIcon}
-                  video={link.preview}
-                  courseId={link.id}
-                  targetedId={link.targetedId}
-                  tracked={true}
-                />
-              ))}
+              initCourses
+                .sort((a, b) => b.clicks - a.clicks)
+                .map((link) => (
+                  <NewCouseCard
+                    key={link.id}
+                    title={link.title}
+                    description={link.subheadline}
+                    background={link.seoImage}
+                    link={link.link}
+                    link_text={'Select Course'}
+                    Icon={SparklesIcon}
+                    video={link.preview}
+                    courseId={link.id}
+                    targetedId={link.targetedId}
+                    tracked={true}
+                    clicks={link.clicks}
+                  />
+                ))}
           </div>
           <div className='w-full flex justify-center items-center mt-12'>
             <div className='bg-clemson hover:bg-clemson-dark text-lg font-bold text-white px-6 py-3 rounded-lg shadow'>
@@ -154,6 +155,7 @@ const Page = ({ customer }) => {
           </div>
         </div>
       </div>
+      <div className='h-[1px] w-full rounded-b-xl mb-16'></div>
     </div>
   );
 };

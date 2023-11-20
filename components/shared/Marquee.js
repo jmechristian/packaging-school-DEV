@@ -24,7 +24,7 @@ const Marquee = () => {
           variants={marqueeVariants}
           animate='animate'
         >
-          <h1 className='font-bit text-7xl text-brand-yellow font-normal'>
+          <h1 className='font-bit text-4xl lg:text-7xl text-brand-yellow font-normal'>
             25% Off Everything! 25% Off Everything! 25% Off Everything! 25% Off
             Everything! 25% Off Everything! 25% Off Everything! 25% Off
             Everything! 25% Off Everything! 25% Off Everything! 25% Off
