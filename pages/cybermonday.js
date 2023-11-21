@@ -55,9 +55,16 @@ const Page = ({ customer }) => {
           Certificate Programs (if applied by Dec 1). This is a great time to
           enroll in that program you&apos;ve been eyeing all year!
         </div>
+        <div className='text-white text-xl lg:text-3xl'>
+          Use Code{' '}
+          <span className='text-brand-yellow-light font-bold'>
+            BLACKFRIDAY23
+          </span>{' '}
+          at Checkout
+        </div>
       </div>
       <div className='flex flex-col bg-base-mid w-full pb-3 max-w-[1400px] mx-auto lg:rounded-t-xl shadow-lg'>
-        <div className='max-w-7xl w-full mx-auto flex flex-col gap-4 py-12 md:py-24'>
+        <div className='max-w-7xl w-full mx-auto flex flex-col gap-4 py-16 md:py-28'>
           <div className='flex flex-col gap-3 justify-center text-center text-white mb-9 px-6 lg:px-0'>
             <h2 className='w-full font-bold text-3xl lg:text-4xl text-white text-center'>
               <span className='text-brand-yellow-light'>Comprehensive</span>{' '}
