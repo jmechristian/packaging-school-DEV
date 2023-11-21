@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { Suspense, useMemo } from 'react';
 import Image from 'next/image';
 import {
   AcademicCapIcon,
@@ -132,27 +132,29 @@ const Page = ({ customer }) => {
             Unparalleled in quality, these courses are meticulously designed by
             subject matter experts at the forefront of the industry.
           </div>
-          <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-9 max-w-6xl mx-auto mt-9'>
-            {allCourses &&
-              initCourses
-                .sort((a, b) => b.clicks - a.clicks)
-                .map((link) => (
-                  <NewCouseCard
-                    key={link.id}
-                    title={link.title}
-                    description={link.subheadline}
-                    background={link.seoImage}
-                    link={link.link}
-                    link_text={'Select Course'}
-                    Icon={SparklesIcon}
-                    video={link.preview}
-                    courseId={link.id}
-                    targetedId={link.targetedId}
-                    tracked={true}
-                    clicks={link.clicks}
-                  />
-                ))}
-          </div>
+          <Suspense>
+            <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-9 max-w-6xl mx-auto mt-9'>
+              {allCourses &&
+                initCourses
+                  .sort((a, b) => b.clicks - a.clicks)
+                  .map((link) => (
+                    <NewCouseCard
+                      key={link.id}
+                      title={link.title}
+                      description={link.subheadline}
+                      background={link.seoImage}
+                      link={link.link}
+                      link_text={'Select Course'}
+                      Icon={SparklesIcon}
+                      video={link.preview}
+                      courseId={link.id}
+                      targetedId={link.targetedId}
+                      tracked={true}
+                      clicks={link.clicks}
+                    />
+                  ))}
+            </div>
+          </Suspense>
           <div className='w-full flex justify-center items-center mt-12'>
             <div className='bg-clemson hover:bg-clemson-dark text-lg font-bold text-white px-6 py-3 rounded-lg shadow'>
               <Link href={'/all_courses'} passHref>

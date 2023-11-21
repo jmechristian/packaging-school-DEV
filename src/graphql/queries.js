@@ -3626,6 +3626,37 @@ export const listCustomers = /* GraphQL */ `
     }
   }
 `;
+export const getSalesBar = /* GraphQL */ `
+  query GetSalesBar($id: ID!) {
+    getSalesBar(id: $id) {
+      id
+      text
+      link
+      icon
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listSalesBars = /* GraphQL */ `
+  query ListSalesBars(
+    $filter: ModelSalesBarFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listSalesBars(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        text
+        link
+        icon
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
 export const getCertificateCourses = /* GraphQL */ `
   query GetCertificateCourses($id: ID!) {
     getCertificateCourses(id: $id) {

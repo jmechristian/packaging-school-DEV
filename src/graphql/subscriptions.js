@@ -4849,6 +4849,42 @@ export const onDeleteCustomer = /* GraphQL */ `
     }
   }
 `;
+export const onCreateSalesBar = /* GraphQL */ `
+  subscription OnCreateSalesBar {
+    onCreateSalesBar {
+      id
+      text
+      link
+      icon
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateSalesBar = /* GraphQL */ `
+  subscription OnUpdateSalesBar {
+    onUpdateSalesBar {
+      id
+      text
+      link
+      icon
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteSalesBar = /* GraphQL */ `
+  subscription OnDeleteSalesBar {
+    onDeleteSalesBar {
+      id
+      text
+      link
+      icon
+      createdAt
+      updatedAt
+    }
+  }
+`;
 export const onCreateCertificateCourses = /* GraphQL */ `
   subscription OnCreateCertificateCourses {
     onCreateCertificateCourses {

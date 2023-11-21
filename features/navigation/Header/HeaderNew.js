@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { Fragment, Suspense, useState } from 'react';
 import { Dialog, Popover, Tab, Transition } from '@headlessui/react';
 import { useSelector } from 'react-redux';
 import {
@@ -20,9 +20,15 @@ import { showSearch } from '../navigationSlice';
 import { setDark, setLight, toggleSignInModal } from '../../layout/layoutSlice';
 import { useDispatch } from 'react-redux';
 import { LightBulbIcon } from '@heroicons/react/24/outline';
-import { MoonIcon, BoltIcon } from '@heroicons/react/24/solid';
+import {
+  MoonIcon,
+  BoltIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+} from '@heroicons/react/24/solid';
 import LogoSquare from '../../../components/layout/LogoSquare';
 import { useRouter } from 'next/router';
+import SalesBar from './SalesBar';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -202,74 +208,9 @@ export default function HeaderNew() {
       <header className='relative'>
         <nav aria-label='Top'>
           {/* Top navigation */}
-          <div className='bg-gray-900 dark:bg-dark-dark flex items-center justify-center'>
-            <div className='flex min-h-10 max-w-7xl items-center justify-between w-full px-8 xl:px-0 py-3'>
-              <div
-                className='flex justify-center items-center text-center lg:flex-none cursor-pointer'
-                onClick={() =>
-                  router.push('/certificate-of-mastery-in-packaging-management')
-                }
-              >
-                <div className='flex gap-1 items-center font-greycliff'>
-                  <div>
-                    <BoltIcon className='w-5 h-5 fill-white dark:fill-base-brand' />
-                  </div>
-                  <div className='text-white text-sm md:text-base leading-tight'>
-                    Deadline Alert! CMPM registration for Winter ends Nov. 24
-                  </div>
-                </div>
-              </div>
-
-              <div className='hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6'>
-                {/* {!user ? (
-                  <>
-                    <Link
-                      href={`/api/auth/login?returnTo=${currentPath}`}
-                      className='text-sm font-semibold text-clemson hover:text-gray-100 font-greycliff'
-                    >
-                      <a className='text-sm font-semibold text-clemson hover:text-gray-100 font-greycliff'>
-                        Create a FREE account
-                      </a>
-                    </Link>
-                    <span className='h-6 w-px bg-gray-600' aria-hidden='true' />
-                    <Link
-                      href={`/api/auth/login?returnTo=${currentPath}`}
-                      className='text-sm font-medium text-white hover:text-gray-100 font-greycliff'
-                    >
-                      <a className='text-sm font-medium text-white hover:text-gray-100 font-greycliff'>
-                        Sign in
-                      </a>
-                    </Link>
-                  </>
-                ) : (
-                  <>
-                    <Link href='/profile'>
-                      <a className='text-sm font-semibold text-clemson  hover:text-gray-100 font-greycliff'>
-                        Hello, {user && user.name}
-                      </a>
-                    </Link>
-                    <span className='h-6 w-px bg-gray-600' aria-hidden='true' />
-                    <Link
-                      href='/api/auth/logout'
-                      className='text-sm font-medium text-white hover:text-gray-100 font-greycliff'
-                    >
-                      <a className='text-sm font-medium text-white hover:text-gray-100 font-greycliff'>
-                        Sign Out
-                      </a>
-                    </Link>
-                  </>
-                )} */}
-                <a
-                  href='https://learn.packagingschool.com'
-                  target='_blank'
-                  rel='noreferrer'
-                  className='text-clemson font-semibold text-sm'
-                >
-                  Go To My Learning Dashboard
-                </a>
-              </div>
-            </div>
-          </div>
+          <Suspense>
+            <SalesBar />
+          </Suspense>
 
           {/* Secondary navigation */}
           <div className='bg-white dark:bg-dark-mid'>

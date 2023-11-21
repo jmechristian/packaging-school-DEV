@@ -71,7 +71,7 @@ const APSExperts = () => {
     <div className='py-12 sm:py-16'>
       <div className='mx-auto max-w-7xl px-6 lg:text-center lg:px-8'>
         <div className='mx-auto max-w-2xl'>
-          <h2 className='text-4xl lg:text-5xl font-semibold tracking-tight dark:text-white sm:text-5xl font-greycliff'>
+          <h2 className='text-4xl lg:text-5xl font-semibold tracking-tight dark:dark:text-white sm:text-5xl font-greycliff'>
             Meet The Experts
           </h2>
         </div>
@@ -89,7 +89,7 @@ const APSExperts = () => {
                 src={person.imageUrl}
                 alt=''
               />
-              <h3 className='mt-6 text-base font-semibold leading-7 tracking-tight text-white'>
+              <h3 className='mt-6 text-base font-semibold leading-7 tracking-tight dark:text-white'>
                 {person.name}
               </h3>
               <p className='text-sm leading-6 text-slate-400'>{person.role}</p>

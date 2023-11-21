@@ -5155,6 +5155,51 @@ export const deleteCustomer = /* GraphQL */ `
     }
   }
 `;
+export const createSalesBar = /* GraphQL */ `
+  mutation CreateSalesBar(
+    $input: CreateSalesBarInput!
+    $condition: ModelSalesBarConditionInput
+  ) {
+    createSalesBar(input: $input, condition: $condition) {
+      id
+      text
+      link
+      icon
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateSalesBar = /* GraphQL */ `
+  mutation UpdateSalesBar(
+    $input: UpdateSalesBarInput!
+    $condition: ModelSalesBarConditionInput
+  ) {
+    updateSalesBar(input: $input, condition: $condition) {
+      id
+      text
+      link
+      icon
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteSalesBar = /* GraphQL */ `
+  mutation DeleteSalesBar(
+    $input: DeleteSalesBarInput!
+    $condition: ModelSalesBarConditionInput
+  ) {
+    deleteSalesBar(input: $input, condition: $condition) {
+      id
+      text
+      link
+      icon
+      createdAt
+      updatedAt
+    }
+  }
+`;
 export const createCertificateCourses = /* GraphQL */ `
   mutation CreateCertificateCourses(
     $input: CreateCertificateCoursesInput!

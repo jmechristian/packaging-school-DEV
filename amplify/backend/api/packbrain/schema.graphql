@@ -488,3 +488,11 @@ type Customer @model @auth(rules: [{ allow: public }]) {
   courses: [TrackedCourse]
     @hasMany(indexName: "trackedByCustomer", fields: ["id"])
 }
+
+# Sales Bar
+type SalesBar @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  text: String!
+  link: String!
+  icon: String @default(value: "BoltIcon")
+}
