@@ -5,9 +5,11 @@ import {
   createCMPMForm,
   updateUser,
 } from '../../../src/graphql/mutations';
+import { usersByEmail } from '../../../src/graphql/queries';
 import Cookies from 'js-cookie';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleSignInModal } from '../../../features/layout/layoutSlice';
+import { setUser } from '../../../features/auth/authslice';
 import CMPMPersonalInfo from './CMPMPersonalInfo';
 import CMPMProfessionalInfo from './CMPMProfessionalInfo';
 import { useRouter } from 'next/router';
@@ -32,6 +34,17 @@ const CMPMForm = ({ methods, email, free }) => {
   const captureEmail = (val) => setIsEmail(val);
 
   const dispatch = useDispatch();
+
+  const getAndSetUser = async () => {
+    const currentUser = await API.graphql({
+      query: usersByEmail,
+      variables: { email: user.email },
+    });
+
+    if (currentUser.data.usersByEmail.items[0]) {
+      dispatch(setUser(currentUser.data.usersByEmail.items[0]));
+    }
+  };
 
   const sendFormToAWS = async () => {
     if (user && user.cmpmFormID) {
@@ -157,8 +170,7 @@ const CMPMForm = ({ methods, email, free }) => {
       setIsLoading(false);
       setIsUpdated(true);
       router.push('/cmpm-application-confirmation');
-    }
-    if (user && user.cmpmFormID) {
+    } else if (user && user.cmpmFormID) {
       setIsUpdated(false);
       setIsLoading(true);
       await API.graphql({
@@ -188,7 +200,9 @@ const CMPMForm = ({ methods, email, free }) => {
             yearGoals: methods.getValues('yearGoals'),
             cmpmGoals: methods.getValues('cmpmGoals'),
             moreAboutYou: methods.getValues('moreAboutYou'),
-            paymentConfirmation: methods.getValues('paymentConfirmation'),
+            paymentConfirmation: user.cmpmForm.paymentConfirmation
+              ? user.cmpmForm.paymentConfirmation
+              : methods.getValues('paymentConfirmation'),
           },
         },
       });
@@ -246,12 +260,14 @@ const CMPMForm = ({ methods, email, free }) => {
     }
   };
 
-  const saveHandler = () => {
+  const saveHandler = async (e) => {
+    e.preventDefault();
     const data = methods.getValues();
     console.log(data);
     const rawData = JSON.stringify(data);
     if (user) {
-      sendFormToAWS(data);
+      await sendFormToAWS(data);
+      getAndSetUser();
     } else if (!user) {
       Cookies.set('cmpmFormSave', rawData, { expires: 7 });
       dispatch(toggleSignInModal());
@@ -272,7 +288,7 @@ const CMPMForm = ({ methods, email, free }) => {
     });
   };
 
-  const onSubmit = async (e, data) => {
+  const onSubmit = async (data) => {
     await submitFormToAWS(data);
     sendSubmitNotification(data);
   };
@@ -324,7 +340,7 @@ const CMPMForm = ({ methods, email, free }) => {
         <div className='flex gap-2 items-center'>
           <div
             className='flex cursor-pointer justify-center items-center w-fit px-6 py-3 rounded-lg ring-2 ring-slate-400 text-slate-500 font-greycliff font-semibold '
-            onClick={saveHandler}
+            onClick={(e) => saveHandler(e)}
           >
             Save Form
           </div>
