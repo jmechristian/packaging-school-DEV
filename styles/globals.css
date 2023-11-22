@@ -416,7 +416,7 @@ h4 {
   margin-top: 10px;
   margin-left: 5px;
   margin-right: 5px;
-  padding: 8px 0;
+  padding: 3px 6px;
   display: flex;
   justify-content: space-between;
   border-radius: 18px/40px;
@@ -441,7 +441,7 @@ h4 {
   align-self: center;
 }
 .frame-art {
-  height: 50%;
+  height: auto;
   margin: 0 10px;
 }
 
@@ -463,7 +463,7 @@ h4 {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  padding: 50px 6px;
+  padding: 6px;
 }
 
 .flavour-text {

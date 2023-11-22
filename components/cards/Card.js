@@ -1,15 +1,20 @@
 import React from 'react';
 import { CircleStackIcon, PaintBrushIcon } from '@heroicons/react/24/solid';
-import LegendaryGem from './LegendaryGem';
+import LegendaryGem from './gems/LegendaryGem';
 
 const Card = () => {
   return (
-    <div class='card-container'>
-      <div class='card-background'>
+    <div class='w-[500px] lg:w-full pb-5  h-[500px] lg:h-full border rounded-[25px] bg-[#171314] shadow-lg'>
+      <div
+        class='h-[90%] mx-[20px] mt-[20px] mb-0 rounded-t-[6px] rounded-b-[8%] bg-cover bg-no-repeat flex bg-[#bbb] z-0'
+        style={{
+          backgroundImage:
+            "url('https://packschool.s3.amazonaws.com/card-back.png')",
+        }}
+      >
         <div class='card-frame'>
           <div class='frame-header'>
-            <h1 class='name text-xl'>Package Design Workflow</h1>
-            <i class='ms ms-g' id='mana-icon'></i>
+            <h1>Package Design Workflow</h1>
           </div>
 
           <img
@@ -18,10 +23,8 @@ const Card = () => {
             alt='nissa art'
           />
 
-          <div class='frame-type-line '>
-            <h1 class='type leading-tight items-center text-lg'>
-              Material, Design
-            </h1>
+          <div class='frame-type-line'>
+            <h1 class='leading-tight items-center'>Material, Design</h1>
             <div className='flex items-center gap-1'>
               <div className=''>
                 <CircleStackIcon className='w-5 h-5 fill-neutral-900' />
@@ -32,16 +35,13 @@ const Card = () => {
             </div>
           </div>
 
-          <div class='frame-text-box'>
-            <div class='description ftb-inner-margin text-lg leading-tight'>
+          <div class='frame-text-box h-40'>
+            <div class='description pt-2 pb-3 text-lg lg:text-sm lg:leading-tight leading-tight'>
               A course that provides the complete pathway of the design process
               from concept to manufacturing. We are going to review design
               terminology, highlight important design theories, such as
               typography, color, imagery and materials.
             </div>
-            <p class='flavour-text'>
-              &quot;For the life of every plane, I will keep watch.&quot;{' '}
-            </p>
           </div>
 
           <div class='frame-bottom-info inner-margin relative z-0'>
