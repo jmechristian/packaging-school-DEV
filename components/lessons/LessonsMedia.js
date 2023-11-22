@@ -3,7 +3,7 @@ import React from 'react';
 const LessonsMedia = ({ videoUrl }) => {
   return (
     <div>
-      <div className='max-w-7xl mx-auto aspect-[16/9] object-cover'>
+      <div className='max-w-7xl mx-auto aspect-[16/9] object-cover border border-neutral-500'>
         {/* <video
           className='w-full h-full'
           controls

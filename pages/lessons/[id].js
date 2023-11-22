@@ -29,8 +29,6 @@ const Page = ({ lesson, lessons }) => {
   const [unlocked, setUnlocked] = useState(false);
   const [isPage, setIsPage] = useState(0);
 
-  console.log(lesson);
-
   const setMedia = () => {
     switch (lesson.mediaType) {
       case 'IMAGE':
@@ -105,7 +103,7 @@ const Page = ({ lesson, lessons }) => {
               ''
             )}
           </div> */}
-          <main className='flex flex-col gap-20 pt-12 dark:bg-dark-dark bg-white'>
+          <main className='flex flex-col gap-24 pt-20 dark:bg-dark-dark bg-white'>
             <LessonsHeader
               title={lesson.title}
               subhead={lesson.subhead}
