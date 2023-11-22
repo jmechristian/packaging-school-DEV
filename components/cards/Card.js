@@ -4,7 +4,7 @@ import LegendaryGem from './gems/LegendaryGem';
 
 const Card = () => {
   return (
-    <div class='w-[500px] lg:w-full pb-5  h-[500px] lg:h-full border rounded-[25px] bg-[#171314] shadow-lg'>
+    <div class='max-w-[500px] w-full pb-5  max-h-[500px] h-full border rounded-[25px] bg-[#171314] shadow-lg'>
       <div
         class='h-[90%] mx-[20px] mt-[20px] mb-0 rounded-t-[6px] rounded-b-[8%] bg-cover bg-no-repeat flex bg-[#bbb] z-0'
         style={{
@@ -35,7 +35,7 @@ const Card = () => {
             </div>
           </div>
 
-          <div class='frame-text-box h-40'>
+          <div class='frame-text-box h-48'>
             <div class='description pt-2 pb-3 text-lg lg:text-sm lg:leading-tight leading-tight'>
               A course that provides the complete pathway of the design process
               from concept to manufacturing. We are going to review design

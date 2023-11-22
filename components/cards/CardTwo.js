@@ -3,11 +3,7 @@ import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { FiMousePointer } from 'react-icons/fi';
 
 const CardTwo = () => {
-  return (
-    <div className='grid w-full place-content-center bg-gradient-to-br from-indigo-500 to-violet-500 px-4 py-12 text-slate-900'>
-      <TiltCard />
-    </div>
-  );
+  return <TiltCard />;
 };
 
 const TiltCard = () => {
@@ -58,7 +54,7 @@ const TiltCard = () => {
         rotateX,
         transformStyle: 'preserve-3d',
       }}
-      className='relative h-96 w-72 rounded-xl bg-gradient-to-br from-indigo-300 to-violet-300'
+      className='relative h-[425px] w-[300px] rounded-xl bg-gradient-to-br from-indigo-300 to-violet-300'
     >
       <div
         style={{

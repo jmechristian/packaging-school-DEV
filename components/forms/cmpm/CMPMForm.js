@@ -272,12 +272,12 @@ const CMPMForm = ({ methods, email, free }) => {
     });
   };
 
-  const onSubmit = async (data) => {
+  const onSubmit = async (e, data) => {
     await submitFormToAWS(data);
     sendSubmitNotification(data);
   };
 
-  const onError = (errors, e) => console.log(errors, e);
+  const onError = (errors, data) => console.log('errors', errors, 'data', data);
 
   return (
     <form
