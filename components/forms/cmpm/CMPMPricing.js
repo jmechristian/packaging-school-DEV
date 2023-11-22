@@ -21,7 +21,7 @@ const CMPMPricing = ({ email, free }) => {
   useEffect(() => {
     if (user && user.cmpmForm && user.cmpmForm.paymentConfirmation) {
       setPaymentConfirmation(user.cmpmForm.paymentConfirmation);
-    } else setPaymentConfirmation('');
+    }
   }, [, user]);
 
   const [paymentConfirmation, setPaymentConfirmation] = useState('');
