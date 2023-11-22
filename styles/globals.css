@@ -265,7 +265,7 @@ h4 {
 }
 
 .tiptap h3 {
-  @apply text-neutral-900 dark:text-neutral-500 text-2xl font-bold leading-tight tracking-tight mb-2;
+  @apply text-neutral-900 dark:text-brand-yellow-light text-2xl font-bold leading-tight tracking-tight mb-2;
 }
 
 .tiptap ul {
