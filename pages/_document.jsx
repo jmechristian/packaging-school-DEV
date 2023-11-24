@@ -36,7 +36,7 @@ export default function Document() {
           href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'
           rel='stylesheet'
         ></link>
-        {/* <Script
+        <Script
           id='hotjar'
           strategy='afterInteractive'
           dangerouslySetInnerHTML={{
@@ -49,7 +49,7 @@ export default function Document() {
               a.appendChild(r);
           })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');`,
           }}
-        /> */}
+        />
       </Head>
       <body className='flex flex-col min-h-screen' id='home'>
         <Main />
