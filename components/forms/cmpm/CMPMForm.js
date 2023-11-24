@@ -263,7 +263,7 @@ const CMPMForm = ({ methods, email, free }) => {
   const saveHandler = async (e) => {
     e.preventDefault();
     const data = methods.getValues();
-    console.log(data);
+    // console.log(data);
     const rawData = JSON.stringify(data);
     if (user) {
       await sendFormToAWS(data);

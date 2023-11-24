@@ -12,6 +12,8 @@ import CPSProfessionalInfo from './CPSProfessionalInfo';
 import { useRouter } from 'next/router';
 import CPSGoals from './CPSGoals';
 import CPSApply from './CPSApply';
+import { usersByEmail } from '../../../src/graphql/queries';
+import { setUser } from '../../../features/auth/authslice';
 
 const CPSForm = ({ methods, email, free }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -252,10 +254,22 @@ const CPSForm = ({ methods, email, free }) => {
     }
   };
 
-  const saveHandler = () => {
+  const getAndSetUser = async () => {
+    const currentUser = await API.graphql({
+      query: usersByEmail,
+      variables: { email: user.email },
+    });
+
+    if (currentUser.data.usersByEmail.items[0]) {
+      dispatch(setUser(currentUser.data.usersByEmail.items[0]));
+    }
+  };
+
+  const saveHandler = async () => {
     const data = methods.getValues();
     if (user) {
-      sendFormToAWS(data);
+      await sendFormToAWS(data);
+      getAndSetUser();
     } else if (!user) {
       dispatch(toggleSignInModal());
     }

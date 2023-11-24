@@ -1,13 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import CheckoutForm from '../../layout/CheckoutForm';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 import { useFormContext } from 'react-hook-form';
+import { useSelector } from 'react-redux';
 
 const CPSPricing = ({ email, free }) => {
+  const { user } = useSelector((state) => state.auth);
   const [stripePromise, setStripePromise] = useState(() =>
     loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
   );
+
+  useEffect(() => {
+    if (user && user.cpsForm && user.cpsForm.paymentConfirmation) {
+      setPaymentConfirmation(user.cpsForm.paymentConfirmation);
+    }
+  }, [user]);
 
   const [paymentConfirmation, setPaymentConfirmation] = useState('');
 
