@@ -164,6 +164,7 @@ const CMPMForm = ({ methods, email, free }) => {
             cmpmGoals: methods.getValues('cmpmGoals'),
             moreAboutYou: methods.getValues('moreAboutYou'),
             paymentConfirmation: methods.getValues('paymentConfirmation'),
+            status: 'SUBMITTED',
           },
         },
       });
@@ -203,6 +204,7 @@ const CMPMForm = ({ methods, email, free }) => {
             paymentConfirmation: user.cmpmForm.paymentConfirmation
               ? user.cmpmForm.paymentConfirmation
               : methods.getValues('paymentConfirmation'),
+            status: 'SUBMITTED',
           },
         },
       });
@@ -241,6 +243,7 @@ const CMPMForm = ({ methods, email, free }) => {
             cmpmGoals: methods.getValues('cmpmGoals'),
             moreAboutYou: methods.getValues('moreAboutYou'),
             paymentConfirmation: methods.getValues('paymentConfirmation'),
+            status: 'SUBMITTED',
           },
         },
       });

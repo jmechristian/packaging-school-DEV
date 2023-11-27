@@ -155,6 +155,7 @@ const CPSForm = ({ methods, email, free }) => {
             paymentConfirmation: free
               ? 'WAIVED'
               : methods.getValues('paymentConfirmation'),
+            status: 'SUBMITTED',
           },
         },
       });
@@ -195,6 +196,7 @@ const CPSForm = ({ methods, email, free }) => {
             paymentConfirmation: free
               ? 'WAIVED'
               : methods.getValues('paymentConfirmation'),
+            status: 'SUBMITTED',
           },
         },
       });
@@ -235,6 +237,7 @@ const CPSForm = ({ methods, email, free }) => {
             paymentConfirmation: free
               ? 'WAIVED'
               : methods.getValues('paymentConfirmation'),
+            status: 'SUBMITTED',
           },
         },
       });

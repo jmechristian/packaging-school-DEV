@@ -1488,6 +1488,7 @@ export const createUser = /* GraphQL */ `
         birthYear
         optOut
         paymentConfirmation
+        status
         createdOn
         updatedOn
         cMPMFormUserId
@@ -1543,6 +1544,7 @@ export const createUser = /* GraphQL */ `
         elective
         optOut
         paymentConfirmation
+        status
         createdOn
         updatedOn
         cPSFormUserId
@@ -1699,6 +1701,7 @@ export const updateUser = /* GraphQL */ `
         birthYear
         optOut
         paymentConfirmation
+        status
         createdOn
         updatedOn
         cMPMFormUserId
@@ -1754,6 +1757,7 @@ export const updateUser = /* GraphQL */ `
         elective
         optOut
         paymentConfirmation
+        status
         createdOn
         updatedOn
         cPSFormUserId
@@ -1910,6 +1914,7 @@ export const deleteUser = /* GraphQL */ `
         birthYear
         optOut
         paymentConfirmation
+        status
         createdOn
         updatedOn
         cMPMFormUserId
@@ -1965,6 +1970,7 @@ export const deleteUser = /* GraphQL */ `
         elective
         optOut
         paymentConfirmation
+        status
         createdOn
         updatedOn
         cPSFormUserId
@@ -2093,6 +2099,7 @@ export const createCMPMForm = /* GraphQL */ `
           birthYear
           optOut
           paymentConfirmation
+          status
           createdOn
           updatedOn
           cMPMFormUserId
@@ -2125,6 +2132,7 @@ export const createCMPMForm = /* GraphQL */ `
           elective
           optOut
           paymentConfirmation
+          status
           createdOn
           updatedOn
           cPSFormUserId
@@ -2174,6 +2182,7 @@ export const createCMPMForm = /* GraphQL */ `
       birthYear
       optOut
       paymentConfirmation
+      status
       createdOn
       updatedOn
       cMPMFormUserId
@@ -2229,6 +2238,7 @@ export const updateCMPMForm = /* GraphQL */ `
           birthYear
           optOut
           paymentConfirmation
+          status
           createdOn
           updatedOn
           cMPMFormUserId
@@ -2261,6 +2271,7 @@ export const updateCMPMForm = /* GraphQL */ `
           elective
           optOut
           paymentConfirmation
+          status
           createdOn
           updatedOn
           cPSFormUserId
@@ -2310,6 +2321,7 @@ export const updateCMPMForm = /* GraphQL */ `
       birthYear
       optOut
       paymentConfirmation
+      status
       createdOn
       updatedOn
       cMPMFormUserId
@@ -2365,6 +2377,7 @@ export const deleteCMPMForm = /* GraphQL */ `
           birthYear
           optOut
           paymentConfirmation
+          status
           createdOn
           updatedOn
           cMPMFormUserId
@@ -2397,6 +2410,7 @@ export const deleteCMPMForm = /* GraphQL */ `
           elective
           optOut
           paymentConfirmation
+          status
           createdOn
           updatedOn
           cPSFormUserId
@@ -2446,6 +2460,7 @@ export const deleteCMPMForm = /* GraphQL */ `
       birthYear
       optOut
       paymentConfirmation
+      status
       createdOn
       updatedOn
       cMPMFormUserId
@@ -2501,6 +2516,7 @@ export const createCPSForm = /* GraphQL */ `
           birthYear
           optOut
           paymentConfirmation
+          status
           createdOn
           updatedOn
           cMPMFormUserId
@@ -2533,6 +2549,7 @@ export const createCPSForm = /* GraphQL */ `
           elective
           optOut
           paymentConfirmation
+          status
           createdOn
           updatedOn
           cPSFormUserId
@@ -2583,6 +2600,7 @@ export const createCPSForm = /* GraphQL */ `
       elective
       optOut
       paymentConfirmation
+      status
       createdOn
       updatedOn
       cPSFormUserId
@@ -2638,6 +2656,7 @@ export const updateCPSForm = /* GraphQL */ `
           birthYear
           optOut
           paymentConfirmation
+          status
           createdOn
           updatedOn
           cMPMFormUserId
@@ -2670,6 +2689,7 @@ export const updateCPSForm = /* GraphQL */ `
           elective
           optOut
           paymentConfirmation
+          status
           createdOn
           updatedOn
           cPSFormUserId
@@ -2720,6 +2740,7 @@ export const updateCPSForm = /* GraphQL */ `
       elective
       optOut
       paymentConfirmation
+      status
       createdOn
       updatedOn
       cPSFormUserId
@@ -2775,6 +2796,7 @@ export const deleteCPSForm = /* GraphQL */ `
           birthYear
           optOut
           paymentConfirmation
+          status
           createdOn
           updatedOn
           cMPMFormUserId
@@ -2807,6 +2829,7 @@ export const deleteCPSForm = /* GraphQL */ `
           elective
           optOut
           paymentConfirmation
+          status
           createdOn
           updatedOn
           cPSFormUserId
@@ -2857,6 +2880,7 @@ export const deleteCPSForm = /* GraphQL */ `
       elective
       optOut
       paymentConfirmation
+      status
       createdOn
       updatedOn
       cPSFormUserId
@@ -4095,6 +4119,7 @@ export const createStudent = /* GraphQL */ `
           birthYear
           optOut
           paymentConfirmation
+          status
           createdOn
           updatedOn
           cMPMFormUserId
@@ -4127,6 +4152,7 @@ export const createStudent = /* GraphQL */ `
           elective
           optOut
           paymentConfirmation
+          status
           createdOn
           updatedOn
           cPSFormUserId
@@ -4236,6 +4262,7 @@ export const updateStudent = /* GraphQL */ `
           birthYear
           optOut
           paymentConfirmation
+          status
           createdOn
           updatedOn
           cMPMFormUserId
@@ -4268,6 +4295,7 @@ export const updateStudent = /* GraphQL */ `
           elective
           optOut
           paymentConfirmation
+          status
           createdOn
           updatedOn
           cPSFormUserId
@@ -4377,6 +4405,7 @@ export const deleteStudent = /* GraphQL */ `
           birthYear
           optOut
           paymentConfirmation
+          status
           createdOn
           updatedOn
           cMPMFormUserId
@@ -4409,6 +4438,7 @@ export const deleteStudent = /* GraphQL */ `
           elective
           optOut
           paymentConfirmation
+          status
           createdOn
           updatedOn
           cPSFormUserId
@@ -4518,6 +4548,7 @@ export const createInstructor = /* GraphQL */ `
           birthYear
           optOut
           paymentConfirmation
+          status
           createdOn
           updatedOn
           cMPMFormUserId
@@ -4550,6 +4581,7 @@ export const createInstructor = /* GraphQL */ `
           elective
           optOut
           paymentConfirmation
+          status
           createdOn
           updatedOn
           cPSFormUserId
@@ -4640,6 +4672,7 @@ export const updateInstructor = /* GraphQL */ `
           birthYear
           optOut
           paymentConfirmation
+          status
           createdOn
           updatedOn
           cMPMFormUserId
@@ -4672,6 +4705,7 @@ export const updateInstructor = /* GraphQL */ `
           elective
           optOut
           paymentConfirmation
+          status
           createdOn
           updatedOn
           cPSFormUserId
@@ -4762,6 +4796,7 @@ export const deleteInstructor = /* GraphQL */ `
           birthYear
           optOut
           paymentConfirmation
+          status
           createdOn
           updatedOn
           cMPMFormUserId
@@ -4794,6 +4829,7 @@ export const deleteInstructor = /* GraphQL */ `
           elective
           optOut
           paymentConfirmation
+          status
           createdOn
           updatedOn
           cPSFormUserId
@@ -5806,6 +5842,7 @@ export const createAPSUser = /* GraphQL */ `
           birthYear
           optOut
           paymentConfirmation
+          status
           createdOn
           updatedOn
           cMPMFormUserId
@@ -5838,6 +5875,7 @@ export const createAPSUser = /* GraphQL */ `
           elective
           optOut
           paymentConfirmation
+          status
           createdOn
           updatedOn
           cPSFormUserId
@@ -5937,6 +5975,7 @@ export const updateAPSUser = /* GraphQL */ `
           birthYear
           optOut
           paymentConfirmation
+          status
           createdOn
           updatedOn
           cMPMFormUserId
@@ -5969,6 +6008,7 @@ export const updateAPSUser = /* GraphQL */ `
           elective
           optOut
           paymentConfirmation
+          status
           createdOn
           updatedOn
           cPSFormUserId
@@ -6068,6 +6108,7 @@ export const deleteAPSUser = /* GraphQL */ `
           birthYear
           optOut
           paymentConfirmation
+          status
           createdOn
           updatedOn
           cMPMFormUserId
@@ -6100,6 +6141,7 @@ export const deleteAPSUser = /* GraphQL */ `
           elective
           optOut
           paymentConfirmation
+          status
           createdOn
           updatedOn
           cPSFormUserId

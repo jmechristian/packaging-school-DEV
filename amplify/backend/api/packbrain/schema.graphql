@@ -245,6 +245,7 @@ type CMPMForm
   birthYear: String
   optOut: Boolean
   paymentConfirmation: String
+  status: String @default(value: "DRAFT")
 }
 
 type CPSForm
@@ -277,6 +278,7 @@ type CPSForm
   elective: String
   optOut: Boolean
   paymentConfirmation: String
+  status: String @default(value: "DRAFT")
 }
 
 type AppStart
