@@ -90,34 +90,43 @@ const Page = ({ isbt }) => {
               callout={'Best Value!'}
             />
             <NewCouseCard
-              title={'Uniliever Packaging Bootcamp 101'}
+              title={'Beverage Ingredients Bundle'}
               description={
-                'This Boot Camp will serve as an introduction to the packaging industry and provide the fundamental knowledge necessary to get you up to speed.'
+                'This course covers the key ingredients used in most beverages. Each module covers chemistry, applications, quality attributes, food safety, regulatory requirements, and much more. And more importantly, especially for the product developer, is how these ingredients interact with one another to produce the intended beverage attributes. Anyone who works with beverages or ingredients will benefit from this course. Any consumer who wants more detailed and accurate information about the ingredients they consume will find it here.'
               }
               background={
-                'https://packschool.s3.amazonaws.com/unilever-brands-1.png'
+                'https://packschool.s3.amazonaws.com/isbt-seoImage.png'
               }
-              link={'#'}
+              link={'https://learn.packagingschool.com/enroll/389255'}
               link_text={'Select Course'}
               Icon={RocketLaunchIcon}
-              callout={'Unilever Developed'}
-              video={'https://www.youtube.com/watch?v=ynDhF_jYZn8'}
-              id={'806c0e2e-c4db-4c13-94f9-b49d4e8b2239'}
+              callout={'Best Value!'}
             />
             <NewCouseCard
-              title={'Uniliever Packaging Bootcamp 101'}
+              title={'Complete Gases Course'}
               description={
-                'This Boot Camp will serve as an introduction to the packaging industry and provide the fundamental knowledge necessary to get you up to speed.'
+                'The course benefits individuals who use beverage gases to create products such as carbonated soft drinks, oxygenated water, argon systems in wine processing, nitrogen for headspace control and pressurization, ozone generation, and oxygen in brewing and wastewater processes.'
               }
               background={
-                'https://packschool.s3.amazonaws.com/unilever-brands-1.png'
+                'https://packschool.s3.amazonaws.com/gases-2-seoImage.png'
               }
-              link={'#'}
+              link={'https://learn.packagingschool.com/enroll/1014824'}
               link_text={'Select Course'}
-              Icon={RocketLaunchIcon}
-              callout={'Unilever Developed'}
-              video={'https://www.youtube.com/watch?v=ynDhF_jYZn8'}
-              id={'806c0e2e-c4db-4c13-94f9-b49d4e8b2239'}
+              Icon={AcademicCapIcon}
+              callout={'Comprehensive'}
+            />
+            <NewCouseCard
+              title={'PET: Resin, Preform, and Bottle Technology'}
+              description={
+                'If you are responsible for purchasing, running PET filling lines, quality or packaging development, then this is the course for you. This course will help you understand the PET bottle making process including resins, preforms, blow molding, bottles.'
+              }
+              background={
+                'https://packschool.s3.amazonaws.com/pet-seoImage.png'
+              }
+              link={'https://learn.packagingschool.com/enroll/1338971'}
+              link_text={'Select Course'}
+              Icon={SparklesIcon}
+              callout={'Most Popular'}
             />
           </div>
         </div>
