@@ -2,15 +2,15 @@ import React, { createContext, useState } from 'react';
 import Head from 'next/head';
 import { lessonsBySlug, listLessons } from '../../src/graphql/queries';
 import { API, graphqlOperation } from 'aws-amplify';
-import LessonActivity from '../../components/lessons/LessonActivity';
-import LessonsContent from '../../components/lessons/LessonsContent';
+import { useSelector, useDispatch } from 'react-redux';
+import { LockClosedIcon, LockOpenIcon } from '@heroicons/react/24/solid';
+import { toggleSignInModal } from '../../features/layout/layoutSlice';
+
 import LessonsHeader from '../../components/lessons/LessonsHeader';
 import LessonsMedia from '../../components/lessons/LessonsMedia';
 import LinksButton from '../../components/shared/LinksButton';
 import SocialShare from '../../components/shared/SocialShare';
 import LessonSlides from '../../components/lessons/LessonSlides';
-import RelatedLessons from '../../components/shared/RelatedLessons';
-import Image from 'next/image';
 import LessonHero from '../../components/lessons/LessonHero';
 import RelatedLesson from '../../components/lessons/RelatedLesson';
 import LearningObjectives from '../../components/lessons/LearningObjectives';
@@ -22,12 +22,16 @@ export const LessonContext = createContext({
   setPageContext: () => {},
 });
 
-const GRAPHQL_ENDPOINT = process.env.GRAPHQL_ENDPOINT;
-const GRAPHQL_API_KEY = process.env.GRAPHQL_API_KEY;
+// const GRAPHQL_ENDPOINT = process.env.GRAPHQL_ENDPOINT;
+// const GRAPHQL_API_KEY = process.env.GRAPHQL_API_KEY;
 
 const Page = ({ lesson, lessons }) => {
   const [unlocked, setUnlocked] = useState(false);
   const [isPage, setIsPage] = useState(0);
+
+  const dispatch = useDispatch();
+
+  const { user } = useSelector((state) => state.auth);
 
   const setMedia = () => {
     switch (lesson.mediaType) {
@@ -39,6 +43,14 @@ const Page = ({ lesson, lessons }) => {
         return <LessonSlides slides={lesson.slides ? lesson.slides : []} />;
       default:
         return <LessonHero url={lesson.media} />;
+    }
+  };
+
+  const actionClickHandler = () => {
+    if (user) {
+      window.open(lesson.actionLink);
+    } else {
+      dispatch(toggleSignInModal());
     }
   };
 
@@ -120,6 +132,26 @@ const Page = ({ lesson, lessons }) => {
                 {lesson.objectives && lesson.objectives.length > 0 && (
                   <div className='border-b border-b-neutral-300 dark:border-b-neutral-500 pb-4'>
                     <LearningObjectives objectives={lesson.objectives} />
+                  </div>
+                )}
+                {lesson.actionLink && (
+                  <div className='w-full bg-base-dark flex justify-between items-center rounded-lg px-3 py-4'>
+                    <div className='text-white font-semibold'>
+                      {lesson.actionLinkTitle}
+                    </div>
+                    <div
+                      className='w-fit flex gap-1 items-center px-3 py-2 text-white font-bold bg-clemson rounded shadow-lg'
+                      onClick={actionClickHandler}
+                    >
+                      <div>
+                        {user ? (
+                          <LockOpenIcon className='w-5 h-5 fill-white' />
+                        ) : (
+                          <LockClosedIcon className='w-5 h-5 fill-white' />
+                        )}
+                      </div>
+                      <div>Download</div>
+                    </div>
                   </div>
                 )}
                 <div className='relative'>
