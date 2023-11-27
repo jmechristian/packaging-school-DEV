@@ -116,14 +116,15 @@ const Page = ({ isbt }) => {
               callout={'Comprehensive'}
             />
             <NewCouseCard
-              title={'PET: Resin, Preform, and Bottle Technology'}
+              title={'Fundamentals of Beverage Technology'}
               description={
-                'If you are responsible for purchasing, running PET filling lines, quality or packaging development, then this is the course for you. This course will help you understand the PET bottle making process including resins, preforms, blow molding, bottles.'
+                'This course is a self-paced, interactive session providing a technical overview of the beverage industry.'
               }
               background={
-                'https://packschool.s3.amazonaws.com/pet-seoImage.png'
+                'https://packschool.s3.amazonaws.com/fundBev-seoImage.png'
               }
-              link={'https://learn.packagingschool.com/enroll/1338971'}
+              link={'https://learn.packagingschool.com/enroll/165283'}
+              video={'https://www.youtube.com/embed/IWL8R7Xk8cU'}
               link_text={'Select Course'}
               Icon={SparklesIcon}
               callout={'Most Popular'}
