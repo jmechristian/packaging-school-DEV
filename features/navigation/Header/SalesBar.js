@@ -57,8 +57,8 @@ const SalesBar = () => {
 
   return (
     <div className='bg-gray-900 dark:bg-dark-dark flex items-center justify-center'>
-      <div className='w-full h-16 lg:h-12 max-w-7xl px-3 lg:px-0 mx-auto lg:grid lg:grid-cols-2 lg:gap-32'>
-        <div className='w-full flex gap-2 cursor-pointer h-full items-center'>
+      <div className='w-full h-16 lg:h-12 max-w-7xl px-3 lg:px-0 mx-auto lg:grid lg:grid-cols-5'>
+        <div className='w-full flex gap-2 cursor-pointer h-full items-center lg:col-span-4'>
           <div className='w-fit flex h-full items-center'>
             <div className='flex gap-1 items-center w-fit h-full'>
               <div

@@ -1,5 +1,4 @@
-import React from 'react';
-import FullWidthDropDown from '../components/shared/FullWidthDropDown';
+import React, { Suspense } from 'react';
 import {
   AcademicCapIcon,
   BoltIcon,
@@ -8,65 +7,18 @@ import {
   SignalIcon,
   ArrowTopRightOnSquareIcon,
 } from '@heroicons/react/24/outline';
-import { motion } from 'framer-motion';
+import { API } from 'aws-amplify';
+import { getCustomer } from '../src/graphql/queries';
 
 import NewCouseCard from '../components/shared/NewCouseCard';
 import ExpandSearch from '../components/shared/ExpandSearch';
 import VideoPlayer from '../components/VideoPlayer';
+import CustomerCourses from '../components/shared/CustomerCourses';
 
-const Page = () => {
-  const HighlightContent = ({ link }) => {
-    return (
-      <motion.div className='px-0 lg:px-6 w-full grid lg:grid-cols-3 gap-12 pb-3 my-9 overflow-hidden'>
-        <NewCouseCard
-          title={'Uniliever Packaging Bootcamp 101'}
-          description={
-            'This Boot Camp will serve as an introduction to the packaging industry and provide the fundamental knowledge necessary to get you up to speed.'
-          }
-          background={
-            'https://packschool.s3.amazonaws.com/unilever-brands-1.png'
-          }
-          link={'#'}
-          link_text={'Select Course'}
-          Icon={RocketLaunchIcon}
-          callout={'Unilever Developed'}
-          video={'https://www.youtube.com/watch?v=ynDhF_jYZn8'}
-          id={'806c0e2e-c4db-4c13-94f9-b49d4e8b2239'}
-        />
-        <NewCouseCard
-          title={'Sustainable Packaging'}
-          description={
-            'Have you ever wondered how grocery store produce ships from the farm to the grocery store?'
-          }
-          background={
-            'https://packschool.s3.amazonaws.com/sustainable-seoImage.png'
-          }
-          link={'#'}
-          link_text={'Select Course'}
-          Icon={SparklesIcon}
-          callout={'Most Popular'}
-          video={'https://www.youtube.com/watch?v=ynDhF_jYZn8'}
-          id={'806c0e2e-c4db-4c13-94f9-b49d4e8b2239'}
-        />
-        <NewCouseCard
-          title={'Shoe Shopping From Home'}
-          description={
-            "Does packaging influence value? Let's investigate the relationship between product packaging and consumer to analyze how design can influence purchase choice."
-          }
-          background={'https://packschool.s3.amazonaws.com/demo-lesson.png'}
-          link={'/lessons/shoe-shopping-from-home'}
-          link_text={'View Lesson'}
-          Icon={SignalIcon}
-          callout={'Latest Lesson'}
-          id={'806c0e2e-c4db-4c13-94f9-b49d4e8b2239'}
-        />
-      </motion.div>
-    );
-  };
-
+const Page = ({ isbt }) => {
   return (
     <div className='w-full flex flex-col gap-4 md:gap-6 lg:gap-12 py-6 lg:py-9 mx-auto'>
-      <div className='w-full h-full grid md:grid-cols-2 gap-x-24 py-16 max-w-7xl mx-auto px-3 md:px-6 lg:px-0'>
+      <div className='w-full h-full grid md:grid-cols-2 gap-x-24 py-16 max-w-7xl mx-auto px-3 md:px-6 xl:px-0'>
         <div className='flex flex-col gap-9'>
           <div className='w-full max-w-[60%]'>
             <img
@@ -122,22 +74,7 @@ const Page = () => {
               See below for a full list of courses offered.
             </div>
           </div>
-          <div className='grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-9 pb-6'>
-            <NewCouseCard
-              title={'Uniliever Packaging Bootcamp 101'}
-              description={
-                'This Boot Camp will serve as an introduction to the packaging industry and provide the fundamental knowledge necessary to get you up to speed.'
-              }
-              background={
-                'https://packschool.s3.amazonaws.com/unilever-brands-1.png'
-              }
-              link={'#'}
-              link_text={'Select Course'}
-              Icon={RocketLaunchIcon}
-              callout={'Unilever Developed'}
-              video={'https://www.youtube.com/watch?v=ynDhF_jYZn8'}
-              id={'806c0e2e-c4db-4c13-94f9-b49d4e8b2239'}
-            />
+          <div className='card-grid'>
             <NewCouseCard
               title={'Uniliever Packaging Bootcamp 101'}
               description={
@@ -186,138 +123,9 @@ const Page = () => {
           </div>
         </div>
       </div>
-      <div className='max-w-7xl w-full mx-auto flex flex-col gap-6 mt-3'>
-        <div className='flex justify-between items-center'>
-          <div className='w-full font-bold lg:text-3xl text-base-dark'>
-            ISBT<sup>&reg;</sup> Courses
-          </div>
-          <div>
-            <ExpandSearch />
-          </div>
-        </div>
-        <div className='grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-9'>
-          <NewCouseCard
-            title={'Uniliever Packaging Bootcamp 101'}
-            description={
-              'This Boot Camp will serve as an introduction to the packaging industry and provide the fundamental knowledge necessary to get you up to speed.'
-            }
-            background={
-              'https://packschool.s3.amazonaws.com/unilever-brands-1.png'
-            }
-            link={'#'}
-            link_text={'Select Course'}
-            Icon={RocketLaunchIcon}
-            callout={'Unilever Developed'}
-            video={'https://www.youtube.com/watch?v=ynDhF_jYZn8'}
-            id={'806c0e2e-c4db-4c13-94f9-b49d4e8b2239'}
-          />
-          <NewCouseCard
-            title={'Uniliever Packaging Bootcamp 101'}
-            description={
-              'This Boot Camp will serve as an introduction to the packaging industry and provide the fundamental knowledge necessary to get you up to speed.'
-            }
-            background={
-              'https://packschool.s3.amazonaws.com/unilever-brands-1.png'
-            }
-            link={'#'}
-            link_text={'Select Course'}
-            Icon={RocketLaunchIcon}
-            callout={'Unilever Developed'}
-            video={'https://www.youtube.com/watch?v=ynDhF_jYZn8'}
-            id={'806c0e2e-c4db-4c13-94f9-b49d4e8b2239'}
-          />
-          <NewCouseCard
-            title={'Uniliever Packaging Bootcamp 101'}
-            description={
-              'This Boot Camp will serve as an introduction to the packaging industry and provide the fundamental knowledge necessary to get you up to speed.'
-            }
-            background={
-              'https://packschool.s3.amazonaws.com/unilever-brands-1.png'
-            }
-            link={'#'}
-            link_text={'Select Course'}
-            Icon={RocketLaunchIcon}
-            callout={'Unilever Developed'}
-            video={'https://www.youtube.com/watch?v=ynDhF_jYZn8'}
-            id={'806c0e2e-c4db-4c13-94f9-b49d4e8b2239'}
-          />
-          <NewCouseCard
-            title={'Uniliever Packaging Bootcamp 101'}
-            description={
-              'This Boot Camp will serve as an introduction to the packaging industry and provide the fundamental knowledge necessary to get you up to speed.'
-            }
-            background={
-              'https://packschool.s3.amazonaws.com/unilever-brands-1.png'
-            }
-            link={'#'}
-            link_text={'Select Course'}
-            Icon={RocketLaunchIcon}
-            callout={'Unilever Developed'}
-            video={'https://www.youtube.com/watch?v=ynDhF_jYZn8'}
-            id={'806c0e2e-c4db-4c13-94f9-b49d4e8b2239'}
-          />
-          <NewCouseCard
-            title={'Uniliever Packaging Bootcamp 101'}
-            description={
-              'This Boot Camp will serve as an introduction to the packaging industry and provide the fundamental knowledge necessary to get you up to speed.'
-            }
-            background={
-              'https://packschool.s3.amazonaws.com/unilever-brands-1.png'
-            }
-            link={'#'}
-            link_text={'Select Course'}
-            Icon={RocketLaunchIcon}
-            callout={'Unilever Developed'}
-            video={'https://www.youtube.com/watch?v=ynDhF_jYZn8'}
-            id={'806c0e2e-c4db-4c13-94f9-b49d4e8b2239'}
-          />
-          <NewCouseCard
-            title={'Uniliever Packaging Bootcamp 101'}
-            description={
-              'This Boot Camp will serve as an introduction to the packaging industry and provide the fundamental knowledge necessary to get you up to speed.'
-            }
-            background={
-              'https://packschool.s3.amazonaws.com/unilever-brands-1.png'
-            }
-            link={'#'}
-            link_text={'Select Course'}
-            Icon={RocketLaunchIcon}
-            callout={'Unilever Developed'}
-            video={'https://www.youtube.com/watch?v=ynDhF_jYZn8'}
-            id={'806c0e2e-c4db-4c13-94f9-b49d4e8b2239'}
-          />
-          <NewCouseCard
-            title={'Uniliever Packaging Bootcamp 101'}
-            description={
-              'This Boot Camp will serve as an introduction to the packaging industry and provide the fundamental knowledge necessary to get you up to speed.'
-            }
-            background={
-              'https://packschool.s3.amazonaws.com/unilever-brands-1.png'
-            }
-            link={'#'}
-            link_text={'Select Course'}
-            Icon={RocketLaunchIcon}
-            callout={'Unilever Developed'}
-            video={'https://www.youtube.com/watch?v=ynDhF_jYZn8'}
-            id={'806c0e2e-c4db-4c13-94f9-b49d4e8b2239'}
-          />
-          <NewCouseCard
-            title={'Uniliever Packaging Bootcamp 101'}
-            description={
-              'This Boot Camp will serve as an introduction to the packaging industry and provide the fundamental knowledge necessary to get you up to speed.'
-            }
-            background={
-              'https://packschool.s3.amazonaws.com/unilever-brands-1.png'
-            }
-            link={'#'}
-            link_text={'Select Course'}
-            Icon={RocketLaunchIcon}
-            callout={'Unilever Developed'}
-            video={'https://www.youtube.com/watch?v=ynDhF_jYZn8'}
-            id={'806c0e2e-c4db-4c13-94f9-b49d4e8b2239'}
-          />
-        </div>
-      </div>
+
+      <CustomerCourses courses={isbt.courses.items} />
+
       <div className='w-full bg-gradient-to-tr from-base-brand via-base-mid to-clemson rounded-xl max-w-7xl mx-auto mt-2 mb-12'>
         <div className='mx-auto max-w-7xl px-6 text-center lg:text-left py-12 lg:py-20 flex flex-col gap-12 lg:flex-row items-center justify-center lg:justify-between w-full lg:px-16'>
           <h2 className='text-4xl font-bold  text-white sm:text-5xl font-etna'>
@@ -347,5 +155,17 @@ const Page = () => {
     </div>
   );
 };
+
+export async function getServerSideProps() {
+  const res = await API.graphql({
+    query: getCustomer,
+    variables: { id: '4c14edd3-d25d-4409-ac1c-0da8b609d99e' },
+  });
+  const isbt = res.data.getCustomer;
+
+  return {
+    props: { isbt },
+  };
+}
 
 export default Page;

@@ -9,9 +9,7 @@ const SalesBarItem = ({ link, icon, text, zIdx }) => {
       onClick={() => router.push(link)}
     >
       <div className='w-5 h-5'>{icon}</div>
-      <div className='text-white text-sm lg:text-base leading-tight'>
-        {text}
-      </div>
+      <div className='text-white text-sm lg:text-base leading-none'>{text}</div>
     </div>
   );
 };
