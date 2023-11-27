@@ -5023,6 +5023,7 @@ export const createTrackedCourse = /* GraphQL */ `
       customer {
         id
         displayName
+        link
         courses {
           nextToken
         }
@@ -5047,6 +5048,7 @@ export const updateTrackedCourse = /* GraphQL */ `
       customer {
         id
         displayName
+        link
         courses {
           nextToken
         }
@@ -5071,6 +5073,7 @@ export const deleteTrackedCourse = /* GraphQL */ `
       customer {
         id
         displayName
+        link
         courses {
           nextToken
         }
@@ -5091,6 +5094,7 @@ export const createCustomer = /* GraphQL */ `
     createCustomer(input: $input, condition: $condition) {
       id
       displayName
+      link
       courses {
         items {
           id
@@ -5115,6 +5119,7 @@ export const updateCustomer = /* GraphQL */ `
     updateCustomer(input: $input, condition: $condition) {
       id
       displayName
+      link
       courses {
         items {
           id
@@ -5139,6 +5144,7 @@ export const deleteCustomer = /* GraphQL */ `
     deleteCustomer(input: $input, condition: $condition) {
       id
       displayName
+      link
       courses {
         items {
           id

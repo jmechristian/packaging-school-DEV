@@ -59,7 +59,7 @@ const CustomerCourses = ({ courses }) => {
       <div className='card-grid'>
         {allCourses && courses && initCourses ? (
           initCourses
-            .sort((a, b) => a.courseId.localeCompare(b.courseId))
+            .sort((a, b) => b.clicks - a.clicks)
             .filter(
               (o) =>
                 o.title.toLowerCase().includes(isSearchTerm.toLowerCase()) ||

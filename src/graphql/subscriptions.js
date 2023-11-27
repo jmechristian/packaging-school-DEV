@@ -4732,6 +4732,7 @@ export const onCreateTrackedCourse = /* GraphQL */ `
       customer {
         id
         displayName
+        link
         courses {
           nextToken
         }
@@ -4753,6 +4754,7 @@ export const onUpdateTrackedCourse = /* GraphQL */ `
       customer {
         id
         displayName
+        link
         courses {
           nextToken
         }
@@ -4774,6 +4776,7 @@ export const onDeleteTrackedCourse = /* GraphQL */ `
       customer {
         id
         displayName
+        link
         courses {
           nextToken
         }
@@ -4791,6 +4794,7 @@ export const onCreateCustomer = /* GraphQL */ `
     onCreateCustomer {
       id
       displayName
+      link
       courses {
         items {
           id
@@ -4812,6 +4816,7 @@ export const onUpdateCustomer = /* GraphQL */ `
     onUpdateCustomer {
       id
       displayName
+      link
       courses {
         items {
           id
@@ -4833,6 +4838,7 @@ export const onDeleteCustomer = /* GraphQL */ `
     onDeleteCustomer {
       id
       displayName
+      link
       courses {
         items {
           id

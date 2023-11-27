@@ -3513,6 +3513,7 @@ export const getTrackedCourse = /* GraphQL */ `
       customer {
         id
         displayName
+        link
         courses {
           nextToken
         }
@@ -3539,6 +3540,7 @@ export const listTrackedCourses = /* GraphQL */ `
         customer {
           id
           displayName
+          link
           createdAt
           updatedAt
         }
@@ -3574,6 +3576,7 @@ export const trackedCoursesByCustomerIdAndClicks = /* GraphQL */ `
         customer {
           id
           displayName
+          link
           createdAt
           updatedAt
         }
@@ -3590,6 +3593,7 @@ export const getCustomer = /* GraphQL */ `
     getCustomer(id: $id) {
       id
       displayName
+      link
       courses {
         items {
           id
@@ -3616,6 +3620,7 @@ export const listCustomers = /* GraphQL */ `
       items {
         id
         displayName
+        link
         courses {
           nextToken
         }

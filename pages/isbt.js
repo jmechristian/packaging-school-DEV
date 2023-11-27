@@ -16,6 +16,7 @@ import VideoPlayer from '../components/VideoPlayer';
 import CustomerCourses from '../components/shared/CustomerCourses';
 
 const Page = ({ isbt }) => {
+  console.log(isbt);
   return (
     <div className='w-full flex flex-col gap-4 md:gap-6 lg:gap-12 py-6 lg:py-9 mx-auto'>
       <div className='w-full h-full grid md:grid-cols-2 gap-x-24 py-16 max-w-7xl mx-auto px-3 md:px-6 xl:px-0'>
@@ -76,19 +77,17 @@ const Page = ({ isbt }) => {
           </div>
           <div className='card-grid'>
             <NewCouseCard
-              title={'Uniliever Packaging Bootcamp 101'}
+              title={'Beverage Institute Value Bundle'}
               description={
-                'This Boot Camp will serve as an introduction to the packaging industry and provide the fundamental knowledge necessary to get you up to speed.'
+                'This limited time offer allows learners to take all the courses offered by the Beverage Institute for a discounted price. The courses in this bundle total 39 hours and take the learner on a journey through the fundamentals of beverage technology, beverage ingredients, sanitation for foundation beverages, microbiology basics, water and wastewater treatments, sweeteners, beverage gases, and all PET resins, preforms, and bottle technology.'
               }
               background={
-                'https://packschool.s3.amazonaws.com/unilever-brands-1.png'
+                'https://packschool.s3.amazonaws.com/bevValBundle-seoImage.png'
               }
-              link={'#'}
+              link={'https://learn.packagingschool.com/enroll/389255'}
               link_text={'Select Course'}
               Icon={RocketLaunchIcon}
-              callout={'Unilever Developed'}
-              video={'https://www.youtube.com/watch?v=ynDhF_jYZn8'}
-              id={'806c0e2e-c4db-4c13-94f9-b49d4e8b2239'}
+              callout={'Best Value!'}
             />
             <NewCouseCard
               title={'Uniliever Packaging Bootcamp 101'}
@@ -126,32 +125,25 @@ const Page = ({ isbt }) => {
 
       <CustomerCourses courses={isbt.courses.items} />
 
-      <div className='w-full bg-gradient-to-tr from-base-brand via-base-mid to-clemson rounded-xl max-w-7xl mx-auto mt-2 mb-12'>
-        <div className='mx-auto max-w-7xl px-6 text-center lg:text-left py-12 lg:py-20 flex flex-col gap-12 lg:flex-row items-center justify-center lg:justify-between w-full lg:px-16'>
-          <h2 className='text-4xl font-bold  text-white sm:text-5xl font-etna'>
-            Ready to get hands-on?
-            <br />
-            Purchase your Class Pack today!
-          </h2>
-          <div className='flex flex-col justify-center items-center gap-3 '>
-            <div
-              className='aspect-[1/1] w-40 bg-white ring-clemson ring-4 rounded-lg shadow-lg bg-contain bg-center cursor-pointer'
-              style={{
-                backgroundImage: `url('https://packschool.s3.amazonaws.com/teachqr.png')`,
-              }}
-              onClick={() =>
-                window.open(
-                  'https://buy.stripe.com/5kA5lg9g29HG6JOfYY',
-                  '_blank'
-                )
-              }
-            ></div>
-            <div className='text-sm text-white cursor-pointer'>
-              Click or Scan
+      {isbt && isbt.link && (
+        <div className='w-full bg-gradient-to-tr from-base-brand via-base-mid to-clemson rounded-xl max-w-7xl mx-auto mt-2 mb-12'>
+          <div className='mx-auto max-w-7xl px-6 text-center lg:text-left py-12 lg:py-20 flex flex-col gap-12 lg:flex-row items-center justify-center lg:justify-between w-full lg:px-16'>
+            <h2 className='text-4xl font-bold  text-white sm:text-5xl font-etna'>
+              Interested in learning more
+              <br />
+              about {isbt.displayName}?
+            </h2>
+            <div className='flex flex-col justify-center items-center gap-3 '>
+              <div
+                className=' text-white cursor-pointer flex w-fit px-6 py-4 rounded-xl shadow-md bg-clemson text-lg font-medium'
+                onClick={() => window.open(isbt.link, '_blank')}
+              >
+                Get More Info
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };
