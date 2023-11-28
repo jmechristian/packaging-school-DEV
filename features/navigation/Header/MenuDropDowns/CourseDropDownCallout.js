@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 const CourseDropDownCallout = ({ onClose }) => {
   const router = useRouter();
   return (
-    <div className='bg-slate-300 dark:bg-dark-mid rounded-lg'>
+    <div className='bg-white/50 dark:bg-dark-mid rounded-lg shadow-lg'>
       <div className='px-8 py-10 flex flex-col gap-8'>
         <BootcampCTA />
         <div className='flex flex-col gap-2'>

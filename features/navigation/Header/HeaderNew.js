@@ -247,7 +247,6 @@ export default function HeaderNew() {
                                 >
                                   {navigation.categories[0].name}
                                 </Popover.Button>
-                                <Popover.Overlay className='fixed top-32 bottom-0 left-0 right-0 bg-black/60 backdrop-blur-sm z-10' />
                               </div>
 
                               <Transition
@@ -266,7 +265,7 @@ export default function HeaderNew() {
                                     aria-hidden='true'
                                   />
 
-                                  <div className='relative bg-slate-100 dark:bg-dark-dark'>
+                                  <div className='relative bg-base-light dark:bg-dark-dark'>
                                     <div className='mx-auto max-w-7xl px-8'>
                                       <div className='grid grid-cols-3 overflow-hidden items-start gap-x-8 gap-y-10 py-10'>
                                         <div className='grid grid-cols-1 overflow-hidden col-span-1 gap-6 h-full'>
@@ -336,7 +335,6 @@ export default function HeaderNew() {
                                 >
                                   {navigation.categories[1].name}
                                 </Popover.Button>
-                                <Popover.Overlay className='fixed top-32 bottom-0 left-0 right-0 bg-black/60 backdrop-blur-sm z-10' />
                               </div>
 
                               <Transition
@@ -355,7 +353,7 @@ export default function HeaderNew() {
                                     aria-hidden='true'
                                   />
 
-                                  <div className='relative bg-slate-100 dark:bg-dark-dark'>
+                                  <div className='relative bg-base-light dark:bg-dark-dark'>
                                     <div className='mx-auto max-w-7xl px-8'>
                                       <div className='grid grid-cols-3 items-start gap-x-8 gap-y-10 pb-8 pt-8'>
                                         <CourseDropDownCourses

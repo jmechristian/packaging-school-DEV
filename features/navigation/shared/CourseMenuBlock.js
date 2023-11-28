@@ -87,7 +87,7 @@ const CourseMenuBlock = ({ onClose }) => {
         setFilter={categoryClickHandler}
       />
       <div
-        className='col-span-2 bg-slate-300 rounded-md'
+        className='col-span-2 bg-white rounded-md'
         onClick={() => {
           categoryClickHandler('All', 'all');
         }}
