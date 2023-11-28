@@ -98,7 +98,7 @@ const APCPricing = () => {
                   /mo
                 </span>
               </p>
-              <Link href='https://learn.packagingschool.com/enroll/735516'>
+              <Link href='https://learn.packagingschool.com/enroll/735516?price_id=2898851'>
                 <a className='mt-10 block w-full rounded-md bg-clemson px-3 py-3 text-center text-lg font-semibold text-white shadow-sm hover:bg-clemson-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-clemson'>
                   Enroll Now
                 </a>
