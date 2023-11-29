@@ -98,7 +98,7 @@ const Page = ({ draft }) => {
         return <div>{headingHandler(item)}</div>;
       case 'image':
         return (
-          <div className='w-full h-full my-12'>
+          <div className='w-full h-full'>
             {/* <div
               className='aspect-[16/9] w-full h-full bg-contain bg-center bg-no-repeat mx-auto'
               style={{ backgroundImage: `url(${item.attrs.src})` }}

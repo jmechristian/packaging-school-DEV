@@ -41,7 +41,13 @@
           "s3Key": "amplify-builds/sendWelcomeEmail-496e456b2f396f646f51-build.zip"
         }
       },
-      "notifications": {}
+      "notifications": {
+        "Pinpoint": {
+          "Name": "unileverAnalytics-staging",
+          "Id": "1459fffb37a9496a83cda7db5b2e2370",
+          "Region": "us-east-1"
+        }
+      }
     }
   }
 }

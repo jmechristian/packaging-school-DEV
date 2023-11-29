@@ -525,6 +525,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/courses',
+        destination: '/all_courses',
+        permanent: true,
+      },
+      {
         source: '/courses-preform-heating',
         destination: '/courses/preform-heating',
         permanent: true,

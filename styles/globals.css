@@ -253,7 +253,7 @@ h4 {
 /* TEXT EDITOR */
 
 .tiptap p {
-  @apply lg:text-lg dark:text-white mb-6 lg:leading-snug;
+  @apply lg:text-lg dark:text-white mb-6 lg:leading-snug !important;
 }
 
 .tiptap h1 {
