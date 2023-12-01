@@ -1,10 +1,13 @@
 import React from 'react';
 import { ArrowLongRightIcon } from '@heroicons/react/24/solid';
+import { useRouter } from 'next/router';
 
 import VideoPlayer from '../../VideoPlayer';
 import FadeIn from '../../../helpers/FadeIn';
 
 const CSPHero = () => {
+  const router = useRouter();
+
   return (
     <div className='w-full max-w-7xl mx-auto lg:pr-6 xl:pr-0'>
       <div className='grid gap-9 lg:gap-6 lg:grid-cols-2 overflow-hidden w-full h-full'>
@@ -37,7 +40,7 @@ const CSPHero = () => {
                     className='w-full md:w-fit px-9 bg-clemson rounded-lg py-4 text-white font-semibold font-greycliff xl:text-xl'
                     onClick={() =>
                       router.push(
-                        'https://learn.packagingschool.com/enroll/735516'
+                        'https://learn.packagingschool.com/enroll/2772370?price_id=3600658'
                       )
                     }
                   >

@@ -11,7 +11,7 @@ const sections = [
   },
   { id: 'how', title: 'How does it work?' },
   { id: 'where', title: 'Where do I start?' },
-  { id: 'reviews', title: 'What do your peers say?' },
+  { id: 'reviews', title: 'Want more sustainability?' },
 ];
 
 function MenuIcon({ open, ...props }) {
@@ -131,7 +131,7 @@ const CSPNav = () => {
             <div
               onClick={() =>
                 window.open(
-                  '/certificate-of-packaging-science-application',
+                  'https://learn.packagingschool.com/enroll/2772370?price_id=3600658',
                   '_blank'
                 )
               }

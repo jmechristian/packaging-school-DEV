@@ -6,7 +6,7 @@ import { SectionHeading } from '../../shared/SectionHeading';
 
 const CSPWhere = () => {
   return (
-    <div className='container-7xl flex flex-col gap-9' id='where'>
+    <div className='container-7xl flex flex-col gap-9 scroll-mt-36' id='where'>
       <SectionHeading number='3'>Where do I start?</SectionHeading>
       <div className='grid grid-cols-5 gap-16 overflow-hidden'>
         <div className='col-span-3 flex flex-col gap-6'>
@@ -45,7 +45,7 @@ const CSPWhere = () => {
             </div>
           </div>
         </div>
-        <div className='col-span-2 w-full h-full flex flex-col gap-6'>
+        <div className='col-span-2 w-full h-full flex flex-col gap-4'>
           <div className='rounded-2xl bg-gray-50 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-12'>
             <div className='mx-auto max-w-xs px-8 flex flex-col gap-3'>
               <p className='flex items-baseline justify-center gap-x-2'>
@@ -56,7 +56,7 @@ const CSPWhere = () => {
                   USD
                 </span>
               </p>
-              <Link href='/certificate-of-mastery-in-packaging-management'>
+              <Link href='https://learn.packagingschool.com/enroll/2772370?price_id=3600658'>
                 <a className='block w-full rounded-md bg-clemson px-3 py-3 text-center text-lg font-semibold text-white shadow-sm hover:bg-clemson-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-clemson'>
                   Enroll Now
                 </a>

@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const CSPCard = () => {
   return (
-    <div className='rounded-2xl bg-neutral-200 p-10 flex flex-col gap-12 shadow-xl'>
+    <div className='rounded-2xl bg-base-light/60 p-10 flex flex-col gap-12 shadow-xl'>
       <div className='w-full h-full divide-x divide-y divide-solid border-b border-b-base-brand border-r border-r-base-brand divide-base-brand grid grid-cols-2 mx-auto'>
         <div className='w-full bg-base-brand py-3 col-span-2'>
           <div className='flex items-center px-6 gap-2'>

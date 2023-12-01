@@ -13,7 +13,10 @@ import CSPMissionStatement from './CSPMissionStatement';
 
 const CSPWhat = () => {
   return (
-    <section className='max-w-7xl mx-auto flex flex-col gap-10' id='about'>
+    <section
+      className='max-w-7xl mx-auto flex flex-col gap-10 scroll-mt-36'
+      id='about'
+    >
       <div className='grid lg:grid-cols-5 gap-9 lg:gap-28 justify-end'>
         <div className='flex flex-col gap-9 col-span-3'>
           <FadeIn>
