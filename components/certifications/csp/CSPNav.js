@@ -37,7 +37,7 @@ const CSPNav = () => {
   let [activeIndex, setActiveIndex] = useState(null);
   let mobileActiveIndex = activeIndex === null ? 0 : activeIndex;
   return (
-    <div ref={navBarRef} className='sticky top-0 z-[200]'>
+    <div ref={navBarRef} className='sticky top-0 z-[90]'>
       <Popover className='sm:hidden'>
         {({ open }) => (
           <>
