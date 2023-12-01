@@ -5,6 +5,7 @@ import CSPMissionStatement from '../../components/certifications/csp/CSPMissionS
 import CSPNav from '../../components/certifications/csp/CSPNav';
 import CSPWhat from '../../components/certifications/csp/CSPWhat';
 import CSPHow from '../../components/certifications/csp/CSPHow';
+import CSPWhere from '../../components/certifications/csp/CSPWhere';
 
 const Page = () => {
   return (
@@ -13,6 +14,7 @@ const Page = () => {
       <CSPNav />
       <CSPWhat />
       <CSPHow />
+      <CSPWhere />
     </div>
   );
 };

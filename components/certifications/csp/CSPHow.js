@@ -12,9 +12,7 @@ const CSPHow = () => {
           <SectionHeading number='2'>How Does it Work?</SectionHeading>
         </FadeIn>
         <h2 className='text-3xl lg:text-4xl  dark:text-white'>
-          <FadeIn>
-            Mastering Sustainable Packaging: From Concept to Lifelong Impact
-          </FadeIn>
+          <FadeIn>A Dynamic Online Learning Experience</FadeIn>
         </h2>
         <div className='flex flex-col gap-9'>
           <p className='dark:text-gray-500 text-slate-700 text-lg leading-normal font-greycliff tracking-wide'>
