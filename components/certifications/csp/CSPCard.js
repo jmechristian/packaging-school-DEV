@@ -1,6 +1,7 @@
 import React from 'react';
-import { KeyIcon } from '@heroicons/react/24/solid';
+import { KeyIcon, ArrowRightCircleIcon } from '@heroicons/react/24/solid';
 import { TrophyIcon } from '@heroicons/react/24/outline';
+import Image from 'next/image';
 
 const CSPCard = () => {
   return (
@@ -24,8 +25,31 @@ const CSPCard = () => {
             into impactful actions.
           </div>
         </div>
-        <div className='p-6'>
-          <div className='aspect-[1/1] bg-neutral-800'></div>
+        <div className='p-6 flex flex-col w-full'>
+          <div className='relative aspect-[1/1]'>
+            <div className='w-full h-full absolute inset-0 z-10 px-6 max-w-xl mx-auto'>
+              <Image
+                src={'https://packschool.s3.amazonaws.com/patch-1.png'}
+                alt='sustainable champion patch'
+                width={800}
+                height={808}
+                layout='responsive'
+                className=' shadow-xl'
+              />
+            </div>
+          </div>
+          <div className='flex flex-col gap-3 divide-y-2 divide-base-brand'>
+            <div className='w-full flex justify-between items-center'>
+              <div className='text-sm uppercase'>Challenge Progress</div>
+              <div className='text-sm uppercase'>[0/6]</div>
+            </div>
+            <div className='w-full flex pt-1.5 items-center gap-2'>
+              <div className='cursor-pointer'>
+                <ArrowRightCircleIcon className='w-6 h-6 fill-black' />
+              </div>
+              <div>Enroll today to start your journey!</div>
+            </div>
+          </div>
         </div>
         <div className='p-6'>
           <div className='flex flex-col gap-6'>
