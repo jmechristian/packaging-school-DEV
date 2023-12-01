@@ -1,9 +1,9 @@
 import React from 'react';
 
-const CPSMissionStatement = () => {
+const CSPMissionStatement = () => {
   return (
     <div
-      className='w-full max-w-7xl xl:rounded-lg mx-auto h-full bg-cover bg-center bg-no-repeat px-6 py-16 lg:py-24 flex flex-col gap-9 items-center justify-center'
+      className='w-full max-w-7xl xl:rounded-2xl mx-auto h-full bg-cover bg-center bg-no-repeat px-6 py-16 lg:py-24 flex flex-col gap-9 items-center justify-center xl:mt-9 shadow-xl'
       style={{
         backgroundImage: `url('https://packschool.s3.amazonaws.com/packgradient-1.png')`,
       }}
@@ -19,4 +19,4 @@ const CPSMissionStatement = () => {
   );
 };
 
-export default CPSMissionStatement;
+export default CSPMissionStatement;

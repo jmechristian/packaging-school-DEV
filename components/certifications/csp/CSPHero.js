@@ -7,19 +7,19 @@ import FadeIn from '../../../helpers/FadeIn';
 const CSPHero = () => {
   return (
     <div className='w-full max-w-7xl mx-auto lg:pr-6 xl:pr-0'>
-      <div className='grid lg:gap-6 lg:grid-cols-2 overflow-hidden w-full h-full'>
+      <div className='grid gap-9 lg:gap-6 lg:grid-cols-2 overflow-hidden w-full h-full'>
         <div className='w-full h-full p-6 xl:p-0 flex flex-col justify-center max-w-xl mx-auto'>
-          <div className='flex flex-col gap-6'>
+          <div className='flex flex-col gap-10'>
             <div>
               <FadeIn>
-                <h1 className='text-3xl xl:text-5xl leading-tight dark:text-white'>
+                <h1 className='text-4xl xl:text-5xl  dark:text-white'>
                   Certificate of Sustainable Packaging (CSP)
                 </h1>
               </FadeIn>
             </div>
             <div>
               <FadeIn>
-                <p className='xl:text-xl font-greycliff text-slate-700 dark:text-gray-500 tracking-wide'>
+                <p className='lg:text-lg lg:leading-normal font-greycliff text-slate-700 dark:text-gray-500 tracking-wide'>
                   In the quest for sustainable packaging, the Packaging School
                   introduces a transformative program empowering industry
                   professionals to navigate the complexities of sustainable
