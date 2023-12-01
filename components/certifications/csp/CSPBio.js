@@ -15,7 +15,7 @@ const CSPBio = () => {
               Want to learn more about sustainability?
             </h2>
           </div>
-          <div className='w-full max-w-prose xl:text-lg text-white font-medium'>
+          <div className='w-full max-w-2xl lg:text-xl text-white font-medium'>
             With over two decades of industry experience, Dr. Sandeep Kulkarni,
             founder and President of KoolEarth Solutions Inc., and an adjunct
             professor at The Packaging School, guides students through the
