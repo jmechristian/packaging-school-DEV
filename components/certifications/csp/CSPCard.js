@@ -29,7 +29,7 @@ const CSPCard = () => {
           <div className='relative aspect-[1/1]'>
             <div className='w-full h-full absolute inset-0 z-10 px-6 max-w-xl mx-auto'>
               <Image
-                src={'https://packschool.s3.amazonaws.com/patch-1.png'}
+                src={'https://packschool.s3.amazonaws.com/patch-2.png'}
                 alt='sustainable champion patch'
                 width={800}
                 height={808}
