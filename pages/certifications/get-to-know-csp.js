@@ -13,7 +13,7 @@ const Page = () => {
     <div className='w-full h-full flex flex-col gap-12 lg:gap-36 pt-6 md:pt-20 pb-20'>
       <CSPHero />
       <CSPNav />
-      <div className='flex flex-col gap-12 lg:gap-48'>
+      <div className='flex flex-col gap-12 md:gap-48'>
         <CSPWhat />
         <CSPHow />
         <CSPWhere />

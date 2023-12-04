@@ -17,8 +17,8 @@ const CSPWhat = () => {
       className='max-w-7xl mx-auto flex flex-col gap-10 scroll-mt-36'
       id='about'
     >
-      <div className='grid lg:grid-cols-5 gap-9 lg:gap-28 justify-end'>
-        <div className='flex flex-col gap-9 col-span-3'>
+      <div className='grid lg:grid-cols-5 gap-9 lg:gap-28 justify-end lg:pl-6 xl:pl-0'>
+        <div className='flex flex-col gap-9 col-span-3 p-6 lg:p-0'>
           <FadeIn>
             <SectionHeading number='1'>What is CSP?</SectionHeading>
           </FadeIn>

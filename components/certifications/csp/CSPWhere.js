@@ -8,13 +8,13 @@ const CSPWhere = () => {
   return (
     <div className='container-7xl flex flex-col gap-9 scroll-mt-36' id='where'>
       <SectionHeading number='3'>Where do I start?</SectionHeading>
-      <div className='grid grid-cols-5 gap-16 overflow-hidden'>
-        <div className='col-span-3 flex flex-col gap-6'>
+      <div className='flex flex-col lg:grid-cols-5 xl:grid xl:grid-cols-5 gap-9 lg:gap-16 overflow-hidden'>
+        <div className='lg:col-span-3 flex flex-col gap-6'>
           <h2 className='text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl'>
             Lead the Charge: Empower Progress through Sustainable Packaging
           </h2>
           <div className='flex flex-col'>
-            <div className='mt-6 text-xl text-gray-700 dark:text-gray-500 max-w-prose'>
+            <div className='mt-6 text-xl text-gray-700 dark:text-gray-500 lg:max-w-prose'>
               Position yourself as the unparalleled knowledge leader within your
               company by mastering every facet of sustainable packaging. From
               inception to delivery, become the authority on best practices,
@@ -23,7 +23,7 @@ const CSPWhere = () => {
               initiatives that make a lasting impact.
             </div>
             <div
-              className='w-full lg:w-fit py-2 lg:pl-6 lg:pr-9 bg-base-brand cursor-pointer rounded-lg mt-9 flex gap-2 items-center'
+              className='w-full md:w-fit py-2 md:pl-6 md:pr-9 bg-base-brand cursor-pointer rounded-lg mt-9 flex gap-2 justify-center items-center'
               onClick={() =>
                 window.open(
                   'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ35Hm4GpLbs5oMIYuUcefaOcrSb_F1jFkU_9mCus2H5P9gIObXySikly5zZxVPXuiw-Ou5wZwfg',
@@ -32,7 +32,7 @@ const CSPWhere = () => {
               }
             >
               <div>
-                <QuestionMarkCircleIcon className='w-16 h-16 fill-white/70' />
+                <QuestionMarkCircleIcon className='w-9 h-9 fill-white/70' />
               </div>
               <div className='flex flex-col'>
                 <div className='font-bold text-xl text-white'>
@@ -45,8 +45,8 @@ const CSPWhere = () => {
             </div>
           </div>
         </div>
-        <div className='col-span-2 w-full h-full flex flex-col gap-4'>
-          <div className='rounded-2xl bg-gray-50 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-12'>
+        <div className='col-span-2 w-full h-full flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-6 xl:flex xl:flex-col xl:gap-4'>
+          <div className='rounded-2xl bg-gray-50 py-10 text-center ring-1 ring-inset ring-gray-900/5 md:flex md:flex-col md:justify-center lg:py-12'>
             <div className='mx-auto max-w-xs px-8 flex flex-col gap-3'>
               <p className='flex items-baseline justify-center gap-x-2'>
                 <span className='text-5xl font-bold tracking-tight text-gray-900'>

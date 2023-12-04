@@ -5,8 +5,8 @@ import Image from 'next/image';
 
 const CSPCard = () => {
   return (
-    <div className='rounded-2xl bg-base-light/60 p-10 flex flex-col gap-12 shadow-xl'>
-      <div className='w-full h-full divide-x divide-y divide-solid border-b border-b-base-brand border-r border-r-base-brand divide-base-brand grid grid-cols-2 mx-auto'>
+    <div className='rounded-2xl bg-base-light/60 p-6 lg:p-10 flex flex-col gap-12 shadow-xl'>
+      <div className='w-full h-full divide-x divide-y divide-solid border-b border-b-base-brand border-r border-r-base-brand divide-base-brand flex flex-col lg:grid lg:grid-cols-2 mx-auto'>
         <div className='w-full bg-base-brand py-3 col-span-2'>
           <div className='flex items-center px-6 gap-2'>
             <div>
@@ -26,8 +26,8 @@ const CSPCard = () => {
           </div>
         </div>
         <div className='p-6 flex flex-col w-full'>
-          <div className='relative aspect-[1/1]'>
-            <div className='w-full h-full absolute inset-0 z-10 px-6 max-w-xl mx-auto'>
+          <div className='relative aspect-[1/1] mb-6 lg:mb-0'>
+            <div className='w-full h-full absolute inset-0 z-10 lg:px-6 max-w-xl mx-auto'>
               <Image
                 src={'https://packschool.s3.amazonaws.com/patch-2.png'}
                 alt='sustainable champion patch'

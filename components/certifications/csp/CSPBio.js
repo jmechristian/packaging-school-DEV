@@ -8,10 +8,10 @@ const CSPBio = () => {
       className='w-full h-full bg-base-mid rounded-2xl shadow-xl max-w-7xl mx-auto scroll-mt-36'
       id='reviews'
     >
-      <div className='w-full flex justify-between items-center p-12'>
-        <div className='flex flex-col gap-9'>
+      <div className='w-full flex flex-col lg:flex-row justify-between items-center gap-9 py-12 px-6 lg:px-12'>
+        <div className='flex flex-col gap-9 pt-6 lg:pt-0'>
           <div>
-            <h2 className='text-5xl text-white max-w-xl'>
+            <h2 className='text-4xl md:text-5xl text-white max-w-xl'>
               Want to learn more about sustainability?
             </h2>
           </div>

@@ -114,7 +114,7 @@ const CSPNav = () => {
               <a
                 href={`#${section.id}`}
                 className={clsx(
-                  'flex w-full flex-col items-center justify-center border-b-2 before:mb-2 font-sans font-semibold before:font-mono before:text-sm before:content-[counter(section,decimal-leading-zero)]',
+                  'flex w-full flex-col items-center justify-center border-b-2 text-center before:mb-2 font-sans font-semibold before:font-mono before:text-sm before:content-[counter(section,decimal-leading-zero)]',
                   sectionIndex === activeIndex
                     ? 'border-blue-600 bg-blue-50 text-blue-600 before:text-blue-600'
                     : 'border-transparent before:text-slate-500 hover:bg-blue-50/40 hover:before:text-slate-900 '
