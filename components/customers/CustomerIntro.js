@@ -19,7 +19,7 @@ const CustomerIntro = ({ logo, name, link }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMediaType, setIsMediaType] = useState('VIDEO');
   return (
-    <div className='w-full h-full grid md:grid-cols-2 gap-x-24 max-w-7xl mx-auto px-3 md:px-6 xl:px-0 py-12 md:py-16'>
+    <div className='w-full h-full grid md:grid-cols-2 gap-x-24 max-w-7xl mx-auto px-3 md:px-6 xl:px-0 py-12 md:py-20'>
       <div className='flex flex-col gap-9'>
         <div className='w-full h-full flex items-center justify-center'>
           <img src={logo} alt='isbt logo' className='w-full h-auto' />
