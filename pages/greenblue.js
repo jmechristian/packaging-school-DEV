@@ -67,6 +67,7 @@ const Page = () => {
         bgdark='bg-gradient-to-r from-gb-main to-gb-green'
         highlight={'bg-gb-green'}
         content={<CustomerFeatures />}
+        bgContent={'bg-neutral-200 border'}
         open={false}
       />
       <FullWidthDropDown
