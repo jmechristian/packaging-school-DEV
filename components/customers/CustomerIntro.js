@@ -25,8 +25,8 @@ const CustomerIntro = ({ logo, name, link }) => {
           <img src={logo} alt='isbt logo' className='w-full h-auto' />
         </div>
       </div>
-      <div className='flex w-full flex-col gap-4 p-3 md:p-6 lg:p-0 lg:gap-x-16 bg-gb-main rounded-b-xl'>
-        <div className='md:w-full aspect-[16/9] md:max-w-none max-w-xs mx-auto bg-indigo-300 h-full flex items-center justify-center text-2xl'>
+      <div className='flex w-full flex-col gap-4 p-3 md:p-6 lg:p-0 lg:gap-x-16 rounded-xl border shadow-xl'>
+        <div className='md:w-full aspect-[16/9] md:max-w-none max-w-xs mx-auto h-full flex items-center justify-center text-2xl'>
           <div className='w-full h-full '>
             <ReactGoogleSlides
               width={'100%'}
@@ -39,7 +39,7 @@ const CustomerIntro = ({ logo, name, link }) => {
           </div>
         </div>
 
-        <div className='w-full flex max-w-xs md:max-w-none mx-auto flex-col items-center gap-2 bg-gb-main shadow  rounded-lg cursor-pointer'>
+        <div className='w-full flex max-w-xs md:max-w-none mx-auto flex-col items-center gap-2cursor-pointer'>
           {/* <div className='justify-center items-center flex gap-1.5'>
                 <div>
                   <InformationCircleIcon className='w-6 h-6 stroke-white' />
