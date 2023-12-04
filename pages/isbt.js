@@ -16,7 +16,6 @@ import VideoPlayer from '../components/VideoPlayer';
 import CustomerCourses from '../components/shared/CustomerCourses';
 
 const Page = ({ isbt }) => {
-  console.log(isbt);
   return (
     <div className='w-full flex flex-col gap-4 md:gap-6 lg:gap-12 py-6 lg:py-9 mx-auto'>
       <div className='w-full h-full grid md:grid-cols-2 gap-x-24 py-16 max-w-7xl mx-auto px-3 md:px-6 xl:px-0'>

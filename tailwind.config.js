@@ -62,6 +62,11 @@ module.exports = {
         'unilever-jade': '#00d7c4',
         'unilever-purple': '#7705bc',
         'unilever-lavendar': '#e2bee8',
+        'gb-main': '#00bcdd',
+        'gb-green': '#93c840',
+        'gb-dark': '#051923',
+        'gb-gray': '#636466',
+        'gb-red': '#FB6107',
       },
       backgroundImage: {
         'dark-mobile':

@@ -16,9 +16,9 @@ const FullWidthDropDown = ({
   const [isOpen, setIsOpen] = useState(open);
 
   return (
-    <motion.div className={`w-full ${bg} rounded-lg flex flex-col`}>
+    <motion.div className={`w-full ${bg} rounded-xl flex flex-col`}>
       <motion.div
-        className={`w-full transition-all ease-in duration-200 flex justify-between rounded-t-lg py-6 px-6 cursor-pointer ${
+        className={`w-full transition-all ease-in duration-200 flex justify-between rounded-t-xl py-6 px-6 cursor-pointer ${
           isOpen ? bgdark : bg
         }`}
         onClick={() => setIsOpen(!isOpen)}
@@ -60,7 +60,7 @@ const FullWidthDropDown = ({
                 duration: 0.3,
                 delayChildren: 1,
               }}
-              className={`${bgContent} rounded-b-lg`}
+              className={`${bgContent} rounded-b-xl`}
             >
               <motion.div
                 className={`px-6 w-full mt-9`}
