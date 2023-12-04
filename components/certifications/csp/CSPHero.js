@@ -75,7 +75,9 @@ const CSPHero = () => {
         >
           <div className='w-full h-full aspect-[16/9] max-w-[78%] mx-auto absolute -translate-x-1/2 left-1/2'>
             <VideoPlayer
-              videoEmbedLink={'https://player.vimeo.com/video/888839253'}
+              videoEmbedLink={
+                'https://player.vimeo.com/video/888839253?h=c1a4d5982a&amp;badge=0&amp;autopause=0&amp;quality_selector=1&amp;player_id=0&amp;app_id=58479'
+              }
             />
           </div>
         </div>
