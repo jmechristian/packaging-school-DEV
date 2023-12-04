@@ -46,11 +46,7 @@ const Page = () => {
 
   return (
     <div className='w-full max-w-7xl px-3 md:px-6 lg:px-0 flex flex-col gap-4 md:gap-6 pb-3 md:pb-6 lg:pb-24 mx-auto'>
-      <CustomerIntro
-        logo={
-          'https://packschool.s3.amazonaws.com/GB_Logo_Family_16_x_9_New.png'
-        }
-      />
+      <CustomerIntro logo={'https://packschool.s3.amazonaws.com/GB_logo.png'} />
       <FullWidthDropDown
         title={'featured'}
         Icon={BoltIcon}
