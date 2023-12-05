@@ -61,8 +61,8 @@ const CSPCard = () => {
                 <div className='text-lg font-semibold'>Objective 1</div>
               </div>
               <div className='pl-7'>
-                Define the key terminology a learner needs to speak the language
-                of sustainability with colleagues and customers
+                Define the key terminology needed to speak the language of
+                sustainability with colleagues and customers
               </div>
             </div>
             <div className='flex flex-col gap-1'>
@@ -95,7 +95,7 @@ const CSPCard = () => {
                 <div className='text-lg font-semibold'>Objective 4</div>
               </div>
               <div className='pl-7'>
-                Measure the carbon footprint of their packaging
+                Measure the carbon footprint of your packaging
               </div>
             </div>
             <div className='flex flex-col gap-1'>
