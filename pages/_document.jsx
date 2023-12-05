@@ -47,7 +47,6 @@ export default function Document() {
           }}
         />
         <Script
-          async
           defer
           data-domain='packagingschool.com'
           src='https://plausible.io/js/script.js'
