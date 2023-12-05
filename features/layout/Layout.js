@@ -21,6 +21,7 @@ import HeaderNew from '../navigation/Header/HeaderNew';
 import SearchContainer from '../../components/search/SearchContainer';
 import Loading from '../../components/shared/Loading';
 import SignInModal from '../../components/shared/SignInModal';
+import CookieConsent from '../../components/shared/CookieConsent';
 
 const Layout = ({ children }) => {
   const dispatch = useDispatch();
@@ -157,6 +158,7 @@ const Layout = ({ children }) => {
           content='0J1SRWS-xIM_nHRIochuPhFVG-Yfa3lPy3Y7qoAsx8Y'
         />
       </Head>
+      <CookieConsent />
       <div className={`${darkMode ? 'dark' : ''} `}>
         <div className='relative flex flex-col justify-between'>
           {searchOpen && <SearchContainer />}
