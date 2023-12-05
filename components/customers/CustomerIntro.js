@@ -50,7 +50,7 @@ const CustomerIntro = ({ logo, name, link }) => {
             Please choose your instruction method below. If you have any
             questions, please reach out to email@email.com
           </div>
-          <div className='w-fit grid grid-cols-3 gap-x-7 overflow-hidden pb-6'>
+          <div className='w-fit grid grid-cols-3 gap-x-7 overflow-hidden pb-3'>
             <div
               className='w-16 h-16 rounded-full bg-gb-green hover:bg-gb-gray shadow-md flex items-center justify-center'
               onClick={() => setIsMediaType('VIDEO')}
