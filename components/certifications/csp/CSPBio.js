@@ -1,6 +1,8 @@
 import React from 'react';
 import NewCouseCard from '../../shared/NewCouseCard';
 import { AcademicCapIcon, RocketLaunchIcon } from '@heroicons/react/24/outline';
+import FadeIn from '../../../helpers/FadeIn';
+import { SectionHeading } from '../../shared/SectionHeading';
 
 const CSPBio = () => {
   return (
@@ -10,15 +12,21 @@ const CSPBio = () => {
     >
       <div className='w-full flex flex-col lg:flex-row justify-between items-center gap-9 py-12 px-6 lg:px-12'>
         <div className='flex flex-col gap-9 pt-6 lg:pt-0'>
+          <FadeIn>
+            <SectionHeading number='4' className={'text-white ring-white'}>
+              Want more sustainability?
+            </SectionHeading>
+          </FadeIn>
           <div>
-            <h2 className='text-4xl md:text-5xl text-white max-w-xl'>
-              Want to learn more about sustainability?
+            <h2 className='text-3xl md:text-5xl text-white max-w-xl'>
+              Ready to Take the Lead in Sustainability? Expand Your Expertise
+              Now!
             </h2>
           </div>
           <div className='w-full max-w-2xl lg:text-xl text-white font-medium'>
             With over two decades of industry experience, Dr. Sandeep Kulkarni,
             founder and President of KoolEarth Solutions Inc., and an adjunct
-            professor at The Packaging School, guides students through the
+            professor at the Packaging School, guides students through the
             comprehensive exploration of bioplastics, offering insights,
             strategies, and a forward-looking perspective on integrating
             bioplastics into current applications.

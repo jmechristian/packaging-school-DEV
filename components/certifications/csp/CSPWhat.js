@@ -33,8 +33,7 @@ const CSPWhat = () => {
               it&apos;s a vital ongoing dialogue crucial for every industry.
               Meeting customer demands for sustainable packaging requires
               embedding this conversation into the packaging concept phase,
-              considering the entire life cycle to minimize environmental
-              impact.
+              considering the entire lifecycle to minimize environmental impact.
             </p>
             <p className='dark:text-gray-500 text-slate-700 text-lg leading-normal font-greycliff tracking-wide max-w-prose'>
               To that end, the Pacakging School has crafted a sustainability

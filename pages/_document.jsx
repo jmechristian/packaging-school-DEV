@@ -32,11 +32,7 @@ export default function Document() {
             })(window,document,'script','dataLayer','GTM-5H8KXB9');`,
           }}
         />
-        <link
-          href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'
-          rel='stylesheet'
-        ></link>
-        {/* <Script
+        <Script
           id='hotjar'
           strategy='afterInteractive'
           dangerouslySetInnerHTML={{
@@ -47,9 +43,19 @@ export default function Document() {
               r=o.createElement('script');r.async=1;
               r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
               a.appendChild(r);
-          })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');`,
+            })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');`,
           }}
-        /> */}
+        />
+        <Script
+          id='plausible'
+          strategy='afterInteractive'
+          data-domain='packagingschool.com'
+          src='https://plausible.io/js/script.js'
+        />
+        <link
+          href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'
+          rel='stylesheet'
+        ></link>
       </Head>
       <body className='flex flex-col min-h-screen' id='home'>
         <Main />
