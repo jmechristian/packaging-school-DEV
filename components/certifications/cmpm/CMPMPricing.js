@@ -91,28 +91,36 @@ export default function CMPMPricing() {
 
           <div className='grid lg:grid-cols-3 gap-6 mt-6'>
             {sessions &&
-              sessions.slice(0, 3).map((it, i) => (
-                <div
-                  className='bg-slate-400 dark:bg-dark-mid rounded-lg shadow-sm'
-                  key={it.deadline}
-                >
-                  <div className='flex flex-col gap-3 p-4'>
-                    <div className='dark:text-base-brand text-slate-700 uppercase tracking-wide text-sm font-semibold'>
-                      {it.title}
-                    </div>
-                    <div className='text-white text-lg font-bold flex flex-col'>
-                      <div>{translateDate(it.startDate)} -</div>
-                      <div>{translateDate(it.endDate)}</div>
-                    </div>
-                    <div className='dark:text-base-brand text-slate-700 uppercase tracking-wide text-sm font-semibold mt-9'>
-                      Application Deadline
-                    </div>
-                    <div className='text-white dark:text-gray-400  text-lg font-bold whitespace-pre-wrap'>
-                      {translateDate(it.deadline)}
+              sessions
+                .sort((a, b) => {
+                  let dateA = new Date(a.deadline);
+                  let dateB = new Date(b.deadline);
+
+                  return dateA - dateB;
+                })
+                .slice(0, 3)
+                .map((it, i) => (
+                  <div
+                    className='bg-slate-400 dark:bg-dark-mid rounded-lg shadow-sm'
+                    key={it.deadline}
+                  >
+                    <div className='flex flex-col gap-3 p-4'>
+                      <div className='dark:text-base-brand text-slate-700 uppercase tracking-wide text-sm font-semibold'>
+                        {it.title}
+                      </div>
+                      <div className='text-white text-lg font-bold flex flex-col'>
+                        <div>{translateDate(it.startDate)} -</div>
+                        <div>{translateDate(it.endDate)}</div>
+                      </div>
+                      <div className='dark:text-base-brand text-slate-700 uppercase tracking-wide text-sm font-semibold mt-9'>
+                        Application Deadline
+                      </div>
+                      <div className='text-white dark:text-gray-400  text-lg font-bold whitespace-pre-wrap'>
+                        {translateDate(it.deadline)}
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
           </div>
         </div>
         <div className='-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0'>
