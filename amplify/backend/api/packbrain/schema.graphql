@@ -216,6 +216,13 @@ type User @model @auth(rules: [{ allow: public }]) {
   source: String
 }
 
+type CMPMSession @model @auth(rules: [{ allow: public }]) {
+  startDate: String!
+  endDate: String! @index(name: "cmpmSessionByEndDate")
+  deadline: String! @index(name: "cmpmSessionByDeadline")
+  title: String!
+}
+
 type CMPMForm
   @model(timestamps: { createdAt: "createdOn", updatedAt: "updatedOn" })
   @auth(rules: [{ allow: public }]) {

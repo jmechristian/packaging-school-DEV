@@ -1,4 +1,7 @@
+import { useEffect, useState } from 'react';
+import { API } from 'aws-amplify';
 import { CheckIcon, QuestionMarkCircleIcon } from '@heroicons/react/20/solid';
+import { listCMPMSessions } from '../../../src/graphql/queries';
 import Link from 'next/link';
 
 const schedule = [
@@ -20,6 +23,25 @@ const schedule = [
 ];
 
 export default function CMPMPricing() {
+  const [sessions, setSessions] = useState([]);
+
+  useEffect(() => {
+    const getSessions = async () => {
+      const res = await API.graphql({ query: listCMPMSessions });
+      setSessions(res.data.listCMPMSessions.items);
+    };
+
+    getSessions();
+  }, []);
+
+  const translateDate = (date) => {
+    return new Date(date).toLocaleDateString('en-us', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+    });
+  };
+
   return (
     <div>
       <div className='mx-auto'>
@@ -66,28 +88,31 @@ export default function CMPMPricing() {
           <h3 className='text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-400'>
             Find Your Cohort
           </h3>
+
           <div className='grid lg:grid-cols-3 gap-6 mt-6'>
-            {schedule.map((it, i) => (
-              <div
-                className='bg-slate-400 dark:bg-dark-mid rounded-lg shadow-sm'
-                key={it.deadline}
-              >
-                <div className='flex flex-col gap-3 p-4'>
-                  <div className='dark:text-base-brand text-slate-700 uppercase tracking-wide text-sm font-semibold'>
-                    {it.session}
-                  </div>
-                  <div className='text-white text-lg font-bold whitespace-pre-wrap'>
-                    {it.dates}
-                  </div>
-                  <div className='dark:text-base-brand text-slate-700 uppercase tracking-wide text-sm font-semibold mt-9'>
-                    Application Deadline
-                  </div>
-                  <div className='text-white dark:text-gray-400  text-lg font-bold whitespace-pre-wrap'>
-                    {it.deadline}
+            {sessions &&
+              sessions.slice(0, 3).map((it, i) => (
+                <div
+                  className='bg-slate-400 dark:bg-dark-mid rounded-lg shadow-sm'
+                  key={it.deadline}
+                >
+                  <div className='flex flex-col gap-3 p-4'>
+                    <div className='dark:text-base-brand text-slate-700 uppercase tracking-wide text-sm font-semibold'>
+                      {it.title}
+                    </div>
+                    <div className='text-white text-lg font-bold flex flex-col'>
+                      <div>{translateDate(it.startDate)} -</div>
+                      <div>{translateDate(it.endDate)}</div>
+                    </div>
+                    <div className='dark:text-base-brand text-slate-700 uppercase tracking-wide text-sm font-semibold mt-9'>
+                      Application Deadline
+                    </div>
+                    <div className='text-white dark:text-gray-400  text-lg font-bold whitespace-pre-wrap'>
+                      {translateDate(it.deadline)}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
           </div>
         </div>
         <div className='-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0'>

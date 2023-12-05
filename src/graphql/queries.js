@@ -1723,6 +1723,95 @@ export const usersByCompanyID = /* GraphQL */ `
     }
   }
 `;
+export const getCMPMSession = /* GraphQL */ `
+  query GetCMPMSession($id: ID!) {
+    getCMPMSession(id: $id) {
+      startDate
+      endDate
+      deadline
+      title
+      id
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listCMPMSessions = /* GraphQL */ `
+  query ListCMPMSessions(
+    $filter: ModelCMPMSessionFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listCMPMSessions(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        startDate
+        endDate
+        deadline
+        title
+        id
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const cMPMSessionsByEndDate = /* GraphQL */ `
+  query CMPMSessionsByEndDate(
+    $endDate: String!
+    $sortDirection: ModelSortDirection
+    $filter: ModelCMPMSessionFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    cMPMSessionsByEndDate(
+      endDate: $endDate
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        startDate
+        endDate
+        deadline
+        title
+        id
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const cMPMSessionsByDeadline = /* GraphQL */ `
+  query CMPMSessionsByDeadline(
+    $deadline: String!
+    $sortDirection: ModelSortDirection
+    $filter: ModelCMPMSessionFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    cMPMSessionsByDeadline(
+      deadline: $deadline
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        startDate
+        endDate
+        deadline
+        title
+        id
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
 export const getCMPMForm = /* GraphQL */ `
   query GetCMPMForm($id: ID!) {
     getCMPMForm(id: $id) {

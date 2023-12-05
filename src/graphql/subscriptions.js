@@ -1924,6 +1924,45 @@ export const onDeleteUser = /* GraphQL */ `
     }
   }
 `;
+export const onCreateCMPMSession = /* GraphQL */ `
+  subscription OnCreateCMPMSession {
+    onCreateCMPMSession {
+      startDate
+      endDate
+      deadline
+      title
+      id
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateCMPMSession = /* GraphQL */ `
+  subscription OnUpdateCMPMSession {
+    onUpdateCMPMSession {
+      startDate
+      endDate
+      deadline
+      title
+      id
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteCMPMSession = /* GraphQL */ `
+  subscription OnDeleteCMPMSession {
+    onDeleteCMPMSession {
+      startDate
+      endDate
+      deadline
+      title
+      id
+      createdAt
+      updatedAt
+    }
+  }
+`;
 export const onCreateCMPMForm = /* GraphQL */ `
   subscription OnCreateCMPMForm {
     onCreateCMPMForm {

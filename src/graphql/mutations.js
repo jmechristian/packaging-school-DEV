@@ -2050,6 +2050,54 @@ export const deleteUser = /* GraphQL */ `
     }
   }
 `;
+export const createCMPMSession = /* GraphQL */ `
+  mutation CreateCMPMSession(
+    $input: CreateCMPMSessionInput!
+    $condition: ModelCMPMSessionConditionInput
+  ) {
+    createCMPMSession(input: $input, condition: $condition) {
+      startDate
+      endDate
+      deadline
+      title
+      id
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateCMPMSession = /* GraphQL */ `
+  mutation UpdateCMPMSession(
+    $input: UpdateCMPMSessionInput!
+    $condition: ModelCMPMSessionConditionInput
+  ) {
+    updateCMPMSession(input: $input, condition: $condition) {
+      startDate
+      endDate
+      deadline
+      title
+      id
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteCMPMSession = /* GraphQL */ `
+  mutation DeleteCMPMSession(
+    $input: DeleteCMPMSessionInput!
+    $condition: ModelCMPMSessionConditionInput
+  ) {
+    deleteCMPMSession(input: $input, condition: $condition) {
+      startDate
+      endDate
+      deadline
+      title
+      id
+      createdAt
+      updatedAt
+    }
+  }
+`;
 export const createCMPMForm = /* GraphQL */ `
   mutation CreateCMPMForm(
     $input: CreateCMPMFormInput!
