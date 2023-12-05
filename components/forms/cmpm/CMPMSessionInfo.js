@@ -25,33 +25,33 @@ const CMPMSessionInfo = ({ email, free }) => {
             <div className='flex items-center gap-x-3'>
               <input
                 {...register('sessionApplying', { required: true })}
-                id='dec2023'
+                id='spring2024'
                 name='sessionApplying'
-                value='dec2023'
+                value='spring2024'
                 type='radio'
                 className='h-4 w-4 border-slate-300 text-base-brand focus:ring-base-brand'
               />
               <label
-                htmlFor='dec2023'
+                htmlFor='spring2024'
                 className='block font-medium font-greycliff leading-6 text-slate-900'
               >
-                Dec 2023
+                Spring / Mar 2024
               </label>
             </div>
             <div className='flex items-center gap-x-3'>
               <input
                 {...register('sessionApplying', { required: true })}
-                id='March 2024'
+                id='summer2024'
                 name='sessionApplying'
                 type='radio'
-                value='March 2024'
+                value='summer2024'
                 className='h-4 w-4 border-slate-300 text-base-brand focus:ring-base-brand'
               />
               <label
-                htmlFor='March 2024'
+                htmlFor='summer2024'
                 className='block font-medium font-greycliff leading-6 text-slate-900'
               >
-                March 2024
+                Summer / May 2024
               </label>
             </div>
           </div>
