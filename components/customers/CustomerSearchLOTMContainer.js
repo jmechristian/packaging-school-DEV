@@ -233,7 +233,7 @@ const CustomerSearchLOTMContainer = () => {
       {!isActiveSearch && isExpanded ? (
         <div className='w-fit mx-auto grid gap-12 md:gap-6 lg:gap-16 md:grid-cols-2 lg:grid-cols-3 pb-3 mb-9 overflow-hidden lg:pb-9'>
           {lessonsToShow
-            .splice(0, 3)
+            .slice(4)
             .filter((cou) => cou.type === 'LOTM')
             .map((link) => (
               <NewCouseCard
