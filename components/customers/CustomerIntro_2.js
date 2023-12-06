@@ -17,10 +17,10 @@ import VideoPlayer from '../VideoPlayer';
 
 const CustomerIntro_2 = () => {
   return (
-    <div className='w-full h-full flex flex-col md:grid md:grid-cols-5 gap-12 pt-9 pb-12'>
+    <div className='w-full h-full flex flex-col md:grid md:grid-cols-5 gap-12 pt-9 pb-16'>
       <div className='md:col-span-3'>
-        <div className='w-full flex flex-col gap-9 md:max-w-2xl'>
-          <div className='w-full h-full flex'>
+        <div className='w-full flex flex-col justify-center gap-9 md:max-w-2xl'>
+          <div className='w-full h-full flex mb-6'>
             <img
               src='https://packschool.s3.amazonaws.com/GB_logo.png'
               alt='greenBlue logo'
