@@ -7,8 +7,6 @@ import {
   BookmarkSquareIcon,
 } from '@heroicons/react/24/outline';
 import { Disclosure } from '@headlessui/react';
-import { useSelector } from 'react-redux';
-import { API } from 'aws-amplify';
 
 import CustomerIntro from '../components/customers/CustomerIntro';
 import CustomerSearchContainer from '../components/customers/CustomerSearchContainer';
@@ -46,9 +44,6 @@ const faqs = [
 ];
 
 const Page = () => {
-  const { allLessons } = useSelector((state) => state.course_filter);
-  const { allCourses } = useSelector((state) => state.course_filter);
-
   return (
     <div className='w-full max-w-7xl px-3 md:px-6 lg:px-0 flex flex-col gap-4 md:gap-8 pb-3 md:pb-6 lg:pb-24 pt-12 mx-auto'>
       {/* <CustomerIntro logo={'https://packschool.s3.amazonaws.com/GB_logo.png'} /> */}

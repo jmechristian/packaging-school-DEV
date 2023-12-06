@@ -134,7 +134,7 @@ const CustomerSearchLOTMContainer = () => {
                 </div>
               </div>
             ) : (
-              <div className='w-fit mx-auto grid gap-20 lg:grid-cols-3 pb-3 mt-9 overflow-hidden md:pb-12'>
+              <div className='w-fit mx-auto grid gap-20 lg:grid-cols-3 pb-3 mt-9 overflow-hidden md:pb-6'>
                 {lessonsToShow.map((link) => (
                   <NewCouseCard
                     key={link.title}
@@ -152,18 +152,18 @@ const CustomerSearchLOTMContainer = () => {
           </div>
         </motion.div>
       ) : (
-        <div className='w-fit lg:pb-9 mx-auto md:px-6 grid gap-12 md:gap-x-6 md:gap-y-12 lg:gap-16 md:grid-cols-2 lg:grid-cols-3 pb-3 my-9 overflow-hidden items-center'>
-          <div className='md:col-span-2 lg:col-span-3 grid overflow-hidden grid-cols-1 md:grid-cols-2 bg-white rounded-lg shadow-lg max-w-[300px] md:max-w-none'>
-            <div className='w-full rounded-lg'>
+        <div className='w-fit md:w-full md:px-6 lg:px-16 lg:w-fit mx-auto grid gap-12 md:gap-x-6 md:gap-y-12 lg:gap-x-16 lg:gap-y-16 md:grid-cols-2 xl:grid-cols-3 mt-9 overflow-hidden items-center pb-9'>
+          <div className='md:col-span-2 xl:col-span-3 grid overflow-hidden grid-cols-1 lg:grid-cols-2 bg-white rounded-xl shadow-lg max-w-[300px] md:max-w-none'>
+            <div className='w-full rounded-xl flex items-center'>
               <div
-                className='w-full aspect-[16/9] rounded-lg justify-center items-center flex bg-cover bg-center relative'
+                className='w-full aspect-[16/9] rounded-xl justify-center items-center flex bg-cover bg-center relative'
                 style={{
                   backgroundImage: `url(${
                     lessonsToShow && lessonsToShow[0].seoImage
                   })`,
                 }}
               >
-                <motion.div className='absolute left-4 top-4 w-fit z-[2] bg-neutral-600/40 backdrop-blur-md rounded-lg px-2 py-1.5 shadow'>
+                <motion.div className='absolute left-4 top-4 w-fit z-[2] bg-neutral-600/40 backdrop-blur-md rounded-xl px-2 py-1.5 shadow'>
                   <motion.div className='flex items-center gap-2'>
                     <motion.div>
                       <Bolt className='w-5 h-5 fill-white' />
@@ -178,19 +178,19 @@ const CustomerSearchLOTMContainer = () => {
               </motion.div> */}
               </div>
             </div>
-            <div className='w-full flex justify-center items-center px-6 lg:px-0'>
+            <div className='w-full flex justify-center items-center px-6'>
               <motion.div className='flex flex-col gap-3 py-9 lg:py-12'>
                 <motion.div className='font-semibold text-sm uppercase text-base-mid'>
                   {createDate(lessonsToShow[0].createdAt)}
                 </motion.div>
-                <motion.div className='font-semibold text-2xl lg:text-3xl max-w-sm tracking-tight leading-none'>
+                <motion.div className='font-semibold text-2xl lg:text-3xl max-w-sm md:max-w-full tracking-tight leading-none'>
                   {lessonsToShow[0].title}
                 </motion.div>
-                <motion.div className='leading-snug line-clamp-4 text-neutral-600 max-w-md'>
+                <motion.div className='leading-snug line-clamp-4 text-neutral-600 max-w-md md:max-w-full'>
                   {lessonsToShow[0].subhead}
                 </motion.div>
                 <motion.div
-                  className='bg-black text-white font-bold w-fit rounded-lg px-6 py-2 mt-2 cursor-pointer'
+                  className='bg-black text-white font-bold w-fit rounded-xl px-6 py-2 mt-2 cursor-pointer'
                   onClick={() =>
                     window.open(`/lessons/${lessonsToShow[0].slug}`, '_blank')
                   }
@@ -231,7 +231,7 @@ const CustomerSearchLOTMContainer = () => {
       )}
 
       {!isActiveSearch && isExpanded ? (
-        <div className='w-fit mx-auto grid gap-12 md:gap-6 lg:gap-16 md:grid-cols-2 lg:grid-cols-3 pb-3 mb-9 overflow-hidden lg:pb-9'>
+        <div className='w-fit md:w-full md:px-6 lg:w-fit mx-auto grid gap-12 md:gap-x-6 md:gap-y-12 lg:gap-x-16 lg:gap-y-16 md:grid-cols-2 xl:grid-cols-3 pb-9 overflow-hidden items-center'>
           {lessonsToShow
             .slice(4)
             .filter((cou) => cou.type === 'LOTM')
@@ -257,7 +257,7 @@ const CustomerSearchLOTMContainer = () => {
           className='w-full flex justify-center mb-12'
           onClick={() => setIsExpanded(!isExpanded)}
         >
-          <div className='flex items-center gap-2 bg-clemson hover:bg-clemson-dark cursor-pointer text-white px-6 py-3 rounded-lg font-semibold shadow-md'>
+          <div className='flex items-center gap-2 bg-clemson hover:bg-clemson-dark cursor-pointer text-white px-6 py-3 rounded-xl font-semibold shadow-md'>
             <div>{isExpanded ? 'Hide Courses' : 'Show All Lessons'}</div>
             <div>
               <ChevronDoubleDownIcon
