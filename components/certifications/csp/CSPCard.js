@@ -119,8 +119,8 @@ const CSPCard = () => {
               </div>
               <div className='pl-7'>
                 Assess your environmental performance criteria through a license
-                to cutting-edge sustainability tools (ISO 14040 compliant life
-                cycle analysis software) into your concept development and
+                to cutting-edge sustainability tools (ISO 14040/14044 compliant
+                life cycle analysis software) into your concept development and
                 material selection steps of packaging design
               </div>
             </div>

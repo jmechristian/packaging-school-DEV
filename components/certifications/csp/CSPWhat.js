@@ -24,7 +24,7 @@ const CSPWhat = () => {
           </FadeIn>
           <h2 className='text-3xl lg:text-4xl max-w-2xl dark:text-white'>
             <FadeIn>
-              Mastering Sustainable Packaging: From Concept to Lifelong Impact
+              Mastering Sustainable Packaging: From Concept to End of Life
             </FadeIn>
           </h2>
           <div className='flex flex-col gap-9'>
@@ -41,8 +41,8 @@ const CSPWhat = () => {
               communicate in sustainability language, set and achieve UN-based
               sustainability targets, design sustainable systems, measure carbon
               footprints, attain carbon neutrality through offset programs, and
-              integrate cutting-edge sustainability tools into packaging concept
-              development and material selection.
+              integrate a cutting-edge LCA software into their packaging concept
+              development and material selection processes.
             </p>
           </div>
         </div>
