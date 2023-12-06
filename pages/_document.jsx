@@ -46,12 +46,6 @@ export default function Document() {
             })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');`,
           }}
         />
-        <Script
-          async
-          defer
-          data-domain='packagingschool.com'
-          src='https://plausible.io/js/script.js'
-        />
         <link
           href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'
           rel='stylesheet'
