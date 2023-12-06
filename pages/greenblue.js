@@ -15,7 +15,7 @@ import CustomerSearchContainer from '../components/customers/CustomerSearchConta
 import FullWidthDropDown from '../components/shared/FullWidthDropDown';
 import CustomerFeatures from '../components/customers/CustomerFeatures';
 import CustomerIntro_2 from '../components/customers/CustomerIntro_2';
-import { dummyCourses } from '../data/DummyCourses';
+import { dummyData } from '../data/DummyData';
 import CustomerSearchLOTMContainer from '../components/customers/CustomerSearchLOTMContainer';
 
 const faqs = [
@@ -77,9 +77,7 @@ const Page = () => {
         Icon={AcademicCapIcon}
         bg='bg-base-mid'
         bgdark='bg-base-dark'
-        content={
-          <CustomerSearchContainer courses={dummyCourses ? dummyCourses : []} />
-        }
+        content={<CustomerSearchContainer courses={dummyData} />}
         highlight={'bg-clemson'}
         bgContent={'bg-neutral-200 border'}
       />
