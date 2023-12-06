@@ -17,7 +17,7 @@ import VideoPlayer from '../VideoPlayer';
 
 const CustomerIntro_2 = () => {
   return (
-    <div className='w-full h-full flex flex-col md:grid md:grid-cols-5 gap-12 pt-6 pb-16'>
+    <div className='w-full h-full flex flex-col md:grid md:grid-cols-5 gap-12 pt-12 pb-20'>
       <div className='md:col-span-3 flex  items-center'>
         <div className='w-full flex flex-col justify-center gap-9 md:max-w-2xl'>
           <div className='w-full h-full flex mb-4'>
