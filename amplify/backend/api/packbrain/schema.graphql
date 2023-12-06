@@ -495,6 +495,9 @@ type Customer @model @auth(rules: [{ allow: public }]) {
   id: ID!
   displayName: String!
   link: String
+  logo: String
+  primaryColor: String
+  highlightColor: String
   courses: [TrackedCourse]
     @hasMany(indexName: "trackedByCustomer", fields: ["id"])
 }

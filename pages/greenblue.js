@@ -73,7 +73,7 @@ const Page = () => {
         Icon={AcademicCapIcon}
         bg='bg-base-mid'
         bgdark='bg-base-dark'
-        content={''}
+        content={<CustomerSearchContainer />}
         highlight={'bg-clemson'}
         bgContent={'bg-neutral-200 border'}
       />
