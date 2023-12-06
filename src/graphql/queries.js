@@ -3625,6 +3625,9 @@ export const getTrackedCourse = /* GraphQL */ `
         id
         displayName
         link
+        logo
+        primaryColor
+        highlightColor
         courses {
           nextToken
         }
@@ -3652,6 +3655,9 @@ export const listTrackedCourses = /* GraphQL */ `
           id
           displayName
           link
+          logo
+          primaryColor
+          highlightColor
           createdAt
           updatedAt
         }
@@ -3688,6 +3694,9 @@ export const trackedCoursesByCustomerIdAndClicks = /* GraphQL */ `
           id
           displayName
           link
+          logo
+          primaryColor
+          highlightColor
           createdAt
           updatedAt
         }
@@ -3705,6 +3714,9 @@ export const getCustomer = /* GraphQL */ `
       id
       displayName
       link
+      logo
+      primaryColor
+      highlightColor
       courses {
         items {
           id
@@ -3732,6 +3744,9 @@ export const listCustomers = /* GraphQL */ `
         id
         displayName
         link
+        logo
+        primaryColor
+        highlightColor
         courses {
           nextToken
         }

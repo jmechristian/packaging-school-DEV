@@ -4808,6 +4808,9 @@ export const onCreateTrackedCourse = /* GraphQL */ `
         id
         displayName
         link
+        logo
+        primaryColor
+        highlightColor
         courses {
           nextToken
         }
@@ -4830,6 +4833,9 @@ export const onUpdateTrackedCourse = /* GraphQL */ `
         id
         displayName
         link
+        logo
+        primaryColor
+        highlightColor
         courses {
           nextToken
         }
@@ -4852,6 +4858,9 @@ export const onDeleteTrackedCourse = /* GraphQL */ `
         id
         displayName
         link
+        logo
+        primaryColor
+        highlightColor
         courses {
           nextToken
         }
@@ -4870,6 +4879,9 @@ export const onCreateCustomer = /* GraphQL */ `
       id
       displayName
       link
+      logo
+      primaryColor
+      highlightColor
       courses {
         items {
           id
@@ -4892,6 +4904,9 @@ export const onUpdateCustomer = /* GraphQL */ `
       id
       displayName
       link
+      logo
+      primaryColor
+      highlightColor
       courses {
         items {
           id
@@ -4914,6 +4929,9 @@ export const onDeleteCustomer = /* GraphQL */ `
       id
       displayName
       link
+      logo
+      primaryColor
+      highlightColor
       courses {
         items {
           id
