@@ -1,4 +1,4 @@
-export const dummyCourse = [
+export const dummyCourses = [
   {
     id: '318cdcea-3954-4581-bfdc-ae3318229a5b',
     courseId: 'f2fad11c-4548-41ea-b39d-be5a4913a4f5',
