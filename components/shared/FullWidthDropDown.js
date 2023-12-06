@@ -29,7 +29,7 @@ const FullWidthDropDown = ({
           >
             <Icon className={`stroke-white w-6 h-6 transition-all ease-in`} />
           </motion.div>
-          <motion.div className='text-white font-semibold tracking-tight text-2xl capitalize leading-tight'>
+          <motion.div className='text-white font-semibold tracking-tight text-xl md:text-2xl capitalize leading-tight'>
             {title}
           </motion.div>
         </motion.div>

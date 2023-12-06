@@ -45,7 +45,7 @@ const faqs = [
 
 const Page = () => {
   return (
-    <div className='w-full max-w-7xl px-3 md:px-6 lg:px-0 flex flex-col gap-4 md:gap-8 pb-3 md:pb-6 lg:pb-24 pt-12 mx-auto'>
+    <div className='w-full max-w-7xl px-3 md:px-6 lg:px-0 flex flex-col gap-4 md:gap-8 pb-3 md:pb-6 lg:pb-24 md:pt-12 mx-auto'>
       {/* <CustomerIntro logo={'https://packschool.s3.amazonaws.com/GB_logo.png'} /> */}
       <CustomerIntro_2 />
       <FullWidthDropDown
