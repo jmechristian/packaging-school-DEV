@@ -155,7 +155,7 @@ const CustomerSearchContainer = ({ courses }) => {
               <div
                 className='w-full aspect-[16/9] md:aspect-[4/3] rounded-lg justify-center items-center flex bg-cover bg-center relative'
                 style={{
-                  backgroundImage: `url("https://packschool.s3.amazonaws.com/unilever-brands-1.png")`,
+                  backgroundImage: `url("https://packschool.s3.amazonaws.com/spc-seoImage-2.png")`,
                 }}
               >
                 <motion.div className='absolute left-1 top-1 md:left-4 md:top-4 w-fit z-[2] bg-neutral-600/40 backdrop-blur-md rounded-lg px-2 py-1.5 shadow'>
@@ -168,22 +168,30 @@ const CustomerSearchContainer = ({ courses }) => {
                     </motion.div>
                   </motion.div>
                 </motion.div>
-                <motion.div className='w-20 h-20 bg-white/40 backdrop-blur-lg hover:bg-clemson transition-colors ease-in rounded-full shadow-xl flex justify-center items-center cursor-pointer'>
+                {/* <motion.div className='w-20 h-20 bg-white/40 backdrop-blur-lg hover:bg-clemson transition-colors ease-in rounded-full shadow-xl flex justify-center items-center cursor-pointer'>
                   <PlayCircleIcon className='w-20 h-20' />
-                </motion.div>
+                </motion.div> */}
               </div>
             </div>
             <div className='w-full flex justify-center items-center px-6 lg:px-0'>
               <motion.div className='flex flex-col gap-3 py-9 md:py-3'>
                 <motion.div className='font-semibold text-xl lg:text-3xl max-w-sm tracking-tight leading-none'>
-                  Unilever Packaging Bootcamp 101
+                  SPC’s Bioplastics Topic
                 </motion.div>
                 <motion.div className='leading-snug lg:text-lg line-clamp-4 text-neutral-600 max-w-md'>
-                  This Boot Camp will serve as an introduction to the packaging
-                  industry and provide the fundamental knowledge necessary to
-                  get you up to speed.
+                  Welcome to SPC’s Knowledge Library about Bioplastics. In this
+                  topic, we will explore what bioplastics are and how we can
+                  think about them in the context of sustainable packaging.
                 </motion.div>
-                <motion.div className='bg-black text-white font-bold w-fit rounded-lg px-6 py-2 mt-2 cursor-pointer'>
+                <motion.div
+                  className='bg-black text-white font-bold w-fit rounded-lg px-6 py-2 mt-2 cursor-pointer'
+                  onClick={() => {
+                    window.open(
+                      'https://learn.packagingschool.com/enroll/2753655?price_id=3579258',
+                      '_blank'
+                    );
+                  }}
+                >
                   Select Course
                 </motion.div>
               </motion.div>
