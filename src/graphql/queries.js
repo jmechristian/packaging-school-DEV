@@ -2604,6 +2604,7 @@ export const getLMSCourse = /* GraphQL */ `
       id
       courseId
       category
+      categoryArray
       type
       cirriculum {
         items {
@@ -2669,6 +2670,7 @@ export const listLMSCourses = /* GraphQL */ `
         id
         courseId
         category
+        categoryArray
         type
         cirriculum {
           nextToken
@@ -2723,6 +2725,7 @@ export const lMSCoursesBySlug = /* GraphQL */ `
         id
         courseId
         category
+        categoryArray
         type
         cirriculum {
           nextToken
@@ -3257,6 +3260,7 @@ export const getStudent = /* GraphQL */ `
           id
           courseId
           category
+          categoryArray
           type
           price
           hours
@@ -4959,6 +4963,7 @@ export const getCirriculumCourses = /* GraphQL */ `
         id
         courseId
         category
+        categoryArray
         type
         cirriculum {
           nextToken
@@ -5023,6 +5028,7 @@ export const listCirriculumCourses = /* GraphQL */ `
           id
           courseId
           category
+          categoryArray
           type
           price
           hours
@@ -5084,6 +5090,7 @@ export const cirriculumCoursesByLMSCirriculumId = /* GraphQL */ `
           id
           courseId
           category
+          categoryArray
           type
           price
           hours
@@ -5145,6 +5152,7 @@ export const cirriculumCoursesByLMSCourseId = /* GraphQL */ `
           id
           courseId
           category
+          categoryArray
           type
           price
           hours
@@ -5184,6 +5192,7 @@ export const getCourseLessons = /* GraphQL */ `
         id
         courseId
         category
+        categoryArray
         type
         cirriculum {
           nextToken
@@ -5253,6 +5262,7 @@ export const listCourseLessons = /* GraphQL */ `
           id
           courseId
           category
+          categoryArray
           type
           price
           hours
@@ -5317,6 +5327,7 @@ export const courseLessonsByLMSCourseId = /* GraphQL */ `
           id
           courseId
           category
+          categoryArray
           type
           price
           hours
@@ -5381,6 +5392,7 @@ export const courseLessonsByLMSLessonId = /* GraphQL */ `
           id
           courseId
           category
+          categoryArray
           type
           price
           hours
@@ -5432,6 +5444,7 @@ export const getCourseInstructors = /* GraphQL */ `
         id
         courseId
         category
+        categoryArray
         type
         cirriculum {
           nextToken
@@ -5519,6 +5532,7 @@ export const listCourseInstructors = /* GraphQL */ `
           id
           courseId
           category
+          categoryArray
           type
           price
           hours
@@ -5577,6 +5591,7 @@ export const courseInstructorsByLMSCourseId = /* GraphQL */ `
           id
           courseId
           category
+          categoryArray
           type
           price
           hours
@@ -5635,6 +5650,7 @@ export const courseInstructorsByInstructorId = /* GraphQL */ `
           id
           courseId
           category
+          categoryArray
           type
           price
           hours

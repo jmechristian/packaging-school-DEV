@@ -17,7 +17,9 @@ const AllCourseBody = () => {
     } else if (selectedFilter.value === 'ELECTIVE') {
       return allCourses.filter((o) => o.type === 'ELECTIVE');
     } else {
-      return allCourses.filter((o) => o.category === selectedFilter.value);
+      return allCourses.filter((o) =>
+        o.categoryArray.includes(selectedFilter.value)
+      );
     }
   }, [selectedFilter, allCourses]);
 

@@ -371,6 +371,7 @@ type LMSCourse @model @auth(rules: [{ allow: public }]) {
   id: ID!
   courseId: String
   category: CategoryType @default(value: "MATERIALS")
+  categoryArray: [String]
   type: String
   cirriculum: [LMSCirriculum] @manyToMany(relationName: "CirriculumCourses")
   lmsLessons: [LMSLesson] @manyToMany(relationName: "CourseLessons")
