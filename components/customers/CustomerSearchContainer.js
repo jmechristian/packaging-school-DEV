@@ -5,7 +5,6 @@ import {
   ArrowLongRightIcon,
   AcademicCapIcon,
   ArchiveBoxIcon,
-  BoltIcon,
   BriefcaseIcon,
   Cog6ToothIcon,
   SwatchIcon,
@@ -14,6 +13,7 @@ import {
   RocketLaunchIcon,
   SparklesIcon,
   SignalIcon,
+  BoltSlashIcon,
 } from '@heroicons/react/24/outline';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
@@ -23,6 +23,7 @@ import {
   ChevronDoubleDownIcon,
   StarIcon,
   XMarkIcon,
+  BoltIcon,
 } from '@heroicons/react/24/solid';
 
 import NewCouseCard from '../shared/NewCouseCard';
@@ -64,7 +65,7 @@ const CustomerSearchContainer = ({ courses }) => {
   }, [initCourses, isSearchTerm]);
 
   return (
-    <motion.section className='px-0 lg:px-6 w-full flex flex-col gap-6'>
+    <motion.section className='px-0 lg:px-6 w-full flex flex-col gap-12'>
       <div className='border-y border-y-neutral-400'>
         <div className='flex justify-between items-center py-3'>
           {isActiveSearch ? (
@@ -149,98 +150,100 @@ const CustomerSearchContainer = ({ courses }) => {
           </div>
         </motion.div>
       ) : (
-        <div className='w-fit lg:pb-9 mx-auto md:px-6 grid gap-12 md:gap-x-6 md:gap-y-12 lg:gap-16 md:grid-cols-2 lg:grid-cols-3 pb-3 my-9 overflow-hidden items-center'>
-          <div className='md:col-span-2 lg:col-span-3 grid overflow-hidden grid-cols-1 md:grid-cols-2 bg-white rounded-lg shadow-lg max-w-[300px] md:max-w-none'>
-            <div className='rounded-lg'>
+        <div className='flex flex-col gap-12 justify-center items-center w-full max-w-[996px] mx-auto'>
+          <div className='md:col-span-2 xl:col-span-3 grid overflow-hidden grid-cols-1 lg:grid-cols-2 bg-white rounded-xl shadow-lg max-w-[300px] md:max-w-none'>
+            <div className='w-full rounded-xl flex items-center'>
               <div
-                className='w-full aspect-[16/9] md:aspect-[4/3] rounded-lg justify-center items-center flex bg-cover bg-center relative'
+                className='w-full aspect-[16/9] rounded-xl justify-center items-center flex bg-cover bg-center relative'
                 style={{
                   backgroundImage: `url("https://packschool.s3.amazonaws.com/spc-seoImage-2.png")`,
                 }}
               >
-                <motion.div className='absolute left-1 top-1 md:left-4 md:top-4 w-fit z-[2] bg-neutral-600/40 backdrop-blur-md rounded-lg px-2 py-1.5 shadow'>
+                <motion.div className='absolute left-4 top-4 w-fit z-[2] bg-neutral-600/40 backdrop-blur-md rounded-xl px-2 py-1.5 shadow'>
                   <motion.div className='flex items-center gap-2'>
                     <motion.div>
-                      <StarIcon className='w-5 h-5 fill-white' />
+                      <BoltIcon className='w-5 h-5 fill-white' />
                     </motion.div>
                     <motion.div className='text-white font-bold'>
-                      Featured Course
+                      Featured
                     </motion.div>
                   </motion.div>
                 </motion.div>
                 {/* <motion.div className='w-20 h-20 bg-white/40 backdrop-blur-lg hover:bg-clemson transition-colors ease-in rounded-full shadow-xl flex justify-center items-center cursor-pointer'>
-                  <PlayCircleIcon className='w-20 h-20' />
-                </motion.div> */}
+                <PlayCircleIcon className='w-20 h-20' />
+              </motion.div> */}
               </div>
             </div>
-            <div className='w-full flex justify-center items-center px-6 lg:px-0'>
-              <motion.div className='flex flex-col gap-3 py-9 md:py-3'>
-                <motion.div className='font-semibold text-xl lg:text-3xl max-w-sm tracking-tight leading-none'>
+            <div className='w-full flex justify-center items-center px-6'>
+              <motion.div className='flex flex-col gap-3 py-9 lg:py-12'>
+                <motion.div className='font-semibold text-2xl lg:text-3xl max-w-sm md:max-w-full tracking-tight leading-none'>
                   SPC’s Bioplastics Topic
                 </motion.div>
-                <motion.div className='leading-snug lg:text-lg line-clamp-4 text-neutral-600 max-w-md'>
+                <motion.div className='leading-snug line-clamp-4 text-neutral-600 max-w-md md:max-w-full'>
                   Welcome to SPC’s Knowledge Library about Bioplastics. In this
                   topic, we will explore what bioplastics are and how we can
                   think about them in the context of sustainable packaging.
                 </motion.div>
                 <motion.div
-                  className='bg-black text-white font-bold w-fit rounded-lg px-6 py-2 mt-2 cursor-pointer'
-                  onClick={() => {
+                  className='bg-black text-white font-bold w-fit rounded-xl px-6 py-2 mt-2 cursor-pointer'
+                  onClick={() =>
                     window.open(
                       'https://learn.packagingschool.com/enroll/2753655?price_id=3579258',
                       '_blank'
-                    );
-                  }}
+                    )
+                  }
                 >
-                  Select Course
+                  View Lesson
                 </motion.div>
               </motion.div>
             </div>
           </div>
-          <NewCouseCard
-            title={initCourses[0].title}
-            description={initCourses[0].subheadline}
-            background={initCourses[0].seoImage}
-            link={initCourses[0].link}
-            link_text={'Select Course'}
-            Icon={SparklesIcon}
-            callout={'Most Popular'}
-            video={initCourses[0].preview}
-            clicks={initCourses[0].clicks}
-            targetedId={initCourses[0].targetedId}
-            tracked={true}
-          />
-          <NewCouseCard
-            title={initCourses[1].title}
-            description={initCourses[1].subheadline}
-            background={initCourses[1].seoImage}
-            link={initCourses[1].link}
-            link_text={'Select Course'}
-            Icon={SparklesIcon}
-            callout={'Most Popular'}
-            video={initCourses[1].preview}
-            clicks={initCourses[1].clicks}
-            targetedId={initCourses[1].targetedId}
-            tracked={true}
-          />
-          <NewCouseCard
-            title={initCourses[2].title}
-            description={initCourses[2].subheadline}
-            background={initCourses[2].seoImage}
-            link={initCourses[2].link}
-            link_text={'Select Course'}
-            Icon={SparklesIcon}
-            callout={'Most Popular'}
-            video={initCourses[2].preview}
-            clicks={initCourses[2].clicks}
-            targetedId={initCourses[2].targetedId}
-            tracked={true}
-          />
+          <div className='course-card-grid'>
+            <NewCouseCard
+              title={initCourses[0].title}
+              description={initCourses[0].subheadline}
+              background={initCourses[0].seoImage}
+              link={initCourses[0].link}
+              link_text={'Select Course'}
+              Icon={SparklesIcon}
+              callout={'Most Popular'}
+              video={initCourses[0].preview}
+              clicks={initCourses[0].clicks}
+              targetedId={initCourses[0].targetedId}
+              tracked={true}
+            />
+            <NewCouseCard
+              title={initCourses[1].title}
+              description={initCourses[1].subheadline}
+              background={initCourses[1].seoImage}
+              link={initCourses[1].link}
+              link_text={'Select Course'}
+              Icon={SparklesIcon}
+              callout={'Most Popular'}
+              video={initCourses[1].preview}
+              clicks={initCourses[1].clicks}
+              targetedId={initCourses[1].targetedId}
+              tracked={true}
+            />
+            <NewCouseCard
+              title={initCourses[2].title}
+              description={initCourses[2].subheadline}
+              background={initCourses[2].seoImage}
+              link={initCourses[2].link}
+              link_text={'Select Course'}
+              Icon={SparklesIcon}
+              callout={'Most Popular'}
+              video={initCourses[2].preview}
+              clicks={initCourses[2].clicks}
+              targetedId={initCourses[2].targetedId}
+              tracked={true}
+            />
+          </div>
         </div>
       )}
 
       {!isActiveSearch && isExpanded ? (
-        <div className='w-fit mx-auto grid gap-12 md:gap-6 lg:gap-16 md:grid-cols-2 lg:grid-cols-3 pb-3 mb-9 overflow-hidden lg:pb-9'>
+        <div className='course-card-grid'>
           {initCourses
             .slice(3)
             .sort((a, b) => a.courseId.localeCompare(b.courseId))

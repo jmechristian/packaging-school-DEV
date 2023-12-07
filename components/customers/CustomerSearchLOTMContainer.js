@@ -65,7 +65,7 @@ const CustomerSearchLOTMContainer = () => {
   }, [allLessons, isSearchTerm]);
 
   return (
-    <motion.section className='px-0 lg:px-6 w-full flex flex-col gap-6'>
+    <motion.section className='px-0 lg:px-6 w-full flex flex-col gap-12'>
       <div className='border-y border-y-neutral-400'>
         <div className='flex justify-between items-center py-3'>
           {isActiveSearch ? (
@@ -134,7 +134,7 @@ const CustomerSearchLOTMContainer = () => {
                 </div>
               </div>
             ) : (
-              <div className='w-fit mx-auto grid gap-20 lg:grid-cols-3 pb-3 mt-9 overflow-hidden md:pb-6'>
+              <div className='course-card-grid'>
                 {lessonsToShow.map((link) => (
                   <NewCouseCard
                     key={link.title}
@@ -152,7 +152,7 @@ const CustomerSearchLOTMContainer = () => {
           </div>
         </motion.div>
       ) : (
-        <div className='w-fit md:w-full md:px-6 lg:px-16 lg:w-fit mx-auto grid gap-12 md:gap-x-6 md:gap-y-12 lg:gap-x-16 lg:gap-y-16 md:grid-cols-2 xl:grid-cols-3 mt-9 overflow-hidden items-center pb-9'>
+        <div className='flex flex-col gap-12 justify-center items-center w-full max-w-[996px] mx-auto'>
           <div className='md:col-span-2 xl:col-span-3 grid overflow-hidden grid-cols-1 lg:grid-cols-2 bg-white rounded-xl shadow-lg max-w-[300px] md:max-w-none'>
             <div className='w-full rounded-xl flex items-center'>
               <div
@@ -200,38 +200,40 @@ const CustomerSearchLOTMContainer = () => {
               </motion.div>
             </div>
           </div>
-          <NewCouseCard
-            title={lessonsToShow[1].title}
-            description={lessonsToShow[1].subhead}
-            background={lessonsToShow[1].seoImage}
-            link={`/lessons/${lessonsToShow[1].slug}`}
-            link_text={'View Lesson'}
-            callout={createDate(lessonsToShow[1].createdAt)}
-            Icon={BookOpenIcon}
-          />
-          <NewCouseCard
-            title={lessonsToShow[2].title}
-            description={lessonsToShow[2].subhead}
-            background={lessonsToShow[2].seoImage}
-            link={`/lessons/${lessonsToShow[2].slug}`}
-            link_text={'View Lesson'}
-            callout={createDate(lessonsToShow[2].createdAt)}
-            Icon={BookOpenIcon}
-          />
-          <NewCouseCard
-            title={lessonsToShow[3].title}
-            description={lessonsToShow[3].subhead}
-            background={lessonsToShow[3].seoImage}
-            link={`/lessons/${lessonsToShow[3].slug}`}
-            link_text={'View Lesson'}
-            callout={createDate(lessonsToShow[3].createdAt)}
-            Icon={BookOpenIcon}
-          />
+          <div className='course-card-grid'>
+            <NewCouseCard
+              title={lessonsToShow[1].title}
+              description={lessonsToShow[1].subhead}
+              background={lessonsToShow[1].seoImage}
+              link={`/lessons/${lessonsToShow[1].slug}`}
+              link_text={'View Lesson'}
+              callout={createDate(lessonsToShow[1].createdAt)}
+              Icon={BookOpenIcon}
+            />
+            <NewCouseCard
+              title={lessonsToShow[2].title}
+              description={lessonsToShow[2].subhead}
+              background={lessonsToShow[2].seoImage}
+              link={`/lessons/${lessonsToShow[2].slug}`}
+              link_text={'View Lesson'}
+              callout={createDate(lessonsToShow[2].createdAt)}
+              Icon={BookOpenIcon}
+            />
+            <NewCouseCard
+              title={lessonsToShow[3].title}
+              description={lessonsToShow[3].subhead}
+              background={lessonsToShow[3].seoImage}
+              link={`/lessons/${lessonsToShow[3].slug}`}
+              link_text={'View Lesson'}
+              callout={createDate(lessonsToShow[3].createdAt)}
+              Icon={BookOpenIcon}
+            />
+          </div>
         </div>
       )}
 
       {!isActiveSearch && isExpanded ? (
-        <div className='w-fit md:w-full md:px-6 lg:w-fit mx-auto grid gap-12 md:gap-x-6 md:gap-y-12 lg:gap-x-16 lg:gap-y-16 md:grid-cols-2 xl:grid-cols-3 pb-9 overflow-hidden items-center'>
+        <div className='course-card-grid'>
           {lessonsToShow
             .slice(4)
             .filter((cou) => cou.type === 'LOTM')
