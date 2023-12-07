@@ -7,6 +7,7 @@ import {
   BookmarkSquareIcon,
 } from '@heroicons/react/24/outline';
 import { Disclosure } from '@headlessui/react';
+import { AnimatePresence, motion } from 'framer-motion';
 
 import CustomerIntro from '../components/customers/CustomerIntro';
 import CustomerSearchContainer from '../components/customers/CustomerSearchContainer';
@@ -15,6 +16,7 @@ import CustomerFeatures from '../components/customers/CustomerFeatures';
 import CustomerIntro_2 from '../components/customers/CustomerIntro_2';
 import { dummyData } from '../data/DummyData';
 import CustomerSearchLOTMContainer from '../components/customers/CustomerSearchLOTMContainer';
+import CustomerOfferings from '../components/customers/CustomerOfferings';
 
 const faqs = [
   {
@@ -63,7 +65,7 @@ const Page = () => {
         bg='bg-gb-main'
         bgdark='bg-gradient-to-r from-gb-main to-gb-green'
         highlight={'bg-gb-green'}
-        content={<CustomerFeatures />}
+        content={<CustomerOfferings />}
         bgContent={'bg-neutral-200 border'}
         open={false}
       />
