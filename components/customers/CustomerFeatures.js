@@ -41,25 +41,25 @@ const CustomerFeatures = ({ featured }) => {
         link={
           'https://learn.packagingschool.com/enroll/2753655?price_id=3579258'
         }
-        link_text={'Select Course'}
+        link_text={'Select Topic'}
         Icon={AcademicCapIcon}
         callout={'SPC Knowledge Library'}
         // video={'https://www.youtube.com/watch?v=ynDhF_jYZn8'}
         // id={'806c0e2e-c4db-4c13-94f9-b49d4e8b2239'}
       />
       <NewCouseCard
-        title={'Sustainable Packaging'}
+        title={'Packaging Boot Camp 101'}
         description={
-          'Have you ever wondered how grocery store produce ships from the farm to the grocery store?'
+          'Want a solid foundation in packaging basics? This Boot Camp will serve as an introduction to the packaging industry and provide the fundamental knowledge necessary to get you up to speed. '
         }
-        background={
-          'https://packschool.s3.amazonaws.com/sustainable-seoImage.png'
-        }
-        link={'#'}
+        background={'https://packschool.s3.amazonaws.com/bootcamp-seoImage.png'}
+        link={'https://learn.packagingschool.com/enroll/887760'}
         link_text={'Select Course'}
         Icon={SparklesIcon}
         callout={'Most Popular'}
-        video={'https://www.youtube.com/watch?v=ynDhF_jYZn8'}
+        video={
+          'https://player.vimeo.com/video/402952067?h=b90f627eee&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'
+        }
       />
       <NewCouseCard
         title={latestLesson && latestLesson[0].title}

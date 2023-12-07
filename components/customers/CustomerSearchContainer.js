@@ -193,7 +193,7 @@ const CustomerSearchContainer = ({ courses }) => {
                     )
                   }
                 >
-                  View Lesson
+                  Select Topic
                 </motion.div>
               </motion.div>
             </div>

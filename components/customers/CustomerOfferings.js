@@ -41,7 +41,7 @@ const CustomerOfferings = ({ featured }) => {
         link={
           'https://learn.packagingschool.com/enroll/2753655?price_id=3579258'
         }
-        link_text={'Select Course'}
+        link_text={'Select Topic'}
         Icon={AcademicCapIcon}
         callout={'SPC Knowledge Library'}
         // video={'https://www.youtube.com/watch?v=ynDhF_jYZn8'}
