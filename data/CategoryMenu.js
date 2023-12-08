@@ -4,28 +4,32 @@ export const categoryMenu = [
     value: 'all',
   },
   {
-    name: 'Materials',
-    value: 'MATERIALS',
-  },
-  {
-    name: 'Industry',
-    value: 'INDUSTRY',
-  },
-  {
-    name: 'Food & Beverage',
-    value: 'FOODANDBEVERAGE',
+    name: 'Automotive',
+    value: 'AUTO',
   },
   {
     name: 'Business',
     value: 'BUSINESS',
   },
   {
-    name: 'Supply Chain & Logistics',
-    value: 'SUPPLYCHAIN',
-  },
-  {
     name: 'Design',
     value: 'DESIGN',
+  },
+  {
+    name: 'Food & Beverage',
+    value: 'FOODANDBEVERAGE',
+  },
+  {
+    name: 'Industry',
+    value: 'INDUSTRY',
+  },
+  {
+    name: 'Materials',
+    value: 'MATERIALS',
+  },
+  {
+    name: 'Supply Chain & Logistics',
+    value: 'SUPPLYCHAIN',
   },
   {
     name: 'Collections',

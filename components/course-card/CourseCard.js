@@ -26,6 +26,8 @@ const CourseCard = ({
   category,
   courseId,
   savedCourses,
+  categoryArray,
+  partOf,
   type,
   slug,
 }) => {
@@ -48,8 +50,8 @@ const CourseCard = ({
       : setUserArray([]);
   }, [user]);
 
-  const textColor = () => {
-    switch (category) {
+  const textColor = (cat) => {
+    switch (cat) {
       case 'Materials':
         return 'bg-base-dark text-white';
       case 'MATERIALS':
@@ -63,9 +65,9 @@ const CourseCard = ({
       case 'DESIGN':
         return 'bg-clemson';
       case 'FOODANDBEVERAGE':
-        return 'bg-base-light text-gray-900';
+        return 'bg-indigo-400 text-neutral-900';
       case 'Food & Beverage':
-        return 'bg-base-light text-gray-900';
+        return 'bg-indigo-400 text-neutral-900';
       case 'Supply Chain & Logistics':
         return 'bg-clemson-dark text-white';
       case 'SUPPLYCHAIN':
@@ -74,11 +76,13 @@ const CourseCard = ({
         return 'bg-green-600';
       case 'BUSINESS':
         return 'bg-green-600';
+      case 'AUTO':
+        return 'bg-brand-yellow text-neutral-900';
     }
   };
 
-  const categoryText = () => {
-    switch (category) {
+  const categoryText = (cat) => {
+    switch (cat) {
       case 'Materials':
         return 'Materials';
       case 'MATERIALS':
@@ -103,6 +107,8 @@ const CourseCard = ({
         return 'Business';
       case 'BUSINESS':
         return 'Business';
+      case 'AUTO':
+        return 'Automotive';
     }
   };
 
@@ -169,19 +175,10 @@ const CourseCard = ({
   return (
     <>
       <motion.div
-        className=' dark:hover:bg-neutral-800 hover:bg-gray-300 w-full h-full max-w-[300px] lg:max-w-[330px] dark:bg-dark-mid text-white bg-gray-200 rounded-xl shadow-lg relative'
+        className=' dark:hover:bg-neutral-800 hover:bg-base-brand/30 w-full h-full max-w-[300px] lg:max-w-[330px] dark:bg-dark-mid text-white bg-base-light/70 rounded-xl shadow-lg relative'
         onMouseEnter={() => setIsEntered(true)}
         onMouseLeave={() => setIsEntered(false)}
       >
-        <div onClick={toggleFavorite} className='absolute z-20 top-4 right-4'>
-          <StarIcon
-            className={`w-6 h-6 cursor-pointer ${
-              isFavorited
-                ? 'text-yellow-500'
-                : 'text-gray-400 dark:text-neutral-600'
-            } `}
-          />
-        </div>
         <div className='flex flex-col justify-between h-full gap-6'>
           <div
             className='flex flex-col gap-4 px-4 pt-4 cursor-pointer'
@@ -193,25 +190,31 @@ const CourseCard = ({
               )
             }
           >
-            <div className='flex justify-between relative'>
-              <div
-                className={`${textColor()} uppercase text-xs font-bold py-1.5 rounded px-2 tracking-wide`}
-              >
-                {categoryText()}
-              </div>
+            <div className='flex items-center gap-2 relative'>
+              {categoryArray &&
+                categoryArray.map((cat, i) => (
+                  <div
+                    key={i}
+                    className={`${textColor(
+                      cat
+                    )}  text-xs font-medium py-1 rounded-lg px-2 tracking-wide`}
+                  >
+                    {categoryText(cat)}
+                  </div>
+                ))}
             </div>
-            <div className='font-semibold text-xl font-greycliff cursor-pointer leading-tight line-clamp-2 text-gray-900 dark:text-white'>
+            <div className='font-semibold text-xl font-greycliff cursor-pointer leading-tight line-clamp-2 text-neutral-900 dark:text-white'>
               {title}
             </div>
             <div
-              className='line-clamp-3 text-sm desc cursor-pointer dark:text-white/60 text-gray-700'
+              className='line-clamp-3 text-sm desc cursor-pointer dark:text-white/60 text-neutral-800'
               data-tooltip-content={desc}
             >
               {desc}
             </div>
           </div>
           <div className='px-4'>
-            <hr className='dark:border-neutral-600' />
+            <hr className='border-neutral-400 dark:border-neutral-500' />
           </div>
           <div className='flex justify-between items-end p-4'>
             <div
@@ -224,14 +227,23 @@ const CourseCard = ({
                 )
               }
             >
-              <div className='text-sm dark:text-white/50 text-gray-700'>
+              <div className='text-sm dark:text-white/50 text-neutral-700'>
                 {hours} hours
               </div>
-              <div className='font-greycliff text-2xl font-semibold text-gray-900 dark:text-white'>
+              <div className='font-greycliff text-2xl font-semibold text-neutral-900 dark:text-white'>
                 {price === 'FREE' ? 'Free' : '$' + price}
               </div>
             </div>
-            <div className='flex gap-2'>
+            <div className='flex items-center gap-2'>
+              <div onClick={toggleFavorite} className='mr-1'>
+                <StarIcon
+                  className={`w-6 h-6 cursor-pointer ${
+                    isFavorited
+                      ? 'text-yellow-500'
+                      : 'text-neutral-400 dark:text-neutral-600'
+                  } `}
+                />
+              </div>
               {video && (
                 <div
                   className='w-9 h-9 rounded bg-black/80 flex justify-center items-center cursor-pointer hover:bg-base-brand'

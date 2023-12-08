@@ -58,7 +58,7 @@ const AllCourseMenu = ({ click }) => {
                 {categoryMenu[1].name}
               </div>
             </div>
-            <div className='py-1'>
+            <div className='pb-1 pt-2'>
               <div
                 className={`${
                   selectedFilter.value === categoryMenu[2].value
@@ -126,7 +126,7 @@ const AllCourseMenu = ({ click }) => {
                 {categoryMenu[5].name}
               </div>
             </div>
-            <div className='pt-1 pb-2'>
+            <div className='py-1'>
               <div
                 className={`${
                   selectedFilter.value === categoryMenu[6].value
@@ -143,7 +143,7 @@ const AllCourseMenu = ({ click }) => {
                 {categoryMenu[6].name}
               </div>
             </div>
-            <div className='py-2 border-y border-y-gray-400 dark:border-y-gray-500'>
+            <div className='pt-1 pb-2'>
               <div
                 className={`${
                   selectedFilter.value === categoryMenu[7].value
@@ -160,7 +160,7 @@ const AllCourseMenu = ({ click }) => {
                 {categoryMenu[7].name}
               </div>
             </div>
-            <div className='py-2'>
+            <div className='py-2 border-y border-y-gray-400 dark:border-y-gray-500'>
               <div
                 className={`${
                   selectedFilter.value === categoryMenu[8].value
@@ -175,6 +175,23 @@ const AllCourseMenu = ({ click }) => {
                 }
               >
                 {categoryMenu[8].name}
+              </div>
+            </div>
+            <div className='py-2'>
+              <div
+                className={`${
+                  selectedFilter.value === categoryMenu[9].value
+                    ? 'bg-base-brand text-slate-200 font-medium rounded'
+                    : 'text-gray-700 dark:text-gray-400'
+                } pl-2 py-1.5 cursor-pointer`}
+                onClick={() =>
+                  filterClickHandler(
+                    categoryMenu[9].name,
+                    categoryMenu[9].value
+                  )
+                }
+              >
+                {categoryMenu[9].name}
               </div>
             </div>
           </div>

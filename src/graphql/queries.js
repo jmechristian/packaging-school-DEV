@@ -2653,6 +2653,7 @@ export const getLMSCourse = /* GraphQL */ `
       slug
       collection
       demo
+      partOf
       createdAt
       updatedAt
       studentCourseEnrolledId
@@ -2698,6 +2699,7 @@ export const listLMSCourses = /* GraphQL */ `
         slug
         collection
         demo
+        partOf
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -2753,6 +2755,7 @@ export const lMSCoursesBySlug = /* GraphQL */ `
         slug
         collection
         demo
+        partOf
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -3279,6 +3282,7 @@ export const getStudent = /* GraphQL */ `
           slug
           collection
           demo
+          partOf
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -4991,6 +4995,7 @@ export const getCirriculumCourses = /* GraphQL */ `
         slug
         collection
         demo
+        partOf
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -5047,6 +5052,7 @@ export const listCirriculumCourses = /* GraphQL */ `
           slug
           collection
           demo
+          partOf
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -5109,6 +5115,7 @@ export const cirriculumCoursesByLMSCirriculumId = /* GraphQL */ `
           slug
           collection
           demo
+          partOf
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -5171,6 +5178,7 @@ export const cirriculumCoursesByLMSCourseId = /* GraphQL */ `
           slug
           collection
           demo
+          partOf
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -5220,6 +5228,7 @@ export const getCourseLessons = /* GraphQL */ `
         slug
         collection
         demo
+        partOf
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -5281,6 +5290,7 @@ export const listCourseLessons = /* GraphQL */ `
           slug
           collection
           demo
+          partOf
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -5346,6 +5356,7 @@ export const courseLessonsByLMSCourseId = /* GraphQL */ `
           slug
           collection
           demo
+          partOf
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -5411,6 +5422,7 @@ export const courseLessonsByLMSLessonId = /* GraphQL */ `
           slug
           collection
           demo
+          partOf
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -5472,6 +5484,7 @@ export const getCourseInstructors = /* GraphQL */ `
         slug
         collection
         demo
+        partOf
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -5551,6 +5564,7 @@ export const listCourseInstructors = /* GraphQL */ `
           slug
           collection
           demo
+          partOf
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -5610,6 +5624,7 @@ export const courseInstructorsByLMSCourseId = /* GraphQL */ `
           slug
           collection
           demo
+          partOf
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -5669,6 +5684,7 @@ export const courseInstructorsByInstructorId = /* GraphQL */ `
           slug
           collection
           demo
+          partOf
           createdAt
           updatedAt
           studentCourseEnrolledId
