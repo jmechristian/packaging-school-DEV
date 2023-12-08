@@ -27,6 +27,8 @@ const AllCourseCoursesMobile = ({ coursesToShow }) => {
                 category={course.category}
                 savedCourses={user?.savedCourses}
                 type={course.type ? course.type : undefined}
+                categoryArray={course.categoryArray}
+                partOf={course.partOf ? course.partOf : undefined}
               />
             </div>
           ))}
