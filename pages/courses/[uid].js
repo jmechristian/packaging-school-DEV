@@ -13,14 +13,14 @@ const Page = ({ course }) => {
   const { preview } = useSelector((state) => state.course_filter);
   return (
     <div className='relative'>
-      <Head>
+      {/* <Head>
         <title>Packaging School | {course && course.title}</title>
         <meta
           property='og:title'
           content={`Packaging School | ${course && course.title}`}
           key='title'
         />
-      </Head>
+      </Head> */}
       <CourseMain data={course} />
       <CourseBottom
         category={course && course.category}
