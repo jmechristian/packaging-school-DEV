@@ -45,6 +45,7 @@ const CourseMain = ({ data }) => {
                   link={data.link}
                   trialLink={`${data.link}?et=free_trial`}
                   partOf={data.partOf ? data.partOf : undefined}
+                  seoImage={data.seoImage ? data.seoImage : ''}
                 />
               </div>
               <CourseObjectives

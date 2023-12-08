@@ -13,13 +13,13 @@ const CSPCard = () => {
               <TrophyIcon className='w-6 h-6 stroke-white' />
             </div>
             <div className='text-white font-bold text-2xl'>
-              <h3>Sustainable Champion</h3>
+              <h3>Sustainable Leader</h3>
             </div>
           </div>
         </div>
         <div className='col-span-2 w-full p-6 border-b border-b-base-brand'>
           <div className='text-lg'>
-            This 40-hour workshop unlocks the Sustainable Champion achievement,
+            This 40-hour workshop unlocks the Sustainable Leader achievement,
             empowering companies to cultivate internal heroes mastering the dos
             and don&apos;ts of sustainable packaging, transforming intentions
             into impactful actions.
@@ -29,8 +29,8 @@ const CSPCard = () => {
           <div className='relative aspect-[1/1] mb-6 lg:mb-0'>
             <div className='w-full h-full absolute inset-0 z-10 lg:px-6 max-w-xl mx-auto'>
               <Image
-                src={'https://packschool.s3.amazonaws.com/patch-2.png'}
-                alt='sustainable champion patch'
+                src={'https://packschool.s3.amazonaws.com/V2-Patch-2-sm.png'}
+                alt='sustainable leader patch'
                 width={800}
                 height={808}
                 layout='responsive'

@@ -10,6 +10,7 @@ import {
 } from '@heroicons/react/24/outline';
 
 import CSPMissionStatement from './CSPMissionStatement';
+import Image from 'next/image';
 
 const CSPWhat = () => {
   return (
@@ -47,9 +48,15 @@ const CSPWhat = () => {
           </div>
         </div>
         <div className='flex flex-col gap-9 lg:gap-12 justify-end col-span-2'>
-          <div className='grid bg-neutral-200 w-full h-full'>
+          <div className='grid w-full h-full'>
             <div className='w-full h-full flex items-center justify-center'>
-              <div>Lars Image?</div>
+              <Image
+                src={'https://packschool.s3.amazonaws.com/V2-Patch-4.png'}
+                alt='Mastering Sustainable Packaging'
+                width={600}
+                height={600}
+                className='w-full h-full'
+              />
             </div>
           </div>
         </div>
