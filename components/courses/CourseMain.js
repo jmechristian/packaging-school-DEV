@@ -7,7 +7,6 @@ import YouTubeEmbed from '../YouTubeEmbed';
 import VideoPlayer from '../VideoPlayer';
 
 const CourseMain = ({ data }) => {
-  console.log(data.id);
   return (
     <section className='w-full h-full bg-white dark:bg-dark-dark bg-cover py-16'>
       <motion.div
