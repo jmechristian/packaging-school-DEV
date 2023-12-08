@@ -10,7 +10,7 @@ import CSPBio from '../../components/certifications/csp/CSPBio';
 
 const Page = () => {
   return (
-    <div className='w-full h-full flex flex-col gap-12 lg:gap-36 pt-6 md:pt-20 pb-20'>
+    <div className='w-full h-full flex flex-col gap-12 lg:gap-36 pt-6 md:pt-20 pb-20 dark:bg-dark-dark'>
       <CSPHero />
       <CSPNav />
       <div className='flex flex-col gap-12 md:gap-48'>

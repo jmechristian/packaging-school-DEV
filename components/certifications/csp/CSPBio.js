@@ -7,7 +7,7 @@ import { SectionHeading } from '../../shared/SectionHeading';
 const CSPBio = () => {
   return (
     <div
-      className='w-full h-full bg-base-mid rounded-2xl shadow-xl max-w-7xl mx-auto scroll-mt-36'
+      className='w-full h-full bg-base-mid dark:bg-dark-mid rounded-2xl shadow-xl max-w-7xl mx-auto scroll-mt-36'
       id='reviews'
     >
       <div className='w-full flex flex-col lg:flex-row justify-between items-center gap-9 py-12 px-6 lg:px-12'>
