@@ -28,6 +28,7 @@ const CourseMain = ({ data }) => {
               <CourseIntro
                 id={data.courseId}
                 category={data.category}
+                categoryArray={data.categoryArray}
                 title={data.title}
                 instructor={data.instructor ? data.instructor : ''}
                 subtitle={data.subheadline}
@@ -43,6 +44,7 @@ const CourseMain = ({ data }) => {
                   certification={''}
                   link={data.link}
                   trialLink={`${data.link}?et=free_trial`}
+                  partOf={data.partOf ? data.partOf : undefined}
                 />
               </div>
               <CourseObjectives
