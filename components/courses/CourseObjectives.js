@@ -16,7 +16,7 @@ const CourseObjectives = ({ what, items }) => {
         <div className='font-semibold font-greycliff text-2xl black__white '>
           What You Will Learn
         </div>
-        <div className='text-slate-500 dark:text-gray-400 text-lg'>{what}</div>
+        <div className='text-slate-700 dark:text-gray-400 text-lg'>{what}</div>
       </div>
       {items && items.length > 1 && (
         <div className='flex flex-col gap-6'>
@@ -28,11 +28,11 @@ const CourseObjectives = ({ what, items }) => {
               className='flex gap-1 items-center'
               onClick={() => setShowObjectives(!showObjectives)}
             >
-              <div className='text-base-brand'>
+              <div className='text-neutral-700'>
                 {showObjectives ? 'Hide' : 'View'} All Objectives
               </div>
               <RotatingCaret
-                styling='h-7 w-7 fill-base-brand'
+                styling='h-7 w-7 fill-neutral-700'
                 open={showObjectives}
               />
             </div>

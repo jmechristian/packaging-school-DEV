@@ -87,8 +87,10 @@ const CourseIntro = ({
         </div>
       </div>
       <div className='flex flex-col gap-4'>
-        <div className='hero__headline black__white mb-3'>{title}</div>
-        <div className='text-slate-500 dark:text-gray-400 text-lg'>
+        <div className='hero__headline black__white mb-3'>
+          <h1>{title}</h1>
+        </div>
+        <div className='text-slate-700 dark:text-gray-400 text-lg'>
           {subtitle}
         </div>
       </div>

@@ -2,7 +2,6 @@ import React from 'react';
 import CTAButtonLarge from '../CTAButtonLarge';
 import CTAButtonTrial from '../CTAButtonTrial';
 import CourseCertificate from './CourseCertificate';
-import YouTubeEmbed from '../YouTubeEmbed';
 import VideoPlayer from '../VideoPlayer';
 
 const CourseInfo = ({ price, link, trialLink, certification, embedid }) => {
