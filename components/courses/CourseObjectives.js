@@ -28,7 +28,7 @@ const CourseObjectives = ({ what, items }) => {
               className='flex gap-1 items-center'
               onClick={() => setShowObjectives(!showObjectives)}
             >
-              <div className='text-neutral-700'>
+              <div className='text-neutral-700 dark:text-neutral-400'>
                 {showObjectives ? 'Hide' : 'View'} All Objectives
               </div>
               <RotatingCaret

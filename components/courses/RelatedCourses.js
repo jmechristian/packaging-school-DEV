@@ -35,7 +35,7 @@ const RelatedCourses = ({ category, id }) => {
 
   return (
     <div className='overflow-hidden' ref={desktopRef}>
-      <div className='grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 container-7xl gap-4'>
+      <div className='grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 container-7xl gap-4'>
         {isRelated &&
           isRelated.map((course, i) => (
             <div key={course.id} className='inline-block'>
