@@ -4,6 +4,8 @@ import CTAButtonTrial from '../CTAButtonTrial';
 import CourseCertificate from './CourseCertificate';
 import VideoPlayer from '../VideoPlayer';
 import { useSelector } from 'react-redux';
+import HoverCard from '../shared/HoverCard';
+import { FiCreditCard, FiMail, FiUser, FiUsers } from 'react-icons/fi';
 
 const CourseInfo = ({
   seoImage,
@@ -12,8 +14,9 @@ const CourseInfo = ({
   trialLink,
   certification,
   embedid,
+  partOf,
 }) => {
-  const { allCourses } = useSelector((state) => state.course_filter);
+  console.log(partOf);
 
   return (
     <section>
@@ -53,7 +56,16 @@ const CourseInfo = ({
           </div>
         </div>
         <div className='flex flex-col gap-4  p-8'>
-          <CourseCertificate certification={certification} />
+          {partOf ? (
+            <HoverCard
+              title={'Automotive Packaging Certificate'}
+              href={'#'}
+              subtitle={'Subtitle'}
+              Icon={FiCreditCard}
+            />
+          ) : (
+            <CourseCertificate certification={certification} />
+          )}
         </div>
       </div>
     </section>

@@ -24,7 +24,7 @@ const CookieConsent = (props) => {
 
   return (
     <div className='fixed z-[210]'>
-      <div className='fixed bottom-0 left-0 right-0 flex items-center justify-between px-4 md:px-12 py-8 bg-base-dark'>
+      <div className='fixed bottom-0 left-0 right-0 flex md:flex-row flex-col gap-6 md:items-center justify-between px-4 md:px-12 py-8 bg-base-dark'>
         <span className='text-white font-medium text-base mr-16 max-w-6xl'>
           We use cookies to enhance your browsing experience and analyze site
           traffic. By continuing to use our website, you consent to the use of
