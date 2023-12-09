@@ -11,7 +11,7 @@ const CourseMain = ({ data }) => {
     data && (
       <section className='w-full h-full bg-white dark:bg-dark-dark bg-cover py-16'>
         <motion.div
-          className='container__inner'
+          className='container__inner lg:px-6 xl:px-0'
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{

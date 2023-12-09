@@ -55,7 +55,7 @@ const CourseInfo = ({
             </div>
           </div>
         </div>
-        <div className='flex flex-col gap-4  p-8'>
+        {/* <div className='flex flex-col gap-4  p-8'>
           {partOf ? (
             <HoverCard
               title={'Automotive Packaging Certificate'}
@@ -66,7 +66,7 @@ const CourseInfo = ({
           ) : (
             <CourseCertificate certification={certification} />
           )}
-        </div>
+        </div> */}
       </div>
     </section>
   );
