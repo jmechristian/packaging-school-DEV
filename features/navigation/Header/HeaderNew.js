@@ -526,12 +526,13 @@ export default function HeaderNew() {
                                               <div className='grid grid-cols-2 gap-4 h-full'>
                                                 <div
                                                   className='w-full rounded-xl bg-base-mid shadow-xl cursor-pointer group hover:bg-base-dark transition-colors ease-in'
-                                                  onClick={() =>
+                                                  onClick={() => {
+                                                    close();
                                                     categoryClickHandler(
                                                       'CPS Electives',
                                                       'ELECTIVE'
-                                                    )
-                                                  }
+                                                    );
+                                                  }}
                                                 >
                                                   <div className='px-4 py-4 w-full h-full flex items-center'>
                                                     <div className='w-full flex justify-between items-center'>
@@ -550,12 +551,13 @@ export default function HeaderNew() {
                                                 </div>
                                                 <div
                                                   className='w-full h-full rounded-xl bg-indigo-500 hover:bg-indigo-700 transition-colors ease-in shadow-xl cursor-pointer group'
-                                                  onClick={() =>
+                                                  onClick={() => {
+                                                    close();
                                                     categoryClickHandler(
                                                       'Automotive',
                                                       'AUTO'
-                                                    )
-                                                  }
+                                                    );
+                                                  }}
                                                 >
                                                   <div className='px-4 py-4 w-full flex items-center h-full'>
                                                     <div className='w-full flex justify-between items-center'>
@@ -582,6 +584,12 @@ export default function HeaderNew() {
                                               className='w-full aspect-[4/3] bg-cover bg-center rounded-xl relative cursor-pointer'
                                               style={{
                                                 backgroundImage: `url('https://packschool.s3.amazonaws.com/bootcamp-2-seoImage.png')`,
+                                              }}
+                                              onClick={() => {
+                                                close();
+                                                router.push(
+                                                  '/courses/packaging-boot-camp-101'
+                                                );
                                               }}
                                             >
                                               <div className='w-full h-full bg-gradient-to-t from-black/80 rounded-b-xl absolute inset-0 z-[10]'></div>
