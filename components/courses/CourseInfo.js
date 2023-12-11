@@ -6,6 +6,8 @@ import VideoPlayer from '../VideoPlayer';
 import { useSelector } from 'react-redux';
 import HoverCard from '../shared/HoverCard';
 import { FiCreditCard, FiMail, FiUser, FiUsers } from 'react-icons/fi';
+import { LuRocket } from 'react-icons/lu';
+import { RocketLaunchIcon } from '@heroicons/react/24/outline';
 
 const CourseInfo = ({
   seoImage,
@@ -16,8 +18,6 @@ const CourseInfo = ({
   embedid,
   partOf,
 }) => {
-  console.log(partOf);
-
   return (
     <section>
       <div className='dark:bg-dark-mid bg-slate-200 shadow-lg rounded-md'>
@@ -55,18 +55,20 @@ const CourseInfo = ({
             </div>
           </div>
         </div>
-        {/* <div className='flex flex-col gap-4  p-8'>
+        <div className='flex flex-col gap-4 p-4 xl:p-8'>
           {partOf ? (
             <HoverCard
-              title={'Automotive Packaging Certificate'}
-              href={'#'}
-              subtitle={'Subtitle'}
-              Icon={FiCreditCard}
+              title={'Your Journey Starts Here'}
+              href={'/certifications/get-to-know-apc'}
+              subtitle={
+                'This course as part of the Automotive Pacakaging Certificate. Exploring distinctive aspects of automotive packaging, with exclusive content unmatched by any other.'
+              }
+              Icon={LuRocket}
             />
           ) : (
             <CourseCertificate certification={certification} />
           )}
-        </div> */}
+        </div>
       </div>
     </section>
   );
