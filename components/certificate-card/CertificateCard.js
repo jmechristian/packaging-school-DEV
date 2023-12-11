@@ -36,6 +36,7 @@ const CertificateCard = ({
   calloutValue,
   apply,
   link,
+  enroll,
 }) => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
@@ -245,9 +246,7 @@ const CertificateCard = ({
                 onClick={() => router.push(apply)}
               >
                 <div className='text-white font-semibold'>
-                  {title === 'Automotive Packaging Certificate'
-                    ? 'Enroll'
-                    : 'Apply'}
+                  {enroll ? 'Enroll' : 'Apply'}
                 </div>
               </div>
             </div>

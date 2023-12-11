@@ -42,6 +42,7 @@ const AllCoursesCert = () => {
       video: 'https://vimeo.com/358392462',
       callout: 'Limited!',
       calloutValue: `Workbook \nIncluded`,
+      enroll: true,
     },
     {
       name: 'Certificate of Sustainable Packaging',
@@ -54,6 +55,7 @@ const AllCoursesCert = () => {
       ring: 'clemson',
       callout: '',
       calloutValue: `Newly Released!`,
+      enroll: true,
     },
   ];
 
@@ -78,6 +80,7 @@ const AllCoursesCert = () => {
               callout={c.callout}
               calloutValue={c.calloutValue}
               video={c.video}
+              enroll={c.enroll}
             />
           </div>
         ))}
