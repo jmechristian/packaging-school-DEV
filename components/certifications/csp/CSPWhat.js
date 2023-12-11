@@ -18,7 +18,7 @@ const CSPWhat = () => {
       className='max-w-7xl mx-auto flex flex-col gap-10 scroll-mt-36'
       id='about'
     >
-      <div className='grid lg:grid-cols-5 gap-9 lg:gap-28 justify-end lg:pl-6 xl:pl-0'>
+      <div className='grid lg:grid-cols-5 gap-9 lg:gap-20 justify-end lg:pl-6 xl:pl-0'>
         <div className='flex flex-col gap-9 col-span-3 p-6 lg:p-0'>
           <FadeIn>
             <SectionHeading number='1'>What is CSP?</SectionHeading>
@@ -47,17 +47,15 @@ const CSPWhat = () => {
             </p>
           </div>
         </div>
-        <div className='flex flex-col gap-9 lg:gap-12 justify-end col-span-2'>
-          <div className='grid w-full h-full'>
-            <div className='w-full h-full flex items-center justify-center'>
-              <Image
-                src={'https://packschool.s3.amazonaws.com/V2-Patch-4.png'}
-                alt='Mastering Sustainable Packaging'
-                width={600}
-                height={600}
-                className='w-full h-full'
-              />
-            </div>
+        <div className='flex flex-col gap-9 lg:gap-12 justify-end col-span-3 lg:col-span-2 w-full min-w-full'>
+          <div className='w-full h-full flex items-center justify-center'>
+            <Image
+              src={'https://packschool.s3.amazonaws.com/V2-Patch-5.png'}
+              alt='Mastering Sustainable Packaging'
+              width={600}
+              height={600}
+              className='w-full h-full'
+            />
           </div>
         </div>
       </div>
