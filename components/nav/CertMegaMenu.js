@@ -42,7 +42,7 @@ const CertMegaMenu = ({ onClose }) => {
           title='Certificate of Sustainable Packaging'
           apply='https://learn.packagingschool.com/enroll/2772370'
           learnMore='/certifications/get-to-know-csp'
-          onClose={() => close()}
+          onClose={() => onClose()}
           bgColor='bg-gradient-to-br from-brand-green to-slate-900'
           content="Introducing a transformative program empowering industry professionals to navigate the complexities of sustainable design. This initiative equips companies with internal champions, well-versed in the dos and don'ts of sustainable packaging, fostering a positive force for change within organizations."
           callout={'Newly Released!'}

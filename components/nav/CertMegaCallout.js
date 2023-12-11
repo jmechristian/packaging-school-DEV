@@ -51,7 +51,10 @@ const CertMegaCallout = ({ close }) => {
         </div>
         <div
           className='w-full rounded-xl bg-base-mid shadow-xl cursor-pointer group hover:bg-base-dark transition-colors ease-in'
-          onClick={() => router.push('/food-packaging')}
+          onClick={() => {
+            close();
+            router.push('/food-packaging');
+          }}
         >
           <div className='px-4 py-4 w-full h-full flex items-center'>
             <div className='w-full flex justify-between items-center'>
