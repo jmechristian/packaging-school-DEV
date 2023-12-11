@@ -53,7 +53,7 @@ const CertMegaCallout = ({ onClose }) => {
           </div>
         </div>
         <div
-          className='w-full rounded-xl bg-base-mid shadow-xl cursor-pointer group hover:bg-base-dark transition-colors ease-in'
+          className='w-full rounded-xl bg-base-mid cursor-pointer group hover:bg-base-dark transition-colors ease-in'
           onClick={() => {
             onClose();
             router.push('/food-packaging');
