@@ -71,7 +71,14 @@ const CSPWhere = () => {
               <p className='font-bold text-lg'>Recommend Materials</p>
               <div>
                 &rarr; Review of{' '}
-                <span className='underline'>https://sdgs.un.org/goals</span>
+                <span
+                  className='underline cursor-pointer'
+                  onClick={() =>
+                    window.open('https://sdgs.un.org/goals', '_blank')
+                  }
+                >
+                  https://sdgs.un.org/goals
+                </span>
               </div>
               <div>&rarr; Access to printing and prototyping equipment</div>
             </div>
