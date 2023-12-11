@@ -8,7 +8,7 @@ import DoctorForm from './DoctorForm';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useRouter } from 'next/router';
 
-const CertMegaCallout = ({ close }) => {
+const CertMegaCallout = ({ onClose }) => {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
 
@@ -52,7 +52,7 @@ const CertMegaCallout = ({ close }) => {
         <div
           className='w-full rounded-xl bg-base-mid shadow-xl cursor-pointer group hover:bg-base-dark transition-colors ease-in'
           onClick={() => {
-            close();
+            onClose();
             router.push('/food-packaging');
           }}
         >

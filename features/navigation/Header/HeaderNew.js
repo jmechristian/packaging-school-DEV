@@ -56,7 +56,6 @@ export default function HeaderNew() {
   const currentPath = router.asPath;
 
   const categoryClickHandler = (name, value) => {
-    onClose();
     let newVal = value?.toUpperCase();
     router.push('/all_courses#courses');
     dispatch(setSelectedFilter({ name: name, value: value }));
@@ -410,7 +409,9 @@ export default function HeaderNew() {
                                             </div>
                                           </div>
                                         </div> */}
-                                        <CertMegaCallout />
+                                        <CertMegaCallout
+                                          onClose={() => close()}
+                                        />
                                       </div>
                                       {/* <CourseDropDownCourses
                                           onClose={() => close()}
