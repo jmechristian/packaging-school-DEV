@@ -26,6 +26,10 @@ export const setTextColor = (cat) => {
       return 'bg-green-600';
     case 'AUTO':
       return 'bg-brand-yellow text-neutral-900';
+    case 'Automotive':
+      return 'bg-brand-yellow text-neutral-900';
+    case 'Explore All Courses':
+      return 'bg-black text-neutral-900';
   }
 };
 

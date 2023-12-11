@@ -10,6 +10,7 @@ import CertIcon from '../icons/CertIcon';
 import { Popover } from '@headlessui/react';
 
 const CertMenuItem = ({
+  enroll,
   title,
   content,
   bgColor,
@@ -17,6 +18,7 @@ const CertMenuItem = ({
   learnMore,
   apply,
   onClose,
+  callout,
 }) => {
   const setIcon = () => {
     switch (icon) {
@@ -36,7 +38,7 @@ const CertMenuItem = ({
   };
 
   return (
-    <div className='flex flex-col bg-white/70 shadow-lg dark:bg-dark-mid rounded-lg p-5 gap-4 h-full justify-between'>
+    <div className='flex flex-col bg-white/70 shadow-lg dark:bg-dark-mid rounded-xl p-5 gap-4 h-full justify-between'>
       <div className='flex items-center justify-center h-full'>
         <div className='flex flex-col gap-3 h-full overflow-hidden'>
           <div className='flex gap-3 items-center w-full overflow-hidden'>
@@ -47,35 +49,38 @@ const CertMenuItem = ({
                 {setIcon()}
               </div>
             </div>
-            <div className='font-semibold font-greycliff text-slate-700 dark:text-white text-lg leading-tight'>
+            <div className='font-semibold font-greycliff text-neutral-900 dark:text-white text-lg leading-tight'>
               {title}
             </div>
           </div>
 
-          <div className='text-sm line-clamp-3 text-slate-600 dark:text-slate-400'>
+          <div className='text-sm line-clamp-3 text-neutral-600 dark:text-neutral-400'>
             {content}
           </div>
         </div>
       </div>
-      <div className='flex items-center gap-1 h-full'>
-        {apply && (
-          <div
-            className='rounded-lg px-3 py-1.5 font-greycliff text-sm w-fit  text-clemson font-bold'
-            onClick={() => onClose()}
-          >
-            <Link href={apply}>
-              {title === 'Automotive Packaging Certificate'
-                ? 'Enroll Now'
-                : 'Apply Now'}
-            </Link>
-          </div>
-        )}
-        {learnMore && (
-          <div
-            className='rounded-lg px-3 py-1.5 font-greycliff text-sm  text-slate-500 font-semibold'
-            onClick={() => onClose()}
-          >
-            <Link href={learnMore}>Learn More</Link>
+      <div className='flex justify-between items-center flex-wrap gap-3 md:gap-1'>
+        <div className='flex items-center gap-1 h-full'>
+          {apply && (
+            <div
+              className='rounded-lg px-3 py-1.5 font-greycliff text-sm w-fit  text-clemson font-bold'
+              onClick={() => onClose()}
+            >
+              <Link href={apply}>{enroll ? 'Enroll Now' : 'Apply Now'}</Link>
+            </div>
+          )}
+          {learnMore && (
+            <div
+              className='rounded-lg px-3 py-1.5 font-greycliff text-sm  text-neutral-500 font-semibold'
+              onClick={() => onClose()}
+            >
+              <Link href={learnMore}>Learn More</Link>
+            </div>
+          )}
+        </div>
+        {callout && (
+          <div className='bg-brand-red text-white font-semibold text-xs w-full md:w-fit   px-2 py-1 rounded'>
+            {callout}
           </div>
         )}
       </div>

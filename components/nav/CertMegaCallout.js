@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
-import { ArrowLongRightIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
+import {
+  ArrowLongRightIcon,
+  EnvelopeIcon,
+  CakeIcon,
+} from '@heroicons/react/24/outline';
 import DoctorForm from './DoctorForm';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useRouter } from 'next/router';
@@ -22,44 +26,49 @@ const CertMegaCallout = ({ close }) => {
           </motion.div>
         )}
       </AnimatePresence>
-      <div className='lg:px-8 flex flex-col gap-8'>
-        <div className='flex flex-col gap-3'>
-          <div className='font-bold font-greycliff text-lg dark:text-gray-200 text-slate-900'>
-            Questions about Certifications?
+      <div className='flex flex-col gap-4 p-1 md:p-4'>
+        <div
+          className='w-full aspect-[4/3] bg-cover bg-center rounded-xl relative cursor-pointer'
+          style={{
+            backgroundImage: `url('https://packschool.s3.amazonaws.com/JULIE-2018-sm.jpg')`,
+          }}
+        >
+          <div className='w-full h-full bg-gradient-to-t from-black/80  rounded-b-xl absolute inset-0 z-[10]'></div>
+          <div className='flex flex-col justify-between w-full h-full absolute inset-0 z-[20]'>
+            <div className='w-fit py-2 text-sm font-semibold px-3 text-white bg-clemson rounded-xl mt-2 ml-2'>
+              The Doctor is In!
+            </div>
+            <div className='flex flex-col gap-1 p-3 leading-tight'>
+              <div className='font-bold text-2xl text-white'>
+                Questions about Certifications?
+              </div>
+              <div className='text-white'>
+                Reach out to Dr. Julie Suggs for a personalized consultation for
+                yourself or your team.
+              </div>
+            </div>
           </div>
-          <div
-            className='w-full aspect-[3/2] relative bg-center bg-cover rounded-lg'
-            style={{
-              backgroundImage: `url('https://packschool.s3.amazonaws.com/JULIE-2018-sm.jpg')`,
-            }}
-          >
-            <div className='absolute inset-0 bg-gradient-to-br from-base-dark-highlight/70 to-base-mid/70'></div>
-            <div className='absolute bottom-0 left-0 right-0'>
-              <div className='grid w-full justify-between px-3 py-3'>
-                <div className='flex flex-col gap-2'>
-                  <div className='font-bold font-greycliff text-xl text-white'>
-                    The Doctor is In!
-                  </div>
-                  <div className='text-white leading-tight text-sm'>
-                    Reach out to Dr. Julie Suggs for a personalized consultation
-                    for yourself or your team.
-                  </div>
-                  <div
-                    className='bg-clemson text-white font-semibold font-greycliff w-fit py-1.5 px-3 rounded-lg cursor-pointer flex gap-1 items-center'
-                    onClick={() => setIsOpen(true)}
-                  >
-                    <div>
-                      <EnvelopeIcon className='w-5 h-5' />
-                    </div>
-                    <div>Connect</div>
-                  </div>
+        </div>
+        <div
+          className='w-full rounded-xl bg-base-mid shadow-xl cursor-pointer group hover:bg-base-dark transition-colors ease-in'
+          onClick={() => router.push('/food-packaging')}
+        >
+          <div className='px-4 py-4 w-full h-full flex items-center'>
+            <div className='w-full flex justify-between items-center'>
+              <div className='col-span-1'>
+                <CakeIcon className='w-12 h-12 stroke-white/40 group-hover:stroke-clemson group-hover:scale-110 transition-all ease-in' />
+              </div>
+              <div className='col-span-4'>
+                <div className='font-medium text-white text-lg leading-tight'>
+                  Food Packaging
+                  <br /> Certificate
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div className='flex flex-col gap-2'>
-          <div className='font-bold w-full dark:text-gray-200 text-slate-900 text-lg border-b border-b-slate-400 pb-2 font-greycliff'>
+        <div className='flex flex-col gap-2 mt-2'>
+          <div className='font-bold w-full dark:text-gray-200 text-slate-900 border-b border-b-slate-400 pb-2 font-greycliff'>
             Not Sure Where to Start?
           </div>
           <div
@@ -84,23 +93,6 @@ const CertMegaCallout = ({ close }) => {
               <ArrowLongRightIcon className='h-5 w-5 stroke-slate-700' />
             </div>
           </div> */}
-          <div className='flex gap-2 justify-between items-center border-b border-b-slate-400 pb-2'>
-            <div
-              className='text-sm text-slate-700 dark:text-gray-500'
-              onClick={() => close()}
-            >
-              <a
-                href='mailto:info@packagingschool.com'
-                target='_blank'
-                rel='noreferrer'
-              >
-                Contact Our Team
-              </a>
-            </div>
-            <div>
-              <ArrowLongRightIcon className='h-5 w-5 stroke-slate-700' />
-            </div>
-          </div>
         </div>
       </div>
     </div>

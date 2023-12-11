@@ -38,12 +38,14 @@ const CertMegaMenu = ({ onClose }) => {
           onClose={() => onClose()}
         />
         <CertMenuItem
-          title='Food Packaging Certificate'
-          bgColor='bg-indigo-900'
-          learnMore='/food-packaging'
-          content='In Development! Want to be a part? Interested In Sponsoring? Leave your mark on the packaging industry. Click below to apply or reach out to our Academic Director Dr. Julie Suggs'
-          icon='food'
-          onClose={() => onClose()}
+          enroll={true}
+          title='Certificate of Sustainable Packaging'
+          apply='https://learn.packagingschool.com/enroll/2772370'
+          learnMore='/certifications/get-to-know-csp'
+          onClose={() => close()}
+          bgColor='bg-gradient-to-br from-brand-green to-slate-900'
+          content="Introducing a transformative program empowering industry professionals to navigate the complexities of sustainable design. This initiative equips companies with internal champions, well-versed in the dos and don'ts of sustainable packaging, fostering a positive force for change within organizations."
+          callout={'Newly Released!'}
         />
       </div>
     </div>

@@ -3,6 +3,17 @@ import { useRouter } from 'next/router';
 import { useDispatch } from 'react-redux';
 import { setSelectedFilter } from '../../all_courses/courseFilterSlice';
 import {
+  MdOutlineFactory,
+  MdOutlineBusiness,
+  MdOutlineDesignServices,
+  MdOutlineLocalGroceryStore,
+  MdOutlineLiquor,
+  MdOutlineExtension,
+  MdOutlineMultipleStop,
+  MdOutlineDriveEta,
+  MdOutlineAutoStories,
+} from 'react-icons/md';
+import {
   setMenuItem,
   setSelectedNav,
   closeMobileMenu,
@@ -32,27 +43,21 @@ const CourseMenuBlock = ({ onClose }) => {
   return (
     <>
       <DropDownIconBlock
-        icon={
-          <BusinessIcon style='h-6 w-6 stroke-white stroke-2 fill-transparent' />
-        }
+        icon={<MdOutlineBusiness size={24} color='white' />}
         category='Business'
         value='business'
         desc='Optimize your sales ops and project management workflows'
         setFilter={categoryClickHandler}
       />
       <DropDownIconBlock
-        icon={
-          <DesignIcon style='h-6 w-6 stroke-white stroke-2 fill-transparent' />
-        }
+        icon={<MdOutlineDesignServices size={24} color='white' />}
         category='Design'
         value='design'
         desc='Design smarter with material best practices and human factors in mind'
         setFilter={categoryClickHandler}
       />
       <DropDownIconBlock
-        icon={
-          <FoodIcon style='h-6 w-6 stroke-white stroke-2 fill-transparent' />
-        }
+        icon={<MdOutlineLiquor size={24} color='white' />}
         category='Food & Beverage'
         value='FOODANDBEVERAGE'
         desc='Learn in partnership with the International Society of Beverage Technologists (ISBT).'
@@ -60,33 +65,43 @@ const CourseMenuBlock = ({ onClose }) => {
       />
 
       <DropDownIconBlock
-        icon={
-          <IndustryIcon style='h-7 w-7 stroke-white stroke-2 fill-transparent' />
-        }
+        icon={<MdOutlineFactory size={24} color='white' />}
         category='Industry'
         value='industry'
         desc='Industry specific courses designed to give you an edge against your competitors'
         setFilter={categoryClickHandler}
       />
       <DropDownIconBlock
-        icon={
-          <MaterialIcon style='h-6 w-6 stroke-white stroke-2 fill-transparent' />
-        }
+        icon={<MdOutlineExtension size={24} color='white' />}
         category='Materials'
         value='materials'
         desc='Master the building blocks of the packaging industry'
         setFilter={categoryClickHandler}
       />
       <DropDownIconBlock
-        icon={
-          <SupplyIcon style='h-6 w-6 stroke-white stroke-2 fill-transparent' />
-        }
+        icon={<MdOutlineMultipleStop size={24} color='white' />}
         category='Supply Chain & Logistics'
         value='supplychain'
         desc='Optimize your logistics from hazmat packaging, regulations, distribution, and more.'
         setFilter={categoryClickHandler}
       />
-      <div
+      <DropDownIconBlock
+        icon={<MdOutlineDriveEta size={24} color='white' />}
+        category='Automotive'
+        value='AUTO'
+        desc='Optimize your logistics from hazmat packaging, regulations, distribution, and more.'
+        setFilter={categoryClickHandler}
+        callout='Just Added!'
+      />
+      <DropDownIconBlock
+        icon={<MdOutlineAutoStories size={24} color='white' />}
+        category='Explore All Courses'
+        value='ALL'
+        desc='Optimize your logistics from hazmat packaging, regulations, distribution, and more.'
+        setFilter={() => categoryClickHandler('All', 'ALL')}
+      />
+
+      {/* <div
         className='col-span-2 bg-white rounded-md'
         onClick={() => {
           categoryClickHandler('All', 'all');
@@ -103,7 +118,7 @@ const CourseMenuBlock = ({ onClose }) => {
             <ArrowLongRightIcon className='h-5 w-5 fill-slate-900 stroke-slate-900' />
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };

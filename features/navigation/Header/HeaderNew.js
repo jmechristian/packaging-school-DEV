@@ -2,7 +2,11 @@ import { Fragment, Suspense, useState } from 'react';
 import { Dialog, Popover, Tab, Transition } from '@headlessui/react';
 import { useSelector } from 'react-redux';
 import {
+  AcademicCapIcon,
   Bars3Icon,
+  BeakerIcon,
+  Cog6ToothIcon,
+  CogIcon,
   MagnifyingGlassIcon,
   UserIcon,
   XMarkIcon,
@@ -18,6 +22,12 @@ import MobileMenuCoursesCallout from '../MobileMenu/MobileMenuComponents/MobileM
 import CertMegaCallout from '../../../components/nav/CertMegaCallout';
 import { showSearch } from '../navigationSlice';
 import { setDark, setLight, toggleSignInModal } from '../../layout/layoutSlice';
+import { setSelectedFilter } from '../../all_courses/courseFilterSlice';
+import {
+  setMenuItem,
+  setSelectedNav,
+  closeMobileMenu,
+} from '../../navigation/navigationSlice';
 import { useDispatch } from 'react-redux';
 import { LightBulbIcon } from '@heroicons/react/24/outline';
 import {
@@ -25,10 +35,12 @@ import {
   BoltIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
+  ArrowLongRightIcon,
 } from '@heroicons/react/24/solid';
 import LogoSquare from '../../../components/layout/LogoSquare';
 import { useRouter } from 'next/router';
 import SalesBar from './SalesBar';
+import MiniCertBlock from '../../../components/shared/MiniCertBlock';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -43,6 +55,16 @@ export default function HeaderNew() {
   const router = useRouter();
   const currentPath = router.asPath;
 
+  const categoryClickHandler = (name, value) => {
+    // onClose();
+    let newVal = value?.toUpperCase();
+    router.push('/all_courses#courses');
+    dispatch(setSelectedFilter({ name: name, value: value }));
+    dispatch(closeMobileMenu());
+    dispatch(setMenuItem());
+    dispatch(setSelectedNav(null));
+  };
+
   const navigation = {
     categories: [
       {
@@ -53,7 +75,7 @@ export default function HeaderNew() {
       {
         name: 'Courses',
         body: (
-          <div className='flex flex-col gap-9'>
+          <div className='flex flex-col gap-4 lg:gap-9'>
             <CourseMenuBlock onClose={() => setOpen(false)} />
           </div>
         ),
@@ -112,7 +134,7 @@ export default function HeaderNew() {
 
                 {/* Links */}
                 <Tab.Group as='div' className='mt-2'>
-                  <div className='border-b border-gray-200'>
+                  <div className='border-b border-gray-400'>
                     <Tab.List className='-mb-px flex space-x-8 px-4'>
                       {navigation.categories.map((category) => (
                         <Tab
@@ -148,7 +170,7 @@ export default function HeaderNew() {
                   </Tab.Panels>
                 </Tab.Group>
 
-                <div className='space-y-6 border-t border-gray-200 px-4 py-6'>
+                <div className='space-y-6 border-t border-gray-400 px-4 py-6'>
                   {navigation.pages.map((page) => (
                     <div
                       key={page.name}
@@ -167,7 +189,7 @@ export default function HeaderNew() {
                   ))}
                 </div>
 
-                <div className='space-y-6 border-t border-gray-200 px-4 py-6'>
+                <div className='space-y-6 border-t border-gray-400 px-4 py-6'>
                   <div className='flow-root'>
                     <a
                       href='https://learn.packagingschool.com'
@@ -214,9 +236,9 @@ export default function HeaderNew() {
 
           {/* Secondary navigation */}
           <div className='bg-white dark:bg-dark-mid'>
-            <div className='mx-auto max-w-7xl'>
-              <div className='border-b border-t lg:border-t-0 border-slate-200 dark:border-gray-700'>
-                <div className='flex h-24 items-center justify-between px-4 md:px-8 xl:pl-0'>
+            <div className=''>
+              <div className='border-b border-t lg:border-t-0 border-slate-400 dark:border-gray-700'>
+                <div className='flex h-24 items-center justify-between px-4 md:px-8 xl:pl-0 mx-auto max-w-7xl'>
                   {/* Logo (lg+) */}
                   <div className='hidden lg:flex lg:items-center'>
                     <Link href='/'>
@@ -240,7 +262,7 @@ export default function HeaderNew() {
                                 <Popover.Button
                                   className={classNames(
                                     open
-                                      ? 'border-base-brand text-base-brand dark:text-white/80'
+                                      ? 'border-transparent text-base-brand dark:text-white/80'
                                       : 'border-transparent text-gray-700 dark:hover:text-gray-500 hover:text-gray-800 dark:text-white/80',
                                     'relative z-10 -mb-px flex items-center border-b-2 pt-px font-semibold font-greycliff transition-colors duration-200 ease-out'
                                   )}
@@ -258,16 +280,150 @@ export default function HeaderNew() {
                                 leaveFrom='opacity-100'
                                 leaveTo='opacity-0'
                               >
-                                <Popover.Panel className='absolute inset-x-0 top-full text-gray-500 z-20'>
+                                <Popover.Panel className='absolute inset-x-0 top-full z-20'>
                                   {/* Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow */}
                                   <div
-                                    className='absolute inset-0 top-1/2 bg-white shadow'
+                                    className='absolute inset-0 top-1/2 bg-white  shadow'
                                     aria-hidden='true'
                                   />
+                                  <div className='mx-auto bg-base-light/95 dark:bg-dark-dark backdrop-blur  rounded-b-xl shadow-xl px-3 pt-6 pb-10'>
+                                    <div className='grid grid-cols-3 items-start gap-3 max-w-7xl mx-auto h-full'>
+                                      <div className='col-span-2 h-full'>
+                                        <div className='flex flex-col gap-3 h-full'>
+                                          <div className='w-full rounded-xl border bg-white dark:bg-dark-dark shadow-lg'>
+                                            <div className='flex flex-col gap-4 p-4'>
+                                              <h3 className='text-xl dark:text-white'>
+                                                Comprehensive Certificate
+                                                Programs
+                                              </h3>
+                                              <div className='grid grid-cols-2 gap-3'>
+                                                <div className='border rounded-xl'>
+                                                  <CertMenuItem
+                                                    title='Certificate of Mastery in Packaging Management'
+                                                    apply='/certificate-of-mastery-in-packaging-management'
+                                                    learnMore='/certifications/get-to-know-cmpm'
+                                                    content='A 12-week, PhD-led program teaching you the latest technologies accelerating the packaging field in the space of packaging development, material procurement, and organizational management.'
+                                                    bgColor='bg-gradient-to-br from-base-brand to-slate-700'
+                                                    onClose={() => close()}
+                                                    // icon={'academicHat'}
+                                                  />
+                                                </div>
+                                                <div className='border rounded-xl'>
+                                                  <CertMenuItem
+                                                    title='Certificate of Packaging Science'
+                                                    apply='/certificate-of-packaging-science-application'
+                                                    learnMore='/certifications/get-to-know-cps'
+                                                    onClose={() => close()}
+                                                    bgColor='bg-gradient-to-br from-base-dark to-slate-900'
+                                                    content='A 12-month, online program teaching the materials, processes, and influences shaping the advancement of the industry. Speak the language of packaging and be a key differentiator for you and your company.'
+                                                    // icon='beaker'
+                                                  />
+                                                </div>
+                                                <div className='border rounded-xl'>
+                                                  <CertMenuItem
+                                                    title='Automotive Packaging Certificate'
+                                                    bgColor='bg-gradient-to-br from-clemson to-orange-800'
+                                                    content='The first and only 100% online academic program that will enable you to develop the professional skill set you need to be successful in the automotive packaging field.'
+                                                    apply='https://learn.packagingschool.com/enroll/735516'
+                                                    learnMore='/certifications/get-to-know-apc'
+                                                    enroll={true}
+                                                    onClose={() => close()}
+                                                  />
+                                                </div>
+                                                <div className='border rounded-xl'>
+                                                  <CertMenuItem
+                                                    enroll={true}
+                                                    title='Certificate of Sustainable Packaging'
+                                                    apply='https://learn.packagingschool.com/enroll/2772370'
+                                                    learnMore='/certifications/get-to-know-csp'
+                                                    onClose={() => close()}
+                                                    bgColor='bg-gradient-to-br from-brand-green to-slate-900'
+                                                    content="Introducing a transformative program empowering industry professionals to navigate the complexities of sustainable design. This initiative equips companies with internal champions, well-versed in the dos and don'ts of sustainable packaging, fostering a positive force for change within organizations."
+                                                    callout={'Newly Released!'}
+                                                  />
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div className='col-span-1 border w-full h-full rounded-xl bg-neutral-100 dark:bg-dark-mid shadow-xl'>
+                                        {/* <div className='w-full flex flex-col gap-4 p-4 justify-between h-full'>
+                                          <div
+                                            className='w-full aspect-[4/3] bg-cover bg-center rounded-xl relative cursor-pointer'
+                                            style={{
+                                              backgroundImage: `url('https://packschool.s3.amazonaws.com/JULIE-2018-sm.jpg')`,
+                                            }}
+                                          >
+                                            <div className='w-full h-full bg-gradient-to-t from-black/80  rounded-b-xl absolute inset-0 z-[10]'></div>
+                                            <div className='flex flex-col justify-between w-full h-full absolute inset-0 z-[20]'>
+                                              <div className='w-fit py-2 text-sm font-semibold px-3 text-white bg-clemson rounded-xl mt-2 ml-2'>
+                                                The Doctor is In!
+                                              </div>
+                                              <div className='flex flex-col gap-1 p-3 leading-tight'>
+                                                <div className='font-bold text-2xl text-white'>
+                                                  Questions about
+                                                  Certifications?
+                                                </div>
+                                                <div className='text-white'>
+                                                  Reach out to Dr. Julie Suggs
+                                                  for a personalized
+                                                  consultation for yourself or
+                                                  your team.
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div>
+                                            <div className='flex flex-col gap-2'>
+                                              <div className='font-bold w-full border-b border-b-slate-400 pb-2 font-greycliff'>
+                                                Not Sure Where to Start?
+                                              </div>
+                                              <div
+                                                className='flex gap-2 justify-between items-center border-b border-b-slate-400 pb-2 cursor-pointer'
+                                                onClick={() => {
+                                                  router.push('/all_courses');
+                                                  close();
+                                                }}
+                                              >
+                                                <div className='text-sm text-slate-700 dark:text-slate-300'>
+                                                  Browse the Library
+                                                </div>
+                                                <div>
+                                                  <ArrowLongRightIcon className='h-5 w-5 stroke-slate-700' />
+                                                </div>
+                                              </div>
+                                              <div
+                                                className='flex gap-2 justify-between cursor-pointer items-center'
+                                                onClick={() => {
+                                                  router.push('/contact');
+                                                  close();
+                                                }}
+                                              >
+                                                <div className='text-sm text-slate-700 dark:text-slate-300'>
+                                                  Contact Our Team
+                                                </div>
+                                                <div>
+                                                  <ArrowLongRightIcon className='h-5 w-5 stroke-slate-700' />
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div> */}
+                                        <CertMegaCallout />
+                                      </div>
+                                      {/* <CourseDropDownCourses
+                                          onClose={() => close()}
+                                        />
+                                        <CourseDropDownCallout
+                                          onClose={() => close()}
+                                        /> */}
+                                    </div>
+                                  </div>
 
-                                  <div className='relative bg-base-light dark:bg-dark-dark'>
+                                  {/* <div className='mx-auto bg-base-light/95 backdrop-blur dark:bg-dark-dark rounded-b-xl shadow-xl px-3 pt-3 pb-8'>
                                     <div className='mx-auto max-w-7xl px-8'>
-                                      <div className='grid grid-cols-3 overflow-hidden items-start gap-x-8 gap-y-10 py-10'>
+                                      <div className='grid grid-cols-3 overflow-hidden items-start gap-x-8 gap-y-10 py-4'>
                                         <div className='grid grid-cols-1 overflow-hidden col-span-1 gap-6 h-full'>
                                           <CertMenuItem
                                             title='Certificate of Mastery in Packaging Management'
@@ -286,7 +442,6 @@ export default function HeaderNew() {
                                             apply='https://learn.packagingschool.com/enroll/735516'
                                             learnMore='/certifications/get-to-know-apc'
                                             onClose={() => close()}
-                                            // icon='cog'
                                           />
                                         </div>
                                         <div className='grid grid-cols-1 col-span-1 gap-6 h-full'>
@@ -311,7 +466,7 @@ export default function HeaderNew() {
                                         <CertMegaCallout close={close} />
                                       </div>
                                     </div>
-                                  </div>
+                                  </div> */}
                                 </Popover.Panel>
                               </Transition>
                             </>
@@ -328,7 +483,7 @@ export default function HeaderNew() {
                                 <Popover.Button
                                   className={classNames(
                                     open
-                                      ? 'border-base-brand text-base-brand dark:text-white/80'
+                                      ? 'border-transparent text-base-brand dark:text-white/80'
                                       : 'border-transparent text-gray-700 dark:hover:text-gray-500 hover:text-gray-800 dark:text-white/80',
                                     'relative z-10 -mb-px flex items-center border-b-2 pt-px font-semibold font-greycliff transition-colors duration-200 ease-out'
                                   )}
@@ -346,22 +501,158 @@ export default function HeaderNew() {
                                 leaveFrom='opacity-100'
                                 leaveTo='opacity-0'
                               >
-                                <Popover.Panel className='absolute inset-x-0 top-full text-gray-500 z-20'>
+                                <Popover.Panel className='absolute inset-x-0 top-full z-20'>
                                   {/* Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow */}
-                                  <div
-                                    className='absolute inset-0 top-1/2 bg-white shadow'
-                                    aria-hidden='true'
-                                  />
 
-                                  <div className='relative bg-base-light dark:bg-dark-dark'>
-                                    <div className='mx-auto max-w-7xl px-8'>
-                                      <div className='grid grid-cols-3 items-start gap-x-8 gap-y-10 pb-8 pt-8'>
-                                        <CourseDropDownCourses
+                                  <div className='relative'>
+                                    <div className='mx-auto bg-base-light/95 backdrop-blur dark:bg-dark-dark rounded-b-xl shadow-xl px-3 pt-6 pb-10'>
+                                      <div className='grid grid-cols-3 items-start gap-3 max-w-7xl mx-auto h-full'>
+                                        <div className='col-span-2 h-full'>
+                                          <div className='flex flex-col gap-3 h-full'>
+                                            <div className='w-full rounded-xl border bg-white dark:bg-dark-dark shadow-lg'>
+                                              <div className='flex flex-col gap-4 p-4'>
+                                                <h3 className='text-xl dark:text-white'>
+                                                  Courses By Category
+                                                </h3>
+                                                <div className='grid grid-cols-2 gap-3'>
+                                                  <CourseMenuBlock
+                                                    onClose={close}
+                                                  />
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div className='w-full h-full'>
+                                              <div className='grid grid-cols-2 gap-4 h-full'>
+                                                <div
+                                                  className='w-full rounded-xl bg-base-mid shadow-xl cursor-pointer group hover:bg-base-dark transition-colors ease-in'
+                                                  onClick={() =>
+                                                    categoryClickHandler(
+                                                      'CPS Electives',
+                                                      'ELECTIVE'
+                                                    )
+                                                  }
+                                                >
+                                                  <div className='px-4 py-4 w-full h-full flex items-center'>
+                                                    <div className='w-full flex justify-between items-center'>
+                                                      <div className='col-span-1'>
+                                                        <BeakerIcon className='w-12 h-12 stroke-white/40 group-hover:stroke-clemson group-hover:scale-110 transition-all ease-in' />
+                                                      </div>
+                                                      <div className='col-span-4'>
+                                                        <div className='font-medium text-white text-lg leading-tight'>
+                                                          Certificate of
+                                                          Packaging
+                                                          <br /> Science Courses
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div
+                                                  className='w-full h-full rounded-xl bg-indigo-500 hover:bg-indigo-700 transition-colors ease-in shadow-xl cursor-pointer group'
+                                                  onClick={() =>
+                                                    categoryClickHandler(
+                                                      'Automotive',
+                                                      'AUTO'
+                                                    )
+                                                  }
+                                                >
+                                                  <div className='px-4 py-4 w-full flex items-center h-full'>
+                                                    <div className='w-full flex justify-between items-center'>
+                                                      <div className='col-span-1'>
+                                                        <Cog6ToothIcon className='w-12 h-12 stroke-white/40 group-hover:stroke-brand-yellow group-hover:scale-110 transition-all ease-in' />
+                                                      </div>
+                                                      <div className='col-span-4 flex flex-col gap-2'>
+                                                        <div className='font-medium text-white text-lg leading-tight'>
+                                                          Automotive Packaging
+                                                          <br />
+                                                          Certificate Courses
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div className='col-span-1 border w-full h-full rounded-xl bg-neutral-100 dark:bg-dark-mid shadow-xl'>
+                                          <div className='w-full flex flex-col gap-4 p-4 justify-between h-full'>
+                                            <div
+                                              className='w-full aspect-[4/3] bg-cover bg-center rounded-xl relative cursor-pointer'
+                                              style={{
+                                                backgroundImage: `url('https://packschool.s3.amazonaws.com/bootcamp-2-seoImage.png')`,
+                                              }}
+                                            >
+                                              <div className='w-full h-full bg-gradient-to-t from-black/80 rounded-b-xl absolute inset-0 z-[10]'></div>
+                                              <div className='flex flex-col justify-between w-full h-full absolute inset-0 z-[20]'>
+                                                <div className='w-fit py-2 text-sm font-semibold px-3 text-white bg-clemson rounded-xl mt-2 ml-2'>
+                                                  New To Packaging?
+                                                </div>
+                                                <div className='flex flex-col gap-1 p-3 leading-tight'>
+                                                  <div className='font-bold text-2xl text-white'>
+                                                    Packaging Bootcamp 101
+                                                  </div>
+                                                  <div className='text-white'>
+                                                    20 days, 20 minutes daily.
+                                                    Gain a solid foundation with
+                                                    eight hours of content,
+                                                    activities, and cheat
+                                                    sheets.
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div>
+                                              <div className='flex flex-col gap-2'>
+                                                <div className='font-bold w-full border-b dark:text-white border-b-slate-400 pb-2 font-greycliff'>
+                                                  Not Sure Where to Start?
+                                                </div>
+                                                {/* <div className='flex gap-2 justify-between items-center border-b border-b-slate-400 pb-2'>
+            <div className='text-sm text-slate-700 dark:text-slate-300'>
+              Take Our Skills Assesment
+            </div>
+            <div>
+              <ArrowLongRightIcon className='h-5 w-5 stroke-slate-700' />
+            </div>
+          </div> */}
+                                                <div
+                                                  className='flex gap-2 justify-between items-center border-b border-b-slate-400 pb-2 cursor-pointer'
+                                                  onClick={() => {
+                                                    router.push('/all_courses');
+                                                    close();
+                                                  }}
+                                                >
+                                                  <div className='text-sm text-slate-700 dark:text-slate-300'>
+                                                    Browse the Library
+                                                  </div>
+                                                  <div>
+                                                    <ArrowLongRightIcon className='h-5 w-5 stroke-slate-700' />
+                                                  </div>
+                                                </div>
+                                                <div
+                                                  className='flex gap-2 justify-between cursor-pointer items-center'
+                                                  onClick={() => {
+                                                    router.push('/contact');
+                                                    close();
+                                                  }}
+                                                >
+                                                  <div className='text-sm text-slate-700 dark:text-slate-300'>
+                                                    Contact Our Team
+                                                  </div>
+                                                  <div>
+                                                    <ArrowLongRightIcon className='h-5 w-5 stroke-slate-700' />
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        {/* <CourseDropDownCourses
                                           onClose={() => close()}
                                         />
                                         <CourseDropDownCallout
                                           onClose={() => close()}
-                                        />
+                                        /> */}
                                       </div>
                                     </div>
                                   </div>
