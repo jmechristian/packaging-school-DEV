@@ -1,5 +1,7 @@
 import React from 'react';
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
+import { useRouter } from 'next/router';
+import { useDispatch } from 'react-redux';
 import {
   AcademicCapIcon,
   Bars3Icon,
@@ -10,8 +12,30 @@ import {
   UserIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline';
+import {
+  setDark,
+  setLight,
+  toggleSignInModal,
+} from '../../../layout/layoutSlice';
+import { setSelectedFilter } from '../../../all_courses/courseFilterSlice';
+import {
+  setMenuItem,
+  setSelectedNav,
+  closeMobileMenu,
+} from '../../../navigation/navigationSlice';
 
-const MobileMenuCoursesCallout = () => {
+const MobileMenuCoursesCallout = ({ onClose }) => {
+  const router = useRouter();
+  const dispatch = useDispatch();
+  const categoryClickHandler = (name, value) => {
+    onClose();
+    let newVal = value?.toUpperCase();
+    router.push('/all_courses#courses');
+    dispatch(setSelectedFilter({ name: name, value: value }));
+    dispatch(closeMobileMenu());
+    dispatch(setMenuItem());
+    dispatch(setSelectedNav(null));
+  };
   return (
     <div>
       <div className='flex flex-col gap-6'>

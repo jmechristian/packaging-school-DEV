@@ -56,7 +56,7 @@ export default function HeaderNew() {
   const currentPath = router.asPath;
 
   const categoryClickHandler = (name, value) => {
-    // onClose();
+    onClose();
     let newVal = value?.toUpperCase();
     router.push('/all_courses#courses');
     dispatch(setSelectedFilter({ name: name, value: value }));
