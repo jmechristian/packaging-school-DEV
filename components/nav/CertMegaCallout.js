@@ -34,7 +34,10 @@ const CertMegaCallout = ({ onClose }) => {
           }}
         >
           <div className='w-full h-full bg-gradient-to-t from-black/80  rounded-b-xl absolute inset-0 z-[10]'></div>
-          <div className='flex flex-col justify-between w-full h-full absolute inset-0 z-[20]'>
+          <div
+            className='flex flex-col justify-between w-full h-full absolute inset-0 z-[20]'
+            onClick={() => setIsOpen(true)}
+          >
             <div className='w-fit py-2 text-sm font-semibold px-3 text-white bg-clemson rounded-xl mt-2 ml-2'>
               The Doctor is In!
             </div>
