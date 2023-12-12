@@ -143,7 +143,7 @@ const Page = ({ customer }) => {
   );
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const res = await API.graphql({
     query: getCustomer,
     variables: { id: 'fec13ccf-8b5c-497a-bccd-adb6d06820ea' },

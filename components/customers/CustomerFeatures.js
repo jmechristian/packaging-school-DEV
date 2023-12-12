@@ -39,7 +39,7 @@ const CustomerFeatures = ({ courses }) => {
       allCourses && allCourses.filter((c) => c.id === pop[0].courseId);
 
     return popCourse;
-  }, [courses]);
+  }, [courses, allCourses]);
 
   return (
     <motion.div className='px-0 lg:px-6 w-fit mx-auto grid gap-12 md:gap-6 lg:gap-16 md:grid-cols-2 lg:grid-cols-3 md:pb-10 my-9 overflow-hidden'>
@@ -59,14 +59,14 @@ const CustomerFeatures = ({ courses }) => {
         // id={'806c0e2e-c4db-4c13-94f9-b49d4e8b2239'}
       />
       <NewCouseCard
-        title={mostPopularCourse[0].title}
-        description={mostPopularCourse[0].subheadline}
-        background={mostPopularCourse[0].seoImage}
-        link={mostPopularCourse[0].link}
+        title={mostPopularCourse && mostPopularCourse[0].title}
+        description={mostPopularCourse && mostPopularCourse[0].subheadline}
+        background={mostPopularCourse && mostPopularCourse[0].seoImage}
+        link={mostPopularCourse && mostPopularCourse[0].link}
         link_text={'Select Course'}
         Icon={SparklesIcon}
         callout={'Most Popular'}
-        video={mostPopularCourse[0].preview}
+        video={mostPopularCourse && mostPopularCourse[0].preview}
       />
       <NewCouseCard
         title={latestLesson && latestLesson[0].title}
