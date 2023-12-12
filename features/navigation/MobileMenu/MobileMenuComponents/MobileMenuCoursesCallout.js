@@ -39,7 +39,7 @@ const MobileMenuCoursesCallout = ({ onClose }) => {
   return (
     <div>
       <div className='flex flex-col gap-6'>
-        <div className='grid gap-4 h-full'>
+        <div className='flex flex-col gap-4 h-full'>
           <div
             className='w-full rounded-xl bg-base-mid shadow-xl cursor-pointer group hover:bg-base-dark transition-colors ease-in'
             onClick={() => categoryClickHandler('CPS Electives', 'ELECTIVE')}
@@ -49,7 +49,7 @@ const MobileMenuCoursesCallout = ({ onClose }) => {
                 <div className='col-span-1'>
                   <BeakerIcon className='w-12 h-12 stroke-white/40 group-hover:stroke-clemson group-hover:scale-110 transition-all ease-in' />
                 </div>
-                <div className='col-span-4'>
+                <div className='w-full'>
                   <div className='font-medium text-white text-lg leading-tight'>
                     Certificate of Packaging
                     <br /> Science Courses
@@ -67,7 +67,7 @@ const MobileMenuCoursesCallout = ({ onClose }) => {
                 <div className='col-span-1'>
                   <Cog6ToothIcon className='w-12 h-12 stroke-white/40 group-hover:stroke-brand-yellow group-hover:scale-110 transition-all ease-in' />
                 </div>
-                <div className='col-span-4 flex flex-col gap-2'>
+                <div className='w-full flex flex-col gap-2'>
                   <div className='font-medium text-white text-lg leading-tight'>
                     Automotive Packaging
                     <br />
@@ -78,7 +78,7 @@ const MobileMenuCoursesCallout = ({ onClose }) => {
             </div>
           </div>
         </div>
-        <div className='col-span-1 w-full h-full rounded-xl'>
+        <div className='w-full h-full rounded-xl'>
           <div className='w-full flex flex-col gap-4 py-4 justify-between h-full'>
             <div
               className='w-full aspect-[4/3] bg-cover bg-center rounded-xl relative cursor-pointer'
