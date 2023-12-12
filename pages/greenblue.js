@@ -87,7 +87,7 @@ const Page = () => {
         highlight={'bg-clemson'}
         bgContent={'bg-neutral-200 border'}
       />
-      <div className='bg-neutral-100 rounded-xl'>
+      {/* <div className='bg-neutral-100 rounded-xl'>
         <div className='mx-auto max-w-7xl px-6 py-20 lg:px-8'>
           <div className='mx-auto max-w-5xl divide-y divide-gray-900/10'>
             <h2 className='text-2xl font-bold leading-10 tracking-tight text-gray-900'>
@@ -130,7 +130,7 @@ const Page = () => {
             </dl>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

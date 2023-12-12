@@ -16,6 +16,7 @@ const ReactGoogleSlides = dynamic(() => import('react-google-slides'), {
 import VideoPlayer from '../VideoPlayer';
 
 const CustomerIntro_2 = () => {
+  const [isMediaType, setIsMediaType] = useState('SLIDES');
   return (
     <div className='w-full h-full flex flex-col lg:grid lg:grid-cols-5 gap-12 pt-12 pb-20 lg:px-12 xl:px-0 lg:gap-16'>
       <div className='lg:col-span-3 flex items-center'>
@@ -42,14 +43,14 @@ const CustomerIntro_2 = () => {
           <ReactGoogleSlides
             width={'100%'}
             height={'100%'}
-            slidesLink='https://docs.google.com/presentation/d/1frh5qJEeQQ-kMIKpSi3MHaamjPUlSHKCudoPHX8vDXs'
+            slidesLink='https://docs.google.com/presentation/d/15DjazbEB9njTkkU6z2EdTKCKsN5FtvWW4s10urJhT_M/edit?usp=sharing'
             position={1}
             showControls
             loop
           />
         </div>
-        <div className='w-fit grid grid-cols-3 gap-x-7 overflow-hidden py-2'>
-          <div
+        <div className='w-fit grid grid-cols-2 gap-x-7 overflow-hidden py-2'>
+          {/* <div
             className='w-[56px] h-[56px] rounded-full bg-gb-green hover:bg-gb-gray shadow-md flex items-center justify-center'
             onClick={() => setIsMediaType('VIDEO')}
           >
@@ -59,7 +60,7 @@ const CustomerIntro_2 = () => {
               </div>
               <div className='text-xs font-medium text-white'>Video</div>
             </div>
-          </div>
+          </div> */}
           <div
             className='w-[56px] h-[56px] rounded-full bg-gb-green hover:bg-gb-gray cursor-pointer shadow-md flex items-center justify-center'
             onClick={() => setIsMediaType('SLIDES')}
