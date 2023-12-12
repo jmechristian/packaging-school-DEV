@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { API } from 'aws-amplify';
+import { getCustomer } from '../src/graphql/queries';
 import {
   BoltIcon,
   MinusSmallIcon,
@@ -45,7 +47,7 @@ const faqs = [
   },
 ];
 
-const Page = () => {
+const Page = ({ customer }) => {
   return (
     <div className='w-full max-w-7xl px-3 md:px-6 lg:px-0 flex flex-col gap-4 md:gap-8 pb-3 md:pb-6 lg:pb-24 md:pt-12 mx-auto'>
       {/* <CustomerIntro logo={'https://packschool.s3.amazonaws.com/GB_logo.png'} /> */}
@@ -56,7 +58,9 @@ const Page = () => {
         bg='bg-gb-main'
         bgdark='bg-gradient-to-r from-gb-main to-gb-green'
         highlight={'bg-gb-green'}
-        content={<CustomerFeatures />}
+        content={
+          <CustomerFeatures courses={customer && customer.courses.items} />
+        }
         open={true}
       />
       <FullWidthDropDown
@@ -74,7 +78,11 @@ const Page = () => {
         Icon={AcademicCapIcon}
         bg='bg-base-mid'
         bgdark='bg-base-dark'
-        content={<CustomerSearchContainer courses={dummyData} />}
+        content={
+          <CustomerSearchContainer
+            courses={customer && customer.courses.items}
+          />
+        }
         highlight={'bg-clemson'}
         bgContent={'bg-neutral-200 border'}
       />
@@ -134,5 +142,17 @@ const Page = () => {
     </div>
   );
 };
+
+export async function getStaticProps() {
+  const res = await API.graphql({
+    query: getCustomer,
+    variables: { id: 'fec13ccf-8b5c-497a-bccd-adb6d06820ea' },
+  });
+  const customer = res.data.getCustomer;
+
+  return {
+    props: { customer },
+  };
+}
 
 export default Page;

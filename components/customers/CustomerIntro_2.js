@@ -34,7 +34,15 @@ const CustomerIntro_2 = () => {
           <div className='text-lg'>
             Explore your library resources below. To learn how to make the most
             of your library, select your preferred instructional method. For
-            additional assistance, feel free to contact us at Email@email.com.
+            additional assistance, feel free to contact us at{' '}
+            <a
+              href='mailto:education@greenblue.org'
+              rel='noreferrer'
+              target='_blank'
+            >
+              education@greenblue.org
+            </a>
+            .
           </div>
         </div>
       </div>
@@ -49,7 +57,11 @@ const CustomerIntro_2 = () => {
             loop
           />
         </div>
-        <div className='w-fit grid grid-cols-2 gap-x-7 overflow-hidden py-2'>
+        <div className='w-full flex items-center justify-center py-4 gap-1'>
+          <div>
+            <DocumentArrowDownIcon className='w-5 h-5' />
+          </div>
+          <div className='text-sm font-medium'>Download as PDF</div>
           {/* <div
             className='w-[56px] h-[56px] rounded-full bg-gb-green hover:bg-gb-gray shadow-md flex items-center justify-center'
             onClick={() => setIsMediaType('VIDEO')}
@@ -61,7 +73,7 @@ const CustomerIntro_2 = () => {
               <div className='text-xs font-medium text-white'>Video</div>
             </div>
           </div> */}
-          <div
+          {/* <div
             className='w-[56px] h-[56px] rounded-full bg-gb-green hover:bg-gb-gray cursor-pointer shadow-md flex items-center justify-center'
             onClick={() => setIsMediaType('SLIDES')}
           >
@@ -82,7 +94,7 @@ const CustomerIntro_2 = () => {
               </div>
               <div className='text-xs font-medium text-white'>PDF</div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

@@ -151,7 +151,7 @@ const CustomerSearchContainer = ({ courses }) => {
         </motion.div>
       ) : (
         <div className='flex flex-col gap-12 justify-center items-center w-full max-w-[996px] mx-auto'>
-          <div className='md:col-span-2 xl:col-span-3 grid overflow-hidden grid-cols-1 lg:grid-cols-2 bg-white rounded-xl shadow-lg max-w-[300px] md:max-w-none'>
+          {/* <div className='md:col-span-2 xl:col-span-3 grid overflow-hidden grid-cols-1 lg:grid-cols-2 bg-white rounded-xl shadow-lg max-w-[300px] md:max-w-none'>
             <div className='w-full rounded-xl flex items-center'>
               <div
                 className='w-full aspect-[16/9] rounded-xl justify-center items-center flex bg-cover bg-center relative'
@@ -159,19 +159,7 @@ const CustomerSearchContainer = ({ courses }) => {
                   backgroundImage: `url("https://packschool.s3.amazonaws.com/spc-seoImage-2.png")`,
                 }}
               >
-                <motion.div className='absolute left-4 top-4 w-fit z-[2] bg-neutral-600/40 backdrop-blur-md rounded-xl px-2 py-1.5 shadow'>
-                  <motion.div className='flex items-center gap-2'>
-                    <motion.div>
-                      <BoltIcon className='w-5 h-5 fill-white' />
-                    </motion.div>
-                    <motion.div className='text-white font-bold'>
-                      Featured
-                    </motion.div>
-                  </motion.div>
-                </motion.div>
-                {/* <motion.div className='w-20 h-20 bg-white/40 backdrop-blur-lg hover:bg-clemson transition-colors ease-in rounded-full shadow-xl flex justify-center items-center cursor-pointer'>
-                <PlayCircleIcon className='w-20 h-20' />
-              </motion.div> */}
+
               </div>
             </div>
             <div className='w-full flex justify-center items-center px-6'>
@@ -197,7 +185,7 @@ const CustomerSearchContainer = ({ courses }) => {
                 </motion.div>
               </motion.div>
             </div>
-          </div>
+          </div> */}
           <div className='course-card-grid'>
             <NewCouseCard
               title={initCourses[0].title}
