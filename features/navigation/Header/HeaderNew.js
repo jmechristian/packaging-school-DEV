@@ -156,10 +156,10 @@ export default function HeaderNew() {
                     {navigation.categories.map((category, categoryIdx) => (
                       <Tab.Panel
                         key={category.name}
-                        className='space-y-12 px-4 pb-6 pt-10 max-w-[96%]'
+                        className='space-y-12 px-4 pb-6 pt-10'
                       >
-                        <div className='grid grid-cols-1 items-start gap-x-6 gap-y-10'>
-                          <div className='flex flex-col gap-x-6 gap-y-10'>
+                        <div className='flex flex-col items-start gap-x-6 gap-y-10 w-full'>
+                          <div className='flex flex-col gap-x-6 gap-y-10 w-full'>
                             <div>{category.body}</div>
                             <div>{category.callout}</div>
                           </div>
