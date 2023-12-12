@@ -1,6 +1,7 @@
 import React from 'react';
 import CertificateCard from '../../components/certificate-card/CertificateCard';
 import ScrollButtons from '../../components/ScrollButtons';
+import { certMenuFull } from '../../data/CertMenu';
 
 const AllCoursesCert = () => {
   const certs = [
@@ -15,7 +16,7 @@ const AllCoursesCert = () => {
       ring: 'slate-400',
       video: 'https://youtu.be/N_hYWvQO0Sg',
       callout: 'Deadline to Apply',
-      calloutValue: 'Nov 24',
+      calloutValue: 'Feb 22',
     },
     {
       name: 'Certificate of Packaging Science',
@@ -67,7 +68,7 @@ const AllCoursesCert = () => {
         </div>
       </div>
       <div className='relative grid lg:grid-cols-2 gap-9'>
-        {certs.map((c) => (
+        {certMenuFull.map((c) => (
           <div className='w-full' key={c.name}>
             <CertificateCard
               title={c.name}

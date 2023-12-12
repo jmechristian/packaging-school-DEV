@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import CertificateCard from '../../components/certificate-card/CertificateCard';
 import Scroller from '../../components/Scroller';
+import { certMenuFull } from '../../data/CertMenu';
 
 const AllCourseCertMobile = () => {
   const certRef = useRef();
@@ -45,6 +46,19 @@ const AllCourseCertMobile = () => {
       callout: 'Limited!',
       calloutValue: `Workbook \nIncluded`,
     },
+    {
+      name: 'Certificate of Sustainable Packaging',
+      link: 'certifications/get-to-know-csp',
+      apply: 'https://learn.packagingschool.com/enroll/2772370',
+      body: "Introducing a transformative program empowering industry professionals to navigate the complexities of sustainable design. This initiative equips companies with internal champions, well-versed in the dos and don'ts of sustainable packaging, fostering a positive force for change within organizations.",
+      image:
+        'https://packschool.s3.amazonaws.com/certifications/NEW-Packaging-School-Blank-APC-Julie-Suggs.png',
+      backgroundColor: 'bg-gradient-to-br from-brand-green to-green-900',
+      ring: 'clemson',
+      callout: '',
+      calloutValue: `Newly Released!`,
+      enroll: true,
+    },
   ];
 
   return (
@@ -53,7 +67,7 @@ const AllCourseCertMobile = () => {
         Find Your Learning Path
       </div>
       <div className='relative grid md:grid-cols-2 lg:grid-cols-2 gap-6 px-4 md:px-8'>
-        {certs.map((c) => (
+        {certMenuFull.map((c) => (
           <div className='w-full' key={c.name}>
             <CertificateCard
               title={c.name}

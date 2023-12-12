@@ -28,17 +28,17 @@ const HomeCertItem = ({ cert }) => {
           <div className='text-slate-600'>{cert.body}</div>
         </div>
         <div className='flex gap-4'>
-          <Link href={cert.apply}>
-            <div
-              className={`${
-                isHover ? 'bg-clemson-dark shadow-lg' : 'bg-clemson'
-              } cursor-pointer text-white font-greycliff font-semibold rounded-lg p-2`}
-            >
-              {cert.link === 'certifications/get-to-know-apc'
-                ? 'Enroll Now'
-                : 'Apply Now'}
-            </div>
-          </Link>
+          {cert.apply && (
+            <Link href={cert.apply}>
+              <div
+                className={`${
+                  isHover ? 'bg-clemson-dark shadow-lg' : 'bg-clemson'
+                } cursor-pointer text-white font-greycliff font-semibold rounded-lg p-2`}
+              >
+                {cert.enroll ? 'Enroll Now' : 'Apply Now'}
+              </div>
+            </Link>
+          )}
           <Link href={cert.link}>
             <div className='border cursor-pointer border-slate-600 text-slate-800 font-greycliff font-semibold rounded-lg p-2'>
               More Info

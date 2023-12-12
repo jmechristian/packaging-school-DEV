@@ -24,6 +24,19 @@ const certs = [
     background: 'bg-gradient-to-br from-base-dark to-slate-900',
   },
   {
+    name: 'Certificate of Sustainable Packaging',
+    link: 'certifications/get-to-know-csp',
+    apply: 'https://learn.packagingschool.com/enroll/2772370',
+    body: "Introducing a transformative program empowering industry professionals to navigate the complexities of sustainable design. This initiative equips companies with internal champions, well-versed in the dos and don'ts of sustainable packaging, fostering a positive force for change within organizations.",
+    image:
+      'https://packschool.s3.amazonaws.com/certifications/NEW-Packaging-School-Blank-APC-Julie-Suggs.png',
+    background: 'bg-gradient-to-br from-brand-green to-green-900',
+    ring: 'clemson',
+    callout: '',
+    calloutValue: `Newly Released!`,
+    enroll: true,
+  },
+  {
     name: 'Automotive Packaging Certificate',
     link: 'certifications/get-to-know-apc',
     apply: 'https://learn.packagingschool.com/enroll/735516',
@@ -31,6 +44,15 @@ const certs = [
     image:
       'https://packschool.s3.amazonaws.com/certifications/NEW-Packaging-School-Blank-APC-Julie-Suggs.png',
     background: 'bg-gradient-to-br from-clemson to-orange-800',
+    enroll: true,
+  },
+  {
+    name: 'Food Packaging Certificate',
+    link: '/food-packaging',
+    body: "In Development! Interested In Sponsoring? Enhance your brand and enlighten the World. By partnering with us, you'll bolster the knowledge of numerous food packaging professionals, helping them gain deeper insights into the industry and recognizing the unique value your company offers. Your brand takes the spotlight, and your leaders become the recognized experts in the field.",
+    image:
+      'https://packschool.s3.amazonaws.com/certifications/NEW-Packaging-School-Blank-APC-Julie-Suggs.png',
+    background: 'bg-gradient-to-br from-brand-yellow to-yellow-800',
   },
 ];
 
