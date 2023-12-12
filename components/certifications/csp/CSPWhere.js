@@ -68,7 +68,7 @@ const CSPWhere = () => {
           </div>
           <div className='rounded-2xl bg-base-light py-12 ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col'>
             <div className='mx-auto max-w-xl px-8 flex flex-col gap-2'>
-              <p className='font-bold text-lg'>Recommend Materials</p>
+              <p className='font-bold text-lg'>Recommended Materials</p>
               <div>
                 &rarr; Review of{' '}
                 <span
