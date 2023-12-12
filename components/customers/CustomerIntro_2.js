@@ -18,8 +18,8 @@ import VideoPlayer from '../VideoPlayer';
 const CustomerIntro_2 = () => {
   const [isMediaType, setIsMediaType] = useState('SLIDES');
   return (
-    <div className='w-full h-full flex flex-col lg:grid lg:grid-cols-5 gap-12 pt-12 pb-20 lg:px-12 xl:px-0 lg:gap-16 overflow-hidden'>
-      <div className='lg:col-span-3 flex items-center'>
+    <div className='w-full h-full flex flex-col lg:flex-row lg:justify-between gap-12 pt-12 pb-20 lg:px-12 xl:px-0 lg:gap-16'>
+      <div className='flex items-center'>
         <div className='w-full flex flex-col justify-center gap-6 lg:gap-9 lg:max-w-2xl'>
           <div className='w-full h-full flex mb-4'>
             <img
@@ -46,7 +46,7 @@ const CustomerIntro_2 = () => {
           </div>
         </div>
       </div>
-      <div className='lg:col-span-2 flex flex-col justify-center items-center border rounded-xl'>
+      <div className='flex flex-col justify-center items-center border rounded-xl w-full max-w-[500px]'>
         <div className='w-full h-auto aspect-[16/9] bg-neutral-700'>
           <ReactGoogleSlides
             width={'100%'}
