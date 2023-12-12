@@ -484,7 +484,7 @@ type Staff @model @auth(rules: [{ allow: public }]) {
   linkedIn: String
 }
 
-######### Unilever #########
+######### Customer #########
 
 type TrackedCourse @model @auth(rules: [{ allow: public }]) {
   id: ID!
@@ -505,10 +505,23 @@ type Customer @model @auth(rules: [{ allow: public }]) {
     @hasMany(indexName: "trackedByCustomer", fields: ["id"])
 }
 
-# Sales Bar
+######### Salesbar #########
+
 type SalesBar @model @auth(rules: [{ allow: public }]) {
   id: ID!
   text: String!
   link: String!
   icon: String @default(value: "BoltIcon")
+}
+
+######### Testimonials #########
+
+type Testimonial @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  content: String!
+  author: String
+  company: String
+  affiliation: String
+  title: String
+  tags: [String]
 }
