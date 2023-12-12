@@ -3,10 +3,12 @@ import AllCourseMenu from './AllCourseMenu';
 import AllCourseCert from './AllCourseCert';
 import { useSelector } from 'react-redux';
 import AllCourseCourses from './AllCourseCourses';
-import AllCourseSearch from './AllCourseSearch';
 import { useRouter } from 'next/router';
+import { useDispatch } from 'react-redux';
+import { setSelectedFilter } from './courseFilterSlice';
 
 const AllCourseBodyDesktop = ({ coursesToShow }) => {
+  const dispatch = useDispatch();
   const { selectedFilter } = useSelector((state) => state.course_filter);
   const router = useRouter();
   const coursesRef = useRef();
@@ -20,6 +22,13 @@ const AllCourseBodyDesktop = ({ coursesToShow }) => {
   const scrollToCourses = () => {
     coursesRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
+
+  useEffect(() => {
+    if (router.query.cat === 'automotive') {
+      dispatch(setSelectedFilter({ name: 'Automotive', value: 'AUTO' }));
+      scrollToCourses();
+    }
+  }, [router.query, dispatch]);
 
   return (
     <div className='w-full h-full relative hidden lg:flex gap-16 container-7xl py-20'>

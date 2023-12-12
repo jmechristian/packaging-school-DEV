@@ -1036,6 +1036,11 @@ const nextConfig = {
         destination: 'https://bmw.packagingschool.com/sws-bmw-survey',
         permanent: true,
       },
+      {
+        source: '/apccourses',
+        destination: '/all_courses?cat=automotive',
+        permanent: true,
+      },
     ];
   },
 };

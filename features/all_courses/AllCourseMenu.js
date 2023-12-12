@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setSelectedFilter, setMobileFilterClosed } from './courseFilterSlice';
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
 import { categoryMenu } from '../../data/CategoryMenu';
 import { certMenu } from '../../data/CertMenu';
 import AssessmentCTA from '../../components/AssessmentCTA';
+import { useRouter } from 'next/router';
 
 const AllCourseMenu = ({ click }) => {
   const dispatch = useDispatch();
+  const router = useRouter();
   const { selectedFilter } = useSelector((state) => state.course_filter);
 
   const filterClickHandler = (name, value) => {
