@@ -18,7 +18,7 @@ import VideoPlayer from '../VideoPlayer';
 const CustomerIntro_2 = () => {
   const [isMediaType, setIsMediaType] = useState('SLIDES');
   return (
-    <div className='w-full h-full flex flex-col lg:grid lg:grid-cols-5 gap-12 pt-12 pb-20 lg:px-12 xl:px-0 lg:gap-16'>
+    <div className='w-full h-full flex flex-col lg:grid lg:grid-cols-5 gap-12 pt-12 pb-20 lg:px-12 xl:px-0 lg:gap-16 overflow-hidden'>
       <div className='lg:col-span-3 flex items-center'>
         <div className='w-full flex flex-col justify-center gap-6 lg:gap-9 lg:max-w-2xl'>
           <div className='w-full h-full flex mb-4'>
