@@ -524,4 +524,7 @@ type Testimonial @model @auth(rules: [{ allow: public }]) {
   affiliation: String
   title: String
   tags: [String]
+  linkedin: String
+  headshot: String
+  featured: Boolean @default(value: "false")
 }

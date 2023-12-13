@@ -3796,6 +3796,49 @@ export const listSalesBars = /* GraphQL */ `
     }
   }
 `;
+export const getTestimonial = /* GraphQL */ `
+  query GetTestimonial($id: ID!) {
+    getTestimonial(id: $id) {
+      id
+      content
+      author
+      company
+      affiliation
+      title
+      tags
+      linkedin
+      headshot
+      featured
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listTestimonials = /* GraphQL */ `
+  query ListTestimonials(
+    $filter: ModelTestimonialFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listTestimonials(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        content
+        author
+        company
+        affiliation
+        title
+        tags
+        linkedin
+        headshot
+        featured
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
 export const getCertificateCourses = /* GraphQL */ `
   query GetCertificateCourses($id: ID!) {
     getCertificateCourses(id: $id) {

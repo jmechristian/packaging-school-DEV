@@ -4996,6 +4996,60 @@ export const onDeleteSalesBar = /* GraphQL */ `
     }
   }
 `;
+export const onCreateTestimonial = /* GraphQL */ `
+  subscription OnCreateTestimonial {
+    onCreateTestimonial {
+      id
+      content
+      author
+      company
+      affiliation
+      title
+      tags
+      linkedin
+      headshot
+      featured
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateTestimonial = /* GraphQL */ `
+  subscription OnUpdateTestimonial {
+    onUpdateTestimonial {
+      id
+      content
+      author
+      company
+      affiliation
+      title
+      tags
+      linkedin
+      headshot
+      featured
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteTestimonial = /* GraphQL */ `
+  subscription OnDeleteTestimonial {
+    onDeleteTestimonial {
+      id
+      content
+      author
+      company
+      affiliation
+      title
+      tags
+      linkedin
+      headshot
+      featured
+      createdAt
+      updatedAt
+    }
+  }
+`;
 export const onCreateCertificateCourses = /* GraphQL */ `
   subscription OnCreateCertificateCourses {
     onCreateCertificateCourses {

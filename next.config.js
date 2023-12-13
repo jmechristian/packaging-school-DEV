@@ -6,6 +6,7 @@ const nextConfig = {
     domains: [
       'res.cloudinary.com',
       'packschool.s3.amazonaws.com',
+      'psheadshots.s3.amazonaws.com',
       'tailwindui.com',
       'apsmedia.s3.amazonaws.com',
       'packagingschool.com',

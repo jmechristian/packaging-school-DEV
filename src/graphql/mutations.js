@@ -5320,6 +5320,69 @@ export const deleteSalesBar = /* GraphQL */ `
     }
   }
 `;
+export const createTestimonial = /* GraphQL */ `
+  mutation CreateTestimonial(
+    $input: CreateTestimonialInput!
+    $condition: ModelTestimonialConditionInput
+  ) {
+    createTestimonial(input: $input, condition: $condition) {
+      id
+      content
+      author
+      company
+      affiliation
+      title
+      tags
+      linkedin
+      headshot
+      featured
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateTestimonial = /* GraphQL */ `
+  mutation UpdateTestimonial(
+    $input: UpdateTestimonialInput!
+    $condition: ModelTestimonialConditionInput
+  ) {
+    updateTestimonial(input: $input, condition: $condition) {
+      id
+      content
+      author
+      company
+      affiliation
+      title
+      tags
+      linkedin
+      headshot
+      featured
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteTestimonial = /* GraphQL */ `
+  mutation DeleteTestimonial(
+    $input: DeleteTestimonialInput!
+    $condition: ModelTestimonialConditionInput
+  ) {
+    deleteTestimonial(input: $input, condition: $condition) {
+      id
+      content
+      author
+      company
+      affiliation
+      title
+      tags
+      linkedin
+      headshot
+      featured
+      createdAt
+      updatedAt
+    }
+  }
+`;
 export const createCertificateCourses = /* GraphQL */ `
   mutation CreateCertificateCourses(
     $input: CreateCertificateCoursesInput!
