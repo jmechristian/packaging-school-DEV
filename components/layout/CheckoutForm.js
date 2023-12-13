@@ -59,7 +59,7 @@ export default function CheckoutForm({ setConfirmation, email, type }) {
         setLoading(false);
         setApproved(true);
         setValue('paymentConfirmation', result.paymentIntent.id);
-        setButtonText('Approved!');
+        setButtonText('Payment Approved!');
       }
     }
   };
