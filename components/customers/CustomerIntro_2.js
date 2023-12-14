@@ -29,7 +29,7 @@ const CustomerIntro_2 = () => {
             />
           </div>
           <div className='font-bold text-5xl xl:text-6xl'>
-            <h1>Welcome, GreenBlue</h1>
+            <h1>Welcome, SPC Members</h1>
           </div>
           <div className='text-lg'>
             Explore your library resources below. To learn how to make the most
