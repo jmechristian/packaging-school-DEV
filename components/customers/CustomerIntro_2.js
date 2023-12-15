@@ -32,9 +32,10 @@ const CustomerIntro_2 = () => {
             <h1>Welcome, SPC Members</h1>
           </div>
           <div className='text-lg'>
-            Explore your library resources below. To learn how to make the most
-            of your library, select your preferred instructional method. For
-            additional assistance, feel free to contact us at{' '}
+            Explore the SPC&apos;s Knowledge Library below. To learn how to make
+            the most of your library, select your preferred instructional method
+            to the right (advance through the slides or download them as a PDF).
+            For additional assistance, feel free to contact us at{' '}
             <a
               href='mailto:education@greenblue.org'
               rel='noreferrer'

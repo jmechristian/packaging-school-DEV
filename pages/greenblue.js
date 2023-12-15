@@ -64,7 +64,7 @@ const Page = ({ customer }) => {
         open={true}
       />
       <FullWidthDropDown
-        title={'GreenBlue Course Offerings'}
+        title={'GreenBlue Knowledge Library Topics'}
         Icon={AcademicCapIcon}
         bg='bg-gb-main'
         bgdark='bg-gradient-to-r from-gb-main to-gb-green'
