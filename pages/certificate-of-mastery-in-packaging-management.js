@@ -204,6 +204,7 @@ const Page = () => {
               <div className='col-span-2 flex justify-end items-center'>
                 <button
                   type='submit'
+                  disabled={isLoading}
                   className='bg-clemson  align-end w-fit hover:bg-clemson-dark mt-2 text-white font-semibold items-center rounded-lg px-4 py-3 flex gap-1'
                 >
                   {isLoading ? 'Preparing...' : 'Continue Application'}
