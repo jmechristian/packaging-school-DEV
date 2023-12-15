@@ -63,3 +63,149 @@ export const setCategoryText = (cat) => {
       return 'Automotive';
   }
 };
+
+// Active Campaign
+
+const userOptions = {
+  method: 'GET',
+  headers: {
+    accept: 'application/json',
+    'Api-Token':
+      '5b711970d216e0f86172aa745b874bcd8ab60f27e791dce12137beb0533c3cd6618d1021',
+  },
+};
+
+const dealsOptions = {
+  method: 'POST',
+  headers: {
+    accept: 'application/json',
+    'Api-Token':
+      '5b711970d216e0f86172aa745b874bcd8ab60f27e791dce12137beb0533c3cd6618d1021',
+  },
+  body: JSON.stringify({
+    deal: {
+      status: 0,
+      title: 'CMPM Abandon App',
+      group: '16',
+      stage: '113',
+      contact: '16610',
+      value: 10000,
+      owner: '10',
+      currency: 'usd',
+    },
+  }),
+};
+
+const createOptions = {
+  method: 'POST',
+  headers: { accept: 'application/json', 'content-type': 'application/json' },
+  body: JSON.stringify({
+    contact: {
+      email: 'jmechristian@gmail.com',
+      firstName: 'Jamie',
+      lastName: 'Christian',
+      phone: '5122893696',
+    },
+  }),
+};
+
+export const createUser = async (email, firstName, lastName, phone) => {
+  const user = await fetch(
+    'https://packagingschool42200.api-us1.com/api/3/contacts',
+    {
+      method: 'POST',
+      headers: {
+        accept: 'application/json',
+        'content-type': 'application/json',
+        'Api-Token':
+          '5b711970d216e0f86172aa745b874bcd8ab60f27e791dce12137beb0533c3cd6618d1021',
+      },
+      body: JSON.stringify({
+        contact: {
+          email,
+          firstName,
+          lastName,
+          phone,
+        },
+      }),
+    }
+  )
+    .then((response) => response.json())
+    .catch((err) => {
+      console.log(err);
+    });
+
+  return user;
+};
+
+export const getUser = async (email) => {
+  const user = await fetch(
+    `https://packagingschool42200.api-us1.com/api/3/contacts?email=${email}`,
+    userOptions
+  )
+    .then((response) => response.json())
+    .catch((err) => {
+      console.log(err);
+    });
+
+  return user;
+};
+
+export const createDeal = async (contact, formType) => {
+  const deal = await fetch(
+    `https://packagingschool42200.api-us1.com/api/3/deals`,
+    {
+      method: 'POST',
+      headers: {
+        accept: 'application/json',
+        'content-type': 'application/json',
+        'Api-Token':
+          '5b711970d216e0f86172aa745b874bcd8ab60f27e791dce12137beb0533c3cd6618d1021',
+      },
+      body: JSON.stringify({
+        deal: {
+          status: 0,
+          title: `${formType} Abandoned App`,
+          group: '16',
+          stage: '113',
+          contact: contact,
+          owner: '10',
+          value: 10000,
+          currency: 'usd',
+        },
+      }),
+    }
+  )
+    .then((response) => response.json())
+    .catch((err) => {
+      console.log(err);
+    });
+
+  return deal;
+};
+
+export const updateDeal = async (id, formType) => {
+  const deal = await fetch(
+    `https://packagingschool42200.api-us1.com/api/3/deals/${id}`,
+    {
+      method: 'PUT',
+      headers: {
+        accept: 'application/json',
+        'content-type': 'application/json',
+        'Api-Token':
+          '5b711970d216e0f86172aa745b874bcd8ab60f27e791dce12137beb0533c3cd6618d1021',
+      },
+      body: JSON.stringify({
+        deal: {
+          stage: formType === 'CMPM' ? '139' : '140',
+        },
+      }),
+    }
+  )
+    .then((response) => response.json())
+    .catch((err) => {
+      console.log(err);
+    });
+
+  return deal;
+};

@@ -14,6 +14,80 @@ import { createAppStart } from '../src/graphql/mutations';
 const Page = () => {
   const [isLoading, setIsLoading] = useState(false);
 
+  const automateDealHandler = async (
+    isEmail,
+    isForm,
+    isFirstName,
+    isLastName,
+    isPhone
+  ) => {
+    // Check For User
+    const user = await fetch(`/api/get-ac-user?email=${isEmail}`).then(
+      (response) => response.json()
+    );
+    if (user.data.contacts[0]) {
+      //Create Deal
+      const deal = await fetch('/api/create-deal', {
+        method: 'POST',
+        headers: {
+          accept: 'application/json',
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify({
+          formType: isForm,
+          contactId: user.data.contacts[0].id,
+        }),
+      }).then((response) => response.json());
+
+      if (deal.data.deal.id) {
+        // Update Deal
+        const updated = await fetch(
+          `/api/update-deal?dealId=${deal.data.deal.id}&formType=${isForm}`
+        ).then((response) => response.json());
+      } else {
+        console.log('no deal');
+      }
+    } else {
+      const newUser = await fetch('/api/create-ac-user', {
+        method: 'POST',
+        headers: {
+          accept: 'application/json',
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: isEmail,
+          firstName: isFirstName,
+          lastName: isLastName,
+          phone: isPhone,
+        }),
+      }).then((res) => res.json());
+
+      if (newUser.data.contact) {
+        //Create Deal
+        const deal = await fetch('/api/create-deal', {
+          method: 'POST',
+          headers: {
+            accept: 'application/json',
+            'content-type': 'application/json',
+          },
+          body: JSON.stringify({
+            formType: isForm,
+            contactId: newUser.data.contact.id,
+          }),
+        }).then((response) => response.json());
+
+        if (deal.data.deal.id) {
+          // Update Deal
+          const updated = await fetch(
+            `/api/update-deal?dealId=${deal.data.deal.id}&formType=${isForm}`
+          ).then((response) => response.json());
+        } else {
+          console.log('no deal');
+        }
+      }
+    }
+  };
+
   const methods = useForm();
   const router = useRouter();
   const onSubmit = async (data) => {
@@ -32,6 +106,14 @@ const Page = () => {
         },
       },
     });
+
+    await automateDealHandler(
+      data.email,
+      'CMPM',
+      data.firstName,
+      data.lastName,
+      data.isPhone
+    );
 
     await fetch('/api/send-certificate-start', {
       method: 'POST',
