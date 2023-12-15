@@ -28,11 +28,11 @@ const Loader = () => {
       animate='animate'
       className='flex gap-1'
     >
-      <motion.div variants={variants} className='h-12 w-2 bg-base-brand' />
-      <motion.div variants={variants} className='h-12 w-2 bg-base-brand' />
-      <motion.div variants={variants} className='h-12 w-2 bg-base-brand' />
-      <motion.div variants={variants} className='h-12 w-2 bg-base-brand' />
-      <motion.div variants={variants} className='h-12 w-2 bg-base-brand' />
+      <motion.div variants={variants} className='h-6 w-2 bg-base-brand' />
+      <motion.div variants={variants} className='h-6 w-2 bg-base-brand' />
+      <motion.div variants={variants} className='h-6 w-2 bg-base-brand' />
+      <motion.div variants={variants} className='h-6 w-2 bg-base-brand' />
+      <motion.div variants={variants} className='h-6 w-2 bg-base-brand' />
     </motion.div>
   );
 };

@@ -10,6 +10,7 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { API } from 'aws-amplify';
 import { createAppStart } from '../src/graphql/mutations';
+import Loader from '../components/shared/Loader';
 
 const Page = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -201,13 +202,18 @@ const Page = () => {
                 label={'Phone Number'}
               />
 
-              <div className='col-span-2 flex justify-end items-center'>
+              <div className='col-span-2 gap-3 flex justify-end items-center'>
+                {isLoading && (
+                  <div className='mr-3 mt-2'>
+                    <Loader />
+                  </div>
+                )}
                 <button
                   type='submit'
                   disabled={isLoading}
                   className='bg-clemson  align-end w-fit hover:bg-clemson-dark mt-2 text-white font-semibold items-center rounded-lg px-4 py-3 flex gap-1'
                 >
-                  {isLoading ? 'Preparing...' : 'Continue Application'}
+                  {isLoading ? 'Preparing' : 'Continue Application'}
                   <div>
                     <ArrowLongRightIcon className='w-6 h-6 stroke-white' />
                   </div>

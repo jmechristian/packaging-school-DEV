@@ -8,6 +8,7 @@ import Head from 'next/head';
 import { API } from 'aws-amplify';
 import { createAppStart } from '../src/graphql/mutations';
 import { CalendarDaysIcon } from '@heroicons/react/24/solid';
+import Loader from '../components/shared/Loader';
 
 const Page = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -202,13 +203,18 @@ const Page = () => {
                   label={'Phone Number'}
                 />
               </div>
-              <div className='col-span-2 flex flex-1 justify-end items-center w-full'>
+              <div className='col-span-2 gap-3 flex flex-1 justify-end items-center w-full'>
+                {isLoading && (
+                  <div className='mr-3 mt-2'>
+                    <Loader />
+                  </div>
+                )}
                 <button
                   type='submit'
                   disabled={isLoading}
                   className='bg-clemson md:align-end w-full md:w-fit hover:bg-clemson-dark mt-2 text-white font-semibold items-center rounded-lg px-4 py-3 flex justify-center gap-1'
                 >
-                  {isLoading ? 'Preparing...' : 'Continue Application'}
+                  {isLoading ? 'Prepping' : 'Continue Application'}
                   <div>
                     <ArrowLongRightIcon className='w-6 h-6 stroke-white' />
                   </div>
