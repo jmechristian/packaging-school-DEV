@@ -23,9 +23,9 @@ const CustomerIntro_2 = () => {
         <div className='w-full flex flex-col justify-center gap-6 lg:gap-9 lg:max-w-2xl'>
           <div className='w-full h-full flex mb-4'>
             <img
-              src='https://packschool.s3.amazonaws.com/GB_logo.png'
+              src='https://packschool.s3.amazonaws.com/spc-project.png'
               alt='greenBlue logo'
-              className='w-1/2 h-auto'
+              className='w-full h-auto'
             />
           </div>
           <div className='font-bold text-5xl xl:text-6xl'>
@@ -46,8 +46,8 @@ const CustomerIntro_2 = () => {
           </div>
         </div>
       </div>
-      <div className='flex flex-col justify-center items-center border rounded-xl w-full max-w-[500px]'>
-        <div className='w-full h-auto aspect-[16/9] bg-neutral-700'>
+      <div className='flex flex-col justify-center items-center border rounded-xl h-full w-full max-w-[500px] lg:mt-9'>
+        <div className='w-full aspect-[16/9] bg-neutral-700'>
           <ReactGoogleSlides
             width={'100%'}
             height={'100%'}
@@ -57,7 +57,15 @@ const CustomerIntro_2 = () => {
             loop
           />
         </div>
-        <div className='w-full flex items-center justify-center py-4 gap-1'>
+        <div
+          className='w-full flex items-center justify-center py-4 gap-1 cursor-pointer'
+          onClick={() =>
+            window.open(
+              'https://packschool.s3.amazonaws.com/greenblue-instructions.pdf',
+              '_blank'
+            )
+          }
+        >
           <div>
             <DocumentArrowDownIcon className='w-5 h-5' />
           </div>
