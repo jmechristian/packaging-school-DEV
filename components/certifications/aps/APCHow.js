@@ -27,9 +27,9 @@ const APCHow = () => {
 
   return (
     <section id='how'>
-      <div className='container-7xl py-32 flex flex-col gap-24'>
+      <div className='container-7xl flex flex-col gap-12 lg:gap-24'>
         <div className='grid lg:grid-cols-2 gap-16 lg:gap-24'>
-          <div className='flex flex-col gap-16'>
+          <div className='flex flex-col gap-6 lg:gap-16'>
             <FadeIn>
               <SectionHeading number='2'>How does it work?</SectionHeading>
             </FadeIn>

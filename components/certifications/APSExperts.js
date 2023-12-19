@@ -68,7 +68,7 @@ const APSExperts = () => {
   ];
 
   return (
-    <div className='py-12 sm:py-16'>
+    <div>
       <div className='mx-auto max-w-7xl px-6 lg:text-center lg:px-8'>
         <div className='mx-auto max-w-2xl'>
           <h2 className='text-4xl lg:text-5xl font-semibold tracking-tight dark:dark:text-white sm:text-5xl font-greycliff'>
@@ -77,7 +77,7 @@ const APSExperts = () => {
         </div>
         <ul
           role='list'
-          className='mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-6 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-8'
+          className='mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-6 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-8'
         >
           {people.map((person) => (
             <li

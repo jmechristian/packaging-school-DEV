@@ -11,7 +11,7 @@ const sections = [
   },
   { id: 'how', title: 'How does it work?' },
   { id: 'where', title: 'Where do I start?' },
-  { id: 'reviews', title: 'What do your peers say?' },
+  { id: 'reviews', title: 'Student Stories' },
 ];
 
 function MenuIcon({ open, ...props }) {

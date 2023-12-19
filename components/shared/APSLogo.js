@@ -9,7 +9,7 @@ const APSLogo = () => {
       version='1.1'
       xmlns='http://www.w3.org/2000/svg'
       viewBox='0 0 105.6 27.7'
-      className='w-full h-auto fill-white'
+      className='w-full h-auto fill-black'
       onClick={() => router.push('https://autopacksummit.com', '_blank')}
     >
       <g>

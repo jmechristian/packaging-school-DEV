@@ -5336,6 +5336,7 @@ export const createTestimonial = /* GraphQL */ `
       linkedin
       headshot
       featured
+      date
       createdAt
       updatedAt
     }
@@ -5357,6 +5358,7 @@ export const updateTestimonial = /* GraphQL */ `
       linkedin
       headshot
       featured
+      date
       createdAt
       updatedAt
     }
@@ -5378,6 +5380,7 @@ export const deleteTestimonial = /* GraphQL */ `
       linkedin
       headshot
       featured
+      date
       createdAt
       updatedAt
     }

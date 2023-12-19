@@ -1,4 +1,6 @@
 import React from 'react';
+import { API } from 'aws-amplify';
+import { listTestimonials } from '../../src/graphql/queries';
 import CMPMReviews from '../../components/certifications/cmpm/CMPMReviews';
 import Testimonial from '../../components/shared/Testimonial';
 import GradientCTA from '../../components/GradientCTA';
@@ -11,8 +13,9 @@ import APSExperts from '../../components/certifications/APSExperts';
 import APCStart from '../../components/certifications/aps/APCStart';
 import APCAPS from '../../components/certifications/aps/APCAPS';
 import Head from 'next/head';
+import TestimonialSlider from '../../components/shared/TestimonialSlider';
 
-const Page = () => {
+const Page = ({ testimonials }) => {
   return (
     <>
       <Head>
@@ -23,11 +26,12 @@ const Page = () => {
           key='title'
         />
       </Head>
-      <div className='flex flex-col dark:bg-dark-dark'>
+      <div className='flex flex-col dark:bg-dark-dark gap-12'>
         <APCHero />
         <APCNavigation />
-        <APCAbout />
-        <Testimonial
+        <div className='flex flex-col gap-28 lg:gap-48'>
+          <APCAbout />
+          {/* <Testimonial
           id='tommy-stroman'
           author={{
             name: 'Lauren McDonald',
@@ -41,22 +45,42 @@ const Page = () => {
             recommend this certificate course for those interested in pursuing
             an automotive packaging career!”
           </p>
-        </Testimonial>
-        <APCVideo />
-        <APCHow />
-        <APSExperts />
-        <APCStart />
-        <CMPMReviews />
-        <APCAPS />
-        <GradientCTA
-          headline={'Not sure if this is for you or your team?'}
-          subheadline={'There is no cost to begin.  Try a free demo today.'}
-          buttonLink={'https://learn.packagingschool.com/enroll/38965?et=free'}
-          buttonText={'Take me to my demo.'}
-        />
+        </Testimonial> */}
+
+          <APCVideo />
+          <APCHow />
+          <APSExperts />
+          <APCStart />
+          <div id='reviews' className='scroll-mt-24'>
+            <TestimonialSlider
+              testimonials={testimonials && testimonials.listTestimonials.items}
+            />
+          </div>
+          {/* <CMPMReviews /> */}
+          <APCAPS />
+          <GradientCTA
+            headline={'Not sure if this is for you or your team?'}
+            subheadline={'There is no cost to begin.  Try a free demo today.'}
+            buttonLink={
+              'https://learn.packagingschool.com/enroll/38965?et=free'
+            }
+            buttonText={'Take me to my demo.'}
+          />
+        </div>
       </div>
     </>
   );
 };
 
 export default Page;
+
+export async function getServerSideProps() {
+  // Fetch data from external API
+  const res = await API.graphql({
+    query: listTestimonials,
+    variables: { filter: { tags: { contains: 'APC' } } },
+  });
+  const testimonials = await res.data;
+  // Pass data to the page via props
+  return { props: { testimonials } };
+}

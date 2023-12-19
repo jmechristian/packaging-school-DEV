@@ -527,4 +527,5 @@ type Testimonial @model @auth(rules: [{ allow: public }]) {
   linkedin: String
   headshot: String
   featured: Boolean @default(value: "false")
+  date: String
 }

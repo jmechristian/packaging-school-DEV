@@ -1,7 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
 import StatCard from '../../shared/StatCard';
+import { SectionHeading } from '../../shared/SectionHeading';
 import {
+  ComputerDesktopIcon,
   RocketLaunchIcon,
   DocumentPlusIcon,
   CalendarDaysIcon,
@@ -13,8 +15,9 @@ const APCPricing = () => {
   return (
     <div>
       <div className='mx-auto max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-12 lg:mx-0 lg:flex lg:max-w-none'>
-        <div className='p-8 sm:p-10 lg:flex lg:flex-col lg:gap-12 lg:h-full'>
-          <div className='mx-auto mb-9'>
+        <div className='p-8 sm:p-10 lg:flex lg:flex-col gap-6 lg:h-full'>
+          <SectionHeading number='3'>Where do I start?</SectionHeading>
+          <div className='mx-auto'>
             <h2 className='text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl'>
               Future Proof Your Skills
             </h2>
@@ -24,32 +27,42 @@ const APCPricing = () => {
               Student Engagement Director, is available to schedule a call with
               you to address all your questions and concerns.
             </div>
-            <div
-              className='w-full lg:w-fit py-2 px-2 lg:pl-6 lg:pr-9 bg-base-brand cursor-pointer rounded-lg mt-9 flex gap-2 items-center'
-              onClick={() =>
-                window.open(
-                  'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ35Hm4GpLbs5oMIYuUcefaOcrSb_F1jFkU_9mCus2H5P9gIObXySikly5zZxVPXuiw-Ou5wZwfg',
-                  '_blank'
-                )
-              }
-            >
-              <div>
-                <QuestionMarkCircleIcon className='w-16 h-16 fill-white/70' />
-              </div>
-              <div className='flex flex-col'>
-                <div className='font-bold text-lg lg:text-xl text-white'>
-                  Questions about APS?
+          </div>
+          <div className='lg:grid lg:grid-cols-4 mt-6 flex flex-col gap-6 overflow-hidden'>
+            <div className='border rounded-xl p-6 flex items-center justify-center'>
+              <div className='flex justify-center items-center gap-4'>
+                <div>
+                  <ComputerDesktopIcon className='w-10 h-10 stroke-clemson dark:stroke-clemson' />
                 </div>
-                <div className='text-white leading-tight text-sm lg:text-base'>
-                  Schedule a FREE live demo today!
+                <div className='text-neutral-800 dark:text-white/60 font-semibold leading-tight whitespace-pre-wrap'>
+                  24/7 Online Access
                 </div>
               </div>
             </div>
-          </div>
-          <div className='lg:grid lg:grid-cols-3 mt-6 flex flex-col gap-6'>
-            <StatCard
+            <div className='border rounded-xl p-6 flex items-center justify-center'>
+              <div className='flex justify-center items-center gap-4'>
+                <div>
+                  <RocketLaunchIcon className='w-10 h-10 stroke-clemson dark:stroke-clemson' />
+                </div>
+                <div className='text-neutral-800 dark:text-white/60 font-semibold leading-tight whitespace-pre-wrap'>
+                  No Application Required
+                </div>
+              </div>
+            </div>
+            <div className='border rounded-xl p-6 flex items-center justify-center'>
+              <div className='flex justify-center items-center gap-4'>
+                <div>
+                  <BookOpenIcon className='w-10 h-10 stroke-clemson dark:stroke-clemson' />
+                </div>
+                <div className='text-neutral-800 dark:text-white/60 font-semibold leading-tight whitespace-pre-wrap'>
+                  Companion Workbook Included
+                </div>
+              </div>
+            </div>
+
+            {/* <StatCard
               stat={
-                <RocketLaunchIcon className='w-12 h-12 stroke-white dark:stroke-clemson' />
+                
               }
               title='24/7 Online Access'
             />
@@ -64,10 +77,27 @@ const APCPricing = () => {
                 <BookOpenIcon className='w-12 h-12 stroke-white dark:stroke-clemson' />
               }
               title='Companion Workbook Included'
-            />
-            <div className='col-span-3 dark:text-white lg:text-lg'>
-              Team Discounts available. For questions or inquiries, please email
-              Bianca@packagingschool.com
+            /> */}
+          </div>
+          <div
+            className='w-full lg:w-fit py-2 px-2 lg:pl-6 lg:pr-9 bg-base-brand cursor-pointer rounded-lg mt-9 flex gap-2 items-center'
+            onClick={() =>
+              window.open(
+                'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ35Hm4GpLbs5oMIYuUcefaOcrSb_F1jFkU_9mCus2H5P9gIObXySikly5zZxVPXuiw-Ou5wZwfg',
+                '_blank'
+              )
+            }
+          >
+            <div>
+              <QuestionMarkCircleIcon className='w-16 h-16 fill-white/70' />
+            </div>
+            <div className='flex flex-col'>
+              <div className='font-bold text-lg lg:text-xl text-white'>
+                Questions about APS?
+              </div>
+              <div className='text-white leading-tight text-sm lg:text-base'>
+                Schedule a FREE live demo today!
+              </div>
             </div>
           </div>
         </div>

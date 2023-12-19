@@ -4,7 +4,7 @@ import FadeIn from '../../../helpers/FadeIn';
 
 const APCVideo = () => {
   return (
-    <section className='py-16 lg:py-32'>
+    <section>
       <div className='flex flex-col gap-9 container-7xl'>
         <div className='flex flex-col gap-9 max-w-4xl mx-auto'>
           <h2 className='text-4xl lg:text-5xl max-w-2xl dark:text-white '>
@@ -25,7 +25,7 @@ const APCVideo = () => {
           </div>
         </div>
         <FadeIn>
-          <div className='w-full h-full aspect-[16/9] mt-8'>
+          <div className='w-full h-full aspect-[16/9] lg:mt-8'>
             <VideoPlayer videoEmbedLink={'https://vimeo.com/358392462'} />
           </div>
         </FadeIn>

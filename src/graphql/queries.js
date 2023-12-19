@@ -3809,6 +3809,7 @@ export const getTestimonial = /* GraphQL */ `
       linkedin
       headshot
       featured
+      date
       createdAt
       updatedAt
     }
@@ -3832,6 +3833,7 @@ export const listTestimonials = /* GraphQL */ `
         linkedin
         headshot
         featured
+        date
         createdAt
         updatedAt
       }

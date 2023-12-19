@@ -2,7 +2,7 @@ import APSLogo from '../../shared/APSLogo';
 
 export default function APCAPS() {
   return (
-    <div className='overflow-hidden py-32'>
+    <div className='overflow-hidden'>
       <div className='mx-auto max-w-7xl px-6 lg:flex lg:px-8'>
         <div className='mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8'>
           <div className='lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8'>
@@ -11,7 +11,8 @@ export default function APCAPS() {
             </div>
 
             <p className='mt-6 text-xl lg:text-2xl font-semibold  text-base-mid whitespace-pre-wrap'>
-              October 11-13th, Huguenot Loft,{'\n'}Greenville SC
+              October 21-23rd, 2024
+              <br /> Hyatt Regency,{'\n'}Greenville SC
             </p>
             <p className='mt-6 text-xl text-gray-600 dark:text-gray-500'>
               The premier open forum for OEMs, Tier 1 Part Suppliers and

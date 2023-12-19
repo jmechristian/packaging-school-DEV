@@ -7,10 +7,7 @@ import APCPricing from './APCPricing';
 const APCStart = () => {
   return (
     <section id='where'>
-      <div className='container-7xl py-32 flex flex-col gap-6'>
-        <FadeIn>
-          <SectionHeading number='3'>Where do I start?</SectionHeading>
-        </FadeIn>
+      <div className='container-7xl flex flex-col gap-6'>
         <FadeIn>
           <APCPricing />
         </FadeIn>

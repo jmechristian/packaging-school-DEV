@@ -13,10 +13,10 @@ const GradientCTA = ({
     <div className='bg-gradient-to-tr from-clemson via-base-dark to-base-brand'>
       <div className='mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:justify-between lg:px-8'>
         <div className='flex flex-col gap-5'>
-          <h2 className='text-3xl font-bold font-greycliff tracking-tight text-white sm:text-5xl'>
+          <h2 className='text-3xl font-bold font-greycliff tracking-tight text-white lg:text-4xl xl:text-5xl'>
             {headline}
           </h2>
-          <div className='font-medium text-xl lg:text-3xl leading-tight max-w-3xl text-white'>
+          <div className='font-medium text-xl lg:text-2xl xl:text-3xl leading-tight max-w-3xl text-white'>
             {subheadline}
           </div>
         </div>
