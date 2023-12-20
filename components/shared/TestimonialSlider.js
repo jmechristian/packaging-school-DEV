@@ -95,7 +95,7 @@ const TestimonialSlider = ({ testimonials, type }) => {
           </div>
         </div>
       </div>
-      <div className='w-full h-full bg-neutral-200 py-6 lg:p-6 rounded-xl lg:max-w-[50%]'>
+      <div className='w-full h-full bg-neutral-200 dark:bg-dark-mid py-6 lg:p-6 rounded-xl lg:max-w-[50%]'>
         <div className='relative flex flex-col items-center w-full mx-auto md:max-w-2xl md:px-16 lg:px-6 lg:max-w-6xl lg:py-16 px-6'>
           <AnimatePresence>
             <motion.div
@@ -111,7 +111,7 @@ const TestimonialSlider = ({ testimonials, type }) => {
                 </blockquote>
                 <figcaption className='mt-10 flex items-center sm:justify-center'>
                   {items.length > 0 && (
-                    <div className='overflow-hidden rounded-full h-12 w-12 bg-slate-200 ring-2 ring-clemson'>
+                    <div className='overflow-hidden rounded-full h-12 w-12 bg-slate-200  ring-2 ring-clemson'>
                       <Image
                         className='h-12 w-12 object-cover'
                         src={
@@ -162,7 +162,9 @@ const TestimonialSlider = ({ testimonials, type }) => {
               <div
                 onClick={() => setIsActive(index)}
                 className={`h-3 w-3 rounded-full transition-colors ease-in cursor-pointer ${
-                  index === isActive ? 'bg-neutral-900' : 'bg-white'
+                  index === isActive
+                    ? 'bg-neutral-900 dark:bg-base-brand'
+                    : 'bg-white'
                 }`}
                 key={it.author}
               ></div>
