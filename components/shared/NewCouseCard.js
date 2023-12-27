@@ -47,7 +47,7 @@ const NewCouseCard = ({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <motion.div className='absolute z-[1] left-0 right-0 bottom-0 top-1/3 bg-gradient-to-t from-neutral-900 via-base-mid rounded-b-lg'></motion.div>
+      <motion.div className='absolute z-[1] left-0 right-0 bottom-0 top-1/3 bg-gradient-to-t from-neutral-900 via-neutral-500 rounded-b-lg'></motion.div>
       <motion.div
         className='absolute z-0 left-0 right-0 top-0 bottom-1/3 bg-black rounded-t-lg bg-cover bg-center bg-no-repeat w-full h-auto'
         style={{
@@ -89,13 +89,13 @@ const NewCouseCard = ({
           )}
         </motion.div>
       )}
-      <motion.div className='flex flex-col justify-center items-center h-[242px]'>
-        <motion.div className='mt-4 h-full min-h-[150px] bg-white/70 backdrop-blur shadow-lg rounded-b-lg mx-4 rounded-lg mb-4 relative z-[2] flex flex-col flex-1 '>
+      <motion.div className='flex flex-col justify-center items-center h-[225px]'>
+        <motion.div className='mt-4 h-full min-h-[150px] bg-white/70 backdrop-blur shadow-lg rounded-b-lg mx-2 rounded-lg mb-4 relative z-[2] flex flex-col flex-1 '>
           <motion.div className='flex flex-col gap-3 h-full pt-4'>
-            <motion.div className='font-semibold text-lg tracking-tight leading-none px-4'>
+            <motion.div className='font-semibold text-lg tracking-tight leading-none px-3 text-neutral-900'>
               {title}
             </motion.div>
-            <motion.div className='text-sm leading-tight px-4 line-clamp-4 text-neutral-600'>
+            <motion.div className='text-sm leading-tight px-3 line-clamp-4 text-neutral-600'>
               {description}
             </motion.div>
           </motion.div>

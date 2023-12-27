@@ -48,10 +48,10 @@ const LessonsHeader = ({ id, title, subhead, tags, author, date }) => {
   };
 
   return (
-    <div className='mx-auto w-full max-w-prose lg:max-w-4xl px-4 sm:px-6 lg:px-8 flex flex-col gap-3'>
+    <div className='mx-auto w-full px-4 sm:px-6 lg:px-8 flex flex-col gap-3'>
       <div className='flex flex-col gap-4 lg:gap-1'>
-        <div className='flex justify-between w-full gap-2 lg:text-center'>
-          <h1 className='text-4xl font-bold sm:text-5xl font-greycliff dark:text-white mr-6 max-w-5xl lg:text-center w-full'>
+        <div className='flex justify-between w-full gap-2'>
+          <h1 className='text-4xl font-bold sm:text-5xl font-greycliff dark:text-white mr-6 max-w-5xl w-full'>
             {title}
           </h1>
           <div onClick={savedLesson}>
@@ -77,7 +77,7 @@ const LessonsHeader = ({ id, title, subhead, tags, author, date }) => {
               ))}
           </div>
         )}
-        <div className='text-xl mt-6 leading-snug  text-neutral-600 dark:text-white/60 max-w-5xl lg:text-center'>
+        <div className='text-xl mt-6 leading-snug  text-neutral-600 dark:text-white/60 max-w-5xl'>
           {subhead}
         </div>
       </div>

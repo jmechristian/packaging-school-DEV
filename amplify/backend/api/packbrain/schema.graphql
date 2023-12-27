@@ -105,6 +105,7 @@ type Lesson @model @auth(rules: [{ allow: public }]) {
   author: [Author] @manyToMany(relationName: "AuthorLessons")
   status: String @default(value: "DRAFT")
   related: [String]
+  featured: String
 }
 
 type Author @model @auth(rules: [{ allow: public }]) {

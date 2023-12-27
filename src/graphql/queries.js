@@ -403,6 +403,7 @@ export const getLesson = /* GraphQL */ `
       }
       status
       related
+      featured
       createdAt
       updatedAt
     }
@@ -446,6 +447,7 @@ export const listLessons = /* GraphQL */ `
         }
         status
         related
+        featured
         createdAt
         updatedAt
       }
@@ -499,6 +501,7 @@ export const lessonsBySlug = /* GraphQL */ `
         }
         status
         related
+        featured
         createdAt
         updatedAt
       }
@@ -4337,6 +4340,7 @@ export const getAuthorLessons = /* GraphQL */ `
         }
         status
         related
+        featured
         createdAt
         updatedAt
       }
@@ -4388,6 +4392,7 @@ export const listAuthorLessons = /* GraphQL */ `
           actionExample
           status
           related
+          featured
           createdAt
           updatedAt
         }
@@ -4446,6 +4451,7 @@ export const authorLessonsByLessonId = /* GraphQL */ `
           actionExample
           status
           related
+          featured
           createdAt
           updatedAt
         }
@@ -4504,6 +4510,7 @@ export const authorLessonsByAuthorId = /* GraphQL */ `
           actionExample
           status
           related
+          featured
           createdAt
           updatedAt
         }

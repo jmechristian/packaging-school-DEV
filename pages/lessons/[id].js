@@ -116,16 +116,18 @@ const Page = ({ lesson, lessons }) => {
             )}
           </div> */}
           <main className='flex flex-col gap-24 pt-20 dark:bg-dark-dark bg-white'>
-            <LessonsHeader
-              title={lesson.title}
-              subhead={lesson.subhead}
-              id={lesson.id}
-              author={lesson.author.items}
-              date={lesson.updatedAt}
-            />
-            <div>{lesson && setMedia()}</div>
+            <div className='grid lg:grid-cols-2 gap-6 w-full max-w-7xl mx-auto'>
+              <div>{lesson && setMedia()}</div>
+              <LessonsHeader
+                title={lesson.title}
+                subhead={lesson.subhead}
+                id={lesson.id}
+                author={lesson.author.items}
+                date={lesson.updatedAt}
+              />
+            </div>
             <div
-              className={`w-full flex flex-col md:max-w-5xl lg:grid lg:grid-cols-12 max-w-6xl mx-auto gap-12 px-3`}
+              className={`w-full flex flex-col lg:grid lg:grid-cols-12 max-w-7xl mx-auto gap-12 px-3`}
             >
               <div className='flex flex-col gap-12 col-span-12 lg:col-span-8 xl:pr-12 w-full max-w-prose mx-auto'>
                 {/* <div className='grid grid-cols-12'></div> */}

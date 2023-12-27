@@ -418,6 +418,7 @@ export const onCreateLesson = /* GraphQL */ `
       }
       status
       related
+      featured
       createdAt
       updatedAt
     }
@@ -489,6 +490,7 @@ export const onUpdateLesson = /* GraphQL */ `
       }
       status
       related
+      featured
       createdAt
       updatedAt
     }
@@ -560,6 +562,7 @@ export const onDeleteLesson = /* GraphQL */ `
       }
       status
       related
+      featured
       createdAt
       updatedAt
     }
@@ -5420,6 +5423,7 @@ export const onCreateAuthorLessons = /* GraphQL */ `
         }
         status
         related
+        featured
         createdAt
         updatedAt
       }
@@ -5478,6 +5482,7 @@ export const onUpdateAuthorLessons = /* GraphQL */ `
         }
         status
         related
+        featured
         createdAt
         updatedAt
       }
@@ -5536,6 +5541,7 @@ export const onDeleteAuthorLessons = /* GraphQL */ `
         }
         status
         related
+        featured
         createdAt
         updatedAt
       }

@@ -68,7 +68,7 @@ export function CertItem({ hit }) {
   return (
     <a
       href={hit.slug}
-      className='aa-ItemLink hover:bg-slate-700 cursor-pointer'
+      className='aa-ItemLink hover:bg-slate-100 dark:hover:bg-dark-dark cursor-pointer'
     >
       <div className='grid grid-cols-5 w-full'>
         <div className='lg:px-3 py-1.5 col-span-4'>
@@ -90,7 +90,7 @@ export function CertItem({ hit }) {
           </div>
         </div>
         <div className='col-span-1 flex items-center justify-end'>
-          <ArrowUpRightIcon className='w-5 h-5 mr-2 stroke-white' />
+          <ArrowUpRightIcon className='w-5 h-5 mr-2 dark:stroke-white' />
         </div>
       </div>
     </a>
@@ -115,7 +115,7 @@ export function CourseItem({ hit }) {
   return (
     <Link passHref href={`/courses/${hit.slug}`}>
       <a
-        className='aa-ItemLink hover:bg-slate-700 cursor-pointer'
+        className='aa-ItemLink hover:bg-slate-100 dark:hover:bg-dark-dark cursor-pointer'
         onClick={() => dispatch(closeSearch())}
       >
         <div className='grid grid-cols-5 w-full'>
@@ -164,7 +164,7 @@ export function LOTMItem({ hit }) {
   return (
     <Link href={`/lessons/${hit.slug}`} passHref>
       <a
-        className='aa-ItemLink hover:bg-slate-700 cursor-pointer'
+        className='aa-ItemLink hover:bg-slate-100 dark:hover:bg-dark-dark cursor-pointer'
         onClick={() => dispatch(closeSearch())}
       >
         <div className='grid grid-cols-5 w-full'>

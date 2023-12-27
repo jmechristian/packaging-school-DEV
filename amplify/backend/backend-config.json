@@ -28,9 +28,7 @@
       "dependsOn": [],
       "frontendAuthConfig": {
         "mfaConfiguration": "OFF",
-        "mfaTypes": [
-          "SMS"
-        ],
+        "mfaTypes": ["SMS"],
         "passwordProtectionSettings": {
           "passwordPolicyCharacters": [
             "REQUIRES_LOWERCASE",
@@ -40,16 +38,10 @@
           ],
           "passwordPolicyMinLength": 8
         },
-        "signupAttributes": [
-          "EMAIL"
-        ],
+        "signupAttributes": ["EMAIL"],
         "socialProviders": [],
-        "usernameAttributes": [
-          "EMAIL"
-        ],
-        "verificationMechanisms": [
-          "EMAIL"
-        ]
+        "usernameAttributes": ["EMAIL"],
+        "verificationMechanisms": ["EMAIL"]
       },
       "providerPlugin": "awscloudformation",
       "service": "Cognito"
@@ -110,37 +102,7 @@
     }
   },
   "hosting": {},
-  "notifications": {
-    "unileverAnalytics": {
-      "service": "Pinpoint",
-      "channels": []
-    }
-  },
   "parameters": {
-    "AMPLIFY_analytics_Pinpoint_Id": {
-      "usedBy": [
-        {
-          "category": "analytics",
-          "resourceName": "Pinpoint"
-        }
-      ]
-    },
-    "AMPLIFY_analytics_Pinpoint_Name": {
-      "usedBy": [
-        {
-          "category": "analytics",
-          "resourceName": "Pinpoint"
-        }
-      ]
-    },
-    "AMPLIFY_analytics_Pinpoint_Region": {
-      "usedBy": [
-        {
-          "category": "analytics",
-          "resourceName": "Pinpoint"
-        }
-      ]
-    },
     "AMPLIFY_function_addAPSToUser_deploymentBucketName": {
       "usedBy": [
         {
@@ -234,30 +196,6 @@
         {
           "category": "function",
           "resourceName": "sendWelcomeEmail"
-        }
-      ]
-    },
-    "AMPLIFY_notifications_Pinpoint_Id": {
-      "usedBy": [
-        {
-          "category": "notifications",
-          "resourceName": "Pinpoint"
-        }
-      ]
-    },
-    "AMPLIFY_notifications_Pinpoint_Name": {
-      "usedBy": [
-        {
-          "category": "notifications",
-          "resourceName": "Pinpoint"
-        }
-      ]
-    },
-    "AMPLIFY_notifications_Pinpoint_Region": {
-      "usedBy": [
-        {
-          "category": "notifications",
-          "resourceName": "Pinpoint"
         }
       ]
     }
