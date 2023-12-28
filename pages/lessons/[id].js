@@ -26,22 +26,24 @@ const Page = ({ lesson }) => {
   const { allCourses } = useSelector((state) => state.course_filter);
 
   const sortedSources = useMemo(() => {
-    const sorted =
-      lesson &&
-      lesson.sources.items &&
-      lesson.sources.items.sort(function (a, b) {
-        return a.position - b.position;
-      });
+    if (lesson && lesson.sources.items) {
+      const sorted =
+        lesson &&
+        lesson.sources.items &&
+        lesson.sources.items.sort(function (a, b) {
+          return a.position - b.position;
+        });
 
-    const chunkSize = sorted && sorted.length / 2;
-    const chunks = [];
+      const chunkSize = sorted && sorted.length / 2;
+      const chunks = [];
 
-    for (let i = 0; i < sorted.length; i += chunkSize) {
-      const chunk = sorted.slice(i, i + chunkSize);
-      chunks.push(chunk);
-    }
+      for (let i = 0; i < sorted.length; i += chunkSize) {
+        const chunk = sorted.slice(i, i + chunkSize);
+        chunks.push(chunk);
+      }
 
-    return chunks;
+      return chunks;
+    } else return null;
   }, [lesson]);
 
   const featured = useMemo(() => {
