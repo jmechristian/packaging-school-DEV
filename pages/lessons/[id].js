@@ -25,6 +25,25 @@ const Page = ({ lesson }) => {
   const { user } = useSelector((state) => state.auth);
   const { allCourses } = useSelector((state) => state.course_filter);
 
+  const sortedSources = useMemo(() => {
+    const sorted =
+      lesson &&
+      lesson.sources.items &&
+      lesson.sources.items.sort(function (a, b) {
+        return a.position - b.position;
+      });
+
+    const chunkSize = sorted.length / 2;
+    const chunks = [];
+
+    for (let i = 0; i < sorted.length; i += chunkSize) {
+      const chunk = sorted.slice(i, i + chunkSize);
+      chunks.push(chunk);
+    }
+
+    return chunks;
+  }, [lesson]);
+
   const featured = useMemo(() => {
     const item =
       allCourses && allCourses.filter((cou) => cou.id === lesson.featured);
@@ -92,8 +111,8 @@ const Page = ({ lesson }) => {
                     </div>
                   )}
                   {lesson.mediaType === 'VIDEO' ? (
-                    <div className='flex flex-col md:flex-row md:items-center lg:gap-2 font-medium border-b border-b-neutral-900 pb-6 px-4 xl:px-0'>
-                      <div className='font-bold text-sm uppercase'>
+                    <div className='flex flex-col md:flex-row md:items-center lg:gap-2 font-medium border-b border-b-neutral-900 dark:border-b-white pb-6 px-4 xl:px-0'>
+                      <div className='font-bold dark:text-white text-sm uppercase'>
                         {newDate}
                       </div>
                       {lesson.author.items.length > 0 &&
@@ -175,7 +194,7 @@ const Page = ({ lesson }) => {
                   )}
 
                   <div
-                    className={`relative px-6 ${
+                    className={`relative px-6 lg:px-0 ${
                       lesson.mediaType === 'IMAGE' ? 'mt-0' : 'mt-6'
                     }`}
                   >
@@ -188,6 +207,37 @@ const Page = ({ lesson }) => {
                   <div key={i}>{bodyCotentHandler(item)}</div>
                 ))}
               </div> */}
+                  </div>
+                  <div className='flex flex-col gap-3 border-t border-t-black dark:border-t-white pt-6'>
+                    <div className='font-bold dark:text-white'>Sources</div>
+                    {lesson.sources && sortedSources && (
+                      <div className='grid lg:grid-cols-2 dark:text-white gap-3 text-xs'>
+                        <div className='flex flex-col gap-3'>
+                          {sortedSources[0].map((sou) => (
+                            <div className='flex gap-1' key={sou.id}>
+                              <div>
+                                <sup>{sou.position}</sup>
+                              </div>
+                              <div>
+                                <a href={sou.link}>{sou.name}</a>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                        <div className='flex flex-col gap-3'>
+                          {sortedSources[1].map((sou) => (
+                            <div className='flex gap-1' key={sou.id}>
+                              <div>
+                                <sup>{sou.position}</sup>
+                              </div>
+                              <div>
+                                <a href={sou.link}>{sou.name}</a>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
