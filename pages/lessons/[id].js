@@ -208,37 +208,39 @@ const Page = ({ lesson }) => {
                 ))}
               </div> */}
                   </div>
-                  {lesson.sources && sortedSources.length > 0 && (
-                    <div className='flex flex-col gap-3 border-t border-t-black dark:border-t-white pt-6'>
-                      <div className='font-bold dark:text-white'>Sources</div>
-                      <div className='grid lg:grid-cols-2 dark:text-white gap-3 text-xs'>
-                        <div className='flex flex-col gap-3'>
-                          {sortedSources[0].map((sou) => (
-                            <div className='flex gap-1' key={sou.id}>
-                              <div>
-                                <sup>{sou.position}</sup>
+                  {lesson.sources &&
+                    sortedSources &&
+                    sortedSources.length > 0 && (
+                      <div className='flex flex-col gap-3 border-t border-t-black dark:border-t-white pt-6'>
+                        <div className='font-bold dark:text-white'>Sources</div>
+                        <div className='grid lg:grid-cols-2 dark:text-white gap-3 text-xs'>
+                          <div className='flex flex-col gap-3'>
+                            {sortedSources[0].map((sou) => (
+                              <div className='flex gap-1' key={sou.id}>
+                                <div>
+                                  <sup>{sou.position}</sup>
+                                </div>
+                                <div>
+                                  <a href={sou.link}>{sou.name}</a>
+                                </div>
                               </div>
-                              <div>
-                                <a href={sou.link}>{sou.name}</a>
+                            ))}
+                          </div>
+                          <div className='flex flex-col gap-3'>
+                            {sortedSources[1].map((sou) => (
+                              <div className='flex gap-1' key={sou.id}>
+                                <div>
+                                  <sup>{sou.position}</sup>
+                                </div>
+                                <div>
+                                  <a href={sou.link}>{sou.name}</a>
+                                </div>
                               </div>
-                            </div>
-                          ))}
-                        </div>
-                        <div className='flex flex-col gap-3'>
-                          {sortedSources[1].map((sou) => (
-                            <div className='flex gap-1' key={sou.id}>
-                              <div>
-                                <sup>{sou.position}</sup>
-                              </div>
-                              <div>
-                                <a href={sou.link}>{sou.name}</a>
-                              </div>
-                            </div>
-                          ))}
+                            ))}
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  )}
+                    )}
                 </div>
               </div>
 
