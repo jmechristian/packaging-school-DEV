@@ -3,24 +3,17 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { wrap } from 'popmotion';
 import { ChevronRightIcon, ChevronLeftIcon } from '@heroicons/react/24/solid';
 import SlideBar from '../shared/SlideBar';
-import { LessonContext } from '../../pages/lessons/[id]';
 import { usePageVisibility } from '../../libs/visibility';
 import dynamic from 'next/dynamic';
 
 const SlidesPlayer = ({ images, title }) => {
   const [[page, direction], setPage] = useState([0, 0]);
-  const { unlocked, toggleUnlocked, setPageContext } =
-    useContext(LessonContext);
 
   const isVisible = usePageVisibility();
 
   // if (!isVisible) {
   //   gtag('event', 'slide_exit', { slide: page, lesson_title: title });
   // }
-
-  useEffect(() => {
-    setPageContext(page);
-  }, [page, setPageContext]);
 
   const variants = {
     enter: (direction) => {
