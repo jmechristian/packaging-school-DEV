@@ -170,9 +170,6 @@ export function LOTMItem({ hit }) {
         <div className='grid grid-cols-5 w-full'>
           <div className='px-3 py-1.5 col-span-4'>
             <div className='flex gap-3 w-full'>
-              <div>
-                <LotmIcon style='w-12 h-12 fill-white' />
-              </div>
               <div className='flex flex-col '>
                 <div className='font-greycliff font-semibold leading-snug md:text-lg dark:text-white'>
                   <Highlight hit={hit} attribute='title' />
