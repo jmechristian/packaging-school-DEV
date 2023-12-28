@@ -287,7 +287,7 @@ const Page = ({ lesson }) => {
                     </>
                   )}
                 </div>
-                <div className='flex flex-col justify-center md:items-start items-center md:col-span-2'>
+                <div className='flex flex-col justify-center items-start md:col-span-2'>
                   {lesson.related && lesson.related.length > 0 && (
                     <div className='flex gap-2 items-center px-4 md:py-4'>
                       <MdScreenShare size={24} color='orange' />
