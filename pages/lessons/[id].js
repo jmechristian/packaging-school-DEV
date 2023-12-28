@@ -107,7 +107,7 @@ const Page = ({ lesson }) => {
                 <div className='flex flex-col gap-6'>
                   {lesson.mediaType != 'IMAGE' && (
                     <div className='border-b-8 border-b-neutral-900 dark:border-white pb-9'>
-                      <div className='w-full dark:text-white font-bold max-w-3xl text-3xl lg:text-4xl xl:text-5xl leading-none lg:tracking-tight tracking-tighter px-4 xl:px-0'>
+                      <div className='w-full dark:text-white font-bold max-w-xs md:max-w-3xl text-3xl lg:text-4xl xl:text-5xl leading-none lg:tracking-tight tracking-tighter px-4 xl:px-0'>
                         {lesson.title}
                       </div>
                     </div>
@@ -143,7 +143,7 @@ const Page = ({ lesson }) => {
                   {lesson.objectives &&
                   lesson.objectives.length > 0 &&
                   !lesson.actionLink ? (
-                    <div className='flex flex-col md:flex-row gap-6 w-full bg-brand-yellow/20 dark:bg-base-mid dark:text-white rounded-xl p-9'>
+                    <div className='flex flex-col md:flex-row gap-6 w-full bg-brand-yellow/20 dark:bg-base-mid dark:text-white lg:rounded-xl p-9'>
                       <div className='aspect-[4/3] w-full lg:max-w-[250px] bg-clemson dark:bg-brand-yellow flex items-center justify-center'>
                         <div className='w-full p-3'>
                           <Image
@@ -173,7 +173,7 @@ const Page = ({ lesson }) => {
                       </div>
                     </div>
                   ) : lesson.objectives && lesson.actionLink ? (
-                    <div className='w-full bg-base-dark flex flex-col gap-4 md:flex-row text-center md:text-left justify-between items-center rounded-lg px-6 py-4'>
+                    <div className='w-full bg-base-dark flex flex-col gap-4 md:flex-row text-center md:text-left justify-between items-center lg:rounded-lg px-6 py-6 lg:py-4'>
                       <div className='text-white text-lg font-semibold leading-tight'>
                         {lesson.actionLinkTitle}
                       </div>
@@ -213,7 +213,7 @@ const Page = ({ lesson }) => {
                   {lesson.sources &&
                     sortedSources &&
                     sortedSources.length > 0 && (
-                      <div className='flex flex-col gap-3 border-t border-t-black dark:border-t-white pt-6'>
+                      <div className='hidden lg:flex flex-col gap-3 border-t border-t-black dark:border-t-white pt-6  px-6 lg:px-0'>
                         <div className='font-bold dark:text-white'>Sources</div>
                         <div className='grid lg:grid-cols-2 dark:text-white gap-3 text-xs'>
                           <div className='flex flex-col gap-3'>
@@ -317,6 +317,37 @@ const Page = ({ lesson }) => {
                 </div>
               </div>
             </div>
+            {lesson.sources && sortedSources && sortedSources.length > 0 && (
+              <div className='lg:hidden flex flex-col gap-3 border-t border-t-black dark:border-t-white pt-6  px-6 lg:px-0'>
+                <div className='font-bold dark:text-white'>Sources</div>
+                <div className='grid lg:grid-cols-2 dark:text-white gap-3 text-xs'>
+                  <div className='flex flex-col gap-3'>
+                    {sortedSources[0].map((sou) => (
+                      <div className='flex gap-1' key={sou.id}>
+                        <div>
+                          <sup>{sou.position}</sup>
+                        </div>
+                        <div>
+                          <a href={sou.link}>{sou.name}</a>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  <div className='flex flex-col gap-3'>
+                    {sortedSources[1].map((sou) => (
+                      <div className='flex gap-1' key={sou.id}>
+                        <div>
+                          <sup>{sou.position}</sup>
+                        </div>
+                        <div>
+                          <a href={sou.link}>{sou.name}</a>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </>
