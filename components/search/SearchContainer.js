@@ -41,10 +41,6 @@ export function ProductItem({ hit }) {
           <div className='font-greycliff font-semibold leading-snug lg:text-lg dark:text-white w-full'>
             <Highlight hit={hit} attribute='title' />
           </div>
-
-          <div className='col-span-1 flex items-center justify-end w-full'>
-            <ArrowUpRightIcon className='w-5 h-5 mr-2 stroke-white' />
-          </div>
         </a>
       </Link>
     </div>
@@ -60,6 +56,10 @@ export function CertItem({ hit }) {
         return 'bg-gradient-to-br from-base-dark to-slate-900';
       case 'Automotive Packaging Certificate':
         return 'bg-gradient-to-br from-clemson to-orange-800';
+      case 'Certificate of Sustainable Packaging':
+        return 'bg-gradient-to-br from-brand-green to-green-900';
+      case 'Food Packaging Certificate':
+        return 'bg-gradient-to-br from-brand-yellow to-yellow-800';
       default:
         return 'bg-gradient-to-br from-base-brand to-slate-900';
     }
@@ -71,7 +71,7 @@ export function CertItem({ hit }) {
       className='aa-ItemLink hover:bg-slate-100 dark:hover:bg-dark-dark cursor-pointer'
     >
       <div className='grid grid-cols-5 w-full'>
-        <div className='lg:px-3 py-1.5 col-span-4'>
+        <div className='lg:px-1.5 py-1.5 col-span-5'>
           <div className='flex gap-3 w-full'>
             <div>
               <CMPMIcon scale={12} background={setBackground()} />
@@ -89,9 +89,6 @@ export function CertItem({ hit }) {
             </div>
           </div>
         </div>
-        <div className='col-span-1 flex items-center justify-end'>
-          <ArrowUpRightIcon className='w-5 h-5 mr-2 dark:stroke-white' />
-        </div>
       </div>
     </a>
   );
@@ -107,6 +104,10 @@ export function CourseItem({ hit }) {
         return 'bg-gradient-to-br from-base-dark to-slate-900';
       case 'Automotive Packaging Certificate':
         return 'bg-gradient-to-br from-clemson to-orange-800';
+      case 'Certificate of Sustainable Packaging':
+        return 'bg-gradient-to-br from-brand-green to-green-900';
+      case 'Food Packaging Certificate':
+        return 'bg-gradient-to-br from-brand-yellow to-yellow-800';
       default:
         return 'bg-gradient-to-br from-green-600 to-green-900';
     }
@@ -119,7 +120,7 @@ export function CourseItem({ hit }) {
         onClick={() => dispatch(closeSearch())}
       >
         <div className='grid grid-cols-5 w-full'>
-          <div className='px-3 py-1.5 col-span-4'>
+          <div className='px-1.5 py-1.5 col-span-5'>
             <div className='flex gap-3 w-full'>
               <div>
                 <GlobalMaterialsIcon scale={12} background={setBackground()} />
@@ -136,9 +137,6 @@ export function CourseItem({ hit }) {
                 </div>
               </div>
             </div>
-          </div>
-          <div className='col-span-1 flex items-center justify-end'>
-            <ArrowUpRightIcon className='w-5 h-5 mr-2 stroke-white' />
           </div>
         </div>
       </a>
@@ -168,7 +166,7 @@ export function LOTMItem({ hit }) {
         onClick={() => dispatch(closeSearch())}
       >
         <div className='grid grid-cols-5 w-full'>
-          <div className='px-3 py-1.5 col-span-4'>
+          <div className='px-2 py-1.5 col-span-5'>
             <div className='flex gap-3 w-full'>
               <div className='flex flex-col '>
                 <div className='font-greycliff font-semibold leading-snug md:text-lg dark:text-white'>
@@ -182,9 +180,6 @@ export function LOTMItem({ hit }) {
                 </div>
               </div>
             </div>
-          </div>
-          <div className='col-span-1 flex items-center justify-end'>
-            <ArrowUpRightIcon className='w-5 h-5 mr-2 stroke-white' />
           </div>
         </div>
       </a>
@@ -279,7 +274,7 @@ const SearchContainer = () => {
   });
 
   return (
-    <div className='fixed inset-0 justify-center items-between p-4 lg:py-20 bg-black/60 backdrop-blur-sm z-[60]'>
+    <div className='fixed inset-0 justify-center items-between p-4 lg:py-20 bg-black/60 backdrop-blur-sm z-[110]'>
       <div
         className='absolute right-6 top-6 cursor-pointer z-[80]'
         onClick={() => dispatch(closeSearch())}
@@ -327,8 +322,8 @@ const SearchContainer = () => {
                 />
               </Index>
               <Index indexName='LESSONS'>
-                <div className='w-full bg-slate-400 text-slate-700 text-sm font-bold font-greycliff px-6 py-1.5'>
-                  LEARNING OF THE MONTH
+                <div className='w-full bg-slate-400 text-slate-700 text-sm font-bold font-greycliff px-4 py-1.5'>
+                  LESSONS
                 </div>
                 <Hits
                   hitComponent={LOTMItem}
