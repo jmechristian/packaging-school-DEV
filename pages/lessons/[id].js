@@ -33,7 +33,7 @@ const Page = ({ lesson }) => {
         return a.position - b.position;
       });
 
-    const chunkSize = sorted.length / 2;
+    const chunkSize = sorted && sorted.length / 2;
     const chunks = [];
 
     for (let i = 0; i < sorted.length; i += chunkSize) {
