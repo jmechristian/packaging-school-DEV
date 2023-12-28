@@ -208,9 +208,9 @@ const Page = ({ lesson }) => {
                 ))}
               </div> */}
                   </div>
-                  <div className='flex flex-col gap-3 border-t border-t-black dark:border-t-white pt-6'>
-                    <div className='font-bold dark:text-white'>Sources</div>
-                    {lesson.sources && sortedSources && (
+                  {lesson.sources && sortedSources.length > 0 && (
+                    <div className='flex flex-col gap-3 border-t border-t-black dark:border-t-white pt-6'>
+                      <div className='font-bold dark:text-white'>Sources</div>
                       <div className='grid lg:grid-cols-2 dark:text-white gap-3 text-xs'>
                         <div className='flex flex-col gap-3'>
                           {sortedSources[0].map((sou) => (
@@ -237,8 +237,8 @@ const Page = ({ lesson }) => {
                           ))}
                         </div>
                       </div>
-                    )}
-                  </div>
+                    </div>
+                  )}
                 </div>
               </div>
 
