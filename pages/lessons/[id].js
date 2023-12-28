@@ -20,7 +20,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toggleSignInModal } from '../../features/layout/layoutSlice';
 
 const Page = ({ lesson }) => {
-  const newDate = new Date(lesson.updatedAt).toDateString();
+  const newDate = lesson && new Date(lesson.updatedAt).toDateString();
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
   const { allCourses } = useSelector((state) => state.course_filter);
