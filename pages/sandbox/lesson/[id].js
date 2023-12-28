@@ -72,15 +72,15 @@ const Page = ({ pageData }) => {
   };
 
   return (
-    <div className='w-full lg:pt-6 pb-12 relative'>
+    <div className='w-full lg:pt-6 pb-12 relative dark:bg-dark-dark'>
       <div className='w-full flex flex-col gap-6 lg:gap-9 max-w-6xl mx-auto'>
         {setMedia()}
         <div className='w-full flex flex-col lg:flex-row gap-6 lg:gap-12'>
           <div className='flex w-full'>
             <div className='flex flex-col gap-6'>
               {lesson.mediaType != 'IMAGE' && (
-                <div className=' border-b-8 border-b-neutral-900 pb-9'>
-                  <div className='w-full font-bold max-w-3xl text-3xl lg:text-4xl xl:text-5xl leading-none lg:tracking-tight tracking-tighter px-4 xl:px-0'>
+                <div className='border-b-8 border-b-neutral-900 dark:border-white pb-9'>
+                  <div className='w-full dark:text-white font-bold max-w-3xl text-3xl lg:text-4xl xl:text-5xl leading-none lg:tracking-tight tracking-tighter px-4 xl:px-0'>
                     {lesson.title}
                   </div>
                 </div>
@@ -106,6 +106,8 @@ const Page = ({ pageData }) => {
                       </div>
                     ))}
                 </div>
+              ) : lesson.mediaType === 'SLIDES' ? (
+                <></>
               ) : (
                 <div className='border-t-8 border-t-neutral-900 pt-9'></div>
               )}
@@ -183,7 +185,7 @@ const Page = ({ pageData }) => {
           </div>
 
           {/* Sidebar */}
-          <div className='w-full lg:max-w-[280px] h-full bg-dark-dark text-white rounded-xl flex flex-col md:items-start md:grid md:grid-cols-3 lg:flex lg:flex-col gap-6 pt-2 px-6 md:px-0'>
+          <div className='w-full lg:max-w-[280px] h-full bg-dark-dark dark:bg-dark-mid text-white rounded-xl flex flex-col md:items-start md:grid md:grid-cols-3 lg:flex lg:flex-col gap-6 pt-2 px-6 md:px-0'>
             <div className='flex flex-col justify-center md:items-start items-center gap-6 p-4 mx-auto'>
               <div className='flex flex-col gap-1.5 '>
                 <div className='flex gap-1 items-center'>
@@ -321,7 +323,7 @@ export const getServerSideProps = async () => {
   const lesson = await API.graphql({
     query: getLesson,
     variables: {
-      slug: 'the-evolution-of-the-eus-packaging-and-packaging-waste-directive-ppwd',
+      slug: 'sustainable-terminology',
     },
   });
   const pageData = lesson.data;
