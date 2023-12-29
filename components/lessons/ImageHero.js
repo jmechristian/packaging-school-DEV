@@ -1,6 +1,7 @@
 import React from 'react';
+import AuthorBlock from '../shared/AuthorBlock';
 
-const ImageHero = ({ title, date, authors, media }) => {
+const ImageHero = ({ title, date, author, media }) => {
   return (
     <div className='flex flex-col gap-8 lg:gap-16 md:flex-row items-center justify-between md:px-6 xl:px-0 pt-6'>
       <div
@@ -15,17 +16,12 @@ const ImageHero = ({ title, date, authors, media }) => {
           <div className='font-bold text-sm uppercase dark:text-white'>
             {date}
           </div>
-          {/* {authors &&
-            authors.map((a) => (
-              <div
-                className='text-base-mid text-sm md:text-base'
-                key={a.author.name}
-              >
-                <a href={a.author.linkedIn} rel='noreferrer' target='_blank'>
-                  {'/' + ' ' + a.author.name + ',' + ' ' + a.author.title}
-                </a>
+          {author &&
+            author.map((a) => (
+              <div key={a}>
+                <AuthorBlock id={a} />
               </div>
-            ))} */}
+            ))}
         </div>
       </div>
     </div>

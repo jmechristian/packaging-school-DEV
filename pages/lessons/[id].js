@@ -18,6 +18,7 @@ import WiredLessonCard from '../../components/shared/WiredLessonCard';
 import { listLessons } from '../../src/graphql/queries';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleSignInModal } from '../../features/layout/layoutSlice';
+import AuthorBlock from '../../components/shared/AuthorBlock';
 
 const Page = ({ lesson }) => {
   const newDate = lesson && new Date(lesson.updatedAt).toDateString();
@@ -46,11 +47,11 @@ const Page = ({ lesson }) => {
     } else return null;
   }, [lesson]);
 
-  const featured = useMemo(() => {
-    const item =
-      allCourses && allCourses.filter((cou) => cou.id === lesson.featured);
-    return item;
-  }, [lesson, allCourses]);
+  // const featured = useMemo(() => {
+  //   const item =
+  //     allCourses && allCourses.filter((cou) => cou.id === lesson.featured);
+  //   return item;
+  // }, [lesson, allCourses]);
 
   const setMedia = () => {
     switch (lesson.mediaType) {
@@ -59,7 +60,7 @@ const Page = ({ lesson }) => {
           <ImageHero
             title={lesson.title}
             date={newDate}
-            // authors={lesson.author.items}
+            author={lesson.author}
             media={lesson.seoImage}
           />
         );
@@ -68,7 +69,15 @@ const Page = ({ lesson }) => {
       case 'SLIDES':
         return <LessonSlides slides={lesson.slides ? lesson.slides : []} />;
       default:
-        return <ImageHero url={lesson.media} />;
+        return (
+          <ImageHero
+            url={lesson.media}
+            title={lesson.title}
+            date={newDate}
+            author={lesson.author}
+            media={lesson.seoImage}
+          />
+        );
     }
   };
 
@@ -117,23 +126,12 @@ const Page = ({ lesson }) => {
                       <div className='font-bold dark:text-white text-sm uppercase'>
                         {newDate}
                       </div>
-                      {/* {lesson.author.items.length > 0 &&
-                        lesson.author.items.map((a) => (
-                          <div className='text-base-mid' key={a.author.name}>
-                            <a
-                              href={a.author.linkedIn}
-                              rel='noreferrer'
-                              target='_blank'
-                            >
-                              {'/' +
-                                ' ' +
-                                a.author.name +
-                                ',' +
-                                ' ' +
-                                a.author.title}
-                            </a>
+                      {lesson.author &&
+                        lesson.author.map((a) => (
+                          <div key={a}>
+                            <AuthorBlock id={a} />
                           </div>
-                        ))} */}
+                        ))}
                     </div>
                   ) : lesson.mediaType === 'SLIDES' ? (
                     <></>
@@ -261,7 +259,7 @@ const Page = ({ lesson }) => {
                       experts.
                     </div>
                   </div>
-                  {featured && featured.length > 0 ? (
+                  {/* {featured && featured.length > 0 ? (
                     <NewCouseCard
                       title={featured[0].title}
                       description={featured[0].subheadline}
@@ -273,23 +271,23 @@ const Page = ({ lesson }) => {
                       // id={'806c0e2e-c4db-4c13-94f9-b49d4e8b2239'}
                     />
                   ) : (
-                    <>
-                      <NewCouseCard
-                        title={'Packaging Foundations'}
-                        description={
-                          'Learn the intricate dynamics of packaging as a system, integrating roles from marketing to warehousing, to become an effective stakeholder in package design.'
-                        }
-                        background={
-                          'https://packschool.s3.amazonaws.com/packaging-foundations-seoImage-2-sm.png'
-                        }
-                        link={'https://learn.packagingschool.com/enroll/35691'}
-                        link_text={'Enroll Now'}
-                        Icon={AcademicCapIcon}
-                        video={'https://www.youtube.com/watch?v=L4Q6sZlXoe4'}
-                        // id={'806c0e2e-c4db-4c13-94f9-b49d4e8b2239'}
-                      />
-                    </>
-                  )}
+                    <> */}
+                  <NewCouseCard
+                    title={'Packaging Foundations'}
+                    description={
+                      'Learn the intricate dynamics of packaging as a system, integrating roles from marketing to warehousing, to become an effective stakeholder in package design.'
+                    }
+                    background={
+                      'https://packschool.s3.amazonaws.com/packaging-foundations-seoImage-2-sm.png'
+                    }
+                    link={'https://learn.packagingschool.com/enroll/35691'}
+                    link_text={'Enroll Now'}
+                    Icon={AcademicCapIcon}
+                    video={'https://www.youtube.com/watch?v=L4Q6sZlXoe4'}
+                    // id={'806c0e2e-c4db-4c13-94f9-b49d4e8b2239'}
+                  />
+                  {/* </>
+                  )} */}
                 </div>
                 <div className='flex flex-col justify-center items-start md:col-span-2'>
                   {lesson.related && lesson.related.length > 0 && (
