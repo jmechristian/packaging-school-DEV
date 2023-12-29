@@ -8,11 +8,13 @@ const ImageHero = ({ title, date, authors, media }) => {
         style={{ backgroundImage: `url(${media})` }}
       ></div>
       <div className='flex flex-col h-full w-full gap-5 px-6 lg:px-0'>
-        <div className='w-full font-bold max-w-3xl text-3xl lg:text-4xl xl:text-5xl leading-none lg:tracking-tight tracking-tighter'>
+        <div className='w-full font-bold max-w-3xl text-3xl lg:text-4xl xl:text-5xl leading-none lg:tracking-tight tracking-tighter dark:text-white'>
           {title}
         </div>
         <div className='flex flex-col'>
-          <div className='font-bold text-sm uppercase'>{date}</div>
+          <div className='font-bold text-sm uppercase dark:text-white'>
+            {date}
+          </div>
           {authors &&
             authors.map((a) => (
               <div
