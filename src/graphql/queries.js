@@ -391,16 +391,7 @@ export const getLesson = /* GraphQL */ `
       actionLink
       actionLinkTitle
       actionExample
-      author {
-        items {
-          id
-          lessonId
-          authorId
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
+      author
       status
       related
       featured
@@ -442,9 +433,7 @@ export const listLessons = /* GraphQL */ `
         actionLink
         actionLinkTitle
         actionExample
-        author {
-          nextToken
-        }
+        author
         status
         related
         featured
@@ -496,9 +485,7 @@ export const lessonsBySlug = /* GraphQL */ `
         actionLink
         actionLinkTitle
         actionExample
-        author {
-          nextToken
-        }
+        author
         status
         related
         featured
@@ -518,16 +505,6 @@ export const getAuthor = /* GraphQL */ `
       linkedIn
       title
       company
-      lessons {
-        items {
-          id
-          lessonId
-          authorId
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
       createdAt
       updatedAt
     }
@@ -547,9 +524,6 @@ export const listAuthors = /* GraphQL */ `
         linkedIn
         title
         company
-        lessons {
-          nextToken
-        }
         createdAt
         updatedAt
       }
@@ -4293,234 +4267,6 @@ export const articleRelatedCoursesByArticleId = /* GraphQL */ `
           media
           seoImage
           content
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
-export const getAuthorLessons = /* GraphQL */ `
-  query GetAuthorLessons($id: ID!) {
-    getAuthorLessons(id: $id) {
-      id
-      lessonId
-      authorId
-      lesson {
-        id
-        slug
-        title
-        subhead
-        type
-        media
-        mediaType
-        slides
-        seoImage
-        content
-        sources {
-          nextToken
-        }
-        links {
-          nextToken
-        }
-        tags {
-          nextToken
-        }
-        objectives
-        actionCTA
-        actionSubhead
-        actionLink
-        actionLinkTitle
-        actionExample
-        author {
-          nextToken
-        }
-        status
-        related
-        featured
-        createdAt
-        updatedAt
-      }
-      author {
-        id
-        name
-        headshot
-        linkedIn
-        title
-        company
-        lessons {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const listAuthorLessons = /* GraphQL */ `
-  query ListAuthorLessons(
-    $filter: ModelAuthorLessonsFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listAuthorLessons(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        lessonId
-        authorId
-        lesson {
-          id
-          slug
-          title
-          subhead
-          type
-          media
-          mediaType
-          slides
-          seoImage
-          content
-          objectives
-          actionCTA
-          actionSubhead
-          actionLink
-          actionLinkTitle
-          actionExample
-          status
-          related
-          featured
-          createdAt
-          updatedAt
-        }
-        author {
-          id
-          name
-          headshot
-          linkedIn
-          title
-          company
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
-export const authorLessonsByLessonId = /* GraphQL */ `
-  query AuthorLessonsByLessonId(
-    $lessonId: ID!
-    $sortDirection: ModelSortDirection
-    $filter: ModelAuthorLessonsFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    authorLessonsByLessonId(
-      lessonId: $lessonId
-      sortDirection: $sortDirection
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-    ) {
-      items {
-        id
-        lessonId
-        authorId
-        lesson {
-          id
-          slug
-          title
-          subhead
-          type
-          media
-          mediaType
-          slides
-          seoImage
-          content
-          objectives
-          actionCTA
-          actionSubhead
-          actionLink
-          actionLinkTitle
-          actionExample
-          status
-          related
-          featured
-          createdAt
-          updatedAt
-        }
-        author {
-          id
-          name
-          headshot
-          linkedIn
-          title
-          company
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
-export const authorLessonsByAuthorId = /* GraphQL */ `
-  query AuthorLessonsByAuthorId(
-    $authorId: ID!
-    $sortDirection: ModelSortDirection
-    $filter: ModelAuthorLessonsFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    authorLessonsByAuthorId(
-      authorId: $authorId
-      sortDirection: $sortDirection
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-    ) {
-      items {
-        id
-        lessonId
-        authorId
-        lesson {
-          id
-          slug
-          title
-          subhead
-          type
-          media
-          mediaType
-          slides
-          seoImage
-          content
-          objectives
-          actionCTA
-          actionSubhead
-          actionLink
-          actionLinkTitle
-          actionExample
-          status
-          related
-          featured
-          createdAt
-          updatedAt
-        }
-        author {
-          id
-          name
-          headshot
-          linkedIn
-          title
-          company
           createdAt
           updatedAt
         }

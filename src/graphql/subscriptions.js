@@ -406,16 +406,7 @@ export const onCreateLesson = /* GraphQL */ `
       actionLink
       actionLinkTitle
       actionExample
-      author {
-        items {
-          id
-          lessonId
-          authorId
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
+      author
       status
       related
       featured
@@ -478,16 +469,7 @@ export const onUpdateLesson = /* GraphQL */ `
       actionLink
       actionLinkTitle
       actionExample
-      author {
-        items {
-          id
-          lessonId
-          authorId
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
+      author
       status
       related
       featured
@@ -550,16 +532,7 @@ export const onDeleteLesson = /* GraphQL */ `
       actionLink
       actionLinkTitle
       actionExample
-      author {
-        items {
-          id
-          lessonId
-          authorId
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
+      author
       status
       related
       featured
@@ -577,16 +550,6 @@ export const onCreateAuthor = /* GraphQL */ `
       linkedIn
       title
       company
-      lessons {
-        items {
-          id
-          lessonId
-          authorId
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
       createdAt
       updatedAt
     }
@@ -601,16 +564,6 @@ export const onUpdateAuthor = /* GraphQL */ `
       linkedIn
       title
       company
-      lessons {
-        items {
-          id
-          lessonId
-          authorId
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
       createdAt
       updatedAt
     }
@@ -625,16 +578,6 @@ export const onDeleteAuthor = /* GraphQL */ `
       linkedIn
       title
       company
-      lessons {
-        items {
-          id
-          lessonId
-          authorId
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
       createdAt
       updatedAt
     }
@@ -5376,183 +5319,6 @@ export const onDeleteArticleRelatedCourses = /* GraphQL */ `
           nextToken
         }
         relatedCourses {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onCreateAuthorLessons = /* GraphQL */ `
-  subscription OnCreateAuthorLessons {
-    onCreateAuthorLessons {
-      id
-      lessonId
-      authorId
-      lesson {
-        id
-        slug
-        title
-        subhead
-        type
-        media
-        mediaType
-        slides
-        seoImage
-        content
-        sources {
-          nextToken
-        }
-        links {
-          nextToken
-        }
-        tags {
-          nextToken
-        }
-        objectives
-        actionCTA
-        actionSubhead
-        actionLink
-        actionLinkTitle
-        actionExample
-        author {
-          nextToken
-        }
-        status
-        related
-        featured
-        createdAt
-        updatedAt
-      }
-      author {
-        id
-        name
-        headshot
-        linkedIn
-        title
-        company
-        lessons {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onUpdateAuthorLessons = /* GraphQL */ `
-  subscription OnUpdateAuthorLessons {
-    onUpdateAuthorLessons {
-      id
-      lessonId
-      authorId
-      lesson {
-        id
-        slug
-        title
-        subhead
-        type
-        media
-        mediaType
-        slides
-        seoImage
-        content
-        sources {
-          nextToken
-        }
-        links {
-          nextToken
-        }
-        tags {
-          nextToken
-        }
-        objectives
-        actionCTA
-        actionSubhead
-        actionLink
-        actionLinkTitle
-        actionExample
-        author {
-          nextToken
-        }
-        status
-        related
-        featured
-        createdAt
-        updatedAt
-      }
-      author {
-        id
-        name
-        headshot
-        linkedIn
-        title
-        company
-        lessons {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onDeleteAuthorLessons = /* GraphQL */ `
-  subscription OnDeleteAuthorLessons {
-    onDeleteAuthorLessons {
-      id
-      lessonId
-      authorId
-      lesson {
-        id
-        slug
-        title
-        subhead
-        type
-        media
-        mediaType
-        slides
-        seoImage
-        content
-        sources {
-          nextToken
-        }
-        links {
-          nextToken
-        }
-        tags {
-          nextToken
-        }
-        objectives
-        actionCTA
-        actionSubhead
-        actionLink
-        actionLinkTitle
-        actionExample
-        author {
-          nextToken
-        }
-        status
-        related
-        featured
-        createdAt
-        updatedAt
-      }
-      author {
-        id
-        name
-        headshot
-        linkedIn
-        title
-        company
-        lessons {
           nextToken
         }
         createdAt
