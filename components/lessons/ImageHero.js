@@ -15,7 +15,7 @@ const ImageHero = ({ title, date, authors, media }) => {
           <div className='font-bold text-sm uppercase dark:text-white'>
             {date}
           </div>
-          {authors &&
+          {/* {authors &&
             authors.map((a) => (
               <div
                 className='text-base-mid text-sm md:text-base'
@@ -25,7 +25,7 @@ const ImageHero = ({ title, date, authors, media }) => {
                   {'/' + ' ' + a.author.name + ',' + ' ' + a.author.title}
                 </a>
               </div>
-            ))}
+            ))} */}
         </div>
       </div>
     </div>

@@ -59,7 +59,7 @@ const Page = ({ lesson }) => {
           <ImageHero
             title={lesson.title}
             date={newDate}
-            authors={lesson.author.items}
+            // authors={lesson.author.items}
             media={lesson.seoImage}
           />
         );
@@ -117,7 +117,7 @@ const Page = ({ lesson }) => {
                       <div className='font-bold dark:text-white text-sm uppercase'>
                         {newDate}
                       </div>
-                      {lesson.author.items.length > 0 &&
+                      {/* {lesson.author.items.length > 0 &&
                         lesson.author.items.map((a) => (
                           <div className='text-base-mid' key={a.author.name}>
                             <a
@@ -133,7 +133,7 @@ const Page = ({ lesson }) => {
                                 a.author.title}
                             </a>
                           </div>
-                        ))}
+                        ))} */}
                     </div>
                   ) : lesson.mediaType === 'SLIDES' ? (
                     <></>
@@ -383,16 +383,7 @@ export async function getStaticProps({ params }) {
               lessonLinksId
             }
           }
-          author {
-            items {
-              author {
-                headshot
-                linkedIn
-                name
-                title
-              }
-            }
-          }
+          author
           media
           mediaType
           content
