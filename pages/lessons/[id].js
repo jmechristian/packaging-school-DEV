@@ -245,7 +245,7 @@ const Page = ({ lesson }) => {
               </div>
 
               {/* Sidebar */}
-              <div className='w-full lg:max-w-[280px] h-full bg-dark-dark dark:bg-dark-mid text-white rounded-xl flex flex-col md:items-start md:grid md:grid-cols-3 lg:flex lg:flex-col gap-6 pt-2 px-6 md:px-0'>
+              <div className='w-full lg:max-w-[280px] h-full bg-dark-dark dark:bg-dark-mid text-white rounded-xl flex flex-col md:items-start md:grid md:grid-cols-3 lg:flex lg:flex-col gap-6 py-2 px-6 md:px-0'>
                 <div className='flex flex-col justify-center md:items-start items-center gap-6 p-4 mx-auto'>
                   <div className='flex flex-col gap-1.5 '>
                     <div className='flex gap-1 items-center'>
@@ -289,9 +289,10 @@ const Page = ({ lesson }) => {
                   {/* </>
                   )} */}
                 </div>
-                <div className='flex flex-col justify-center items-start md:col-span-2'>
+                <div className='w-full h-0.5 bg-white/30 px-3'></div>
+                <div className='flex flex-col justify-center items-start md:col-span-2 py-2'>
                   {lesson.related && lesson.related.length > 0 && (
-                    <div className='flex gap-2 items-center px-4 md:py-4'>
+                    <div className='flex gap-2 items-center px-4 md:py-4 lg:py-0'>
                       <MdScreenShare size={24} color='orange' />
                       <div className='font-bold tracking-tight text-lg'>
                         Related Lessons
@@ -302,7 +303,7 @@ const Page = ({ lesson }) => {
                     {lesson.related && lesson.related.length > 0 ? (
                       lesson.related.map((cou) => (
                         <div
-                          className='border-b border-b-neutral-700 last:border-b-0 pt-3 pb-7 hover:bg-dark-mid transition-colors ease-in px-4 rounded-xl'
+                          className='pt-3 pb-7 hover:bg-dark-mid transition-colors ease-in px-4 rounded-xl'
                           key={cou}
                         >
                           <WiredLessonCard link_text={'Enroll Now'} id={cou} />
