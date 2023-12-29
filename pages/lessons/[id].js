@@ -104,7 +104,7 @@ const Page = ({ lesson }) => {
             {setMedia()}
             <div className='w-full flex flex-col lg:flex-row gap-6 lg:gap-12'>
               <div className='flex w-full'>
-                <div className='flex flex-col gap-6'>
+                <div className='flex flex-col gap-6 w-full'>
                   {lesson.mediaType != 'IMAGE' && (
                     <div className='border-b-8 border-b-neutral-900 dark:border-white pb-9'>
                       <div className='w-full dark:text-white font-bold max-w-xs md:max-w-3xl text-3xl lg:text-4xl xl:text-5xl leading-none lg:tracking-tight tracking-tighter px-4 xl:px-0'>
