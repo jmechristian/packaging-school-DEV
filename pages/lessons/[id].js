@@ -189,6 +189,25 @@ const Page = ({ lesson }) => {
                         <div>Download</div>
                       </div>
                     </div>
+                  ) : !lesson.objectives && lesson.actionLink ? (
+                    <div className='w-full bg-base-dark flex flex-col gap-4 md:flex-row text-center md:text-left justify-between items-center lg:rounded-lg px-6 py-6 lg:py-4'>
+                      <div className='text-white text-lg font-semibold leading-tight'>
+                        {lesson.actionLinkTitle}
+                      </div>
+                      <div
+                        className='w-fit flex gap-1 items-center px-6 py-2 text-white cursor-pointer font-bold bg-clemson rounded shadow-lg'
+                        onClick={actionClickHandler}
+                      >
+                        <div>
+                          {user ? (
+                            <LockOpenIcon className='w-5 h-5 stroke-white' />
+                          ) : (
+                            <LockClosedIcon className='w-5 h-5 stroke-white' />
+                          )}
+                        </div>
+                        <div>Download</div>
+                      </div>
+                    </div>
                   ) : (
                     <></>
                   )}

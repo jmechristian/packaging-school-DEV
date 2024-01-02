@@ -80,6 +80,7 @@ const Page = ({ customer }) => {
         bgdark='bg-base-dark'
         content={
           <CustomerSearchContainer
+            reference={'ref=ac65d9'}
             courses={customer && customer.courses.items}
           />
         }

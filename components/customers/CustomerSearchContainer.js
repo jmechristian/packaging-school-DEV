@@ -28,7 +28,7 @@ import {
 
 import NewCouseCard from '../shared/NewCouseCard';
 
-const CustomerSearchContainer = ({ courses }) => {
+const CustomerSearchContainer = ({ courses, reference }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isActiveSearch, setIsActiveSearch] = useState(false);
   const [isSearchTerm, setIsSearchTerm] = useState('');
@@ -136,7 +136,7 @@ const CustomerSearchContainer = ({ courses }) => {
                     title={link.title}
                     description={link.subheadline}
                     background={link.seoImage}
-                    link={link.link}
+                    link={reference ? link.link + `${reference}` : link.link}
                     link_text={'Select Course'}
                     Icon={SparklesIcon}
                     video={link.preview}
@@ -151,47 +151,16 @@ const CustomerSearchContainer = ({ courses }) => {
         </motion.div>
       ) : (
         <div className='flex flex-col gap-12 justify-center items-center w-full max-w-[996px] mx-auto'>
-          {/* <div className='md:col-span-2 xl:col-span-3 grid overflow-hidden grid-cols-1 lg:grid-cols-2 bg-white rounded-xl shadow-lg max-w-[300px] md:max-w-none'>
-            <div className='w-full rounded-xl flex items-center'>
-              <div
-                className='w-full aspect-[16/9] rounded-xl justify-center items-center flex bg-cover bg-center relative'
-                style={{
-                  backgroundImage: `url("https://packschool.s3.amazonaws.com/spc-seoImage-2.png")`,
-                }}
-              >
-
-              </div>
-            </div>
-            <div className='w-full flex justify-center items-center px-6'>
-              <motion.div className='flex flex-col gap-3 py-9 lg:py-12'>
-                <motion.div className='font-semibold text-2xl lg:text-3xl max-w-sm md:max-w-full tracking-tight leading-none'>
-                  SPC’s Bioplastics Topic
-                </motion.div>
-                <motion.div className='leading-snug line-clamp-4 text-neutral-600 max-w-md md:max-w-full'>
-                  Welcome to SPC’s Knowledge Library about Bioplastics. In this
-                  topic, we will explore what bioplastics are and how we can
-                  think about them in the context of sustainable packaging.
-                </motion.div>
-                <motion.div
-                  className='bg-black text-white font-bold w-fit rounded-xl px-6 py-2 mt-2 cursor-pointer'
-                  onClick={() =>
-                    window.open(
-                      'https://learn.packagingschool.com/enroll/2753655?price_id=3579258',
-                      '_blank'
-                    )
-                  }
-                >
-                  Select Topic
-                </motion.div>
-              </motion.div>
-            </div>
-          </div> */}
           <div className='course-card-grid'>
             <NewCouseCard
               title={initCourses[0].title}
               description={initCourses[0].subheadline}
               background={initCourses[0].seoImage}
-              link={initCourses[0].link}
+              link={
+                reference
+                  ? initCourses[0].link + `${reference}`
+                  : initCourses[0].link
+              }
               link_text={'Select Course'}
               Icon={SparklesIcon}
               callout={'Most Popular'}
@@ -204,7 +173,11 @@ const CustomerSearchContainer = ({ courses }) => {
               title={initCourses[1].title}
               description={initCourses[1].subheadline}
               background={initCourses[1].seoImage}
-              link={initCourses[1].link}
+              link={
+                reference
+                  ? initCourses[1].link + `${reference}`
+                  : initCourses[1].link
+              }
               link_text={'Select Course'}
               Icon={SparklesIcon}
               callout={'Most Popular'}
@@ -217,7 +190,11 @@ const CustomerSearchContainer = ({ courses }) => {
               title={initCourses[2].title}
               description={initCourses[2].subheadline}
               background={initCourses[2].seoImage}
-              link={initCourses[2].link}
+              link={
+                reference
+                  ? initCourses[2].link + `${reference}`
+                  : initCourses[2].link
+              }
               link_text={'Select Course'}
               Icon={SparklesIcon}
               callout={'Most Popular'}
@@ -241,7 +218,7 @@ const CustomerSearchContainer = ({ courses }) => {
                 title={link.title}
                 description={link.subheadline}
                 background={link.seoImage}
-                link={link.link}
+                link={reference ? link.link + `${reference}` : link.link}
                 link_text={'Select Course'}
                 Icon={SparklesIcon}
                 video={link.preview}

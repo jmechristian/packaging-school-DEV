@@ -47,6 +47,23 @@ const CustomerOfferings = ({ featured }) => {
         // video={'https://www.youtube.com/watch?v=ynDhF_jYZn8'}
         // id={'806c0e2e-c4db-4c13-94f9-b49d4e8b2239'}
       />
+      <NewCouseCard
+        title={'Life Cycle Assessment'}
+        description={
+          'In this topic, we’ll first discuss the foundations of Life Cycle Assessment (LCA) and how it is being used to better understand the environmental impacts of products and packaging.'
+        }
+        background={
+          'https://packschool.s3.amazonaws.com/gb-topic-2-seoImage-sm.png'
+        }
+        link={
+          'https://learn.packagingschool.com/enroll/2794500?price_id=3625661'
+        }
+        link_text={'Select Topic'}
+        Icon={AcademicCapIcon}
+        callout={'SPC Knowledge Library'}
+        // video={'https://www.youtube.com/watch?v=ynDhF_jYZn8'}
+        // id={'806c0e2e-c4db-4c13-94f9-b49d4e8b2239'}
+      />
     </motion.div>
   );
 };
