@@ -48,7 +48,9 @@ const CustomerFeatures = ({ courses }) => {
         description={
           'In this topic, we will explore what bioplastics are and how we can think about them in the context of sustainable packaging.'
         }
-        background={'https://packschool.s3.amazonaws.com/spc-seoImage-2.png'}
+        background={
+          'https://packschool.s3.amazonaws.com/gb-topic-1-seoImage-sm.png'
+        }
         link={
           'https://learn.packagingschool.com/enroll/2753655?price_id=3579258'
         }
