@@ -170,23 +170,56 @@ const Page = ({ lesson }) => {
                         ))}
                       </div>
                     </div>
-                  ) : lesson.objectives && lesson.actionLink ? (
-                    <div className='w-full bg-base-dark flex flex-col gap-4 md:flex-row text-center md:text-left justify-between items-center lg:rounded-lg px-6 py-6 lg:py-4'>
-                      <div className='text-white text-lg font-semibold leading-tight'>
-                        {lesson.actionLinkTitle}
-                      </div>
-                      <div
-                        className='w-fit flex gap-1 items-center px-6 py-2 text-white cursor-pointer font-bold bg-clemson rounded shadow-lg'
-                        onClick={actionClickHandler}
-                      >
-                        <div>
-                          {user ? (
-                            <LockOpenIcon className='w-5 h-5 stroke-white' />
-                          ) : (
-                            <LockClosedIcon className='w-5 h-5 stroke-white' />
-                          )}
+                  ) : lesson.objectives &&
+                    lesson.objectives.length > 0 &&
+                    lesson.actionLink ? (
+                    <div className='flex flex-col gap-3'>
+                      <div className='flex flex-col md:flex-row gap-6 w-full bg-brand-yellow/20 dark:bg-base-mid dark:text-white lg:rounded-xl p-9'>
+                        <div className='aspect-[4/3] w-full lg:max-w-[250px] bg-clemson dark:bg-brand-yellow flex items-center justify-center'>
+                          <div className='w-full p-3'>
+                            <Image
+                              src={
+                                'https://packschool.s3.amazonaws.com/LOTM-Logo-Final-White-sm.png'
+                              }
+                              width={600}
+                              height={309}
+                              layout='responsive'
+                              alt='Learning of the Month'
+                            />
+                          </div>
                         </div>
-                        <div>Download</div>
+
+                        <div className='flex flex-col gap-4'>
+                          <div className='font-bold tracking-tight text-lg lg:text-xl lg:leading-none'>
+                            Learning Objectives
+                          </div>
+                          {lesson.objectives.map((ob) => (
+                            <div className='flex gap-2' key={ob}>
+                              <div>
+                                <MdTrackChanges color='black' size={32} />
+                              </div>
+                              <div className='leading-tight'>{ob}</div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                      <div className='w-full bg-base-dark flex flex-col gap-4 md:flex-row text-center md:text-left justify-between items-center lg:rounded-lg px-6 py-6 lg:py-4'>
+                        <div className='text-white text-lg font-semibold leading-tight'>
+                          {lesson.actionLinkTitle}
+                        </div>
+                        <div
+                          className='w-fit flex gap-1 items-center px-6 py-2 text-white cursor-pointer font-bold bg-clemson rounded shadow-lg'
+                          onClick={actionClickHandler}
+                        >
+                          <div>
+                            {user ? (
+                              <LockOpenIcon className='w-5 h-5 stroke-white' />
+                            ) : (
+                              <LockClosedIcon className='w-5 h-5 stroke-white' />
+                            )}
+                          </div>
+                          <div>Download</div>
+                        </div>
                       </div>
                     </div>
                   ) : !lesson.objectives && lesson.actionLink ? (
