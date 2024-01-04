@@ -62,7 +62,7 @@ const CustomerIntro_2 = () => {
           className='w-full flex items-center justify-center py-4 gap-1 cursor-pointer'
           onClick={() =>
             window.open(
-              'https://packschool.s3.amazonaws.com/greenblue-instructions.pdf',
+              'https://packschool.s3.amazonaws.com/greenblue-instructions-v2.pdf',
               '_blank'
             )
           }
