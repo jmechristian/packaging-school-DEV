@@ -289,14 +289,12 @@ const Page = ({ lesson }) => {
                 </div>
                 <div className='w-full h-0.5 bg-white/30 px-3'></div>
                 <div className='flex flex-col justify-center items-start md:col-span-2 py-2'>
-                  {lesson.related && lesson.related.length > 0 && (
-                    <div className='flex gap-2 items-center px-4 md:py-4 lg:py-0'>
-                      <MdScreenShare size={24} color='orange' />
-                      <div className='font-bold tracking-tight text-lg'>
-                        Related Lessons
-                      </div>
+                  <div className='flex gap-2 items-center px-4 md:py-4 lg:py-0'>
+                    <MdScreenShare size={24} color='orange' />
+                    <div className='font-bold tracking-tight text-lg'>
+                      Related Lessons
                     </div>
-                  )}
+                  </div>
                   <div className='md:grid md:grid-cols-2 lg:flex lg:flex-col'>
                     {lesson.related && lesson.related.length > 0 ? (
                       lesson.related.map((cou) => (
@@ -308,7 +306,26 @@ const Page = ({ lesson }) => {
                         </div>
                       ))
                     ) : (
-                      <></>
+                      <>
+                        <div className='pt-3 pb-7 hover:bg-dark-mid transition-colors ease-in px-4 rounded-xl'>
+                          <WiredLessonCard
+                            link_text={'Enroll Now'}
+                            id={'66a95671-feb8-4d74-8a87-033d71431de8'}
+                          />
+                        </div>
+                        <div className='pt-3 pb-7 hover:bg-dark-mid transition-colors ease-in px-4 rounded-xl'>
+                          <WiredLessonCard
+                            link_text={'Enroll Now'}
+                            id={'f2d26420-1ac4-4172-8af2-f70e8010770d'}
+                          />
+                        </div>
+                        <div className='pt-3 pb-7 hover:bg-dark-mid transition-colors ease-in px-4 rounded-xl'>
+                          <WiredLessonCard
+                            link_text={'Enroll Now'}
+                            id={'7b90c1b2-1226-4b1e-b086-ef26871d7963'}
+                          />
+                        </div>
+                      </>
                     )}
                   </div>
                 </div>

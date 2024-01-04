@@ -16,12 +16,7 @@ const AuthorBlock = ({ id }) => {
         rel='noreferrer'
         target='_blank'
       >
-        {'/' +
-          ' ' +
-          isAuthor.getAuthor.name +
-          ',' +
-          ' ' +
-          isAuthor.getAuthor.title}
+        {isAuthor.getAuthor.name + ',' + ' ' + isAuthor.getAuthor.title}
       </a>
     </div>
   ) : (
