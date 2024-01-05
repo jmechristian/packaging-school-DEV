@@ -26,11 +26,13 @@ const Page = () => {
           key='title'
         />
       </Head>
-      <div className='flex flex-col dark:bg-dark-dark'>
+      <div className='flex flex-col dark:bg-dark-dark gap-28 md:gap-36 lg:gap-48'>
         <CertificateHero />
-        <CertificateNavigation />
-        <CertificateAbout />
-        <CertificateWhat />
+        <div className='flex flex-col gap-6 md:gap-12 lg:gap-24'>
+          <CertificateNavigation />
+          <CertificateAbout />
+        </div>
+        {/* <CertificateWhat /> */}
         <CMPMHow />
         <CertificateCirriculum />
         <Testimonial

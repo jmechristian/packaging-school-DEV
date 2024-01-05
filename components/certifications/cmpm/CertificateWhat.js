@@ -7,14 +7,14 @@ const CertificateWhat = () => {
     <section className='py-16 lg:py-32'>
       <div className='flex flex-col gap-9 container-7xl'>
         <div className='flex flex-col gap-9 max-w-4xl mx-auto'>
-          <h2 className='text-4xl lg:text-5xl max-w-2xl dark:text-white '>
+          <h2 className='text-4xl xl:text-5xl max-w-2xl dark:text-white '>
             <FadeIn>
               The Industry&apos;s Most Valuable Certificate Program
             </FadeIn>
           </h2>
           <div>
             <FadeIn>
-              <p className='dark:text-gray-500 text-slate-700 font-greycliff text-xl'>
+              <p className='dark:text-gray-500 font-greycliff text-xl'>
                 With a duration of 12 weeks and 14 comprehensive courses, this
                 <span className='dark:text-white text-slate-900 font-bold'>
                   {' '}

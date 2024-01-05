@@ -45,10 +45,10 @@ export default function CMPMPricing() {
   return (
     <div>
       <div className='mx-auto'>
-        <h2 className='text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl'>
+        <h2 className='text-4xl font-bold tracking-tight text-gray-900 dark:text-white xl:text-5xl'>
           Future Proof Your Skills
         </h2>
-        <div className='mt-6 text-xl text-gray-700 dark:text-gray-500 max-w-prose'>
+        <div className='mt-6 text-lg dark:text-gray-500 max-w-4xl'>
           To start your journey,{' '}
           <span className='font-bold dark:text-white'>
             please fill out the short application form and submit your $25
@@ -89,7 +89,7 @@ export default function CMPMPricing() {
             Find Your Cohort
           </h3>
 
-          <div className='grid lg:grid-cols-3 gap-6 mt-6'>
+          <div className='grid xl:grid-cols-3 gap-6 mt-6'>
             {sessions &&
               sessions
                 .sort((a, b) => {

@@ -93,7 +93,7 @@ const CertificateNavigation = () => {
                     >
                       {(sectionIndex + 1).toString().padStart(2, '0')}
                     </span>
-                    <span className='ml-4 text-base font-medium text-slate-900 dark:text-white'>
+                    <span className='ml-4 text-sm font-medium text-slate-900 dark:text-white'>
                       {section.title}
                     </span>
                   </a>
@@ -120,14 +120,14 @@ const CertificateNavigation = () => {
       <div className='hidden sm:flex sm:h-32 sm:justify-center sm:border-b border-slate-300  sm:bg-white/95 sm:dark:bg-white/10 sm:[@supports(backdrop-filter:blur(0))]:bg-white/80 sm:[@supports(backdrop-filter:blur(0))]:dark:bg-dark-mid sm:[@supports(backdrop-filter:blur(0))]:backdrop-blur'>
         <ol
           role='list'
-          className='mb-[-2px] container-7xl grid auto-cols-[minmax(0,15rem)] grid-flow-col text-lg font-medium text-slate-900 dark:text-gray-300 [counter-reset:section]'
+          className='mb-[-2px] container-7xl grid auto-cols-[minmax(0,15rem)] grid-flow-col font-medium text-slate-900 dark:text-gray-300 [counter-reset:section]'
         >
           {sections.map((section, sectionIndex) => (
             <li key={section.id} className='flex [counter-increment:section]'>
               <a
                 href={`#${section.id}`}
                 className={clsx(
-                  'flex w-full flex-col items-center justify-center border-b-2 before:mb-2 font-sans font-semibold before:font-mono before:text-sm before:content-[counter(section,decimal-leading-zero)]',
+                  'flex w-full flex-col items-center text-center justify-center border-b-2 before:mb-2 font-sans font-semibold before:font-mono before:text-sm before:content-[counter(section,decimal-leading-zero)]',
                   'border-transparent before:text-slate-500 hover:bg-blue-50/40 hover:before:text-slate-900 '
                 )}
               >

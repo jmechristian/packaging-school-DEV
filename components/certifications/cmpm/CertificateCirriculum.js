@@ -4,15 +4,15 @@ import FadeIn from '../../../helpers/FadeIn';
 
 const CertificateCirriculum = () => {
   return (
-    <div className='container-7xl py-16 lg:py-32'>
+    <div className='container-7xl'>
       <FadeIn>
         <div className='flex flex-col gap-16'>
-          <div className='lg:text-center text-4xl lg:text-5xl dark:text-white'>
+          <div className='lg:text-center text-4xl xl:text-5xl dark:text-white'>
             <h2 className='leading-tight font-bold'>
               Comprehensive Curriculum
             </h2>
           </div>
-          <div className='grid lg:grid-cols-4 gap-9 overflow-hidden'>
+          <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-9 overflow-hidden'>
             <div className='flex flex-col gap-9 w-full'>
               <WeekItem
                 week={'1'}

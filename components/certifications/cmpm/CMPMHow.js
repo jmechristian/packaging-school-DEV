@@ -34,37 +34,14 @@ const item = [
 const CMPMHow = () => {
   return (
     <section id='how'>
-      <div className='container-7xl py-32 flex flex-col gap-16'>
-        <div className='grid lg:grid-cols-2 gap-24'>
-          <div className='flex flex-col gap-16'>
-            <FadeIn>
-              <SectionHeading number='2'>How does it work?</SectionHeading>
-            </FadeIn>
-            <FadeIn>
-              <div className='flex flex-col gap-9'>
-                <div className='flex flex-col'>
-                  <div className='font-bold text-4xl lg:text-5xl'>
-                    <h2 className='dark:text-white'>12-weeks.</h2>
-                  </div>
-                  <div className='text-gray-500 font-bold text-4xl lg:text-5xl'>
-                    PhD-Led.
-                  </div>
-                </div>
-                <div className='text-xl text-gray-700 dark:text-gray-500 max-w-prose'>
-                  The Certificate of Mastery in Packaging Management is a
-                  12-week program offered 5 times a year (spring, summer, fall
-                  1, fall 2, and winter). To begin the process, simply complete
-                  a brief application and submit the $25 application fee. If you
-                  have any doubts or inquiries, Dr. Suggs, the program
-                  instructor, is readily available for a call to address all
-                  your questions and concerns.
-                </div>
-              </div>
-            </FadeIn>
-          </div>
+      <div className='container-7xl flex flex-col  gap-16'>
+        <FadeIn>
+          <SectionHeading number='2'>How does it work?</SectionHeading>
+        </FadeIn>
+        <div className='grid md:grid-cols-2  gap-6 lg:gap-16'>
           <div className='flex flex-col gap-3'>
             <div
-              className='w-full aspect-[3/4] lg:aspect-[4/3] relative bg-center bg-cover rounded-lg'
+              className='w-full aspect-[3/4] lg:aspect-[4/3] relative bg-center bg-cover rounded-lg max-w-md xl:max-w-xl mx-auto'
               style={{
                 backgroundImage: `url('https://packschool.s3.amazonaws.com/JULIE-2018-sm.jpg')`,
               }}
@@ -92,6 +69,29 @@ const CMPMHow = () => {
                 </div>
               </div>
             </div>
+          </div>
+          <div className='flex flex-col gap-6'>
+            <FadeIn>
+              <div className='flex flex-col gap-9'>
+                <div className='flex flex-col'>
+                  <div className='font-bold text-4xl xl:text-5xl'>
+                    <h2 className='dark:text-white'>12-weeks.</h2>
+                  </div>
+                  <div className='text-gray-500 font-bold text-4xl xl:text-5xl'>
+                    PhD-Led.
+                  </div>
+                </div>
+                <div className='text-lg dark:text-gray-500 max-w-prose'>
+                  The Certificate of Mastery in Packaging Management is a
+                  12-week program offered 5 times a year (spring, summer, fall
+                  1, fall 2, and winter). To begin the process, simply complete
+                  a brief application and submit the $25 application fee. If you
+                  have any doubts or inquiries, Dr. Suggs, the program
+                  instructor, is readily available for a call to address all
+                  your questions and concerns.
+                </div>
+              </div>
+            </FadeIn>
           </div>
         </div>
       </div>

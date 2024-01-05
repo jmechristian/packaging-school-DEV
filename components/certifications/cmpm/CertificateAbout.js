@@ -7,70 +7,44 @@ import {
   AcademicCapIcon,
   MagnifyingGlassPlusIcon,
 } from '@heroicons/react/24/outline';
+import PDPDownload from './PDPDownload';
 
 const CertificateAbout = () => {
   return (
-    <section className='py-32 container-7xl' id='about'>
-      <div className='grid lg:grid-cols-2 gap-9 lg:gap-28 justify-end'>
+    <section className='container-7xl' id='about'>
+      <div className='flex flex-col lg:flex-row gap-16 lg:gap-9 xl:gap-16 items-center'>
         <div className='flex flex-col gap-9'>
           <FadeIn>
             <SectionHeading number='1'>What is CMPM?</SectionHeading>
           </FadeIn>
-          <h2 className='text-4xl lg:text-5xl max-w-2xl dark:text-white'>
-            <FadeIn>
-              Executive-level education design to be agile giving you the
-              competitive edge.
-            </FadeIn>
+          <h2 className='text-4xl xl:text-5xl max-w-2xl dark:text-white'>
+            <FadeIn>Executive-level education design to be agile.</FadeIn>
           </h2>
-          <div>
-            <p className='dark:text-gray-500 text-slate-700 text-xl font-greycliff tracking-wide'>
-              Distinguish yourself from your colleagues by acquiring a tangible
-              solution that can be presented to both management and peers. The
-              exceptional feature of this program lies in its{' '}
-              <span className='dark:text-white text-base-mid font-bold'>
+
+          <div className='flex flex-col gap-6 dark:text-gray-500  text-lg font-greycliff tracking-wide'>
+            <p className=''>
+              Acquiring a tangible solution that can be presented to both
+              management and peers. The exceptional feature of this program lies
+              in its{' '}
+              <span className='dark:text-white font-bold'>
                 Packaging Development Plan (PDP)
               </span>{' '}
               and{' '}
-              <span className='dark:text-white text-base-mid font-bold'>
+              <span className='dark:text-white font-bold'>
                 personalized 1-1 coaching
               </span>
               , enabling students to apply course teachings to their own
-              organizational or personal projects. The PDP, an ongoing project
-              within the certificate, becomes an invaluable asset to share with
-              stakeholders involved in realizing your projects, and it offers
-              endless possibilities as it can be tailored to your unique
-              requirements.
+              organizational or personal projects.
+            </p>
+            <p>
+              With a duration of 12 weeks and 14 comprehensive courses, this
+              online program offers flexibility for individuals with full-time
+              jobs, while ensuring continuous support through Dr. Suggs&apos;
+              readily available office hours.
             </p>
           </div>
-        </div>
-        <div className='flex flex-col gap-9 lg:gap-12 justify-end'>
           <FadeIn>
-            <div className='grid grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-9'>
-              <StatCard stat='80' title='Certificate Hours' />
-              <StatCard stat='14' title='Certificate Courses' />
-              <StatCard stat='8' title={`CEU \nCredits`} />
-              <StatCard
-                stat={
-                  <AcademicCapIcon className='w-12 h-12 stroke-white dark:stroke-clemson' />
-                }
-                title='PhD-led Project'
-              />
-              <StatCard
-                stat={
-                  <DocumentPlusIcon className='w-12 h-12 stroke-white dark:stroke-clemson' />
-                }
-                title='Application Required'
-              />
-              <StatCard
-                stat={
-                  <MagnifyingGlassPlusIcon className='w-12 h-12 stroke-white dark:stroke-clemson' />
-                }
-                title='Rigorous Examination'
-              />
-            </div>
-          </FadeIn>
-          <FadeIn>
-            <div className='w-full py-6 lg:p-9 flex gap-9 items-center border-t border-b border-slate-800'>
+            <div className='w-full py-6 lg:p-6 flex gap-5 items-center border-t border-b border-slate-800'>
               <div className='w-40'>
                 <img
                   src='https://packschool.s3.amazonaws.com/01-LOGO_ClemsonCCL.png'
@@ -85,6 +59,39 @@ const CertificateAbout = () => {
                 </p>
               </div>
             </div>
+          </FadeIn>
+        </div>
+        <div className='flex flex-col gap-9 justify-end border rounded-xl py-9 px-6 shadow-2xl shadow-base-brand bg-white h-full'>
+          <div className='grid grid-cols-3 overflow-hidden'>
+            <div className='flex flex-col gap-2 border-r-neutral-400 border-r last-of-type:border-r-0 pl-5'>
+              <div className='text-5xl font-bold'>14</div>
+              <div className='font-bold leading-none text-neutral-500 text-sm md:text-base'>
+                Certificate
+                <br />
+                Courses
+              </div>
+            </div>
+            <div className='flex flex-col gap-2 border-r-neutral-400 border-r last-of-type:border-r-0 pl-5'>
+              <div className='text-5xl font-bold'>80</div>
+              <div className='font-bold leading-none text-neutral-500 text-sm md:text-base'>
+                Certificate
+                <br />
+                Hours
+              </div>
+            </div>
+            <div className='flex flex-col gap-2 border-r-neutral-400 border-r last-of-type:border-r-0 pl-5'>
+              <div className='text-5xl font-bold'>
+                <AcademicCapIcon className='w-12' />
+              </div>
+              <div className='font-bold leading-none text-neutral-500 text-sm md:text-base'>
+                PhD-Led
+                <br />
+                Project
+              </div>
+            </div>
+          </div>
+          <FadeIn>
+            <PDPDownload />
           </FadeIn>
         </div>
       </div>

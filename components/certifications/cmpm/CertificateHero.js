@@ -1,19 +1,40 @@
 import React from 'react';
-import HeadlineMotion from '../../../helpers/HeadlineMotion';
+import VideoPlayer from '../../VideoPlayer';
 import FadeIn from '../../../helpers/FadeIn';
 import CertHeroImage from '../../../slices/CertificateHero/components/CertHeroImage';
 import Link from 'next/link';
-import { ArrowLongRightIcon, BoltIcon } from '@heroicons/react/24/outline';
+import {
+  ArrowLongRightIcon,
+  BoltIcon,
+  ClockIcon,
+} from '@heroicons/react/24/outline';
 import { useRouter } from 'next/router';
+import CountdownTimer from '../../shared/CountdownTimer';
 
 const CertificateHero = () => {
   const router = useRouter();
   return (
-    <div className='grid lg:grid-cols-2 items-center gap-6 overflow-hidden py-12 md:py-24 container-7xl'>
-      <div>
-        <CertHeroImage />
+    <div className='flex flex-col gap-12 xl:gap-24 lg:flex-row items-center pt-6 md:pt-16 lg:pt-24 container-7xl text-center lg:text-left'>
+      <div className='w-full max-w-sm md:max-w-md xl:max-w-2xl flex flex-col shadow-xl'>
+        <div className='w-full h-full bg-brand-yellow-light rounded-t-xl px-6 pb-6'>
+          <FadeIn>
+            <div className='w-full h-full aspect-[16/9] mt-8 shadow-2xl'>
+              <VideoPlayer
+                videoEmbedLink={'https://youtu.be/N_hYWvQO0Sg'}
+                light={true}
+              />
+            </div>
+          </FadeIn>
+        </div>
+        <div className='flex flex-col gap-4 bg-black rounded-b-xl px-6 pt-5 pb-7 items-center'>
+          <div className='font-bold text-white'>
+            <span className=' text-white/50'>Deadline to Apply:</span> Feb. 22,
+            2024
+          </div>
+          <CountdownTimer />
+        </div>
       </div>
-      <div className='flex flex-col gap-9'>
+      <div className='flex flex-col gap-6 xl:gap-9 flex-1'>
         <div>
           <FadeIn>
             <h1 className='text-4xl xl:text-5xl leading-tight dark:text-white'>
@@ -21,9 +42,10 @@ const CertificateHero = () => {
             </h1>
           </FadeIn>
         </div>
+
         <div>
           <FadeIn>
-            <p className='text-xl font-greycliff text-slate-700 dark:text-gray-500 tracking-wide'>
+            <p className='text-lg xl:text-xl font-greycliff dark:text-gray-500 tracking-wide'>
               A 12-week, PhD-led certificate program ideal for ambitious
               professionals seeking to advance their career in the packaging
               industry and for companies actively seeking future leaders and
@@ -34,9 +56,9 @@ const CertificateHero = () => {
 
         <div>
           <FadeIn>
-            <div className='flex flex-col md:flex-row items-center gap-6 mt-4'>
+            <div className='flex flex-col xl:flex-row xl:items-center left-center gap-6 mt-4'>
               <button
-                className='w-full md:w-fit px-9 bg-clemson rounded-lg py-4 text-white font-semibold font-greycliff text-xl'
+                className='w-full md:w-fit px-6 bg-clemson rounded-lg py-4 text-white font-semibold font-greycliff text-xl'
                 onClick={() =>
                   router.push('/certificate-of-mastery-in-packaging-management')
                 }

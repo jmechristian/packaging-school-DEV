@@ -89,7 +89,7 @@ const CMPMReviews = () => {
 
   return (
     <section id='reviews'>
-      <div className='container-7xl py-32 flex flex-col gap-12'>
+      <div className='container-7xl flex flex-col gap-12'>
         <FadeIn>
           <SectionHeading number='4'>What do your peers say?</SectionHeading>
         </FadeIn>
@@ -97,7 +97,7 @@ const CMPMReviews = () => {
           <div>
             <div>
               <div className='max-w-3xl'>
-                <p className='text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl'>
+                <p className='text-4xl font-bold tracking-tight text-gray-900 dark:text-white xl:text-5xl'>
                   We have worked with tens of thousands of amazing people.
                 </p>
               </div>

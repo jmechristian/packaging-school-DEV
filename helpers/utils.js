@@ -209,3 +209,36 @@ export const updateDeal = async (id, formType) => {
 
   return deal;
 };
+
+export const createCMPMDeal = async (contact) => {
+  const deal = await fetch(
+    `https://packagingschool42200.api-us1.com/api/3/deals`,
+    {
+      method: 'POST',
+      headers: {
+        accept: 'application/json',
+        'content-type': 'application/json',
+        'Api-Token':
+          '5b711970d216e0f86172aa745b874bcd8ab60f27e791dce12137beb0533c3cd6618d1021',
+      },
+      body: JSON.stringify({
+        deal: {
+          status: 0,
+          title: 'New PDP Outline Download',
+          group: '2',
+          stage: '4',
+          contact: contact,
+          owner: '10',
+          value: 700000,
+          currency: 'usd',
+        },
+      }),
+    }
+  )
+    .then((response) => response.json())
+    .catch((err) => {
+      console.log(err);
+    });
+
+  return deal;
+};
