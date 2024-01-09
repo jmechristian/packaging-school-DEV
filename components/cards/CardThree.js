@@ -2,9 +2,15 @@ import Image from 'next/image';
 import React, { useMemo, useState } from 'react';
 import { MdAccessTime, MdExtension } from 'react-icons/md';
 import { useSelector } from 'react-redux';
+import { AnimatePresence, motion } from 'framer-motion';
+
+import { setCategoryIcon } from '../../helpers/utils';
+import VideoPlayer from '../VideoPlayer';
 
 const CardThree = ({ id }) => {
   const [isLoading, setIsLoading] = useState(false);
+  const [isHovering, setIsHovering] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const { allCourses } = useSelector((state) => state.course_filter);
 
@@ -13,7 +19,14 @@ const CardThree = ({ id }) => {
   }, [id, allCourses]);
 
   return cardLesson ? (
-    <div className='w-[360px] h-[515px] bg-neutral-900 rounded-[22px] flex justify-center py-3 shadow-xl hover:scale-[102%] transition-all ease-in cursor-pointer'>
+    <div
+      className='w-[360px] h-[515px] bg-neutral-900 rounded-[22px] flex justify-center py-3 shadow-xl hover:shadow-2xl hover:scale-[102%] transition-all ease-in cursor-pointer'
+      onMouseEnter={() => setIsHovering(true)}
+      onMouseLeave={() => {
+        setIsHovering(false);
+        setIsPlaying(false);
+      }}
+    >
       <div className='w-[336px] h-full bg-yellow-100 rounded-2xl'>
         <div className='h-[77px] bg-clemson rounded-t-xl flex items-center gap-3'>
           <div className='bg-neutral-900 -ml-2 h-full w-[73px] rounded-r-2xl flex items-center justify-center'>
@@ -31,18 +44,48 @@ const CardThree = ({ id }) => {
           </div>
         </div>
         <div
-          className='w-full h-auto aspect-[16/9] bg-cover bg-center'
+          className='w-full h-auto aspect-[16/9] bg-cover bg-center relative'
           style={{
             backgroundImage: `url(${cardLesson[0].seoImage})`,
           }}
-        ></div>
-        <div className='bg-white w-full font-bold h-[45px] rounded-xl ring-6 ring-neutral-900 -mr-2'>
+        >
+          <AnimatePresence>
+            <motion.div
+              className='absolute inset-0 z-10 bg-black/40 flex justify-center items-center opacity-0'
+              initial={{ opacity: 0 }}
+              animate={isHovering && { opacity: 1 }}
+              exit={{ opacity: 0 }}
+              key={isHovering}
+            >
+              {isHovering && isPlaying ? (
+                <motion.div className='aspect-[16/9] w-full h-auto relative z-[2] flex items-center justify-center bg-black transition-opacity ease-in'>
+                  <VideoPlayer
+                    videoEmbedLink={cardLesson[0].preview}
+                    light={false}
+                    playing={true}
+                  />
+                </motion.div>
+              ) : (
+                <motion.div
+                  onClick={() => setIsPlaying(true)}
+                  initial={{ scale: 0, opacity: 0 }}
+                  animate={isHovering && { opacity: 1, scale: '100%' }}
+                  exit={{ scale: 0, opacity: 0 }}
+                  key={isHovering}
+                  className='w-[36%] h-full bg-contain bg-center bg-no-repeat '
+                  style={{
+                    backgroundImage: `url('https://packschool.s3.amazonaws.com/play-sm-2.png')`,
+                  }}
+                ></motion.div>
+              )}
+            </motion.div>
+          </AnimatePresence>
+        </div>
+        <div className='bg-white w-full font-bold h-[45px] rounded-xl ring-6 ring-neutral-900 relative'>
           <div className='w-full px-3 flex items-center justify-between h-full'>
             <div className='font-bold text-lg'>${cardLesson[0].price}</div>
             <div className='flex gap-1.5 items-center'>
-              <div className='aspect-[1/1] w-[28px] h-[28px] bg-neutral-900 rounded-full flex items-center justify-center'>
-                <MdExtension color='white' size={18} />
-              </div>
+              {cardLesson[0].categoryArray.map((c) => setCategoryIcon(c))}
               <div className='flex justify-center items-center text-lg'>
                 {cardLesson[0].hours} <MdAccessTime color='black' size={19} />
               </div>

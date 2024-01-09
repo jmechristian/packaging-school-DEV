@@ -17,7 +17,7 @@ const Page = () => {
   const isLegendaries = useMemo(() => {
     return (
       allCourses &&
-      allCourses.filter((c) => c.partOf && c.partOf.includes('CPS'))
+      allCourses.filter((c) => c.partOf && c.partOf.includes('LEGENDARY'))
     );
   }, [allCourses]);
 
@@ -25,7 +25,7 @@ const Page = () => {
     <div className='w-full h-full my-24 max-w-7xl mx-auto flex flex-col gap-16'>
       <div className='w-full flex justify-between items-center'>
         <div>
-          <h1 className='text-4xl'>CPS Courses</h1>
+          <h1 className='text-4xl'>CPS/ APS Courses</h1>
         </div>
         <div className='flex gap-2 items-center'>
           <Image
@@ -37,7 +37,7 @@ const Page = () => {
           <div className='font-bold'>Legendaries</div>
         </div>
       </div>
-      <div className='w-full h-full grid grid-cols-3 gap-10 border p-6'>
+      <div className='w-full h-full grid lg:grid-cols-3 gap-10 border p-6'>
         {isLegendaries &&
           isLegendaries.map((l) => (
             <div className='flex justify-center items-center' key={l.id}>
