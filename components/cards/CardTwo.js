@@ -54,7 +54,7 @@ const TiltCard = () => {
         rotateX,
         transformStyle: 'preserve-3d',
       }}
-      className='relative h-[425px] w-[300px] rounded-xl bg-gradient-to-br from-indigo-300 to-violet-300'
+      className='relative w-[360px] h-[515px] rounded-3xl bg-neutral-900'
     >
       <div
         style={{
@@ -62,22 +62,7 @@ const TiltCard = () => {
           transformStyle: 'preserve-3d',
         }}
         className='absolute inset-4 grid place-content-center rounded-xl bg-white shadow-lg'
-      >
-        <FiMousePointer
-          style={{
-            transform: 'translateZ(75px)',
-          }}
-          className='mx-auto text-4xl'
-        />
-        <p
-          style={{
-            transform: 'translateZ(50px)',
-          }}
-          className='text-center text-2xl font-bold'
-        >
-          HOVER ME
-        </p>
-      </div>
+      ></div>
     </motion.div>
   );
 };
