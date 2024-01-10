@@ -27,19 +27,53 @@ const CardThree = ({ id }) => {
         setIsPlaying(false);
       }}
     >
-      <div className='w-[336px] h-full bg-yellow-100 rounded-2xl'>
-        <div className='h-[77px] bg-clemson rounded-t-xl flex items-center gap-3'>
+      <div
+        className={`w-[336px] h-full rounded-2xl ${
+          cardLesson[0].partOf && cardLesson[0].partOf.includes('LEGENDARY')
+            ? 'bg-yellow-100'
+            : cardLesson[0].partOf && cardLesson[0].partOf.includes('EPIC')
+            ? 'bg-gradient-to-b from-base-mid via-base-light to-white'
+            : 'bg-white'
+        }`}
+      >
+        <div
+          className={`h-[77px]  rounded-t-xl flex items-center gap-3 ${
+            cardLesson[0].partOf && cardLesson[0].partOf.includes('LEGENDARY')
+              ? 'bg-clemson'
+              : cardLesson[0].partOf && cardLesson[0].partOf.includes('EPIC')
+              ? 'bg-base-mid'
+              : 'bg-green-600'
+          }`}
+        >
           <div className='bg-neutral-900 -ml-2 h-full w-[73px] rounded-r-2xl flex items-center justify-center'>
-            <div className='flex justify-center rotate-6'>
-              <Image
-                src={'https://packschool.s3.amazonaws.com/gold-diamon.png'}
-                alt='legendary'
-                width={51}
-                height={46}
-              />
+            <div className='flex justify-center'>
+              {cardLesson[0].partOf &&
+              cardLesson[0].partOf.includes('LEGENDARY') ? (
+                <Image
+                  src={'https://packschool.s3.amazonaws.com/gold-diamon.png'}
+                  alt='legendary'
+                  width={45}
+                  height={40}
+                />
+              ) : cardLesson[0].partOf &&
+                cardLesson[0].partOf.includes('EPIC') ? (
+                <Image
+                  src={'https://packschool.s3.amazonaws.com/epics.png'}
+                  alt='epic'
+                  width={45}
+                  height={40}
+                />
+              ) : (
+                <Image
+                  src={'https://packschool.s3.amazonaws.com/emerald-sm-2.png'}
+                  alt='rare'
+                  width={45}
+                  height={40}
+                />
+              )}
             </div>
           </div>
-          <div className='font-bold text-xl text-white leading-tight w-fit flex-1'>
+          <div className='font-semibold text-xl text-white leading-none w-fit flex-1 pr-3'>
             {cardLesson[0].title}
           </div>
         </div>
