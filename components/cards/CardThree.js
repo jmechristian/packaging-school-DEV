@@ -119,7 +119,11 @@ const CardThree = ({ id }) => {
         </div>
         <div className='bg-white w-full font-bold h-[45px] rounded-xl ring-6 ring-neutral-900 relative'>
           <div className='w-full px-3 flex items-center justify-between h-full'>
-            <div className='font-bold text-lg'>${cardLesson[0].price}</div>
+            <div className='font-bold text-lg'>
+              {cardLesson[0].price === 'FREE'
+                ? 'FREE'
+                : '$' + cardLesson[0].price}
+            </div>
             <div className='flex gap-1.5 items-center w-fit'>
               {cardLesson[0].categoryArray.map((c) => setCategoryIcon(c))}
               <div className='flex justify-center items-center text-lg'>
