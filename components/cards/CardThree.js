@@ -83,42 +83,44 @@ const CardThree = ({ id }) => {
             backgroundImage: `url(${cardLesson[0].seoImage})`,
           }}
         >
-          <AnimatePresence>
-            <motion.div
-              className='absolute inset-0 z-10 bg-black/40 flex justify-center items-center opacity-0'
-              initial={{ opacity: 0 }}
-              animate={isHovering && { opacity: 1 }}
-              exit={{ opacity: 0 }}
-              key={isHovering}
-            >
-              {isHovering && isPlaying ? (
-                <motion.div className='aspect-[16/9] w-full h-auto relative z-[2] flex items-center justify-center bg-black transition-opacity ease-in'>
-                  <VideoPlayer
-                    videoEmbedLink={cardLesson[0].preview}
-                    light={false}
-                    playing={true}
-                  />
-                </motion.div>
-              ) : (
-                <motion.div
-                  onClick={() => setIsPlaying(true)}
-                  initial={{ scale: 0, opacity: 0 }}
-                  animate={isHovering && { opacity: 1, scale: '100%' }}
-                  exit={{ scale: 0, opacity: 0 }}
-                  key={isHovering}
-                  className='w-[36%] h-full bg-contain bg-center bg-no-repeat '
-                  style={{
-                    backgroundImage: `url('https://packschool.s3.amazonaws.com/play-sm-2.png')`,
-                  }}
-                ></motion.div>
-              )}
-            </motion.div>
-          </AnimatePresence>
+          {cardLesson[0].preview && (
+            <AnimatePresence>
+              <motion.div
+                className='absolute inset-0 z-10 bg-black/40 flex justify-center items-center opacity-0'
+                initial={{ opacity: 0 }}
+                animate={isHovering && { opacity: 1 }}
+                exit={{ opacity: 0 }}
+                key={isHovering}
+              >
+                {isHovering && isPlaying ? (
+                  <motion.div className='aspect-[16/9] w-full h-auto relative z-[2] flex items-center justify-center bg-black transition-opacity ease-in'>
+                    <VideoPlayer
+                      videoEmbedLink={cardLesson[0].preview}
+                      light={false}
+                      playing={true}
+                    />
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    onClick={() => setIsPlaying(true)}
+                    initial={{ scale: 0, opacity: 0 }}
+                    animate={isHovering && { opacity: 1, scale: '100%' }}
+                    exit={{ scale: 0, opacity: 0 }}
+                    key={isHovering}
+                    className='w-[36%] h-full bg-contain bg-center bg-no-repeat '
+                    style={{
+                      backgroundImage: `url('https://packschool.s3.amazonaws.com/play-sm-2.png')`,
+                    }}
+                  ></motion.div>
+                )}
+              </motion.div>
+            </AnimatePresence>
+          )}
         </div>
         <div className='bg-white w-full font-bold h-[45px] rounded-xl ring-6 ring-neutral-900 relative'>
           <div className='w-full px-3 flex items-center justify-between h-full'>
             <div className='font-bold text-lg'>${cardLesson[0].price}</div>
-            <div className='flex gap-1.5 items-center'>
+            <div className='flex gap-1.5 items-center w-fit'>
               {cardLesson[0].categoryArray.map((c) => setCategoryIcon(c))}
               <div className='flex justify-center items-center text-lg'>
                 {cardLesson[0].hours} <MdAccessTime color='black' size={19} />

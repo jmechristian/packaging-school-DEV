@@ -79,49 +79,49 @@ export const setCategoryIcon = (cat) => {
   switch (cat) {
     case 'MATERIALS':
       return (
-        <div className='aspect-[1/1] w-[28px] h-[28px] bg-base-dark rounded-full flex items-center justify-center'>
+        <div className='w-7 h-7 bg-base-dark rounded-full flex items-center justify-center'>
           <MdExtension color='white' size={18} />
         </div>
       );
     case 'INDUSTRY':
       return (
-        <div className='aspect-[1/1] w-[28px] h-[28px] bg-base-mid rounded-full flex items-center justify-center'>
+        <div className='w-7 h-7 bg-base-mid rounded-full flex items-center justify-center'>
           <MdFactory color='white' size={18} />
         </div>
       );
     case 'DESIGN':
       return (
-        <div className='aspect-[1/1] w-[28px] h-[28px] bg-clemson rounded-full flex items-center justify-center'>
+        <div className='w-7 h-7 bg-clemson rounded-full flex items-center justify-center'>
           <MdColorLens color='white' size={18} />
         </div>
       );
     case 'FOODANDBEVERAGE':
       return (
-        <div className='aspect-[1/1] w-[28px] h-[28px] bg-indigo-400 rounded-full flex items-center justify-center'>
+        <div className='w-7 h-7 bg-indigo-400 rounded-full flex items-center justify-center'>
           <MdLunchDining color='white' size={18} />
         </div>
       );
     case 'SUPPLYCHAIN':
       return (
-        <div className='aspect-[1/1] w-[28px] h-[28px] bg-clemson-dark rounded-full flex items-center justify-center'>
+        <div className='w-7 h-7 bg-clemson-dark rounded-full flex items-center justify-center'>
           <MdLocalShipping color='white' size={18} />
         </div>
       );
     case 'BUSINESS':
       return (
-        <div className='aspect-[1/1] w-[28px] h-[28px] bg-green-600 rounded-full flex items-center justify-center'>
+        <div className='w-7 h-7 bg-green-600 rounded-full flex items-center justify-center'>
           <MdBusinessCenter color='white' size={18} />
         </div>
       );
     case 'AUTO':
       return (
-        <div className='aspect-[1/1] w-[28px] h-[28px] bg-red-600 rounded-full flex items-center justify-center'>
+        <div className='w-7 h-7 bg-red-600 rounded-full flex items-center justify-center'>
           <MdMiscellaneousServices color='white' size={18} />
         </div>
       );
     default:
       return (
-        <div className='aspect-[1/1] w-[28px] h-[28px] bg-base-dark rounded-full flex items-center justify-center'>
+        <div className='w-7 h-7 bg-base-dark rounded-full flex items-center justify-center'>
           <MdExtension color='white' size={18} />
         </div>
       );
