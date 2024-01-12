@@ -37,6 +37,7 @@ const Page = () => {
         body: JSON.stringify({
           formType: isForm,
           contactId: user.data.contacts[0].id,
+          title: 'CMPM Abandoned App',
         }),
       }).then((response) => response.json());
 
@@ -74,6 +75,7 @@ const Page = () => {
           body: JSON.stringify({
             formType: isForm,
             contactId: newUser.data.contact.id,
+            title: 'CMPM Abandoned App',
           }),
         }).then((response) => response.json());
 

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { MdArrowOutward, MdSend, MdCheckCircle } from 'react-icons/md';
 import { AnimatePresence, motion } from 'framer-motion';
 
-const PDPDownload = () => {
+const OneSheetDownload = () => {
   const [isShown, setIsShown] = useState(false);
   const [isSending, setIsSending] = useState(false);
   const [isUnlocked, setIsUnlocked] = useState(false);
@@ -22,7 +22,7 @@ const PDPDownload = () => {
       );
       if (user.data.contacts[0]) {
         //Create Deal
-        const deal = await fetch('/api/create-cmpm-deal', {
+        const deal = await fetch('/api/create-csp-deal', {
           method: 'POST',
           headers: {
             accept: 'application/json',
@@ -30,7 +30,7 @@ const PDPDownload = () => {
           },
           body: JSON.stringify({
             contactId: user.data.contacts[0].id,
-            title: 'New PDP Outline Download',
+            title: 'CSP prospect',
           }),
         }).then((response) => response.json());
       } else {
@@ -47,7 +47,7 @@ const PDPDownload = () => {
 
         if (newUser.data.contact) {
           //Create Deal
-          const deal = await fetch('/api/create-cmpm-deal', {
+          const deal = await fetch('/api/create-csp-deal', {
             method: 'POST',
             headers: {
               accept: 'application/json',
@@ -55,7 +55,7 @@ const PDPDownload = () => {
             },
             body: JSON.stringify({
               contactId: newUser.data.contact.id,
-              title: 'New PDP Outline Download',
+              title: 'CSP prospect',
             }),
           }).then((response) => response.json());
         }
@@ -63,7 +63,7 @@ const PDPDownload = () => {
       setIsSuccess(true);
       setIsEmail('Success!');
       window.open(
-        'https://packschool.s3.amazonaws.com/PDP-spotlight-for-CMPM-WEB.pdf',
+        'https://packschool.s3.amazonaws.com/Cert_of_Sust._Info_Sheet_Comp.pdf',
         '_blank'
       );
     } else {
@@ -76,28 +76,16 @@ const PDPDownload = () => {
   return (
     <div className='relative'>
       <div
-        className='relative z-20 bg-brand-yellow-light rounded-2xl flex flex-col gap-6 md:gap-12 h-full lg:gap-6 items-center px-5 py-9 shadow-xl cursor-pointer hover:bg-brand-yellow transition-all ease-in group'
-        id='pdp-download'
+        className='relative z-20 bg-white ring-4 ring-black rounded-2xl flex flex-col gap-6 md:gap-12 h-full items-center px-5 py-4 shadow-xl cursor-pointer hover:bg-brand-yellow transition-all ease-in group bg-cover bg-bottom'
+        id='csp-download'
         onClick={() => setIsShown(!isShown)}
       >
-        <div className='font-medium uppercase text-3xl flex flex-col items-start w-full'>
-          <div>PDP Alum </div>
-          <div>Spotlight</div>
-        </div>
-        <div className='flex flex-col flex-1'>
-          <div className='leading-snug mt-1'>
-            The PDP, an ongoing project within the certificate, becomes an
-            invaluable asset to share with stakeholders involved in realizing
-            your projects, and it offers endless possibilities as it can be
-            tailored to your unique requirements.
+        <div className='flex items-center justify-between w-full'>
+          <div className='font-bold text-2xl flex flex-col items-start w-full tracking-tight'>
+            <div>Download The One-Sheet</div>
           </div>
-          <div className='mt-3 flex gap-3 items-center'>
-            <div className='font-bold leading-tight'>
-              Click to learn more about the projects our alumni completed.
-            </div>
-            <div>
-              <MdArrowOutward color='black' size={'70'} />
-            </div>
+          <div>
+            <MdArrowOutward color='black' size={'50'} />
           </div>
         </div>
       </div>
@@ -135,4 +123,4 @@ const PDPDownload = () => {
   );
 };
 
-export default PDPDownload;
+export default OneSheetDownload;

@@ -15,6 +15,7 @@ const Page = () => {
       <CSPNav />
       <div className='flex flex-col gap-12 md:gap-48'>
         <CSPWhat />
+        {/* <CSPMissionStatement /> */}
         <CSPHow />
         <CSPWhere />
         <CSPBio />

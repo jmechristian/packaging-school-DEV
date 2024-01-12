@@ -11,6 +11,7 @@ import {
 
 import CSPMissionStatement from './CSPMissionStatement';
 import Image from 'next/image';
+import OneSheetDownload from './OneSheetDownload';
 
 const CSPWhat = () => {
   return (
@@ -45,21 +46,23 @@ const CSPWhat = () => {
               integrate a cutting-edge LCA software into their packaging concept
               development and material selection processes.
             </p>
+            <div className='lg:pr-6'>
+              <OneSheetDownload />
+            </div>
           </div>
         </div>
-        <div className='flex flex-col gap-9 lg:gap-12 justify-end col-span-3 lg:col-span-2 w-full min-w-full'>
-          <div className='w-full h-full flex items-center justify-center'>
+        <div className='flex flex-col gap-9 lg:gap-0 justify-end col-span-3 lg:col-span-2 w-full min-w-full'>
+          <div className='w-full mx-auto h-full flex items-center justify-center'>
             <Image
               src={'https://packschool.s3.amazonaws.com/V2-Patch-5.png'}
               alt='Mastering Sustainable Packaging'
-              width={600}
-              height={600}
+              width={500}
+              height={500}
               className='w-full h-full'
             />
           </div>
         </div>
       </div>
-      <CSPMissionStatement />
     </section>
   );
 };

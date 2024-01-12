@@ -39,7 +39,7 @@ const CSPBio = () => {
               'An online course that provides an introduction to the area of bioplastics and offers guidance on the usage of these materials for packaging applications.'
             }
             background={
-              'https://packschool.s3.amazonaws.com/bioplastics%402x.png'
+              'https://packschool.s3.amazonaws.com/bioplastics-sm.png'
             }
             link={
               'https://packagingschool.com/courses/bioplastics-for-packaging-with-dr-sandeep-kulkarni'
