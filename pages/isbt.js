@@ -81,7 +81,7 @@ const Page = ({ isbt }) => {
                 'This limited time offer allows learners to take all the courses offered by the Beverage Institute for a discounted price. The courses in this bundle total 39 hours and take the learner on a journey through the fundamentals of beverage technology, beverage ingredients, sanitation for foundation beverages, microbiology basics, water and wastewater treatments, sweeteners, beverage gases, and all PET resins, preforms, and bottle technology.'
               }
               background={
-                'https://packschool.s3.amazonaws.com/bevValBundle-seoImage.png'
+                'https://packschool.s3.amazonaws.com/bev-value-sm.png'
               }
               link={'https://learn.packagingschool.com/enroll/389255'}
               link_text={'Select Course'}
@@ -94,7 +94,7 @@ const Page = ({ isbt }) => {
                 'This course covers the key ingredients used in most beverages. Each module covers chemistry, applications, quality attributes, food safety, regulatory requirements, and much more. And more importantly, especially for the product developer, is how these ingredients interact with one another to produce the intended beverage attributes. Anyone who works with beverages or ingredients will benefit from this course. Any consumer who wants more detailed and accurate information about the ingredients they consume will find it here.'
               }
               background={
-                'https://packschool.s3.amazonaws.com/isbt-seoImage.png'
+                'https://packschool.s3.amazonaws.com/ben-ingredients-sm.png'
               }
               link={'https://learn.packagingschool.com/enroll/389255'}
               link_text={'Select Course'}
@@ -106,9 +106,7 @@ const Page = ({ isbt }) => {
               description={
                 'The course benefits individuals who use beverage gases to create products such as carbonated soft drinks, oxygenated water, argon systems in wine processing, nitrogen for headspace control and pressurization, ozone generation, and oxygen in brewing and wastewater processes.'
               }
-              background={
-                'https://packschool.s3.amazonaws.com/gases-2-seoImage.png'
-              }
+              background={'https://packschool.s3.amazonaws.com/gases-sm.png'}
               link={'https://learn.packagingschool.com/enroll/1014824'}
               link_text={'Select Course'}
               Icon={AcademicCapIcon}
@@ -120,7 +118,7 @@ const Page = ({ isbt }) => {
                 'This course is a self-paced, interactive session providing a technical overview of the beverage industry.'
               }
               background={
-                'https://packschool.s3.amazonaws.com/fundBev-seoImage.png'
+                'https://packschool.s3.amazonaws.com/fund-bev-full-sm.png'
               }
               link={'https://learn.packagingschool.com/enroll/165283'}
               video={'https://www.youtube.com/embed/IWL8R7Xk8cU'}

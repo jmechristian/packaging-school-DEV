@@ -196,6 +196,12 @@ const AllCourseMenu = ({ click }) => {
                 {categoryMenu[9].name}
               </div>
             </div>
+            <div
+              className='pl-2 py-1.5 text-gray-700 cursor-pointer'
+              onClick={() => router.push('/isbt')}
+            >
+              Beverage Institute by ISBT&reg;
+            </div>
           </div>
         </div>
       </div>

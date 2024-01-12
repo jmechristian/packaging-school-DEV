@@ -3,6 +3,7 @@ import React, { useMemo, useState } from 'react';
 import { MdAccessTime, MdExtension } from 'react-icons/md';
 import { useSelector } from 'react-redux';
 import { AnimatePresence, motion } from 'framer-motion';
+import { useRouter } from 'next/router';
 
 import { setCategoryIcon } from '../../helpers/utils';
 import VideoPlayer from '../VideoPlayer';
@@ -12,6 +13,8 @@ const CardThree = ({ id }) => {
   const [isHovering, setIsHovering] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
 
+  const router = useRouter();
+
   const { allCourses } = useSelector((state) => state.course_filter);
 
   const cardLesson = useMemo(() => {
@@ -19,13 +22,16 @@ const CardThree = ({ id }) => {
   }, [id, allCourses]);
 
   return cardLesson ? (
-    <div
+    <motion.div
       className='w-[360px] h-[515px] bg-neutral-900 rounded-[22px] flex justify-center py-3 shadow-xl hover:shadow-2xl hover:scale-[102%] transition-all ease-in cursor-pointer'
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => {
         setIsHovering(false);
         setIsPlaying(false);
       }}
+      onClick={() =>
+        router.push(`http://localhost:3000/sandbox/demo/${cardLesson[0].id}`)
+      }
     >
       <div
         className={`w-[336px] h-full rounded-2xl ${
@@ -136,7 +142,7 @@ const CardThree = ({ id }) => {
           {cardLesson[0].subheadline}
         </div>
       </div>
-    </div>
+    </motion.div>
   ) : (
     <div className=''>Loading</div>
   );
