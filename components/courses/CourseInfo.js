@@ -56,17 +56,21 @@ const CourseInfo = ({
           </div>
         </div>
         <div className='flex flex-col gap-4 p-4 xl:p-8'>
-          {partOf ? (
+          {partOf && partOf.includes('APC') && (
             <HoverCard
               title={'Your Journey Starts Here'}
               href={'/certifications/get-to-know-apc'}
-              subtitle={
-                'This course as part of the Automotive Pacakaging Certificate. Exploring distinctive aspects of automotive packaging, with exclusive content unmatched by any other.'
-              }
+              subtitle={`This course as part of the  Autmotive Packaging Certificate. Exploring distinctive aspects of automotive packaging, with exclusive content unmatched by any other.`}
               Icon={LuRocket}
             />
-          ) : (
-            <CourseCertificate certification={certification} />
+          )}
+          {partOf && partOf.includes('CPS') && (
+            <HoverCard
+              title={'Your Journey Starts Here'}
+              href={'/certifications/get-to-know-cps'}
+              subtitle={`This course as part of the  Certificate of Packaging Science. Exploring distinctive aspects of automotive packaging, with exclusive content unmatched by any other.`}
+              Icon={LuRocket}
+            />
           )}
         </div>
       </div>

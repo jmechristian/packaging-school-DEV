@@ -14,6 +14,7 @@ import VideoHero from '../../../components/lessons/VideoHero';
 import LessonSlides from '../../../components/lessons/LessonSlides';
 import ImageHero from '../../../components/lessons/ImageHero';
 import WiredLessonCard from '../../../components/shared/WiredLessonCard';
+import WiredCourseCard from '../../../components/shared/WiredCourseCard';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleSignInModal } from '../../../features/layout/layoutSlice';
@@ -250,35 +251,29 @@ const Page = ({ lesson }) => {
                       experts.
                     </div>
                   </div>
-                  {/* {featured && featured.length > 0 ? (
-                    <NewCouseCard
-                      title={featured[0].title}
-                      description={featured[0].subheadline}
-                      background={featured[0].seoImage}
-                      link={featured[0].link}
+                  {lesson.featured ? (
+                    <WiredCourseCard
+                      id={lesson.featured}
                       link_text={'Enroll Now'}
-                      Icon={AcademicCapIcon}
-                      video={featured[0].preview}
-                      // id={'806c0e2e-c4db-4c13-94f9-b49d4e8b2239'}
                     />
                   ) : (
-                    <> */}
-                  <NewCouseCard
-                    title={'Packaging Foundations'}
-                    description={
-                      'Learn the intricate dynamics of packaging as a system, integrating roles from marketing to warehousing, to become an effective stakeholder in package design.'
-                    }
-                    background={
-                      'https://packschool.s3.amazonaws.com/packaging-foundations-seoImage-2-sm.png'
-                    }
-                    link={'https://learn.packagingschool.com/enroll/35691'}
-                    link_text={'Enroll Now'}
-                    Icon={AcademicCapIcon}
-                    video={'https://www.youtube.com/watch?v=L4Q6sZlXoe4'}
-                    // id={'806c0e2e-c4db-4c13-94f9-b49d4e8b2239'}
-                  />
-                  {/* </>
-                  )} */}
+                    <>
+                      <NewCouseCard
+                        title={'Packaging Foundations'}
+                        description={
+                          'Learn the intricate dynamics of packaging as a system, integrating roles from marketing to warehousing, to become an effective stakeholder in package design.'
+                        }
+                        background={
+                          'https://packschool.s3.amazonaws.com/packaging-foundations-seoImage-2-sm.png'
+                        }
+                        link={'https://learn.packagingschool.com/enroll/35691'}
+                        link_text={'Enroll Now'}
+                        Icon={AcademicCapIcon}
+                        video={'https://www.youtube.com/watch?v=L4Q6sZlXoe4'}
+                        // id={'806c0e2e-c4db-4c13-94f9-b49d4e8b2239'}
+                      />
+                    </>
+                  )}
                 </div>
                 <div className='w-full h-0.5 bg-white/30 px-3'></div>
                 <div className='flex flex-col justify-center items-start md:col-span-2 py-2'>
