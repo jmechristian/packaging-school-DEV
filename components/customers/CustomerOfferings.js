@@ -50,7 +50,7 @@ const CustomerOfferings = ({ featured }) => {
         // id={'806c0e2e-c4db-4c13-94f9-b49d4e8b2239'}
       />
       <NewCouseCard
-        title={'Life Cycle Assessment'}
+        title={"SPC's Life Cycle Assessment"}
         description={
           'In this topic, we’ll first discuss the foundations of Life Cycle Assessment (LCA) and how it is being used to better understand the environmental impacts of products and packaging.'
         }
