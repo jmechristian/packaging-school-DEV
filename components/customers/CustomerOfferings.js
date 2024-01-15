@@ -45,7 +45,7 @@ const CustomerOfferings = ({ featured }) => {
         }
         link_text={'Select Topic'}
         Icon={AcademicCapIcon}
-        callout={'SPC Knowledge Library'}
+        // callout={'SPC Knowledge Library'}
         // video={'https://www.youtube.com/watch?v=ynDhF_jYZn8'}
         // id={'806c0e2e-c4db-4c13-94f9-b49d4e8b2239'}
       />
@@ -62,7 +62,7 @@ const CustomerOfferings = ({ featured }) => {
         }
         link_text={'Select Topic'}
         Icon={AcademicCapIcon}
-        callout={'SPC Knowledge Library'}
+        // callout={'SPC Knowledge Library'}
         // video={'https://www.youtube.com/watch?v=ynDhF_jYZn8'}
         // id={'806c0e2e-c4db-4c13-94f9-b49d4e8b2239'}
       />
