@@ -52,7 +52,7 @@ const CustomerFeatures = ({ courses }) => {
           'https://packschool.s3.amazonaws.com/gb-topic-1-seoImage-sm.png'
         }
         link={
-          'https://learn.packagingschool.com/enroll/2753655?price_id=3579258'
+          'https://learn.packagingschool.com/enroll/2753655?price_id=3579258&coupon=greenblue'
         }
         link_text={'Select Topic'}
         Icon={AcademicCapIcon}
