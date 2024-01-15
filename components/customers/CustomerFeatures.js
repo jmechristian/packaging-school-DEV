@@ -66,8 +66,8 @@ const CustomerFeatures = ({ courses }) => {
         background={mostPopularCourse && mostPopularCourse[0].seoImage}
         link={mostPopularCourse && mostPopularCourse[0].link}
         link_text={'Select Course'}
-        Icon={SparklesIcon}
-        callout={'Most Popular'}
+        Icon={AcademicCapIcon}
+        callout={'Packaging School Course'}
         video={mostPopularCourse && mostPopularCourse[0].preview}
       />
       <NewCouseCard

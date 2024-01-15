@@ -64,7 +64,7 @@ const Page = ({ customer }) => {
         open={true}
       />
       <FullWidthDropDown
-        title={'GreenBlue Knowledge Library Topics'}
+        title={'SPC Knowledge Library Topics'}
         Icon={AcademicCapIcon}
         bg='bg-gb-main'
         bgdark='bg-gradient-to-r from-gb-main to-gb-green'

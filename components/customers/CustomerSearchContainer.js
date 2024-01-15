@@ -163,7 +163,7 @@ const CustomerSearchContainer = ({ courses, reference }) => {
               }
               link_text={'Select Course'}
               Icon={SparklesIcon}
-              callout={'Most Popular'}
+              // callout={'Most Popular'}
               video={initCourses[0].preview}
               clicks={initCourses[0].clicks}
               targetedId={initCourses[0].targetedId}
@@ -180,7 +180,7 @@ const CustomerSearchContainer = ({ courses, reference }) => {
               }
               link_text={'Select Course'}
               Icon={SparklesIcon}
-              callout={'Most Popular'}
+              // callout={'Most Popular'}
               video={initCourses[1].preview}
               clicks={initCourses[1].clicks}
               targetedId={initCourses[1].targetedId}
@@ -197,7 +197,7 @@ const CustomerSearchContainer = ({ courses, reference }) => {
               }
               link_text={'Select Course'}
               Icon={SparklesIcon}
-              callout={'Most Popular'}
+              // callout={'Most Popular'}
               video={initCourses[2].preview}
               clicks={initCourses[2].clicks}
               targetedId={initCourses[2].targetedId}
