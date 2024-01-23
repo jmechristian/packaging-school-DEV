@@ -395,6 +395,7 @@ export const getLesson = /* GraphQL */ `
       status
       related
       featured
+      backdate
       createdAt
       updatedAt
     }
@@ -437,6 +438,7 @@ export const listLessons = /* GraphQL */ `
         status
         related
         featured
+        backdate
         createdAt
         updatedAt
       }
@@ -489,6 +491,7 @@ export const lessonsBySlug = /* GraphQL */ `
         status
         related
         featured
+        backdate
         createdAt
         updatedAt
       }
@@ -3787,6 +3790,7 @@ export const getTestimonial = /* GraphQL */ `
       headshot
       featured
       date
+      video
       createdAt
       updatedAt
     }
@@ -3811,6 +3815,7 @@ export const listTestimonials = /* GraphQL */ `
         headshot
         featured
         date
+        video
         createdAt
         updatedAt
       }

@@ -15,7 +15,7 @@ import {
 
 import VideoPlayer from '../VideoPlayer';
 
-const WiredCourseCard = ({
+const WiredLessonCardToo = ({
   id,
   external,
   reference,
@@ -32,11 +32,11 @@ const WiredCourseCard = ({
   useEffect(() => {
     const getCurrentCourse = async () => {
       const res = await API.graphql({
-        query: getLMSCourse,
+        query: getLesson,
         variables: { id: id },
       });
-      if (res.data.getLMSCourse) {
-        setIsLesson(res.data.getLMSCourse);
+      if (res.data.getLesson) {
+        setIsLesson(res.data.getLesson);
       }
     };
 
@@ -51,14 +51,14 @@ const WiredCourseCard = ({
     >
       <motion.div className='absolute z-[1] left-0 right-0 bottom-0 top-1/3 bg-gradient-to-t from-neutral-900 via-neutral-500 rounded-b-lg'></motion.div>
       <motion.div
-        className='absolute z-0 left-0 right-0 top-0 bottom-1/3 bg-black rounded-t-lg bg-cover bg-center bg-no-repeat w-full h-auto'
+        className='absolute z-0 left-0 right-0 top-0 bottom-0 bg-black rounded-t-lg bg-cover bg-center bg-no-repeat w-full h-auto'
         style={{
           backgroundImage: `url(${isLesson.seoImage})`,
         }}
       >
         <img
           src={isLesson.seoImage}
-          alt={isLesson.subheadline}
+          alt={isLesson.subhead}
           className='opacity-0'
         />
       </motion.div>
@@ -70,45 +70,19 @@ const WiredCourseCard = ({
           <motion.div className=' font-bold text-white '>{callout}</motion.div>
         </motion.div>
       )}
-      {isPlaying ? (
-        <motion.div className='aspect-[16/9] w-full h-auto relative z-[2] flex items-center justify-center bg-black transition-opacity ease-in'>
-          <VideoPlayer
-            videoEmbedLink={isLesson.preview}
-            light={false}
-            playing={true}
-          />
-        </motion.div>
-      ) : isMobile ? (
-        <motion.div
-          className='aspect-[16/9] w-full h-auto relative z-[2] flex items-center justify-center '
-          onClick={isLesson.preview ? () => setIsPlaying(true) : () => {}}
-        >
-          {isLesson.preview && (
-            <motion.div className='w-20 h-20 bg-white/40 backdrop-blur-lg hover:bg-clemson transition-colors ease-in rounded-full shadow-xl flex justify-center items-center cursor-pointer'>
-              <PlayCircleIcon className='w-20 h-20' />
-            </motion.div>
-          )}
-        </motion.div>
-      ) : (
-        <motion.div
-          className='aspect-[16/9] w-full h-auto relative z-[2] flex items-center justify-center '
-          onClick={isLesson.preview ? () => setIsPlaying(true) : () => {}}
-        >
-          {isLesson.preview && isHover && (
-            <motion.div className='w-20 h-20 bg-white/40 backdrop-blur-lg hover:bg-clemson transition-colors ease-in rounded-full shadow-xl flex justify-center items-center cursor-pointer'>
-              <PlayCircleIcon className='w-20 h-20' />
-            </motion.div>
-          )}
-        </motion.div>
-      )}
+      <div
+        className='w-full h-auto aspect-[16/9] relative z-10 bg-center bg-contain'
+        style={{ backgroundImage: `url(${isLesson.seoImage})` }}
+      ></div>
+
       <motion.div className='flex flex-col justify-center items-center h-[225px]'>
-        <motion.div className='mt-6 h-full min-h-[180px] bg-white/90 backdrop-blur shadow-lg rounded-b-lg mx-2 rounded-lg mb-4 relative z-[2] flex flex-col flex-1 '>
-          <motion.div className='flex flex-col gap-3 h-full pt-5'>
+        <motion.div className='mt-6 h-full min-h-[185px] bg-white/90 backdrop-blur shadow-lg rounded-b-lg mx-2 rounded-lg mb-4 relative z-[2] flex flex-col flex-1 '>
+          <motion.div className='flex flex-col gap-3 h-full pt-4'>
             <motion.div className='font-semibold text-lg tracking-tight leading-none px-3 text-neutral-900'>
               {isLesson.title}
             </motion.div>
             <motion.div className='text-sm leading-tight px-3 line-clamp-6 text-neutral-600'>
-              {isLesson.subheadline}
+              {isLesson.subhead}
             </motion.div>
           </motion.div>
         </motion.div>
@@ -116,7 +90,7 @@ const WiredCourseCard = ({
           className='bg-black w-full rounded-b-lg z-10 relative text-center cursor-pointer'
           onClick={() =>
             !external
-              ? router.push(`/courses/${isLesson.slug}`)
+              ? router.push(`/lessons/${isLesson.slug}`)
               : reference
               ? window.open(isLesson.link + `${reference}`, '_blank')
               : window.open(isLesson.link, '_blank')
@@ -141,4 +115,4 @@ const WiredCourseCard = ({
   );
 };
 
-export default WiredCourseCard;
+export default WiredLessonCardToo;

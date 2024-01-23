@@ -410,6 +410,7 @@ export const onCreateLesson = /* GraphQL */ `
       status
       related
       featured
+      backdate
       createdAt
       updatedAt
     }
@@ -473,6 +474,7 @@ export const onUpdateLesson = /* GraphQL */ `
       status
       related
       featured
+      backdate
       createdAt
       updatedAt
     }
@@ -536,6 +538,7 @@ export const onDeleteLesson = /* GraphQL */ `
       status
       related
       featured
+      backdate
       createdAt
       updatedAt
     }
@@ -4956,6 +4959,7 @@ export const onCreateTestimonial = /* GraphQL */ `
       headshot
       featured
       date
+      video
       createdAt
       updatedAt
     }
@@ -4975,6 +4979,7 @@ export const onUpdateTestimonial = /* GraphQL */ `
       headshot
       featured
       date
+      video
       createdAt
       updatedAt
     }
@@ -4994,6 +4999,7 @@ export const onDeleteTestimonial = /* GraphQL */ `
       headshot
       featured
       date
+      video
       createdAt
       updatedAt
     }

@@ -106,6 +106,7 @@ type Lesson @model @auth(rules: [{ allow: public }]) {
   status: String @default(value: "DRAFT")
   related: [String]
   featured: String
+  backdate: String
 }
 
 type Author @model @auth(rules: [{ allow: public }]) {
@@ -529,4 +530,5 @@ type Testimonial @model @auth(rules: [{ allow: public }]) {
   headshot: String
   featured: Boolean @default(value: "false")
   date: String
+  video: String
 }

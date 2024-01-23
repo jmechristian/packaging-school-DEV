@@ -20,8 +20,8 @@ const CustomerIntro_2 = () => {
   return (
     <div className='w-full h-full flex flex-col lg:flex-row lg:justify-between gap-12 pt-12 pb-20 lg:px-12 xl:px-0 lg:gap-16'>
       <div className='flex items-center'>
-        <div className='w-full flex flex-col justify-center gap-6 lg:gap-9 lg:max-w-2xl'>
-          <div className='w-full h-full flex mb-4'>
+        <div className='w-full flex flex-col justify-center gap-6 lg:gap-5 lg:max-w-2xl'>
+          <div className='w-full h-full flex lg:-mt-4'>
             <img
               src='https://packschool.s3.amazonaws.com/spc-project.png'
               alt='greenBlue logo'
@@ -31,7 +31,7 @@ const CustomerIntro_2 = () => {
           <div className='font-bold text-5xl xl:text-6xl'>
             <h1>Welcome, SPC Members</h1>
           </div>
-          <div className='text-lg'>
+          <div className='text-lg leading-snug'>
             Explore the SPC&apos;s Knowledge Library below. To learn how to make
             the most of your library, select your preferred instructional method
             to the right (advance through the slides or download them as a PDF).

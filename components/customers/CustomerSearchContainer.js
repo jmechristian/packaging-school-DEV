@@ -27,6 +27,7 @@ import {
 } from '@heroicons/react/24/solid';
 
 import NewCouseCard from '../shared/NewCouseCard';
+import WiredCourseCard from '../shared/WiredCourseCard';
 
 const CustomerSearchContainer = ({ courses, reference }) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -131,18 +132,11 @@ const CustomerSearchContainer = ({ courses, reference }) => {
             ) : (
               <div className='w-fit mx-auto grid gap-20 lg:grid-cols-3 pb-3 mt-9 overflow-hidden'>
                 {coursesToShow.map((link) => (
-                  <NewCouseCard
+                  <WiredCourseCard
+                    id={link.id}
+                    external={false}
                     key={link.id}
-                    title={link.title}
-                    description={link.subheadline}
-                    background={link.seoImage}
-                    link={reference ? link.link + `${reference}` : link.link}
-                    link_text={'Select Course'}
-                    Icon={SparklesIcon}
-                    video={link.preview}
-                    courseId={link.id}
-                    targetedId={link.targetedId}
-                    tracked={true}
+                    reference={reference}
                   />
                 ))}
               </div>
@@ -152,56 +146,23 @@ const CustomerSearchContainer = ({ courses, reference }) => {
       ) : (
         <div className='flex flex-col gap-12 justify-center items-center w-full max-w-[996px] mx-auto'>
           <div className='course-card-grid'>
-            <NewCouseCard
-              title={initCourses[0].title}
-              description={initCourses[0].subheadline}
-              background={initCourses[0].seoImage}
-              link={
-                reference
-                  ? initCourses[0].link + `${reference}`
-                  : initCourses[0].link
-              }
-              link_text={'Select Course'}
-              Icon={SparklesIcon}
-              // callout={'Most Popular'}
-              video={initCourses[0].preview}
-              clicks={initCourses[0].clicks}
-              targetedId={initCourses[0].targetedId}
-              tracked={true}
+            <WiredCourseCard
+              id={initCourses[0].id}
+              external={true}
+              key={initCourses[0].id}
+              reference={reference}
             />
-            <NewCouseCard
-              title={initCourses[1].title}
-              description={initCourses[1].subheadline}
-              background={initCourses[1].seoImage}
-              link={
-                reference
-                  ? initCourses[1].link + `${reference}`
-                  : initCourses[1].link
-              }
-              link_text={'Select Course'}
-              Icon={SparklesIcon}
-              // callout={'Most Popular'}
-              video={initCourses[1].preview}
-              clicks={initCourses[1].clicks}
-              targetedId={initCourses[1].targetedId}
-              tracked={true}
+            <WiredCourseCard
+              id={initCourses[1].id}
+              external={true}
+              key={initCourses[1].id}
+              reference={reference}
             />
-            <NewCouseCard
-              title={initCourses[2].title}
-              description={initCourses[2].subheadline}
-              background={initCourses[2].seoImage}
-              link={
-                reference
-                  ? initCourses[2].link + `${reference}`
-                  : initCourses[2].link
-              }
-              link_text={'Select Course'}
-              Icon={SparklesIcon}
-              // callout={'Most Popular'}
-              video={initCourses[2].preview}
-              clicks={initCourses[2].clicks}
-              targetedId={initCourses[2].targetedId}
-              tracked={true}
+            <WiredCourseCard
+              id={initCourses[2].id}
+              external={true}
+              key={initCourses[2].id}
+              reference={reference}
             />
           </div>
         </div>
@@ -213,19 +174,11 @@ const CustomerSearchContainer = ({ courses, reference }) => {
             .slice(3)
             .sort((a, b) => a.courseId.localeCompare(b.courseId))
             .map((link) => (
-              <NewCouseCard
+              <WiredCourseCard
+                id={link.id}
+                external={true}
                 key={link.id}
-                title={link.title}
-                description={link.subheadline}
-                background={link.seoImage}
-                link={reference ? link.link + `${reference}` : link.link}
-                link_text={'Select Course'}
-                Icon={SparklesIcon}
-                video={link.preview}
-                courseId={link.id}
-                clicks={link.clicks}
-                targetedId={link.targetedId}
-                tracked={true}
+                reference={reference}
               />
             ))}
         </div>

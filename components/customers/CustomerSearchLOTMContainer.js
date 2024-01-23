@@ -29,6 +29,7 @@ import {
   XMarkIcon,
   BoltIcon as Bolt,
 } from '@heroicons/react/24/solid';
+import WiredLessonCardToo from '../shared/WiredLessonCardToo';
 
 const createDate = (date) => {
   const newDate = new Date(date);
@@ -179,7 +180,7 @@ const CustomerSearchLOTMContainer = () => {
               </div>
             </div>
             <div className='w-full flex justify-center items-center px-6'>
-              <motion.div className='flex flex-col gap-3 py-9 lg:py-12'>
+              <motion.div className='flex flex-col gap-3'>
                 <motion.div className='font-semibold text-sm uppercase text-base-mid'>
                   {createDate(lessonsToShow[0].createdAt)}
                 </motion.div>
@@ -201,32 +202,27 @@ const CustomerSearchLOTMContainer = () => {
             </div>
           </div>
           <div className='course-card-grid'>
-            <NewCouseCard
-              title={lessonsToShow[1].title}
-              description={lessonsToShow[1].subhead}
-              background={lessonsToShow[1].seoImage}
-              link={`/lessons/${lessonsToShow[1].slug}`}
-              link_text={'View Lesson'}
+            <WiredLessonCardToo
+              key={lessonsToShow[1].id}
+              id={lessonsToShow[1].id}
+              Icon={BookOpenIcon}
               callout={createDate(lessonsToShow[1].createdAt)}
-              Icon={BookOpenIcon}
-            />
-            <NewCouseCard
-              title={lessonsToShow[2].title}
-              description={lessonsToShow[2].subhead}
-              background={lessonsToShow[2].seoImage}
-              link={`/lessons/${lessonsToShow[2].slug}`}
               link_text={'View Lesson'}
+            />
+
+            <WiredLessonCardToo
+              key={lessonsToShow[2].id}
+              id={lessonsToShow[2].id}
+              Icon={BookOpenIcon}
               callout={createDate(lessonsToShow[2].createdAt)}
-              Icon={BookOpenIcon}
-            />
-            <NewCouseCard
-              title={lessonsToShow[3].title}
-              description={lessonsToShow[3].subhead}
-              background={lessonsToShow[3].seoImage}
-              link={`/lessons/${lessonsToShow[3].slug}`}
               link_text={'View Lesson'}
-              callout={createDate(lessonsToShow[3].createdAt)}
+            />
+            <WiredLessonCardToo
+              key={lessonsToShow[3].id}
+              id={lessonsToShow[3].id}
               Icon={BookOpenIcon}
+              callout={createDate(lessonsToShow[3].createdAt)}
+              link_text={'View Lesson'}
             />
           </div>
         </div>
@@ -237,16 +233,13 @@ const CustomerSearchLOTMContainer = () => {
           {lessonsToShow
             .slice(4)
             .filter((cou) => cou.type === 'LOTM')
-            .map((link) => (
-              <NewCouseCard
-                key={link.title}
-                title={link.title}
-                description={link.subhead}
-                background={link.seoImage}
-                link={`/lessons/${link.slug}`}
-                link_text={'View Lesson'}
-                callout={createDate(link.createdAt)}
+            .map((cou) => (
+              <WiredLessonCardToo
+                key={cou.id}
+                id={cou.id}
                 Icon={BookOpenIcon}
+                callout={createDate(cou.createdAt)}
+                link_text={'View Lesson'}
               />
             ))}
         </div>

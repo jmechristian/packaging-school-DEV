@@ -9,6 +9,9 @@ import {
 import { useSelector } from 'react-redux';
 
 import NewCouseCard from '../shared/NewCouseCard';
+import WiredCourseCard from '../shared/WiredCourseCard';
+import WiredLessonCard from '../shared/WiredLessonCard';
+import WiredLessonCardToo from '../shared/WiredLessonCardToo';
 
 const CustomerFeatures = ({ courses }) => {
   const { allLessons, allCourses } = useSelector(
@@ -43,34 +46,26 @@ const CustomerFeatures = ({ courses }) => {
 
   return (
     <motion.div className='px-0 lg:px-6 w-fit mx-auto grid gap-12 md:gap-6 lg:gap-16 md:grid-cols-2 lg:grid-cols-3 md:pb-10 my-9 overflow-hidden'>
-      <NewCouseCard
-        title={'SPC’s Bioplastics Topic'}
-        description={
-          'In this topic, we will explore what bioplastics are and how we can think about them in the context of sustainable packaging.'
-        }
-        background={
-          'https://packschool.s3.amazonaws.com/gb-topic-1-seoImage-sm.png'
-        }
-        link={
-          'https://learn.packagingschool.com/enroll/2753655?price_id=3579258&coupon=greenblue'
-        }
-        link_text={'Select Topic'}
-        Icon={AcademicCapIcon}
-        callout={'SPC Knowledge Library'}
-        // video={'https://www.youtube.com/watch?v=ynDhF_jYZn8'}
-        // id={'806c0e2e-c4db-4c13-94f9-b49d4e8b2239'}
-      />
-      <NewCouseCard
-        title={mostPopularCourse && mostPopularCourse[0].title}
-        description={mostPopularCourse && mostPopularCourse[0].subheadline}
-        background={mostPopularCourse && mostPopularCourse[0].seoImage}
-        link={mostPopularCourse && mostPopularCourse[0].link}
+      <WiredCourseCard
+        id={'5fc017b2-2149-40d7-a6d2-272afad2c4e3'}
+        external={true}
         link_text={'Select Course'}
         Icon={AcademicCapIcon}
-        callout={'Packaging School Course'}
-        video={mostPopularCourse && mostPopularCourse[0].preview}
+        callout={'SPC Knowledge Library'}
       />
-      <NewCouseCard
+      <WiredCourseCard
+        id={'ff174f01-5f76-486c-8d7a-849d6d3ff914'}
+        external={true}
+        Icon={AcademicCapIcon}
+        callout={'Packaging School Course'}
+      />
+      <WiredLessonCardToo
+        id={latestLesson && latestLesson[0].id}
+        Icon={SignalIcon}
+        callout={'Latest Lesson'}
+        link_text={'View Lesson'}
+      />
+      {/* <NewCouseCard
         title={latestLesson && latestLesson[0].title}
         description={latestLesson && latestLesson[0].subhead}
         background={latestLesson && latestLesson[0].seoImage}
@@ -78,7 +73,7 @@ const CustomerFeatures = ({ courses }) => {
         link_text={'View Lesson'}
         Icon={SignalIcon}
         callout={'Latest Lesson'}
-      />
+      /> */}
     </motion.div>
   );
 };
