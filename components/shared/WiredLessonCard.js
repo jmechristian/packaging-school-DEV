@@ -11,6 +11,7 @@ import {
   isMobile,
 } from 'react-device-detect';
 import { updateTrackedCourse } from '../../src/graphql/mutations';
+import { registgerLessonClick } from '../../helpers/api';
 
 import VideoPlayer from '../VideoPlayer';
 
@@ -44,10 +45,16 @@ const WiredLessonCard = ({
       .then(() => setIsLoading(false));
   }, [id]);
 
+  const cardClickHandler = async () => {
+    await registgerLessonClick(isLesson.id, router.asPath);
+
+    router.push(`/lessons/${isLesson.slug}`);
+  };
+
   return (
     <motion.div
       className='w-full pt-3 cursor-pointer'
-      onClick={() => router.push(`/lessons/${isLesson.slug}`)}
+      onClick={cardClickHandler}
     >
       {isLesson ? (
         <>
