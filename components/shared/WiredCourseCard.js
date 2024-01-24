@@ -45,18 +45,7 @@ const WiredCourseCard = ({
   }, [id]);
 
   const cardClickHandler = async () => {
-    // await fetch('https://www.packagingschool.com/api/register-course-click', {
-    //   method: 'POST',
-    //   headers: {
-    //     accept: 'application/json',
-    //     'content-type': 'application/json',
-    //   },
-    //   body: JSON.stringify({
-    //     id: isLesson.id,
-    //     page: '/greenblue',
-    //   }),
-    // }).then((response) => response.json());
-    await registgerCourseClick(isLesson.id, '/greenblue');
+    await registgerCourseClick(isLesson.id, router.asPath);
 
     !external
       ? router.push(`/courses/${isLesson.slug}`)
