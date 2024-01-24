@@ -3180,18 +3180,6 @@ export const onCreateLMSCourse = /* GraphQL */ `
       collection
       demo
       partOf
-      clicks {
-        items {
-          id
-          courseID
-          timestamp
-          page
-          ipAddress
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
       createdAt
       updatedAt
       studentCourseEnrolledId
@@ -3254,18 +3242,6 @@ export const onUpdateLMSCourse = /* GraphQL */ `
       collection
       demo
       partOf
-      clicks {
-        items {
-          id
-          courseID
-          timestamp
-          page
-          ipAddress
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
       createdAt
       updatedAt
       studentCourseEnrolledId
@@ -3328,30 +3304,17 @@ export const onDeleteLMSCourse = /* GraphQL */ `
       collection
       demo
       partOf
-      clicks {
-        items {
-          id
-          courseID
-          timestamp
-          page
-          ipAddress
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
       createdAt
       updatedAt
       studentCourseEnrolledId
     }
   }
 `;
-export const onCreateClick = /* GraphQL */ `
-  subscription OnCreateClick {
-    onCreateClick {
+export const onCreateCourseClick = /* GraphQL */ `
+  subscription OnCreateCourseClick {
+    onCreateCourseClick {
       id
       courseID
-      timestamp
       page
       ipAddress
       createdAt
@@ -3359,12 +3322,11 @@ export const onCreateClick = /* GraphQL */ `
     }
   }
 `;
-export const onUpdateClick = /* GraphQL */ `
-  subscription OnUpdateClick {
-    onUpdateClick {
+export const onUpdateCourseClick = /* GraphQL */ `
+  subscription OnUpdateCourseClick {
+    onUpdateCourseClick {
       id
       courseID
-      timestamp
       page
       ipAddress
       createdAt
@@ -3372,12 +3334,47 @@ export const onUpdateClick = /* GraphQL */ `
     }
   }
 `;
-export const onDeleteClick = /* GraphQL */ `
-  subscription OnDeleteClick {
-    onDeleteClick {
+export const onDeleteCourseClick = /* GraphQL */ `
+  subscription OnDeleteCourseClick {
+    onDeleteCourseClick {
       id
       courseID
-      timestamp
+      page
+      ipAddress
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateLessonClick = /* GraphQL */ `
+  subscription OnCreateLessonClick {
+    onCreateLessonClick {
+      id
+      LessonID
+      page
+      ipAddress
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateLessonClick = /* GraphQL */ `
+  subscription OnUpdateLessonClick {
+    onUpdateLessonClick {
+      id
+      LessonID
+      page
+      ipAddress
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteLessonClick = /* GraphQL */ `
+  subscription OnDeleteLessonClick {
+    onDeleteLessonClick {
+      id
+      LessonID
       page
       ipAddress
       createdAt
@@ -5998,9 +5995,6 @@ export const onCreateCirriculumCourses = /* GraphQL */ `
         collection
         demo
         partOf
-        clicks {
-          nextToken
-        }
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -6061,9 +6055,6 @@ export const onUpdateCirriculumCourses = /* GraphQL */ `
         collection
         demo
         partOf
-        clicks {
-          nextToken
-        }
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -6124,9 +6115,6 @@ export const onDeleteCirriculumCourses = /* GraphQL */ `
         collection
         demo
         partOf
-        clicks {
-          nextToken
-        }
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -6175,9 +6163,6 @@ export const onCreateCourseLessons = /* GraphQL */ `
         collection
         demo
         partOf
-        clicks {
-          nextToken
-        }
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -6244,9 +6229,6 @@ export const onUpdateCourseLessons = /* GraphQL */ `
         collection
         demo
         partOf
-        clicks {
-          nextToken
-        }
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -6313,9 +6295,6 @@ export const onDeleteCourseLessons = /* GraphQL */ `
         collection
         demo
         partOf
-        clicks {
-          nextToken
-        }
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -6382,9 +6361,6 @@ export const onCreateCourseInstructors = /* GraphQL */ `
         collection
         demo
         partOf
-        clicks {
-          nextToken
-        }
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -6465,9 +6441,6 @@ export const onUpdateCourseInstructors = /* GraphQL */ `
         collection
         demo
         partOf
-        clicks {
-          nextToken
-        }
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -6548,9 +6521,6 @@ export const onDeleteCourseInstructors = /* GraphQL */ `
         collection
         demo
         partOf
-        clicks {
-          nextToken
-        }
         createdAt
         updatedAt
         studentCourseEnrolledId

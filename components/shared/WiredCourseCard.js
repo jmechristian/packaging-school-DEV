@@ -43,6 +43,26 @@ const WiredCourseCard = ({
     id && getCurrentCourse();
   }, [id]);
 
+  const cardClickHandler = async () => {
+    await fetch('/api/register-course-click', {
+      method: 'POST',
+      headers: {
+        accept: 'application/json',
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        id: isLesson.id,
+        page: router.asPath,
+      }),
+    }).then((response) => response.json());
+
+    !external
+      ? router.push(`/courses/${isLesson.slug}`)
+      : reference
+      ? window.open(isLesson.link + `${reference}`, '_blank')
+      : window.open(isLesson.link, '_blank');
+  };
+
   return isLesson ? (
     <motion.div
       className='w-full min-h-[270px] max-h-[455px] max-w-[300px] rounded-lg shadow-xl bg-cover bg-bottom bg-opacity-60 relative bg-black'
@@ -114,13 +134,7 @@ const WiredCourseCard = ({
         </motion.div>
         <motion.div
           className='bg-black w-full rounded-b-lg z-10 relative text-center cursor-pointer'
-          onClick={() =>
-            !external
-              ? router.push(`/courses/${isLesson.slug}`)
-              : reference
-              ? window.open(isLesson.link + `${reference}`, '_blank')
-              : window.open(isLesson.link, '_blank')
-          }
+          onClick={cardClickHandler}
         >
           <div className='text-white font-bold px-6 py-3'>
             {link_text ? link_text : 'Select Course'}

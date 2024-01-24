@@ -2634,18 +2634,6 @@ export const getLMSCourse = /* GraphQL */ `
       collection
       demo
       partOf
-      clicks {
-        items {
-          id
-          courseID
-          timestamp
-          page
-          ipAddress
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
       createdAt
       updatedAt
       studentCourseEnrolledId
@@ -2692,9 +2680,6 @@ export const listLMSCourses = /* GraphQL */ `
         collection
         demo
         partOf
-        clicks {
-          nextToken
-        }
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -2751,9 +2736,6 @@ export const lMSCoursesBySlug = /* GraphQL */ `
         collection
         demo
         partOf
-        clicks {
-          nextToken
-        }
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -2762,12 +2744,11 @@ export const lMSCoursesBySlug = /* GraphQL */ `
     }
   }
 `;
-export const getClick = /* GraphQL */ `
-  query GetClick($id: ID!) {
-    getClick(id: $id) {
+export const getCourseClick = /* GraphQL */ `
+  query GetCourseClick($id: ID!) {
+    getCourseClick(id: $id) {
       id
       courseID
-      timestamp
       page
       ipAddress
       createdAt
@@ -2775,17 +2756,16 @@ export const getClick = /* GraphQL */ `
     }
   }
 `;
-export const listClicks = /* GraphQL */ `
-  query ListClicks(
-    $filter: ModelClickFilterInput
+export const listCourseClicks = /* GraphQL */ `
+  query ListCourseClicks(
+    $filter: ModelCourseClickFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listClicks(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listCourseClicks(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
         courseID
-        timestamp
         page
         ipAddress
         createdAt
@@ -2795,18 +2775,16 @@ export const listClicks = /* GraphQL */ `
     }
   }
 `;
-export const clicksByCourseIDAndTimestamp = /* GraphQL */ `
-  query ClicksByCourseIDAndTimestamp(
-    $courseID: ID!
-    $timestamp: ModelStringKeyConditionInput
+export const courseClicksByCourseID = /* GraphQL */ `
+  query CourseClicksByCourseID(
+    $courseID: String!
     $sortDirection: ModelSortDirection
-    $filter: ModelClickFilterInput
+    $filter: ModelCourseClickFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    clicksByCourseIDAndTimestamp(
+    courseClicksByCourseID(
       courseID: $courseID
-      timestamp: $timestamp
       sortDirection: $sortDirection
       filter: $filter
       limit: $limit
@@ -2815,7 +2793,64 @@ export const clicksByCourseIDAndTimestamp = /* GraphQL */ `
       items {
         id
         courseID
-        timestamp
+        page
+        ipAddress
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getLessonClick = /* GraphQL */ `
+  query GetLessonClick($id: ID!) {
+    getLessonClick(id: $id) {
+      id
+      LessonID
+      page
+      ipAddress
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listLessonClicks = /* GraphQL */ `
+  query ListLessonClicks(
+    $filter: ModelLessonClickFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listLessonClicks(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        LessonID
+        page
+        ipAddress
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const lessonClicksByLessonID = /* GraphQL */ `
+  query LessonClicksByLessonID(
+    $LessonID: String!
+    $sortDirection: ModelSortDirection
+    $filter: ModelLessonClickFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    lessonClicksByLessonID(
+      LessonID: $LessonID
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        LessonID
         page
         ipAddress
         createdAt
@@ -4880,9 +4915,6 @@ export const getCirriculumCourses = /* GraphQL */ `
         collection
         demo
         partOf
-        clicks {
-          nextToken
-        }
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -5116,9 +5148,6 @@ export const getCourseLessons = /* GraphQL */ `
         collection
         demo
         partOf
-        clicks {
-          nextToken
-        }
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -5375,9 +5404,6 @@ export const getCourseInstructors = /* GraphQL */ `
         collection
         demo
         partOf
-        clicks {
-          nextToken
-        }
         createdAt
         updatedAt
         studentCourseEnrolledId
