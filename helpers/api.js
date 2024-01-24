@@ -24,7 +24,9 @@ export const registgerCourseClick = async (id, page) => {
 
   const items = await API.graphql({
     query: createCourseClick,
-    variables: { input: { courseID: id, page: page, ipAddress: ip.ip } },
+    variables: {
+      input: { courseID: id, page: page, ipAddress: ip ? ip.ip : 'undefined' },
+    },
   });
   return items.data;
 };
