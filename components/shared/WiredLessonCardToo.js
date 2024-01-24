@@ -14,6 +14,7 @@ import {
 } from 'react-device-detect';
 
 import VideoPlayer from '../VideoPlayer';
+import { registgerLessonClick } from '../../helpers/api';
 
 const WiredLessonCardToo = ({
   id,
@@ -42,6 +43,16 @@ const WiredLessonCardToo = ({
 
     id && getCurrentCourse();
   }, [id]);
+
+  const cardClickHandler = async () => {
+    await registgerLessonClick(isLesson.id, router.asPath);
+
+    !external
+      ? router.push(`/lessons/${isLesson.slug}`)
+      : reference
+      ? window.open(isLesson.link + `${reference}`, '_blank')
+      : window.open(isLesson.link, '_blank');
+  };
 
   return isLesson ? (
     <motion.div
@@ -88,13 +99,7 @@ const WiredLessonCardToo = ({
         </motion.div>
         <motion.div
           className='bg-black w-full rounded-b-lg z-10 relative text-center cursor-pointer'
-          onClick={() =>
-            !external
-              ? router.push(`/lessons/${isLesson.slug}`)
-              : reference
-              ? window.open(isLesson.link + `${reference}`, '_blank')
-              : window.open(isLesson.link, '_blank')
-          }
+          onClick={cardClickHandler}
         >
           <div className='text-white font-bold px-6 py-3'>
             {link_text ? link_text : 'Select Course'}
