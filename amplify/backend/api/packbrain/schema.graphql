@@ -397,6 +397,15 @@ type LMSCourse @model @auth(rules: [{ allow: public }]) {
   collection: [String]
   demo: Boolean @default(value: "false")
   partOf: [String]
+  clicks: [Click] @hasMany(indexName: "clicksByCourse", fields: ["id"])
+}
+
+type Click @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  courseID: ID! @index(name: "clicksByCourse", sortKeyFields: ["timestamp"])
+  timestamp: AWSDateTime
+  page: String
+  ipAddress: String
 }
 
 type LMSLesson @model @auth(rules: [{ allow: public }]) {
