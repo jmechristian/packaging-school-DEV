@@ -44,17 +44,17 @@ const WiredCourseCard = ({
   }, [id]);
 
   const cardClickHandler = async () => {
-    await fetch('/api/register-course-click', {
-      method: 'POST',
-      headers: {
-        accept: 'application/json',
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify({
-        id: isLesson.id,
-        page: router.asPath,
-      }),
-    }).then((response) => response.json());
+    // await fetch('/api/register-course-click', {
+    //   method: 'POST',
+    //   headers: {
+    //     accept: 'application/json',
+    //     'content-type': 'application/json',
+    //   },
+    //   body: JSON.stringify({
+    //     id: isLesson.id,
+    //     page: router.asPath,
+    //   }),
+    // }).then((response) => response.json());
 
     !external
       ? router.push(`/courses/${isLesson.slug}`)
