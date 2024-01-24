@@ -14,6 +14,7 @@ import {
 } from 'react-device-detect';
 
 import VideoPlayer from '../VideoPlayer';
+import { registgerCourseClick } from '../../helpers/api';
 
 const WiredCourseCard = ({
   id,
@@ -55,6 +56,7 @@ const WiredCourseCard = ({
     //     page: '/greenblue',
     //   }),
     // }).then((response) => response.json());
+    await registgerCourseClick(isLesson.id, '/greenblue');
 
     !external
       ? router.push(`/courses/${isLesson.slug}`)
