@@ -11,9 +11,11 @@ const FullWidthDropDown = ({
   content,
   highlight,
   bgContent,
+  cash,
   open,
 }) => {
   const [isOpen, setIsOpen] = useState(open);
+  const [isTooltip, setTooltip] = useState('');
 
   return (
     <motion.div className={`w-full ${bg} rounded-xl flex flex-col`}>
@@ -29,8 +31,32 @@ const FullWidthDropDown = ({
           >
             <Icon className={`stroke-white w-6 h-6 transition-all ease-in`} />
           </motion.div>
-          <motion.div className='text-white font-semibold tracking-tight text-xl md:text-2xl capitalize leading-tight'>
-            {title}
+          <motion.div className='w-full flex gap-1 items-start'>
+            <motion.div className='text-white font-semibold tracking-tight text-xl md:text-2xl capitalize leading-tight'>
+              {title}
+            </motion.div>
+            {cash && (
+              <motion.div
+                className='w-5 h-5 rounded-full relative'
+                onMouseEnter={() => setTooltip('Purchase Required')}
+                onMouseLeave={() => setTooltip('')}
+              >
+                {isTooltip && (
+                  <AnimatePresence>
+                    <motion.div
+                      className='ease-in absolute bottom-full px-2 py-0.5 rounded-lg text-sm bg-neutral-900 text-white whitespace-nowrap w-fit z-10 mb-1'
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      key={isTooltip}
+                    >
+                      {isTooltip}
+                    </motion.div>
+                  </AnimatePresence>
+                )}
+                <Icons.CurrencyDollarIcon className='w-5 h-5 fill-green-700 bg-white rounded-full' />
+              </motion.div>
+            )}
           </motion.div>
         </motion.div>
         <motion.div className='text-white'>

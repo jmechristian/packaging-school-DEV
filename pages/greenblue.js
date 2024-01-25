@@ -52,7 +52,7 @@ const Page = ({ customer }) => {
     <div className='w-full max-w-7xl px-3 md:px-6 lg:px-0 flex flex-col gap-4 md:gap-6 pb-3 md:pb-6 lg:pb-24 mx-auto'>
       {/* <CustomerIntro logo={'https://packschool.s3.amazonaws.com/GB_logo.png'} /> */}
       <CustomerIntro_2 />
-      <FullWidthDropDown
+      {/* <FullWidthDropDown
         title={'featured'}
         Icon={BoltIcon}
         bg='bg-gb-main'
@@ -62,7 +62,7 @@ const Page = ({ customer }) => {
           <CustomerFeatures courses={customer && customer.courses.items} />
         }
         open={true}
-      />
+      /> */}
       <FullWidthDropDown
         title={'SPC Knowledge Library Topics'}
         Icon={AcademicCapIcon}
@@ -71,11 +71,12 @@ const Page = ({ customer }) => {
         highlight={'bg-gb-green'}
         content={<CustomerOfferings />}
         bgContent={'bg-neutral-200 border'}
-        open={false}
+        open={true}
       />
       <FullWidthDropDown
         title={'Packaging School Course Offerings'}
         Icon={AcademicCapIcon}
+        cash={true}
         bg='bg-base-mid'
         bgdark='bg-base-dark'
         content={

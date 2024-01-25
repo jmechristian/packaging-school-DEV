@@ -130,13 +130,14 @@ const CustomerSearchContainer = ({ courses, reference }) => {
                 </div>
               </div>
             ) : (
-              <div className='w-fit mx-auto grid gap-20 lg:grid-cols-3 pb-3 mt-9 overflow-hidden'>
+              <div className='w-fit mx-auto grid gap-20 lg:grid-cols-3 pb-3 mt-9'>
                 {coursesToShow.map((link) => (
                   <WiredCourseCard
                     id={link.id}
                     external={false}
                     key={link.id}
                     reference={reference}
+                    link_text={'Purchase Course'}
                   />
                 ))}
               </div>
@@ -151,18 +152,21 @@ const CustomerSearchContainer = ({ courses, reference }) => {
               external={true}
               key={initCourses[0].id}
               reference={reference}
+              link_text={'Purchase Course'}
             />
             <WiredCourseCard
               id={initCourses[1].id}
               external={true}
               key={initCourses[1].id}
               reference={reference}
+              link_text={'Purchase Course'}
             />
             <WiredCourseCard
               id={initCourses[2].id}
               external={true}
               key={initCourses[2].id}
               reference={reference}
+              link_text={'Purchase Course'}
             />
           </div>
         </div>
@@ -179,6 +183,7 @@ const CustomerSearchContainer = ({ courses, reference }) => {
                 external={true}
                 key={link.id}
                 reference={reference}
+                link_text={'Purchase Course'}
               />
             ))}
         </div>
