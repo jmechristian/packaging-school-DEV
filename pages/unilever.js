@@ -36,6 +36,7 @@ import NewCouseCard from '../components/shared/NewCouseCard';
 import UnileverCourses from '../components/unilever/UnileverCourses';
 import UnileverLessons from '../components/unilever/UnileverLessons';
 import { getCustomer, listUnilevers } from '../src/graphql/queries';
+import SPCLibraryModule from '../components/library/SPCLibraryModule';
 
 const ReactGoogleSlides = dynamic(() => import('react-google-slides'), {
   ssr: false,
@@ -374,30 +375,6 @@ const Page = ({ unilever }) => {
               </div>
             </div>
           </div>
-          {/* <div className='bg-white/60 backdrop-blur flex gap-3 items-center justify-center w-fit mx-auto rounded-tr-lg lg:rounded-t-lg lg:px-12 pl-1.5 pr-6 py-2 col-span-2 lg:mt-12 lg:py-3 shadow-lg'>
-            <div className='flex gap-12 items-center'>
-              <div className='flex gap-2 items-center cursor-pointer'>
-                <div className='w-16 h-16 bg-unilever-darkblue rounded-full shadow-md flex items-center justify-center'>
-                  <div>
-                    <AcademicCapIcon className='w-9 h-9 fill-white/80' />
-                  </div>
-                </div>
-                <div className='text-xl text-unilever-darkblue font-etna'>
-                  Courses
-                </div>
-              </div>
-              <div className='flex gap-2 items-center cursor-pointer'>
-                <div className='w-16 h-16 bg-unilever-darkblue rounded-full shadow-md flex items-center justify-center'>
-                  <div>
-                    <BookOpenIcon className='w-9 h-9 fill-white/80' />
-                  </div>
-                </div>
-                <div className='text-xl text-unilever-darkblue font-etna'>
-                  Lessons
-                </div>
-              </div>
-            </div>
-          </div> */}
         </div>
         <div className='text-center text-white pt-6 md:pt-12'>
           <div className=' bg-black/40 rounded-lg py-4 px-6 w-full justify-center mx-auto flex items-center gap-3'>
@@ -437,6 +414,15 @@ const Page = ({ unilever }) => {
         bgContent={'bg-neutral-200 border'}
       />
 
+      <FullWidthDropDown
+        title={'SPC Knowledge Library Topics'}
+        Icon={AcademicCapIcon}
+        bg='bg-base-mid'
+        bgdark='bg-base-dark'
+        content={<SPCLibraryModule />}
+        highlight={'bg-clemson'}
+        bgContent={'bg-neutral-200 border'}
+      />
       <FullWidthDropDown
         title={'Packaging School Course Offerings'}
         Icon={AcademicCapIcon}
