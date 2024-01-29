@@ -123,16 +123,22 @@ const Page = ({ lesson }) => {
                     </div>
                   )}
                   {lesson.mediaType === 'VIDEO' ? (
-                    <div className='flex flex-col md:flex-row md:items-center lg:gap-2 font-medium border-b border-b-neutral-900 dark:border-b-white pb-6 px-4 xl:px-0'>
-                      <div className='font-bold dark:text-white text-sm uppercase'>
+                    <div className='flex flex-col md:flex-row md:items-center gap-3 lg:gap-5 font-medium border-b border-b-neutral-900 dark:border-b-white pb-6 px-4 xl:px-0'>
+                      <div className='w-fit font-bold dark:text-white text-sm uppercase bg-brand-yellow/40 px-2 py-4 flex items-center justify-center text-center leading-tighter'>
                         {newDate}
                       </div>
-                      {lesson.author &&
-                        lesson.author.map((a) => (
-                          <div key={a}>
-                            <AuthorBlock id={a} />
-                          </div>
-                        ))}
+                      {lesson.author && (
+                        <div className='flex flex-col w-full md:flex-row gap-3 md:gap-9 md:items-center'>
+                          {lesson.author.map((a) => (
+                            <div
+                              key={a}
+                              className='w-fit md:border-r md:border-r-neutral-600 md:last:border-r-0 pr-4'
+                            >
+                              <AuthorBlock id={a} />
+                            </div>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   ) : lesson.mediaType === 'SLIDES' ? (
                     <></>
@@ -193,7 +199,7 @@ const Page = ({ lesson }) => {
                     </div>
                   )}
                   <div
-                    className={`relative px-6 lg:px-0 ${
+                    className={`relative px-6 xl:px-0 ${
                       lesson.mediaType === 'IMAGE' ? 'mt-0' : 'mt-6'
                     }`}
                   >

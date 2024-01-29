@@ -10,14 +10,27 @@ const AuthorBlock = ({ id }) => {
   }, [id]);
 
   return isAuthor ? (
-    <div className='text-base-mid'>
-      <a
-        href={isAuthor.getAuthor.linkedIn ? isAuthor.getAuthor.linkedIn : '#'}
-        rel='noreferrer'
-        target='_blank'
-      >
-        {isAuthor.getAuthor.name + ',' + ' ' + isAuthor.getAuthor.title}
-      </a>
+    <div className=' flex flex-col gap-0 leading-none'>
+      <div>
+        <a
+          href={isAuthor.getAuthor.linkedIn ? isAuthor.getAuthor.linkedIn : '#'}
+          rel='noreferrer'
+          target='_blank'
+          className='font-bold uppercase text-sm'
+        >
+          {isAuthor.getAuthor.name}
+        </a>
+      </div>
+      <div>
+        <a
+          href={isAuthor.getAuthor.linkedIn ? isAuthor.getAuthor.linkedIn : '#'}
+          rel='noreferrer'
+          target='_blank'
+          className='text-xs'
+        >
+          {isAuthor.getAuthor.title}
+        </a>
+      </div>
     </div>
   ) : (
     <div className='w-48 h-2 bg-neutral-200 rounded-full animate-pulse my-1'></div>
