@@ -179,7 +179,7 @@ const CustomerSearchLOTMContainer = () => {
               </motion.div> */}
               </div>
             </div>
-            <div className='w-full flex justify-center items-center px-6'>
+            <div className='w-full flex justify-center items-center px-6 py-5'>
               <motion.div className='flex flex-col gap-3'>
                 <motion.div className='font-semibold text-sm uppercase text-base-mid'>
                   {createDate(lessonsToShow[0].createdAt)}
