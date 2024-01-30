@@ -37,6 +37,7 @@ import UnileverCourses from '../components/unilever/UnileverCourses';
 import UnileverLessons from '../components/unilever/UnileverLessons';
 import { getCustomer, listUnilevers } from '../src/graphql/queries';
 import SPCLibraryModule from '../components/library/SPCLibraryModule';
+import CustomerSearchLOTMContainer from '../components/customers/CustomerSearchLOTMContainer';
 
 const ReactGoogleSlides = dynamic(() => import('react-google-slides'), {
   ssr: false,
@@ -439,7 +440,7 @@ const Page = ({ unilever }) => {
         Icon={BookmarkSquareIcon}
         bg='bg-base-mid'
         bgdark='bg-base-dark'
-        content={<LessonContent />}
+        content={<CustomerSearchLOTMContainer />}
         highlight={'bg-clemson'}
         bgContent={'bg-neutral-200 border'}
       />
