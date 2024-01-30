@@ -14,21 +14,17 @@ const Page = () => {
             </div>
           </div>
         </div>
-        <div className='bg-neutral-900 py-6 px-6 text-white my-5 flex flex-col md:flex-row mg: gap-6'>
+        <div className='bg-brand-green py-6 px-6 my-5 flex flex-col md:flex-row mg: gap-6'>
           <div className='font-bold '>Instructors</div>
           <div>
-            <span className='text-brand-yellow-light font-bold'>
-              Dr. Julie Suggs
-            </span>
+            <span className='font-bold'>Dr. Julie Suggs</span>
             <br />{' '}
-            <span className='text-neutral-400'>julie@packagingschool.com</span>
+            <span className='text-neutral-900'>julie@packagingschool.com</span>
           </div>
           <div>
-            <span className='text-brand-yellow-light font-bold'>
-              Dr. Andrew Hurley
-            </span>
+            <span className='font-bold'>Dr. Andrew Hurley</span>
             <br />{' '}
-            <span className='text-neutral-400'>me@drandrewhurley.com</span>
+            <span className='text-neutral-900'>me@drandrewhurley.com</span>
           </div>
         </div>
         <div className='md:p-10 p-6 flex flex-col gap-6 md:gap-10'>
