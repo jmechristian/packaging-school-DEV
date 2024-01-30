@@ -8,7 +8,7 @@ import {
   setAllLessons,
   setPreviewClosed,
 } from '../all_courses/courseFilterSlice';
-import { setUser } from '../auth/authslice';
+import { setLocation, setUser } from '../auth/authslice';
 import { setDark, setLight, toggleSignInModal } from './layoutSlice';
 import ScrollTop from './ScrollTop';
 import { useUser } from '@auth0/nextjs-auth0/client';
@@ -140,6 +140,22 @@ const Layout = ({ children }) => {
       }
     }
   }, []);
+
+  useEffect(() => {
+    fetch('https://geolocation-db.com/json/')
+      .then((response) => response.json())
+      .then((data) => {
+        dispatch(
+          setLocation({
+            ip: data.IPv4,
+            country: data.country_name,
+            lat: data.latitude,
+            long: data.longitude,
+          })
+        );
+      })
+      .catch((error) => console.log(error));
+  }, [dispatch]);
 
   return (
     <>

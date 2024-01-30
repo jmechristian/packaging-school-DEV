@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
+import { useSelector } from 'react-redux';
 import { motion, AnimatePresence } from 'framer-motion';
 import { API } from 'aws-amplify';
 import { getLesson } from '../../src/graphql/queries';
@@ -46,10 +47,12 @@ const WiredLessonCard = ({
   }, [id]);
 
   const cardClickHandler = async () => {
-    await registgerLessonClick(isLesson.id, router.asPath);
+    await registgerLessonClick(isLesson.id, router.asPath, location);
 
     router.push(`/lessons/${isLesson.slug}`);
   };
+
+  const { location } = useSelector((state) => state.auth);
 
   return (
     <motion.div

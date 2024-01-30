@@ -404,6 +404,10 @@ type CourseClick @model @auth(rules: [{ allow: public }]) {
   courseID: String! @index(name: "clicksByCourse")
   page: String
   ipAddress: String
+  country: String
+  lat: String
+  long: String
+  referrer: String
 }
 
 type LessonClick @model @auth(rules: [{ allow: public }]) {
@@ -411,6 +415,10 @@ type LessonClick @model @auth(rules: [{ allow: public }]) {
   LessonID: String! @index(name: "clicksByLesson")
   page: String
   ipAddress: String
+  country: String
+  lat: String
+  long: String
+  referrer: String
 }
 
 type LMSLesson @model @auth(rules: [{ allow: public }]) {

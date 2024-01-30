@@ -21,7 +21,7 @@ export const getAuthors = async (id) => {
   return items.data;
 };
 
-export const registgerCourseClick = async (id, page) => {
+export const registgerCourseClick = async (id, page, location) => {
   // const ip = await fetch('https://api.ipify.org/?format=json').then((res) =>
   //   res.json()
   // );
@@ -29,13 +29,20 @@ export const registgerCourseClick = async (id, page) => {
   const items = await API.graphql({
     query: createCourseClick,
     variables: {
-      input: { courseID: id, page: page, ipAddress: 'undefined' },
+      input: {
+        courseID: id,
+        page: page,
+        ipAddress: location.ip,
+        country: location.country,
+        lat: location.lat,
+        long: location.long,
+      },
     },
   });
   return items.data;
 };
 
-export const registgerLessonClick = async (id, page) => {
+export const registgerLessonClick = async (id, page, location) => {
   // const ip = await fetch('https://api.ipify.org/?format=json').then((res) =>
   //   res.json()
   // );
@@ -43,7 +50,14 @@ export const registgerLessonClick = async (id, page) => {
   const items = await API.graphql({
     query: createLessonClick,
     variables: {
-      input: { LessonID: id, page: page, ipAddress: 'undefined' },
+      input: {
+        LessonID: id,
+        page: page,
+        ipAddress: location.ip,
+        country: location.country,
+        lat: location.lat,
+        long: location.long,
+      },
     },
   });
   return items.data;

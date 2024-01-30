@@ -2751,6 +2751,10 @@ export const getCourseClick = /* GraphQL */ `
       courseID
       page
       ipAddress
+      country
+      lat
+      long
+      referrer
       createdAt
       updatedAt
     }
@@ -2768,6 +2772,10 @@ export const listCourseClicks = /* GraphQL */ `
         courseID
         page
         ipAddress
+        country
+        lat
+        long
+        referrer
         createdAt
         updatedAt
       }
@@ -2795,6 +2803,10 @@ export const courseClicksByCourseID = /* GraphQL */ `
         courseID
         page
         ipAddress
+        country
+        lat
+        long
+        referrer
         createdAt
         updatedAt
       }
@@ -2809,6 +2821,10 @@ export const getLessonClick = /* GraphQL */ `
       LessonID
       page
       ipAddress
+      country
+      lat
+      long
+      referrer
       createdAt
       updatedAt
     }
@@ -2826,6 +2842,10 @@ export const listLessonClicks = /* GraphQL */ `
         LessonID
         page
         ipAddress
+        country
+        lat
+        long
+        referrer
         createdAt
         updatedAt
       }
@@ -2853,6 +2873,10 @@ export const lessonClicksByLessonID = /* GraphQL */ `
         LessonID
         page
         ipAddress
+        country
+        lat
+        long
+        referrer
         createdAt
         updatedAt
       }

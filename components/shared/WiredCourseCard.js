@@ -30,6 +30,8 @@ const WiredCourseCard = ({
   const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
 
+  const { location } = useSelector((state) => state.auth);
+
   useEffect(() => {
     const getCurrentCourse = async () => {
       const res = await API.graphql({
@@ -45,7 +47,7 @@ const WiredCourseCard = ({
   }, [id]);
 
   const cardClickHandler = async () => {
-    await registgerCourseClick(isLesson.id, router.asPath);
+    await registgerCourseClick(isLesson.id, router.asPath, location);
 
     !external
       ? router.push(`/courses/${isLesson.slug}`)
