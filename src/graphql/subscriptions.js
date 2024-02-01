@@ -4866,11 +4866,18 @@ export const onCreateTrackedCourse = /* GraphQL */ `
         displayName
         link
         logo
+        email
         primaryColor
         highlightColor
+        pdf
+        slide
+        video
+        offered
         courses {
           nextToken
         }
+        offerings
+        status
         createdAt
         updatedAt
       }
@@ -4891,11 +4898,18 @@ export const onUpdateTrackedCourse = /* GraphQL */ `
         displayName
         link
         logo
+        email
         primaryColor
         highlightColor
+        pdf
+        slide
+        video
+        offered
         courses {
           nextToken
         }
+        offerings
+        status
         createdAt
         updatedAt
       }
@@ -4916,11 +4930,18 @@ export const onDeleteTrackedCourse = /* GraphQL */ `
         displayName
         link
         logo
+        email
         primaryColor
         highlightColor
+        pdf
+        slide
+        video
+        offered
         courses {
           nextToken
         }
+        offerings
+        status
         createdAt
         updatedAt
       }
@@ -4937,8 +4958,13 @@ export const onCreateCustomer = /* GraphQL */ `
       displayName
       link
       logo
+      email
       primaryColor
       highlightColor
+      pdf
+      slide
+      video
+      offered
       courses {
         items {
           id
@@ -4950,6 +4976,8 @@ export const onCreateCustomer = /* GraphQL */ `
         }
         nextToken
       }
+      offerings
+      status
       createdAt
       updatedAt
     }
@@ -4962,8 +4990,13 @@ export const onUpdateCustomer = /* GraphQL */ `
       displayName
       link
       logo
+      email
       primaryColor
       highlightColor
+      pdf
+      slide
+      video
+      offered
       courses {
         items {
           id
@@ -4975,6 +5008,8 @@ export const onUpdateCustomer = /* GraphQL */ `
         }
         nextToken
       }
+      offerings
+      status
       createdAt
       updatedAt
     }
@@ -4987,8 +5022,13 @@ export const onDeleteCustomer = /* GraphQL */ `
       displayName
       link
       logo
+      email
       primaryColor
       highlightColor
+      pdf
+      slide
+      video
+      offered
       courses {
         items {
           id
@@ -5000,6 +5040,74 @@ export const onDeleteCustomer = /* GraphQL */ `
         }
         nextToken
       }
+      offerings
+      status
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateCustomerLibary = /* GraphQL */ `
+  subscription OnCreateCustomerLibary {
+    onCreateCustomerLibary {
+      id
+      displayName
+      description
+      link
+      logo
+      email
+      primaryColor
+      highlightColor
+      pdf
+      slide
+      video
+      offered
+      offerings
+      status
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateCustomerLibary = /* GraphQL */ `
+  subscription OnUpdateCustomerLibary {
+    onUpdateCustomerLibary {
+      id
+      displayName
+      description
+      link
+      logo
+      email
+      primaryColor
+      highlightColor
+      pdf
+      slide
+      video
+      offered
+      offerings
+      status
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteCustomerLibary = /* GraphQL */ `
+  subscription OnDeleteCustomerLibary {
+    onDeleteCustomerLibary {
+      id
+      displayName
+      description
+      link
+      logo
+      email
+      primaryColor
+      highlightColor
+      pdf
+      slide
+      video
+      offered
+      offerings
+      status
       createdAt
       updatedAt
     }

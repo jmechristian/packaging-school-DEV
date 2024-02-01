@@ -523,10 +523,34 @@ type Customer @model @auth(rules: [{ allow: public }]) {
   displayName: String!
   link: String
   logo: String
+  email: String
   primaryColor: String
   highlightColor: String
+  pdf: String
+  slide: String
+  video: String
+  offered: [String]
   courses: [TrackedCourse]
     @hasMany(indexName: "trackedByCustomer", fields: ["id"])
+  offerings: [String]
+  status: String @default(value: "DRAFT")
+}
+
+type CustomerLibary @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  displayName: String!
+  description: String
+  link: String
+  logo: String
+  email: String
+  primaryColor: String
+  highlightColor: String
+  pdf: String
+  slide: String
+  video: String
+  offered: [String]
+  offerings: [String]
+  status: String @default(value: "DRAFT")
 }
 
 ######### Salesbar #########

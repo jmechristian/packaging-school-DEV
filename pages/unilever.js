@@ -38,6 +38,8 @@ import UnileverLessons from '../components/unilever/UnileverLessons';
 import { getCustomer, listUnilevers } from '../src/graphql/queries';
 import SPCLibraryModule from '../components/library/SPCLibraryModule';
 import CustomerSearchLOTMContainer from '../components/customers/CustomerSearchLOTMContainer';
+import CustomerSearchContainer from '../components/customers/CustomerSearchContainer';
+import Head from 'next/head';
 
 const ReactGoogleSlides = dynamic(() => import('react-google-slides'), {
   ssr: false,
@@ -215,7 +217,7 @@ const faqs = [
   },
 ];
 
-const Page = ({ unilever }) => {
+const Page = ({ customer }) => {
   // console.log(unilever);
 
   const [isPlaying, setIsPlaying] = useState(false);
@@ -272,16 +274,6 @@ const Page = ({ unilever }) => {
     );
   };
 
-  const CourseContent = () => {
-    return (
-      <UnileverCourses
-        supportLinks={supportLinks}
-        id={'84558b1f-359a-4551-8832-c6c570171163'}
-        courses={unilever.courses.items}
-      />
-    );
-  };
-
   const LessonContent = () => {
     return (
       <UnileverLessons
@@ -304,192 +296,197 @@ const Page = ({ unilever }) => {
   };
 
   return (
-    <div className='w-full max-w-7xl px-3 md:px-6 lg:px-0 flex flex-col gap-4 md:gap-6 py-3 md:py-6 lg:py-9 mx-auto'>
-      {/* MAIN */}
-      <div className='w-full bg-unilever-blue h-full rounded-lg pt-6 shadow-xl'>
-        <div className='grid md:grid-cols-5 gap-4 md:gap-9 lg:max-w-6xl lg:mx-auto overflow-hidden w-full h-full'>
-          <div className='flex justify-center w-full items-center md:col-span-2 lg:col-span-2'>
-            <div>
-              <Unilever style={'w-40 lg:w-72 p-3 h-full fill-white'} />
+    <>
+      <Head>
+        <meta name='robots' content='noindex,nofollow' />
+      </Head>
+      <div className='w-full max-w-7xl px-3 md:px-6 lg:px-0 flex flex-col gap-4 md:gap-6 py-3 md:py-6 lg:py-9 mx-auto'>
+        {/* MAIN */}
+        <div className='w-full bg-unilever-blue h-full rounded-lg pt-6 shadow-xl'>
+          <div className='grid md:grid-cols-5 gap-4 md:gap-9 lg:max-w-6xl lg:mx-auto overflow-hidden w-full h-full'>
+            <div className='flex justify-center w-full items-center md:col-span-2 lg:col-span-2'>
+              <div>
+                <Unilever style={'w-40 lg:w-72 p-3 h-full fill-white'} />
+              </div>
+            </div>
+            <div className='flex w-full flex-col gap-4 p-3 md:p-6 lg:p-9 md:col-span-3 lg:col-span-3 lg:gap-x-16'>
+              <div className='md:w-full  aspect-[16/9] md:max-w-none max-w-xs mx-auto bg-indigo-300 h-full flex items-center justify-center text-2xl'>
+                <div className='w-full h-full '>
+                  <ReactGoogleSlides
+                    width={'100%'}
+                    height={'100%'}
+                    slidesLink='https://docs.google.com/presentation/d/1frh5qJEeQQ-kMIKpSi3MHaamjPUlSHKCudoPHX8vDXs'
+                    position={1}
+                    showControls
+                    loop
+                  />
+                </div>
+              </div>
+
+              <div className='w-full flex max-w-xs md:max-w-none mx-auto flex-col items-center gap-2 bg-unilever-lightblue  shadow text-white rounded-lg py-4 cursor-pointer'>
+                <div className='text-sm mb-1'>
+                  Please choose your instruction method below.
+                </div>
+                <div className='w-fit grid grid-cols-2 gap-x-7 overflow-hidden'>
+                  <div
+                    className='w-16 h-16 rounded-full bg-unilever-blue hover:bg-unilever-darkblue cursor-pointer shadow-md flex items-center justify-center'
+                    onClick={() => setIsMediaType('SLIDES')}
+                  >
+                    <div className='flex flex-col items-center justify-center'>
+                      <div>
+                        <Square3Stack3DIcon className='w-6 h-6 fill-white/80' />
+                      </div>
+                      <div className='text-xs font-bold text-white/80'>
+                        Slides
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className='w-16 h-16 rounded-full bg-unilever-blue hover:bg-unilever-darkblue cursor-pointer shadow-md flex items-center justify-center'
+                    onClick={() => setIsMediaType('PDF')}
+                  >
+                    <div className='flex flex-col items-center justify-center'>
+                      <div>
+                        <DocumentArrowDownIcon className='w-6 h-6 fill-white/80' />
+                      </div>
+                      <div className='text-xs font-bold text-white/80'>PDF</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div className='flex w-full flex-col gap-4 p-3 md:p-6 lg:p-9 md:col-span-3 lg:col-span-3 lg:gap-x-16'>
-            <div className='md:w-full  aspect-[16/9] md:max-w-none max-w-xs mx-auto bg-indigo-300 h-full flex items-center justify-center text-2xl'>
-              <div className='w-full h-full '>
-                <ReactGoogleSlides
-                  width={'100%'}
-                  height={'100%'}
-                  slidesLink='https://docs.google.com/presentation/d/1frh5qJEeQQ-kMIKpSi3MHaamjPUlSHKCudoPHX8vDXs'
-                  position={1}
-                  showControls
-                  loop
-                />
+          <div className='text-center text-white pt-6 md:pt-12'>
+            <div className=' bg-black/40 rounded-lg py-4 px-6 w-full justify-center mx-auto flex items-center gap-3'>
+              <div>
+                <InformationCircleIcon className='w-8 h-8 md:w-6 md:h-6 stroke-white' />
               </div>
-            </div>
-
-            <div className='w-full flex max-w-xs md:max-w-none mx-auto flex-col items-center gap-2 bg-unilever-lightblue  shadow text-white rounded-lg py-4 cursor-pointer'>
-              {/* <div className='justify-center items-center flex gap-1.5'>
-                <div>
-                  <InformationCircleIcon className='w-6 h-6 stroke-white' />
-                </div>
-                <div className='text-xl font-bold'>How to Use This Library</div>
-              </div> */}
-              <div className='text-sm mb-1'>
-                Please choose your instruction method below.
-              </div>
-              <div className='w-fit grid grid-cols-3 gap-x-7 overflow-hidden'>
-                <div
-                  className='w-16 h-16 rounded-full bg-unilever-blue hover:bg-unilever-darkblue shadow-md flex items-center justify-center'
-                  onClick={() => setIsMediaType('VIDEO')}
+              <div className='text-left leading-tight text-sm md:text-base'>
+                Find your library of courses below. If you have any questions,
+                please reach out to{' '}
+                <a
+                  href='mailto:ruth.alvarez@unilever.com'
+                  className='underline'
                 >
-                  <div className='flex flex-col items-center justify-center'>
-                    <div>
-                      <FilmIcon className='w-6 h-6 fill-white/80' />
-                    </div>
-                    <div className='text-xs font-bold text-white/80'>Video</div>
-                  </div>
-                </div>
-                <div
-                  className='w-16 h-16 rounded-full bg-unilever-blue hover:bg-unilever-darkblue cursor-pointer shadow-md flex items-center justify-center'
-                  onClick={() => setIsMediaType('SLIDES')}
-                >
-                  <div className='flex flex-col items-center justify-center'>
-                    <div>
-                      <Square3Stack3DIcon className='w-6 h-6 fill-white/80' />
-                    </div>
-                    <div className='text-xs font-bold text-white/80'>
-                      Slides
-                    </div>
-                  </div>
-                </div>
-                <div
-                  className='w-16 h-16 rounded-full bg-unilever-blue hover:bg-unilever-darkblue cursor-pointer shadow-md flex items-center justify-center'
-                  onClick={() => setIsMediaType('PDF')}
-                >
-                  <div className='flex flex-col items-center justify-center'>
-                    <div>
-                      <DocumentArrowDownIcon className='w-6 h-6 fill-white/80' />
-                    </div>
-                    <div className='text-xs font-bold text-white/80'>PDF</div>
-                  </div>
-                </div>
+                  ruth.alvarez@unilever.com
+                </a>
               </div>
             </div>
           </div>
         </div>
-        <div className='text-center text-white pt-6 md:pt-12'>
-          <div className=' bg-black/40 rounded-lg py-4 px-6 w-full justify-center mx-auto flex items-center gap-3'>
-            <div>
-              <InformationCircleIcon className='w-8 h-8 md:w-6 md:h-6 stroke-white' />
-            </div>
-            <div className='text-left leading-tight text-sm md:text-base'>
-              Find your library of courses below. If you have any questions,
-              please reach out to{' '}
-              <span className='underline'>email@Unilever.com</span>
+
+        {/* HIGHLIGHT */}
+
+        <FullWidthDropDown
+          title={'featured'}
+          Icon={BoltIcon}
+          bg='bg-unilever-blue'
+          bgdark='bg-unilever-darkblue'
+          highlight={'bg-unilever-lightblue'}
+          content={<HighlightContent />}
+          open={true}
+        />
+
+        {/* COURSES */}
+
+        <FullWidthDropDown
+          title={'Unilever Course Offerings'}
+          Icon={AcademicCapIcon}
+          bg='bg-unilever-blue'
+          bgdark='bg-unilever-darkblue'
+          content={
+            <UnileverCourses
+              supportLinks={supportLinks}
+              id={'84558b1f-359a-4551-8832-c6c570171163'}
+              courses={customer && customer.courses.items}
+            />
+          }
+          highlight={'bg-unilever-lightblue'}
+          bgContent={'bg-neutral-200 border'}
+        />
+
+        <FullWidthDropDown
+          title={'SPC Knowledge Library Topics'}
+          Icon={AcademicCapIcon}
+          bg='bg-base-mid'
+          bgdark='bg-base-dark'
+          content={<SPCLibraryModule />}
+          highlight={'bg-clemson'}
+          bgContent={'bg-neutral-200 border'}
+        />
+        <FullWidthDropDown
+          title={'Packaging School Course Offerings'}
+          Icon={AcademicCapIcon}
+          bg='bg-base-mid'
+          bgdark='bg-base-dark'
+          content={
+            <UnileverCourses
+              supportLinks={supportLinks}
+              id={'84558b1f-359a-4551-8832-c6c570171163'}
+              courses={customer && customer.courses.items}
+            />
+          }
+          highlight={'bg-clemson'}
+          bgContent={'bg-neutral-200 border'}
+        />
+
+        {/* LOTM */}
+        <FullWidthDropDown
+          title={'Learning of the Month'}
+          Icon={BookmarkSquareIcon}
+          bg='bg-base-mid'
+          bgdark='bg-base-dark'
+          content={<CustomerSearchLOTMContainer />}
+          highlight={'bg-clemson'}
+          bgContent={'bg-neutral-200 border'}
+        />
+
+        <div className='bg-neutral-100 rounded-xl'>
+          <div className='mx-auto max-w-7xl px-6 py-20 lg:px-8'>
+            <div className='mx-auto max-w-5xl divide-y divide-gray-900/10'>
+              <h2 className='text-2xl font-bold leading-10 tracking-tight text-gray-900'>
+                Frequently asked questions
+              </h2>
+              <dl className='mt-10 space-y-6 divide-y divide-gray-900/10'>
+                {faqs.map((faq) => (
+                  <Disclosure as='div' key={faq.question} className='pt-6'>
+                    {({ open }) => (
+                      <>
+                        <dt>
+                          <Disclosure.Button className='flex w-full items-start justify-between text-left text-gray-900'>
+                            <span className='text-base font-semibold leading-7'>
+                              {faq.question}
+                            </span>
+                            <span className='ml-6 flex h-7 items-center'>
+                              {open ? (
+                                <MinusSmallIcon
+                                  className='h-6 w-6'
+                                  aria-hidden='true'
+                                />
+                              ) : (
+                                <PlusSmallIcon
+                                  className='h-6 w-6'
+                                  aria-hidden='true'
+                                />
+                              )}
+                            </span>
+                          </Disclosure.Button>
+                        </dt>
+                        <Disclosure.Panel as='dd' className='mt-2 pr-12'>
+                          <p className='text-base leading-7 text-gray-600'>
+                            {faq.answer}
+                          </p>
+                        </Disclosure.Panel>
+                      </>
+                    )}
+                  </Disclosure>
+                ))}
+              </dl>
             </div>
           </div>
         </div>
       </div>
-
-      {/* HIGHLIGHT */}
-
-      <FullWidthDropDown
-        title={'featured'}
-        Icon={BoltIcon}
-        bg='bg-unilever-blue'
-        bgdark='bg-unilever-darkblue'
-        highlight={'bg-unilever-lightblue'}
-        content={<HighlightContent />}
-        open={true}
-      />
-
-      {/* COURSES */}
-
-      <FullWidthDropDown
-        title={'Unilever Course Offerings'}
-        Icon={AcademicCapIcon}
-        bg='bg-unilever-blue'
-        bgdark='bg-unilever-darkblue'
-        content={<CourseContent />}
-        highlight={'bg-unilever-lightblue'}
-        bgContent={'bg-neutral-200 border'}
-      />
-
-      <FullWidthDropDown
-        title={'SPC Knowledge Library Topics'}
-        Icon={AcademicCapIcon}
-        bg='bg-base-mid'
-        bgdark='bg-base-dark'
-        content={<SPCLibraryModule />}
-        highlight={'bg-clemson'}
-        bgContent={'bg-neutral-200 border'}
-      />
-      <FullWidthDropDown
-        title={'Packaging School Course Offerings'}
-        Icon={AcademicCapIcon}
-        bg='bg-base-mid'
-        bgdark='bg-base-dark'
-        content={<CourseContent />}
-        highlight={'bg-clemson'}
-        bgContent={'bg-neutral-200 border'}
-      />
-
-      {/* LOTM */}
-      <FullWidthDropDown
-        title={'Learning of the Month'}
-        Icon={BookmarkSquareIcon}
-        bg='bg-base-mid'
-        bgdark='bg-base-dark'
-        content={<CustomerSearchLOTMContainer />}
-        highlight={'bg-clemson'}
-        bgContent={'bg-neutral-200 border'}
-      />
-
-      <div className='bg-neutral-100 rounded-xl'>
-        <div className='mx-auto max-w-7xl px-6 py-20 lg:px-8'>
-          <div className='mx-auto max-w-5xl divide-y divide-gray-900/10'>
-            <h2 className='text-2xl font-bold leading-10 tracking-tight text-gray-900'>
-              Frequently asked questions
-            </h2>
-            <dl className='mt-10 space-y-6 divide-y divide-gray-900/10'>
-              {faqs.map((faq) => (
-                <Disclosure as='div' key={faq.question} className='pt-6'>
-                  {({ open }) => (
-                    <>
-                      <dt>
-                        <Disclosure.Button className='flex w-full items-start justify-between text-left text-gray-900'>
-                          <span className='text-base font-semibold leading-7'>
-                            {faq.question}
-                          </span>
-                          <span className='ml-6 flex h-7 items-center'>
-                            {open ? (
-                              <MinusSmallIcon
-                                className='h-6 w-6'
-                                aria-hidden='true'
-                              />
-                            ) : (
-                              <PlusSmallIcon
-                                className='h-6 w-6'
-                                aria-hidden='true'
-                              />
-                            )}
-                          </span>
-                        </Disclosure.Button>
-                      </dt>
-                      <Disclosure.Panel as='dd' className='mt-2 pr-12'>
-                        <p className='text-base leading-7 text-gray-600'>
-                          {faq.answer}
-                        </p>
-                      </Disclosure.Panel>
-                    </>
-                  )}
-                </Disclosure>
-              ))}
-            </dl>
-          </div>
-        </div>
-      </div>
-    </div>
+    </>
   );
 };
 
@@ -498,10 +495,10 @@ export async function getServerSideProps() {
     query: getCustomer,
     variables: { id: '84558b1f-359a-4551-8832-c6c570171163' },
   });
-  const unilever = res.data.getCustomer;
+  const customer = res.data.getCustomer;
 
   return {
-    props: { unilever },
+    props: { customer },
   };
 }
 

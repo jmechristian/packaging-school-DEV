@@ -88,6 +88,7 @@ const Page = ({ lesson }) => {
       <>
         <Head>
           <title>{lesson.title}</title>
+          <meta name='robots' content='noindex,nofollow' />
           <meta
             name='image'
             property='og:image'

@@ -3754,11 +3754,18 @@ export const getTrackedCourse = /* GraphQL */ `
         displayName
         link
         logo
+        email
         primaryColor
         highlightColor
+        pdf
+        slide
+        video
+        offered
         courses {
           nextToken
         }
+        offerings
+        status
         createdAt
         updatedAt
       }
@@ -3784,8 +3791,15 @@ export const listTrackedCourses = /* GraphQL */ `
           displayName
           link
           logo
+          email
           primaryColor
           highlightColor
+          pdf
+          slide
+          video
+          offered
+          offerings
+          status
           createdAt
           updatedAt
         }
@@ -3823,8 +3837,15 @@ export const trackedCoursesByCustomerIdAndClicks = /* GraphQL */ `
           displayName
           link
           logo
+          email
           primaryColor
           highlightColor
+          pdf
+          slide
+          video
+          offered
+          offerings
+          status
           createdAt
           updatedAt
         }
@@ -3843,8 +3864,13 @@ export const getCustomer = /* GraphQL */ `
       displayName
       link
       logo
+      email
       primaryColor
       highlightColor
+      pdf
+      slide
+      video
+      offered
       courses {
         items {
           id
@@ -3856,6 +3882,8 @@ export const getCustomer = /* GraphQL */ `
         }
         nextToken
       }
+      offerings
+      status
       createdAt
       updatedAt
     }
@@ -3873,11 +3901,73 @@ export const listCustomers = /* GraphQL */ `
         displayName
         link
         logo
+        email
         primaryColor
         highlightColor
+        pdf
+        slide
+        video
+        offered
         courses {
           nextToken
         }
+        offerings
+        status
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getCustomerLibary = /* GraphQL */ `
+  query GetCustomerLibary($id: ID!) {
+    getCustomerLibary(id: $id) {
+      id
+      displayName
+      description
+      link
+      logo
+      email
+      primaryColor
+      highlightColor
+      pdf
+      slide
+      video
+      offered
+      offerings
+      status
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listCustomerLibaries = /* GraphQL */ `
+  query ListCustomerLibaries(
+    $filter: ModelCustomerLibaryFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listCustomerLibaries(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        displayName
+        description
+        link
+        logo
+        email
+        primaryColor
+        highlightColor
+        pdf
+        slide
+        video
+        offered
+        offerings
+        status
         createdAt
         updatedAt
       }

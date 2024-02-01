@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Head from 'next/head';
 import { API } from 'aws-amplify';
 import { getCustomer } from '../src/graphql/queries';
 import {
@@ -49,10 +50,14 @@ const faqs = [
 
 const Page = ({ customer }) => {
   return (
-    <div className='w-full max-w-7xl px-3 md:px-6 lg:px-0 flex flex-col gap-4 md:gap-6 pb-3 md:pb-6 lg:pb-24 mx-auto'>
-      {/* <CustomerIntro logo={'https://packschool.s3.amazonaws.com/GB_logo.png'} /> */}
-      <CustomerIntro_2 />
-      {/* <FullWidthDropDown
+    <>
+      <Head>
+        <meta name='robots' content='noindex,nofollow' />
+      </Head>
+      <div className='w-full max-w-7xl px-3 md:px-6 lg:px-0 flex flex-col gap-4 md:gap-6 pb-3 md:pb-6 lg:pb-24 mx-auto'>
+        {/* <CustomerIntro logo={'https://packschool.s3.amazonaws.com/GB_logo.png'} /> */}
+        <CustomerIntro_2 />
+        {/* <FullWidthDropDown
         title={'featured'}
         Icon={BoltIcon}
         bg='bg-gb-main'
@@ -63,41 +68,42 @@ const Page = ({ customer }) => {
         }
         open={true}
       /> */}
-      <FullWidthDropDown
-        title={'SPC Knowledge Library Topics'}
-        Icon={AcademicCapIcon}
-        bg='bg-gb-main'
-        bgdark='bg-gradient-to-r from-gb-main to-gb-green'
-        highlight={'bg-gb-green'}
-        content={<CustomerOfferings />}
-        bgContent={'bg-neutral-200 border'}
-        open={true}
-      />
-      <FullWidthDropDown
-        title={'Packaging School Course Offerings'}
-        Icon={AcademicCapIcon}
-        cash={true}
-        bg='bg-base-mid'
-        bgdark='bg-base-dark'
-        content={
-          <CustomerSearchContainer
-            reference={'ref=ac65d9'}
-            courses={customer && customer.courses.items}
-          />
-        }
-        highlight={'bg-clemson'}
-        bgContent={'bg-neutral-200 border'}
-      />
-      <FullWidthDropDown
-        title={'Learning of the Month'}
-        Icon={BookmarkSquareIcon}
-        bg='bg-base-mid'
-        bgdark='bg-base-dark'
-        content={<CustomerSearchLOTMContainer />}
-        highlight={'bg-clemson'}
-        bgContent={'bg-neutral-200 border'}
-      />
-    </div>
+        <FullWidthDropDown
+          title={'SPC Knowledge Library Topics'}
+          Icon={AcademicCapIcon}
+          bg='bg-gb-main'
+          bgdark='bg-gradient-to-r from-gb-main to-gb-green'
+          highlight={'bg-gb-green'}
+          content={<CustomerOfferings />}
+          bgContent={'bg-neutral-200 border'}
+          open={true}
+        />
+        <FullWidthDropDown
+          title={'Packaging School Course Offerings'}
+          Icon={AcademicCapIcon}
+          cash={true}
+          bg='bg-base-mid'
+          bgdark='bg-base-dark'
+          content={
+            <CustomerSearchContainer
+              reference={'ref=ac65d9'}
+              courses={customer && customer.courses.items}
+            />
+          }
+          highlight={'bg-clemson'}
+          bgContent={'bg-neutral-200 border'}
+        />
+        <FullWidthDropDown
+          title={'Learning of the Month'}
+          Icon={BookmarkSquareIcon}
+          bg='bg-base-mid'
+          bgdark='bg-base-dark'
+          content={<CustomerSearchLOTMContainer />}
+          highlight={'bg-clemson'}
+          bgContent={'bg-neutral-200 border'}
+        />
+      </div>
+    </>
   );
 };
 
