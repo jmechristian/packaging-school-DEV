@@ -74,7 +74,7 @@ const Page = ({ customer }) => {
           bg='bg-gb-main'
           bgdark='bg-gradient-to-r from-gb-main to-gb-green'
           highlight={'bg-gb-green'}
-          content={<CustomerOfferings />}
+          content={<CustomerOfferings reference={'coupon=greenblue'} />}
           bgContent={'bg-neutral-200 border'}
           open={true}
         />

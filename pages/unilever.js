@@ -336,7 +336,12 @@ const Page = ({ customer }) => {
                   </div>
                   <div
                     className='w-16 h-16 rounded-full bg-unilever-blue hover:bg-unilever-darkblue cursor-pointer shadow-md flex items-center justify-center'
-                    onClick={() => setIsMediaType('PDF')}
+                    onClick={() =>
+                      window.open(
+                        'https://packschool.s3.amazonaws.com/unilever-instructions-20240205.pdf',
+                        '_blank'
+                      )
+                    }
                   >
                     <div className='flex flex-col items-center justify-center'>
                       <div>
@@ -403,7 +408,7 @@ const Page = ({ customer }) => {
           Icon={AcademicCapIcon}
           bg='bg-base-mid'
           bgdark='bg-base-dark'
-          content={<SPCLibraryModule />}
+          content={<SPCLibraryModule reference={'coupon=unileverspc'} />}
           highlight={'bg-clemson'}
           bgContent={'bg-neutral-200 border'}
         />

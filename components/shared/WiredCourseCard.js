@@ -23,6 +23,7 @@ const WiredCourseCard = ({
   Icon,
   callout,
   link_text,
+  coupon,
 }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isHover, setIsHovered] = useState(false);
@@ -49,10 +50,10 @@ const WiredCourseCard = ({
   const cardClickHandler = async () => {
     await registgerCourseClick(isLesson.id, router.asPath, location);
 
-    !external
+    !external && !reference
       ? router.push(`/courses/${isLesson.slug}`)
       : reference
-      ? window.open(isLesson.link + `${reference}`, '_blank')
+      ? window.open(isLesson.link + `?${reference}`, '_blank')
       : window.open(isLesson.link, '_blank');
   };
 
