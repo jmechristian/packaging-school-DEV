@@ -89,7 +89,7 @@ const FullWidthDropDown = ({
               className={`${bgContent} rounded-b-xl`}
             >
               <motion.div
-                className={`px-6 w-full mt-9`}
+                className={`px-6 w-full my-9 h-full`}
                 layout
                 key={isOpen}
                 initial='collapsed'

@@ -11,7 +11,7 @@ import WiredCourseCard from '../shared/WiredCourseCard';
 
 const SPCLibraryModule = ({ featured, reference, path }) => {
   return (
-    <motion.div className='px-0 lg:px-6 w-fit mx-auto grid gap-12 md:gap-6 lg:gap-16 md:grid-cols-2 lg:grid-cols-3 md:pb-10 my-9 overflow-hidden'>
+    <motion.div className='px-0 lg:px-6 w-fit mx-auto grid gap-12 md:gap-6 lg:gap-16 md:grid-cols-2 lg:grid-cols-3 md:pb-10 py-9'>
       <WiredCourseCard
         id={'5fc017b2-2149-40d7-a6d2-272afad2c4e3'}
         reference={reference}
