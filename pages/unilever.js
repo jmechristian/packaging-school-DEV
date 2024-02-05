@@ -265,7 +265,6 @@ const Page = ({ customer }) => {
           external={true}
           Icon={AcademicCapIcon}
           callout={'Packaging School Course'}
-          reference={'ref=ac65d9'}
         />
         <WiredLessonCardToo
           id={latestLesson && latestLesson[0].id}
