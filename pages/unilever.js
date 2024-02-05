@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
+import WiredCourseCard from '../components/shared/WiredCourseCard';
 import dynamic from 'next/dynamic';
 import {
   MinusSmallIcon,
   PlusSmallIcon,
   ArrowTopRightOnSquareIcon,
   ArrowLongRightIcon,
+  BookOpenIcon,
   AcademicCapIcon,
   ArchiveBoxIcon,
   BoltIcon,
@@ -26,6 +28,7 @@ import {
   Square3Stack3DIcon,
   DocumentArrowDownIcon,
 } from '@heroicons/react/24/solid';
+import { useRouter } from 'next/router';
 import { Disclosure } from '@headlessui/react';
 import { useSelector } from 'react-redux';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -40,6 +43,7 @@ import SPCLibraryModule from '../components/library/SPCLibraryModule';
 import CustomerSearchLOTMContainer from '../components/customers/CustomerSearchLOTMContainer';
 import CustomerSearchContainer from '../components/customers/CustomerSearchContainer';
 import Head from 'next/head';
+import WiredLessonCardToo from '../components/shared/WiredLessonCardToo';
 
 const ReactGoogleSlides = dynamic(() => import('react-google-slides'), {
   ssr: false,
@@ -211,58 +215,73 @@ const faqs = [
 ];
 
 const Page = ({ customer }) => {
+  const router = useRouter();
   // console.log(unilever);
+  const createDate = (date) => {
+    const newDate = new Date(date);
+    return newDate.toLocaleDateString('en-US', {
+      month: 'long',
+      year: 'numeric',
+    });
+  };
+
+  const pagePath = useMemo(() => {
+    return router.asPath;
+  }, [router]);
 
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMediaType, setIsMediaType] = useState('VIDEO');
 
   const { allLessons } = useSelector((state) => state.course_filter);
 
+  const latestLesson = useMemo(() => {
+    const lotm =
+      allLessons &&
+      [...allLessons]
+        .filter((less) => less.type === 'LOTM')
+        .sort((a, b) => {
+          if (a.createdAt < b.createdAt) {
+            return 1;
+          }
+          if (a.createdAt > b.createdAt) {
+            return -1;
+          }
+        });
+    return lotm;
+  }, [allLessons]);
+
   const HighlightContent = ({ link }) => {
     return (
-      <motion.div className='px-0 lg:px-6 w-fit mx-auto grid gap-12 md:gap-6 lg:gap-16 md:grid-cols-2 lg:grid-cols-3 pb-3 my-9 overflow-hidden'>
-        <NewCouseCard
-          title={'Uniliever Packaging Bootcamp 101'}
-          description={
-            'This Boot Camp will serve as an introduction to the packaging industry and provide the fundamental knowledge necessary to get you up to speed.'
-          }
-          background={
-            'https://packschool.s3.amazonaws.com/unilever-brands-1.png'
-          }
-          link={'#'}
+      <motion.div className='px-0 lg:px-6 w-fit mx-auto grid gap-12 md:gap-6 lg:gap-16 md:grid-cols-2 lg:grid-cols-3 md:pb-10 my-9 overflow-hidden'>
+        <WiredCourseCard
+          id={'a6769066-eda9-4f8f-aee9-579482d87ce0'}
+          external={true}
           link_text={'Select Course'}
-          Icon={RocketLaunchIcon}
+          Icon={AcademicCapIcon}
           callout={'Unilever Developed'}
-          video={'https://www.youtube.com/watch?v=ynDhF_jYZn8'}
-          id={'806c0e2e-c4db-4c13-94f9-b49d4e8b2239'}
         />
-        <NewCouseCard
-          title={'Sustainable Packaging'}
-          description={
-            'Have you ever wondered how grocery store produce ships from the farm to the grocery store?'
-          }
-          background={
-            'https://packschool.s3.amazonaws.com/sustainable-seoImage.png'
-          }
-          link={'#'}
-          link_text={'Select Course'}
-          Icon={SparklesIcon}
-          callout={'Most Popular'}
-          video={'https://www.youtube.com/watch?v=ynDhF_jYZn8'}
-          id={'806c0e2e-c4db-4c13-94f9-b49d4e8b2239'}
+        <WiredCourseCard
+          id={'ff174f01-5f76-486c-8d7a-849d6d3ff914'}
+          external={true}
+          Icon={AcademicCapIcon}
+          callout={'Packaging School Course'}
+          reference={'ref=ac65d9'}
         />
-        <NewCouseCard
-          title={'Shoe Shopping From Home'}
-          description={
-            "Does packaging influence value? Let's investigate the relationship between product packaging and consumer to analyze how design can influence purchase choice."
-          }
-          background={'https://packschool.s3.amazonaws.com/demo-lesson.png'}
-          link={'/lessons/shoe-shopping-from-home'}
-          link_text={'View Lesson'}
+        <WiredLessonCardToo
+          id={latestLesson && latestLesson[0].id}
           Icon={SignalIcon}
           callout={'Latest Lesson'}
-          id={'806c0e2e-c4db-4c13-94f9-b49d4e8b2239'}
+          link_text={'View Lesson'}
         />
+        {/* <NewCouseCard
+        title={latestLesson && latestLesson[0].title}
+        description={latestLesson && latestLesson[0].subhead}
+        background={latestLesson && latestLesson[0].seoImage}
+        link={`/lessons/${latestLesson && latestLesson[0].slug}`}
+        link_text={'View Lesson'}
+        Icon={SignalIcon}
+        callout={'Latest Lesson'}
+      /> */}
       </motion.div>
     );
   };
@@ -408,7 +427,12 @@ const Page = ({ customer }) => {
           Icon={AcademicCapIcon}
           bg='bg-base-mid'
           bgdark='bg-base-dark'
-          content={<SPCLibraryModule reference={'coupon=unileverspc'} />}
+          content={
+            <SPCLibraryModule
+              reference={'coupon=unileverspc'}
+              path={pagePath}
+            />
+          }
           highlight={'bg-clemson'}
           bgContent={'bg-neutral-200 border'}
         />

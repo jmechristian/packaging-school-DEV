@@ -47,16 +47,18 @@ const CustomerSearchLOTMContainer = () => {
   const { allLessons } = useSelector((state) => state.course_filter);
 
   const lessonsToShow = useMemo(() => {
-    const lotm = [...allLessons]
-      .filter((less) => less.type === 'LOTM')
-      .sort((a, b) => {
-        if (a.createdAt < b.createdAt) {
-          return 1;
-        }
-        if (a.createdAt > b.createdAt) {
-          return -1;
-        }
-      });
+    const lotm =
+      allLessons &&
+      [...allLessons]
+        .filter((less) => less.type === 'LOTM')
+        .sort((a, b) => {
+          if (a.createdAt < b.createdAt) {
+            return 1;
+          }
+          if (a.createdAt > b.createdAt) {
+            return -1;
+          }
+        });
 
     return lotm.filter(
       (o) =>
@@ -137,15 +139,12 @@ const CustomerSearchLOTMContainer = () => {
             ) : (
               <div className='course-card-grid'>
                 {lessonsToShow.map((link) => (
-                  <NewCouseCard
-                    key={link.title}
-                    title={link.title}
-                    description={link.subhead}
-                    background={link.seoImage}
-                    link={`/lessons/${link.slug}`}
-                    link_text={'View Lesson'}
-                    callout={createDate(link.createdAt)}
+                  <WiredLessonCardToo
+                    key={link.id}
+                    id={link.id}
                     Icon={BookOpenIcon}
+                    callout={createDate(link.createdAt)}
+                    link_text={'View Lesson'}
                   />
                 ))}
               </div>

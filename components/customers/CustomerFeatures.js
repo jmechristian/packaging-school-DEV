@@ -13,7 +13,7 @@ import WiredCourseCard from '../shared/WiredCourseCard';
 import WiredLessonCard from '../shared/WiredLessonCard';
 import WiredLessonCardToo from '../shared/WiredLessonCardToo';
 
-const CustomerFeatures = ({ courses }) => {
+const CustomerFeatures = ({ courseId, lessonId, clientCourseId }) => {
   const { allLessons, allCourses } = useSelector(
     (state) => state.course_filter
   );
@@ -34,15 +34,6 @@ const CustomerFeatures = ({ courses }) => {
 
     return lotm;
   }, [allLessons]);
-
-  const mostPopularCourse = useMemo(() => {
-    const pop = courses && [...courses].sort((a, b) => b.clicks - a.clicks);
-
-    const popCourse =
-      allCourses && allCourses.filter((c) => c.id === pop[0].courseId);
-
-    return popCourse;
-  }, [courses, allCourses]);
 
   return (
     <motion.div className='px-0 lg:px-6 w-fit mx-auto grid gap-12 md:gap-6 lg:gap-16 md:grid-cols-2 lg:grid-cols-3 md:pb-10 my-9 overflow-hidden'>
