@@ -936,6 +936,103 @@ export const listAPS = /* GraphQL */ `
     }
   }
 `;
+export const getAPSRegistrant = /* GraphQL */ `
+  query GetAPSRegistrant($id: ID!) {
+    getAPSRegistrant(id: $id) {
+      year
+      id
+      name
+      email
+      company
+      title
+      phone
+      code
+      worksWith
+      speedNetworking
+      innovationWorkshop
+      plantTour
+      confirmationSent
+      codeRequested
+      codeSent
+      registrationReceived
+      welcomeEmailSent
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listAPSRegistrants = /* GraphQL */ `
+  query ListAPSRegistrants(
+    $filter: ModelAPSRegistrantFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listAPSRegistrants(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        year
+        id
+        name
+        email
+        company
+        title
+        phone
+        code
+        worksWith
+        speedNetworking
+        innovationWorkshop
+        plantTour
+        confirmationSent
+        codeRequested
+        codeSent
+        registrationReceived
+        welcomeEmailSent
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const aPSRegistrantsByEmail = /* GraphQL */ `
+  query APSRegistrantsByEmail(
+    $email: String!
+    $sortDirection: ModelSortDirection
+    $filter: ModelAPSRegistrantFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    aPSRegistrantsByEmail(
+      email: $email
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        year
+        id
+        name
+        email
+        company
+        title
+        phone
+        code
+        worksWith
+        speedNetworking
+        innovationWorkshop
+        plantTour
+        confirmationSent
+        codeRequested
+        codeSent
+        registrationReceived
+        welcomeEmailSent
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
 export const getCompany = /* GraphQL */ `
   query GetCompany($id: ID!) {
     getCompany(id: $id) {

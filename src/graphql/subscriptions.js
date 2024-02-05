@@ -1081,6 +1081,81 @@ export const onDeleteAPS = /* GraphQL */ `
     }
   }
 `;
+export const onCreateAPSRegistrant = /* GraphQL */ `
+  subscription OnCreateAPSRegistrant {
+    onCreateAPSRegistrant {
+      year
+      id
+      name
+      email
+      company
+      title
+      phone
+      code
+      worksWith
+      speedNetworking
+      innovationWorkshop
+      plantTour
+      confirmationSent
+      codeRequested
+      codeSent
+      registrationReceived
+      welcomeEmailSent
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateAPSRegistrant = /* GraphQL */ `
+  subscription OnUpdateAPSRegistrant {
+    onUpdateAPSRegistrant {
+      year
+      id
+      name
+      email
+      company
+      title
+      phone
+      code
+      worksWith
+      speedNetworking
+      innovationWorkshop
+      plantTour
+      confirmationSent
+      codeRequested
+      codeSent
+      registrationReceived
+      welcomeEmailSent
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteAPSRegistrant = /* GraphQL */ `
+  subscription OnDeleteAPSRegistrant {
+    onDeleteAPSRegistrant {
+      year
+      id
+      name
+      email
+      company
+      title
+      phone
+      code
+      worksWith
+      speedNetworking
+      innovationWorkshop
+      plantTour
+      confirmationSent
+      codeRequested
+      codeSent
+      registrationReceived
+      welcomeEmailSent
+      createdAt
+      updatedAt
+    }
+  }
+`;
 export const onCreateCompany = /* GraphQL */ `
   subscription OnCreateCompany {
     onCreateCompany {

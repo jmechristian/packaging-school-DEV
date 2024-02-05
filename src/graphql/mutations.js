@@ -1189,6 +1189,90 @@ export const deleteAPS = /* GraphQL */ `
     }
   }
 `;
+export const createAPSRegistrant = /* GraphQL */ `
+  mutation CreateAPSRegistrant(
+    $input: CreateAPSRegistrantInput!
+    $condition: ModelAPSRegistrantConditionInput
+  ) {
+    createAPSRegistrant(input: $input, condition: $condition) {
+      year
+      id
+      name
+      email
+      company
+      title
+      phone
+      code
+      worksWith
+      speedNetworking
+      innovationWorkshop
+      plantTour
+      confirmationSent
+      codeRequested
+      codeSent
+      registrationReceived
+      welcomeEmailSent
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateAPSRegistrant = /* GraphQL */ `
+  mutation UpdateAPSRegistrant(
+    $input: UpdateAPSRegistrantInput!
+    $condition: ModelAPSRegistrantConditionInput
+  ) {
+    updateAPSRegistrant(input: $input, condition: $condition) {
+      year
+      id
+      name
+      email
+      company
+      title
+      phone
+      code
+      worksWith
+      speedNetworking
+      innovationWorkshop
+      plantTour
+      confirmationSent
+      codeRequested
+      codeSent
+      registrationReceived
+      welcomeEmailSent
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteAPSRegistrant = /* GraphQL */ `
+  mutation DeleteAPSRegistrant(
+    $input: DeleteAPSRegistrantInput!
+    $condition: ModelAPSRegistrantConditionInput
+  ) {
+    deleteAPSRegistrant(input: $input, condition: $condition) {
+      year
+      id
+      name
+      email
+      company
+      title
+      phone
+      code
+      worksWith
+      speedNetworking
+      innovationWorkshop
+      plantTour
+      confirmationSent
+      codeRequested
+      codeSent
+      registrationReceived
+      welcomeEmailSent
+      createdAt
+      updatedAt
+    }
+  }
+`;
 export const createCompany = /* GraphQL */ `
   mutation CreateCompany(
     $input: CreateCompanyInput!

@@ -193,27 +193,20 @@ const supportLinks = [
 const faqs = [
   {
     id: 1,
-    question: 'How do you make holy water?',
+    question: 'Who is my Unilever contact?',
     answer:
-      'You boil the hell out of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.',
+      'If you have any questions regarding curriculum, reach out to ruth.alvarez@unilever.com.',
   },
   {
     id: 2,
-    question: "What's the best thing about Switzerland?",
+    question: 'What if I run into technical difficulties?',
     answer:
-      "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+      'We are happy to help at the Packaging School—email info@packagingschool.com.',
   },
   {
     id: 3,
-    question: 'What do you call someone with no body and no nose?',
-    answer:
-      'Nobody knows. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.',
-  },
-  {
-    id: 4,
-    question: 'Why do you never see elephants hiding in trees?',
-    answer:
-      "Because they're so good at it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+    question: 'How do I sign up?',
+    answer: `Refer to the slide deck/PDF at the top of the page or email ruth.alvarez@unilever.com`,
   },
 ];
 
@@ -406,7 +399,7 @@ const Page = ({ customer }) => {
         />
 
         <FullWidthDropDown
-          title={'SPC Knowledge Library Topics'}
+          title={'Sustainable Packaging Coalition (SPC) Library Topics'}
           Icon={AcademicCapIcon}
           bg='bg-base-mid'
           bgdark='bg-base-dark'
