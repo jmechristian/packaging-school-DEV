@@ -440,13 +440,7 @@ const Page = ({ customer }) => {
           Icon={AcademicCapIcon}
           bg='bg-base-mid'
           bgdark='bg-base-dark'
-          content={
-            <UnileverCourses
-              supportLinks={supportLinks}
-              id={'84558b1f-359a-4551-8832-c6c570171163'}
-              courses={customer && customer.courses.items}
-            />
-          }
+          content={[]}
           highlight={'bg-clemson'}
           bgContent={'bg-neutral-200 border'}
         />
