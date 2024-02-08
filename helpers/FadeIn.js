@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { AnimatePresence, motion, useInView } from 'framer-motion';
 
-const FadeIn = ({ children }) => {
+const FadeIn = ({ children, delay }) => {
   const textRef = useRef();
   const inView = useInView(textRef);
   return (
@@ -11,6 +11,7 @@ const FadeIn = ({ children }) => {
         animate={inView ? { opacity: 1 } : { opacity: 0 }}
         exit={{ opacity: 0 }}
         ref={textRef}
+        transition={{ duration: 0.5, delay: delay ? delay : 0 }}
       >
         {children}
       </motion.div>
