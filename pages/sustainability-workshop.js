@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { AnimatePresence, motion, useInView } from 'framer-motion';
 import { ArrowDownCircleIcon } from '@heroicons/react/20/solid';
+import { FaLinkedin } from 'react-icons/fa';
 
 import IconButton from '../components/shared/IconButton';
 import { Reveal } from '../components/shared/Reveal';
@@ -59,7 +60,7 @@ const Page = () => {
   return (
     <>
       <Head>{/* add title and description */}</Head>
-      <div className='w-full flex flex-col py-10 gap-12 lg:gap-32'>
+      <div className='w-full flex flex-col py-10 gap-12 lg:gap-24'>
         {/* HERO */}
         <div className='grid lg:grid-cols-2 gap-16  md:max-w-xl mx-auto lg:max-w-7xl lg:gap-40  px-5 lg:px-10 xl:px-0'>
           <div className='flex flex-col gap-5 justify-center'>
@@ -183,7 +184,7 @@ const Page = () => {
             </motion.div>
           </div>
         </div>
-        <div className='w-full max-w-[1400px] mx-auto md:rounded-2xl bg-gradient-to-t from-brand-green to-base-light flex flex-col gap-6 pb-20 pt-16'>
+        <div className='w-full max-w-[1400px] mx-auto md:rounded-2xl bg-gradient-to-t from-brand-green to-base-light flex flex-col gap-6 pb-20 pt-16 shadow-2xl'>
           <div className='max-w-xl mx-auto flex flex-col gap-4 text-center px-6 lg:px-10 xl:px-0'>
             <h2 className='text-2xl xl:text-3xl'>
               Why Engage the Packaging School to Facilitate Your Workshop?
@@ -197,12 +198,111 @@ const Page = () => {
           </div>
           <ScrollingCards testimonials={cards} />
         </div>
-        <div className='grid lg:grid-cols-12'>
-          <div className='w-full px-6 xl:px-0 flex flex-col gap-6'>
+        <div className='grid lg:grid-cols-12 gap-16 max-w-7xl mx-auto mt-9'>
+          {/* HURLEY */}
+          <div className='w-full px-6 xl:px-0 flex flex-col gap-6 lg:col-span-4'>
             <div>
               <h2 className='text-2xl xl:text-3xl'>
                 Learn from Packaging Industry Leaders
               </h2>
+            </div>
+            <div
+              className='aspect-[1/1] w-full bg-cover bg-center'
+              style={{
+                backgroundImage: `url(https://packschool.s3.amazonaws.com/hurley-sm.jpeg)`,
+              }}
+            ></div>
+            <div className='flex flex-col border-b border-black pb-4'>
+              <div className='w-full flex  justify-between items-center'>
+                <div className='font-bold text-xl'>R. Andrew Hurley, Ph.D.</div>
+                <div
+                  className='cursor-pointer'
+                  onClick={() =>
+                    window.open(
+                      'https://www.linkedin.com/in/drandrewhurley/',
+                      '_blank'
+                    )
+                  }
+                >
+                  <FaLinkedin color='blue' size={30} />
+                </div>
+              </div>
+              <div className='text-neutral-600'>Founder, Packaging School</div>
+            </div>
+            <div className='flex flex-col gap-5 mt-4'>
+              <p>
+                Dr. R. Andrew Hurley is an Assistant Professor of Packaging
+                Science at Clemson University, leading design and consumer test
+                labs. His CUshopTM lab aids businesses with data-driven designs
+                for better engagement and sales. He founded Package InSight in
+                Greenville, SC, enhancing packaging design and consumer
+                experiences. Since 2008, Hurley has improved Clemson&apos;s
+                packaging curriculum, culminating in a licensed program to The
+                Packaging School, offering a comprehensive online Certificate of
+                Packaging Science.
+              </p>
+            </div>
+          </div>
+          <div className='w-full flex flex-col gap-6 lg:col-span-8'>
+            <div className='w-full bg-neutral-300 rounded-2xl px-6 pt-6 pb-12'>
+              <div className='flex flex-col gap-6'>
+                <div>
+                  <h2 className='text-2xl xl:text-3xl'>Success Stories!</h2>
+                </div>
+                <div
+                  className='w-full aspect-[16/9] bg-black px-6 bg-center bg-cover'
+                  style={{
+                    backgroundImage: `url('https://packschool.s3.amazonaws.com/hurley-pda.jpeg')`,
+                  }}
+                ></div>
+                <div className='flex flex-col gap-5 lg:flex-row lg:gap-6'>
+                  <p className='max-w-sm font-semibold text-lg'>
+                    Our Chief Learning Officer and Co-founder, Dr. Andrew
+                    Hurley, and our CEO, Drew Felty, traveled to Florida for the
+                    Packaging Distributors of America Kick Off Meeting and
+                    Sustainability Summit. During the one-hour and
+                    fifteen-minute time slot, Dr. Hurley guided the audience in
+                    understanding how to:
+                  </p>
+                  <ul className='flex flex-col gap-3 list-disc'>
+                    <li className='ml-6'>
+                      Approach / measure their sustainability goal
+                    </li>
+                    <li className='ml-6'>
+                      Create a sensible sustainability audit
+                    </li>
+                    <li className='ml-6'>
+                      Discuss United Nation Sustainable Development Goals (UN
+                      SDGs)
+                    </li>
+                    <li className='ml-6'>
+                      Classify the four types of packaging innovation{' '}
+                    </li>
+                    <li className='ml-6'>
+                      Summarize greenwashing through an industry example{' '}
+                    </li>
+                    <li className='ml-6'>
+                      Examine environmental claims about a package or product
+                      through the Federal Trade Commission (FTC) Green Guides{' '}
+                    </li>
+                    <li className='ml-6'>
+                      Apply an over-packaged example (e.g., polybag in a
+                      container with peanuts, a frame packaged in EPS and shrink
+                      film, and a box in a box with air pillows) to a
+                      one-of-a-kind sustainable innovation worksheet
+                    </li>
+                  </ul>
+                </div>
+                <IconButton
+                  text={'Want to be Next? Inquire Below.'}
+                  icon={
+                    <ArrowDownCircleIcon
+                      className='-mr-0.5 h-6 w-6'
+                      aria-hidden='true'
+                    />
+                  }
+                />
+              </div>
             </div>
           </div>
         </div>
