@@ -196,6 +196,9 @@ const Page = () => {
           </div>
           <ScrollingCards testimonials={cards} />
         </div>
+        <div className='grid lg:grid-cols-12'>
+          <div className='w-full px-6 xl:px-0'></div>
+        </div>
       </div>
     </>
   );
