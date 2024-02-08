@@ -59,9 +59,9 @@ const Page = () => {
   return (
     <>
       <Head>{/* add title and description */}</Head>
-      <div className='w-full flex flex-col py-10 gap-12 lg:gap-36 md:max-w-xl mx-auto lg:max-w-7xl'>
+      <div className='w-full flex flex-col py-10 gap-12 lg:gap-32'>
         {/* HERO */}
-        <div className='grid lg:grid-cols-2 gap-16 lg:gap-40  px-5 lg:px-10 xl:px-0'>
+        <div className='grid lg:grid-cols-2 gap-16  md:max-w-xl mx-auto lg:max-w-7xl lg:gap-40  px-5 lg:px-10 xl:px-0'>
           <div className='flex flex-col gap-5 justify-center'>
             <div>
               <Reveal>
@@ -178,11 +178,12 @@ const Page = () => {
                 width={430}
                 height={430}
                 layout='responsive'
+                priority
               />
             </motion.div>
           </div>
         </div>
-        <div className='w-full md:rounded-2xl bg-gradient-to-t from-brand-green to-base-light flex flex-col gap-6 pb-20 pt-16'>
+        <div className='w-full max-w-[1400px] mx-auto md:rounded-2xl bg-gradient-to-t from-brand-green to-base-light flex flex-col gap-6 pb-20 pt-16'>
           <div className='max-w-xl mx-auto flex flex-col gap-4 text-center px-6 lg:px-10 xl:px-0'>
             <h2 className='text-2xl xl:text-3xl'>
               Why Engage the Packaging School to Facilitate Your Workshop?
@@ -197,7 +198,13 @@ const Page = () => {
           <ScrollingCards testimonials={cards} />
         </div>
         <div className='grid lg:grid-cols-12'>
-          <div className='w-full px-6 xl:px-0'></div>
+          <div className='w-full px-6 xl:px-0 flex flex-col gap-6'>
+            <div>
+              <h2 className='text-2xl xl:text-3xl'>
+                Learn from Packaging Industry Leaders
+              </h2>
+            </div>
+          </div>
         </div>
       </div>
     </>
