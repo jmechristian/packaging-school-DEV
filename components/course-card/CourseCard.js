@@ -30,6 +30,7 @@ const CourseCard = ({
   partOf,
   type,
   slug,
+  altLink,
 }) => {
   const dispatch = useDispatch();
   const { darkMode } = useSelector((state) => state.layout);
@@ -182,13 +183,15 @@ const CourseCard = ({
         <div className='flex flex-col justify-between h-full gap-6'>
           <div
             className='flex flex-col gap-4 px-4 pt-4 cursor-pointer'
-            onClick={() =>
-              router.push(
-                `/${
-                  type && type === 'COLLECTION' ? 'collections' : 'courses'
-                }/${slug}`
-              )
-            }
+            onClick={() => {
+              altLink
+                ? window.open(altLink, '_blank')
+                : router.push(
+                    `/${
+                      type && type === 'COLLECTION' ? 'collections' : 'courses'
+                    }/${slug}`
+                  );
+            }}
           >
             <div className='flex items-center gap-2 relative'>
               {categoryArray &&
@@ -219,13 +222,17 @@ const CourseCard = ({
           <div className='flex justify-between items-end p-4'>
             <div
               className='flex flex-col cursor-pointer'
-              onClick={() =>
-                router.push(
-                  `/${
-                    type && type === 'COLLECTION' ? 'collections' : 'courses'
-                  }/${slug}`
-                )
-              }
+              onClick={() => {
+                altLink
+                  ? window.open(altLink, '_blank')
+                  : router.push(
+                      `/${
+                        type && type === 'COLLECTION'
+                          ? 'collections'
+                          : 'courses'
+                      }/${slug}`
+                    );
+              }}
             >
               <div className='text-sm dark:text-white/50 text-neutral-700'>
                 {hours} hours
@@ -258,7 +265,17 @@ const CourseCard = ({
                 className={`w-9 h-9 rounded ${
                   isEntered ? 'bg-clemson' : 'bg-black/80'
                 } flex justify-center items-center cursor-pointer hover:bg-clemson`}
-                onClick={() => router.push(getLink())}
+                onClick={() => {
+                  altLink
+                    ? window.open(altLink, '_blank')
+                    : router.push(
+                        `/${
+                          type && type === 'COLLECTION'
+                            ? 'collections'
+                            : 'courses'
+                        }/${slug}`
+                      );
+                }}
               >
                 <ArrowSmallRightIcon className='w-5 h-5 text-white' />
               </div>

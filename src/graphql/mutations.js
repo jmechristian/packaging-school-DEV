@@ -3546,6 +3546,7 @@ export const createLMSCourse = /* GraphQL */ `
       collection
       demo
       partOf
+      altLink
       createdAt
       updatedAt
       studentCourseEnrolledId
@@ -3611,6 +3612,7 @@ export const updateLMSCourse = /* GraphQL */ `
       collection
       demo
       partOf
+      altLink
       createdAt
       updatedAt
       studentCourseEnrolledId
@@ -3676,6 +3678,7 @@ export const deleteLMSCourse = /* GraphQL */ `
       collection
       demo
       partOf
+      altLink
       createdAt
       updatedAt
       studentCourseEnrolledId
@@ -4476,6 +4479,7 @@ export const createStudent = /* GraphQL */ `
           collection
           demo
           partOf
+          altLink
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -4621,6 +4625,7 @@ export const updateStudent = /* GraphQL */ `
           collection
           demo
           partOf
+          altLink
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -4766,6 +4771,7 @@ export const deleteStudent = /* GraphQL */ `
           collection
           demo
           partOf
+          altLink
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -6682,6 +6688,7 @@ export const createCirriculumCourses = /* GraphQL */ `
         collection
         demo
         partOf
+        altLink
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -6745,6 +6752,7 @@ export const updateCirriculumCourses = /* GraphQL */ `
         collection
         demo
         partOf
+        altLink
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -6808,6 +6816,7 @@ export const deleteCirriculumCourses = /* GraphQL */ `
         collection
         demo
         partOf
+        altLink
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -6859,6 +6868,7 @@ export const createCourseLessons = /* GraphQL */ `
         collection
         demo
         partOf
+        altLink
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -6928,6 +6938,7 @@ export const updateCourseLessons = /* GraphQL */ `
         collection
         demo
         partOf
+        altLink
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -6997,6 +7008,7 @@ export const deleteCourseLessons = /* GraphQL */ `
         collection
         demo
         partOf
+        altLink
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -7066,6 +7078,7 @@ export const createCourseInstructors = /* GraphQL */ `
         collection
         demo
         partOf
+        altLink
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -7149,6 +7162,7 @@ export const updateCourseInstructors = /* GraphQL */ `
         collection
         demo
         partOf
+        altLink
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -7232,6 +7246,7 @@ export const deleteCourseInstructors = /* GraphQL */ `
         collection
         demo
         partOf
+        altLink
         createdAt
         updatedAt
         studentCourseEnrolledId

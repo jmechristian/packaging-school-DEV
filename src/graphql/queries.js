@@ -2779,6 +2779,7 @@ export const getLMSCourse = /* GraphQL */ `
       collection
       demo
       partOf
+      altLink
       createdAt
       updatedAt
       studentCourseEnrolledId
@@ -2825,6 +2826,7 @@ export const listLMSCourses = /* GraphQL */ `
         collection
         demo
         partOf
+        altLink
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -2881,6 +2883,7 @@ export const lMSCoursesBySlug = /* GraphQL */ `
         collection
         demo
         partOf
+        altLink
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -3548,6 +3551,7 @@ export const getStudent = /* GraphQL */ `
           collection
           demo
           partOf
+          altLink
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -5174,6 +5178,7 @@ export const getCirriculumCourses = /* GraphQL */ `
         collection
         demo
         partOf
+        altLink
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -5231,6 +5236,7 @@ export const listCirriculumCourses = /* GraphQL */ `
           collection
           demo
           partOf
+          altLink
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -5294,6 +5300,7 @@ export const cirriculumCoursesByLMSCirriculumId = /* GraphQL */ `
           collection
           demo
           partOf
+          altLink
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -5357,6 +5364,7 @@ export const cirriculumCoursesByLMSCourseId = /* GraphQL */ `
           collection
           demo
           partOf
+          altLink
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -5407,6 +5415,7 @@ export const getCourseLessons = /* GraphQL */ `
         collection
         demo
         partOf
+        altLink
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -5469,6 +5478,7 @@ export const listCourseLessons = /* GraphQL */ `
           collection
           demo
           partOf
+          altLink
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -5535,6 +5545,7 @@ export const courseLessonsByLMSCourseId = /* GraphQL */ `
           collection
           demo
           partOf
+          altLink
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -5601,6 +5612,7 @@ export const courseLessonsByLMSLessonId = /* GraphQL */ `
           collection
           demo
           partOf
+          altLink
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -5663,6 +5675,7 @@ export const getCourseInstructors = /* GraphQL */ `
         collection
         demo
         partOf
+        altLink
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -5743,6 +5756,7 @@ export const listCourseInstructors = /* GraphQL */ `
           collection
           demo
           partOf
+          altLink
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -5803,6 +5817,7 @@ export const courseInstructorsByLMSCourseId = /* GraphQL */ `
           collection
           demo
           partOf
+          altLink
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -5863,6 +5878,7 @@ export const courseInstructorsByInstructorId = /* GraphQL */ `
           collection
           demo
           partOf
+          altLink
           createdAt
           updatedAt
           studentCourseEnrolledId

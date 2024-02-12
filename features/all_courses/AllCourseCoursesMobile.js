@@ -29,6 +29,7 @@ const AllCourseCoursesMobile = ({ coursesToShow }) => {
                 type={course.type ? course.type : undefined}
                 categoryArray={course.categoryArray}
                 partOf={course.partOf ? course.partOf : undefined}
+                altLink={course.altLink ? course.altLink : undefined}
               />
             </div>
           ))}
