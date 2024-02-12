@@ -1,14 +1,20 @@
 import React, { useRef } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import { AnimatePresence, motion, useInView } from 'framer-motion';
-import { ArrowDownCircleIcon, TrophyIcon } from '@heroicons/react/20/solid';
+import {
+  ArrowDownCircleIcon,
+  TrophyIcon,
+  ArrowRightCircleIcon,
+} from '@heroicons/react/20/solid';
 import { FaLinkedin } from 'react-icons/fa';
 import { useForm } from 'react-hook-form';
 
 import IconButton from '../components/shared/IconButton';
 import { Reveal } from '../components/shared/Reveal';
 import FadeIn from '../helpers/FadeIn';
+import VideoPlayer from '../components/VideoPlayer';
 import ScrollingCards from '../components/shared/ScrollingCards';
 import ReactHookInput from '../components/shared/ReactHookInput';
 import ReactHookTextArea from '../components/shared/ReactHookTextArea';
@@ -64,6 +70,8 @@ const Page = () => {
   const imageRef = useRef();
   const isInView = useInView(imageRef);
 
+  const router = useRouter();
+
   const {
     register,
     handleSubmit,
@@ -74,7 +82,7 @@ const Page = () => {
   return (
     <>
       <Head>{/* add title and description */}</Head>
-      <div className='w-full flex flex-col py-10 gap-12 lg:gap-32'>
+      <div className='w-full flex flex-col py-10 gap-20 lg:gap-32 scroll-smooth'>
         {/* HERO */}
         <div className='grid lg:grid-cols-2 gap-16  md:max-w-xl mx-auto lg:max-w-7xl lg:gap-40  px-5 lg:px-10 xl:px-0'>
           <div className='flex flex-col gap-5 justify-center'>
@@ -99,6 +107,10 @@ const Page = () => {
             <div>
               <FadeIn delay={0.75}>
                 <IconButton
+                  bgColor={'bg-green-600'}
+                  textColor={'text-white'}
+                  hoverColor={'bg-brand-green'}
+                  fn={() => router.push('#form')}
                   text={'Inquire Below'}
                   icon={
                     <ArrowDownCircleIcon
@@ -339,7 +351,7 @@ const Page = () => {
         </div>
         {/* FORM */}
         <div
-          className='w-full flex flex-col gap-12 max-w-7xl mx-auto px-5 xl:px-0'
+          className='w-full flex flex-col gap-12 max-w-7xl mx-auto px-5 xl:px-0 scroll-mt-16'
           id='form'
         >
           <div className='w-full flex flex-col lg:grid lg:grid-cols-12 gap-10 lg:gap-16 max-w-2xl mx-auto lg:max-w-7xl lg:rounded-2xl lg:border-2 lg:border-black lg:p-9 lg:shadow-2xl'>
@@ -458,11 +470,11 @@ const Page = () => {
           </div>
         </div>
         {/* CSP CALLOUT */}
-        <div className='w-full flex flex-col lg:flex-row gap-6 items-center justify-between lg:rounded-2xl bg-base-mid p-6 lg:p-10 xl:p-16 max-w-7xl mx-auto'>
+        <div className='w-full flex flex-col lg:flex-row gap-6 items-center justify-between lg:rounded-2xl bg-base-mid px-6 py-10 lg:p-10 xl:p-16 max-w-7xl mx-auto'>
           <div className='max-w-2xl w-full flex flex-col gap-6'>
             <div>
-              <h2 className='text-white text-2xl lg:text-3xl'>
-                Be a Sustainability Innovator
+              <h2 className='text-white text-3xl max-w-sm'>
+                Be the Sustainability Innovator in Your Company
               </h2>
             </div>
             <div>
@@ -478,8 +490,29 @@ const Page = () => {
                 selection efforts.
               </p>
             </div>
+            <div>
+              <IconButton
+                text={'Learn More'}
+                bgColor={'bg-green-600'}
+                textColor={'text-white'}
+                hoverColor={'bg-brand-green'}
+                fn={() => router.push('/certifications/get-to-know-csp')}
+                icon={
+                  <ArrowRightCircleIcon
+                    className='-mr-0.5 h-6 w-6'
+                    aria-hidden='true'
+                  />
+                }
+              />
+            </div>
           </div>
-          <div></div>
+          <div className='aspect-[16/9] w-full max-w-3xl'>
+            <VideoPlayer
+              videoEmbedLink={
+                'https://player.vimeo.com/video/888839253?h=c1a4d5982a&amp;badge=0&amp;autopause=0&amp;quality_selector=1&amp;player_id=0&amp;app_id=58479'
+              }
+            />
+          </div>
         </div>
       </div>
     </>
