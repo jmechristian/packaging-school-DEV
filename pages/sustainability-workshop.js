@@ -68,7 +68,9 @@ const cards = [
 
 const Page = () => {
   const imageRef = useRef();
-  const isInView = useInView(imageRef);
+  const bubbleRef1 = useRef();
+
+  const isInView = useInView(bubbleRef1);
 
   const router = useRouter();
 
@@ -132,8 +134,9 @@ const Page = () => {
               <motion.div
                 className='absolute z-10 w-[125px] xl:w-[175px] bottom-20 xl:bottom-[120px] -left-8 xl:-left-20'
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+                animate={isInView && { opacity: 1 }}
                 transition={{ delay: 0.9, duration: 0.15 }}
+                ref={bubbleRef1}
               >
                 <Image
                   src={'https://packschool.s3.amazonaws.com/bubble1.png'}
@@ -146,7 +149,7 @@ const Page = () => {
               <motion.div
                 className='absolute z-10 w-[125px] xl:w-[175px] bottom-[190px] xl:bottom-[260px] left-3'
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+                animate={isInView && { opacity: 1 }}
                 transition={{ delay: 1.25, duration: 0.15 }}
               >
                 <Image
@@ -160,7 +163,7 @@ const Page = () => {
               <motion.div
                 className='absolute z-10 w-[125px] xl:w-[175px] bottom-40 xl:bottom-[190px] -right-6 xl:-right-10'
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+                animate={isInView && { opacity: 1 }}
                 transition={{ delay: 1.55, duration: 0.15 }}
               >
                 <Image
@@ -174,7 +177,7 @@ const Page = () => {
               <motion.div
                 className='absolute z-10 w-[125px] xl:w-[175px] bottom-20 -right-6 xl:-right-10'
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+                animate={isInView && { opacity: 1 }}
                 transition={{ delay: 1.85, duration: 0.15 }}
               >
                 <Image
@@ -188,7 +191,7 @@ const Page = () => {
               <motion.div
                 className='absolute z-10 w-[125px] xl:w-[175px] bottom-[160px] left-[140px] xl:-right-10'
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+                animate={isInView && { opacity: 1 }}
                 transition={{ delay: 2.1, duration: 0.15 }}
               >
                 <Image
