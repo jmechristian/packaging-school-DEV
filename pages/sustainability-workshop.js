@@ -2,13 +2,20 @@ import React, { useRef } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import { AnimatePresence, motion, useInView } from 'framer-motion';
-import { ArrowDownCircleIcon } from '@heroicons/react/20/solid';
+import { ArrowDownCircleIcon, TrophyIcon } from '@heroicons/react/20/solid';
 import { FaLinkedin } from 'react-icons/fa';
+import { useForm } from 'react-hook-form';
 
 import IconButton from '../components/shared/IconButton';
 import { Reveal } from '../components/shared/Reveal';
 import FadeIn from '../helpers/FadeIn';
 import ScrollingCards from '../components/shared/ScrollingCards';
+import ReactHookInput from '../components/shared/ReactHookInput';
+import ReactHookTextArea from '../components/shared/ReactHookTextArea';
+import CardThree from '../components/cards/CardThree';
+import TiltCard from '../components/shared/TiltCard';
+
+const onSubmit = (data) => console.log(data);
 
 const cards = [
   {
@@ -57,10 +64,17 @@ const Page = () => {
   const imageRef = useRef();
   const isInView = useInView(imageRef);
 
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+
   return (
     <>
       <Head>{/* add title and description */}</Head>
-      <div className='w-full flex flex-col py-10 gap-12 lg:gap-24'>
+      <div className='w-full flex flex-col py-10 gap-12 lg:gap-32'>
         {/* HERO */}
         <div className='grid lg:grid-cols-2 gap-16  md:max-w-xl mx-auto lg:max-w-7xl lg:gap-40  px-5 lg:px-10 xl:px-0'>
           <div className='flex flex-col gap-5 justify-center'>
@@ -184,6 +198,7 @@ const Page = () => {
             </motion.div>
           </div>
         </div>
+        {/* FEATURES */}
         <div className='w-full max-w-[1400px] mx-auto md:rounded-2xl bg-gradient-to-t from-brand-green to-base-light flex flex-col gap-6 pb-20 pt-16 shadow-2xl'>
           <div className='max-w-xl mx-auto flex flex-col gap-4 text-center px-6 lg:px-10 xl:px-0'>
             <h2 className='text-2xl xl:text-3xl'>
@@ -198,6 +213,7 @@ const Page = () => {
           </div>
           <ScrollingCards testimonials={cards} />
         </div>
+        {/* SUCCESS BLOCK */}
         <div className='grid lg:grid-cols-12 gap-16 max-w-7xl mx-auto mt-9'>
           {/* HURLEY */}
           <div className='w-full px-6 xl:px-0 flex flex-col gap-6 lg:col-span-4'>
@@ -243,27 +259,40 @@ const Page = () => {
               </p>
             </div>
           </div>
+          {/* SUCCESS STORY */}
           <div className='w-full flex flex-col gap-6 lg:col-span-8'>
             <div className='w-full bg-neutral-300 rounded-2xl px-6 pt-6 pb-12'>
               <div className='flex flex-col gap-6'>
-                <div>
-                  <h2 className='text-2xl xl:text-3xl'>Success Stories!</h2>
-                </div>
                 <div
-                  className='w-full aspect-[16/9] bg-black px-6 bg-center bg-cover'
+                  className='w-full aspect-[16/9] bg-black px-6 bg-center bg-cover h-full flex justify-end items-end'
                   style={{
                     backgroundImage: `url('https://packschool.s3.amazonaws.com/hurley-pda.jpeg')`,
                   }}
-                ></div>
+                >
+                  <div className='font-semibold p-5 bg-black/80 backdrop-blur text-white rounded-xl flex flex-col gap-2'>
+                    <div className='flex gap-1 items-center'>
+                      <div>
+                        <TrophyIcon className='w-7 h-7  fill-brand-yellow-light' />
+                      </div>
+                      <div>
+                        <h2 className='text-2xl xl:text-3xl text-brand-yellow-light'>
+                          Success Stories
+                        </h2>
+                      </div>
+                    </div>
+                    <div>
+                      Our Chief Learning Officer and Co-founder, Dr. Andrew
+                      Hurley, and our CEO, Drew Felty, traveled to Florida for
+                      the Packaging Distributors of America Kick Off Meeting and
+                      Sustainability.
+                    </div>
+                  </div>
+                </div>
                 <div className='flex flex-col gap-5 lg:flex-row lg:gap-6'>
-                  <p className='max-w-sm font-semibold text-lg'>
-                    Our Chief Learning Officer and Co-founder, Dr. Andrew
-                    Hurley, and our CEO, Drew Felty, traveled to Florida for the
-                    Packaging Distributors of America Kick Off Meeting and
-                    Sustainability Summit. During the one-hour and
-                    fifteen-minute time slot, Dr. Hurley guided the audience in
-                    understanding how to:
-                  </p>
+                  <div>
+                    During the one-hour and fifteen-minute time slot, Dr. Hurley
+                    guided the audience in understanding how to:
+                  </div>
                   <ul className='flex flex-col gap-3 list-disc'>
                     <li className='ml-6'>
                       Approach / measure their sustainability goal
@@ -293,18 +322,164 @@ const Page = () => {
                     </li>
                   </ul>
                 </div>
-                <IconButton
-                  text={'Want to be Next? Inquire Below.'}
-                  icon={
-                    <ArrowDownCircleIcon
-                      className='-mr-0.5 h-6 w-6'
-                      aria-hidden='true'
-                    />
-                  }
-                />
+                <div className='text-center w-full mt-2'>
+                  <IconButton
+                    text={'Want to be Next? Inquire Below.'}
+                    icon={
+                      <ArrowDownCircleIcon
+                        className='-mr-0.5 h-6 w-6'
+                        aria-hidden='true'
+                      />
+                    }
+                  />
+                </div>
               </div>
             </div>
           </div>
+        </div>
+        {/* FORM */}
+        <div
+          className='w-full flex flex-col gap-12 max-w-7xl mx-auto px-5 xl:px-0'
+          id='form'
+        >
+          <div className='w-full flex flex-col lg:grid lg:grid-cols-12 gap-10 lg:gap-16 max-w-2xl mx-auto lg:max-w-7xl lg:rounded-2xl lg:border-2 lg:border-black lg:p-9 lg:shadow-2xl'>
+            <div className='w-full lg:grid lg:col-span-4 bg-gradient-to-t from-brand-green to-base-light p-5 rounded-2xl'>
+              <div className='max-w-2xl mx-auto flex flex-col gap-10'>
+                <h2 className='text-2xl lg:text-3xl'>
+                  Customized 1–3 Hour Workshops & Keynotes: Innovate Sustainably
+                  with Expert Guidance
+                </h2>
+                <p>
+                  To partner with the Packaging School and embark on a journey
+                  towards sustainable innovation, please fill out the form
+                  below. A dedicated counselor will collaborate closely with you
+                  and your team to ensure your sustainability efforts are guided
+                  and executed effectively in your organization.
+                </p>
+              </div>
+            </div>
+            <div className='col-span-12 lg:col-span-8'>
+              <form
+                onSubmit={handleSubmit(onSubmit)}
+                className='flex flex-col gap-5 md:grid md:grid-cols-2 md:gap-6'
+              >
+                <ReactHookInput
+                  name={'firstName'}
+                  type={'text'}
+                  register={register}
+                  // placeholder={'Please Enter Full Name'}
+                  required={true}
+                  display={'First Name'}
+                  errors={errors}
+                />
+                <ReactHookInput
+                  name={'lastName'}
+                  type={'text'}
+                  register={register}
+                  // placeholder={'Please Enter Full Name'}
+                  required={true}
+                  display={'Last Name'}
+                  errors={errors}
+                />
+                <ReactHookInput
+                  name={'email'}
+                  type={'email'}
+                  register={register}
+                  // placeholder={'Please Enter Email'}
+                  required={true}
+                  display={'Email'}
+                  errors={errors}
+                />
+                <ReactHookInput
+                  name={'phone'}
+                  type={'text'}
+                  register={register}
+                  // placeholder={'Please Enter Phone Number'}
+                  required={true}
+                  display={'Phone'}
+                  errors={errors}
+                />
+                <ReactHookInput
+                  name={'companyName'}
+                  type={'text'}
+                  register={register}
+                  // placeholder={'Please Enter Company Name'}
+                  required={true}
+                  display={'Company Name'}
+                  errors={errors}
+                />
+                <ReactHookInput
+                  name={'eventDate'}
+                  type={'text'}
+                  register={register}
+                  placeholder={'Enter Date(s) YYYY-MM-DD'}
+                  required={true}
+                  display={'Date of Event'}
+                  errors={errors}
+                />
+                <ReactHookInput
+                  name={'audienceSize'}
+                  type={'text'}
+                  register={register}
+                  // placeholder={'Please Enter Audience Size'}
+                  required={true}
+                  display={'Audience Size'}
+                  errors={errors}
+                />
+                <ReactHookInput
+                  name={'eventLocation'}
+                  type={'text'}
+                  register={register}
+                  // placeholder={'Please Enter Event Location'}
+                  required={true}
+                  display={'Event Location'}
+                  errors={errors}
+                />
+                <div className='lg:col-span-2'>
+                  <ReactHookTextArea
+                    name={'eventDescription'}
+                    register={register}
+                    // placeholder={'Please give a brief description of your event.'}
+                    display={'Event Description'}
+                    required={true}
+                    errors={errors}
+                  />
+                </div>
+                <div className='flex w-full lg:col-span-2'>
+                  <button
+                    type='submit'
+                    className='bg-base-brand font-bold text-white hover:bg-brand-green text-lg w-fit px-6 py-3 rounded'
+                  >
+                    Submit Interest Form
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        {/* CSP CALLOUT */}
+        <div className='w-full flex flex-col lg:flex-row gap-6 items-center justify-between lg:rounded-2xl bg-base-mid p-6 lg:p-10 xl:p-16 max-w-7xl mx-auto'>
+          <div className='max-w-2xl w-full flex flex-col gap-6'>
+            <div>
+              <h2 className='text-white text-2xl lg:text-3xl'>
+                Be a Sustainability Innovator
+              </h2>
+            </div>
+            <div>
+              <p className='text-white font-medium'>
+                The Packaging School has developed a comprehensive
+                sustainability package design program designed to empower
+                participants with the skills to effectively use sustainability
+                terminology, establish and meet United Nations-based
+                sustainability goals, create sustainable systems, calculate
+                carbon footprints, achieve carbon neutrality via offset
+                initiatives, and incorporate advanced Life Cycle Assessment
+                (LCA) software into their packaging design and material
+                selection efforts.
+              </p>
+            </div>
+          </div>
+          <div></div>
         </div>
       </div>
     </>
