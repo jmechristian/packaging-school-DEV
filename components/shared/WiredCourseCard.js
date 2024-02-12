@@ -128,7 +128,11 @@ const WiredCourseCard = ({
         </motion.div>
         <motion.div
           className='bg-black w-full rounded-b-lg z-10 relative text-center cursor-pointer'
-          onClick={cardClickHandler}
+          onClick={
+            isLesson.altLink
+              ? window.open(isLesson.altLink, '_blank')
+              : cardClickHandler
+          }
         >
           <div className='text-white font-bold px-6 py-3'>
             {link_text ? link_text : 'Select Course'}
