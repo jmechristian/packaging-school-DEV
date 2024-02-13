@@ -82,6 +82,21 @@ const Page = () => {
     formState: { errors },
   } = useForm();
 
+  const sendWorkshopInterest = async (data) => {
+    const res = fetch('/api/send-workshop-interest-email', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        data,
+      }),
+    });
+
+    return (await res).status;
+  };
+
   const onSubmit = async (data) => {
     setIsLoading(true);
     const res = await API.graphql({
@@ -100,12 +115,14 @@ const Page = () => {
       },
     });
 
-    setIsLoading(false);
     if (res.data) {
+      await sendWorkshopInterest(data);
+      setIsLoading(false);
       router.push('/form-thank-you');
     }
 
     if (res.errors) {
+      setIsLoading(false);
       setIsError(
         'Error sending form. Please email info@packagingschool.com for assistance.'
       );
