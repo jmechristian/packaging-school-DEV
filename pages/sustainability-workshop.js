@@ -1,7 +1,8 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import { API } from 'aws-amplify';
+import { createWorkshopForm } from '../src/graphql/mutations';
 import { useRouter } from 'next/router';
 import { AnimatePresence, motion, useInView } from 'framer-motion';
 import {
@@ -19,8 +20,6 @@ import VideoPlayer from '../components/VideoPlayer';
 import ScrollingCards from '../components/shared/ScrollingCards';
 import ReactHookInput from '../components/shared/ReactHookInput';
 import ReactHookTextArea from '../components/shared/ReactHookTextArea';
-
-const onSubmit = (data) => {};
 
 const cards = [
   {
@@ -69,9 +68,12 @@ const Page = () => {
   const imageRef = useRef();
   const bubbleRef1 = useRef();
   const formRef = useRef();
-  const isInView = useInView(bubbleRef1);
+  const isInView = useInView(bubbleRef1, { amount: 'all' });
 
   const router = useRouter();
+
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState('');
 
   const {
     register,
@@ -79,6 +81,36 @@ const Page = () => {
     watch,
     formState: { errors },
   } = useForm();
+
+  const onSubmit = async (data) => {
+    setIsLoading(true);
+    const res = await API.graphql({
+      query: createWorkshopForm,
+      variables: {
+        input: {
+          audienceSize: data.audienceSize,
+          companyName: data.companyName,
+          email: data.email,
+          eventDate: data.eventDate,
+          eventDescription: data.eventDescription,
+          eventLocation: data.eventLocation,
+          firstName: data.firstName,
+          lastName: data.lastName,
+        },
+      },
+    });
+
+    setIsLoading(false);
+    if (res.data) {
+      router.push('/form-thank-you');
+    }
+
+    if (res.errors) {
+      setIsError(
+        'Error sending form. Please email info@packagingschool.com for assistance.'
+      );
+    }
+  };
 
   return (
     <>
@@ -162,7 +194,7 @@ const Page = () => {
               <motion.div
                 className='absolute z-10 w-[125px] xl:w-[175px] bottom-20 xl:bottom-[120px] -left-8 xl:-left-20'
                 initial={{ opacity: 0 }}
-                animate={isInView && { opacity: 1 }}
+                animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ delay: 0.9, duration: 0.15 }}
                 ref={bubbleRef1}
               >
@@ -177,7 +209,7 @@ const Page = () => {
               <motion.div
                 className='absolute z-10 w-[125px] xl:w-[175px] bottom-[190px] xl:bottom-[260px] left-3'
                 initial={{ opacity: 0 }}
-                animate={isInView && { opacity: 1 }}
+                animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ delay: 1.25, duration: 0.15 }}
               >
                 <Image
@@ -191,7 +223,7 @@ const Page = () => {
               <motion.div
                 className='absolute z-10 w-[125px] xl:w-[175px] bottom-40 xl:bottom-[190px] -right-6 xl:-right-10'
                 initial={{ opacity: 0 }}
-                animate={isInView && { opacity: 1 }}
+                animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ delay: 1.55, duration: 0.15 }}
               >
                 <Image
@@ -205,7 +237,7 @@ const Page = () => {
               <motion.div
                 className='absolute z-10 w-[125px] xl:w-[175px] bottom-20 -right-6 xl:-right-10'
                 initial={{ opacity: 0 }}
-                animate={isInView && { opacity: 1 }}
+                animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ delay: 1.85, duration: 0.15 }}
               >
                 <Image
@@ -219,7 +251,7 @@ const Page = () => {
               <motion.div
                 className='absolute z-10 w-[125px] xl:w-[175px] bottom-[160px] left-[140px] xl:-right-10'
                 initial={{ opacity: 0 }}
-                animate={isInView && { opacity: 1 }}
+                animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ delay: 2.1, duration: 0.15 }}
               >
                 <Image
@@ -484,13 +516,18 @@ const Page = () => {
                     errors={errors}
                   />
                 </div>
-                <div className='flex w-full md:col-span-2'>
+                <div className='flex justify-between items-center w-full md:col-span-2'>
                   <button
                     type='submit'
                     className='bg-base-brand font-bold text-white hover:bg-brand-green text-lg w-fit px-6 py-3 rounded'
                   >
-                    Submit Interest Form
+                    {isLoading
+                      ? 'Sending Interest Form...'
+                      : 'Submit Interest Form'}
                   </button>
+                  {isError && (
+                    <span className='text-red-600 text-sm'>{isError}</span>
+                  )}
                 </div>
               </form>
             </div>
