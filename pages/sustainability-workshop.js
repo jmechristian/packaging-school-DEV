@@ -69,7 +69,7 @@ const cards = [
 const Page = () => {
   const imageRef = useRef();
   const bubbleRef1 = useRef();
-
+  const formRef = useRef();
   const isInView = useInView(bubbleRef1);
 
   const router = useRouter();
@@ -86,7 +86,7 @@ const Page = () => {
       <Head>{/* add title and description */}</Head>
       <div className='w-full flex flex-col py-10 gap-20 lg:gap-32 scroll-smooth'>
         {/* HERO */}
-        <div className='grid lg:grid-cols-2 gap-16  md:max-w-xl mx-auto lg:max-w-7xl lg:gap-40  px-5 lg:px-10 xl:px-0'>
+        <div className='grid lg:grid-cols-2 gap-16  md:max-w-xl mx-auto xl:max-w-7xl lg:gap-40  px-5 lg:px-10 xl:px-0'>
           <div className='flex flex-col gap-5 justify-center'>
             <div>
               <Reveal>
@@ -229,9 +229,9 @@ const Page = () => {
           <ScrollingCards testimonials={cards} />
         </div>
         {/* SUCCESS BLOCK */}
-        <div className='grid lg:grid-cols-12 gap-16 max-w-7xl mx-auto mt-9'>
+        <div className='grid lg:grid-cols-12 gap-10 xl:gap-16 md:max-w-xl mx-auto lg:max-w-7xl mt-9'>
           {/* HURLEY */}
-          <div className='w-full px-6 xl:px-0 flex flex-col gap-6 lg:col-span-4'>
+          <div className='w-full px-6 xl:px-0 flex flex-col gap-6 lg:col-span-4 '>
             <div>
               <h2 className='text-2xl xl:text-3xl'>
                 Learn from Packaging Industry Leaders
@@ -278,23 +278,14 @@ const Page = () => {
           <div className='w-full flex flex-col gap-6 lg:col-span-8'>
             <div className='w-full bg-neutral-300 rounded-2xl px-6 pt-6 pb-12'>
               <div className='flex flex-col gap-6'>
+                <h2 className='text-2xl lg:text-3xl'>Success Stories</h2>
                 <div
-                  className='w-full aspect-[16/9] bg-black px-6 bg-center bg-cover h-full flex justify-end items-end'
+                  className='w-full aspect-[1/1] md:aspect-[16/9] bg-black bg-center bg-cover h-full flex justify-end items-end'
                   style={{
                     backgroundImage: `url('https://packschool.s3.amazonaws.com/hurley-pda.jpeg')`,
                   }}
                 >
                   <div className='font-semibold p-5 bg-black/80 backdrop-blur text-white rounded-xl flex flex-col gap-2'>
-                    <div className='flex gap-1 items-center'>
-                      <div>
-                        <TrophyIcon className='w-7 h-7  fill-brand-yellow-light' />
-                      </div>
-                      <div>
-                        <h2 className='text-2xl xl:text-3xl text-brand-yellow-light'>
-                          Success Stories
-                        </h2>
-                      </div>
-                    </div>
                     <div>
                       Our Chief Learning Officer and Co-founder, Dr. Andrew
                       Hurley, and our CEO, Drew Felty, traveled to Florida for
@@ -303,8 +294,8 @@ const Page = () => {
                     </div>
                   </div>
                 </div>
-                <div className='flex flex-col gap-5 lg:flex-row lg:gap-6'>
-                  <div>
+                <div className='flex flex-col gap-5 xl:px-4'>
+                  <div className='font-bold text-lg max-w-2xl leading-tight'>
                     During the one-hour and fifteen-minute time slot, Dr. Hurley
                     guided the audience in understanding how to:
                   </div>
@@ -335,18 +326,22 @@ const Page = () => {
                       film, and a box in a box with air pillows) to a
                       one-of-a-kind sustainable innovation worksheet
                     </li>
-                  </ul>
-                </div>
-                <div className='text-center w-full mt-2'>
-                  <IconButton
-                    text={'Want to be Next? Inquire Below.'}
-                    icon={
-                      <ArrowDownCircleIcon
-                        className='-mr-0.5 h-6 w-6'
-                        aria-hidden='true'
+                    <div className='text-right w-full mt-2'>
+                      <IconButton
+                        bgColor={'bg-green-600'}
+                        textColor={'text-white'}
+                        hoverColor={'bg-brand-green'}
+                        fn={() => router.push('#form')}
+                        text={'Want to be Next? Inquire Below.'}
+                        icon={
+                          <ArrowDownCircleIcon
+                            className='-mr-0.5 h-6 w-6'
+                            aria-hidden='true'
+                          />
+                        }
                       />
-                    }
-                  />
+                    </div>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -354,8 +349,9 @@ const Page = () => {
         </div>
         {/* FORM */}
         <div
-          className='w-full flex flex-col gap-12 max-w-7xl mx-auto px-5 xl:px-0 scroll-mt-16'
+          className='w-full flex flex-col gap-12 md:max-w-xl mx-auto lg:max-w-7xl px-5 xl:px-0 scroll-mt-16'
           id='form'
+          ref={formRef}
         >
           <div className='w-full flex flex-col lg:grid lg:grid-cols-12 gap-10 lg:gap-16 max-w-2xl mx-auto lg:max-w-7xl lg:rounded-2xl lg:border-2 lg:border-black lg:p-9 lg:shadow-2xl'>
             <div className='w-full lg:grid lg:col-span-4 bg-gradient-to-t from-brand-green to-base-light p-5 rounded-2xl'>
@@ -450,7 +446,7 @@ const Page = () => {
                   display={'Event Location'}
                   errors={errors}
                 />
-                <div className='lg:col-span-2'>
+                <div className='md:col-span-2'>
                   <ReactHookTextArea
                     name={'eventDescription'}
                     register={register}
@@ -460,7 +456,7 @@ const Page = () => {
                     errors={errors}
                   />
                 </div>
-                <div className='flex w-full lg:col-span-2'>
+                <div className='flex w-full md:col-span-2'>
                   <button
                     type='submit'
                     className='bg-base-brand font-bold text-white hover:bg-brand-green text-lg w-fit px-6 py-3 rounded'
@@ -474,7 +470,7 @@ const Page = () => {
         </div>
         {/* CSP CALLOUT */}
         <div className='w-full flex flex-col lg:flex-row gap-6 items-center justify-between lg:rounded-2xl bg-base-mid px-6 py-10 lg:p-10 xl:p-16 max-w-7xl mx-auto'>
-          <div className='max-w-2xl w-full flex flex-col gap-6'>
+          <div className='md:max-w-xl mx-auto lg:max-w-2xl w-full flex flex-col gap-6'>
             <div>
               <h2 className='text-white text-3xl max-w-sm'>
                 Be the Sustainability Innovator in Your Company
