@@ -614,3 +614,19 @@ type Testimonial @model @auth(rules: [{ allow: public }]) {
   date: String
   video: String
 }
+
+######### Forms #########
+
+type WorkshopForm
+  @model(timestamps: { createdAt: "createdOn", updatedAt: "updatedOn" })
+  @auth(rules: [{ allow: public }]) {
+  firstName: String!
+  lastName: String!
+  email: String! @index(name: "workshopFormByEmail")
+  phone: String
+  companyName: String
+  eventDate: String
+  audienceSize: String
+  eventLocation: String
+  eventDescription: String
+}

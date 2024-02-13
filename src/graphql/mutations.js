@@ -5731,6 +5731,69 @@ export const deleteTestimonial = /* GraphQL */ `
     }
   }
 `;
+export const createWorkshopForm = /* GraphQL */ `
+  mutation CreateWorkshopForm(
+    $input: CreateWorkshopFormInput!
+    $condition: ModelWorkshopFormConditionInput
+  ) {
+    createWorkshopForm(input: $input, condition: $condition) {
+      firstName
+      lastName
+      email
+      phone
+      companyName
+      eventDate
+      audienceSize
+      eventLocation
+      eventDescription
+      id
+      createdOn
+      updatedOn
+    }
+  }
+`;
+export const updateWorkshopForm = /* GraphQL */ `
+  mutation UpdateWorkshopForm(
+    $input: UpdateWorkshopFormInput!
+    $condition: ModelWorkshopFormConditionInput
+  ) {
+    updateWorkshopForm(input: $input, condition: $condition) {
+      firstName
+      lastName
+      email
+      phone
+      companyName
+      eventDate
+      audienceSize
+      eventLocation
+      eventDescription
+      id
+      createdOn
+      updatedOn
+    }
+  }
+`;
+export const deleteWorkshopForm = /* GraphQL */ `
+  mutation DeleteWorkshopForm(
+    $input: DeleteWorkshopFormInput!
+    $condition: ModelWorkshopFormConditionInput
+  ) {
+    deleteWorkshopForm(input: $input, condition: $condition) {
+      firstName
+      lastName
+      email
+      phone
+      companyName
+      eventDate
+      audienceSize
+      eventLocation
+      eventDescription
+      id
+      createdOn
+      updatedOn
+    }
+  }
+`;
 export const createCertificateCourses = /* GraphQL */ `
   mutation CreateCertificateCourses(
     $input: CreateCertificateCoursesInput!

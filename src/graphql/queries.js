@@ -4202,6 +4202,82 @@ export const listTestimonials = /* GraphQL */ `
     }
   }
 `;
+export const getWorkshopForm = /* GraphQL */ `
+  query GetWorkshopForm($id: ID!) {
+    getWorkshopForm(id: $id) {
+      firstName
+      lastName
+      email
+      phone
+      companyName
+      eventDate
+      audienceSize
+      eventLocation
+      eventDescription
+      id
+      createdOn
+      updatedOn
+    }
+  }
+`;
+export const listWorkshopForms = /* GraphQL */ `
+  query ListWorkshopForms(
+    $filter: ModelWorkshopFormFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listWorkshopForms(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        firstName
+        lastName
+        email
+        phone
+        companyName
+        eventDate
+        audienceSize
+        eventLocation
+        eventDescription
+        id
+        createdOn
+        updatedOn
+      }
+      nextToken
+    }
+  }
+`;
+export const workshopFormsByEmail = /* GraphQL */ `
+  query WorkshopFormsByEmail(
+    $email: String!
+    $sortDirection: ModelSortDirection
+    $filter: ModelWorkshopFormFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    workshopFormsByEmail(
+      email: $email
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        firstName
+        lastName
+        email
+        phone
+        companyName
+        eventDate
+        audienceSize
+        eventLocation
+        eventDescription
+        id
+        createdOn
+        updatedOn
+      }
+      nextToken
+    }
+  }
+`;
 export const getCertificateCourses = /* GraphQL */ `
   query GetCertificateCourses($id: ID!) {
     getCertificateCourses(id: $id) {

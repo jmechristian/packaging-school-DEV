@@ -5353,6 +5353,60 @@ export const onDeleteTestimonial = /* GraphQL */ `
     }
   }
 `;
+export const onCreateWorkshopForm = /* GraphQL */ `
+  subscription OnCreateWorkshopForm {
+    onCreateWorkshopForm {
+      firstName
+      lastName
+      email
+      phone
+      companyName
+      eventDate
+      audienceSize
+      eventLocation
+      eventDescription
+      id
+      createdOn
+      updatedOn
+    }
+  }
+`;
+export const onUpdateWorkshopForm = /* GraphQL */ `
+  subscription OnUpdateWorkshopForm {
+    onUpdateWorkshopForm {
+      firstName
+      lastName
+      email
+      phone
+      companyName
+      eventDate
+      audienceSize
+      eventLocation
+      eventDescription
+      id
+      createdOn
+      updatedOn
+    }
+  }
+`;
+export const onDeleteWorkshopForm = /* GraphQL */ `
+  subscription OnDeleteWorkshopForm {
+    onDeleteWorkshopForm {
+      firstName
+      lastName
+      email
+      phone
+      companyName
+      eventDate
+      audienceSize
+      eventLocation
+      eventDescription
+      id
+      createdOn
+      updatedOn
+    }
+  }
+`;
 export const onCreateCertificateCourses = /* GraphQL */ `
   subscription OnCreateCertificateCourses {
     onCreateCertificateCourses {
