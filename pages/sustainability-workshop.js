@@ -519,7 +519,7 @@ const Page = () => {
             </div>
             <div>
               <IconButton
-                text={'Learn More'}
+                text={'Certificate of Sustainable Packaging'}
                 bgColor={'bg-green-600'}
                 textColor={'text-white'}
                 hoverColor={'bg-brand-green'}
