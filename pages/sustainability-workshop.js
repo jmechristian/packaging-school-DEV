@@ -432,7 +432,7 @@ const Page = () => {
         </div>
         {/* FORM */}
         <div
-          className='w-full flex flex-col gap-12 md:max-w-xl mx-auto lg:max-w-7xl px-5 xl:px-0 scroll-mt-16'
+          className='w-full flex flex-col gap-12 md:max-w-xl mx-auto lg:max-w-7xl scroll-mt-16'
           id='form'
           ref={formRef}
         >
@@ -455,7 +455,7 @@ const Page = () => {
             <div className='col-span-12 lg:col-span-8'>
               <form
                 onSubmit={handleSubmit(onSubmit)}
-                className='flex flex-col gap-5 md:grid md:grid-cols-2 md:gap-6'
+                className='flex flex-col gap-5 md:grid md:grid-cols-2 md:gap-6 p-3 lg:p-0'
               >
                 <ReactHookInput
                   name={'firstName'}
