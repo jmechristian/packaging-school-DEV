@@ -161,7 +161,7 @@ const Page = () => {
           key='desc'
         />
       </Head>
-      <div className='w-full flex flex-col py-10 gap-20 lg:gap-32 scroll-smooth'>
+      <div className='w-full flex flex-col py-10 gap-20 lg:gap-32 scroll-smooth bg-white dark:bg-dark-dark'>
         {/* HERO */}
         <div className='grid lg:grid-cols-2 gap-16  md:max-w-xl mx-auto xl:max-w-7xl lg:gap-40  px-5 lg:px-10 xl:px-0'>
           <div className='flex flex-col gap-5 justify-center'>
@@ -174,7 +174,7 @@ const Page = () => {
             </div>
             <div>
               <FadeIn delay={0.5}>
-                <p>
+                <p className='dark:text-neutral-400'>
                   Partner with us for a tailored 1-3 hour workshop and keynote
                   on sustainable innovation, where our experts guide you through
                   sustainability definition, audits, creative brainstorming,
@@ -211,7 +211,7 @@ const Page = () => {
               <motion.div
                 className='absolute z-10 w-[125px] xl:w-[175px] bottom-20 xl:bottom-[120px] -left-8 xl:-left-20'
                 initial={{ opacity: 0 }}
-                animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ delay: 0.9, duration: 0.15 }}
                 ref={bubbleRef1}
               >
@@ -226,7 +226,7 @@ const Page = () => {
               <motion.div
                 className='absolute z-10 w-[125px] xl:w-[175px] bottom-[190px] xl:bottom-[260px] left-3'
                 initial={{ opacity: 0 }}
-                animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ delay: 1.25, duration: 0.15 }}
               >
                 <Image
@@ -240,7 +240,7 @@ const Page = () => {
               <motion.div
                 className='absolute z-10 w-[125px] xl:w-[175px] bottom-40 xl:bottom-[190px] -right-6 xl:-right-10'
                 initial={{ opacity: 0 }}
-                animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ delay: 1.55, duration: 0.15 }}
               >
                 <Image
@@ -254,7 +254,7 @@ const Page = () => {
               <motion.div
                 className='absolute z-10 w-[125px] xl:w-[175px] bottom-20 -right-6 xl:-right-10'
                 initial={{ opacity: 0 }}
-                animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ delay: 1.85, duration: 0.15 }}
               >
                 <Image
@@ -268,7 +268,7 @@ const Page = () => {
               <motion.div
                 className='absolute z-10 w-[125px] xl:w-[175px] bottom-[160px] left-[140px] xl:-right-10'
                 initial={{ opacity: 0 }}
-                animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ delay: 2.1, duration: 0.15 }}
               >
                 <Image
@@ -310,7 +310,7 @@ const Page = () => {
           {/* HURLEY */}
           <div className='w-full px-6 xl:px-0 flex flex-col gap-6 lg:col-span-4 '>
             <div>
-              <h2 className='text-2xl xl:text-3xl'>
+              <h2 className='text-2xl xl:text-3xl dark:text-white'>
                 Learn from Packaging Industry Leaders
               </h2>
             </div>
@@ -320,9 +320,11 @@ const Page = () => {
                 backgroundImage: `url(https://packschool.s3.amazonaws.com/hurley-sm.jpeg)`,
               }}
             ></div>
-            <div className='flex flex-col border-b border-black pb-4'>
+            <div className='flex flex-col border-b border-black dark:border-white pb-4'>
               <div className='w-full flex  justify-between items-center'>
-                <div className='font-bold text-xl'>R. Andrew Hurley, Ph.D.</div>
+                <div className='font-bold text-xl dark:text-white'>
+                  R. Andrew Hurley, Ph.D.
+                </div>
                 <div
                   className='cursor-pointer'
                   onClick={() =>
@@ -335,10 +337,12 @@ const Page = () => {
                   <FaLinkedin color='blue' size={30} />
                 </div>
               </div>
-              <div className='text-neutral-600'>Founder, Packaging School</div>
+              <div className='text-neutral-600 dark:text-neutral-400'>
+                Founder, Packaging School
+              </div>
             </div>
             <div className='flex flex-col gap-5 mt-4'>
-              <p>
+              <p className='dark:dark:text-neutral-400'>
                 Dr. R. Andrew Hurley is an Assistant Professor of Packaging
                 Science at Clemson University, leading design and consumer test
                 labs. His CUshopTM lab aids businesses with data-driven designs
@@ -353,9 +357,11 @@ const Page = () => {
           </div>
           {/* SUCCESS STORY */}
           <div className='w-full flex flex-col gap-6 lg:col-span-8'>
-            <div className='w-full bg-neutral-300 rounded-2xl px-6 pt-6 pb-12'>
+            <div className='w-full bg-neutral-300 dark:bg-dark-mid rounded-2xl px-6 pt-6 pb-12'>
               <div className='flex flex-col gap-6'>
-                <h2 className='text-2xl lg:text-3xl'>Success Stories</h2>
+                <h2 className='text-2xl lg:text-3xl dark:text-white'>
+                  Success Stories
+                </h2>
                 <div
                   className='w-full aspect-[1/1] md:aspect-[16/9] bg-black bg-center bg-cover h-full flex justify-end items-end'
                   style={{
@@ -371,8 +377,8 @@ const Page = () => {
                     </div>
                   </div>
                 </div>
-                <div className='flex flex-col gap-5 xl:px-4'>
-                  <div className='font-bold text-lg max-w-2xl leading-tight'>
+                <div className='flex flex-col gap-5 xl:px-4 dark:text-white'>
+                  <div className='font-bold text-lg max-w-2xl leading-tight '>
                     During the one-hour and fifteen-minute time slot, Dr. Hurley
                     guided the audience in understanding how to:
                   </div>
@@ -430,7 +436,7 @@ const Page = () => {
           id='form'
           ref={formRef}
         >
-          <div className='w-full flex flex-col lg:grid lg:grid-cols-12 gap-10 lg:gap-16 max-w-2xl mx-auto lg:max-w-7xl lg:rounded-2xl lg:border-2 lg:border-black lg:p-9 lg:shadow-2xl'>
+          <div className='w-full flex flex-col lg:grid lg:grid-cols-12 gap-10 lg:gap-16 max-w-2xl mx-auto lg:max-w-7xl lg:rounded-2xl lg:border-2 lg:border-black lg:dark:border-white lg:p-9 lg:shadow-2xl dark:bg-neutral-300'>
             <div className='w-full lg:grid lg:col-span-4 bg-gradient-to-t from-brand-green to-base-light p-5 rounded-2xl'>
               <div className='max-w-2xl mx-auto flex flex-col gap-10'>
                 <h2 className='text-2xl lg:text-3xl'>
