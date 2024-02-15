@@ -396,6 +396,8 @@ export const getLesson = /* GraphQL */ `
       related
       featured
       backdate
+      createdBy
+      lastEditedBy
       createdAt
       updatedAt
     }
@@ -439,6 +441,8 @@ export const listLessons = /* GraphQL */ `
         related
         featured
         backdate
+        createdBy
+        lastEditedBy
         createdAt
         updatedAt
       }
@@ -492,6 +496,8 @@ export const lessonsBySlug = /* GraphQL */ `
         related
         featured
         backdate
+        createdBy
+        lastEditedBy
         createdAt
         updatedAt
       }

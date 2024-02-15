@@ -411,6 +411,8 @@ export const onCreateLesson = /* GraphQL */ `
       related
       featured
       backdate
+      createdBy
+      lastEditedBy
       createdAt
       updatedAt
     }
@@ -475,6 +477,8 @@ export const onUpdateLesson = /* GraphQL */ `
       related
       featured
       backdate
+      createdBy
+      lastEditedBy
       createdAt
       updatedAt
     }
@@ -539,6 +543,8 @@ export const onDeleteLesson = /* GraphQL */ `
       related
       featured
       backdate
+      createdBy
+      lastEditedBy
       createdAt
       updatedAt
     }

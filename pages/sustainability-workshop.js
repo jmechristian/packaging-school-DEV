@@ -343,15 +343,13 @@ const Page = () => {
             </div>
             <div className='flex flex-col gap-5 mt-4'>
               <p className='dark:dark:text-neutral-400'>
-                Dr. R. Andrew Hurley is an Assistant Professor of Packaging
-                Science at Clemson University, leading design and consumer test
-                labs. His CUshopTM lab aids businesses with data-driven designs
-                for better engagement and sales. He founded Package InSight in
-                Greenville, SC, enhancing packaging design and consumer
-                experiences. Since 2008, Hurley has improved Clemson&apos;s
-                packaging curriculum, culminating in a licensed program to The
-                Packaging School, offering a comprehensive online Certificate of
-                Packaging Science.
+                Proffesor Andrew Hurley, PhD developed an online packaging
+                curriculum that Clemson University&amp;s Research Foundation
+                licensed to PackagingSchool.com in 2015. He delivers
+                high-impact, engaging, and forward-thinking presentations and
+                interactive workshops worldwide. His aim is to elevate the
+                industry&amp;s packaging IQ and foster sustainable innovation
+                throughout the supply chain.
               </p>
             </div>
           </div>
