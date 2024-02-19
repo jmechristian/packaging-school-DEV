@@ -215,6 +215,9 @@ const faqs = [
 ];
 
 const Page = ({ customer }) => {
+  const [isSending, setIsSending] = useState(true);
+  const [isForm, setIsForm] = useState('');
+
   const router = useRouter();
   // console.log(unilever);
   const createDate = (date) => {
@@ -223,6 +226,10 @@ const Page = ({ customer }) => {
       month: 'long',
       year: 'numeric',
     });
+  };
+
+  const submitHandler = () => {
+    console.log(isForm);
   };
 
   const pagePath = useMemo(() => {
@@ -393,7 +400,7 @@ const Page = ({ customer }) => {
 
         {/* HIGHLIGHT */}
 
-        <FullWidthDropDown
+        {/* <FullWidthDropDown
           title={'featured'}
           Icon={BoltIcon}
           bg='bg-unilever-blue'
@@ -401,7 +408,7 @@ const Page = ({ customer }) => {
           highlight={'bg-unilever-lightblue'}
           content={<HighlightContent />}
           open={true}
-        />
+        /> */}
 
         {/* COURSES */}
 
@@ -419,6 +426,7 @@ const Page = ({ customer }) => {
           }
           highlight={'bg-unilever-lightblue'}
           bgContent={'bg-neutral-200 border'}
+          open={true}
         />
 
         <FullWidthDropDown
@@ -456,9 +464,40 @@ const Page = ({ customer }) => {
           bgContent={'bg-neutral-200 border'}
         />
 
-        <div className='bg-neutral-100 rounded-xl'>
-          <div className='mx-auto max-w-7xl px-6 py-20 lg:px-8'>
-            <div className='mx-auto max-w-5xl divide-y divide-gray-900/10'>
+        <div className='bg-neutral-200 rounded-xl'>
+          <div className='mx-auto max-w-7xl px-6 py-12 lg:px-16 flex flex-col gap-12'>
+            <div className='flex items-center bg-neutral-100/80 rounded-2xl px-6 py-9 shadow'>
+              <div className='flex flex-col gap-4 pb-10 max-w-sm h-full justify-center'>
+                <h2 className='text-2xl font-bold leading-10 tracking-tight text-gray-900'>
+                  Looking to Learn More?
+                </h2>
+                <p className='text-neutral-600'>
+                  Any courses you are looking for? Fill out the suggestion form
+                  to let us know the courses and topics you would like to
+                  explore.
+                </p>
+              </div>
+              <div className='w-full h-full bg-white border border-neutral-400 rounded-xl overflow-hidden'>
+                <textarea
+                  rows={3}
+                  className='w-full h-full text-lg border-none p-3 focus:ring-0 resize-none placeholder:text-sm placeholder:text-neutral-400'
+                  name='unilever-request'
+                  id='unilever-request'
+                  value={isForm}
+                  onChange={(e) => setIsForm(e.target.value)}
+                  placeholder='Enter your suggestions.'
+                />
+                <div className='flex w-full justify-end pr-3 mb-2'>
+                  <button
+                    className=' bg-base-brand hover:bg-base-dark cursor-pointer text-white text-sm px-2 py-1.5 rounded'
+                    onClick={submitHandler}
+                  >
+                    {isSending ? 'Submit' : 'Sending'}
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className='mx-auto divide-y divide-gray-900/10 w-full'>
               <h2 className='text-2xl font-bold leading-10 tracking-tight text-gray-900'>
                 Frequently asked questions
               </h2>
