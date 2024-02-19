@@ -466,7 +466,7 @@ const Page = ({ customer }) => {
 
         <div className='bg-neutral-200 rounded-xl'>
           <div className='mx-auto max-w-7xl px-6 py-12 lg:px-16 flex flex-col gap-12'>
-            <div className='flex items-center bg-neutral-100/80 rounded-2xl px-6 py-9 shadow'>
+            <div className='flex flex-col lg:flex-row items-center bg-neutral-100/80 rounded-2xl px-6 py-9 shadow'>
               <div className='flex flex-col gap-4 pb-10 max-w-sm h-full justify-center'>
                 <h2 className='text-2xl font-bold leading-10 tracking-tight text-gray-900'>
                   Looking to Learn More?
