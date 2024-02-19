@@ -398,6 +398,7 @@ export const getLesson = /* GraphQL */ `
       backdate
       createdBy
       lastEditedBy
+      videoLink
       createdAt
       updatedAt
     }
@@ -443,6 +444,7 @@ export const listLessons = /* GraphQL */ `
         backdate
         createdBy
         lastEditedBy
+        videoLink
         createdAt
         updatedAt
       }
@@ -498,6 +500,7 @@ export const lessonsBySlug = /* GraphQL */ `
         backdate
         createdBy
         lastEditedBy
+        videoLink
         createdAt
         updatedAt
       }

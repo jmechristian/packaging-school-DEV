@@ -66,7 +66,9 @@ const Page = ({ lesson }) => {
           />
         );
       case 'VIDEO':
-        return <VideoHero videoUrl={lesson.media} />;
+        return (
+          <VideoHero videoUrl={lesson.media} videoLink={lesson.videoLink} />
+        );
       case 'SLIDES':
         return <LessonSlides slides={lesson.slides ? lesson.slides : []} />;
       default:
@@ -388,6 +390,7 @@ export async function getStaticProps({ params }) {
             }
           }
           author
+          videoLink
           media
           mediaType
           content

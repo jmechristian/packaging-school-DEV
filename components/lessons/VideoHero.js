@@ -1,6 +1,7 @@
 import React from 'react';
+import VideoPlayer from '../VideoPlayer';
 
-const VideoHero = ({ videoUrl }) => {
+const VideoHero = ({ videoUrl, videoLink }) => {
   return (
     <div>
       <div className='max-w-7xl mx-auto aspect-[16/9] object-cover border border-neutral-500'>
@@ -13,15 +14,11 @@ const VideoHero = ({ videoUrl }) => {
         >
           <source src={videoUrl} type='video/mp4'></source>
         </video> */}
-        <iframe
-          width='100%'
-          height='100%'
-          src={videoUrl}
-          title='YouTube video player'
-          frameBorder='0'
-          allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-          allowFullScreen
-        ></iframe>
+        <VideoPlayer
+          light={false}
+          videoEmbedLink={videoUrl}
+          videoLink={videoLink}
+        />
       </div>
     </div>
   );

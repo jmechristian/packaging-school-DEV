@@ -60,9 +60,7 @@ const Page = ({ lesson }) => {
         );
       case 'VIDEO':
         return (
-          <VideoHero
-            videoUrl={'https://packschool.s3.amazonaws.com/lotm-test.mp4'}
-          />
+          <VideoHero videoUrl={lesson.media} videoLink={lesson.videoLink} />
         );
       case 'SLIDES':
         return <LessonSlides slides={lesson.slides ? lesson.slides : []} />;
@@ -372,6 +370,7 @@ export async function getServerSideProps({ params }) {
             }
           }
           author
+          videoLink
           media
           mediaType
           content
