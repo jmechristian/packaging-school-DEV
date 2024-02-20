@@ -522,7 +522,9 @@ const Page = ({ customer }) => {
                     className=' bg-base-brand hover:bg-base-dark cursor-pointer text-white text-sm px-2 py-1.5 rounded'
                     onClick={submitHandler}
                   >
-                    {isSending ? 'Sending' : isSent ? 'Sent!' : 'Submit'}
+                    <div className={isSending ? 'animate-pulse' : ''}>
+                      {isSending ? 'Sending' : isSent ? 'Sent!' : 'Submit'}
+                    </div>
                   </button>
                 </div>
               </div>
