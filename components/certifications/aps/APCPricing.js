@@ -96,7 +96,7 @@ const APCPricing = () => {
                 Questions about APS?
               </div>
               <div className='text-white leading-tight text-sm lg:text-base'>
-                Schedule a FREE live demo today!
+                Schedule a FREE live demo today! (EST)
               </div>
             </div>
           </div>

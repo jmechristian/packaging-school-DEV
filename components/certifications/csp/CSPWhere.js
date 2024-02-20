@@ -39,7 +39,7 @@ const CSPWhere = () => {
                   Questions about CSP?
                 </div>
                 <div className='text-white leading-tight'>
-                  Schedule a FREE live demo today!
+                  Schedule a FREE live demo today! (EST)
                 </div>
               </div>
             </div>
