@@ -215,8 +215,10 @@ const faqs = [
 ];
 
 const Page = ({ customer }) => {
-  const [isSending, setIsSending] = useState(true);
+  const [isSending, setIsSending] = useState(false);
+  const [isSent, setIsSent] = useState(false);
   const [isForm, setIsForm] = useState('');
+  const [isError, setError] = useState(true);
 
   const router = useRouter();
   // console.log(unilever);
@@ -228,8 +230,27 @@ const Page = ({ customer }) => {
     });
   };
 
-  const submitHandler = () => {
-    console.log(isForm);
+  const submitHandler = async () => {
+    setIsSending(true);
+    const res = await fetch('/api/send-unilever-suggestion-form', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        suggestion: isForm,
+      }),
+    });
+
+    if (res.status === 200) {
+      setIsSending(false);
+      setIsSent(true);
+      setIsForm('');
+    } else {
+      setIsSending(false);
+      setError(true);
+    }
   };
 
   const pagePath = useMemo(() => {
@@ -468,7 +489,7 @@ const Page = ({ customer }) => {
           <div className='mx-auto max-w-7xl px-6 py-12 lg:px-16 flex flex-col gap-12'>
             <div className='flex flex-col lg:flex-row items-center bg-neutral-100/80 rounded-2xl px-6 py-9 shadow'>
               <div className='flex flex-col gap-4 pb-10 max-w-sm h-full justify-center'>
-                <h2 className='text-2xl font-bold leading-10 tracking-tight text-gray-900'>
+                <h2 className='text-xl lg:text-2xl font-bold leading-10 tracking-tight text-gray-900'>
                   Looking to Learn More?
                 </h2>
                 <p className='text-neutral-600'>
@@ -479,20 +500,29 @@ const Page = ({ customer }) => {
               </div>
               <div className='w-full h-full bg-white border border-neutral-400 rounded-xl overflow-hidden'>
                 <textarea
-                  rows={3}
-                  className='w-full h-full text-lg border-none p-3 focus:ring-0 resize-none placeholder:text-sm placeholder:text-neutral-400'
+                  rows={5}
+                  className='w-full h-full leading-tight border-none p-3 focus:ring-0 resize-none placeholder:text-sm placeholder:text-neutral-400'
                   name='unilever-request'
                   id='unilever-request'
                   value={isForm}
                   onChange={(e) => setIsForm(e.target.value)}
                   placeholder='Enter your suggestions.'
                 />
-                <div className='flex w-full justify-end pr-3 mb-2'>
+                <div className='flex w-full justify-end pr-3 mb-2 gap-6'>
+                  {isError ? (
+                    <div>
+                      <span className='text-sm text-red-500'>
+                        Error sending form.
+                      </span>
+                    </div>
+                  ) : (
+                    <></>
+                  )}
                   <button
                     className=' bg-base-brand hover:bg-base-dark cursor-pointer text-white text-sm px-2 py-1.5 rounded'
                     onClick={submitHandler}
                   >
-                    {isSending ? 'Submit' : 'Sending'}
+                    {isSending ? 'Sending' : isSent ? 'Sent!' : 'Submit'}
                   </button>
                 </div>
               </div>
