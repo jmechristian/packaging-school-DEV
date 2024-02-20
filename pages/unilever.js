@@ -218,7 +218,7 @@ const Page = ({ customer }) => {
   const [isSending, setIsSending] = useState(false);
   const [isSent, setIsSent] = useState(false);
   const [isForm, setIsForm] = useState('');
-  const [isError, setError] = useState(true);
+  const [isError, setError] = useState(false);
 
   const router = useRouter();
   // console.log(unilever);
