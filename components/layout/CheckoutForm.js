@@ -73,24 +73,24 @@ export default function CheckoutForm({ setConfirmation, email, type }) {
             <button
               disabled={!stripe}
               className={`${
-                isApproved ? 'text-green-600' : 'text-slate-700'
-              } font-greycliff rounded-lg font-semibold`}
+                isApproved ? 'text-green-600' : 'text-slate-700 '
+              } font-greycliff rounded-lg font-semibold px-4 py-1.5 shadow text-lg bg-white border-black border-2`}
             >
               {buttonText}
             </button>
           </div>
-          <div className='w-full mt-3 max-w-xl mx-auto bg-base-brand/70 rounded-lg px-6 py-2 flex items-center gap-2  text-white font-semibold'>
-            <div>
-              <MdInfo color='white' size={'40'} />
-            </div>
-            <div className='text-left leading-snug'>
-              Please remain on this page upon payment approval or ensure you hit
-              SAVE or SUBMIT below
-            </div>
-          </div>
         </div>
       </div>
       <div className='text-red-600 w-full text-center'>{message}</div>
+      <div className='w-full mt-3 max-w-xl mx-auto bg-base-brand/70 rounded-lg px-6 py-2 flex items-center gap-2  text-white font-semibold'>
+        <div>
+          <MdInfo color='white' size={'40'} />
+        </div>
+        <div className='text-left leading-snug'>
+          Please remain on this page upon payment approval or ensure you hit
+          SAVE or SUBMIT below
+        </div>
+      </div>
     </div>
   );
 }

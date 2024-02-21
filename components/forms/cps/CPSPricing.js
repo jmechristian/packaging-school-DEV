@@ -65,7 +65,8 @@ const CPSPricing = ({ email, free }) => {
                   />
                   {formState.errors.hasOwnProperty('paymentConfirmation') && (
                     <div className='text-sm text-red-600 mt-3 mb-2'>
-                      Please fill out field.
+                      Please fill out field and hit &quot;Pay Application&quot;
+                      to proceed.
                     </div>
                   )}
                 </div>
