@@ -4,6 +4,7 @@ import {
   createClick,
   createCourseClick,
   createLessonClick,
+  listLMSCourses,
 } from '../src/graphql/mutations';
 
 export const getSalesBarItems = async () => {

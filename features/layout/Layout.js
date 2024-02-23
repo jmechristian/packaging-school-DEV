@@ -73,7 +73,7 @@ const Layout = ({ children }) => {
   useEffect(() => {
     const getLessons = /* GraphQL */ `
       query MyQuery {
-        listLessons {
+        listLessons(filter: { status: { eq: "PUBLISHED" } }) {
           items {
             title
             subhead
@@ -82,6 +82,7 @@ const Layout = ({ children }) => {
             seoImage
             type
             createdAt
+            status
           }
         }
       }
