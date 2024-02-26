@@ -4,7 +4,7 @@ import VideoPlayer from '../VideoPlayer';
 const VideoHero = ({ videoUrl, videoLink }) => {
   return (
     <div>
-      <div className='max-w-7xl mx-auto aspect-[16/9] object-cover border border-neutral-500'>
+      <div className='max-w-7xl mx-auto object-cover border border-neutral-500'>
         {/* <video
           className='w-full h-full'
           controls
