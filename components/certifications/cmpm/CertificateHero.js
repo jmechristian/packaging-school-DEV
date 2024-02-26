@@ -22,11 +22,12 @@ const CertificateHero = () => {
               <VideoPlayer
                 videoEmbedLink={'https://youtu.be/N_hYWvQO0Sg'}
                 light={true}
+                hideSupport={true}
               />
             </div>
           </FadeIn>
         </div>
-        <div className='flex flex-col gap-4 bg-black rounded-b-xl px-6 pt-5 pb-7 items-center'>
+        <div className='flex flex-col gap-4 bg-black rounded-b-xl px-6 pt-7 pb-7 items-center'>
           <div className='font-bold text-white'>
             <span className=' text-white/50'>Deadline to Apply:</span> Mar. 11,
             2024

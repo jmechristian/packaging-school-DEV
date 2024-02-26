@@ -12,6 +12,7 @@ const VideoPlayer = ({
   rounded,
   playing,
   videoLink,
+  hideSupport,
 }) => {
   const [isError, setIsError] = useState(false);
   const [isBackup, setIsBackup] = useState(false);
@@ -22,17 +23,20 @@ const VideoPlayer = ({
         rounded ? 'rounded-t-xl' : ''
       }`}
     >
-      <div
-        className='bg-base-brand cursor-pointer gap-1 px-2 pt-1 pb-2 flex items-center justify-center'
-        onClick={() => setIsBackup(true)}
-      >
-        <div>
-          <CursorArrowRaysIcon className='w-5 h-5 stroke-white' />
+      {!hideSupport && (
+        <div
+          className='bg-base-brand cursor-pointer gap-1 px-2 pt-1 pb-2 flex items-center justify-center'
+          onClick={() => setIsBackup(true)}
+        >
+          <div>
+            <CursorArrowRaysIcon className='w-5 h-5 stroke-white' />
+          </div>
+          <div className='leading-none text-white font-medium text-center text-sm lg:text-base '>
+            Trouble viewing the video?
+          </div>
         </div>
-        <div className='leading-none text-white font-medium text-center text-sm lg:text-base '>
-          Trouble viewing the video?
-        </div>
-      </div>
+      )}
+
       {/* {isError && !isBackup && (
         <div className='absolute inset-0 flex items-center justify-center bg-neutral-800'>
           <div
