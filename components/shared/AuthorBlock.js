@@ -16,7 +16,7 @@ const AuthorBlock = ({ id }) => {
           href={isAuthor.getAuthor.linkedIn ? isAuthor.getAuthor.linkedIn : '#'}
           rel='noreferrer'
           target='_blank'
-          className='font-bold uppercase text-sm'
+          className='font-bold uppercase text-sm dark:text-white'
         >
           {isAuthor.getAuthor.name}
         </a>
