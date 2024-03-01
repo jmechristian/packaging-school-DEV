@@ -22,7 +22,7 @@ const Page = () => {
             transition={{ duration: 0.5, ease: 'easeIn' }}
           >
             <div>
-              <h1 className='text-3xl xl:text-4xl dark:text-white font-semibold'>
+              <h1 className='text-3xl xl:text-4xl dark:text-white font-bold'>
                 Food Packaging Certificate: Packaging and Preservation
               </h1>
             </div>
@@ -153,8 +153,8 @@ const Page = () => {
             />
           </div>
         </div>
-        <div className='flex flex-col gap-6 max-w-md'>
-          <div className='text-2xl xl:text-3xl font-semibold'>
+        <div className='flex flex-col gap-5 max-w-md'>
+          <div className='text-2xl xl:text-3xl font-bold'>
             What You Will Cover
           </div>
           <div>
