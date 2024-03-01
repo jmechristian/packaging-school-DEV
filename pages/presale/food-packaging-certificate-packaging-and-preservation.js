@@ -94,7 +94,6 @@ const Page = () => {
                     <img
                       className='w-full'
                       src='https://packschool.s3.amazonaws.com/foodpackaging-presale-slide1.webp'
-                      className='w-full'
                       alt='food packaging slide 1'
                     />
                   </div>
@@ -102,7 +101,6 @@ const Page = () => {
                     <img
                       className='w-full'
                       src='https://packschool.s3.amazonaws.com/foodpackaging-presale-slide3.webp'
-                      className='w-full'
                       alt='food packaging slide 2'
                     />
                   </div>
@@ -110,7 +108,6 @@ const Page = () => {
                     <img
                       className='w-full'
                       src='https://packschool.s3.amazonaws.com/foodpackaging-presale-slide4.webp'
-                      className='w-full'
                       alt='food packaging slide 4'
                     />
                   </div>
