@@ -38,7 +38,7 @@ const Page = () => {
             </div>
             <div className='flex items-center gap-5 mt-4'>
               <div
-                className='bg-white cursor-pointer px-4 py-2 text-lg rounded-lg text-black shadow border-black border font-bold'
+                className='bg-white hover:bg-neutral-300 transition-all ease-in cursor-pointer px-4 py-2 text-lg rounded-lg text-black shadow border-black border font-bold'
                 onClick={() =>
                   window.open(
                     'https://learn.packagingschool.com/enroll/2893149?price_id=3736463&coupon=fpcpresell',
