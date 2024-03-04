@@ -169,14 +169,14 @@ const Page = () => {
                     <div className='w-full'>
                       <img
                         className='w-full'
-                        src='https://packschool.s3.amazonaws.com/foodpackaging-presale-slide3.webp'
+                        src='https://psadmin.s3.amazonaws.com/foodpackaging-screenshot-5.webp'
                         alt='food packaging slide 2'
                       />
                     </div>
                     <div className='w-full'>
                       <img
                         className='w-full'
-                        src='https://packschool.s3.amazonaws.com/foodpackaging-presale-slide4.webp'
+                        src='https://psadmin.s3.amazonaws.com/foodpackaging-screenshot-7.webp'
                         alt='food packaging slide 4'
                       />
                     </div>
@@ -225,13 +225,13 @@ const Page = () => {
             </div>
             <div>
               <p>
-                Within this course, packaging requirements of different foods
-                will be discussed. Different food products vary in composition,
+                This course discusses the packaging requirements for various
+                food groups. Different food products vary in composition,
                 affecting spoilage type and shelf life differently. The ways
                 packaging can be used to control deteriorative reactions
                 throughout the supply chain will be discussed for a variety of
-                products. We will also highlight many strategies used in
-                industry as well as material selection. We have divided this
+                products. We will also highlight many strategies used in the
+                industry along with material selection. We have divided this
                 course into modules based on the general food type, such as
                 dairy or meat or low- and intermediate-moisture foods.
               </p>
@@ -270,11 +270,12 @@ const Page = () => {
                   }}
                 ></div>
                 <div className='bg-white px-3 pt-4 pb-5 text-sm leading-tight'>
-                  Promote Your Brand, Educate The World. Through your
-                  sponsorship you will support hundreds of food packaging
-                  professionals better understand the industry and the value you
-                  provide. Your company is front and center. Your leaders are
-                  the subject-matter experts.
+                  This certificate aims to help not only packaging engineers,
+                  but also food scientists and technologists, package developers
+                  and designers, marketers, sales teams, and manufacturers by
+                  teaching the theory of food packaging and the methods to apply
+                  current consumer needs through innovation in packaging design,
+                  material choice, and sustainability initiatives.
                 </div>
                 <div
                   className='bg-black text-white uppercase font-medium py-3 text-center cursor-pointer'
