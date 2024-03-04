@@ -169,14 +169,14 @@ const Page = () => {
                     <div className='w-full'>
                       <img
                         className='w-full'
-                        src='https://psadmin.s3.amazonaws.com/foodpackaging-screenshot-5.webp'
+                        src='https://packschool.s3.amazonaws.com/foodpackaging-presale-slide3.webp'
                         alt='food packaging slide 2'
                       />
                     </div>
                     <div className='w-full'>
                       <img
                         className='w-full'
-                        src='https://psadmin.s3.amazonaws.com/foodpackaging-screenshot-7.webp'
+                        src='https://packschool.s3.amazonaws.com/foodpackaging-screenshot-9.webp'
                         alt='food packaging slide 4'
                       />
                     </div>
