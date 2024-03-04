@@ -287,21 +287,26 @@ const Page = () => {
             </div>
             <div className='lg:col-span-8 bg-white w-full p-10'>
               <div className='w-full flex flex-col justify-between gap-6 h-full'>
-                <h1 className='text-3xl xl:text-5xl font-semibold max-w-md'>
+                <h1 className='text-3xl md:text-4xl xl:text-5xl font-semibold max-w-md'>
                   Be a Thought Leader in the Food Packaging Space
                 </h1>
                 <div className='flex flex-col md:flex-row items-end justify-between'>
-                  <p className='text-lg max-w-lg pr-8'>
-                    Elevate Your Presence, Enlighten The Industry. By choosing
-                    to sponsor, you play a pivotal role in enriching the
-                    knowledge base of countless food packaging experts,
-                    showcasing the unparalleled value your brand brings to the
-                    forefront. Position your business at the heart of
-                    innovation, where your executives emerge as the leading
-                    voices of authority. Take this opportunity to not just be
-                    seen, but to significantly impact and shape the future of
-                    the food packaging sector.
-                  </p>
+                  <div className='flex flex-col gap-3'>
+                    <h3 className='text-xl font-bold'>
+                      Elevate Your Presence, Enlighten The Industry.
+                    </h3>
+                    <p className='text-lg max-w-lg pr-8'>
+                      By choosing to sponsor, you play a pivotal role in
+                      enriching the knowledge base of countless food packaging
+                      experts, showcasing the unparalleled value your brand
+                      brings to the forefront. Position your business at the
+                      heart of innovation, where your executives emerge as the
+                      leading voices of authority. Take this opportunity to not
+                      just be seen, but to significantly impact and shape the
+                      future of the food packaging sector.
+                    </p>
+                  </div>
+
                   <div onClick={() => router.push('/food-packaging')}>
                     <MagnetButton />
                   </div>
