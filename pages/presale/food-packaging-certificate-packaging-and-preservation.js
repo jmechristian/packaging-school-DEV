@@ -288,7 +288,7 @@ const Page = () => {
             <div className='lg:col-span-8 bg-white w-full p-10'>
               <div className='w-full flex flex-col justify-between gap-6 h-full'>
                 <h1 className='text-3xl xl:text-5xl dark:text-white font-semibold max-w-md'>
-                  Be a thought leader in the Food Packaging Space
+                  Be a Thought Leader in the Food Packaging Space
                 </h1>
                 <div className='flex flex-col md:flex-row items-end justify-between'>
                   <p className='text-lg max-w-lg pr-8'>
