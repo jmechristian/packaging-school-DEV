@@ -18,12 +18,12 @@ const CSPBio = () => {
             </SectionHeading>
           </FadeIn>
           <div>
-            <h2 className='text-3xl md:text-5xl text-white max-w-xl'>
+            <h2 className='text-3xl md:text-4xl text-white max-w-xl'>
               Ready to Take the Lead in Sustainability? Expand Your Expertise
               Now!
             </h2>
           </div>
-          <div className='w-full max-w-2xl lg:text-xl text-white font-medium'>
+          <div className='w-full max-w-2xl lg:text-lg text-white font-medium'>
             With over two decades of industry experience, Dr. Sandeep Kulkarni,
             founder and President of KoolEarth Solutions Inc., and an adjunct
             professor at the Packaging School, guides students through the

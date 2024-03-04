@@ -593,6 +593,7 @@ const Page = () => {
           </div>
           <div className='aspect-[16/9] w-full max-w-3xl'>
             <VideoPlayer
+              hideSupport={true}
               videoEmbedLink={
                 'https://player.vimeo.com/video/888839253?h=c1a4d5982a&amp;badge=0&amp;autopause=0&amp;quality_selector=1&amp;player_id=0&amp;app_id=58479'
               }

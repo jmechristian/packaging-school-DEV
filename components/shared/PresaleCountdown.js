@@ -46,7 +46,7 @@ const PresaleCountdown = ({ date }) => {
   };
 
   return (
-    <div className='w-full max-w-5xl mx-auto flex items-center'>
+    <div className='w-full max-w-md xl:max-w-5xl mx-auto flex items-center'>
       <CountdownItem num={remaining.days} text='days' />
       <CountdownItem num={remaining.hours} text='hours' />
       <CountdownItem num={remaining.minutes} text='minutes' />
