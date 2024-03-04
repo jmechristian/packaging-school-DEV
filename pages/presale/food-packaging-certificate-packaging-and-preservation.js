@@ -212,7 +212,7 @@ const Page = () => {
         <div className='w-full grid lg:grid-cols-12'>
           <div className='lg:col-span-4 py-10 lg:border-r-black lg:border-r-2'>
             <div className='flex flex-col w-full max-w-[300px] border-2 border-black mx-auto'>
-              <div className='bg-amber-300 text-black font-medium text-xl flex items-center gap-3 p-3 cursor-pointer'>
+              <div className='bg-amber-300 text-black font-medium text-xl flex items-center gap-3 p-3'>
                 <div>
                   <div className='w-12 h-12 border-2 border-black bg-white flex items-center justify-center'>
                     <div className='w-7 h-7 rounded-full bg-brand-yellow ring ring-black flex items-center justify-center'>
@@ -235,7 +235,10 @@ const Page = () => {
                 is front and center. Your leaders are the subject-matter
                 experts.
               </div>
-              <div className='bg-black text-white uppercase font-medium py-3 text-center'>
+              <div
+                className='bg-black text-white uppercase font-medium py-3 text-center cursor-pointer'
+                onClick={() => router.push('/food-packaging')}
+              >
                 View Certificate
               </div>
             </div>
