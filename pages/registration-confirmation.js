@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Meta from '../components/shared/Meta';
 
 const successContent = () => {
   return (
@@ -66,7 +67,13 @@ const Page = () => {
     }
   }, []);
   return (
-    <div className='mx-auto max-w-2xl lg:text-center py-40'>{isContent}</div>
+    <>
+      <Meta
+        title={'Registration Confirmation'}
+        description={'Registration Confirmation'}
+      />
+      <div className='mx-auto max-w-2xl lg:text-center py-40'>{isContent}</div>
+    </>
   );
 };
 

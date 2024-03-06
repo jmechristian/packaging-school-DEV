@@ -30,6 +30,7 @@ const Page = () => {
   return (
     <>
       <Head>
+        <meta name='robots' content='index, follow' />
         <meta
           name='image'
           property='og:image'

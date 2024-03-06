@@ -8,18 +8,19 @@ import GradientCTA from '../components/GradientCTA';
 import HomeCTA from '../components/home/HomeCTA';
 import FadeIn from '../helpers/FadeIn';
 import Head from 'next/head';
+import Meta from '../components/shared/Meta';
 
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>Packaging School | Home</title>
-        <meta
-          property='og:title'
-          content='Packaging School | Home'
-          key='title'
-        />
-      </Head>
+      <Meta
+        title={'Packaging School'}
+        description={
+          'The Packaging School brings together the business, art, and science of packaging so you can lead projects, optimize supply chains, increase margins, and develop sustainable solutions.'
+        }
+        image={'https://packschool.s3.amazonaws.com/firework-box-3.webp'}
+      />
+
       <div className='relative w-full h-full '>
         <div className='flex flex-col gap-24 md:gap-32 lg:gap-40'>
           <FadeIn>

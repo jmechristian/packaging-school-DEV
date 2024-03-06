@@ -11,6 +11,7 @@ import Head from 'next/head';
 import { API } from 'aws-amplify';
 import { createAppStart } from '../src/graphql/mutations';
 import Loader from '../components/shared/Loader';
+import Meta from '../components/shared/Meta';
 
 const Page = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -136,14 +137,13 @@ const Page = () => {
   };
   return (
     <>
-      <Head>
-        <title>Packaging School | CMPM Form</title>
-        <meta
-          property='og:title'
-          content='Packaging School | CMPM Form'
-          key='title'
-        />
-      </Head>
+      <Meta
+        title={'Certificate of Mastery in Packaging Management Form Start'}
+        description={
+          'Distinguish yourself from your colleagues by acquiring a tangible solution that can be presented to both management and peers. Take your first step below and tell us a little bit about yourself to proceed with your application.'
+        }
+        image={'https://packschool.s3.amazonaws.com/form-seoImage3.webp'}
+      />
       <div className='flex flex-col gap-16 pb-24'>
         <CenteredTextHeader
           headline='Certificate of Mastery in Packaging Management'

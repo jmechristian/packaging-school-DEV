@@ -2,6 +2,7 @@ import CareerFeature from '../../components/careers/CareerFeature';
 import CareerHero from '../../components/careers/CareerHero';
 import CareerAction from '../../components/careers/CareerAction';
 import CareerCTA from '../../components/careers/CareerCTA';
+import Head from 'next/head';
 import { Amplify, API, graphqlOperation } from 'aws-amplify';
 import awsExports from '../../src/aws-exports';
 Amplify.configure(awsExports);
@@ -11,29 +12,42 @@ const GRAPHQL_API_KEY = process.env.GRAPHQL_API_KEY;
 
 const Page = ({ career }) => {
   return (
-    <div className='w-full h-full relative flex flex-col mt-8'>
-      <CareerHero
-        title={career.title}
-        altName={career.altName}
-        media={career.media}
-        subhead={career.subhead}
-      />
-      <CareerAction
-        apcCopy={career.apcCopy}
-        beverageCopy={career.beverageCopy}
-        cmpmCopy={career.cmpmCopy}
-        coreCopy={career.coreCopy}
-        cpsCopy={career.cpsCopy}
-        electiveCopy={career.electiveCopy}
-        freeCopy={career.freeCopy}
-      />
-      <CareerFeature
-        name={career.name}
-        altName={career.altName}
-        items={career.dayInLife.items}
-      />
-      <CareerCTA />
-    </div>
+    <>
+      <Head>
+        <title>{career.title}</title>
+        <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+        <meta name='title' content={career.title} />
+        <meta name='description' content={career.subhead} />
+        <meta
+          name='keywords'
+          content='packaging, careers, careers in packaging'
+        />
+        <meta name='robots' content='index, follow' />
+      </Head>
+      <div className='w-full h-full relative flex flex-col mt-8'>
+        <CareerHero
+          title={career.title}
+          altName={career.altName}
+          media={career.media}
+          subhead={career.subhead}
+        />
+        <CareerAction
+          apcCopy={career.apcCopy}
+          beverageCopy={career.beverageCopy}
+          cmpmCopy={career.cmpmCopy}
+          coreCopy={career.coreCopy}
+          cpsCopy={career.cpsCopy}
+          electiveCopy={career.electiveCopy}
+          freeCopy={career.freeCopy}
+        />
+        <CareerFeature
+          name={career.name}
+          altName={career.altName}
+          items={career.dayInLife.items}
+        />
+        <CareerCTA />
+      </div>
+    </>
   );
 };
 

@@ -6,6 +6,7 @@ import { ArrowRightCircleIcon } from '@heroicons/react/24/solid';
 import { Disclosure } from '@headlessui/react';
 import { MinusSmallIcon, PlusSmallIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
+import Meta from '../components/shared/Meta';
 
 const faqs = [
   {
@@ -33,6 +34,13 @@ const faqs = [
 const Index = () => {
   return (
     <>
+      <Meta
+        title={'Food Packaging Certificate'}
+        description={
+          'Boost your brand by sponsoring our project! Partner with us to enrich food packaging pros with deep industry insights. Spotlight your brand, establish your leaders as experts.'
+        }
+        image={'https://packschool.s3.amazonaws.com/fpc-seoImage.webp'}
+      />
       <PatternBackground />
       {/* Hero section */}
       <div className='pt-14'>
@@ -75,6 +83,7 @@ const Index = () => {
         </p>
         <div className='w-full h-full aspect-[16/9]'>
           <VideoPlayer
+            hideSupport={true}
             videoEmbedLink='https://player.vimeo.com/video/712102606?h=853f79b7c0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'
             className='w-full'
             light='https://packschool.s3.amazonaws.com/certifications/food-placeholder.png'

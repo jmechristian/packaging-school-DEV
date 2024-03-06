@@ -6,18 +6,17 @@ import CourseScroller from '../components/shared/CourseScroller';
 import SalesFeatures from '../components/sales-bootcamp/SalesFeatures';
 import SalesStaff from '../components/sales-bootcamp/SalesStaff';
 import Head from 'next/head';
+import Meta from '../components/shared/Meta';
 
 const Page = () => {
   return (
     <>
-      <Head>
-        <title>Packaging School | Sales Bootcamp</title>
-        <meta
-          property='og:title'
-          content='Packaging School | Sales Bootcamp'
-          key='title'
-        />
-      </Head>
+      <Meta
+        title={'Packaging School | Sandler Training Packaging Sales Fast Track'}
+        description={
+          'This introductory course is designed to give a complete overview of the Sandler Selling System concepts as they apply to packaging sales, along with actionable steps that you or your team can implement from the first day to immediately start to improve performance.'
+        }
+      />
       <div className='flex flex-col gap-12'>
         <SalesHeroVideo />
         <SalesFeatures />

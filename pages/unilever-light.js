@@ -29,6 +29,7 @@ import {
 import { Disclosure } from '@headlessui/react';
 import { useSelector } from 'react-redux';
 import { motion, AnimatePresence } from 'framer-motion';
+import Head from 'next/head';
 
 import Unilever from '../components/icons/Unilever';
 import FullWidthDropDown from '../components/shared/FullWidthDropDown';
@@ -223,50 +224,56 @@ const Page = ({ unilever }) => {
 
   const HighlightContent = ({ link }) => {
     return (
-      <motion.div className='px-0 lg:px-6 w-full grid lg:grid-cols-3 gap-12 pb-3 my-9 overflow-hidden'>
-        <NewCouseCard
-          title={'Uniliever Packaging Bootcamp 101'}
-          description={
-            'This Boot Camp will serve as an introduction to the packaging industry and provide the fundamental knowledge necessary to get you up to speed.'
-          }
-          background={
-            'https://packschool.s3.amazonaws.com/unilever-brands-1.png'
-          }
-          link={'#'}
-          link_text={'Select Course'}
-          Icon={RocketLaunchIcon}
-          callout={'Unilever Developed'}
-          video={'https://www.youtube.com/watch?v=ynDhF_jYZn8'}
-          id={'806c0e2e-c4db-4c13-94f9-b49d4e8b2239'}
-        />
-        <NewCouseCard
-          title={'Sustainable Packaging'}
-          description={
-            'Have you ever wondered how grocery store produce ships from the farm to the grocery store?'
-          }
-          background={
-            'https://packschool.s3.amazonaws.com/sustainable-seoImage.png'
-          }
-          link={'#'}
-          link_text={'Select Course'}
-          Icon={SparklesIcon}
-          callout={'Most Popular'}
-          video={'https://www.youtube.com/watch?v=ynDhF_jYZn8'}
-          id={'806c0e2e-c4db-4c13-94f9-b49d4e8b2239'}
-        />
-        <NewCouseCard
-          title={'Shoe Shopping From Home'}
-          description={
-            "Does packaging influence value? Let's investigate the relationship between product packaging and consumer to analyze how design can influence purchase choice."
-          }
-          background={'https://packschool.s3.amazonaws.com/demo-lesson.png'}
-          link={'/lessons/shoe-shopping-from-home'}
-          link_text={'View Lesson'}
-          Icon={SignalIcon}
-          callout={'Latest Lesson'}
-          id={'806c0e2e-c4db-4c13-94f9-b49d4e8b2239'}
-        />
-      </motion.div>
+      <>
+        <Head>
+          <title>Packaging School | Unilever Light</title>
+          <meta name='robots' content='noindex,nofollow' />
+        </Head>
+        <motion.div className='px-0 lg:px-6 w-full grid lg:grid-cols-3 gap-12 pb-3 my-9 overflow-hidden'>
+          <NewCouseCard
+            title={'Uniliever Packaging Bootcamp 101'}
+            description={
+              'This Boot Camp will serve as an introduction to the packaging industry and provide the fundamental knowledge necessary to get you up to speed.'
+            }
+            background={
+              'https://packschool.s3.amazonaws.com/unilever-brands-1.png'
+            }
+            link={'#'}
+            link_text={'Select Course'}
+            Icon={RocketLaunchIcon}
+            callout={'Unilever Developed'}
+            video={'https://www.youtube.com/watch?v=ynDhF_jYZn8'}
+            id={'806c0e2e-c4db-4c13-94f9-b49d4e8b2239'}
+          />
+          <NewCouseCard
+            title={'Sustainable Packaging'}
+            description={
+              'Have you ever wondered how grocery store produce ships from the farm to the grocery store?'
+            }
+            background={
+              'https://packschool.s3.amazonaws.com/sustainable-seoImage.png'
+            }
+            link={'#'}
+            link_text={'Select Course'}
+            Icon={SparklesIcon}
+            callout={'Most Popular'}
+            video={'https://www.youtube.com/watch?v=ynDhF_jYZn8'}
+            id={'806c0e2e-c4db-4c13-94f9-b49d4e8b2239'}
+          />
+          <NewCouseCard
+            title={'Shoe Shopping From Home'}
+            description={
+              "Does packaging influence value? Let's investigate the relationship between product packaging and consumer to analyze how design can influence purchase choice."
+            }
+            background={'https://packschool.s3.amazonaws.com/demo-lesson.png'}
+            link={'/lessons/shoe-shopping-from-home'}
+            link_text={'View Lesson'}
+            Icon={SignalIcon}
+            callout={'Latest Lesson'}
+            id={'806c0e2e-c4db-4c13-94f9-b49d4e8b2239'}
+          />
+        </motion.div>
+      </>
     );
   };
 

@@ -3,6 +3,7 @@ import AcccsaHero from '../components/acccsa/AcccsaHero';
 import AcccsaCourses from '../components/acccsa/AcccsaCourses';
 import Link from 'next/link';
 import Script from 'next/script';
+import Meta from '../components/shared/Meta';
 
 const courses = [
   {
@@ -127,8 +128,16 @@ const courses = [
 
 const Page = () => {
   return (
-    <div className='relative z-0'>
-      {/* <div
+    <>
+      <Meta
+        title={'Packaging School | ACCCSA'}
+        description={
+          'Los cursos de ACCCSA, elegidos por expertos, maximizan el aprendizaje rápido. La educación en línea de AICC y The Packaging School ofrece cursos gratuitos.'
+        }
+        image={'https://packschool.s3.amazonaws.com/acccsa-seoImage.webp'}
+      />
+      <div className='relative z-0'>
+        {/* <div
         className='w-full flex justify-center items-center bg-base-mid overflow-scroll'
         id='scrollers'
       >
@@ -146,35 +155,36 @@ const Page = () => {
           </div>
         </div>
       </div> */}
-      <AcccsaHero />
-      <AcccsaCourses courses={courses} />
-      <div className='relative flex bg-slate-200 rounded-lg py-9 px-6'>
-        <div className='max-w-7xl mx-auto flex gap-9'>
-          <div className='p-12'>
-            <div className='text-5xl font-greycliff font-semibold'>
-              Regístrese aquí
+        <AcccsaHero />
+        <AcccsaCourses courses={courses} />
+        <div className='relative flex bg-slate-200 rounded-lg py-9 px-6'>
+          <div className='max-w-7xl mx-auto flex gap-9'>
+            <div className='p-12'>
+              <div className='text-5xl font-greycliff font-semibold'>
+                Regístrese aquí
+              </div>
+              <p className='my-6 text-xl'>
+                Los cursos de The Packaging School – AICC son un beneficio para
+                los Asociados de ACCCSA.
+              </p>
+              <p className='my-6 text-xl'>
+                Debe registrarse y ser aprobado antes de acceder al los cursos
+                en línea.
+              </p>
+              <p className='my-6 text-xl'>
+                ACCCSA le enviará un usuario y contraseña.
+              </p>
             </div>
-            <p className='my-6 text-xl'>
-              Los cursos de The Packaging School – AICC son un beneficio para
-              los Asociados de ACCCSA.
-            </p>
-            <p className='my-6 text-xl'>
-              Debe registrarse y ser aprobado antes de acceder al los cursos en
-              línea.
-            </p>
-            <p className='my-6 text-xl'>
-              ACCCSA le enviará un usuario y contraseña.
-            </p>
+            <div className='_form_51 max-w-fit py-9' id='Registrese'></div>
+            <Script
+              src='https://packagingschool42200.activehosted.com/f/embed.php?id=51'
+              type='text/javascript'
+              charset='utf-8'
+            ></Script>
           </div>
-          <div className='_form_51 max-w-fit py-9' id='Registrese'></div>
-          <Script
-            src='https://packagingschool42200.activehosted.com/f/embed.php?id=51'
-            type='text/javascript'
-            charset='utf-8'
-          ></Script>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -1,19 +1,17 @@
 import React from 'react';
 import CenteredTextHeader from '../components/layout/CenteredTextHeader';
-import Head from 'next/head';
+import Meta from '../components/shared/Meta';
 
 const Page = () => {
   return (
     <>
+      <Meta
+        title={'Certificate of Mastery in Packaging Management Confirmation'}
+        description={
+          'One of our Education Specialists will be in touch shortly.  We are very excited you have chosen to take this step in your professional career.'
+        }
+      />
       <div className='pb-40'>
-        <Head>
-          <title>Packaging School | CPS Confirmation</title>
-          <meta
-            property='og:title'
-            content='Packaging School | CPS Confirmation'
-            key='title'
-          />
-        </Head>
         <CenteredTextHeader
           headline='Thank you for your submission.'
           heading='Certificate of Packaging Science'

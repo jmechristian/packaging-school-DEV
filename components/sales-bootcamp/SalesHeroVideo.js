@@ -55,6 +55,7 @@ export default function SalesHeroVideo() {
               <div className='-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4'>
                 <div className='aspect-[16/9]'>
                   <VideoPlayer
+                    hideSupport={true}
                     videoEmbedLink={
                       'https://player.vimeo.com/video/451535827?h=27b06b5bf3&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'
                     }

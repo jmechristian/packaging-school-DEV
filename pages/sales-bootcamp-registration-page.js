@@ -1,11 +1,19 @@
 import Script from 'next/script';
 import React from 'react';
+import Meta from '../components/shared/Meta';
 
 const Page = () => {
   return (
-    <div className='bg-white'>
-      <div className='relative isolate'>
-        {/* <div
+    <>
+      <Meta
+        title={'Packaging Sales Bootcamp Registration'}
+        description={
+          'This introductory course is designed to give a complete overview of the Sandler Selling System concepts as they apply to packaging sales, along with actionable steps that you or your team can implement from the first day to immediately start to improve performance.'
+        }
+      />
+      <div className='bg-white'>
+        <div className='relative isolate'>
+          {/* <div
           className='absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80'
           aria-hidden='true'
         >
@@ -17,37 +25,38 @@ const Page = () => {
             }}
           />
         </div> */}
-        <div className='py-24 sm:py-32 lg:pb-40 grid grid-cols-1 lg:grid-cols-2 max-w-7xl mx-auto'>
-          <div className='px-6 lg:px-8'>
-            <div className='mx-auto max-w-3xl'>
-              <img
-                className='w-44 h-auto mb-9'
-                src='https://packschool.s3.amazonaws.com/sandler_ps-logo.png'
-                alt='Sandler Sales Training'
-              />
-              <h1 className='text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl font-greycliff'>
-                Great sales people aren’t born. They’re trained.
-              </h1>
-              <p className='mt-6 text-lg leading-8 text-gray-600'>
-                This introductory course is designed to give a complete overview
-                of the Sandler Selling System concepts as they apply to
-                packaging sales, along with actionable steps that you or your
-                team can implement from the first day to immediately start to
-                improve performance.
-              </p>
+          <div className='py-24 sm:py-32 lg:pb-40 grid grid-cols-1 lg:grid-cols-2 max-w-7xl mx-auto'>
+            <div className='px-6 lg:px-8'>
+              <div className='mx-auto max-w-3xl'>
+                <img
+                  className='w-44 h-auto mb-9'
+                  src='https://packschool.s3.amazonaws.com/sandler_ps-logo.png'
+                  alt='Sandler Sales Training'
+                />
+                <h1 className='text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl font-greycliff'>
+                  Great sales people aren’t born. They’re trained.
+                </h1>
+                <p className='mt-6 text-lg leading-8 text-gray-600'>
+                  This introductory course is designed to give a complete
+                  overview of the Sandler Selling System concepts as they apply
+                  to packaging sales, along with actionable steps that you or
+                  your team can implement from the first day to immediately
+                  start to improve performance.
+                </p>
+              </div>
             </div>
-          </div>
-          <div>
-            <div class='_form_69'></div>
-            <Script
-              src='https://packagingschool42200.activehosted.com/f/embed.php?id=69'
-              type='text/javascript'
-              charset='utf-8'
-            />
+            <div>
+              <div class='_form_69'></div>
+              <Script
+                src='https://packagingschool42200.activehosted.com/f/embed.php?id=69'
+                type='text/javascript'
+                charset='utf-8'
+              />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

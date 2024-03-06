@@ -9,6 +9,7 @@ import { API } from 'aws-amplify';
 import { createAppStart } from '../src/graphql/mutations';
 import { CalendarDaysIcon } from '@heroicons/react/24/solid';
 import Loader from '../components/shared/Loader';
+import Meta from '../components/shared/Meta';
 
 const Page = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -133,14 +134,13 @@ const Page = () => {
   };
   return (
     <>
-      <Head>
-        <title>Packaging School | CMPM Form</title>
-        <meta
-          property='og:title'
-          content='Packaging School | CMPM Form'
-          key='title'
-        />
-      </Head>
+      <Meta
+        title={'Certificate of Packaging Science Form Start'}
+        description={
+          'Empower yourself with the essential tools for success in the packaging profession, providing 24/7 access to review relevant content on-demand. Set your employees up for success, supporting their career advancement, and utilize this program for effective onboarding and retention strategies.'
+        }
+        image={'https://packschool.s3.amazonaws.com/form-seoImage5.webp'}
+      />
       <div className='flex flex-col gap-16 pb-24'>
         <CenteredTextHeader
           headline='Certificate of Packaging Science'

@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import CenteredTextHeader from '../components/layout/CenteredTextHeader';
 import GradientCTA from '../components/GradientCTA';
+import Meta from '../components/shared/Meta';
 
 const people = [
   {
@@ -195,6 +196,7 @@ const people2 = [
 const Index = () => {
   return (
     <>
+      <Meta title={'Automotive Faculty'} />
       <div className='w-full flex justify-center items-center bg-base-mid'>
         <div className='flex gap-12 max-w-7xl mx-auto py-4'>
           <div className='font-greycliff text-white font-semibold text-lg'>
@@ -286,6 +288,7 @@ const Index = () => {
         subheadline='Try a demo, risk-free.'
         buttonText='Get Started For Free'
         secondaryButtonText='Need More Info?'
+        buttonLink={'/certifications/get-to-know-apc'}
       />
     </>
   );

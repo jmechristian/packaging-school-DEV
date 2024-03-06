@@ -1,6 +1,7 @@
 import React from 'react';
 import CenteredTextHeader from '../components/layout/CenteredTextHeader';
 import { useForm } from 'react-hook-form';
+import Meta from '../components/shared/Meta';
 
 const Index = () => {
   const submitForm = (data) => console.log(data);
@@ -13,6 +14,12 @@ const Index = () => {
 
   return (
     <>
+      <Meta
+        title={'Download Your Package Development Plan'}
+        description={
+          'You’ll apply the course content to your own, custom Package Development Plan for your organization or product line. Every student project is unique, and have ranged from pharmaceutical packaging, new consumer products, rebrands and extensions, sustainability initiatives, to protective industrial packaging.'
+        }
+      />
       <CenteredTextHeader
         headline='Download Your Package Development Plan'
         subhead='You’ll apply the course content to your own, custom Package Development Plan for your organization or product line. Every student project is unique, and have ranged from pharmaceutical packaging, new consumer products, rebrands and extensions, sustainability initiatives, to protective industrial packaging.'

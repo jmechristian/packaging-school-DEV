@@ -14,18 +14,21 @@ import APCStart from '../../components/certifications/aps/APCStart';
 import APCAPS from '../../components/certifications/aps/APCAPS';
 import Head from 'next/head';
 import TestimonialSlider from '../../components/shared/TestimonialSlider';
+import Meta from '../../components/shared/Meta';
 
 const Page = ({ testimonials }) => {
   return (
     <>
-      <Head>
-        <title>Packaging School | Automotive Packaging Certificate</title>
-        <meta
-          property='og:title'
-          content='Packaging School | Automotive Packaging Certificate'
-          key='title'
-        />
-      </Head>
+      <Meta
+        title={'Automotive Packaging Certificate (APC)'}
+        description={
+          'Elevate your career with our unique online program tailored for automotive packaging pros. Ideal for suppliers, OEMs, engineers, and sales teams.'
+        }
+        image={'https://packschool.s3.amazonaws.com/aps-seoImage-sm.webp'}
+        keywords={
+          'Automotive Packaging, Returnable Packaging Systems, Expendable Case Studies, Applications, Supplier Databases, Transportation, SME Feedback, certification'
+        }
+      />
       <div className='flex flex-col dark:bg-dark-dark gap-12'>
         <APCHero />
         <APCNavigation />

@@ -7,31 +7,33 @@ import CourseContentMenu from '../../components/courses/CourseContentMenu';
 import { lMSCoursesBySlug, listLMSCourses } from '../../src/graphql/queries';
 import { API } from 'aws-amplify';
 import Head from 'next/head';
+import Meta from '../../components/shared/Meta';
 
 const Page = ({ course }) => {
   const dispatch = useDispatch();
   const { preview } = useSelector((state) => state.course_filter);
   return (
-    <div className='relative'>
-      <Head>
-        <title>Packaging School | {course && course.title}</title>
-        <meta
-          property='og:title'
-          content={`Packaging School | ${course && course.title}`}
-          key='title'
+    <>
+      <Meta
+        title={course && `Packaging School | ${course.title}`}
+        description={course && course.subheadline}
+        image={course && course.seoImage}
+      />
+      <div className='relative'>
+        <CourseMain data={course} />
+        <CourseBottom
+          category={course && course.category}
+          id={course && course.id}
         />
-      </Head>
-      <CourseMain data={course} />
-      <CourseBottom
-        category={course && course.category}
-        id={course && course.id}
-      />
-      {preview && <CoursePreview close={() => dispatch(setPreviewClosed())} />}
-      <CourseContentMenu
-        link={course && course.link}
-        trialLink={`${course && course.link}?et=free_trial`}
-      />
-    </div>
+        {preview && (
+          <CoursePreview close={() => dispatch(setPreviewClosed())} />
+        )}
+        <CourseContentMenu
+          link={course && course.link}
+          trialLink={`${course && course.link}?et=free_trial`}
+        />
+      </div>
+    </>
   );
 };
 

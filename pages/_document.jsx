@@ -7,6 +7,7 @@ export default function Document() {
       style={{
         scrollBehavior: 'smooth',
       }}
+      lang='en'
     >
       <Head>
         <link rel='icon' type='image/svg' href='/favicon.png' />

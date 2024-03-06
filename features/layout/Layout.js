@@ -160,7 +160,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Head>
+      {/* <Head>
         <title>Packaging School</title>
         <meta name='viewport' content='initial-scale=1.0, width=device-width' />
         <meta name='title' content='Packaging School' />
@@ -174,7 +174,7 @@ const Layout = ({ children }) => {
           name='google-site-verification'
           content='0J1SRWS-xIM_nHRIochuPhFVG-Yfa3lPy3Y7qoAsx8Y'
         />
-      </Head>
+      </Head> */}
       <CookieConsent />
       <div className={`${darkMode ? 'dark' : ''} relative`}>
         <div className='flex flex-col justify-between'>

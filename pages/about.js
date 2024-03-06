@@ -7,19 +7,19 @@ import { Amplify, API } from 'aws-amplify';
 import { listStaff } from '../src/graphql/queries';
 import awsExports from '../src/aws-exports';
 import Timeline from '../components/about/Timeline';
+import Meta from '../components/shared/Meta';
 Amplify.configure(awsExports);
 
 const Page = ({ pageData }) => {
   return (
     <>
-      <Head>
-        <title>Packaging School | About</title>
-        <meta
-          property='og:title'
-          content='Packaging School | About'
-          key='title'
-        />
-      </Head>
+      <Meta
+        title={'About Packaging School'}
+        description={
+          'The Packaging School bridges the gap between academia and industry by partnering with companies, subject matter experts and associations to create a shared learning management system. Our expanded catalog will enable knowledge-seekers to connect with knowledge-providers in all facets of packaging and processing.'
+        }
+        image={'https://packschool.s3.amazonaws.com/about-seoImage.webp'}
+      />
       <Mission />
       <Staff staff={pageData.listStaff.items} />
       <Timeline />

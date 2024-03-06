@@ -13,20 +13,17 @@ import { UserIcon } from '@heroicons/react/24/outline';
 import Head from 'next/head';
 import CTAButtonLarge from '../../components/CTAButtonLarge';
 import CTAButtonTrial from '../../components/CTAButtonTrial';
+import Meta from '../../components/shared/Meta';
 
 const Page = ({ collection, courses }) => {
   const router = useRouter();
   console.log('collection', collection);
   return (
     <>
-      <Head>
-        <title>Packaging School | {collection && collection.title}</title>
-        <meta
-          property='og:title'
-          content={`Packaging School | ${collection && collection.title}`}
-          key='title'
-        />
-      </Head>
+      <Meta
+        title={`Packaging School | ${collection && collection.title}`}
+        description={collection && collection.description}
+      />
       <div className='relative dark:bg-dark-dark py-24'>
         <div className='flex flex-col gap-24  container-7xl'>
           <div className='grid grid-cols-1 lg:grid-cols-7 lg:gap-24'>

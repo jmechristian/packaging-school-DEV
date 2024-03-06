@@ -3,10 +3,18 @@ import React from 'react';
 import GradientCTA from '../components/GradientCTA';
 import CenteredTextHeader from '../components/layout/CenteredTextHeader';
 import CourseCard from '../components/course-card/CourseCard';
+import Meta from '../components/shared/Meta';
 
 const Index = () => {
   return (
     <>
+      <Meta
+        title={'Automotive Packaging Courses'}
+        description={
+          'We visited leading experts at PakFab (Returnable Metal Packaging), Tree Brand Packaging (Expendable Packaging – Wood), NTIC Excor Zerust (Comprehensive Corrosion Control), and IPS (Packaging Distributor) to develop industry-specific education from the people who know it best.'
+        }
+        image={'https://packschool.s3.amazonaws.com/autocourses-seoImage.webp'}
+      />
       <div className='w-full flex justify-center items-center bg-base-mid mt-24'>
         <div className='flex gap-12 max-w-7xl mx-auto py-4'>
           <div className='font-greycliff text-white font-semibold text-lg'>

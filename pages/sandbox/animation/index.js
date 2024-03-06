@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Head from 'next/head';
 
 function Gallery({ items, setIndex }) {
   return (
@@ -37,6 +38,10 @@ export default function Index() {
 
   return (
     <>
+      <Head>
+        <title>Packaging School | Animation Sandbox</title>
+        <meta name='robots' content='noindex,nofollow' />
+      </Head>
       <Gallery items={colors} setIndex={setIndex} />
       <AnimatePresence>
         {index !== false && (

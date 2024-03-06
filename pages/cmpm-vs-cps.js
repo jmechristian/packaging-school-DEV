@@ -3,6 +3,7 @@ import { CheckIcon, MinusIcon } from '@heroicons/react/20/solid';
 import { Disclosure } from '@headlessui/react';
 import { MinusSmallIcon, PlusSmallIcon } from '@heroicons/react/24/outline';
 import GradientCTA from '../components/GradientCTA';
+import Meta from '../components/shared/Meta';
 
 const tiers = [
   {
@@ -199,241 +200,252 @@ function classNames(...classes) {
 
 export default function Example() {
   return (
-    <div className='bg-white pt-32 sm:pt-48 relative isolate'>
-      <div className='mx-auto max-w-7xl px-6 lg:px-8'>
-        <div className='mx-auto max-w-4xl text-center'>
-          <p className='mt-2 text-2xl font-greycliff md:text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl'>
-            Certificate of Mastery in Packaging Management (CMPM) and the
-            Certificate of Packaging Science (CPS)
+    <>
+      <Meta
+        title={'CMPM vs. CPS'}
+        description={
+          'Compare out two most popular comprehensive certificate programs developed by the leaders in packaging education.'
+        }
+      />
+      <div className='bg-white pt-32 sm:pt-48 relative isolate'>
+        <div className='mx-auto max-w-7xl px-6 lg:px-8'>
+          <div className='mx-auto max-w-4xl text-center'>
+            <p className='mt-2 text-2xl font-greycliff md:text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl'>
+              Certificate of Mastery in Packaging Management (CMPM) and the
+              Certificate of Packaging Science (CPS)
+            </p>
+          </div>
+          <p className='mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-600'>
+            A side-by-side comparison.
           </p>
-        </div>
-        <p className='mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-600'>
-          A side-by-side comparison.
-        </p>
 
-        {/* xs to lg */}
-        <div className='mx-auto mt-12 max-w-md space-y-8 sm:mt-16 lg:hidden'>
-          {tiers.map((tier) => (
-            <section
-              key={tier.id}
-              className={classNames(
-                tier.mostPopular
-                  ? 'rounded-xl bg-gray-400/5 ring-1 ring-inset ring-gray-200'
-                  : 'rounded-xl ring-1 ring-inset ring-gray-200',
-                'p-8'
-              )}
-            >
-              <h3
-                id={tier.id}
-                className='text-xl font-semibold leading-6 text-gray-900'
-              >
-                {tier.name}
-              </h3>
-              <p className='mt-2 flex items-baseline gap-x-1 text-gray-900'>
-                <span className='text-4xl font-bold'>{tier.priceMonthly}</span>
-              </p>
-              <a
-                href={tier.href}
-                aria-describedby={tier.id}
+          {/* xs to lg */}
+          <div className='mx-auto mt-12 max-w-md space-y-8 sm:mt-16 lg:hidden'>
+            {tiers.map((tier) => (
+              <section
+                key={tier.id}
                 className={classNames(
                   tier.mostPopular
-                    ? 'bg-slate-600 text-white hover:bg-slate-500'
-                    : 'text-slate-600 ring-1 ring-inset ring-slate-200 hover:ring-slate-300',
-                  'mt-8 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600'
+                    ? 'rounded-xl bg-gray-400/5 ring-1 ring-inset ring-gray-200'
+                    : 'rounded-xl ring-1 ring-inset ring-gray-200',
+                  'p-8'
                 )}
               >
-                View Certificate
-              </a>
-              <ul
-                role='list'
-                className='mt-10 space-y-4 text-sm leading-6 text-gray-900'
-              >
-                {sections.map((section) => (
-                  <li key={section.name}>
-                    <ul role='list' className='space-y-4'>
-                      {section.features.map((feature) =>
-                        feature.tiers[tier.name] ? (
-                          <li key={feature.name} className='flex gap-x-3'>
-                            <CheckIcon
-                              className='h-6 w-5 flex-none text-indigo-600'
-                              aria-hidden='true'
-                            />
-                            <span>
-                              {feature.name}{' '}
-                              {typeof feature.tiers[tier.name] === 'string' ? (
-                                <span className='text-sm leading-6 text-gray-500'>
-                                  ({feature.tiers[tier.name]})
-                                </span>
-                              ) : null}
-                            </span>
-                          </li>
-                        ) : null
-                      )}
-                    </ul>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          ))}
-        </div>
-
-        {/* lg+ */}
-        <div className='isolate mt-20 hidden lg:block'>
-          <div className='relative -mx-8'>
-            <table className='w-full table-fixed border-separate border-spacing-x-8 text-left'>
-              <caption className='sr-only'>Pricing plan comparison</caption>
-              <colgroup>
-                <col className='w-1/4' />
-                <col className='w-1/2' />
-                <col className='w-1/2 bg-slate-200 rounded-lg' />
-              </colgroup>
-              <thead>
-                <tr>
-                  <td />
-                  {tiers.map((tier) => (
-                    <th
-                      key={tier.id}
-                      scope='col'
-                      className='px-6 pt-6 xl:px-8 xl:pt-8'
-                    >
-                      <div className='text-2xl text-center font-semibold leading-7 text-gray-900'>
-                        {tier.name}
-                      </div>
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope='row'>
-                    <span className='sr-only'>Compare</span>
-                  </th>
-                  {tiers.map((tier) => (
-                    <td key={tier.id} className='px-6 py-2 xl:px-8 w-1/2'>
-                      <a
-                        href={tier.href}
-                        className={classNames(
-                          tier.mostPopular
-                            ? 'bg-base-brand text-white hover:bg-slate-500'
-                            : 'text-base-brand ring-1 ring-inset ring-indigo-200 hover:ring-indigo-300',
-                          'mt-8 block rounded-md py-3 px-4 text-center text-lg font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600 w-full'
-                        )}
-                      >
-                        View Certificate
-                      </a>
-                    </td>
-                  ))}
-                </tr>
-                {sections.map((section, sectionIdx) => (
-                  <Fragment key={section.name}>
-                    <tr>
-                      <th
-                        scope='colgroup'
-                        colSpan={4}
-                        className={classNames(
-                          sectionIdx === 0 ? 'pt-8' : 'pt-16',
-                          'pb-4 text-sm font-semibold leading-6 text-gray-900'
-                        )}
-                      >
-                        {section.name}
-                        <div className='absolute inset-x-8 mt-4 h-px bg-gray-900/10' />
-                      </th>
-                    </tr>
-                    {section.features.map((feature) => (
-                      <tr key={feature.name}>
-                        <th className='py-4 text-sm font-normal leading-6 text-gray-900'>
-                          {feature.name}
-                          <div className='absolute inset-x-8 mt-4 h-px bg-gray-900/5' />
-                        </th>
-                        {tiers.map((tier) => (
-                          <td key={tier.id} className='py-4 px-6 xl:px-8'>
-                            {typeof feature.tiers[tier.name] === 'string' ? (
-                              <div className='text-center text-sm leading-6 text-gray-500'>
-                                {feature.tiers[tier.name]}
-                              </div>
-                            ) : (
-                              <>
-                                {feature.tiers[tier.name] === true ? (
-                                  <CheckIcon
-                                    className='mx-auto h-5 w-5 text-slate-600'
-                                    aria-hidden='true'
-                                  />
-                                ) : (
-                                  <MinusIcon
-                                    className='mx-auto h-5 w-5 text-gray-400'
-                                    aria-hidden='true'
-                                  />
-                                )}
-
-                                <span className='sr-only'>
-                                  {feature.tiers[tier.name] === true
-                                    ? 'Included'
-                                    : 'Not included'}{' '}
-                                  in {tier.name}
-                                </span>
-                              </>
-                            )}
-                          </td>
-                        ))}
-                      </tr>
-                    ))}
-                  </Fragment>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-      <div className='bg-white'>
-        <div className='mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:py-40 lg:px-8'>
-          <div className='mx-auto max-w-7xl divide-y divide-gray-900/10'>
-            <h2 className='text-2xl font-bold leading-10 tracking-tight font-greycliff text-gray-900'>
-              Frequently asked questions
-            </h2>
-            <dl className='mt-10 space-y-6 divide-y divide-gray-900/10'>
-              {faqs.map((faq) => (
-                <Disclosure as='div' key={faq.question} className='pt-6'>
-                  {({ open }) => (
-                    <>
-                      <dt>
-                        <Disclosure.Button className='flex w-full items-start justify-between text-left text-gray-900'>
-                          <span className='text-lg font-semibold leading-7 font-greycliff'>
-                            {faq.question}
-                          </span>
-                          <span className='ml-6 flex h-7 items-center'>
-                            {open ? (
-                              <MinusSmallIcon
-                                className='h-6 w-6'
-                                aria-hidden='true'
-                              />
-                            ) : (
-                              <PlusSmallIcon
-                                className='h-6 w-6'
-                                aria-hidden='true'
-                              />
-                            )}
-                          </span>
-                        </Disclosure.Button>
-                      </dt>
-                      <Disclosure.Panel as='dd' className='mt-2 pr-12'>
-                        <p className='text-base leading-7 text-gray-600'>
-                          {faq.answer}
-                        </p>
-                      </Disclosure.Panel>
-                    </>
+                <h3
+                  id={tier.id}
+                  className='text-xl font-semibold leading-6 text-gray-900'
+                >
+                  {tier.name}
+                </h3>
+                <p className='mt-2 flex items-baseline gap-x-1 text-gray-900'>
+                  <span className='text-4xl font-bold'>
+                    {tier.priceMonthly}
+                  </span>
+                </p>
+                <a
+                  href={tier.href}
+                  aria-describedby={tier.id}
+                  className={classNames(
+                    tier.mostPopular
+                      ? 'bg-slate-600 text-white hover:bg-slate-500'
+                      : 'text-slate-600 ring-1 ring-inset ring-slate-200 hover:ring-slate-300',
+                    'mt-8 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600'
                   )}
-                </Disclosure>
-              ))}
-            </dl>
+                >
+                  View Certificate
+                </a>
+                <ul
+                  role='list'
+                  className='mt-10 space-y-4 text-sm leading-6 text-gray-900'
+                >
+                  {sections.map((section) => (
+                    <li key={section.name}>
+                      <ul role='list' className='space-y-4'>
+                        {section.features.map((feature) =>
+                          feature.tiers[tier.name] ? (
+                            <li key={feature.name} className='flex gap-x-3'>
+                              <CheckIcon
+                                className='h-6 w-5 flex-none text-indigo-600'
+                                aria-hidden='true'
+                              />
+                              <span>
+                                {feature.name}{' '}
+                                {typeof feature.tiers[tier.name] ===
+                                'string' ? (
+                                  <span className='text-sm leading-6 text-gray-500'>
+                                    ({feature.tiers[tier.name]})
+                                  </span>
+                                ) : null}
+                              </span>
+                            </li>
+                          ) : null
+                        )}
+                      </ul>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            ))}
+          </div>
+
+          {/* lg+ */}
+          <div className='isolate mt-20 hidden lg:block'>
+            <div className='relative -mx-8'>
+              <table className='w-full table-fixed border-separate border-spacing-x-8 text-left'>
+                <caption className='sr-only'>Pricing plan comparison</caption>
+                <colgroup>
+                  <col className='w-1/4' />
+                  <col className='w-1/2' />
+                  <col className='w-1/2 bg-slate-200 rounded-lg' />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <td />
+                    {tiers.map((tier) => (
+                      <th
+                        key={tier.id}
+                        scope='col'
+                        className='px-6 pt-6 xl:px-8 xl:pt-8'
+                      >
+                        <div className='text-2xl text-center font-semibold leading-7 text-gray-900'>
+                          {tier.name}
+                        </div>
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope='row'>
+                      <span className='sr-only'>Compare</span>
+                    </th>
+                    {tiers.map((tier) => (
+                      <td key={tier.id} className='px-6 py-2 xl:px-8 w-1/2'>
+                        <a
+                          href={tier.href}
+                          className={classNames(
+                            tier.mostPopular
+                              ? 'bg-base-brand text-white hover:bg-slate-500'
+                              : 'text-base-brand ring-1 ring-inset ring-indigo-200 hover:ring-indigo-300',
+                            'mt-8 block rounded-md py-3 px-4 text-center text-lg font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600 w-full'
+                          )}
+                        >
+                          View Certificate
+                        </a>
+                      </td>
+                    ))}
+                  </tr>
+                  {sections.map((section, sectionIdx) => (
+                    <Fragment key={section.name}>
+                      <tr>
+                        <th
+                          scope='colgroup'
+                          colSpan={4}
+                          className={classNames(
+                            sectionIdx === 0 ? 'pt-8' : 'pt-16',
+                            'pb-4 text-sm font-semibold leading-6 text-gray-900'
+                          )}
+                        >
+                          {section.name}
+                          <div className='absolute inset-x-8 mt-4 h-px bg-gray-900/10' />
+                        </th>
+                      </tr>
+                      {section.features.map((feature) => (
+                        <tr key={feature.name}>
+                          <th className='py-4 text-sm font-normal leading-6 text-gray-900'>
+                            {feature.name}
+                            <div className='absolute inset-x-8 mt-4 h-px bg-gray-900/5' />
+                          </th>
+                          {tiers.map((tier) => (
+                            <td key={tier.id} className='py-4 px-6 xl:px-8'>
+                              {typeof feature.tiers[tier.name] === 'string' ? (
+                                <div className='text-center text-sm leading-6 text-gray-500'>
+                                  {feature.tiers[tier.name]}
+                                </div>
+                              ) : (
+                                <>
+                                  {feature.tiers[tier.name] === true ? (
+                                    <CheckIcon
+                                      className='mx-auto h-5 w-5 text-slate-600'
+                                      aria-hidden='true'
+                                    />
+                                  ) : (
+                                    <MinusIcon
+                                      className='mx-auto h-5 w-5 text-gray-400'
+                                      aria-hidden='true'
+                                    />
+                                  )}
+
+                                  <span className='sr-only'>
+                                    {feature.tiers[tier.name] === true
+                                      ? 'Included'
+                                      : 'Not included'}{' '}
+                                    in {tier.name}
+                                  </span>
+                                </>
+                              )}
+                            </td>
+                          ))}
+                        </tr>
+                      ))}
+                    </Fragment>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
+        <div className='bg-white'>
+          <div className='mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:py-40 lg:px-8'>
+            <div className='mx-auto max-w-7xl divide-y divide-gray-900/10'>
+              <h2 className='text-2xl font-bold leading-10 tracking-tight font-greycliff text-gray-900'>
+                Frequently asked questions
+              </h2>
+              <dl className='mt-10 space-y-6 divide-y divide-gray-900/10'>
+                {faqs.map((faq) => (
+                  <Disclosure as='div' key={faq.question} className='pt-6'>
+                    {({ open }) => (
+                      <>
+                        <dt>
+                          <Disclosure.Button className='flex w-full items-start justify-between text-left text-gray-900'>
+                            <span className='text-lg font-semibold leading-7 font-greycliff'>
+                              {faq.question}
+                            </span>
+                            <span className='ml-6 flex h-7 items-center'>
+                              {open ? (
+                                <MinusSmallIcon
+                                  className='h-6 w-6'
+                                  aria-hidden='true'
+                                />
+                              ) : (
+                                <PlusSmallIcon
+                                  className='h-6 w-6'
+                                  aria-hidden='true'
+                                />
+                              )}
+                            </span>
+                          </Disclosure.Button>
+                        </dt>
+                        <Disclosure.Panel as='dd' className='mt-2 pr-12'>
+                          <p className='text-base leading-7 text-gray-600'>
+                            {faq.answer}
+                          </p>
+                        </Disclosure.Panel>
+                      </>
+                    )}
+                  </Disclosure>
+                ))}
+              </dl>
+            </div>
+          </div>
+        </div>
+        <GradientCTA
+          headline='Ready to Elevate Your Career?'
+          subheadline='Try a demo, risk-free.'
+          buttonText='Get Started For Free'
+          secondaryButtonText='Need More Info?'
+        />
       </div>
-      <GradientCTA
-        headline='Ready to Elevate Your Career?'
-        subheadline='Try a demo, risk-free.'
-        buttonText='Get Started For Free'
-        secondaryButtonText='Need More Info?'
-      />
-    </div>
+    </>
   );
 }

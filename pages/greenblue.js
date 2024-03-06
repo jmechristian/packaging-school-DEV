@@ -52,6 +52,7 @@ const Page = ({ customer }) => {
   return (
     <>
       <Head>
+        <title>Packaging School | GreenBlue</title>
         <meta name='robots' content='noindex,nofollow' />
       </Head>
       <div className='w-full max-w-7xl px-3 md:px-6 lg:px-0 flex flex-col gap-4 md:gap-6 pb-3 md:pb-6 lg:pb-24 mx-auto'>

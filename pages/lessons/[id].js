@@ -20,6 +20,7 @@ import { listLessons } from '../../src/graphql/queries';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleSignInModal } from '../../features/layout/layoutSlice';
 import AuthorBlock from '../../components/shared/AuthorBlock';
+import Meta from '../../components/shared/Meta';
 
 const Page = ({ lesson }) => {
   const newDate = lesson && new Date(lesson.updatedAt).toDateString();
@@ -95,22 +96,11 @@ const Page = ({ lesson }) => {
   return (
     lesson && (
       <>
-        <Head>
-          <title>{lesson.title}</title>
-          <meta
-            name='image'
-            property='og:image'
-            content={lesson?.seoImage}
-            key='image'
-          />
-          <meta property='og:title' content={lesson.title} key='title' />
-          <meta
-            property='og:description'
-            content={lesson?.subhead}
-            key='desc'
-          />
-          <meta name='description' content={lesson?.subhead} key='desc' />
-        </Head>
+        <Meta
+          title={lesson.title}
+          description={lesson.subhead}
+          image={lesson.seoImage}
+        />
         <div className='w-full lg:pt-6 pb-12 relative dark:bg-dark-dark'>
           <div className='w-full flex flex-col gap-6 lg:gap-9 max-w-6xl mx-auto'>
             {setMedia()}

@@ -20,6 +20,7 @@ import VideoPlayer from '../components/VideoPlayer';
 import ScrollingCards from '../components/shared/ScrollingCards';
 import ReactHookInput from '../components/shared/ReactHookInput';
 import ReactHookTextArea from '../components/shared/ReactHookTextArea';
+import Meta from '../components/shared/Meta';
 
 const cards = [
   {
@@ -131,36 +132,13 @@ const Page = () => {
 
   return (
     <>
-      <Head>
-        <title>Interactive Workshops Hosted by Industry Professionals</title>
-        <meta
-          name='image'
-          property='og:image'
-          content={
-            'https://packschool.s3.amazonaws.com/workshop-seoImage-sm.png'
-          }
-          key='image'
-        />
-        <meta
-          property='og:title'
-          content={'Interactive Workshops Hosted by Industry Professionals'}
-          key='title'
-        />
-        <meta
-          property='og:description'
-          content={
-            'Partner with us for a tailored 1-3 hour workshop and keynote on sustainable innovation, where our experts guide you through sustainability definition, audits, creative brainstorming, goal-setting, greenwashing identification, and environmental impact measurement to bring your product innovations to life.'
-          }
-          key='desc'
-        />
-        <meta
-          name='description'
-          content={
-            'Partner with us for a tailored 1-3 hour workshop and keynote on sustainable innovation, where our experts guide you through sustainability definition, audits, creative brainstorming, goal-setting, greenwashing identification, and environmental impact measurement to bring your product innovations to life.'
-          }
-          key='desc'
-        />
-      </Head>
+      <Meta
+        title={'Interactive Workshops Hosted by Industry Professionals'}
+        image={'https://packschool.s3.amazonaws.com/workshop-seoImage-sm.png'}
+        description={
+          'Partner with us for a tailored 1-3 hour workshop and keynote on sustainable innovation, where our experts guide you through sustainability definition, audits, creative brainstorming, goal-setting, greenwashing identification, and environmental impact measurement to bring your product innovations to life.'
+        }
+      />
       <div className='w-full flex flex-col py-10 gap-20 lg:gap-32 scroll-smooth bg-white dark:bg-dark-dark'>
         {/* HERO */}
         <div className='grid lg:grid-cols-2 gap-16  md:max-w-xl mx-auto xl:max-w-7xl lg:gap-40  px-5 lg:px-10 xl:px-0'>

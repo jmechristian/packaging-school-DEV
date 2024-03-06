@@ -11,21 +11,21 @@ import CertificateCirriculum from '../../components/certifications/cmpm/Certific
 import Testimonial from '../../components/shared/Testimonial';
 import GradientCTA from '../../components/GradientCTA';
 import CMPMPDP from '../../components/forms/cmpm/CMPMPDP';
-import Head from 'next/head';
+import Meta from '../../components/shared/Meta';
 
 const Page = () => {
   return (
     <>
-      <Head>
-        <title>
-          Packaging School | Certificate of Mastery in Packaging Management
-        </title>
-        <meta
-          property='og:title'
-          content={`Packaging School |  Certificate of Mastery in Packaging Management`}
-          key='title'
-        />
-      </Head>
+      <Meta
+        title={'Certificate of Mastery in Packaging Management (CMPM)'}
+        description={
+          'A 12-week, PhD-led certificate program ideal for ambitious professionals seeking to advance their career in the packaging industry and for companies actively seeking future leaders and rising stars to lead their teams.'
+        }
+        image={'https://packschool.s3.amazonaws.com/cmpm-seoImage-sm.webp'}
+        keywords={
+          'Global Competitive Landscape, Project Management Essentials, Regulations, Sustainability, Materials, Package Design, Packaging Development Workflow, Capital Equipment, Manufacturing, Logistics, Supply Chain Management, certification'
+        }
+      />
       <div className='flex flex-col dark:bg-dark-dark gap-28 md:gap-36 lg:gap-48'>
         <CertificateHero />
         <div className='flex flex-col gap-6 md:gap-12 lg:gap-24'>

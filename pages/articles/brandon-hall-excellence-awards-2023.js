@@ -25,6 +25,7 @@ const Page = () => {
           }
           key='desc'
         />
+        <meta name='robots' content='index, follow' />
       </Head>
 
       <div className='flex flex-col gap-24 py-16 md:py-24 bg-white dark:bg-dark-dark'>

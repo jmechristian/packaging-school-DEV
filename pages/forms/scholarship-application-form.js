@@ -3,10 +3,17 @@ import CenteredTextHero from '../../components/layout/CenteredTextHero';
 import Rubric from '../../components/scholarship/Rubric';
 import GradientCTA from '../../components/GradientCTA';
 import WhyUs from '../../components/WhyUs';
+import Meta from '../../components/shared/Meta';
 
 const Index = () => {
   return (
     <>
+      <Meta
+        title={'Scholarship Application Form'}
+        description={
+          'This scholarship application is valid for all courses and programs offered by The Packaging School. You will indicate which course or program you’re applying for in your scholarship essay. The strength of your essay will determine the amount of scholarship you are offered based on the grading rubric provided'
+        }
+      />
       <CenteredTextHero
         subhead='This scholarship application is valid for all courses and programs offered by The Packaging School. You will indicate which course or program you’re applying for in your scholarship essay. The strength of your essay will determine the amount of scholarship you are offered based on the grading rubric provided'
         headline='Scholarship Application Form'
