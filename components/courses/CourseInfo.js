@@ -25,7 +25,7 @@ const CourseInfo = ({
           <div className='flex flex-col gap-10'>
             {embedid ? (
               <div className='block h-full max-w-md aspect-[16/9]'>
-                <VideoPlayer videoEmbedLink={embedid} />
+                <VideoPlayer videoEmbedLink={embedid} hideSupport={true} />
               </div>
             ) : (
               <div
