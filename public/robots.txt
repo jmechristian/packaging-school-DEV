@@ -6,4 +6,4 @@ Allow: /
 Host: https://www.packagingschool.com
 
 # Sitemaps
-Sitemap: https://www.packagingschool.com/sitemap.xml
+Sitemap: https://www.packagingschool.com/api/sitemap-index

@@ -77,7 +77,7 @@ const Page = () => {
               transition={{ duration: 0.5, ease: 'easeIn' }}
             >
               <div>
-                <h1 className='text-3xl xl:text-5xl font-semibold'>
+                <h1 className='text-3xl lg:text-4xl xl:text-5xl font-bold'>
                   Food Packaging Certificate: Packaging and Preservation
                 </h1>
               </div>
