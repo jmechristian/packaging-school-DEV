@@ -349,20 +349,24 @@ const Page = ({ lesson }) => {
   );
 };
 
-// export async function getStaticPaths() {
-//   const res = await API.graphql({
-//     query: listLessons,
-//   });
-//   const paths = res.data.listLessons.items
-//     .filter((it) => it.status != 'DRAFT')
-//     .map((lesson) => ({
-//       params: { id: lesson.slug },
-//     }));
+export async function getStaticPaths() {
+  const res = await API.graphql({
+    query: listLessons,
+    variables: {
+      filter: {
+        videoLink: { attributeExists: true },
+        status: { eq: 'PUBLISHED' },
+      },
+    },
+  });
+  const paths = res.data.listLessons.items.map((lesson) => ({
+    params: { id: lesson.slug },
+  }));
 
-//   return { paths, fallback: true };
-// }
+  return { paths, fallback: true };
+}
 
-export async function getServerSideProps({ params }) {
+export async function getStaticProps({ params }) {
   const { id } = params;
 
   const getLesson = /* GraphQL */ `
@@ -426,7 +430,7 @@ export async function getServerSideProps({ params }) {
   const res = await API.graphql({ query: getLesson, variables: variables });
   const lesson = res.data.lessonsBySlug.items[0];
 
-  return { props: { lesson } };
+  return { props: { lesson }, revalidate: 10 };
 }
 
 export default Page;

@@ -68,7 +68,11 @@ const Page = ({ lesson }) => {
         );
       case 'VIDEO':
         return (
-          <VideoHero videoUrl={lesson.media} videoLink={lesson.videoLink} />
+          <VideoHero
+            videoUrl={lesson.media}
+            videoLink={lesson.videoLink}
+            slug={lesson.slug}
+          />
         );
       case 'SLIDES':
         return <LessonSlides slides={lesson.slides ? lesson.slides : []} />;
