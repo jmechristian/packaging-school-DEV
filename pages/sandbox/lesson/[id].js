@@ -9,7 +9,6 @@ import {
   LockClosedIcon,
   LockOpenIcon,
 } from '@heroicons/react/24/outline';
-import NewCouseCard from '../../../components/shared/NewCouseCard';
 import VideoHero from '../../../components/lessons/VideoHero';
 import LessonSlides from '../../../components/lessons/LessonSlides';
 import ImageHero from '../../../components/lessons/ImageHero';
