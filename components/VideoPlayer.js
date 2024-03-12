@@ -23,7 +23,7 @@ const VideoPlayer = ({
         rounded ? 'rounded-t-xl' : ''
       }`}
     >
-      {!hideSupport && (
+      {/* {!hideSupport && (
         <div
           className='bg-base-brand cursor-pointer gap-1 px-2 pt-1 pb-2 flex items-center justify-center'
           onClick={() => setIsBackup(true)}
@@ -35,7 +35,7 @@ const VideoPlayer = ({
             Trouble viewing the video?
           </div>
         </div>
-      )}
+      )} */}
 
       {/* {isError && !isBackup && (
         <div className='absolute inset-0 flex items-center justify-center bg-neutral-800'>
@@ -49,7 +49,7 @@ const VideoPlayer = ({
         </div>
       )} */}
       <div className='w-full aspect-[16/9]'>
-        {isBackup && videoLink ? (
+        {/* {isBackup && videoLink ? (
           <ReactPlayer
             url={videoLink}
             width={'100%'}
@@ -69,17 +69,17 @@ const VideoPlayer = ({
               </div>
             </div>
           </div>
-        ) : (
-          <ReactPlayer
-            url={videoEmbedLink}
-            width={'100%'}
-            height={'100%'}
-            onError={() => setIsError(true)}
-            controls
-            light={light}
-            playing={playing}
-          />
-        )}
+        ) : ( */}
+        <ReactPlayer
+          url={videoEmbedLink}
+          width={'100%'}
+          height={'100%'}
+          onError={() => setIsError(true)}
+          controls
+          light={light}
+          playing={playing}
+        />
+        {/* )} */}
       </div>
     </div>
   );
