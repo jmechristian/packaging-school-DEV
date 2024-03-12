@@ -68,7 +68,9 @@ const Page = ({ lesson }) => {
         );
       case 'VIDEO':
         return (
-          <VideoHero videoUrl={lesson.media} videoLink={lesson.videoLink} />
+          <VideoHero
+            videoUrl={'https://packschool.s3.amazonaws.com/lotm-test.mp4'}
+          />
         );
       case 'SLIDES':
         return <LessonSlides slides={lesson.slides ? lesson.slides : []} />;
