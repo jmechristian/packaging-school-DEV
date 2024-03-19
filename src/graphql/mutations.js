@@ -1279,6 +1279,81 @@ export const deleteAPSRegistrant = /* GraphQL */ `
     }
   }
 `;
+export const createAPSTicketRegistrant = /* GraphQL */ `
+  mutation CreateAPSTicketRegistrant(
+    $input: CreateAPSTicketRegistrantInput!
+    $condition: ModelAPSTicketRegistrantConditionInput
+  ) {
+    createAPSTicketRegistrant(input: $input, condition: $condition) {
+      year
+      id
+      name
+      email
+      company
+      title
+      phone
+      worksWith
+      speedNetworking
+      innovationWorkshop
+      plantTour
+      registrationReceived
+      welcomeEmailSent
+      code
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateAPSTicketRegistrant = /* GraphQL */ `
+  mutation UpdateAPSTicketRegistrant(
+    $input: UpdateAPSTicketRegistrantInput!
+    $condition: ModelAPSTicketRegistrantConditionInput
+  ) {
+    updateAPSTicketRegistrant(input: $input, condition: $condition) {
+      year
+      id
+      name
+      email
+      company
+      title
+      phone
+      worksWith
+      speedNetworking
+      innovationWorkshop
+      plantTour
+      registrationReceived
+      welcomeEmailSent
+      code
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteAPSTicketRegistrant = /* GraphQL */ `
+  mutation DeleteAPSTicketRegistrant(
+    $input: DeleteAPSTicketRegistrantInput!
+    $condition: ModelAPSTicketRegistrantConditionInput
+  ) {
+    deleteAPSTicketRegistrant(input: $input, condition: $condition) {
+      year
+      id
+      name
+      email
+      company
+      title
+      phone
+      worksWith
+      speedNetworking
+      innovationWorkshop
+      plantTour
+      registrationReceived
+      welcomeEmailSent
+      code
+      createdAt
+      updatedAt
+    }
+  }
+`;
 export const createCompany = /* GraphQL */ `
   mutation CreateCompany(
     $input: CreateCompanyInput!
@@ -3507,6 +3582,8 @@ export const createLMSCourse = /* GraphQL */ `
       category
       categoryArray
       type
+      presale
+      presale_price
       cirriculum {
         items {
           id
@@ -3573,6 +3650,8 @@ export const updateLMSCourse = /* GraphQL */ `
       category
       categoryArray
       type
+      presale
+      presale_price
       cirriculum {
         items {
           id
@@ -3639,6 +3718,8 @@ export const deleteLMSCourse = /* GraphQL */ `
       category
       categoryArray
       type
+      presale
+      presale_price
       cirriculum {
         items {
           id
@@ -4470,6 +4551,8 @@ export const createStudent = /* GraphQL */ `
           category
           categoryArray
           type
+          presale
+          presale_price
           price
           hours
           lessons
@@ -4616,6 +4699,8 @@ export const updateStudent = /* GraphQL */ `
           category
           categoryArray
           type
+          presale
+          presale_price
           price
           hours
           lessons
@@ -4762,6 +4847,8 @@ export const deleteStudent = /* GraphQL */ `
           category
           categoryArray
           type
+          presale
+          presale_price
           price
           hours
           lessons
@@ -6733,6 +6820,8 @@ export const createCirriculumCourses = /* GraphQL */ `
         category
         categoryArray
         type
+        presale
+        presale_price
         cirriculum {
           nextToken
         }
@@ -6797,6 +6886,8 @@ export const updateCirriculumCourses = /* GraphQL */ `
         category
         categoryArray
         type
+        presale
+        presale_price
         cirriculum {
           nextToken
         }
@@ -6861,6 +6952,8 @@ export const deleteCirriculumCourses = /* GraphQL */ `
         category
         categoryArray
         type
+        presale
+        presale_price
         cirriculum {
           nextToken
         }
@@ -6913,6 +7006,8 @@ export const createCourseLessons = /* GraphQL */ `
         category
         categoryArray
         type
+        presale
+        presale_price
         cirriculum {
           nextToken
         }
@@ -6983,6 +7078,8 @@ export const updateCourseLessons = /* GraphQL */ `
         category
         categoryArray
         type
+        presale
+        presale_price
         cirriculum {
           nextToken
         }
@@ -7053,6 +7150,8 @@ export const deleteCourseLessons = /* GraphQL */ `
         category
         categoryArray
         type
+        presale
+        presale_price
         cirriculum {
           nextToken
         }
@@ -7123,6 +7222,8 @@ export const createCourseInstructors = /* GraphQL */ `
         category
         categoryArray
         type
+        presale
+        presale_price
         cirriculum {
           nextToken
         }
@@ -7207,6 +7308,8 @@ export const updateCourseInstructors = /* GraphQL */ `
         category
         categoryArray
         type
+        presale
+        presale_price
         cirriculum {
           nextToken
         }
@@ -7291,6 +7394,8 @@ export const deleteCourseInstructors = /* GraphQL */ `
         category
         categoryArray
         type
+        presale
+        presale_price
         cirriculum {
           nextToken
         }

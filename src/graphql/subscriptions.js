@@ -1162,6 +1162,72 @@ export const onDeleteAPSRegistrant = /* GraphQL */ `
     }
   }
 `;
+export const onCreateAPSTicketRegistrant = /* GraphQL */ `
+  subscription OnCreateAPSTicketRegistrant {
+    onCreateAPSTicketRegistrant {
+      year
+      id
+      name
+      email
+      company
+      title
+      phone
+      worksWith
+      speedNetworking
+      innovationWorkshop
+      plantTour
+      registrationReceived
+      welcomeEmailSent
+      code
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateAPSTicketRegistrant = /* GraphQL */ `
+  subscription OnUpdateAPSTicketRegistrant {
+    onUpdateAPSTicketRegistrant {
+      year
+      id
+      name
+      email
+      company
+      title
+      phone
+      worksWith
+      speedNetworking
+      innovationWorkshop
+      plantTour
+      registrationReceived
+      welcomeEmailSent
+      code
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteAPSTicketRegistrant = /* GraphQL */ `
+  subscription OnDeleteAPSTicketRegistrant {
+    onDeleteAPSTicketRegistrant {
+      year
+      id
+      name
+      email
+      company
+      title
+      phone
+      worksWith
+      speedNetworking
+      innovationWorkshop
+      plantTour
+      registrationReceived
+      welcomeEmailSent
+      code
+      createdAt
+      updatedAt
+    }
+  }
+`;
 export const onCreateCompany = /* GraphQL */ `
   subscription OnCreateCompany {
     onCreateCompany {
@@ -3279,6 +3345,8 @@ export const onCreateLMSCourse = /* GraphQL */ `
       category
       categoryArray
       type
+      presale
+      presale_price
       cirriculum {
         items {
           id
@@ -3342,6 +3410,8 @@ export const onUpdateLMSCourse = /* GraphQL */ `
       category
       categoryArray
       type
+      presale
+      presale_price
       cirriculum {
         items {
           id
@@ -3405,6 +3475,8 @@ export const onDeleteLMSCourse = /* GraphQL */ `
       category
       categoryArray
       type
+      presale
+      presale_price
       cirriculum {
         items {
           id
@@ -4188,6 +4260,8 @@ export const onCreateStudent = /* GraphQL */ `
           category
           categoryArray
           type
+          presale
+          presale_price
           price
           hours
           lessons
@@ -4331,6 +4405,8 @@ export const onUpdateStudent = /* GraphQL */ `
           category
           categoryArray
           type
+          presale
+          presale_price
           price
           hours
           lessons
@@ -4474,6 +4550,8 @@ export const onDeleteStudent = /* GraphQL */ `
           category
           categoryArray
           type
+          presale
+          presale_price
           price
           hours
           lessons
@@ -6307,6 +6385,8 @@ export const onCreateCirriculumCourses = /* GraphQL */ `
         category
         categoryArray
         type
+        presale
+        presale_price
         cirriculum {
           nextToken
         }
@@ -6368,6 +6448,8 @@ export const onUpdateCirriculumCourses = /* GraphQL */ `
         category
         categoryArray
         type
+        presale
+        presale_price
         cirriculum {
           nextToken
         }
@@ -6429,6 +6511,8 @@ export const onDeleteCirriculumCourses = /* GraphQL */ `
         category
         categoryArray
         type
+        presale
+        presale_price
         cirriculum {
           nextToken
         }
@@ -6478,6 +6562,8 @@ export const onCreateCourseLessons = /* GraphQL */ `
         category
         categoryArray
         type
+        presale
+        presale_price
         cirriculum {
           nextToken
         }
@@ -6545,6 +6631,8 @@ export const onUpdateCourseLessons = /* GraphQL */ `
         category
         categoryArray
         type
+        presale
+        presale_price
         cirriculum {
           nextToken
         }
@@ -6612,6 +6700,8 @@ export const onDeleteCourseLessons = /* GraphQL */ `
         category
         categoryArray
         type
+        presale
+        presale_price
         cirriculum {
           nextToken
         }
@@ -6679,6 +6769,8 @@ export const onCreateCourseInstructors = /* GraphQL */ `
         category
         categoryArray
         type
+        presale
+        presale_price
         cirriculum {
           nextToken
         }
@@ -6760,6 +6852,8 @@ export const onUpdateCourseInstructors = /* GraphQL */ `
         category
         categoryArray
         type
+        presale
+        presale_price
         cirriculum {
           nextToken
         }
@@ -6841,6 +6935,8 @@ export const onDeleteCourseInstructors = /* GraphQL */ `
         category
         categoryArray
         type
+        presale
+        presale_price
         cirriculum {
           nextToken
         }

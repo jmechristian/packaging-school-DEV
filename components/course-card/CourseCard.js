@@ -31,6 +31,8 @@ const CourseCard = ({
   type,
   slug,
   altLink,
+  presale,
+  presale_price,
 }) => {
   const dispatch = useDispatch();
   const { darkMode } = useSelector((state) => state.layout);
@@ -180,7 +182,7 @@ const CourseCard = ({
         onMouseEnter={() => setIsEntered(true)}
         onMouseLeave={() => setIsEntered(false)}
       >
-        <div className='flex flex-col justify-between h-full gap-6'>
+        <div className='flex flex-col justify-between h-full gap-4'>
           <div
             className='flex flex-col gap-4 px-4 pt-4 cursor-pointer'
             onClick={() => {
@@ -206,80 +208,142 @@ const CourseCard = ({
                   </div>
                 ))}
             </div>
+            {/* DESCRIPTION  */}
             <div className='font-semibold text-xl font-greycliff cursor-pointer leading-tight line-clamp-2 text-neutral-900 dark:text-white'>
               {title}
             </div>
             <div
-              className='line-clamp-3 text-sm desc cursor-pointer dark:text-white/60 text-neutral-800'
+              className='line-clamp-5 text-sm desc leading-snug cursor-pointer dark:text-white/60 text-neutral-800'
               data-tooltip-content={desc}
             >
               {desc}
             </div>
           </div>
-          <div className='px-4'>
-            <hr className='border-neutral-400 dark:border-neutral-500' />
-          </div>
-          <div className='flex justify-between items-end p-4'>
-            <div
-              className='flex flex-col cursor-pointer'
-              onClick={() => {
-                altLink
-                  ? window.open(altLink, '_blank')
-                  : router.push(
-                      `/${
-                        type && type === 'COLLECTION'
-                          ? 'collections'
-                          : 'courses'
-                      }/${slug}`
-                    );
-              }}
-            >
-              <div className='text-sm dark:text-white/50 text-neutral-700'>
-                {hours} hours
+          <div className='flex flex-col justify-between'>
+            {!presale && (
+              <div className='px-4'>
+                <hr className='border-neutral-400 dark:border-neutral-500' />
               </div>
-              <div className='font-greycliff text-2xl font-semibold text-neutral-900 dark:text-white'>
-                {price === 'FREE' ? 'Free' : '$' + price}
-              </div>
-            </div>
-            <div className='flex items-center gap-2'>
-              <div onClick={toggleFavorite} className='mr-1'>
-                <StarIcon
-                  className={`w-6 h-6 cursor-pointer ${
-                    isFavorited
-                      ? 'text-yellow-500'
-                      : 'text-neutral-400 dark:text-neutral-600'
-                  } `}
-                />
-              </div>
-              {video && (
-                <div
-                  className='w-9 h-9 rounded bg-black/80 flex justify-center items-center cursor-pointer hover:bg-base-brand'
-                  onClick={openPreview}
-                >
-                  <div>
-                    <VideoCameraIcon className='w-5 h-5 text-white' />
+            )}
+            {presale && presale_price ? (
+              <div className='flex justify-between items-end px-4 py-5 bg-base-brand/75 rounded-2xl'>
+                <div className='flex flex-col'>
+                  <div className='flex items-center gap-2'>
+                    <div className='font-greycliff text-2xl font-semibold text-neutral-900 dark:text-white'>
+                      {'$' + presale_price}
+                    </div>
+                    <div className='font-greycliff text-lg line-through font-medium text-neutral-900 dark:text-white'>
+                      {'$' + price}
+                    </div>
+                  </div>
+                  <div className=' text-white text-xs font-bold uppercase'>
+                    Pre-Order by 4/2!
                   </div>
                 </div>
-              )}
-              <div
-                className={`w-9 h-9 rounded ${
-                  isEntered ? 'bg-clemson' : 'bg-black/80'
-                } flex justify-center items-center cursor-pointer hover:bg-clemson`}
-                onClick={() => {
-                  altLink
-                    ? window.open(altLink, '_blank')
-                    : router.push(
-                        `/${
-                          type && type === 'COLLECTION'
-                            ? 'collections'
-                            : 'courses'
-                        }/${slug}`
-                      );
-                }}
-              >
-                <ArrowSmallRightIcon className='w-5 h-5 text-white' />
+                <div className='flex items-center gap-2'>
+                  <div onClick={toggleFavorite} className='mr-1'>
+                    <StarIcon
+                      className={`w-6 h-6 cursor-pointer ${
+                        isFavorited
+                          ? 'text-brand-yellow'
+                          : 'text-white/40 dark:text-neutral-600'
+                      } `}
+                    />
+                  </div>
+                  {video && (
+                    <div
+                      className='w-9 h-9 rounded bg-black/80 flex justify-center items-center cursor-pointer hover:bg-base-brand'
+                      onClick={openPreview}
+                    >
+                      <div>
+                        <VideoCameraIcon className='w-5 h-5 text-white' />
+                      </div>
+                    </div>
+                  )}
+                  <div
+                    className={`w-9 h-9 rounded ${
+                      isEntered ? 'bg-clemson' : 'bg-black/80'
+                    } flex justify-center items-center cursor-pointer hover:bg-clemson`}
+                    onClick={() => {
+                      altLink
+                        ? window.open(altLink, '_blank')
+                        : router.push(
+                            `/${
+                              type && type === 'COLLECTION'
+                                ? 'collections'
+                                : 'courses'
+                            }/${slug}`
+                          );
+                    }}
+                  >
+                    <ArrowSmallRightIcon className='w-5 h-5 text-white' />
+                  </div>
+                </div>
               </div>
-            </div>
+            ) : (
+              <div className='flex justify-between items-end p-4'>
+                <div
+                  className='flex flex-col cursor-pointer'
+                  onClick={() => {
+                    altLink
+                      ? window.open(altLink, '_blank')
+                      : router.push(
+                          `/${
+                            type && type === 'COLLECTION'
+                              ? 'collections'
+                              : 'courses'
+                          }/${slug}`
+                        );
+                  }}
+                >
+                  <div className='text-sm dark:text-white/50 text-neutral-700'>
+                    {hours} hours
+                  </div>
+                  <div className='font-greycliff text-2xl font-semibold text-neutral-900 dark:text-white'>
+                    {price === 'FREE' ? 'Free' : '$' + price}
+                  </div>
+                </div>
+                <div className='flex items-center gap-2'>
+                  <div onClick={toggleFavorite} className='mr-1'>
+                    <StarIcon
+                      className={`w-6 h-6 cursor-pointer ${
+                        isFavorited
+                          ? 'text-yellow-500'
+                          : 'text-neutral-400 dark:text-neutral-600'
+                      } `}
+                    />
+                  </div>
+                  {video && (
+                    <div
+                      className='w-9 h-9 rounded bg-black/80 flex justify-center items-center cursor-pointer hover:bg-base-brand'
+                      onClick={openPreview}
+                    >
+                      <div>
+                        <VideoCameraIcon className='w-5 h-5 text-white' />
+                      </div>
+                    </div>
+                  )}
+                  <div
+                    className={`w-9 h-9 rounded ${
+                      isEntered ? 'bg-clemson' : 'bg-black/80'
+                    } flex justify-center items-center cursor-pointer hover:bg-clemson`}
+                    onClick={() => {
+                      altLink
+                        ? window.open(altLink, '_blank')
+                        : router.push(
+                            `/${
+                              type && type === 'COLLECTION'
+                                ? 'collections'
+                                : 'courses'
+                            }/${slug}`
+                          );
+                    }}
+                  >
+                    <ArrowSmallRightIcon className='w-5 h-5 text-white' />
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </motion.div>

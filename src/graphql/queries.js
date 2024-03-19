@@ -1039,6 +1039,98 @@ export const aPSRegistrantsByEmail = /* GraphQL */ `
     }
   }
 `;
+export const getAPSTicketRegistrant = /* GraphQL */ `
+  query GetAPSTicketRegistrant($id: ID!) {
+    getAPSTicketRegistrant(id: $id) {
+      year
+      id
+      name
+      email
+      company
+      title
+      phone
+      worksWith
+      speedNetworking
+      innovationWorkshop
+      plantTour
+      registrationReceived
+      welcomeEmailSent
+      code
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listAPSTicketRegistrants = /* GraphQL */ `
+  query ListAPSTicketRegistrants(
+    $filter: ModelAPSTicketRegistrantFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listAPSTicketRegistrants(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        year
+        id
+        name
+        email
+        company
+        title
+        phone
+        worksWith
+        speedNetworking
+        innovationWorkshop
+        plantTour
+        registrationReceived
+        welcomeEmailSent
+        code
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const aPSTicketRegistrantsByEmail = /* GraphQL */ `
+  query APSTicketRegistrantsByEmail(
+    $email: String!
+    $sortDirection: ModelSortDirection
+    $filter: ModelAPSTicketRegistrantFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    aPSTicketRegistrantsByEmail(
+      email: $email
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        year
+        id
+        name
+        email
+        company
+        title
+        phone
+        worksWith
+        speedNetworking
+        innovationWorkshop
+        plantTour
+        registrationReceived
+        welcomeEmailSent
+        code
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
 export const getCompany = /* GraphQL */ `
   query GetCompany($id: ID!) {
     getCompany(id: $id) {
@@ -2740,6 +2832,8 @@ export const getLMSCourse = /* GraphQL */ `
       category
       categoryArray
       type
+      presale
+      presale_price
       cirriculum {
         items {
           id
@@ -2808,6 +2902,8 @@ export const listLMSCourses = /* GraphQL */ `
         category
         categoryArray
         type
+        presale
+        presale_price
         cirriculum {
           nextToken
         }
@@ -2865,6 +2961,8 @@ export const lMSCoursesBySlug = /* GraphQL */ `
         category
         categoryArray
         type
+        presale
+        presale_price
         cirriculum {
           nextToken
         }
@@ -3542,6 +3640,8 @@ export const getStudent = /* GraphQL */ `
           category
           categoryArray
           type
+          presale
+          presale_price
           price
           hours
           lessons
@@ -5236,6 +5336,8 @@ export const getCirriculumCourses = /* GraphQL */ `
         category
         categoryArray
         type
+        presale
+        presale_price
         cirriculum {
           nextToken
         }
@@ -5303,6 +5405,8 @@ export const listCirriculumCourses = /* GraphQL */ `
           category
           categoryArray
           type
+          presale
+          presale_price
           price
           hours
           lessons
@@ -5367,6 +5471,8 @@ export const cirriculumCoursesByLMSCirriculumId = /* GraphQL */ `
           category
           categoryArray
           type
+          presale
+          presale_price
           price
           hours
           lessons
@@ -5431,6 +5537,8 @@ export const cirriculumCoursesByLMSCourseId = /* GraphQL */ `
           category
           categoryArray
           type
+          presale
+          presale_price
           price
           hours
           lessons
@@ -5473,6 +5581,8 @@ export const getCourseLessons = /* GraphQL */ `
         category
         categoryArray
         type
+        presale
+        presale_price
         cirriculum {
           nextToken
         }
@@ -5545,6 +5655,8 @@ export const listCourseLessons = /* GraphQL */ `
           category
           categoryArray
           type
+          presale
+          presale_price
           price
           hours
           lessons
@@ -5612,6 +5724,8 @@ export const courseLessonsByLMSCourseId = /* GraphQL */ `
           category
           categoryArray
           type
+          presale
+          presale_price
           price
           hours
           lessons
@@ -5679,6 +5793,8 @@ export const courseLessonsByLMSLessonId = /* GraphQL */ `
           category
           categoryArray
           type
+          presale
+          presale_price
           price
           hours
           lessons
@@ -5733,6 +5849,8 @@ export const getCourseInstructors = /* GraphQL */ `
         category
         categoryArray
         type
+        presale
+        presale_price
         cirriculum {
           nextToken
         }
@@ -5823,6 +5941,8 @@ export const listCourseInstructors = /* GraphQL */ `
           category
           categoryArray
           type
+          presale
+          presale_price
           price
           hours
           lessons
@@ -5884,6 +6004,8 @@ export const courseInstructorsByLMSCourseId = /* GraphQL */ `
           category
           categoryArray
           type
+          presale
+          presale_price
           price
           hours
           lessons
@@ -5945,6 +6067,8 @@ export const courseInstructorsByInstructorId = /* GraphQL */ `
           category
           categoryArray
           type
+          presale
+          presale_price
           price
           hours
           lessons

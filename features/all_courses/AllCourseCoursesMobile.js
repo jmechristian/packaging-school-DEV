@@ -30,6 +30,8 @@ const AllCourseCoursesMobile = ({ coursesToShow }) => {
                 categoryArray={course.categoryArray}
                 partOf={course.partOf ? course.partOf : undefined}
                 altLink={course.altLink ? course.altLink : undefined}
+                presale={course.presale}
+                presale_price={course.presale_price}
               />
             </div>
           ))}
