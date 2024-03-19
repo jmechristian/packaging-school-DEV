@@ -221,7 +221,6 @@ const Page = ({ customer }) => {
   const [isError, setError] = useState(false);
 
   const router = useRouter();
-  // console.log(unilever);
   const createDate = (date) => {
     const newDate = new Date(date);
     return newDate.toLocaleDateString('en-US', {
@@ -470,7 +469,12 @@ const Page = ({ customer }) => {
           Icon={AcademicCapIcon}
           bg='bg-base-mid'
           bgdark='bg-base-dark'
-          content={[]}
+          content={
+            <CustomerSearchContainer
+              reference={'ref=ultps'}
+              courses={customer && customer.courses.items}
+            />
+          }
           highlight={'bg-clemson'}
           bgContent={'bg-neutral-200 border'}
         />

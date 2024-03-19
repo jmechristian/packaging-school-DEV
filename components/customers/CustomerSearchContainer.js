@@ -56,13 +56,16 @@ const CustomerSearchContainer = ({ courses, reference }) => {
 
   const coursesToShow = useMemo(() => {
     // Switch Suport Links to Filtered after we have that set
-    return initCourses
-      .sort((a, b) => b.clicks - a.clicks)
-      .filter(
-        (o) =>
-          o.title.toLowerCase().includes(isSearchTerm.toLowerCase()) ||
-          o.subheadline.toLowerCase().includes(isSearchTerm.toLowerCase())
-      );
+    return (
+      initCourses &&
+      initCourses
+        .sort((a, b) => b.clicks - a.clicks)
+        .filter(
+          (o) =>
+            o.title.toLowerCase().includes(isSearchTerm.toLowerCase()) ||
+            o.subheadline.toLowerCase().includes(isSearchTerm.toLowerCase())
+        )
+    );
   }, [initCourses, isSearchTerm]);
 
   return (
@@ -154,20 +157,24 @@ const CustomerSearchContainer = ({ courses, reference }) => {
               reference={reference}
               link_text={'Purchase Course'}
             />
-            <WiredCourseCard
-              id={initCourses[1].id}
-              external={true}
-              key={initCourses[1].id}
-              reference={reference}
-              link_text={'Purchase Course'}
-            />
-            <WiredCourseCard
-              id={initCourses[2].id}
-              external={true}
-              key={initCourses[2].id}
-              reference={reference}
-              link_text={'Purchase Course'}
-            />
+            {initCourses[1] && (
+              <WiredCourseCard
+                id={initCourses[1].id}
+                external={true}
+                key={initCourses[1].id}
+                reference={reference}
+                link_text={'Purchase Course'}
+              />
+            )}
+            {initCourses[2] && (
+              <WiredCourseCard
+                id={initCourses[2].id}
+                external={true}
+                key={initCourses[2].id}
+                reference={reference}
+                link_text={'Purchase Course'}
+              />
+            )}
           </div>
         </div>
       )}

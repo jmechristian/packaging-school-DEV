@@ -49,6 +49,7 @@ const faqs = [
 ];
 
 const Page = ({ customer }) => {
+  // console.log(customer);
   return (
     <>
       <Head>
