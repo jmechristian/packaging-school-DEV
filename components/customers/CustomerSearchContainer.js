@@ -155,7 +155,7 @@ const CustomerSearchContainer = ({ courses, reference, link_text }) => {
               external={true}
               key={initCourses[0].id}
               reference={reference}
-              link_text={'Select Course'}
+              link_text={link_text}
             />
             {initCourses[1] && (
               <WiredCourseCard
@@ -163,7 +163,7 @@ const CustomerSearchContainer = ({ courses, reference, link_text }) => {
                 external={true}
                 key={initCourses[1].id}
                 reference={reference}
-                link_text={'Select Course'}
+                link_text={link_text}
               />
             )}
             {initCourses[2] && (
@@ -172,7 +172,7 @@ const CustomerSearchContainer = ({ courses, reference, link_text }) => {
                 external={true}
                 key={initCourses[2].id}
                 reference={reference}
-                link_text={'Select Course'}
+                link_text={link_text}
               />
             )}
           </div>
