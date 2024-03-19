@@ -29,7 +29,7 @@ import {
 import NewCouseCard from '../shared/NewCouseCard';
 import WiredCourseCard from '../shared/WiredCourseCard';
 
-const CustomerSearchContainer = ({ courses, reference }) => {
+const CustomerSearchContainer = ({ courses, reference, link_text }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isActiveSearch, setIsActiveSearch] = useState(false);
   const [isSearchTerm, setIsSearchTerm] = useState('');
@@ -140,7 +140,7 @@ const CustomerSearchContainer = ({ courses, reference }) => {
                     external={false}
                     key={link.id}
                     reference={reference}
-                    link_text={'Purchase Course'}
+                    link_text={link_text}
                   />
                 ))}
               </div>
@@ -155,7 +155,7 @@ const CustomerSearchContainer = ({ courses, reference }) => {
               external={true}
               key={initCourses[0].id}
               reference={reference}
-              link_text={'Purchase Course'}
+              link_text={'Select Course'}
             />
             {initCourses[1] && (
               <WiredCourseCard
@@ -163,7 +163,7 @@ const CustomerSearchContainer = ({ courses, reference }) => {
                 external={true}
                 key={initCourses[1].id}
                 reference={reference}
-                link_text={'Purchase Course'}
+                link_text={'Select Course'}
               />
             )}
             {initCourses[2] && (
@@ -172,7 +172,7 @@ const CustomerSearchContainer = ({ courses, reference }) => {
                 external={true}
                 key={initCourses[2].id}
                 reference={reference}
-                link_text={'Purchase Course'}
+                link_text={'Select Course'}
               />
             )}
           </div>
@@ -190,7 +190,7 @@ const CustomerSearchContainer = ({ courses, reference }) => {
                 external={true}
                 key={link.id}
                 reference={reference}
-                link_text={'Purchase Course'}
+                link_text={'Select Course'}
               />
             ))}
         </div>

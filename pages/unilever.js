@@ -473,6 +473,7 @@ const Page = ({ customer }) => {
             <CustomerSearchContainer
               reference={'coupon=ultps'}
               courses={customer && customer.courses.items}
+              link_text='Select Course'
             />
           }
           highlight={'bg-clemson'}

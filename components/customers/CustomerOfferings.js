@@ -10,11 +10,13 @@ const CustomerOfferings = ({ featured, reference }) => {
         id={'5fc017b2-2149-40d7-a6d2-272afad2c4e3'}
         reference={reference}
         external={true}
+        link_text={'Select Topic'}
       />
       <WiredCourseCard
         id={'13c3013a-a246-4a02-b974-9d2e6c2254df'}
         reference={reference}
         external={true}
+        link_text={'Select Topic'}
       />
     </motion.div>
   );

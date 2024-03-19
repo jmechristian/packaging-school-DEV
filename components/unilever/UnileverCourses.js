@@ -10,6 +10,7 @@ const UnileverCourses = ({ featured, reference }) => {
         id={'a6769066-eda9-4f8f-aee9-579482d87ce0'}
         reference={reference}
         external={true}
+        link_text={'Coming Soon!'}
       />
     </motion.div>
   );

@@ -15,15 +15,18 @@ const SPCLibraryModule = ({ featured, reference, path }) => {
       <WiredCourseCard
         id={'5fc017b2-2149-40d7-a6d2-272afad2c4e3'}
         reference={reference}
+        link_text={'Select Topic'}
       />
       <WiredCourseCard
         id={'13c3013a-a246-4a02-b974-9d2e6c2254df'}
         reference={reference}
+        link_text={'Select Topic'}
       />
       {path === '/unilever' ? (
         <WiredCourseCard
           id={'02a237f0-3709-4c3a-8e02-47e04d8f1977'}
           reference={reference}
+          link_text={'Select Topic'}
         />
       ) : (
         <></>

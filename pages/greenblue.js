@@ -90,6 +90,7 @@ const Page = ({ customer }) => {
             <CustomerSearchContainer
               reference={'ref=ac65d9'}
               courses={customer && customer.courses.items}
+              link_text={'Purchase Course'}
             />
           }
           highlight={'bg-clemson'}
