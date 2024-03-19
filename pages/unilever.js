@@ -471,7 +471,7 @@ const Page = ({ customer }) => {
           bgdark='bg-base-dark'
           content={
             <CustomerSearchContainer
-              reference={'ref=ultps'}
+              reference={'coupon=ultps'}
               courses={customer && customer.courses.items}
             />
           }
