@@ -38,7 +38,7 @@ const CSPWhat = () => {
               considering the entire lifecycle to minimize environmental impact.
             </p>
             <p className='dark:text-gray-500 text-slate-700 text-lg leading-normal font-greycliff tracking-wide max-w-prose'>
-              To that end, the Pacakging School has crafted a sustainability
+              To that end, the Packaging School has crafted a sustainability
               package design program that will equip learners to fluently
               communicate in sustainability language, set and achieve UN-based
               sustainability targets, design sustainable systems, measure carbon
