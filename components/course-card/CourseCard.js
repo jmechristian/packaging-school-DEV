@@ -208,12 +208,12 @@ const CourseCard = ({
                   </div>
                 ))}
             </div>
-            {/* DESCRIPTION  */}
-            <div className='font-semibold text-xl font-greycliff cursor-pointer leading-tight line-clamp-2 text-neutral-900 dark:text-white'>
+            {/* Title and Description  */}
+            <div className='font-semibold text-xl font-greycliff cursor-pointer leading-tight line-clamp-3 text-neutral-900 dark:text-white'>
               {title}
             </div>
             <div
-              className='line-clamp-5 text-sm desc leading-snug cursor-pointer dark:text-white/60 text-neutral-800'
+              className='line-clamp-7 text-sm desc leading-snug cursor-pointer dark:text-white/60 text-neutral-800'
               data-tooltip-content={desc}
             >
               {desc}
