@@ -73,7 +73,7 @@ const Layout = ({ children }) => {
   useEffect(() => {
     const getLessons = /* GraphQL */ `
       query MyQuery {
-        listLessons(filter: { status: { eq: "PUBLISHED" } }) {
+        listLessons(limit: 300, filter: { status: { eq: "PUBLISHED" } }) {
           items {
             title
             subhead
