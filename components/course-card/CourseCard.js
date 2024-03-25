@@ -213,7 +213,7 @@ const CourseCard = ({
               {title}
             </div>
             <div
-              className='line-clamp-7 text-sm desc leading-snug cursor-pointer dark:text-white/60 text-neutral-800'
+              className='line-clamp-6 text-sm desc leading-snug cursor-pointer dark:text-white/60 text-neutral-800'
               data-tooltip-content={desc}
             >
               {desc}
