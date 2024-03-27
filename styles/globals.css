@@ -297,7 +297,7 @@ h4 {
 }
 
 .tiptap > p > a {
-  @apply font-medium underline text-indigo-500;
+  @apply font-medium underline text-base-brand;
 }
 
 .cc-revoke,
