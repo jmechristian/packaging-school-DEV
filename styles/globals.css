@@ -296,9 +296,17 @@ h4 {
   @apply py-6;
 }
 
-.tiptap > p > a {
-  @apply font-medium underline text-base-brand;
+.tiptap a > * {
+  @apply font-medium underline text-base-mid !important;
 }
+
+.tiptap > h3 > a > * {
+  @apply font-medium underline text-base-mid !important;
+}
+
+/* .tiptap > p > a > span {
+  @apply font-medium underline text-base-mid !important;
+} */
 
 .cc-revoke,
 .cc-window {
