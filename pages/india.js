@@ -106,19 +106,6 @@ const Page = () => {
             field, from technology and business to creative arts and science.
             Whether you’re starting out or scaling up, find courses tailored for
             every step of your career journey.
-            <span
-              className='underline text-base-mid font-semibold'
-              onClick={() =>
-                window.open(
-                  'https://packagingschool.com/certificate-of-packaging-science-application',
-                  '_blank'
-                )
-              }
-            >
-              Apply now!
-            </span>{' '}
-            Looking to just get a jump start? Puchase an individual course
-            below.
           </div>
           <div className='md:hidden flex flex-col gap-10'>
             <BrutalCourseCard id={'fef1f2a6-b9b9-4619-9900-c677f91681c7'} />
