@@ -28,6 +28,9 @@ const Page = () => {
           'Unbox your potention with 85% OFF select Packaging School Courses'
         }
         image={'https://packschool.s3.amazonaws.com/firework-box-2-logo.webp'}
+        keywords={
+          'packaging, online education, India, Indian Student, design, materials, business'
+        }
       />
       <div className='max-w-6xl mx-auto'>
         <div className='flex flex-col gap-12 py-10 md:py-16 w-full  border-b-black border-b-2'>
