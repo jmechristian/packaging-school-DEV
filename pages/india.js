@@ -22,11 +22,11 @@ const Page = () => {
   return (
     <div className='max-w-6xl mx-auto'>
       <div className='flex flex-col gap-12 py-10 md:py-16 w-full  border-b-black border-b-2'>
-        <div className='flex flex-col gap-4 px-5 xl:px-0'>
+        <div className='flex flex-col gap-5 px-5 xl:px-0'>
           <div className='bg-brand-red border-black border-2 text-white font-bold px-4 py-2 rounded-lg w-fit shadow-[4px_4px_0px_black] lg:text-lg'>
             Limited Time!
           </div>
-          <div className='text-4xl lg:max-w-3xl lg:text-7xl font-medium tracking-tighter lg:leading-[1.0em]'>
+          <div className='text-5xl lg:max-w-3xl lg:text-7xl font-medium tracking-tighter lg:leading-[1.0em]'>
             Unbox Your Potential: Dive into Expert-Crafted Courses at{' '}
             <span className='text-base-brand font-bold'>
               85% OFF!<sup className='-mt-3'>*</sup>
@@ -59,7 +59,7 @@ const Page = () => {
             Looking to just get a jump start? Puchase an individual course
             below.
           </div>
-          <div className='md:grid md:grid-cols-2 lg:grid-cols-3 gap-10 w-fit hidden mt-7'>
+          <div className='md:grid md:grid-cols-2 xl:grid-cols-3 gap-10 w-fit hidden mt-7'>
             {cpsIds.map((id) => (
               <div key={id}>
                 <BrutalCourseCard id={id} />
@@ -94,7 +94,7 @@ const Page = () => {
         </div>
       </div>
       {/* OTHER COURSES */}
-      <div className='flex flex-col gap-10 py-10 px-5 xl:px-0'>
+      <div className='flex flex-col gap-10 pt-10 pb-16 px-5 xl:px-0 border-b-2 border-b-black'>
         <div className='flex flex-col gap-5'>
           <div className='text-2xl'>
             <h3>
@@ -107,15 +107,25 @@ const Page = () => {
             Whether you’re starting out or scaling up, find courses tailored for
             every step of your career journey.
           </div>
-          <div className='md:hidden flex flex-col gap-10'>
+          <div className='md:hidden flex flex-col gap-10 mt-7'>
             <BrutalCourseCard id={'fef1f2a6-b9b9-4619-9900-c677f91681c7'} />
             <BrutalCourseCard id={'4e32d164-d4d9-4ba2-bcc5-ce882df75b71'} />
           </div>
-          <div className='hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-10 py-5 w-fit'>
+          <div className='hidden md:grid md:grid-cols-2 xl:grid-cols-3 gap-10 py-5 w-fit'>
             <BrutalCourseCard id={'fef1f2a6-b9b9-4619-9900-c677f91681c7'} />
             <BrutalCourseCard id={'4e32d164-d4d9-4ba2-bcc5-ce882df75b71'} />
           </div>
         </div>
+      </div>
+      <div className='text-sm mt-6 pb-6 border-b-2 border-black'>
+        *<span className='font-bold'>Course Enrollment Disclaimer:</span> Please
+        be advised that all course orders are contingent upon the terms outlined
+        in the enrollment agreement, including but not limited to, the
+        verification of the student&apos;s location. We reserve the right to
+        cancel any order that does not comply with these requirements. It is the
+        responsibility of the student to ensure that their location aligns with
+        the geographical and regulatory requirements stipulated in the
+        enrollment agreement.
       </div>
     </div>
   );

@@ -9,6 +9,8 @@ import {
   MdLocalShipping,
 } from 'react-icons/md';
 
+import { TiTree } from 'react-icons/ti';
+
 export const setTextColor = (cat) => {
   switch (cat) {
     case 'Materials':
@@ -123,6 +125,63 @@ export const setCategoryIcon = (cat) => {
       return (
         <div className='w-7 h-7 bg-base-dark rounded-full flex items-center justify-center'>
           <MdExtension color='white' size={18} />
+        </div>
+      );
+  }
+};
+
+export const setCardIcon = (cat) => {
+  switch (cat) {
+    case 'MATERIALS':
+      return (
+        <div className='w-9 flex items-center justify-center aspect-[1/1] rounded-full bg-base-dark border border-black shadow-[2px_1px_0px_black]'>
+          <div>
+            <MdExtension color='white' size={20} />
+          </div>
+        </div>
+      );
+    case 'INDUSTRY':
+      return (
+        <div className='w-9 flex items-center justify-center aspect-[1/1] rounded-full bg-base-mid border border-black shadow-[2px_1px_0px_black]'>
+          <div>
+            <MdFactory color='white' size={20} />
+          </div>
+        </div>
+      );
+    case 'DESIGN':
+      return (
+        <div className='w-9 flex items-center justify-center aspect-[1/1] rounded-full bg-clemson border border-black shadow-[2px_1px_0px_black]'>
+          <MdColorLens color='white' size={20} />
+        </div>
+      );
+    case 'FOODANDBEVERAGE':
+      return (
+        <div className='w-9 flex items-center justify-center aspect-[1/1] rounded-full bg-indigo-400 border border-black shadow-[2px_1px_0px_black]'>
+          <MdLunchDining color='white' size={20} />
+        </div>
+      );
+    case 'SUPPLYCHAIN':
+      return (
+        <div className='w-9 flex items-center justify-center aspect-[1/1] rounded-full bg-clemson-dark border border-black shadow-[2px_1px_0px_black]'>
+          <MdLocalShipping color='white' size={20} />
+        </div>
+      );
+    case 'BUSINESS':
+      return (
+        <div className='w-9 flex items-center justify-center aspect-[1/1] rounded-full bg-green-600 border border-black shadow-[2px_1px_0px_black]'>
+          <MdBusinessCenter color='white' size={20} />
+        </div>
+      );
+    case 'AUTO':
+      return (
+        <div className='w-9 flex items-center justify-center aspect-[1/1] rounded-full bg-brand-red border border-black shadow-[2px_1px_0px_black]'>
+          <MdMiscellaneousServices color='white' size={20} />
+        </div>
+      );
+    default:
+      return (
+        <div className='w-9 flex items-center justify-center aspect-[1/1] rounded-full bg-base-dark border border-black shadow-[2px_1px_0px_black]'>
+          <MdExtension color='white' size={20} />
         </div>
       );
   }

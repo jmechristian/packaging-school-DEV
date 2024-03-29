@@ -2,9 +2,14 @@ import React, { useEffect, useState } from 'react';
 import BrutalButton from './BrutalButton';
 import { API } from 'aws-amplify';
 import { getLMSCourse } from '../../src/graphql/queries';
+import { setCardIcon } from '../../helpers/utils';
 import { TrophyIcon } from '@heroicons/react/24/outline';
+import { IoDiamond } from 'react-icons/io5';
 
-const BrutalCourseCard = ({ id, icons }) => {
+import { TiTree } from 'react-icons/ti';
+import { MdDiamond } from 'react-icons/md';
+
+const BrutalCourseCard = ({ id, icons, coupon }) => {
   const [isCourse, setIsCourse] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -30,10 +35,10 @@ const BrutalCourseCard = ({ id, icons }) => {
   }, [id]);
 
   return (
-    <div className='min-w-[320px] max-w-[360px] w-full h-[500px] mx-auto rounded-2xl border-4 border-black bg-white shadow-[4px_4px_0px_black]'>
+    <div className='min-w-[320px] max-w-[360px] w-full h-[520px] mx-auto rounded-2xl border-4 border-black bg-white shadow-[4px_4px_0px_black]'>
       <div className='flex flex-col h-full'>
         <div
-          className='w-full rounded-t-2xl h-full max-h-[210px] bg-base-brand bg-cover bg-center'
+          className='w-full rounded-t-2xl aspect-[16/9] h-full bg-base-brand bg-cover bg-center'
           style={{
             backgroundImage: `url(${isCourse.seoImage})`,
           }}
@@ -43,20 +48,16 @@ const BrutalCourseCard = ({ id, icons }) => {
             {isCourse.title}
           </div>
           <div className='flex flex-col items-center justify-center h-full border-l-2 border-black gap-1 bg-base-brand col-span-1 py-1.5'>
-            <div className='w-9 flex items-center justify-center aspect-[1/1] rounded-full bg-brand-yellow border border-black shadow-[2px_1px_0px_black]'>
+            <div className='w-9 flex items-center justify-center aspect-[1/1] rounded-full bg-yellow-500 border border-black shadow-[2px_1px_0px_black]'>
               <div>
-                <TrophyIcon className='stroke-black w-6 h-6' />
+                <IoDiamond color='white' size={20} />
               </div>
             </div>
-            <div className='w-9 flex items-center justify-center aspect-[1/1] rounded-full bg-brand-yellow border border-black shadow-[2px_1px_0px_black]'>
-              <div>
-                <TrophyIcon className='stroke-black w-6 h-6' />
-              </div>
-            </div>
+            {setCardIcon(isCourse.category)}
           </div>
         </div>
         <div className='flex flex-col justify-between w-full h-full'>
-          <div className='p-4 leading-tight text-neutral-600'>
+          <div className='p-4 leading-tight text-neutral-600 h-full max-h-[150px]'>
             {isCourse.subheadline}
           </div>
           <div className='flex justify-between w-full items-center px-4 pt-5 pb-5'>
@@ -70,7 +71,7 @@ const BrutalCourseCard = ({ id, icons }) => {
             </div>
             <div>
               <a
-                href={isCourse.link}
+                href={isCourse.link + '?coupon=INDIASITE2024'}
                 className={`flex justify-center border-2 border-black items-center gap-2 rounded px-4 py-2 font-medium uppercase text-white text-sm transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 shadow-[4px_4px_0px_black] hover:shadow-[8px_8px_0px_black] bg-clemson`}
               >
                 <span className='font-semibold'>Purchase</span>
