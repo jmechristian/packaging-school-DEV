@@ -6,11 +6,12 @@ import { setCardIcon } from '../../helpers/utils';
 import { TrophyIcon } from '@heroicons/react/24/outline';
 import { PlayIcon } from '@heroicons/react/24/solid';
 import { IoDiamond } from 'react-icons/io5';
+import { AiTwotoneVideoCamera } from 'react-icons/ai';
 import { motion, AnimatePresence } from 'framer-motion';
 import VideoPlayer from '../VideoPlayer';
 
 import { TiTree } from 'react-icons/ti';
-import { MdDiamond } from 'react-icons/md';
+import { MdVideocam } from 'react-icons/md';
 
 const BrutalCourseCard = ({ id, icons, coupon }) => {
   const [isCourse, setIsCourse] = useState([]);
@@ -43,43 +44,34 @@ const BrutalCourseCard = ({ id, icons, coupon }) => {
     <div className='min-w-[320px] max-w-[360px] w-full h-[520px] mx-auto rounded-2xl border-4 border-black bg-white shadow-[4px_4px_0px_black] overflow-hidden'>
       <div className='flex flex-col h-full'>
         <div
-          className='w-full aspect-[16/9] h-full bg-base-brand bg-cover bg-center overflow-hidden cursor-pointer'
+          className='w-full aspect-[16/9] h-full bg-base-brand bg-cover bg-center overflow-hidden cursor-pointer relative'
           style={{
             backgroundImage: `url(${isCourse.seoImage})`,
           }}
-          onMouseEnter={() => setIsHovering(true)}
-          onMouseLeave={() => {
-            setIsHovering(false);
-            setIsPlaying(false);
-          }}
         >
-          {isHovering && !isPlaying && isCourse.preview && (
-            <div className='w-full h-full bg-black/40 backdrop-blur text-white flex items-center justify-center'>
-              <div className='w-24 h-24 rounded-full bg-white border-2 border-black transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 shadow-[2px_2px_0px_black] hover:shadow-[4px_4px_0px_black] flex items-center justify-center'>
-                {!isPlaying && (
-                  <div onClick={() => setIsPlaying(true)}>
-                    <PlayIcon className='w-12 h-12 ml-1 fill-black' />
-                  </div>
-                )}
+          {isCourse.preview && (
+            <div className='w-12 h-12 rounded-full bg-white border-2 border-black transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 shadow-[2px_2px_0px_black] hover:shadow-[4px_4px_0px_black] flex items-center justify-center absolute z-10 bottom-2 left-2'>
+              <div onClick={() => setIsPlaying(true)}>
+                <MdVideocam color='black' size='30' />
               </div>
             </div>
           )}
           {isPlaying && (
-            <AnimatePresence>
-              <motion.div
-                className='bg-black/40 flex justify-center items-center opacity-0 h-full'
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                key={isHovering}
-              >
+            <div className='w-full h-full absolute z-20 inset-0 bg-black'>
+              <div className='w-full h-full relative'>
+                <div
+                  className='w-8 rounded-full bg-white/70 h-8 flex items-center justify-center absolute top-1 right-1 z-30'
+                  onClick={() => setIsPlaying(false)}
+                >
+                  X
+                </div>
                 <VideoPlayer
                   videoEmbedLink={isCourse.preview}
                   light={false}
                   playing={true}
                 />
-              </motion.div>
-            </AnimatePresence>
+              </div>
+            </div>
           )}
         </div>
         <div className='grid grid-cols-5 items-center border-b-2 border-b-black bg-brand-yellow/30'>
