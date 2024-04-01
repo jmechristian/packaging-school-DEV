@@ -117,7 +117,7 @@ const WiredCourseCard = ({
       )}
       <motion.div className='flex flex-col justify-center items-center h-[225px]'>
         <motion.div className='mt-6 h-full min-h-[180px] bg-white/90 backdrop-blur shadow-lg rounded-b-lg mx-2 rounded-lg mb-4 relative z-[2] flex flex-col flex-1 '>
-          <motion.div className='flex flex-col gap-3 h-full pt-5'>
+          <motion.div className='flex flex-col gap-3 h-full pt-3'>
             <motion.div className='font-semibold text-lg tracking-tight leading-none px-3 text-neutral-900'>
               {isLesson.title}
             </motion.div>

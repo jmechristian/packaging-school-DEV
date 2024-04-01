@@ -28,6 +28,7 @@ const Layout = ({ children }) => {
   const { darkMode, signInModal } = useSelector((state) => state.layout);
   const { searchOpen } = useSelector((state) => state.nav);
   const { preview } = useSelector((state) => state.course_filter);
+  const { location } = useSelector((state) => state.auth);
   const { user } = useUser();
 
   useEffect(() => {
@@ -160,21 +161,6 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      {/* <Head>
-        <title>Packaging School</title>
-        <meta name='viewport' content='initial-scale=1.0, width=device-width' />
-        <meta name='title' content='Packaging School' />
-        <meta
-          name='description'
-          content='The Packaging School brings together the business, art, and science of packaging so you can lead projects, optimize supply chains, increase margins, and develop sustainable solutions.'
-        />
-        <meta name='keywords' content='packaging, sustainability' />
-        <meta name='robots' content='index, follow' />
-        <meta
-          name='google-site-verification'
-          content='0J1SRWS-xIM_nHRIochuPhFVG-Yfa3lPy3Y7qoAsx8Y'
-        />
-      </Head> */}
       <CookieConsent />
       <div className={`${darkMode ? 'dark' : ''} relative`}>
         <div className='flex flex-col justify-between'>
