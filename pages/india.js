@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { GoArrowLeft, GoArrowRight } from 'react-icons/go';
 import BrutalCourseCard from '../components/shared/BrutalCourseCard';
 import Meta from '../components/shared/Meta';
@@ -20,6 +21,12 @@ const cpsIds = [
 
 const Page = () => {
   const [isIndex, setIsIndex] = useState(0);
+
+  const { location } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    console.log(location.country);
+  }, [location]);
 
   return (
     <>

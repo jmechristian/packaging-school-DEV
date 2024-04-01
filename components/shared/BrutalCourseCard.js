@@ -21,11 +21,9 @@ const BrutalCourseCard = ({ id, icons, coupon }) => {
         variables: { id: id },
       });
       if (res.data.getLMSCourse) {
-        console.log(res.data.getLMSCourse);
         setIsCourse(res.data.getLMSCourse);
       } else {
         setIsError(true);
-        console.log('Error');
       }
       setIsLoading(false);
     };
