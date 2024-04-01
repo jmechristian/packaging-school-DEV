@@ -57,8 +57,8 @@ const Page = () => {
               The Certificate of Packaging Science offers a comprehensive
               program consisting of 12 courses that cover all major aspects of
               packaging materials, processes, and design. Interested in a
-              structured, comprehensive learning program over the next
-              12-months?{' '}
+              structured, comprehensive learning program over the next 12
+              months?{' '}
               <span
                 className='underline text-base-mid font-semibold'
                 onClick={() =>
@@ -118,9 +118,9 @@ const Page = () => {
                 </h3>
               </div>
               <div className='max-w-4xl'>
-                Dive into our Packaging 101 BootCamp, designed to fit seamlessly
-                into your busy schedule. Spanning 20 workdays, this course
-                demands less than 20 minutes of your day to unlock a
+                Dive into our Packaging 101 Boot Camp, designed to fit
+                seamlessly into your busy schedule. Spanning 20 workdays, this
+                course demands less than 20 minutes of your day to unlock a
                 comprehensive understanding of packaging fundamentals. Through
                 eight hours of rich educational content, engaging activities,
                 and invaluable cheat sheets, you&apos;ll emerge with a robust

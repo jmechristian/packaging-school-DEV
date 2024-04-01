@@ -1,16 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import BrutalButton from './BrutalButton';
 import { API } from 'aws-amplify';
 import { getLMSCourse } from '../../src/graphql/queries';
 import { setCardIcon } from '../../helpers/utils';
-import { TrophyIcon } from '@heroicons/react/24/outline';
-import { PlayIcon } from '@heroicons/react/24/solid';
 import { IoDiamond } from 'react-icons/io5';
-import { AiTwotoneVideoCamera } from 'react-icons/ai';
-import { motion, AnimatePresence } from 'framer-motion';
 import VideoPlayer from '../VideoPlayer';
-
-import { TiTree } from 'react-icons/ti';
 import { MdVideocam } from 'react-icons/md';
 
 const BrutalCourseCard = ({ id, icons, coupon }) => {

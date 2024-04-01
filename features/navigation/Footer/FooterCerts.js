@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const FooterCerts = () => {
   return (
-    <div className='flex flex-col gap-1.5 lg:gap-2 text-sm'>
+    <div className='flex flex-col gap-1.5 lg:gap-2 text-sm cursor-pointer'>
       <div className='font-extrabold text-sm uppercase tracking-widest dark:text-gray-200 font-greycliff'>
         Certifications
       </div>
