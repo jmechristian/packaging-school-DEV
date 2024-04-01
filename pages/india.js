@@ -39,7 +39,15 @@ const Page = () => {
         }
       />
       <div className='max-w-6xl mx-auto pb-16'>
-        {location && location.country === 'Brazil' ? (
+        {!location || !location.country ? (
+          <div className='flex flex-col gap-6 py-10 md:py-16 w-full'>
+            <div className='w-1/4 h-16 bg-neutral-300 animate-pulse rounded-lg'></div>
+            <div className='w-2/3 h-24 bg-neutral-300 animate-pulse rounded-lg'></div>
+            <div className='w-2/3 h-24 bg-neutral-300 animate-pulse rounded-lg'></div>
+            <div className='w-2/3 h-24 bg-neutral-300 animate-pulse rounded-lg'></div>
+            <div className='w-2/3 h-24 bg-neutral-300 animate-pulse rounded-lg'></div>
+          </div>
+        ) : location && location.country === 'Brazil' ? (
           <>
             <div className='flex flex-col gap-12 py-10 md:py-16 w-full  border-b-black border-b-2'>
               <div className='flex flex-col gap-5 px-5 xl:px-0'>
@@ -158,7 +166,7 @@ const Page = () => {
               regulatory requirements stipulated in the enrollment agreement.
             </div>
           </>
-        ) : location && location.country != 'Brazil' ? (
+        ) : (
           <>
             <div className='flex flex-col gap-12 py-10 md:py-16 w-full  border-b-black border-b-2 px-4 lg:px-0'>
               <div className='flex flex-col gap-5 px-5 xl:px-0'>
@@ -183,8 +191,6 @@ const Page = () => {
               what you&apos;d like to learn.
             </div>
           </>
-        ) : (
-          <div></div>
         )}
       </div>
     </>
