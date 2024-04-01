@@ -22,15 +22,23 @@ const SPCLibraryModule = ({ featured, reference, path }) => {
         reference={reference}
         link_text={'Select Topic'}
       />
-      {path === '/unilever' ? (
-        <WiredCourseCard
-          id={'02a237f0-3709-4c3a-8e02-47e04d8f1977'}
-          reference={reference}
-          link_text={'Select Topic'}
-        />
-      ) : (
-        <></>
-      )}
+      <WiredCourseCard
+        id={'02a237f0-3709-4c3a-8e02-47e04d8f1977'}
+        reference={reference}
+        link_text={'Select Topic'}
+      />
+      <WiredCourseCard
+        id={'b8a62fef-5d63-4730-8cb5-0e0a9aec7486'}
+        reference={reference}
+        external={true}
+        link_text={'Select Topic'}
+      />
+      <WiredCourseCard
+        id={'4f1fdc1d-2a88-4ac3-9bd6-4b46a7b6ae08'}
+        reference={reference}
+        external={true}
+        link_text={'Select Topic'}
+      />
     </motion.div>
   );
 };
