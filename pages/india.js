@@ -108,7 +108,7 @@ const Page = () => {
           </div>
         </div>
         {/* OTHER COURSES */}
-        <div className='flex flex-col gap-10 pt-10 pb-16 px-5 xl:px-0 border-b-2 border-b-black'>
+        <div className='flex flex-col gap-10 pt-16 pb-16 px-5 xl:px-0 border-b-2 border-b-black'>
           <div className='flex flex-col lg:flex-row lg:justify-between lg:items-center gap-5'>
             <div className='flex flex-col gap-6 w-full max-w-xl'>
               <div className='text-4xl'>
