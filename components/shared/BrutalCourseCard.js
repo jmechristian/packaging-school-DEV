@@ -4,7 +4,10 @@ import { API } from 'aws-amplify';
 import { getLMSCourse } from '../../src/graphql/queries';
 import { setCardIcon } from '../../helpers/utils';
 import { TrophyIcon } from '@heroicons/react/24/outline';
+import { PlayIcon } from '@heroicons/react/24/solid';
 import { IoDiamond } from 'react-icons/io5';
+import { motion, AnimatePresence } from 'framer-motion';
+import VideoPlayer from '../VideoPlayer';
 
 import { TiTree } from 'react-icons/ti';
 import { MdDiamond } from 'react-icons/md';
@@ -13,6 +16,8 @@ const BrutalCourseCard = ({ id, icons, coupon }) => {
   const [isCourse, setIsCourse] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
+  const [isHovering, setIsHovering] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
     const getCourse = async () => {
@@ -35,14 +40,48 @@ const BrutalCourseCard = ({ id, icons, coupon }) => {
   }, [id]);
 
   return (
-    <div className='min-w-[320px] max-w-[360px] w-full h-[520px] mx-auto rounded-2xl border-4 border-black bg-white shadow-[4px_4px_0px_black]'>
+    <div className='min-w-[320px] max-w-[360px] w-full h-[520px] mx-auto rounded-2xl border-4 border-black bg-white shadow-[4px_4px_0px_black] overflow-hidden'>
       <div className='flex flex-col h-full'>
         <div
-          className='w-full rounded-t-2xl aspect-[16/9] h-full bg-base-brand bg-cover bg-center'
+          className='w-full aspect-[16/9] h-full bg-base-brand bg-cover bg-center overflow-hidden cursor-pointer'
           style={{
             backgroundImage: `url(${isCourse.seoImage})`,
           }}
-        ></div>
+          onMouseEnter={() => setIsHovering(true)}
+          onMouseLeave={() => {
+            setIsHovering(false);
+            setIsPlaying(false);
+          }}
+        >
+          {isHovering && !isPlaying && isCourse.preview && (
+            <div className='w-full h-full bg-black/40 backdrop-blur text-white flex items-center justify-center'>
+              <div className='w-24 h-24 rounded-full bg-white border-2 border-black transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 shadow-[2px_2px_0px_black] hover:shadow-[4px_4px_0px_black] flex items-center justify-center'>
+                {!isPlaying && (
+                  <div onClick={() => setIsPlaying(true)}>
+                    <PlayIcon className='w-12 h-12 ml-1 fill-black' />
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
+          {isPlaying && (
+            <AnimatePresence>
+              <motion.div
+                className='bg-black/40 flex justify-center items-center opacity-0 h-full'
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                key={isHovering}
+              >
+                <VideoPlayer
+                  videoEmbedLink={isCourse.preview}
+                  light={false}
+                  playing={true}
+                />
+              </motion.div>
+            </AnimatePresence>
+          )}
+        </div>
         <div className='grid grid-cols-5 items-center border-b-2 border-b-black bg-brand-yellow/30'>
           <div className='text-xl leading-[1.1em] font-semibold tracking-tight px-4 py-3 col-span-4 '>
             {isCourse.title}
