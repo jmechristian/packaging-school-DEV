@@ -15,6 +15,7 @@ const cpsIds = [
   'f2bd57ba-adbf-45ab-88f0-d68ac20c5b7e',
   '73139212-0b15-4d96-9942-1757fa058fdf',
   'e39e127a-11bc-448d-a8c0-209b3abbfdb9',
+  '4e32d164-d4d9-4ba2-bcc5-ce882df75b71',
 ];
 
 const Page = () => {
@@ -108,25 +109,32 @@ const Page = () => {
         </div>
         {/* OTHER COURSES */}
         <div className='flex flex-col gap-10 pt-10 pb-16 px-5 xl:px-0 border-b-2 border-b-black'>
-          <div className='flex flex-col gap-5'>
-            <div className='text-2xl'>
-              <h3>
-                Explore a World of Knowledge Applicable Across Every Industry
-              </h3>
+          <div className='flex flex-col lg:flex-row lg:justify-between lg:items-center gap-5'>
+            <div className='flex flex-col gap-6 w-full max-w-xl'>
+              <div className='text-4xl'>
+                <h3>
+                  Building a solid packaging foundation. Master the essentials
+                  to elevate your designs.
+                </h3>
+              </div>
+              <div className='max-w-4xl'>
+                Dive into our Packaging 101 BootCamp, designed to fit seamlessly
+                into your busy schedule. Spanning 20 workdays, this course
+                demands less than 20 minutes of your day to unlock a
+                comprehensive understanding of packaging fundamentals. Through
+                eight hours of rich educational content, engaging activities,
+                and invaluable cheat sheets, you&apos;ll emerge with a robust
+                foundation tailored for success. Whether you&apos;re in
+                marketing, sales, procurement, legal, distribution, quality
+                control, manufacturing, or warehousing, this course addresses
+                the distinct packaging requirements of various departments. By
+                the end, you&apos;ll gain the critical thinking skills essential
+                for a successful role in the packaging development process,
+                ready to meet and exceed the unique demands of your field.
+              </div>
             </div>
-            <div className='max-w-4xl'>
-              Dive into an expansive library that caters to every professional
-              field, from technology and business to creative arts and science.
-              Whether you’re starting out or scaling up, find courses tailored
-              for every step of your career journey.
-            </div>
-            <div className='md:hidden flex flex-col gap-10 mt-7'>
+            <div>
               <BrutalCourseCard id={'fef1f2a6-b9b9-4619-9900-c677f91681c7'} />
-              <BrutalCourseCard id={'4e32d164-d4d9-4ba2-bcc5-ce882df75b71'} />
-            </div>
-            <div className='hidden md:grid md:grid-cols-2 xl:grid-cols-3 gap-10 py-5 w-fit'>
-              <BrutalCourseCard id={'fef1f2a6-b9b9-4619-9900-c677f91681c7'} />
-              <BrutalCourseCard id={'4e32d164-d4d9-4ba2-bcc5-ce882df75b71'} />
             </div>
           </div>
         </div>
