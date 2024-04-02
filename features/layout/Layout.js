@@ -9,7 +9,12 @@ import {
   setPreviewClosed,
 } from '../all_courses/courseFilterSlice';
 import { setLocation, setUser } from '../auth/authslice';
-import { setDark, setLight, toggleSignInModal } from './layoutSlice';
+import {
+  setDark,
+  setLight,
+  toggleSignInModal,
+  toggleIndiaBanner,
+} from './layoutSlice';
 import ScrollTop from './ScrollTop';
 import { useUser } from '@auth0/nextjs-auth0/client';
 import { API, graphqlOperation } from 'aws-amplify';
@@ -22,6 +27,7 @@ import SearchContainer from '../../components/search/SearchContainer';
 import Loading from '../../components/shared/Loading';
 import SignInModal from '../../components/shared/SignInModal';
 import CookieConsent from '../../components/shared/CookieConsent';
+import IndiaBanner from '../../components/shared/IndiaBanner';
 
 const Layout = ({ children }) => {
   const dispatch = useDispatch();
@@ -174,6 +180,7 @@ const Layout = ({ children }) => {
           {preview && (
             <CoursePreview close={() => dispatch(setPreviewClosed())} />
           )}
+          {location && location.country === 'India' && <IndiaBanner />}
           <Loading />
           <HeaderNew />
           <ScrollTop />

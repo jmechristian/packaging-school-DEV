@@ -4,6 +4,7 @@ const initialState = {
   darkMode: false,
   isFixed: false,
   signInModal: false,
+  indiaBanner: true,
 };
 
 export const layoutSlice = createSlice({
@@ -25,10 +26,19 @@ export const layoutSlice = createSlice({
     toggleSignInModal: (state) => {
       state.signInModal = !state.signInModal;
     },
+    toggleIndiaBanner: (state) => {
+      state.indiaBanner = !state.indiaBanner;
+    },
   },
 });
 
-export const { setDark, setLight, setFixed, setUnfixed, toggleSignInModal } =
-  layoutSlice.actions;
+export const {
+  setDark,
+  setLight,
+  setFixed,
+  setUnfixed,
+  toggleSignInModal,
+  toggleIndiaBanner,
+} = layoutSlice.actions;
 
 export default layoutSlice.reducer;
