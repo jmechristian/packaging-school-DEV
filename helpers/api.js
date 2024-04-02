@@ -14,6 +14,31 @@ export const getSalesBarItems = async () => {
   return items.data;
 };
 
+export const registerClick = async (
+  id,
+  link,
+  path,
+  ref,
+  type,
+  ip,
+  location
+) => {
+  const res = await API.graphql({
+    query: createClick,
+    variables: {
+      input: {
+        identifier: id,
+        nextPath: link,
+        path: path,
+        ref: ref,
+        type: type,
+        ipAddress: ip,
+        location: location,
+      },
+    },
+  });
+};
+
 export const getAuthors = async (id) => {
   const items = await API.graphql({
     query: getAuthor,

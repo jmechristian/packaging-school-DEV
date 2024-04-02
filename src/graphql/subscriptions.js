@@ -1582,6 +1582,129 @@ export const onDeleteCompany = /* GraphQL */ `
     }
   }
 `;
+export const onCreateAPSSpeaker = /* GraphQL */ `
+  subscription OnCreateAPSSpeaker {
+    onCreateAPSSpeaker {
+      firstName
+      lastName
+      email
+      company
+      title
+      phone
+      linkedin
+      bio
+      presentationTitle
+      presentationSummary
+      headshot
+      mediaConsent
+      privacyConsent
+      apsHistory {
+        id
+        Registrants {
+          nextToken
+        }
+        Sponsors {
+          nextToken
+        }
+        Speakers {
+          nextToken
+        }
+        year
+        codes {
+          code
+        }
+        createdAt
+        updatedAt
+      }
+      id
+      createdAt
+      updatedAt
+      aPSSpeakersId
+    }
+  }
+`;
+export const onUpdateAPSSpeaker = /* GraphQL */ `
+  subscription OnUpdateAPSSpeaker {
+    onUpdateAPSSpeaker {
+      firstName
+      lastName
+      email
+      company
+      title
+      phone
+      linkedin
+      bio
+      presentationTitle
+      presentationSummary
+      headshot
+      mediaConsent
+      privacyConsent
+      apsHistory {
+        id
+        Registrants {
+          nextToken
+        }
+        Sponsors {
+          nextToken
+        }
+        Speakers {
+          nextToken
+        }
+        year
+        codes {
+          code
+        }
+        createdAt
+        updatedAt
+      }
+      id
+      createdAt
+      updatedAt
+      aPSSpeakersId
+    }
+  }
+`;
+export const onDeleteAPSSpeaker = /* GraphQL */ `
+  subscription OnDeleteAPSSpeaker {
+    onDeleteAPSSpeaker {
+      firstName
+      lastName
+      email
+      company
+      title
+      phone
+      linkedin
+      bio
+      presentationTitle
+      presentationSummary
+      headshot
+      mediaConsent
+      privacyConsent
+      apsHistory {
+        id
+        Registrants {
+          nextToken
+        }
+        Sponsors {
+          nextToken
+        }
+        Speakers {
+          nextToken
+        }
+        year
+        codes {
+          code
+        }
+        createdAt
+        updatedAt
+      }
+      id
+      createdAt
+      updatedAt
+      aPSSpeakersId
+    }
+  }
+`;
 export const onCreateUser = /* GraphQL */ `
   subscription OnCreateUser {
     onCreateUser {
@@ -3112,129 +3235,6 @@ export const onDeleteAppStart = /* GraphQL */ `
       id
       createdOn
       updatedOn
-    }
-  }
-`;
-export const onCreateAPSSpeaker = /* GraphQL */ `
-  subscription OnCreateAPSSpeaker {
-    onCreateAPSSpeaker {
-      firstName
-      lastName
-      email
-      company
-      title
-      phone
-      linkedin
-      bio
-      presentationTitle
-      presentationSummary
-      headshot
-      mediaConsent
-      privacyConsent
-      apsHistory {
-        id
-        Registrants {
-          nextToken
-        }
-        Sponsors {
-          nextToken
-        }
-        Speakers {
-          nextToken
-        }
-        year
-        codes {
-          code
-        }
-        createdAt
-        updatedAt
-      }
-      id
-      createdAt
-      updatedAt
-      aPSSpeakersId
-    }
-  }
-`;
-export const onUpdateAPSSpeaker = /* GraphQL */ `
-  subscription OnUpdateAPSSpeaker {
-    onUpdateAPSSpeaker {
-      firstName
-      lastName
-      email
-      company
-      title
-      phone
-      linkedin
-      bio
-      presentationTitle
-      presentationSummary
-      headshot
-      mediaConsent
-      privacyConsent
-      apsHistory {
-        id
-        Registrants {
-          nextToken
-        }
-        Sponsors {
-          nextToken
-        }
-        Speakers {
-          nextToken
-        }
-        year
-        codes {
-          code
-        }
-        createdAt
-        updatedAt
-      }
-      id
-      createdAt
-      updatedAt
-      aPSSpeakersId
-    }
-  }
-`;
-export const onDeleteAPSSpeaker = /* GraphQL */ `
-  subscription OnDeleteAPSSpeaker {
-    onDeleteAPSSpeaker {
-      firstName
-      lastName
-      email
-      company
-      title
-      phone
-      linkedin
-      bio
-      presentationTitle
-      presentationSummary
-      headshot
-      mediaConsent
-      privacyConsent
-      apsHistory {
-        id
-        Registrants {
-          nextToken
-        }
-        Sponsors {
-          nextToken
-        }
-        Speakers {
-          nextToken
-        }
-        year
-        codes {
-          code
-        }
-        createdAt
-        updatedAt
-      }
-      id
-      createdAt
-      updatedAt
-      aPSSpeakersId
     }
   }
 `;
@@ -5518,6 +5518,54 @@ export const onDeleteWorkshopForm = /* GraphQL */ `
       id
       createdOn
       updatedOn
+    }
+  }
+`;
+export const onCreateClick = /* GraphQL */ `
+  subscription OnCreateClick {
+    onCreateClick {
+      id
+      ref
+      path
+      type
+      identifier
+      nextPath
+      ipAddress
+      location
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateClick = /* GraphQL */ `
+  subscription OnUpdateClick {
+    onUpdateClick {
+      id
+      ref
+      path
+      type
+      identifier
+      nextPath
+      ipAddress
+      location
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteClick = /* GraphQL */ `
+  subscription OnDeleteClick {
+    onDeleteClick {
+      id
+      ref
+      path
+      type
+      identifier
+      nextPath
+      ipAddress
+      location
+      createdAt
+      updatedAt
     }
   }
 `;

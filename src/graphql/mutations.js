@@ -1753,6 +1753,138 @@ export const deleteCompany = /* GraphQL */ `
     }
   }
 `;
+export const createAPSSpeaker = /* GraphQL */ `
+  mutation CreateAPSSpeaker(
+    $input: CreateAPSSpeakerInput!
+    $condition: ModelAPSSpeakerConditionInput
+  ) {
+    createAPSSpeaker(input: $input, condition: $condition) {
+      firstName
+      lastName
+      email
+      company
+      title
+      phone
+      linkedin
+      bio
+      presentationTitle
+      presentationSummary
+      headshot
+      mediaConsent
+      privacyConsent
+      apsHistory {
+        id
+        Registrants {
+          nextToken
+        }
+        Sponsors {
+          nextToken
+        }
+        Speakers {
+          nextToken
+        }
+        year
+        codes {
+          code
+        }
+        createdAt
+        updatedAt
+      }
+      id
+      createdAt
+      updatedAt
+      aPSSpeakersId
+    }
+  }
+`;
+export const updateAPSSpeaker = /* GraphQL */ `
+  mutation UpdateAPSSpeaker(
+    $input: UpdateAPSSpeakerInput!
+    $condition: ModelAPSSpeakerConditionInput
+  ) {
+    updateAPSSpeaker(input: $input, condition: $condition) {
+      firstName
+      lastName
+      email
+      company
+      title
+      phone
+      linkedin
+      bio
+      presentationTitle
+      presentationSummary
+      headshot
+      mediaConsent
+      privacyConsent
+      apsHistory {
+        id
+        Registrants {
+          nextToken
+        }
+        Sponsors {
+          nextToken
+        }
+        Speakers {
+          nextToken
+        }
+        year
+        codes {
+          code
+        }
+        createdAt
+        updatedAt
+      }
+      id
+      createdAt
+      updatedAt
+      aPSSpeakersId
+    }
+  }
+`;
+export const deleteAPSSpeaker = /* GraphQL */ `
+  mutation DeleteAPSSpeaker(
+    $input: DeleteAPSSpeakerInput!
+    $condition: ModelAPSSpeakerConditionInput
+  ) {
+    deleteAPSSpeaker(input: $input, condition: $condition) {
+      firstName
+      lastName
+      email
+      company
+      title
+      phone
+      linkedin
+      bio
+      presentationTitle
+      presentationSummary
+      headshot
+      mediaConsent
+      privacyConsent
+      apsHistory {
+        id
+        Registrants {
+          nextToken
+        }
+        Sponsors {
+          nextToken
+        }
+        Speakers {
+          nextToken
+        }
+        year
+        codes {
+          code
+        }
+        createdAt
+        updatedAt
+      }
+      id
+      createdAt
+      updatedAt
+      aPSSpeakersId
+    }
+  }
+`;
 export const createUser = /* GraphQL */ `
   mutation CreateUser(
     $input: CreateUserInput!
@@ -3328,138 +3460,6 @@ export const deleteAppStart = /* GraphQL */ `
       id
       createdOn
       updatedOn
-    }
-  }
-`;
-export const createAPSSpeaker = /* GraphQL */ `
-  mutation CreateAPSSpeaker(
-    $input: CreateAPSSpeakerInput!
-    $condition: ModelAPSSpeakerConditionInput
-  ) {
-    createAPSSpeaker(input: $input, condition: $condition) {
-      firstName
-      lastName
-      email
-      company
-      title
-      phone
-      linkedin
-      bio
-      presentationTitle
-      presentationSummary
-      headshot
-      mediaConsent
-      privacyConsent
-      apsHistory {
-        id
-        Registrants {
-          nextToken
-        }
-        Sponsors {
-          nextToken
-        }
-        Speakers {
-          nextToken
-        }
-        year
-        codes {
-          code
-        }
-        createdAt
-        updatedAt
-      }
-      id
-      createdAt
-      updatedAt
-      aPSSpeakersId
-    }
-  }
-`;
-export const updateAPSSpeaker = /* GraphQL */ `
-  mutation UpdateAPSSpeaker(
-    $input: UpdateAPSSpeakerInput!
-    $condition: ModelAPSSpeakerConditionInput
-  ) {
-    updateAPSSpeaker(input: $input, condition: $condition) {
-      firstName
-      lastName
-      email
-      company
-      title
-      phone
-      linkedin
-      bio
-      presentationTitle
-      presentationSummary
-      headshot
-      mediaConsent
-      privacyConsent
-      apsHistory {
-        id
-        Registrants {
-          nextToken
-        }
-        Sponsors {
-          nextToken
-        }
-        Speakers {
-          nextToken
-        }
-        year
-        codes {
-          code
-        }
-        createdAt
-        updatedAt
-      }
-      id
-      createdAt
-      updatedAt
-      aPSSpeakersId
-    }
-  }
-`;
-export const deleteAPSSpeaker = /* GraphQL */ `
-  mutation DeleteAPSSpeaker(
-    $input: DeleteAPSSpeakerInput!
-    $condition: ModelAPSSpeakerConditionInput
-  ) {
-    deleteAPSSpeaker(input: $input, condition: $condition) {
-      firstName
-      lastName
-      email
-      company
-      title
-      phone
-      linkedin
-      bio
-      presentationTitle
-      presentationSummary
-      headshot
-      mediaConsent
-      privacyConsent
-      apsHistory {
-        id
-        Registrants {
-          nextToken
-        }
-        Sponsors {
-          nextToken
-        }
-        Speakers {
-          nextToken
-        }
-        year
-        codes {
-          code
-        }
-        createdAt
-        updatedAt
-      }
-      id
-      createdAt
-      updatedAt
-      aPSSpeakersId
     }
   }
 `;
@@ -5923,6 +5923,63 @@ export const deleteWorkshopForm = /* GraphQL */ `
       id
       createdOn
       updatedOn
+    }
+  }
+`;
+export const createClick = /* GraphQL */ `
+  mutation CreateClick(
+    $input: CreateClickInput!
+    $condition: ModelClickConditionInput
+  ) {
+    createClick(input: $input, condition: $condition) {
+      id
+      ref
+      path
+      type
+      identifier
+      nextPath
+      ipAddress
+      location
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateClick = /* GraphQL */ `
+  mutation UpdateClick(
+    $input: UpdateClickInput!
+    $condition: ModelClickConditionInput
+  ) {
+    updateClick(input: $input, condition: $condition) {
+      id
+      ref
+      path
+      type
+      identifier
+      nextPath
+      ipAddress
+      location
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteClick = /* GraphQL */ `
+  mutation DeleteClick(
+    $input: DeleteClickInput!
+    $condition: ModelClickConditionInput
+  ) {
+    deleteClick(input: $input, condition: $condition) {
+      id
+      ref
+      path
+      type
+      identifier
+      nextPath
+      ipAddress
+      location
+      createdAt
+      updatedAt
     }
   }
 `;

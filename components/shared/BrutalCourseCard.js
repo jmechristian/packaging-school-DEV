@@ -5,6 +5,9 @@ import { setCardIcon } from '../../helpers/utils';
 import { IoDiamond } from 'react-icons/io5';
 import VideoPlayer from '../VideoPlayer';
 import { MdVideocam } from 'react-icons/md';
+import { createClick } from '../../src/graphql/mutations';
+import { useSelector } from 'react-redux';
+import { registerClick } from '../../helpers/api';
 
 const BrutalCourseCard = ({ id, icons, coupon }) => {
   const [isCourse, setIsCourse] = useState([]);
@@ -12,6 +15,7 @@ const BrutalCourseCard = ({ id, icons, coupon }) => {
   const [isError, setIsError] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
+  const { location } = useSelector((state) => state.auth);
 
   useEffect(() => {
     const getCourse = async () => {
@@ -30,6 +34,19 @@ const BrutalCourseCard = ({ id, icons, coupon }) => {
 
     id && getCourse();
   }, [id]);
+
+  const cardClickHandler = async () => {
+    await registerClick(
+      id,
+      isCourse.link,
+      window.location.pathname,
+      window.location.search ? window.location.search : 'undefined',
+      'COURSE',
+      location.ip,
+      location.country
+    );
+    window.open(isCourse.link + '?coupon=INDIASITE2024');
+  };
 
   return (
     <div className='min-w-[320px] max-w-[360px] w-full h-[520px] mx-auto rounded-2xl border-4 border-black bg-white shadow-[4px_4px_0px_black] overflow-hidden'>
@@ -92,12 +109,12 @@ const BrutalCourseCard = ({ id, icons, coupon }) => {
               </div>
             </div>
             <div>
-              <a
-                href={isCourse.link + '?coupon=INDIASITE2024'}
-                className={`flex justify-center border-2 border-black items-center gap-2 rounded px-4 py-2 font-medium uppercase text-white text-sm transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 shadow-[4px_4px_0px_black] hover:shadow-[8px_8px_0px_black] bg-clemson`}
+              <div
+                onClick={cardClickHandler}
+                className={` cursor-pointer flex justify-center border-2 border-black items-center gap-2 rounded px-4 py-2 font-medium uppercase text-white text-sm transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 shadow-[4px_4px_0px_black] hover:shadow-[8px_8px_0px_black] bg-clemson`}
               >
                 <span className='font-semibold'>Purchase</span>
-              </a>
+              </div>
             </div>
           </div>
         </div>
