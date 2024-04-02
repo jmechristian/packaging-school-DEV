@@ -2,11 +2,28 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleIndiaBanner } from '../../features/layout/layoutSlice';
+import { registerClick } from '../../helpers/api';
 
 const IndiaBanner = () => {
   const router = useRouter();
   const dispatch = useDispatch();
   const { indiaBanner } = useSelector((state) => state.layout);
+  const { location } = useSelector((state) => state.auth);
+
+  const bannerClickHandler = async () => {
+    await registerClick(
+      'IndiaBanner',
+      '/india',
+      window.location.pathname,
+      window.location.search ? window.location.search : 'undefined',
+      'BANNER',
+      location.ip,
+      location.country
+    );
+    router.push(
+      '/india?utm_source=website&utm_medium=banner&utm_campaign=india-students'
+    );
+  };
 
   return (
     indiaBanner && (
@@ -17,14 +34,7 @@ const IndiaBanner = () => {
         >
           X
         </div>
-        <div
-          className='flex items-center gap-5'
-          onClick={() =>
-            router.push(
-              '/india?utm_source=website&utm_medium=banner&utm_campaign=india-students'
-            )
-          }
-        >
+        <div className='flex items-center gap-5' onClick={bannerClickHandler}>
           <div className='bg-brand-red border-black border-2 text-white font-bold px-4 py-2 rounded-lg w-fit shadow-[4px_4px_0px_black] lg:text-lg'>
             Limited Time!
           </div>
