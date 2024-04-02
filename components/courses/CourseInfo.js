@@ -29,7 +29,7 @@ const CourseInfo = ({
               </div>
             ) : (
               <div
-                className='block h-full max-w-md aspect-[16/9] bg-cover bg-center'
+                className='block h-full max-w-md aspect-[4/3] bg-cover bg-center'
                 style={{
                   backgroundImage: `url(${
                     seoImage
