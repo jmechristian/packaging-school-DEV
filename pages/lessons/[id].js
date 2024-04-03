@@ -221,7 +221,7 @@ const Page = ({ lesson }) => {
                                 <div>
                                   <sup>{sou.position}</sup>
                                 </div>
-                                <div>
+                                <div className='break-words w-full'>
                                   <a href={sou.link}>{sou.name}</a>
                                 </div>
                               </div>
@@ -233,7 +233,7 @@ const Page = ({ lesson }) => {
                                 <div>
                                   <sup>{sou.position}</sup>
                                 </div>
-                                <div>
+                                <div className='break-words w-full'>
                                   <a href={sou.link}>{sou.name}</a>
                                 </div>
                               </div>
@@ -320,14 +320,14 @@ const Page = ({ lesson }) => {
             {lesson.sources && sortedSources && sortedSources.length > 0 && (
               <div className='lg:hidden flex flex-col gap-3 border-t border-t-black dark:border-t-white pt-6  px-6 lg:px-0'>
                 <div className='font-bold dark:text-white'>Sources</div>
-                <div className='grid lg:grid-cols-2 dark:text-white gap-3 text-xs'>
+                <div className='flex flex-col dark:text-white gap-3 text-xs'>
                   <div className='flex flex-col gap-3'>
                     {sortedSources[0].map((sou) => (
                       <div className='flex gap-1' key={sou.id}>
                         <div>
                           <sup>{sou.position}</sup>
                         </div>
-                        <div className='break-words w-full'>
+                        <div className='break-all'>
                           <a href={sou.link}>{sou.name}</a>
                         </div>
                       </div>
@@ -339,7 +339,7 @@ const Page = ({ lesson }) => {
                         <div>
                           <sup>{sou.position}</sup>
                         </div>
-                        <div className='break-words w-full'>
+                        <div className='break-all'>
                           <a href={sou.link}>{sou.name}</a>
                         </div>
                       </div>
