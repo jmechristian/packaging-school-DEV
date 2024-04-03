@@ -219,7 +219,7 @@ const Page = ({ lesson }) => {
                                 <div>
                                   <sup>{sou.position}</sup>
                                 </div>
-                                <div className='break-words w-full'>
+                                <div className='break-all w-full'>
                                   <a href={sou.link}>{sou.name}</a>
                                 </div>
                               </div>
@@ -231,7 +231,7 @@ const Page = ({ lesson }) => {
                                 <div>
                                   <sup>{sou.position}</sup>
                                 </div>
-                                <div className='break-words w-full'>
+                                <div className='break-all w-full'>
                                   <a href={sou.link}>{sou.name}</a>
                                 </div>
                               </div>
@@ -319,7 +319,7 @@ const Page = ({ lesson }) => {
                         <div>
                           <sup>{sou.position}</sup>
                         </div>
-                        <div className='break-words w-full'>
+                        <div className='break-all w-full'>
                           <a href={sou.link}>{sou.name}</a>
                         </div>
                       </div>
@@ -331,7 +331,7 @@ const Page = ({ lesson }) => {
                         <div>
                           <sup>{sou.position}</sup>
                         </div>
-                        <div className='break-words w-full'>
+                        <div className='break-all w-full'>
                           <a href={sou.link}>{sou.name}</a>
                         </div>
                       </div>
