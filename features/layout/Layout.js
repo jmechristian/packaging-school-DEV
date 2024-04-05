@@ -150,7 +150,9 @@ const Layout = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    fetch('https://geolocation-db.com/json/')
+    fetch(
+      'https://geolocation-db.com/json/86f5f280-f4eb-11ec-8676-4f4388bc6daa'
+    )
       .then((response) => response.json())
       .then((data) => {
         dispatch(
