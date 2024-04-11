@@ -887,7 +887,7 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/courses/package-printing',
+        source: '/courses/packaging-printing',
         destination: '/courses/package-printing',
         permanent: true,
       },
