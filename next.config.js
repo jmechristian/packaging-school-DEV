@@ -130,12 +130,12 @@ const nextConfig = {
       },
       {
         source: '/package-printing',
-        destination: '/courses/packaging-printing',
+        destination: '/courses/package-printing',
         permanent: true,
       },
       {
         source: '/printing',
-        destination: '/courses/packaging-printing',
+        destination: '/courses/package-printing',
         permanent: true,
       },
       {
@@ -191,7 +191,7 @@ const nextConfig = {
       },
       {
         source: '/courses-package-printing-101',
-        destination: '/courses/packaging-printing',
+        destination: '/courses/package-printing',
         permanent: true,
       },
       {
@@ -888,7 +888,7 @@ const nextConfig = {
       },
       {
         source: '/courses/package-printing',
-        destination: '/courses/packaging-printing',
+        destination: '/courses/package-printing',
         permanent: true,
       },
       {
