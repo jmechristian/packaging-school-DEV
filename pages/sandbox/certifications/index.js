@@ -5,6 +5,9 @@ import CertCompare from '../../../components/certifications/CertCompare';
 import { GoArrowLeft, GoArrowRight } from 'react-icons/go';
 import BrutalTag from '../../../components/shared/BrutalTag';
 import BrutalButton from '../../../components/shared/BrutalButton';
+import CPSCard from '../../../components/rive/CPSCard';
+import CMPMCard from '../../../components/rive/CMPMCard';
+import APCCard from '../../../components/rive/APCCard';
 
 export const RiveDemo = () => {
   const { RiveComponent } = useRive({
@@ -105,10 +108,12 @@ const Index = () => {
               procurement, and organizational management.
             </div>
           </div>
-          <div className='flex flex-col lg:flex-row lg:items-center gap-20'>
+          <div className='flex flex-col lg:flex-row lg:items-center gap-10'>
             <div className='w-full h-[550px] flex justify-center items-center relative'>
-              <div className=' absolute z-5 top-0 left-0 w-[360px] h-[520px] mx-auto rounded-2xl border-4 border-black bg-white shadow-[4px_4px_0px_black] overflow-hidden'></div>
-              <div className=' absolute z-0 bottom-0 right-0 w-[360px] h-[520px] mx-auto rounded-2xl border-4 border-black bg-white shadow-[4px_4px_0px_black] overflow-hidden'></div>
+              {/* <div className=' absolute z-5 top-0 left-0 w-[360px] h-[520px] mx-auto rounded-2xl border-4 border-black bg-white shadow-[4px_4px_0px_black] overflow-hidden'></div>
+              <div className=' absolute z-0 bottom-0 right-0 w-[360px] h-[520px] mx-auto rounded-2xl border-4 border-black bg-white shadow-[4px_4px_0px_black] overflow-hidden'></div> */}
+              <CMPMCard />
+              <CPSCard />
             </div>
             <div>
               <CertCompare />
@@ -190,12 +195,12 @@ const Index = () => {
                 sales, and customer service teams in the automotive industry.
               </div>
             </div>
-            <div className='w-full flex justify-center lg:justify-start items-center'>
-              <div className='w-[360px] h-[520px] mx-auto lg:mx-0 rounded-2xl border-4 border-black bg-white shadow-[4px_4px_0px_black] overflow-hidden'></div>
+            <div className='w-full max-w-[400px] h-[520px]'>
+              <APCCard />
             </div>
           </div>
           <div className='flex flex-col gap-10 max-w-xl mx-auto'>
-            <div className='flex flex-col gap-5 px-5 xl:px-0'>
+            <div className='flex flex-col gap-4 px-5 xl:px-0'>
               <BrutalTag
                 text={'Sustainability'}
                 backgroundColor={'bg-brand-green'}
@@ -217,7 +222,9 @@ const Index = () => {
               </div>
             </div>
             <div className='w-full flex justify-center lg:justify-start items-center'>
-              <div className='w-[360px] h-[520px] mx-auto lg:mx-0 rounded-2xl border-4 border-black bg-white shadow-[4px_4px_0px_black] overflow-hidden'></div>
+              <div className='w-full max-w-[400px] h-[520px]'>
+                <APCCard />
+              </div>
             </div>
           </div>
         </div>
@@ -225,7 +232,7 @@ const Index = () => {
         {/* FPC */}
         <div className='w-full py-16 border-y-2 border-black lg:border-2 lg:rounded-2xl bg-base-brand/60'>
           <div className='flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-24 px-5 xl:px-0 max-w-xl lg:max-w-6xl mx-auto'>
-            <div className='flex flex-col gap-5'>
+            <div className='flex flex-col gap-4'>
               <div className='flex items-center gap-3'>
                 <BrutalTag
                   backgroundColor={'bg-white'}
@@ -260,7 +267,9 @@ const Index = () => {
               </div>
             </div>
             <div className='w-full flex justify-center items-center'>
-              <div className='w-[360px] h-[520px] mx-auto rounded-2xl border-4 border-black bg-white shadow-[4px_4px_0px_black] overflow-hidden'></div>
+              <div className='w-full max-w-[400px] h-[520px]'>
+                <CPSCard />
+              </div>
             </div>
           </div>
         </div>

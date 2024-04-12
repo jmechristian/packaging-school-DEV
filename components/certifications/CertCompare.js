@@ -3,7 +3,7 @@ import { GoCheckCircleFill } from 'react-icons/go';
 
 const CertCompare = () => {
   return (
-    <div className='w-full grid grid-cols-3 gap-5'>
+    <div className='w-full grid grid-cols-3 gap-4'>
       {/* HEADER */}
       <div></div>
       <div className='text-sm font-bold text-center'>CMPM</div>
@@ -42,7 +42,7 @@ const CertCompare = () => {
       <div className='col-span-3 border-b border-b-black'></div>
       {/* Parralel Project */}
       <div className='flex flex-col gap-1 justify-center'>
-        <div className='font-bold text-sm'>Parralel Project</div>
+        <div className='font-bold text-sm'>Parallel Project</div>
         <div className='text-xs'>
           Craft a Project Development Plan (PDP) with program knowledge.
         </div>
@@ -61,6 +61,7 @@ const CertCompare = () => {
       <div className='w-full flex justify-center items-center'>
         <GoCheckCircleFill color='green' size={36} />
       </div>
+      <div className='col-span-3 border-b border-b-black'></div>
     </div>
   );
 };
