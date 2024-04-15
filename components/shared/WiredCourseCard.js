@@ -116,12 +116,16 @@ const WiredCourseCard = ({
         </motion.div>
       )}
       <motion.div className='flex flex-col justify-center items-center h-[225px]'>
-        <motion.div className='mt-6 h-full min-h-[180px] bg-white/90 backdrop-blur shadow-lg rounded-b-lg mx-2 rounded-lg mb-4 relative z-[2] flex flex-col flex-1 '>
+        <motion.div className='mt-6 h-full min-h-[180px] bg-white/90 backdrop-blur shadow-lg rounded-b-lg mx-2 rounded-lg mb-4 relative z-[2] flex flex-col flex-1'>
+          <motion.div className='w-full h-10 bg-gradient-to-t from-white/80 absolute bottom-0'></motion.div>
           <motion.div className='flex flex-col gap-3 h-full pt-3'>
             <motion.div className='font-semibold text-lg tracking-tight leading-none px-3 text-neutral-900'>
               {isLesson.title}
             </motion.div>
-            <motion.div className='text-sm leading-tight px-3 line-clamp-6 text-neutral-600'>
+            <motion.div
+              className='text-sm leading-tight px-3 pb-6 mb-4 text-neutral-600 overflow-x-scroll'
+              id='scrollers'
+            >
               {isLesson.subheadline}
             </motion.div>
           </motion.div>
