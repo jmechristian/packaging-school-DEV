@@ -16,8 +16,8 @@ const UnileverCourses = ({ featured, reference }) => {
     //   />
     // </motion.div>
     <div className='w-full h-full max-w-5xl mx-auto bg-white px-9 py-12 border-2 border-black rounded-xl'>
-      <div className='flex items-center w-full justify-between'>
-        <div className='flex flex-col gap-5 max-w-lg pr-10'>
+      <div className='flex flex-col lg:flex-row items-center w-full lg:justify-between gap-6 md:gap-10'>
+        <div className='flex flex-col gap-5 max-w-lg lg:pr-10'>
           <div className='flex flex-col gap-3'>
             <BrutalTag
               backgroundColor={'bg-green-600'}
