@@ -8,6 +8,8 @@ import BrutalButton from '../../../components/shared/BrutalButton';
 import CPSCard from '../../../components/rive/CPSCard';
 import CMPMCard from '../../../components/rive/CMPMCard';
 import APCCard from '../../../components/rive/APCCard';
+import CSPCard from '../../../components/rive/CSPCard';
+import FPCCard from '../../../components/rive/FPCCard';
 
 export const RiveDemo = () => {
   const { RiveComponent } = useRive({
@@ -223,7 +225,7 @@ const Index = () => {
             </div>
             <div className='w-full flex justify-center lg:justify-start items-center'>
               <div className='w-full max-w-[400px] h-[520px]'>
-                <APCCard />
+                <CSPCard />
               </div>
             </div>
           </div>
@@ -268,7 +270,7 @@ const Index = () => {
             </div>
             <div className='w-full flex justify-center items-center'>
               <div className='w-full max-w-[400px] h-[520px]'>
-                <CPSCard />
+                <FPCCard />
               </div>
             </div>
           </div>

@@ -1,10 +1,10 @@
 import React from 'react';
 import { useRive } from '@rive-app/react-canvas';
 
-const CMPMCard = () => {
+const FPCCard = () => {
   const { RiveComponent } = useRive({
     // Load a local riv `clean_the_car.riv` or upload your own!
-    src: 'https://packschool.s3.amazonaws.com/cmpm_card-3.riv',
+    src: 'https://packschool.s3.amazonaws.com/fpc_card.riv',
     stateMachines: 'rootMachine',
     // Be sure to specify the correct state machine (or animation) name
     onLoadError: (err) => console.log(err),
@@ -15,4 +15,4 @@ const CMPMCard = () => {
   return <RiveComponent />;
 };
 
-export default CMPMCard;
+export default FPCCard;
