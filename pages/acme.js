@@ -220,7 +220,7 @@ const Page = ({ customer }) => {
             bgdark='bg-base-dark'
             content={
               <CustomerSearchContainer
-                reference={'ref=ac65d9'}
+                reference={'ref=lt'}
                 courses={courses}
                 link_text={'Purchase Course'}
               />
