@@ -23,7 +23,11 @@ import AuthorBlock from '../../components/shared/AuthorBlock';
 import Meta from '../../components/shared/Meta';
 
 const Page = ({ lesson }) => {
-  const newDate = lesson && new Date(lesson.updatedAt).toDateString();
+  const newDate =
+    lesson &&
+    new Date(
+      lesson.backdate ? lesson.backdate : lesson.updatedAt
+    ).toLocaleDateString('en-US');
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
   const { allCourses } = useSelector((state) => state.course_filter);
@@ -64,6 +68,7 @@ const Page = ({ lesson }) => {
             date={newDate}
             author={lesson.author}
             media={lesson.seoImage}
+            backdate={lesson.backdate}
           />
         );
       case 'VIDEO':
@@ -385,6 +390,7 @@ export async function getStaticProps({ params }) {
           }
           author
           videoLink
+          backdate
           media
           mediaType
           content

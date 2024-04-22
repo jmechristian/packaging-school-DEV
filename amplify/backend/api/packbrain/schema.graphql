@@ -294,6 +294,48 @@ type APSSpeaker @model @auth(rules: [{ allow: public }]) {
   apsHistory: APS @belongsTo
 }
 
+type MorrisetteForm @model @auth(rules: [{ allow: public }]) {
+  name: String!
+  email: String!
+  company: String!
+  title: String!
+  preference: String!
+  approved: Boolean!
+}
+
+type AristosForm @model @auth(rules: [{ allow: public }]) {
+  name: String!
+  email: String!
+  company: String!
+  title: String!
+  approved: Boolean!
+}
+
+type GuardianForm @model @auth(rules: [{ allow: public }]) {
+  name: String!
+  email: String!
+  company: String!
+  title: String!
+  approved: Boolean!
+}
+
+type SurgereForm @model @auth(rules: [{ allow: public }]) {
+  name: String!
+  email: String!
+  company: String!
+  title: String!
+  approved: Boolean!
+}
+
+type BoschForm @model @auth(rules: [{ allow: public }]) {
+  name: String!
+  email: String!
+  company: String!
+  title: String!
+  topic: String!
+  approved: Boolean!
+}
+
 # User //////////
 
 type User @model @auth(rules: [{ allow: public }]) {
@@ -572,6 +614,8 @@ type Staff @model @auth(rules: [{ allow: public }]) {
   linkedIn: String
 }
 
+######### Library #########
+
 ######### Customer #########
 
 type TrackedCourse @model @auth(rules: [{ allow: public }]) {
@@ -602,7 +646,7 @@ type Customer @model @auth(rules: [{ allow: public }]) {
 
 type CustomerLibary @model @auth(rules: [{ allow: public }]) {
   id: ID!
-  displayName: String!
+  displayName: String! @index(name: "libraryByName")
   description: String
   link: String
   logo: String
@@ -612,8 +656,9 @@ type CustomerLibary @model @auth(rules: [{ allow: public }]) {
   pdf: String
   slide: String
   video: String
-  offered: [String]
-  offerings: [String]
+  clientCourses: [String]
+  pschoolCourses: [String]
+  addOns: [String]
   status: String @default(value: "DRAFT")
 }
 

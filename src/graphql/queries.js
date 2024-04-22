@@ -1510,6 +1510,185 @@ export const listAPSSpeakers = /* GraphQL */ `
     }
   }
 `;
+export const getMorrisetteForm = /* GraphQL */ `
+  query GetMorrisetteForm($id: ID!) {
+    getMorrisetteForm(id: $id) {
+      name
+      email
+      company
+      title
+      preference
+      approved
+      id
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listMorrisetteForms = /* GraphQL */ `
+  query ListMorrisetteForms(
+    $filter: ModelMorrisetteFormFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listMorrisetteForms(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        name
+        email
+        company
+        title
+        preference
+        approved
+        id
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getAristosForm = /* GraphQL */ `
+  query GetAristosForm($id: ID!) {
+    getAristosForm(id: $id) {
+      name
+      email
+      company
+      title
+      approved
+      id
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listAristosForms = /* GraphQL */ `
+  query ListAristosForms(
+    $filter: ModelAristosFormFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listAristosForms(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        name
+        email
+        company
+        title
+        approved
+        id
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getGuardianForm = /* GraphQL */ `
+  query GetGuardianForm($id: ID!) {
+    getGuardianForm(id: $id) {
+      name
+      email
+      company
+      title
+      approved
+      id
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listGuardianForms = /* GraphQL */ `
+  query ListGuardianForms(
+    $filter: ModelGuardianFormFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listGuardianForms(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        name
+        email
+        company
+        title
+        approved
+        id
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getSurgereForm = /* GraphQL */ `
+  query GetSurgereForm($id: ID!) {
+    getSurgereForm(id: $id) {
+      name
+      email
+      company
+      title
+      approved
+      id
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listSurgereForms = /* GraphQL */ `
+  query ListSurgereForms(
+    $filter: ModelSurgereFormFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listSurgereForms(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        name
+        email
+        company
+        title
+        approved
+        id
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getBoschForm = /* GraphQL */ `
+  query GetBoschForm($id: ID!) {
+    getBoschForm(id: $id) {
+      name
+      email
+      company
+      title
+      topic
+      approved
+      id
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listBoschForms = /* GraphQL */ `
+  query ListBoschForms(
+    $filter: ModelBoschFormFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listBoschForms(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        name
+        email
+        company
+        title
+        topic
+        approved
+        id
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
 export const getUser = /* GraphQL */ `
   query GetUser($id: ID!) {
     getUser(id: $id) {
@@ -4249,8 +4428,9 @@ export const getCustomerLibary = /* GraphQL */ `
       pdf
       slide
       video
-      offered
-      offerings
+      clientCourses
+      pschoolCourses
+      addOns
       status
       createdAt
       updatedAt
@@ -4280,8 +4460,47 @@ export const listCustomerLibaries = /* GraphQL */ `
         pdf
         slide
         video
-        offered
-        offerings
+        clientCourses
+        pschoolCourses
+        addOns
+        status
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const customerLibariesByDisplayName = /* GraphQL */ `
+  query CustomerLibariesByDisplayName(
+    $displayName: String!
+    $sortDirection: ModelSortDirection
+    $filter: ModelCustomerLibaryFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    customerLibariesByDisplayName(
+      displayName: $displayName
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        displayName
+        description
+        link
+        logo
+        email
+        primaryColor
+        highlightColor
+        pdf
+        slide
+        video
+        clientCourses
+        pschoolCourses
+        addOns
         status
         createdAt
         updatedAt

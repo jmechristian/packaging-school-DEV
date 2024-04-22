@@ -1885,6 +1885,267 @@ export const deleteAPSSpeaker = /* GraphQL */ `
     }
   }
 `;
+export const createMorrisetteForm = /* GraphQL */ `
+  mutation CreateMorrisetteForm(
+    $input: CreateMorrisetteFormInput!
+    $condition: ModelMorrisetteFormConditionInput
+  ) {
+    createMorrisetteForm(input: $input, condition: $condition) {
+      name
+      email
+      company
+      title
+      preference
+      approved
+      id
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateMorrisetteForm = /* GraphQL */ `
+  mutation UpdateMorrisetteForm(
+    $input: UpdateMorrisetteFormInput!
+    $condition: ModelMorrisetteFormConditionInput
+  ) {
+    updateMorrisetteForm(input: $input, condition: $condition) {
+      name
+      email
+      company
+      title
+      preference
+      approved
+      id
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteMorrisetteForm = /* GraphQL */ `
+  mutation DeleteMorrisetteForm(
+    $input: DeleteMorrisetteFormInput!
+    $condition: ModelMorrisetteFormConditionInput
+  ) {
+    deleteMorrisetteForm(input: $input, condition: $condition) {
+      name
+      email
+      company
+      title
+      preference
+      approved
+      id
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createAristosForm = /* GraphQL */ `
+  mutation CreateAristosForm(
+    $input: CreateAristosFormInput!
+    $condition: ModelAristosFormConditionInput
+  ) {
+    createAristosForm(input: $input, condition: $condition) {
+      name
+      email
+      company
+      title
+      approved
+      id
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateAristosForm = /* GraphQL */ `
+  mutation UpdateAristosForm(
+    $input: UpdateAristosFormInput!
+    $condition: ModelAristosFormConditionInput
+  ) {
+    updateAristosForm(input: $input, condition: $condition) {
+      name
+      email
+      company
+      title
+      approved
+      id
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteAristosForm = /* GraphQL */ `
+  mutation DeleteAristosForm(
+    $input: DeleteAristosFormInput!
+    $condition: ModelAristosFormConditionInput
+  ) {
+    deleteAristosForm(input: $input, condition: $condition) {
+      name
+      email
+      company
+      title
+      approved
+      id
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createGuardianForm = /* GraphQL */ `
+  mutation CreateGuardianForm(
+    $input: CreateGuardianFormInput!
+    $condition: ModelGuardianFormConditionInput
+  ) {
+    createGuardianForm(input: $input, condition: $condition) {
+      name
+      email
+      company
+      title
+      approved
+      id
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateGuardianForm = /* GraphQL */ `
+  mutation UpdateGuardianForm(
+    $input: UpdateGuardianFormInput!
+    $condition: ModelGuardianFormConditionInput
+  ) {
+    updateGuardianForm(input: $input, condition: $condition) {
+      name
+      email
+      company
+      title
+      approved
+      id
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteGuardianForm = /* GraphQL */ `
+  mutation DeleteGuardianForm(
+    $input: DeleteGuardianFormInput!
+    $condition: ModelGuardianFormConditionInput
+  ) {
+    deleteGuardianForm(input: $input, condition: $condition) {
+      name
+      email
+      company
+      title
+      approved
+      id
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createSurgereForm = /* GraphQL */ `
+  mutation CreateSurgereForm(
+    $input: CreateSurgereFormInput!
+    $condition: ModelSurgereFormConditionInput
+  ) {
+    createSurgereForm(input: $input, condition: $condition) {
+      name
+      email
+      company
+      title
+      approved
+      id
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateSurgereForm = /* GraphQL */ `
+  mutation UpdateSurgereForm(
+    $input: UpdateSurgereFormInput!
+    $condition: ModelSurgereFormConditionInput
+  ) {
+    updateSurgereForm(input: $input, condition: $condition) {
+      name
+      email
+      company
+      title
+      approved
+      id
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteSurgereForm = /* GraphQL */ `
+  mutation DeleteSurgereForm(
+    $input: DeleteSurgereFormInput!
+    $condition: ModelSurgereFormConditionInput
+  ) {
+    deleteSurgereForm(input: $input, condition: $condition) {
+      name
+      email
+      company
+      title
+      approved
+      id
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createBoschForm = /* GraphQL */ `
+  mutation CreateBoschForm(
+    $input: CreateBoschFormInput!
+    $condition: ModelBoschFormConditionInput
+  ) {
+    createBoschForm(input: $input, condition: $condition) {
+      name
+      email
+      company
+      title
+      topic
+      approved
+      id
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateBoschForm = /* GraphQL */ `
+  mutation UpdateBoschForm(
+    $input: UpdateBoschFormInput!
+    $condition: ModelBoschFormConditionInput
+  ) {
+    updateBoschForm(input: $input, condition: $condition) {
+      name
+      email
+      company
+      title
+      topic
+      approved
+      id
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteBoschForm = /* GraphQL */ `
+  mutation DeleteBoschForm(
+    $input: DeleteBoschFormInput!
+    $condition: ModelBoschFormConditionInput
+  ) {
+    deleteBoschForm(input: $input, condition: $condition) {
+      name
+      email
+      company
+      title
+      topic
+      approved
+      id
+      createdAt
+      updatedAt
+    }
+  }
+`;
 export const createUser = /* GraphQL */ `
   mutation CreateUser(
     $input: CreateUserInput!
@@ -5691,8 +5952,9 @@ export const createCustomerLibary = /* GraphQL */ `
       pdf
       slide
       video
-      offered
-      offerings
+      clientCourses
+      pschoolCourses
+      addOns
       status
       createdAt
       updatedAt
@@ -5716,8 +5978,9 @@ export const updateCustomerLibary = /* GraphQL */ `
       pdf
       slide
       video
-      offered
-      offerings
+      clientCourses
+      pschoolCourses
+      addOns
       status
       createdAt
       updatedAt
@@ -5741,8 +6004,9 @@ export const deleteCustomerLibary = /* GraphQL */ `
       pdf
       slide
       video
-      offered
-      offerings
+      clientCourses
+      pschoolCourses
+      addOns
       status
       createdAt
       updatedAt
