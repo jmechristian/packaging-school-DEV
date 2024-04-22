@@ -5526,6 +5526,7 @@ export const onCreateCustomerLibary = /* GraphQL */ `
     onCreateCustomerLibary {
       id
       displayName
+      slug
       description
       link
       logo
@@ -5549,6 +5550,7 @@ export const onUpdateCustomerLibary = /* GraphQL */ `
     onUpdateCustomerLibary {
       id
       displayName
+      slug
       description
       link
       logo
@@ -5572,6 +5574,7 @@ export const onDeleteCustomerLibary = /* GraphQL */ `
     onDeleteCustomerLibary {
       id
       displayName
+      slug
       description
       link
       logo

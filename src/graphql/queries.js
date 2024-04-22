@@ -4419,6 +4419,7 @@ export const getCustomerLibary = /* GraphQL */ `
     getCustomerLibary(id: $id) {
       id
       displayName
+      slug
       description
       link
       logo
@@ -4451,6 +4452,7 @@ export const listCustomerLibaries = /* GraphQL */ `
       items {
         id
         displayName
+        slug
         description
         link
         logo
@@ -4471,16 +4473,16 @@ export const listCustomerLibaries = /* GraphQL */ `
     }
   }
 `;
-export const customerLibariesByDisplayName = /* GraphQL */ `
-  query CustomerLibariesByDisplayName(
-    $displayName: String!
+export const customerLibariesBySlug = /* GraphQL */ `
+  query CustomerLibariesBySlug(
+    $slug: String!
     $sortDirection: ModelSortDirection
     $filter: ModelCustomerLibaryFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    customerLibariesByDisplayName(
-      displayName: $displayName
+    customerLibariesBySlug(
+      slug: $slug
       sortDirection: $sortDirection
       filter: $filter
       limit: $limit
@@ -4489,6 +4491,7 @@ export const customerLibariesByDisplayName = /* GraphQL */ `
       items {
         id
         displayName
+        slug
         description
         link
         logo

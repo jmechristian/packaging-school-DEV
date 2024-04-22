@@ -5943,6 +5943,7 @@ export const createCustomerLibary = /* GraphQL */ `
     createCustomerLibary(input: $input, condition: $condition) {
       id
       displayName
+      slug
       description
       link
       logo
@@ -5969,6 +5970,7 @@ export const updateCustomerLibary = /* GraphQL */ `
     updateCustomerLibary(input: $input, condition: $condition) {
       id
       displayName
+      slug
       description
       link
       logo
@@ -5995,6 +5997,7 @@ export const deleteCustomerLibary = /* GraphQL */ `
     deleteCustomerLibary(input: $input, condition: $condition) {
       id
       displayName
+      slug
       description
       link
       logo
