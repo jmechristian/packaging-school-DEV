@@ -2,15 +2,8 @@ import React, { useState } from 'react';
 import * as Icons from '@heroicons/react/24/solid';
 import { motion, AnimatePresence, LayoutGroup } from 'framer-motion';
 import { ChevronRightIcon } from '@heroicons/react/24/solid';
-import {
-  BoltIcon,
-  MinusSmallIcon,
-  PlusSmallIcon,
-  AcademicCapIcon,
-  BookmarkSquareIcon,
-} from '@heroicons/react/24/outline';
 
-const FullWidthDropDown = ({
+const BrutalFullWidthDropDown = ({
   bgdark,
   bg,
   Icon,
@@ -32,7 +25,7 @@ const FullWidthDropDown = ({
         }`}
         onClick={() => setIsOpen(!isOpen)}
       >
-        <motion.div className='flex items-center gap-2 w-full'>
+        <motion.div className='flex items-center gap-2'>
           <motion.div
             className={`w-9 h-9 flex justify-center items-center ${highlight} rounded-full shadow`}
           >
@@ -122,4 +115,4 @@ const FullWidthDropDown = ({
   );
 };
 
-export default FullWidthDropDown;
+export default BrutalFullWidthDropDown;

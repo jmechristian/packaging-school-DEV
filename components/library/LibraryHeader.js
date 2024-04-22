@@ -50,7 +50,7 @@ const LibraryHeader = ({ displayName, email, logo, slides, video, pdf }) => {
           <ReactGoogleSlides
             width={'100%'}
             height={'100%'}
-            slidesLink='https://docs.google.com/presentation/d/15DjazbEB9njTkkU6z2EdTKCKsN5FtvWW4s10urJhT_M/edit?usp=sharing'
+            slidesLink='https://docs.google.com/presentation/d/1njv_Q25JTyNzsDVjP7GqIq_U3Udfg7DSpgoBP-gqLWg/edit?usp=sharing'
             position={1}
             showControls
             loop

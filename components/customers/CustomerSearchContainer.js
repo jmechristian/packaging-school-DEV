@@ -30,6 +30,7 @@ import NewCouseCard from '../shared/NewCouseCard';
 import WiredCourseCard from '../shared/WiredCourseCard';
 
 const CustomerSearchContainer = ({ courses, reference, link_text }) => {
+  console.log(courses);
   const [isExpanded, setIsExpanded] = useState(false);
   const [isActiveSearch, setIsActiveSearch] = useState(false);
   const [isSearchTerm, setIsSearchTerm] = useState('');
