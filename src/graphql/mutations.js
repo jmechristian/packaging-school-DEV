@@ -2102,7 +2102,10 @@ export const createBoschForm = /* GraphQL */ `
       email
       company
       title
-      topic
+      topicOne
+      topicTwo
+      topicThree
+      topicFour
       approved
       id
       createdAt
@@ -2120,7 +2123,10 @@ export const updateBoschForm = /* GraphQL */ `
       email
       company
       title
-      topic
+      topicOne
+      topicTwo
+      topicThree
+      topicFour
       approved
       id
       createdAt
@@ -2138,7 +2144,10 @@ export const deleteBoschForm = /* GraphQL */ `
       email
       company
       title
-      topic
+      topicOne
+      topicTwo
+      topicThree
+      topicFour
       approved
       id
       createdAt

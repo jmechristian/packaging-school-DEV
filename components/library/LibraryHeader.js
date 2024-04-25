@@ -58,12 +58,7 @@ const LibraryHeader = ({ displayName, email, logo, slides, video, pdf }) => {
         </div>
         <div
           className='w-full flex items-center justify-center py-4 gap-1 cursor-pointer'
-          onClick={() =>
-            window.open(
-              'https://packschool.s3.amazonaws.com/greenblue-instructions-v2.pdf',
-              '_blank'
-            )
-          }
+          onClick={() => {}}
         >
           <div>
             <DocumentArrowDownIcon className='w-5 h-5' />

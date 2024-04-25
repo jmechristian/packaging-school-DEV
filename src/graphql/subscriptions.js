@@ -1883,7 +1883,10 @@ export const onCreateBoschForm = /* GraphQL */ `
       email
       company
       title
-      topic
+      topicOne
+      topicTwo
+      topicThree
+      topicFour
       approved
       id
       createdAt
@@ -1898,7 +1901,10 @@ export const onUpdateBoschForm = /* GraphQL */ `
       email
       company
       title
-      topic
+      topicOne
+      topicTwo
+      topicThree
+      topicFour
       approved
       id
       createdAt
@@ -1913,7 +1919,10 @@ export const onDeleteBoschForm = /* GraphQL */ `
       email
       company
       title
-      topic
+      topicOne
+      topicTwo
+      topicThree
+      topicFour
       approved
       id
       createdAt

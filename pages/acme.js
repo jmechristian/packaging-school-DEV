@@ -208,7 +208,7 @@ const Page = ({ customer }) => {
             bg='bg-[#ea2d2d]'
             bgdark='bg-[#ea2d2d]'
             highlight={'bg-black'}
-            content={<DemoOffering reference={'coupon=greenblue'} />}
+            content={<DemoOffering />}
             bgContent={'bg-neutral-200 border'}
             open={true}
           />

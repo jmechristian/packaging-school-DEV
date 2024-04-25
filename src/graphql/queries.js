@@ -1659,7 +1659,10 @@ export const getBoschForm = /* GraphQL */ `
       email
       company
       title
-      topic
+      topicOne
+      topicTwo
+      topicThree
+      topicFour
       approved
       id
       createdAt
@@ -1679,7 +1682,10 @@ export const listBoschForms = /* GraphQL */ `
         email
         company
         title
-        topic
+        topicOne
+        topicTwo
+        topicThree
+        topicFour
         approved
         id
         createdAt
