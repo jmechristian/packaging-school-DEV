@@ -195,7 +195,7 @@ const Page = ({ customer }) => {
         <title>Packaging School | Acme</title>
         <meta name='robots' content='noindex,nofollow' />
       </Head>
-      <div className='w-full max-w-7xl px-3 md:px-6 lg:px-0 flex flex-col gap-4 md:gap-32 py-3 md:py-6 lg:py-16 mx-auto'>
+      <div className='w-full max-w-7xl px-3 md:px-6 lg:px-0 flex flex-col gap-4 md:gap-32 py-5 md:py-6 lg:py-16 mx-auto'>
         <LibraryHeader
           displayName={'Acme'}
           email={'Bobbo@acme.com'}

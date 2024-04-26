@@ -77,6 +77,48 @@ export const setCategoryText = (cat) => {
   }
 };
 
+export const baseCategoryColors = (cat) => {
+  switch (cat) {
+    case 'MATERIALS':
+      return 'base-dark';
+    case 'INDUSTRY':
+      return 'brand-yellow';
+    case 'DESIGN':
+      return 'clemson';
+    case 'FOODANDBEVERAGE':
+      return 'brand-red';
+    case 'AUTO':
+      return 'blue-500';
+    case 'SUPPLYCHAIN':
+      return 'brand-red';
+    case 'BUSINESS':
+      return 'green-600';
+    default:
+      return 'clemson';
+  }
+};
+
+export const setColorByCategory = (catArray) => {
+  switch (catArray[0]) {
+    case 'MATERIALS':
+      return 'bg-base-brand';
+    case 'INDUSTRY':
+      return 'bg-brand-yellow';
+    case 'DESIGN':
+      return 'bg-clemson';
+    case 'FOODANDBEVERAGE':
+      return 'bg-brand-red';
+    case 'AUTO':
+      return 'bg-indigo-500';
+    case 'SUPPLYCHAIN':
+      return 'bg-clemson-dark';
+    case 'BUSINESS':
+      return 'bg-green-600';
+    default:
+      return 'bg-clemson';
+  }
+};
+
 export const setCategoryIcon = (cat) => {
   switch (cat) {
     case 'MATERIALS':
