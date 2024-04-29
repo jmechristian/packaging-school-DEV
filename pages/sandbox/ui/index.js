@@ -6,7 +6,6 @@ import CMPMCard from '../../../components/rive/CMPMCard';
 import APCCard from '../../../components/rive/APCCard';
 import FPCCard from '../../../components/rive/FPCCard';
 import CSPCard from '../../../components/rive/CSPCard';
-import BrutalCourseCard from '../../../components/shared/BrutalCourseCard';
 import LMSCourseCard from '../../../components/shared/LMSCourseCard';
 
 const Page = () => {
