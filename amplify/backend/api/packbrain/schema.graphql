@@ -460,6 +460,20 @@ type ApplicationStart @model @auth(rules: [{ allow: public }]) {
   sourceUrl: String
 }
 
+type CertAppStart @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  type: String!
+    @index(name: "certAppStartByType", sortKeyFields: ["createdAt"])
+    @default(value: "APP_START")
+  createdAt: String!
+  firstName: String!
+  lastName: String!
+  email: String! @index(name: "certAppStartByEmail")
+  phone: String
+  source: String
+  sourceUrl: String
+}
+
 ######### LMS #########
 
 type LMSCollection @model @auth(rules: [{ allow: public }]) {

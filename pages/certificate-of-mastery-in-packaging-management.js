@@ -8,7 +8,7 @@ import {
 } from '@heroicons/react/24/outline';
 import { useRouter } from 'next/router';
 import { API } from 'aws-amplify';
-import { createApplicationStart } from '../src/graphql/mutations';
+import { createCertAppStart } from '../src/graphql/mutations';
 import Loader from '../components/shared/Loader';
 import Meta from '../components/shared/Meta';
 
@@ -97,7 +97,7 @@ const Page = () => {
     setIsLoading(true);
 
     await API.graphql({
-      query: createApplicationStart,
+      query: createCertAppStart,
       variables: {
         input: {
           firstName: data.firstName,

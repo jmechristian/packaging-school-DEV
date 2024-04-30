@@ -3508,6 +3508,54 @@ export const onDeleteApplicationStart = /* GraphQL */ `
     }
   }
 `;
+export const onCreateCertAppStart = /* GraphQL */ `
+  subscription OnCreateCertAppStart {
+    onCreateCertAppStart {
+      id
+      type
+      createdAt
+      firstName
+      lastName
+      email
+      phone
+      source
+      sourceUrl
+      updatedAt
+    }
+  }
+`;
+export const onUpdateCertAppStart = /* GraphQL */ `
+  subscription OnUpdateCertAppStart {
+    onUpdateCertAppStart {
+      id
+      type
+      createdAt
+      firstName
+      lastName
+      email
+      phone
+      source
+      sourceUrl
+      updatedAt
+    }
+  }
+`;
+export const onDeleteCertAppStart = /* GraphQL */ `
+  subscription OnDeleteCertAppStart {
+    onDeleteCertAppStart {
+      id
+      type
+      createdAt
+      firstName
+      lastName
+      email
+      phone
+      source
+      sourceUrl
+      updatedAt
+    }
+  }
+`;
 export const onCreateLMSCollection = /* GraphQL */ `
   subscription OnCreateLMSCollection {
     onCreateLMSCollection {

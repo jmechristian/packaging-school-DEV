@@ -6,7 +6,7 @@ import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { API } from 'aws-amplify';
-import { createApplicationStart } from '../src/graphql/mutations';
+import { createCertAppStart } from '../src/graphql/mutations';
 import { CalendarDaysIcon } from '@heroicons/react/24/solid';
 import Loader from '../components/shared/Loader';
 import Meta from '../components/shared/Meta';
@@ -95,7 +95,7 @@ const Page = () => {
   const onSubmit = async (data) => {
     setIsLoading(true);
     await API.graphql({
-      query: createApplicationStart,
+      query: createCertAppStart,
       variables: {
         input: {
           firstName: data.firstName,

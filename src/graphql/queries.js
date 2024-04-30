@@ -3014,6 +3014,109 @@ export const applicationStartsByEmail = /* GraphQL */ `
     }
   }
 `;
+export const getCertAppStart = /* GraphQL */ `
+  query GetCertAppStart($id: ID!) {
+    getCertAppStart(id: $id) {
+      id
+      type
+      createdAt
+      firstName
+      lastName
+      email
+      phone
+      source
+      sourceUrl
+      updatedAt
+    }
+  }
+`;
+export const listCertAppStarts = /* GraphQL */ `
+  query ListCertAppStarts(
+    $filter: ModelCertAppStartFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listCertAppStarts(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        type
+        createdAt
+        firstName
+        lastName
+        email
+        phone
+        source
+        sourceUrl
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const certAppStartsByTypeAndCreatedAt = /* GraphQL */ `
+  query CertAppStartsByTypeAndCreatedAt(
+    $type: String!
+    $createdAt: ModelStringKeyConditionInput
+    $sortDirection: ModelSortDirection
+    $filter: ModelCertAppStartFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    certAppStartsByTypeAndCreatedAt(
+      type: $type
+      createdAt: $createdAt
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        type
+        createdAt
+        firstName
+        lastName
+        email
+        phone
+        source
+        sourceUrl
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const certAppStartsByEmail = /* GraphQL */ `
+  query CertAppStartsByEmail(
+    $email: String!
+    $sortDirection: ModelSortDirection
+    $filter: ModelCertAppStartFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    certAppStartsByEmail(
+      email: $email
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        type
+        createdAt
+        firstName
+        lastName
+        email
+        phone
+        source
+        sourceUrl
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
 export const getLMSCollection = /* GraphQL */ `
   query GetLMSCollection($id: ID!) {
     getLMSCollection(id: $id) {
