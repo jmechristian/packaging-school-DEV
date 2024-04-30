@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import CenteredTextHeader from '../components/layout/CenteredTextHeader';
 import TextInput from '../components/forms/TextInput';
 import { useForm, FormProvider, useFormContext } from 'react-hook-form';
+import { useSelector } from 'react-redux';
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
@@ -13,6 +14,8 @@ import Meta from '../components/shared/Meta';
 
 const Page = () => {
   const [isLoading, setIsLoading] = useState(false);
+
+  const { location } = useSelector((state) => state.auth);
 
   const automateDealHandler = async (
     isEmail,
@@ -102,8 +105,11 @@ const Page = () => {
           lastName: data.lastName,
           email: data.email,
           phone: data.phone,
+          country: location.country ? location.country : 'Undefined',
+          ipAddress: location.ip ? location.ip : 'Undefined',
           source: 'CPS',
           sourceUrl: router && router.asPath,
+          type: 'APP_START',
         },
       },
     });

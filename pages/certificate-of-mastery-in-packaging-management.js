@@ -6,6 +6,7 @@ import {
   ArrowLongRightIcon,
   CalendarDaysIcon,
 } from '@heroicons/react/24/outline';
+import { useSelector } from 'react-redux';
 import { useRouter } from 'next/router';
 import { API } from 'aws-amplify';
 import { createCertAppStart } from '../src/graphql/mutations';
@@ -14,6 +15,8 @@ import Meta from '../components/shared/Meta';
 
 const Page = () => {
   const [isLoading, setIsLoading] = useState(false);
+
+  const { location } = useSelector((state) => state.auth);
 
   const automateDealHandler = async (
     isEmail,
@@ -104,8 +107,11 @@ const Page = () => {
           lastName: data.lastName,
           email: data.email,
           phone: data.phone,
+          country: location.country ? location.country : 'Undefined',
+          ipAddress: location.ip ? location.ip : 'Undefined',
           source: 'CMPM',
           sourceUrl: router && router.asPath,
+          type: 'APP_START',
         },
       },
     });

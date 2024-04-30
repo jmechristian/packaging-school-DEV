@@ -472,6 +472,8 @@ type CertAppStart @model @auth(rules: [{ allow: public }]) {
   phone: String
   source: String
   sourceUrl: String
+  country: String
+  ipAddress: String
 }
 
 ######### LMS #########

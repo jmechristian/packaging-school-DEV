@@ -3026,6 +3026,8 @@ export const getCertAppStart = /* GraphQL */ `
       phone
       source
       sourceUrl
+      country
+      ipAddress
       updatedAt
     }
   }
@@ -3047,6 +3049,8 @@ export const listCertAppStarts = /* GraphQL */ `
         phone
         source
         sourceUrl
+        country
+        ipAddress
         updatedAt
       }
       nextToken
@@ -3080,6 +3084,8 @@ export const certAppStartsByTypeAndCreatedAt = /* GraphQL */ `
         phone
         source
         sourceUrl
+        country
+        ipAddress
         updatedAt
       }
       nextToken
@@ -3111,6 +3117,8 @@ export const certAppStartsByEmail = /* GraphQL */ `
         phone
         source
         sourceUrl
+        country
+        ipAddress
         updatedAt
       }
       nextToken

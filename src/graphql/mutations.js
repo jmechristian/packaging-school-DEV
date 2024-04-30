@@ -3802,6 +3802,8 @@ export const createCertAppStart = /* GraphQL */ `
       phone
       source
       sourceUrl
+      country
+      ipAddress
       updatedAt
     }
   }
@@ -3821,6 +3823,8 @@ export const updateCertAppStart = /* GraphQL */ `
       phone
       source
       sourceUrl
+      country
+      ipAddress
       updatedAt
     }
   }
@@ -3840,6 +3844,8 @@ export const deleteCertAppStart = /* GraphQL */ `
       phone
       source
       sourceUrl
+      country
+      ipAddress
       updatedAt
     }
   }
