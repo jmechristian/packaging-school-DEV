@@ -3463,6 +3463,51 @@ export const onDeleteAppStart = /* GraphQL */ `
     }
   }
 `;
+export const onCreateApplicationStart = /* GraphQL */ `
+  subscription OnCreateApplicationStart {
+    onCreateApplicationStart {
+      id
+      createdAt
+      firstName
+      lastName
+      email
+      phone
+      source
+      sourceUrl
+      updatedAt
+    }
+  }
+`;
+export const onUpdateApplicationStart = /* GraphQL */ `
+  subscription OnUpdateApplicationStart {
+    onUpdateApplicationStart {
+      id
+      createdAt
+      firstName
+      lastName
+      email
+      phone
+      source
+      sourceUrl
+      updatedAt
+    }
+  }
+`;
+export const onDeleteApplicationStart = /* GraphQL */ `
+  subscription OnDeleteApplicationStart {
+    onDeleteApplicationStart {
+      id
+      createdAt
+      firstName
+      lastName
+      email
+      phone
+      source
+      sourceUrl
+      updatedAt
+    }
+  }
+`;
 export const onCreateLMSCollection = /* GraphQL */ `
   subscription OnCreateLMSCollection {
     onCreateLMSCollection {

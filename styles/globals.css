@@ -10,15 +10,15 @@
   }
 
   .h1-base {
-    @apply text-5xl md:text-5xl lg:text-6xl font-medium tracking-tighter lg:leading-[1.0em];
+    @apply text-5xl md:text-5xl lg:text-6xl font-semibold tracking-tighter lg:leading-[1.0em];
   }
 
   .h2-base {
-    @apply font-medium text-3xl md:text-4xl leading-tight lg:leading-tight tracking-tighter;
+    @apply font-semibold text-3xl md:text-4xl leading-tight lg:leading-tight tracking-tighter;
   }
 
   .h3-base {
-    @apply font-medium text-lg lg:text-xl leading-tight lg:leading-tight tracking-[-0.5];
+    @apply font-semibold text-lg lg:text-xl leading-tight lg:leading-tight tracking-[-0.04em];
   }
 
   .h4-base {

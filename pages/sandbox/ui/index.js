@@ -46,7 +46,7 @@ const Page = () => {
             <div className='h3-base py-3 border-y-2 border-y-black'>
               Course Cards
             </div>
-            <div className='grid grid-cols-4'>
+            <div className='grid lg:grid-cols-3 xl:grid-cols-4 md:grid-cols-2 gap-y-10'>
               {/* <LMSCourseCard id={'8c90539f-5dc5-48ba-a9ab-7e3fa186336f'} />
               <LMSCourseCard id={'3cc39c29-60ba-4482-9869-f9d8e0b67d1a'} />
               <LMSCourseCard id={'e39e127a-11bc-448d-a8c0-209b3abbfdb9'} />

@@ -449,6 +449,17 @@ type AppStart
   sourceUrl: String
 }
 
+type ApplicationStart @model @auth(rules: [{ allow: public }]) {
+  id: ID! @primaryKey(sortKeyFields: ["createdAt"])
+  createdAt: String!
+  firstName: String!
+  lastName: String!
+  email: String! @index(name: "applicationStartByEmail")
+  phone: String
+  source: String
+  sourceUrl: String
+}
+
 ######### LMS #########
 
 type LMSCollection @model @auth(rules: [{ allow: public }]) {

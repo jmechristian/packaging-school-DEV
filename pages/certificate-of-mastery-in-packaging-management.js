@@ -7,9 +7,8 @@ import {
   CalendarDaysIcon,
 } from '@heroicons/react/24/outline';
 import { useRouter } from 'next/router';
-import Head from 'next/head';
 import { API } from 'aws-amplify';
-import { createAppStart } from '../src/graphql/mutations';
+import { createApplicationStart } from '../src/graphql/mutations';
 import Loader from '../components/shared/Loader';
 import Meta from '../components/shared/Meta';
 
@@ -98,7 +97,7 @@ const Page = () => {
     setIsLoading(true);
 
     await API.graphql({
-      query: createAppStart,
+      query: createApplicationStart,
       variables: {
         input: {
           firstName: data.firstName,

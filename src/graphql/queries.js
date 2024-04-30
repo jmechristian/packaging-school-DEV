@@ -2937,6 +2937,83 @@ export const appStartsByEmail = /* GraphQL */ `
     }
   }
 `;
+export const getApplicationStart = /* GraphQL */ `
+  query GetApplicationStart($id: ID!, $createdAt: String!) {
+    getApplicationStart(id: $id, createdAt: $createdAt) {
+      id
+      createdAt
+      firstName
+      lastName
+      email
+      phone
+      source
+      sourceUrl
+      updatedAt
+    }
+  }
+`;
+export const listApplicationStarts = /* GraphQL */ `
+  query ListApplicationStarts(
+    $id: ID
+    $createdAt: ModelStringKeyConditionInput
+    $filter: ModelApplicationStartFilterInput
+    $limit: Int
+    $nextToken: String
+    $sortDirection: ModelSortDirection
+  ) {
+    listApplicationStarts(
+      id: $id
+      createdAt: $createdAt
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      sortDirection: $sortDirection
+    ) {
+      items {
+        id
+        createdAt
+        firstName
+        lastName
+        email
+        phone
+        source
+        sourceUrl
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const applicationStartsByEmail = /* GraphQL */ `
+  query ApplicationStartsByEmail(
+    $email: String!
+    $sortDirection: ModelSortDirection
+    $filter: ModelApplicationStartFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    applicationStartsByEmail(
+      email: $email
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        createdAt
+        firstName
+        lastName
+        email
+        phone
+        source
+        sourceUrl
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
 export const getLMSCollection = /* GraphQL */ `
   query GetLMSCollection($id: ID!) {
     getLMSCollection(id: $id) {

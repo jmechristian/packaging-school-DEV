@@ -19,7 +19,7 @@ const VideoPlayer = ({
 
   return (
     <div
-      className={`relative w-full h-full bg-black ${
+      className={`relative w-full h-full flex items-center justify-center bg-black ${
         rounded ? 'rounded-t-xl' : ''
       }`}
     >

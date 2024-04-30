@@ -99,29 +99,23 @@ export const baseCategoryColors = (cat) => {
 };
 
 export const setColorByCategory = (catArray) => {
-  if (catArray.length === 1) {
-    switch (catArray[0]) {
-      case 'MATERIALS':
-        return 'bg-base-brand';
-      case 'INDUSTRY':
-        return 'bg-brand-yellow';
-      case 'DESIGN':
-        return 'bg-clemson';
-      case 'FOODANDBEVERAGE':
-        return 'bg-brand-red';
-      case 'AUTO':
-        return 'bg-indigo-500';
-      case 'SUPPLYCHAIN':
-        return 'bg-clemson-dark';
-      case 'BUSINESS':
-        return 'bg-green-600';
-      default:
-        return 'bg-clemson';
-    }
-  } else if (catArray.length > 1) {
-    const color1 = baseCategoryColors(catArray[0]);
-    const color2 = baseCategoryColors(catArray[1]);
-    return `bg-gradient-to-br from-${color1} to-${color2}`;
+  switch (catArray[0]) {
+    case 'MATERIALS':
+      return 'bg-base-brand';
+    case 'INDUSTRY':
+      return 'bg-brand-yellow';
+    case 'DESIGN':
+      return 'bg-clemson';
+    case 'FOODANDBEVERAGE':
+      return 'bg-brand-red';
+    case 'AUTO':
+      return 'bg-indigo-500';
+    case 'SUPPLYCHAIN':
+      return 'bg-clemson-dark';
+    case 'BUSINESS':
+      return 'bg-green-600';
+    default:
+      return 'bg-clemson';
   }
 };
 

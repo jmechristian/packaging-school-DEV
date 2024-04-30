@@ -1,6 +1,4 @@
 import { SESClient, SendEmailCommand } from '@aws-sdk/client-ses';
-import { API } from 'aws-amplify';
-import { createAppStart } from '../../src/graphql/mutations';
 const REGION = 'us-east-1';
 const creds = {
   accessKeyId: process.env.AWSACCESSKEYID,

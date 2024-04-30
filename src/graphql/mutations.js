@@ -3733,6 +3733,60 @@ export const deleteAppStart = /* GraphQL */ `
     }
   }
 `;
+export const createApplicationStart = /* GraphQL */ `
+  mutation CreateApplicationStart(
+    $input: CreateApplicationStartInput!
+    $condition: ModelApplicationStartConditionInput
+  ) {
+    createApplicationStart(input: $input, condition: $condition) {
+      id
+      createdAt
+      firstName
+      lastName
+      email
+      phone
+      source
+      sourceUrl
+      updatedAt
+    }
+  }
+`;
+export const updateApplicationStart = /* GraphQL */ `
+  mutation UpdateApplicationStart(
+    $input: UpdateApplicationStartInput!
+    $condition: ModelApplicationStartConditionInput
+  ) {
+    updateApplicationStart(input: $input, condition: $condition) {
+      id
+      createdAt
+      firstName
+      lastName
+      email
+      phone
+      source
+      sourceUrl
+      updatedAt
+    }
+  }
+`;
+export const deleteApplicationStart = /* GraphQL */ `
+  mutation DeleteApplicationStart(
+    $input: DeleteApplicationStartInput!
+    $condition: ModelApplicationStartConditionInput
+  ) {
+    deleteApplicationStart(input: $input, condition: $condition) {
+      id
+      createdAt
+      firstName
+      lastName
+      email
+      phone
+      source
+      sourceUrl
+      updatedAt
+    }
+  }
+`;
 export const createLMSCollection = /* GraphQL */ `
   mutation CreateLMSCollection(
     $input: CreateLMSCollectionInput!
