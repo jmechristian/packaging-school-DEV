@@ -25,22 +25,6 @@ const CMPMSessionInfo = ({ email, free }) => {
             <div className='flex items-center gap-x-3'>
               <input
                 {...register('sessionApplying', { required: true })}
-                id='fallSessionOne'
-                name='sessionApplying'
-                type='radio'
-                value='fallSessionOne'
-                className='h-4 w-4 border-slate-300 text-base-brand focus:ring-base-brand'
-              />
-              <label
-                htmlFor='fallSessionOne'
-                className='block font-medium font-greycliff leading-6 text-slate-900'
-              >
-                Fall Session 1 / August 2024
-              </label>
-            </div>
-            <div className='flex items-center gap-x-3'>
-              <input
-                {...register('sessionApplying', { required: true })}
                 id='summer2024'
                 name='sessionApplying'
                 type='radio'
@@ -52,6 +36,22 @@ const CMPMSessionInfo = ({ email, free }) => {
                 className='block font-medium font-greycliff leading-6 text-slate-900'
               >
                 Summer / May 2024
+              </label>
+            </div>
+            <div className='flex items-center gap-x-3'>
+              <input
+                {...register('sessionApplying', { required: true })}
+                id='fallSessionOne'
+                name='sessionApplying'
+                type='radio'
+                value='fallSessionOne'
+                className='h-4 w-4 border-slate-300 text-base-brand focus:ring-base-brand'
+              />
+              <label
+                htmlFor='fallSessionOne'
+                className='block font-medium font-greycliff leading-6 text-slate-900'
+              >
+                Fall Session 1 / August 2024
               </label>
             </div>
           </div>
