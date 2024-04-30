@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { setColorByCategory } from '../../helpers/utils';
 import VideoPlayer from '../VideoPlayer';
+import { AcademicCapIcon } from '@heroicons/react/24/solid';
+import { FiTarget } from 'react-icons/fi';
 import {
   MdVideocam,
   MdLocalGroceryStore,
@@ -60,9 +62,9 @@ const LMSCourseCard = ({ id, icons, coupon }) => {
       {/* FRONT */}
       {/* OUTER CARD CONTAINER */}
       <motion.div
-        className={` absolute transition-all hover:scale-105 ease-in group rounded-2xl border-2 overflow-hidden border-black ${isBackgroundColor} shadow-[0px_9px_0px_rgba(0,0,0,0.20)]  hover:shadow-[0px_12px_0px_rgba(0,0,0,0.15)] w-full h-full max-h-[520px] min-h-[405px] min-w-[281px] max-w-[360px] aspect-[360/520] p-2.5`}
+        className={` absolute transition-all group rounded-2xl border-2 overflow-hidden border-black ${isBackgroundColor} shadow-[0px_9px_0px_rgba(0,0,0,0.20)]  hover:shadow-[0px_12px_0px_rgba(0,0,0,0.15)] w-full h-full max-h-[520px] min-h-[405px] min-w-[281px] max-w-[360px] aspect-[360/520] p-2.5`}
         style={{ backfaceVisibility: 'hidden' }}
-        transition={{ duration: 0.7 }}
+        transition={{ duration: 0.5 }}
         animate={{ rotateY: !isFlipped ? 0 : 180 }}
       >
         {/* INNER CARD CONTAINER */}
@@ -160,21 +162,64 @@ const LMSCourseCard = ({ id, icons, coupon }) => {
       <motion.div
         className={`absolute transition-all hover:scale-105 ease-in group rounded-2xl border-2 overflow-hidden border-black ${isBackgroundColor} shadow-[0px_9px_0px_rgba(0,0,0,0.20)]  hover:shadow-[0px_12px_0px_rgba(0,0,0,0.15)] w-full h-full max-h-[520px] min-h-[405px] min-w-[281px] max-w-[360px] aspect-[360/520] p-2.5`}
         style={{ backfaceVisibility: 'hidden' }}
-        transition={{ duration: 0.7 }}
+        transition={{ duration: 0.5 }}
         animate={{ rotateY: !isFlipped ? 180 : 0 }}
       >
         {/* INNER CARD CONTAINER */}
         <div
-          className='w-full h-full border-[3px] rounded-lg bg-yellow-100 border-black relative overflow-y-scroll'
+          className={`w-full h-full border-[3px] rounded-lg bg-white/80 border-black relative overflow-y-scroll`}
           id='scrollers'
         >
           {/* CONTENT */}
-          <div className='flex flex-col gap-3 absolute z-20 top-3 left-3 w-fit pr-3 mt-12'>
+          <div className='flex flex-col gap-4 absolute z-20 top-3 left-3 w-fit pr-3 pb-5 mt-16'>
             <div className='leading-none font-semibold text-black tracking-tight'>
               {isCourse.subheadline}
             </div>
-            <div className='text-sm leading-tight'>{isCourse.what_learned}</div>
-            
+            {isCourse.objectives ? (
+              <div className='flex flex-col gap-3'>
+                <div className='border-y-2 border-y-black py-1.5 '>
+                  <div className='flex items-center gap-1'>
+                    <div className='bg-white rounded-full'>
+                      <FiTarget />
+                    </div>
+                    <div className='text-sm font-semibold'>
+                      Course Objectives
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  {isCourse.objectives.map((obj, i) => (
+                    <div
+                      className='text-xs border-b-2 border-b-black border-dotted last:border-b-0 leading-tight py-2'
+                      key={i}
+                    >
+                      {obj}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <></>
+            )}
+            {isCourse.what_learned ? (
+              <div className='flex flex-col gap-3'>
+                <div className='border-y-2 border-y-black py-1.5 '>
+                  <div className='flex items-center gap-1.5'>
+                    <div>
+                      <AcademicCapIcon className='w-5 h-5 fill-black' />
+                    </div>
+                    <div className='text-sm font-semibold'>
+                      What You&apos;ll Learn
+                    </div>
+                  </div>
+                </div>
+                <div className='text-sm leading-tight'>
+                  {isCourse.what_learned}
+                </div>
+              </div>
+            ) : (
+              <></>
+            )}
           </div>
           {/* BOTTOM */}
           <div className={`sticky z-20 right-0 left-0 top-0 p-1`}>
