@@ -119,6 +119,27 @@ export const setColorByCategory = (catArray) => {
   }
 };
 
+export const setColorByCategoryString = (cat) => {
+  switch (cat) {
+    case 'MATERIALS':
+      return 'bg-base-brand';
+    case 'INDUSTRY':
+      return 'bg-brand-yellow';
+    case 'DESIGN':
+      return 'bg-clemson';
+    case 'FOODANDBEVERAGE':
+      return 'bg-brand-red';
+    case 'AUTO':
+      return 'bg-indigo-500';
+    case 'SUPPLYCHAIN':
+      return 'bg-clemson-dark';
+    case 'BUSINESS':
+      return 'bg-green-600';
+    default:
+      return 'bg-clemson';
+  }
+};
+
 export const setCategoryIcon = (cat) => {
   switch (cat) {
     case 'MATERIALS':

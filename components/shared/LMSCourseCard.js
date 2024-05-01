@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { setColorByCategory } from '../../helpers/utils';
-import VideoPlayer from '../VideoPlayer';
 import { AcademicCapIcon } from '@heroicons/react/24/solid';
 import { FiTarget } from 'react-icons/fi';
 import {
@@ -14,6 +13,8 @@ import {
 import { useSelector } from 'react-redux';
 import { useRouter } from 'next/router';
 import { registerClick } from '../../helpers/api';
+
+import VideoPlayer from '../VideoPlayer';
 import BrutalCircleIconTooltip from './BrutalCircleIconTooltip';
 
 const LMSCourseCard = ({ id, icons, coupon }) => {
@@ -58,7 +59,7 @@ const LMSCourseCard = ({ id, icons, coupon }) => {
   };
 
   return (
-    <div className='w-[281px] h-[405px] relative'>
+    <div className='w-[281px] h-[405px] relative mx-auto'>
       {/* FRONT */}
       {/* OUTER CARD CONTAINER */}
       <motion.div
@@ -244,15 +245,7 @@ const LMSCourseCard = ({ id, icons, coupon }) => {
                   tooltip={'Buy'}
                   bgColor={'bg-brand-green'}
                   fn={() => {
-                    isCourse.altLink
-                      ? window.open(isCourse.altLink, '_blank')
-                      : router.push(
-                          `/${
-                            isCourse.type && isCourse.type === 'COLLECTION'
-                              ? 'collections'
-                              : 'courses'
-                          }/${isCourse.slug}`
-                        );
+                    window.open(isCourse.link, '_blank');
                   }}
                 >
                   <MdLocalGroceryStore color='black' size={24} />
