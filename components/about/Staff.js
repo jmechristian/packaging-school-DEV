@@ -25,22 +25,24 @@ const Staff = ({ staff }) => {
           role='list'
           className='mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4'
         >
-          {staff.map((person) => (
-            <li key={person.fullName}>
-              <img
-                className='aspect-[14/13] w-full rounded-2xl object-cover'
-                src={person.image}
-                alt={person.fullName}
-              />
-              <h3 className='mt-6 text-lg font-semibold leading-8 tracking-tight text-white font-greycliff'>
-                {person.fullName}
-              </h3>
-              <p className='text-base leading-7 text-slate-500'>
-                {person.title}
-              </p>
-              <SocialIcon url={person.linkedIn} className='w-1 h-1' />
-            </li>
-          ))}
+          {staff
+            .sort((a, b) => a.fullName.localeCompare(b.fullName))
+            .map((person) => (
+              <li key={person.fullName}>
+                <img
+                  className='aspect-[14/13] w-full rounded-2xl object-cover'
+                  src={person.image}
+                  alt={person.fullName}
+                />
+                <h3 className='mt-6 text-lg font-semibold leading-8 tracking-tight text-white font-greycliff'>
+                  {person.fullName}
+                </h3>
+                <p className='text-base leading-7 text-slate-500'>
+                  {person.title}
+                </p>
+                <SocialIcon url={person.linkedIn} className='w-1 h-1' />
+              </li>
+            ))}
         </ul>
       </div>
     </div>
