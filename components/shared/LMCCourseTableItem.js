@@ -5,26 +5,63 @@ import {
   MdArrowDropDown,
   MdAccessTimeFilled,
   MdOutlineMenuBook,
+  MdLocalGroceryStore,
+  MdVideocam,
+  MdCancel,
 } from 'react-icons/md';
 
+import VideoPlayer from '../VideoPlayer';
 import { setColorByCategoryString } from '../../helpers/utils';
-import BrutalButton from './BrutalButton';
+import BrutalCircleIconTooltip from './BrutalCircleIconTooltip';
 
 const LMCCourseTableItem = ({ course }) => {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   return (
     <div
       className={`w-full border-2 border-black ${setColorByCategoryString(
         course.categoryArray[0]
-      )} bg-opacity-20`}
+      )} bg-opacity-20 relative`}
     >
+      {/* VIDEO PLAYER */}
+      <AnimatePresence>
+        {isPlaying && (
+          <motion.div className='fixed w-screen h-screen inset-0 bg-black z-50 flex items-center justify-center'>
+            <div className='w-full mx-auto max-w-7xl flex flex-col gap-5'>
+              <div className='w-full aspect-[16/9] bg-white/50'>
+                <VideoPlayer
+                  videoEmbedLink={course.preview}
+                  light={false}
+                  playing={true}
+                />
+              </div>
+              <div
+                className='flex items-center justify-center gap-1 cursor-pointer'
+                onClick={() => setIsPlaying(false)}
+              >
+                <div>
+                  <MdCancel size={18} color='white' />
+                </div>
+                <div className='text-white font-semibold text-center text-lg'>
+                  Close
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* DESKTOP */}
       {/* MAIN */}
-      <div className='hidden lg:grid lg:grid-cols-12 gap-5 divide-x-black w-full px-2 py-2'>
-        <div className='col-span-4'>
-          <div className='flex items-center gap-1'>
+
+      <div className='hidden lg:grid lg:grid-cols-12 gap-5 divide-x-black w-full px-2 py-2 h-[75px]'>
+        <div className='col-span-3 pl-2 content-center'>
+          <div className='font-semibold tracking-[-0.01em] leading-tight'>
+            {course.title}
+          </div>
+          <div className='flex items-center gap-1.5'>
             {course.categoryArray.map((cat) => (
               <div
                 key={cat}
@@ -34,30 +71,45 @@ const LMCCourseTableItem = ({ course }) => {
               </div>
             ))}
           </div>
-          <div className='text-lg  font-semibold tracking-tight leading-tight'>
-            {course.title}
+        </div>
+        <div className='col-span-1 content-center'>
+          <div className='font-semibold text-sm'>
+            {course.price === 'FREE' ? 'Free' : '$' + course.price}
           </div>
         </div>
-
-        <div className='col-span-5'>
-          <div className='text-sm line-clamp-3 tracking-tight'>
+        <div className='col-span-5 content-center'>
+          <div className='text-sm line-clamp-2 tracking-tight'>
             {course.subheadline}
           </div>
         </div>
-        <div className='col-span-3'>
-          <div className='grid grid-cols-3 w-full'>
-            <div>Hours</div>
-            <div>Lessons</div>
-            <div>Preview</div>
-            <div className='col-span-3 flex w-full justify-end'>
-              <div>
-                <BrutalButton
-                  text={'Purchase'}
-                  link={course.link}
-                  background={'bg-white'}
-                  textColor={'text-black'}
-                />
+        <div className='col-span-3 content-center'>
+          <div className='grid grid-cols-4 w-full gap-3 text-center text-sm'>
+            <div className='font-bold content-center'>{course.hours}</div>
+            <div className='font-bold content-center'>{course.lessons}</div>
+            {course.preview ? (
+              <div className='content-center mx-auto'>
+                <BrutalCircleIconTooltip
+                  tooltip={'Preview'}
+                  bgColor={'bg-white'}
+                  fn={() => setIsPlaying(!isPlaying)}
+                >
+                  <MdVideocam color='black' size={24} />
+                </BrutalCircleIconTooltip>
               </div>
+            ) : (
+              <div></div>
+            )}
+
+            <div className='place-content-center mx-auto'>
+              <BrutalCircleIconTooltip
+                tooltip={'Buy'}
+                bgColor={'bg-brand-green'}
+                fn={() => {
+                  window.open(course.link, '_blank');
+                }}
+              >
+                <MdLocalGroceryStore color='black' size={24} />
+              </BrutalCircleIconTooltip>
             </div>
           </div>
         </div>

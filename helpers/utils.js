@@ -1,12 +1,14 @@
 import {
   MdExtension,
   MdDirectionsCar,
+  MdAutoAwesome,
   MdBusinessCenter,
   MdColorLens,
   MdLunchDining,
   MdFactory,
   MdMiscellaneousServices,
   MdLocalShipping,
+  MdAutoStories,
 } from 'react-icons/md';
 
 import { TiTree } from 'react-icons/ti';
@@ -144,13 +146,13 @@ export const setCategoryIcon = (cat) => {
   switch (cat) {
     case 'MATERIALS':
       return (
-        <div className='w-7 h-7 bg-base-dark rounded-full flex items-center justify-center'>
+        <div className='w-7 h-7 bg-base-brand rounded-full flex items-center justify-center'>
           <MdExtension color='white' size={18} />
         </div>
       );
     case 'INDUSTRY':
       return (
-        <div className='w-7 h-7 bg-base-mid rounded-full flex items-center justify-center'>
+        <div className='w-7 h-7 bg-brand-yellow rounded-full flex items-center justify-center'>
           <MdFactory color='white' size={18} />
         </div>
       );
@@ -162,7 +164,7 @@ export const setCategoryIcon = (cat) => {
       );
     case 'FOODANDBEVERAGE':
       return (
-        <div className='w-7 h-7 bg-indigo-400 rounded-full flex items-center justify-center'>
+        <div className='w-7 h-7 bg-brand-red rounded-full flex items-center justify-center'>
           <MdLunchDining color='white' size={18} />
         </div>
       );
@@ -180,8 +182,14 @@ export const setCategoryIcon = (cat) => {
       );
     case 'AUTO':
       return (
-        <div className='w-7 h-7 bg-red-600 rounded-full flex items-center justify-center'>
+        <div className='w-7 h-7 bg-indigo-500 rounded-full flex items-center justify-center'>
           <MdMiscellaneousServices color='white' size={18} />
+        </div>
+      );
+    case 'all':
+      return (
+        <div className='w-7 h-7 bg-black rounded-full flex items-center justify-center'>
+          <MdAutoAwesome color='white' size={18} />
         </div>
       );
     default:
