@@ -15,7 +15,10 @@ const HomeFree = ({ courses }) => {
   const scrollRef = useRef();
 
   useEffect(() => {
-    allCourses && setFreeCourses(allCourses.filter((c) => c.price === 'FREE'));
+    allCourses &&
+      setFreeCourses(
+        allCourses.filter((c) => c.price === 'FREE' || c.price === '0')
+      );
   }, [setFreeCourses, allCourses]);
 
   return (
