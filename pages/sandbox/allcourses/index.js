@@ -82,6 +82,20 @@ const Page = () => {
       );
     }
 
+    if (isSort.value === 'id' && isSort.direction === 'ASC') {
+      return (
+        filtered &&
+        [...filtered].sort((a, b) => a.courseId.localeCompare(b.courseId))
+      );
+    }
+
+    if (isSort.value === 'id' && isSort.direction === 'DSC') {
+      return (
+        filtered &&
+        [...filtered].sort((a, b) => b.courseId.localeCompare(a.courseId))
+      );
+    }
+
     if (isSort.value === 'lessons' && isSort.direction === 'DSC') {
       return filtered && [...filtered].sort((a, b) => b.lessons - a.lessons);
     }
@@ -273,36 +287,53 @@ const Page = () => {
         isTable ? (
           <div className='flex flex-col gap-1.5'>
             <div className='hidden lg:grid lg:grid-cols-12 content-center gap-5 divide-x-black w-full px-2 py-2'>
-              <div className='col-span-3'>
-                <div className='text-sm font-semibold'>
-                  <div>
-                    <span
-                      className={`${
-                        isSort.value === 'category' ? 'underline' : ''
-                      } cursor-pointer`}
-                      onClick={() =>
-                        setIsSort({
-                          value: 'category',
-                          direction: isSort.direction === 'ASC' ? 'DSC' : 'ASC',
-                        })
-                      }
-                    >
-                      Category
-                    </span>{' '}
-                    /{' '}
-                    <span
-                      className={`${
-                        isSort.value === 'title' ? 'underline' : ''
-                      } cursor-pointer`}
-                      onClick={() =>
-                        setIsSort({
-                          value: 'title',
-                          direction: isSort.direction === 'ASC' ? 'DSC' : 'ASC',
-                        })
-                      }
-                    >
-                      Title
-                    </span>
+              <div className='col-span-4'>
+                <div className='grid grid-cols-4'>
+                  <div
+                    className={`${
+                      isSort.value === 'id' ? 'underline' : ''
+                    } cursor-pointer col-span-1 text-sm font-semibold`}
+                    onClick={() =>
+                      setIsSort({
+                        value: 'id',
+                        direction: isSort.direction === 'ASC' ? 'DSC' : 'ASC',
+                      })
+                    }
+                  >
+                    Course Id
+                  </div>
+                  <div className='text-sm font-semibold col-span-3'>
+                    <div>
+                      <span
+                        className={`${
+                          isSort.value === 'category' ? 'underline' : ''
+                        } cursor-pointer`}
+                        onClick={() =>
+                          setIsSort({
+                            value: 'category',
+                            direction:
+                              isSort.direction === 'ASC' ? 'DSC' : 'ASC',
+                          })
+                        }
+                      >
+                        Category
+                      </span>{' '}
+                      /{' '}
+                      <span
+                        className={`${
+                          isSort.value === 'title' ? 'underline' : ''
+                        } cursor-pointer`}
+                        onClick={() =>
+                          setIsSort({
+                            value: 'title',
+                            direction:
+                              isSort.direction === 'ASC' ? 'DSC' : 'ASC',
+                          })
+                        }
+                      >
+                        Title
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -323,7 +354,7 @@ const Page = () => {
                   </div>
                 </div>
               </div>
-              <div className='col-span-5'>
+              <div className='col-span-4'>
                 <div className='text-sm font-semibold'>
                   <div>Description</div>
                 </div>

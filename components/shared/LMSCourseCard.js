@@ -74,6 +74,10 @@ const LMSCourseCard = ({ id, icons, coupon }) => {
           className='w-full h-full border-[3px] rounded-lg border-black relative bg-cover bg-top bg-no-repeat overflow-hidden'
           style={{ backgroundImage: `url(${isCourse.seoImage})` }}
         >
+          {/* COURSE ID */}
+          <div className='absolute right-0 top-1 py1 px-1.5 text-xs text-white z-10'>
+            {isCourse.courseId}
+          </div>
           {/* VIDEO */}
           {isPlaying && (
             <div className='w-full h-full absolute z-10 inset-0 bg-black'>
@@ -92,10 +96,10 @@ const LMSCourseCard = ({ id, icons, coupon }) => {
               </div>
             </div>
           )}
-          <div className='w-full h-40 bg-gradient-to-b from-black/80 absolute inset-x-0 top-0 z-0'></div>
+          <div className='w-full h-48 bg-gradient-to-b from-black/80 absolute inset-x-0 top-0 z-0'></div>
           <div className='w-full h-28 bg-gradient-to-t from-black/80 absolute inset-x-0 bottom-0 z-0'></div>
           {/* CONTENT */}
-          <div className='flex flex-col gap-1.5 max-w-[200px] absolute z-20 top-3 left-3 w-fit'>
+          <div className='flex flex-col gap-1.5 max-w-[160px] absolute z-20 top-3 left-3 w-fit'>
             <div className='text-xl leading-none font-semibold text-white tracking-tight'>
               {isCourse.title}
             </div>

@@ -87,27 +87,34 @@ const LMCCourseTableItem = ({ course }) => {
       {/* DESKTOP */}
       {/* MAIN */}
 
-      <div className='hidden lg:grid lg:grid-cols-12 gap-5 divide-x-black w-full px-2 py-2 h-[75px]'>
-        <div className='col-span-3 pl-2 content-center'>
-          <div className='flex items-center'>
-            {course.categoryArray.map((cat, i) => (
-              <div
-                className='flex items-center pl-0.5 pr-0.5 first:pl-0'
-                key={cat}
-              >
-                <div className='text-xs font-semibold leading-tight text-neutral-500 '>
-                  {setCategoryText(cat)}
-                </div>
-                {course.categoryArray.length > 1 && i === 0 ? (
-                  <div className='text-xs text-neutral-500'>/</div>
-                ) : (
-                  <></>
-                )}
+      <div className='hidden lg:grid lg:grid-cols-12 gap-3 divide-x-black w-full px-2 py-2 h-[75px]'>
+        <div className='col-span-4 pl-2 content-center'>
+          <div className='grid grid-cols-4'>
+            <div className='col-span-1 text-xs content-center'>
+              {course.courseId}
+            </div>
+            <div className='col-span-3 flex flex-col gap-1'>
+              <div className='flex items-center'>
+                {course.categoryArray.map((cat, i) => (
+                  <div
+                    className='flex items-center pl-0.5 pr-0.5 first:pl-0'
+                    key={cat}
+                  >
+                    <div className='text-xs font-semibold leading-tight text-neutral-500 '>
+                      {setCategoryText(cat)}
+                    </div>
+                    {course.categoryArray.length > 1 && i === 0 ? (
+                      <div className='text-xs text-neutral-500'>/</div>
+                    ) : (
+                      <></>
+                    )}
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-          <div className='font-semibold tracking-[-0.01em] leading-tight'>
-            {course.title}
+              <div className='font-semibold tracking-[-0.01em] leading-tight'>
+                {course.title}
+              </div>
+            </div>
           </div>
         </div>
         <div className='col-span-1 content-center'>
@@ -115,7 +122,7 @@ const LMCCourseTableItem = ({ course }) => {
             {course.price === 'FREE' ? 'Free' : '$' + course.price}
           </div>
         </div>
-        <div className='col-span-5 content-center'>
+        <div className='col-span-4 content-center'>
           <div className='text-sm line-clamp-2 tracking-tight'>
             {course.subheadline}
           </div>
