@@ -180,7 +180,7 @@ const Page = () => {
               <input
                 type='text'
                 className='w-full flex border-none ring-0 focus:ring-0'
-                placeholder='Search'
+                placeholder='Search Courses'
                 value={isSearchTerm}
                 onChange={(e) => setIsSearchTerm(e.target.value)}
               />
