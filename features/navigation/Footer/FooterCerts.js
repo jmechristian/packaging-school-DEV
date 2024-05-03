@@ -22,6 +22,16 @@ const FooterCerts = () => {
           Automotive Packaging Certificate
         </p>
       </Link>
+      <Link href={'/certifications/get-to-know-csp'}>
+        <p className='text-gray-600 dark:text-gray-500'>
+          Certificate of Sustainable Packaging
+        </p>
+      </Link>
+      <Link href={'/food-packaging'}>
+        <p className='text-gray-600 dark:text-gray-500'>
+          Food Packaging Certificate
+        </p>
+      </Link>
     </div>
   );
 };
