@@ -19,6 +19,37 @@ const LMCCourseTableItem = ({ course }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
 
+  const setCategoryText = (cat) => {
+    switch (cat) {
+      case 'Materials':
+        return 'Materials';
+      case 'MATERIALS':
+        return 'Materials';
+      case 'Industry':
+        return 'Industry';
+      case 'INDUSTRY':
+        return 'Industry';
+      case 'Design':
+        return 'Design';
+      case 'DESIGN':
+        return 'Design';
+      case 'FOODANDBEVERAGE':
+        return 'Food & Bev';
+      case 'Food & Beverage':
+        return 'Food & Bev';
+      case 'Supply Chain & Logistics':
+        return 'Supply Chain & Logistics';
+      case 'SUPPLYCHAIN':
+        return 'Supply Chain & Logistics';
+      case 'Business':
+        return 'Business';
+      case 'BUSINESS':
+        return 'Business';
+      case 'AUTO':
+        return 'Automotive';
+    }
+  };
+
   return (
     <div
       className={`w-full border-2 border-black ${setColorByCategoryString(
@@ -58,18 +89,25 @@ const LMCCourseTableItem = ({ course }) => {
 
       <div className='hidden lg:grid lg:grid-cols-12 gap-5 divide-x-black w-full px-2 py-2 h-[75px]'>
         <div className='col-span-3 pl-2 content-center'>
-          <div className='font-semibold tracking-[-0.01em] leading-tight'>
-            {course.title}
-          </div>
-          <div className='flex items-center gap-1.5'>
-            {course.categoryArray.map((cat) => (
+          <div className='flex items-center'>
+            {course.categoryArray.map((cat, i) => (
               <div
+                className='flex items-center pl-0.5 pr-0.5 first:pl-0'
                 key={cat}
-                className='text-xs font-semibold leading-tight text-neutral-500'
               >
-                {cat}
+                <div className='text-xs font-semibold leading-tight text-neutral-500 '>
+                  {setCategoryText(cat)}
+                </div>
+                {course.categoryArray.length > 1 && i === 0 ? (
+                  <div className='text-xs text-neutral-500'>/</div>
+                ) : (
+                  <></>
+                )}
               </div>
             ))}
+          </div>
+          <div className='font-semibold tracking-[-0.01em] leading-tight'>
+            {course.title}
           </div>
         </div>
         <div className='col-span-1 content-center'>
