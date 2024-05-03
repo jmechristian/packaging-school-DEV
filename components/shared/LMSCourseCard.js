@@ -67,6 +67,7 @@ const LMSCourseCard = ({ id, icons, coupon }) => {
         style={{ backfaceVisibility: 'hidden' }}
         transition={{ duration: 0.5 }}
         animate={{ rotateY: !isFlipped ? 0 : 180 }}
+        initial={{ rotateY: 0 }}
       >
         {/* INNER CARD CONTAINER */}
         <div
@@ -165,6 +166,7 @@ const LMSCourseCard = ({ id, icons, coupon }) => {
         style={{ backfaceVisibility: 'hidden' }}
         transition={{ duration: 0.5 }}
         animate={{ rotateY: !isFlipped ? 180 : 0 }}
+        initial={{ rotateY: 180 }}
       >
         {/* INNER CARD CONTAINER */}
         <div
