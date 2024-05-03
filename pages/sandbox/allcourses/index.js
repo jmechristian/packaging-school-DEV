@@ -268,7 +268,9 @@ const Page = () => {
           </div>
         </div>
         {/* COURSES */}
-        {sortedAndSearchedCourses && isTable ? (
+        {sortedAndSearchedCourses &&
+        sortedAndSearchedCourses.length > 0 &&
+        isTable ? (
           <div className='flex flex-col gap-1.5'>
             <div className='hidden lg:grid lg:grid-cols-12 content-center gap-5 divide-x-black w-full px-2 py-2'>
               <div className='col-span-3'>
@@ -375,6 +377,7 @@ const Page = () => {
         ) : sortedAndSearchedCourses && !isTable ? (
           <div className='grid lg:grid-cols-3 xl:grid-cols-4 md:grid-cols-2 gap-y-10'>
             {sortedAndSearchedCourses &&
+              sortedAndSearchedCourses.length > 0 &&
               [...sortedAndSearchedCourses]
                 .sort((a, b) =>
                   a.categoryArray[0].localeCompare(b.categoryArray[0])
@@ -384,7 +387,14 @@ const Page = () => {
                 ))}
           </div>
         ) : (
-          <div></div>
+          <div className='w-full h-full flex items-center justify-center'>
+            <div className='max-w-5xl py-10 w-full mx-auto justify-center items-center flex flex-col gap-3'>
+              <div className='text-lg font-semibold'>No results returned</div>
+              <div className='text-lg font-semibold'>
+                Inquiry form will live here.
+              </div>
+            </div>
+          </div>
         )}
       </div>
     </div>
