@@ -124,7 +124,9 @@ const LMCCourseTableItem = ({ course }) => {
         </div>
         <div className='col-span-4 content-center'>
           <div className='text-sm line-clamp-2 tracking-tight'>
-            {course.subheadline}
+            {course.shortDescription
+              ? course.shortDescription
+              : course.subheadline}
           </div>
         </div>
         <div className='col-span-3 content-center'>

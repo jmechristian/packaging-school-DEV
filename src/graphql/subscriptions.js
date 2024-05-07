@@ -3757,6 +3757,7 @@ export const onCreateLMSCourse = /* GraphQL */ `
       demo
       partOf
       altLink
+      shortDescription
       createdAt
       updatedAt
       studentCourseEnrolledId
@@ -3820,6 +3821,7 @@ export const onUpdateLMSCourse = /* GraphQL */ `
       demo
       partOf
       altLink
+      shortDescription
       createdAt
       updatedAt
       studentCourseEnrolledId
@@ -3883,105 +3885,10 @@ export const onDeleteLMSCourse = /* GraphQL */ `
       demo
       partOf
       altLink
+      shortDescription
       createdAt
       updatedAt
       studentCourseEnrolledId
-    }
-  }
-`;
-export const onCreateCourseClick = /* GraphQL */ `
-  subscription OnCreateCourseClick {
-    onCreateCourseClick {
-      id
-      courseID
-      page
-      ipAddress
-      country
-      lat
-      long
-      referrer
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onUpdateCourseClick = /* GraphQL */ `
-  subscription OnUpdateCourseClick {
-    onUpdateCourseClick {
-      id
-      courseID
-      page
-      ipAddress
-      country
-      lat
-      long
-      referrer
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onDeleteCourseClick = /* GraphQL */ `
-  subscription OnDeleteCourseClick {
-    onDeleteCourseClick {
-      id
-      courseID
-      page
-      ipAddress
-      country
-      lat
-      long
-      referrer
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onCreateLessonClick = /* GraphQL */ `
-  subscription OnCreateLessonClick {
-    onCreateLessonClick {
-      id
-      LessonID
-      page
-      ipAddress
-      country
-      lat
-      long
-      referrer
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onUpdateLessonClick = /* GraphQL */ `
-  subscription OnUpdateLessonClick {
-    onUpdateLessonClick {
-      id
-      LessonID
-      page
-      ipAddress
-      country
-      lat
-      long
-      referrer
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onDeleteLessonClick = /* GraphQL */ `
-  subscription OnDeleteLessonClick {
-    onDeleteLessonClick {
-      id
-      LessonID
-      page
-      ipAddress
-      country
-      lat
-      long
-      referrer
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -4636,6 +4543,7 @@ export const onCreateStudent = /* GraphQL */ `
           demo
           partOf
           altLink
+          shortDescription
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -4779,6 +4687,7 @@ export const onUpdateStudent = /* GraphQL */ `
           demo
           partOf
           altLink
+          shortDescription
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -4922,6 +4831,7 @@ export const onDeleteStudent = /* GraphQL */ `
           demo
           partOf
           altLink
+          shortDescription
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -5848,6 +5758,111 @@ export const onDeleteWorkshopForm = /* GraphQL */ `
       id
       createdOn
       updatedOn
+    }
+  }
+`;
+export const onCreateCourseClick = /* GraphQL */ `
+  subscription OnCreateCourseClick {
+    onCreateCourseClick {
+      id
+      courseID
+      page
+      ipAddress
+      country
+      lat
+      long
+      referrer
+      nextPath
+      format
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateCourseClick = /* GraphQL */ `
+  subscription OnUpdateCourseClick {
+    onUpdateCourseClick {
+      id
+      courseID
+      page
+      ipAddress
+      country
+      lat
+      long
+      referrer
+      nextPath
+      format
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteCourseClick = /* GraphQL */ `
+  subscription OnDeleteCourseClick {
+    onDeleteCourseClick {
+      id
+      courseID
+      page
+      ipAddress
+      country
+      lat
+      long
+      referrer
+      nextPath
+      format
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateLessonClick = /* GraphQL */ `
+  subscription OnCreateLessonClick {
+    onCreateLessonClick {
+      id
+      LessonID
+      page
+      ipAddress
+      country
+      lat
+      long
+      referrer
+      format
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateLessonClick = /* GraphQL */ `
+  subscription OnUpdateLessonClick {
+    onUpdateLessonClick {
+      id
+      LessonID
+      page
+      ipAddress
+      country
+      lat
+      long
+      referrer
+      format
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteLessonClick = /* GraphQL */ `
+  subscription OnDeleteLessonClick {
+    onDeleteLessonClick {
+      id
+      LessonID
+      page
+      ipAddress
+      country
+      lat
+      long
+      referrer
+      format
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -6818,6 +6833,7 @@ export const onCreateCirriculumCourses = /* GraphQL */ `
         demo
         partOf
         altLink
+        shortDescription
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -6879,6 +6895,7 @@ export const onUpdateCirriculumCourses = /* GraphQL */ `
         demo
         partOf
         altLink
+        shortDescription
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -6940,6 +6957,7 @@ export const onDeleteCirriculumCourses = /* GraphQL */ `
         demo
         partOf
         altLink
+        shortDescription
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -6989,6 +7007,7 @@ export const onCreateCourseLessons = /* GraphQL */ `
         demo
         partOf
         altLink
+        shortDescription
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -7056,6 +7075,7 @@ export const onUpdateCourseLessons = /* GraphQL */ `
         demo
         partOf
         altLink
+        shortDescription
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -7123,6 +7143,7 @@ export const onDeleteCourseLessons = /* GraphQL */ `
         demo
         partOf
         altLink
+        shortDescription
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -7190,6 +7211,7 @@ export const onCreateCourseInstructors = /* GraphQL */ `
         demo
         partOf
         altLink
+        shortDescription
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -7271,6 +7293,7 @@ export const onUpdateCourseInstructors = /* GraphQL */ `
         demo
         partOf
         altLink
+        shortDescription
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -7352,6 +7375,7 @@ export const onDeleteCourseInstructors = /* GraphQL */ `
         demo
         partOf
         altLink
+        shortDescription
         createdAt
         updatedAt
         studentCourseEnrolledId

@@ -13,8 +13,6 @@ import {
 } from '@heroicons/react/24/outline';
 import Logo from '../../../components/layout/Logo';
 import Link from 'next/link';
-import CourseDropDownCourses from './MenuDropDowns/CourseDropDownCourses';
-import CourseDropDownCallout from './MenuDropDowns/CourseDropDownCallout';
 import CertMegaMenu from '../../../components/nav/CertMegaMenu';
 import CertMenuItem from '../../../components/shared/CertMenuItem';
 import CourseMenuBlock from '../shared/CourseMenuBlock';
@@ -30,17 +28,10 @@ import {
 } from '../../navigation/navigationSlice';
 import { useDispatch } from 'react-redux';
 import { LightBulbIcon } from '@heroicons/react/24/outline';
-import {
-  MoonIcon,
-  BoltIcon,
-  ChevronLeftIcon,
-  ChevronRightIcon,
-  ArrowLongRightIcon,
-} from '@heroicons/react/24/solid';
+import { MoonIcon, ArrowLongRightIcon } from '@heroicons/react/24/solid';
 import LogoSquare from '../../../components/layout/LogoSquare';
 import { useRouter } from 'next/router';
 import SalesBar from './SalesBar';
-import MiniCertBlock from '../../../components/shared/MiniCertBlock';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');

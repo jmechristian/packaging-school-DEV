@@ -4066,6 +4066,7 @@ export const createLMSCourse = /* GraphQL */ `
       demo
       partOf
       altLink
+      shortDescription
       createdAt
       updatedAt
       studentCourseEnrolledId
@@ -4132,6 +4133,7 @@ export const updateLMSCourse = /* GraphQL */ `
       demo
       partOf
       altLink
+      shortDescription
       createdAt
       updatedAt
       studentCourseEnrolledId
@@ -4198,123 +4200,10 @@ export const deleteLMSCourse = /* GraphQL */ `
       demo
       partOf
       altLink
+      shortDescription
       createdAt
       updatedAt
       studentCourseEnrolledId
-    }
-  }
-`;
-export const createCourseClick = /* GraphQL */ `
-  mutation CreateCourseClick(
-    $input: CreateCourseClickInput!
-    $condition: ModelCourseClickConditionInput
-  ) {
-    createCourseClick(input: $input, condition: $condition) {
-      id
-      courseID
-      page
-      ipAddress
-      country
-      lat
-      long
-      referrer
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const updateCourseClick = /* GraphQL */ `
-  mutation UpdateCourseClick(
-    $input: UpdateCourseClickInput!
-    $condition: ModelCourseClickConditionInput
-  ) {
-    updateCourseClick(input: $input, condition: $condition) {
-      id
-      courseID
-      page
-      ipAddress
-      country
-      lat
-      long
-      referrer
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const deleteCourseClick = /* GraphQL */ `
-  mutation DeleteCourseClick(
-    $input: DeleteCourseClickInput!
-    $condition: ModelCourseClickConditionInput
-  ) {
-    deleteCourseClick(input: $input, condition: $condition) {
-      id
-      courseID
-      page
-      ipAddress
-      country
-      lat
-      long
-      referrer
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const createLessonClick = /* GraphQL */ `
-  mutation CreateLessonClick(
-    $input: CreateLessonClickInput!
-    $condition: ModelLessonClickConditionInput
-  ) {
-    createLessonClick(input: $input, condition: $condition) {
-      id
-      LessonID
-      page
-      ipAddress
-      country
-      lat
-      long
-      referrer
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const updateLessonClick = /* GraphQL */ `
-  mutation UpdateLessonClick(
-    $input: UpdateLessonClickInput!
-    $condition: ModelLessonClickConditionInput
-  ) {
-    updateLessonClick(input: $input, condition: $condition) {
-      id
-      LessonID
-      page
-      ipAddress
-      country
-      lat
-      long
-      referrer
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const deleteLessonClick = /* GraphQL */ `
-  mutation DeleteLessonClick(
-    $input: DeleteLessonClickInput!
-    $condition: ModelLessonClickConditionInput
-  ) {
-    deleteLessonClick(input: $input, condition: $condition) {
-      id
-      LessonID
-      page
-      ipAddress
-      country
-      lat
-      long
-      referrer
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -4999,6 +4888,7 @@ export const createStudent = /* GraphQL */ `
           demo
           partOf
           altLink
+          shortDescription
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -5145,6 +5035,7 @@ export const updateStudent = /* GraphQL */ `
           demo
           partOf
           altLink
+          shortDescription
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -5291,6 +5182,7 @@ export const deleteStudent = /* GraphQL */ `
           demo
           partOf
           altLink
+          shortDescription
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -6319,6 +6211,129 @@ export const deleteWorkshopForm = /* GraphQL */ `
     }
   }
 `;
+export const createCourseClick = /* GraphQL */ `
+  mutation CreateCourseClick(
+    $input: CreateCourseClickInput!
+    $condition: ModelCourseClickConditionInput
+  ) {
+    createCourseClick(input: $input, condition: $condition) {
+      id
+      courseID
+      page
+      ipAddress
+      country
+      lat
+      long
+      referrer
+      nextPath
+      format
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateCourseClick = /* GraphQL */ `
+  mutation UpdateCourseClick(
+    $input: UpdateCourseClickInput!
+    $condition: ModelCourseClickConditionInput
+  ) {
+    updateCourseClick(input: $input, condition: $condition) {
+      id
+      courseID
+      page
+      ipAddress
+      country
+      lat
+      long
+      referrer
+      nextPath
+      format
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteCourseClick = /* GraphQL */ `
+  mutation DeleteCourseClick(
+    $input: DeleteCourseClickInput!
+    $condition: ModelCourseClickConditionInput
+  ) {
+    deleteCourseClick(input: $input, condition: $condition) {
+      id
+      courseID
+      page
+      ipAddress
+      country
+      lat
+      long
+      referrer
+      nextPath
+      format
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createLessonClick = /* GraphQL */ `
+  mutation CreateLessonClick(
+    $input: CreateLessonClickInput!
+    $condition: ModelLessonClickConditionInput
+  ) {
+    createLessonClick(input: $input, condition: $condition) {
+      id
+      LessonID
+      page
+      ipAddress
+      country
+      lat
+      long
+      referrer
+      format
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateLessonClick = /* GraphQL */ `
+  mutation UpdateLessonClick(
+    $input: UpdateLessonClickInput!
+    $condition: ModelLessonClickConditionInput
+  ) {
+    updateLessonClick(input: $input, condition: $condition) {
+      id
+      LessonID
+      page
+      ipAddress
+      country
+      lat
+      long
+      referrer
+      format
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteLessonClick = /* GraphQL */ `
+  mutation DeleteLessonClick(
+    $input: DeleteLessonClickInput!
+    $condition: ModelLessonClickConditionInput
+  ) {
+    deleteLessonClick(input: $input, condition: $condition) {
+      id
+      LessonID
+      page
+      ipAddress
+      country
+      lat
+      long
+      referrer
+      format
+      createdAt
+      updatedAt
+    }
+  }
+`;
 export const createClick = /* GraphQL */ `
   mutation CreateClick(
     $input: CreateClickInput!
@@ -7334,6 +7349,7 @@ export const createCirriculumCourses = /* GraphQL */ `
         demo
         partOf
         altLink
+        shortDescription
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -7398,6 +7414,7 @@ export const updateCirriculumCourses = /* GraphQL */ `
         demo
         partOf
         altLink
+        shortDescription
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -7462,6 +7479,7 @@ export const deleteCirriculumCourses = /* GraphQL */ `
         demo
         partOf
         altLink
+        shortDescription
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -7514,6 +7532,7 @@ export const createCourseLessons = /* GraphQL */ `
         demo
         partOf
         altLink
+        shortDescription
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -7584,6 +7603,7 @@ export const updateCourseLessons = /* GraphQL */ `
         demo
         partOf
         altLink
+        shortDescription
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -7654,6 +7674,7 @@ export const deleteCourseLessons = /* GraphQL */ `
         demo
         partOf
         altLink
+        shortDescription
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -7724,6 +7745,7 @@ export const createCourseInstructors = /* GraphQL */ `
         demo
         partOf
         altLink
+        shortDescription
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -7808,6 +7830,7 @@ export const updateCourseInstructors = /* GraphQL */ `
         demo
         partOf
         altLink
+        shortDescription
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -7892,6 +7915,7 @@ export const deleteCourseInstructors = /* GraphQL */ `
         demo
         partOf
         altLink
+        shortDescription
         createdAt
         updatedAt
         studentCourseEnrolledId

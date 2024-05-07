@@ -3319,6 +3319,7 @@ export const getLMSCourse = /* GraphQL */ `
       demo
       partOf
       altLink
+      shortDescription
       createdAt
       updatedAt
       studentCourseEnrolledId
@@ -3366,6 +3367,7 @@ export const listLMSCourses = /* GraphQL */ `
         demo
         partOf
         altLink
+        shortDescription
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -3423,149 +3425,10 @@ export const lMSCoursesBySlug = /* GraphQL */ `
         demo
         partOf
         altLink
+        shortDescription
         createdAt
         updatedAt
         studentCourseEnrolledId
-      }
-      nextToken
-    }
-  }
-`;
-export const getCourseClick = /* GraphQL */ `
-  query GetCourseClick($id: ID!) {
-    getCourseClick(id: $id) {
-      id
-      courseID
-      page
-      ipAddress
-      country
-      lat
-      long
-      referrer
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const listCourseClicks = /* GraphQL */ `
-  query ListCourseClicks(
-    $filter: ModelCourseClickFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listCourseClicks(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        courseID
-        page
-        ipAddress
-        country
-        lat
-        long
-        referrer
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
-export const courseClicksByCourseID = /* GraphQL */ `
-  query CourseClicksByCourseID(
-    $courseID: String!
-    $sortDirection: ModelSortDirection
-    $filter: ModelCourseClickFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    courseClicksByCourseID(
-      courseID: $courseID
-      sortDirection: $sortDirection
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-    ) {
-      items {
-        id
-        courseID
-        page
-        ipAddress
-        country
-        lat
-        long
-        referrer
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
-export const getLessonClick = /* GraphQL */ `
-  query GetLessonClick($id: ID!) {
-    getLessonClick(id: $id) {
-      id
-      LessonID
-      page
-      ipAddress
-      country
-      lat
-      long
-      referrer
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const listLessonClicks = /* GraphQL */ `
-  query ListLessonClicks(
-    $filter: ModelLessonClickFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listLessonClicks(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        LessonID
-        page
-        ipAddress
-        country
-        lat
-        long
-        referrer
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
-export const lessonClicksByLessonID = /* GraphQL */ `
-  query LessonClicksByLessonID(
-    $LessonID: String!
-    $sortDirection: ModelSortDirection
-    $filter: ModelLessonClickFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    lessonClicksByLessonID(
-      LessonID: $LessonID
-      sortDirection: $sortDirection
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-    ) {
-      items {
-        id
-        LessonID
-        page
-        ipAddress
-        country
-        lat
-        long
-        referrer
-        createdAt
-        updatedAt
       }
       nextToken
     }
@@ -4091,6 +3954,7 @@ export const getStudent = /* GraphQL */ `
           demo
           partOf
           altLink
+          shortDescription
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -4855,6 +4719,155 @@ export const workshopFormsByEmail = /* GraphQL */ `
         id
         createdOn
         updatedOn
+      }
+      nextToken
+    }
+  }
+`;
+export const getCourseClick = /* GraphQL */ `
+  query GetCourseClick($id: ID!) {
+    getCourseClick(id: $id) {
+      id
+      courseID
+      page
+      ipAddress
+      country
+      lat
+      long
+      referrer
+      nextPath
+      format
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listCourseClicks = /* GraphQL */ `
+  query ListCourseClicks(
+    $filter: ModelCourseClickFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listCourseClicks(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        courseID
+        page
+        ipAddress
+        country
+        lat
+        long
+        referrer
+        nextPath
+        format
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const courseClicksByCourseID = /* GraphQL */ `
+  query CourseClicksByCourseID(
+    $courseID: String!
+    $sortDirection: ModelSortDirection
+    $filter: ModelCourseClickFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    courseClicksByCourseID(
+      courseID: $courseID
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        courseID
+        page
+        ipAddress
+        country
+        lat
+        long
+        referrer
+        nextPath
+        format
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getLessonClick = /* GraphQL */ `
+  query GetLessonClick($id: ID!) {
+    getLessonClick(id: $id) {
+      id
+      LessonID
+      page
+      ipAddress
+      country
+      lat
+      long
+      referrer
+      format
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listLessonClicks = /* GraphQL */ `
+  query ListLessonClicks(
+    $filter: ModelLessonClickFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listLessonClicks(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        LessonID
+        page
+        ipAddress
+        country
+        lat
+        long
+        referrer
+        format
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const lessonClicksByLessonID = /* GraphQL */ `
+  query LessonClicksByLessonID(
+    $LessonID: String!
+    $sortDirection: ModelSortDirection
+    $filter: ModelLessonClickFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    lessonClicksByLessonID(
+      LessonID: $LessonID
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        LessonID
+        page
+        ipAddress
+        country
+        lat
+        long
+        referrer
+        format
+        createdAt
+        updatedAt
       }
       nextToken
     }
@@ -5876,6 +5889,7 @@ export const getCirriculumCourses = /* GraphQL */ `
         demo
         partOf
         altLink
+        shortDescription
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -5934,6 +5948,7 @@ export const listCirriculumCourses = /* GraphQL */ `
           demo
           partOf
           altLink
+          shortDescription
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -5998,6 +6013,7 @@ export const cirriculumCoursesByLMSCirriculumId = /* GraphQL */ `
           demo
           partOf
           altLink
+          shortDescription
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -6062,6 +6078,7 @@ export const cirriculumCoursesByLMSCourseId = /* GraphQL */ `
           demo
           partOf
           altLink
+          shortDescription
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -6113,6 +6130,7 @@ export const getCourseLessons = /* GraphQL */ `
         demo
         partOf
         altLink
+        shortDescription
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -6176,6 +6194,7 @@ export const listCourseLessons = /* GraphQL */ `
           demo
           partOf
           altLink
+          shortDescription
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -6243,6 +6262,7 @@ export const courseLessonsByLMSCourseId = /* GraphQL */ `
           demo
           partOf
           altLink
+          shortDescription
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -6310,6 +6330,7 @@ export const courseLessonsByLMSLessonId = /* GraphQL */ `
           demo
           partOf
           altLink
+          shortDescription
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -6373,6 +6394,7 @@ export const getCourseInstructors = /* GraphQL */ `
         demo
         partOf
         altLink
+        shortDescription
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -6454,6 +6476,7 @@ export const listCourseInstructors = /* GraphQL */ `
           demo
           partOf
           altLink
+          shortDescription
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -6515,6 +6538,7 @@ export const courseInstructorsByLMSCourseId = /* GraphQL */ `
           demo
           partOf
           altLink
+          shortDescription
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -6576,6 +6600,7 @@ export const courseInstructorsByInstructorId = /* GraphQL */ `
           demo
           partOf
           altLink
+          shortDescription
           createdAt
           updatedAt
           studentCourseEnrolledId

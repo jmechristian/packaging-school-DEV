@@ -32,7 +32,7 @@ const Page = () => {
     setIsFilter(false);
   };
 
-  const [isSort, setIsSort] = useState({ value: 'title', direction: 'ASC' });
+  const [isSort, setIsSort] = useState({ value: 'id', direction: 'ASC' });
   const [isSearchTerm, setIsSearchTerm] = useState('');
   const [isFilter, setIsFilter] = useState(false);
   const [isTable, setIsTable] = useState(true);

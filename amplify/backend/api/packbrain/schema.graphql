@@ -533,28 +533,7 @@ type LMSCourse @model @auth(rules: [{ allow: public }]) {
   demo: Boolean @default(value: "false")
   partOf: [String]
   altLink: String
-}
-
-type CourseClick @model @auth(rules: [{ allow: public }]) {
-  id: ID!
-  courseID: String! @index(name: "clicksByCourse")
-  page: String
-  ipAddress: String
-  country: String
-  lat: String
-  long: String
-  referrer: String
-}
-
-type LessonClick @model @auth(rules: [{ allow: public }]) {
-  id: ID!
-  LessonID: String! @index(name: "clicksByLesson")
-  page: String
-  ipAddress: String
-  country: String
-  lat: String
-  long: String
-  referrer: String
+  shortDescription: String
 }
 
 type LMSLesson @model @auth(rules: [{ allow: public }]) {
@@ -700,6 +679,7 @@ type SalesBar @model @auth(rules: [{ allow: public }]) {
   text: String!
   link: String!
   icon: String @default(value: "BoltIcon")
+  type: String
 }
 
 ######### Testimonials #########
@@ -736,6 +716,33 @@ type WorkshopForm
 }
 
 ######### Tracking #########
+
+type CourseClick @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  courseID: String! @index(name: "clicksByCourse")
+  page: String
+  ipAddress: String
+  country: String
+  lat: String
+  long: String
+  referrer: String
+  nextPath: String
+  format: String
+}
+
+type LessonClick @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  LessonID: String! @index(name: "clicksByLesson")
+  page: String
+  ipAddress: String
+  country: String
+  lat: String
+  long: String
+  referrer: String
+  format: String
+}
+
+######### INDIA #########
 
 type Click @model @auth(rules: [{ allow: public }]) {
   id: ID!
