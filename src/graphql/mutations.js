@@ -6044,6 +6044,7 @@ export const createSalesBar = /* GraphQL */ `
       text
       link
       icon
+      type
       createdAt
       updatedAt
     }
@@ -6059,6 +6060,7 @@ export const updateSalesBar = /* GraphQL */ `
       text
       link
       icon
+      type
       createdAt
       updatedAt
     }
@@ -6074,6 +6076,7 @@ export const deleteSalesBar = /* GraphQL */ `
       text
       link
       icon
+      type
       createdAt
       updatedAt
     }
@@ -6269,6 +6272,54 @@ export const deleteCourseClick = /* GraphQL */ `
       referrer
       nextPath
       format
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createSalesbarClick = /* GraphQL */ `
+  mutation CreateSalesbarClick(
+    $input: CreateSalesbarClickInput!
+    $condition: ModelSalesbarClickConditionInput
+  ) {
+    createSalesbarClick(input: $input, condition: $condition) {
+      id
+      page
+      ipAddress
+      country
+      link
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateSalesbarClick = /* GraphQL */ `
+  mutation UpdateSalesbarClick(
+    $input: UpdateSalesbarClickInput!
+    $condition: ModelSalesbarClickConditionInput
+  ) {
+    updateSalesbarClick(input: $input, condition: $condition) {
+      id
+      page
+      ipAddress
+      country
+      link
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteSalesbarClick = /* GraphQL */ `
+  mutation DeleteSalesbarClick(
+    $input: DeleteSalesbarClickInput!
+    $condition: ModelSalesbarClickConditionInput
+  ) {
+    deleteSalesbarClick(input: $input, condition: $condition) {
+      id
+      page
+      ipAddress
+      country
+      link
       createdAt
       updatedAt
     }

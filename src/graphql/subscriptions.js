@@ -5618,6 +5618,7 @@ export const onCreateSalesBar = /* GraphQL */ `
       text
       link
       icon
+      type
       createdAt
       updatedAt
     }
@@ -5630,6 +5631,7 @@ export const onUpdateSalesBar = /* GraphQL */ `
       text
       link
       icon
+      type
       createdAt
       updatedAt
     }
@@ -5642,6 +5644,7 @@ export const onDeleteSalesBar = /* GraphQL */ `
       text
       link
       icon
+      type
       createdAt
       updatedAt
     }
@@ -5810,6 +5813,45 @@ export const onDeleteCourseClick = /* GraphQL */ `
       referrer
       nextPath
       format
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateSalesbarClick = /* GraphQL */ `
+  subscription OnCreateSalesbarClick {
+    onCreateSalesbarClick {
+      id
+      page
+      ipAddress
+      country
+      link
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateSalesbarClick = /* GraphQL */ `
+  subscription OnUpdateSalesbarClick {
+    onUpdateSalesbarClick {
+      id
+      page
+      ipAddress
+      country
+      link
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteSalesbarClick = /* GraphQL */ `
+  subscription OnDeleteSalesbarClick {
+    onDeleteSalesbarClick {
+      id
+      page
+      ipAddress
+      country
+      link
       createdAt
       updatedAt
     }

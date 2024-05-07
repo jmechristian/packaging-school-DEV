@@ -87,14 +87,7 @@ const SalesBar = () => {
               <SalesBarItem
                 text={items.length > 0 && items[isActive].text}
                 link={items.length > 0 && items[isActive].link}
-                icon={
-                  items.length > 0 &&
-                  items[isActive].icon === 'AcademicCapIcon' ? (
-                    <AcademicCapIcon className='w-5 h-5 fill-brand-yellow ' />
-                  ) : (
-                    <BoltIcon className='w-5 h-5 fill-brand-yellow' />
-                  )
-                }
+                icon={items.length > 0 && items[isActive].type}
               />
             ) : (
               <div>Loading</div>

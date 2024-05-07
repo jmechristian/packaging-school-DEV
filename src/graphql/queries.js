@@ -4577,6 +4577,7 @@ export const getSalesBar = /* GraphQL */ `
       text
       link
       icon
+      type
       createdAt
       updatedAt
     }
@@ -4594,6 +4595,7 @@ export const listSalesBars = /* GraphQL */ `
         text
         link
         icon
+        type
         createdAt
         updatedAt
       }
@@ -4793,6 +4795,39 @@ export const courseClicksByCourseID = /* GraphQL */ `
         referrer
         nextPath
         format
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getSalesbarClick = /* GraphQL */ `
+  query GetSalesbarClick($id: ID!) {
+    getSalesbarClick(id: $id) {
+      id
+      page
+      ipAddress
+      country
+      link
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listSalesbarClicks = /* GraphQL */ `
+  query ListSalesbarClicks(
+    $filter: ModelSalesbarClickFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listSalesbarClicks(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        page
+        ipAddress
+        country
+        link
         createdAt
         updatedAt
       }
