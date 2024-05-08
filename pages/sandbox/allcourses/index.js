@@ -9,6 +9,7 @@ import {
   MdArrowDropDown,
   MdExpandLess,
   MdExpandMore,
+  MdAutorenew,
   MdEmojiEvents,
   MdAutoStories,
   MdScience,
@@ -22,6 +23,7 @@ import { setSelectedFilter } from '../../../features/all_courses/courseFilterSli
 import LMCCourseTableItem from '../../../components/shared/LMCCourseTableItem';
 import LMSCourseCard from '../../../components/shared/LMSCourseCard';
 import SortToggleItem from '../../../components/shared/SortToggleItem';
+import BrutalCircleIconTooltip from '../../../components/shared/BrutalCircleIconTooltip';
 
 const Page = () => {
   const dispatch = useDispatch();
@@ -515,10 +517,26 @@ const Page = () => {
         ) : (
           <div className='w-full h-full flex items-center justify-center'>
             <div className='max-w-5xl py-10 w-full mx-auto justify-center items-center flex flex-col gap-3'>
-              <div className='text-lg font-semibold'>No results returned</div>
-              <div className='text-lg font-semibold'>
-                Inquiry form will live here.
-              </div>
+              {isSearchTerm.length > 3 ? (
+                <>
+                  <div className='text-lg font-semibold'>
+                    No results returned
+                  </div>
+                  <BrutalCircleIconTooltip
+                    tooltip={'Reset'}
+                    bgColor={'bg-base-brand'}
+                    fn={() => {
+                      setIsSearchTerm('');
+                    }}
+                  >
+                    <MdAutorenew color='white' size={40} />
+                  </BrutalCircleIconTooltip>
+                </>
+              ) : (
+                <div className='font-medium animate-pulse'>
+                  Gathering Intel...
+                </div>
+              )}
             </div>
           </div>
         )}
