@@ -4908,6 +4908,64 @@ export const lessonClicksByLessonID = /* GraphQL */ `
     }
   }
 `;
+export const getCourseSearch = /* GraphQL */ `
+  query GetCourseSearch($id: ID!) {
+    getCourseSearch(id: $id) {
+      id
+      term
+      ipAddress
+      country
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listCourseSearches = /* GraphQL */ `
+  query ListCourseSearches(
+    $filter: ModelCourseSearchFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listCourseSearches(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        term
+        ipAddress
+        country
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const courseSearchesByTerm = /* GraphQL */ `
+  query CourseSearchesByTerm(
+    $term: String!
+    $sortDirection: ModelSortDirection
+    $filter: ModelCourseSearchFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    courseSearchesByTerm(
+      term: $term
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        term
+        ipAddress
+        country
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
 export const getClick = /* GraphQL */ `
   query GetClick($id: ID!) {
     getClick(id: $id) {

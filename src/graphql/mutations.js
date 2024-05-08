@@ -6385,6 +6385,51 @@ export const deleteLessonClick = /* GraphQL */ `
     }
   }
 `;
+export const createCourseSearch = /* GraphQL */ `
+  mutation CreateCourseSearch(
+    $input: CreateCourseSearchInput!
+    $condition: ModelCourseSearchConditionInput
+  ) {
+    createCourseSearch(input: $input, condition: $condition) {
+      id
+      term
+      ipAddress
+      country
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateCourseSearch = /* GraphQL */ `
+  mutation UpdateCourseSearch(
+    $input: UpdateCourseSearchInput!
+    $condition: ModelCourseSearchConditionInput
+  ) {
+    updateCourseSearch(input: $input, condition: $condition) {
+      id
+      term
+      ipAddress
+      country
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteCourseSearch = /* GraphQL */ `
+  mutation DeleteCourseSearch(
+    $input: DeleteCourseSearchInput!
+    $condition: ModelCourseSearchConditionInput
+  ) {
+    deleteCourseSearch(input: $input, condition: $condition) {
+      id
+      term
+      ipAddress
+      country
+      createdAt
+      updatedAt
+    }
+  }
+`;
 export const createClick = /* GraphQL */ `
   mutation CreateClick(
     $input: CreateClickInput!

@@ -750,6 +750,13 @@ type LessonClick @model @auth(rules: [{ allow: public }]) {
   format: String
 }
 
+type CourseSearch @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  term: String! @index(name: "courseSearchByTerm")
+  ipAddress: String
+  country: String
+}
+
 ######### INDIA #########
 
 type Click @model @auth(rules: [{ allow: public }]) {

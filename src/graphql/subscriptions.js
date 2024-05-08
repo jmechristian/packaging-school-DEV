@@ -5908,6 +5908,42 @@ export const onDeleteLessonClick = /* GraphQL */ `
     }
   }
 `;
+export const onCreateCourseSearch = /* GraphQL */ `
+  subscription OnCreateCourseSearch {
+    onCreateCourseSearch {
+      id
+      term
+      ipAddress
+      country
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateCourseSearch = /* GraphQL */ `
+  subscription OnUpdateCourseSearch {
+    onUpdateCourseSearch {
+      id
+      term
+      ipAddress
+      country
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteCourseSearch = /* GraphQL */ `
+  subscription OnDeleteCourseSearch {
+    onDeleteCourseSearch {
+      id
+      term
+      ipAddress
+      country
+      createdAt
+      updatedAt
+    }
+  }
+`;
 export const onCreateClick = /* GraphQL */ `
   subscription OnCreateClick {
     onCreateClick {

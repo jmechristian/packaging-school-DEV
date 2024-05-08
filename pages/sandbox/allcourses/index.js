@@ -1,5 +1,6 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { API } from 'aws-amplify';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   MdApps,
@@ -24,6 +25,7 @@ import LMCCourseTableItem from '../../../components/shared/LMCCourseTableItem';
 import LMSCourseCard from '../../../components/shared/LMSCourseCard';
 import SortToggleItem from '../../../components/shared/SortToggleItem';
 import BrutalCircleIconTooltip from '../../../components/shared/BrutalCircleIconTooltip';
+import { createCourseSearch } from '../../../src/graphql/mutations';
 
 const Page = () => {
   const dispatch = useDispatch();
@@ -31,6 +33,13 @@ const Page = () => {
   const { allCourses, selectedFilter } = useSelector(
     (state) => state.course_filter
   );
+
+  const { location } = useSelector((state) => state.auth);
+
+  const [isSearchTerm, setIsSearchTerm] = useState('');
+  const [isFilter, setIsFilter] = useState(false);
+  const [openSort, setOpenSort] = useState(false);
+  const [isTable, setIsTable] = useState(true);
 
   const filterClickHandler = (name, value) => {
     dispatch(setSelectedFilter({ name, value }));
@@ -41,10 +50,6 @@ const Page = () => {
     value: 'course id',
     direction: 'ASC',
   });
-  const [isSearchTerm, setIsSearchTerm] = useState('');
-  const [isFilter, setIsFilter] = useState(false);
-  const [openSort, setOpenSort] = useState(false);
-  const [isTable, setIsTable] = useState(true);
 
   const filtered = useMemo(() => {
     if (selectedFilter.name === 'All') {
@@ -159,6 +164,25 @@ const Page = () => {
       );
     }
   }, [isSearchTerm, sortedCourses]);
+
+  useEffect(() => {
+    const sendSearchTracking = async () => {
+      await API.graphql({
+        query: createCourseSearch,
+        variables: {
+          input: {
+            country: location.country,
+            ipAddress: location.ip,
+            term: isSearchTerm,
+          },
+        },
+      });
+    };
+
+    isSearchTerm.length > 3 &&
+      sortedAndSearchedCourses.length === 0 &&
+      sendSearchTracking();
+  }, [isSearchTerm, location, sortedAndSearchedCourses]);
 
   return (
     <div className='container-base px-4 xl:px-0'>
