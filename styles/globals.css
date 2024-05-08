@@ -14,7 +14,7 @@
   }
 
   .h2-base {
-    @apply font-semibold text-3xl md:text-4xl leading-tight lg:leading-tight tracking-tighter;
+    @apply font-semibold text-2xl md:text-4xl leading-tight lg:leading-tight tracking-tighter;
   }
 
   .h3-base {

@@ -7,6 +7,8 @@ import {
   MdSort,
   MdOutlineSearch,
   MdArrowDropDown,
+  MdExpandLess,
+  MdExpandMore,
   MdEmojiEvents,
   MdAutoStories,
   MdScience,
@@ -19,6 +21,7 @@ import { setSelectedFilter } from '../../../features/all_courses/courseFilterSli
 
 import LMCCourseTableItem from '../../../components/shared/LMCCourseTableItem';
 import LMSCourseCard from '../../../components/shared/LMSCourseCard';
+import SortToggleItem from '../../../components/shared/SortToggleItem';
 
 const Page = () => {
   const dispatch = useDispatch();
@@ -32,9 +35,13 @@ const Page = () => {
     setIsFilter(false);
   };
 
-  const [isSort, setIsSort] = useState({ value: 'id', direction: 'ASC' });
+  const [isSort, setIsSort] = useState({
+    value: 'course id',
+    direction: 'ASC',
+  });
   const [isSearchTerm, setIsSearchTerm] = useState('');
   const [isFilter, setIsFilter] = useState(false);
+  const [openSort, setOpenSort] = useState(false);
   const [isTable, setIsTable] = useState(true);
 
   const filtered = useMemo(() => {
@@ -82,14 +89,14 @@ const Page = () => {
       );
     }
 
-    if (isSort.value === 'id' && isSort.direction === 'ASC') {
+    if (isSort.value === 'course id' && isSort.direction === 'ASC') {
       return (
         filtered &&
         [...filtered].sort((a, b) => a.courseId.localeCompare(b.courseId))
       );
     }
 
-    if (isSort.value === 'id' && isSort.direction === 'DSC') {
+    if (isSort.value === 'course id' && isSort.direction === 'DSC') {
       return (
         filtered &&
         [...filtered].sort((a, b) => b.courseId.localeCompare(a.courseId))
@@ -142,13 +149,17 @@ const Page = () => {
       return sortedCourses.filter(
         (cour) =>
           cour.title.toLowerCase().includes(isSearchTerm.toLowerCase()) ||
-          cour.subheadline.toLowerCase().includes(isSearchTerm.toLowerCase())
+          cour.subheadline.toLowerCase().includes(isSearchTerm.toLowerCase()) ||
+          (cour.what_learned &&
+            cour.what_learned
+              .toLowerCase()
+              .includes(isSearchTerm.toLowerCase()))
       );
     }
   }, [isSearchTerm, sortedCourses]);
 
   return (
-    <div className='container-base'>
+    <div className='container-base px-4 xl:px-0'>
       <div className='w-full flex flex-col gap-6'>
         {/* HEADING */}
         <div className='w-full pb-5 border-b-4 border-b-black flex justify-between items-center'>
@@ -173,7 +184,7 @@ const Page = () => {
           </div>
         </div>
         {/* SEARCH - FILTER */}
-        <div className='grid grid-cols-3 lg:mb-5'>
+        <div className='grid grid-cols-3 lg:mb-5 border-b-2 border-b-black pb-6 gap-2.5'>
           {/* SEARCH */}
           <div className='w-full col-span-3 lg:col-span-2 border-2 border-black p-1'>
             <div className='flex gap-2 items-center'>
@@ -190,10 +201,10 @@ const Page = () => {
             </div>
           </div>
           {/* FILTER */}
-          <div className='col-span-1 flex justify-end relative'>
+          <div className='col-span-3 lg:col-span-1 flex gap-5 relative w-full'>
             <AnimatePresence>
-              {isFilter && (
-                <div className='w-[320px] absolute top-full -right-0.5 bg-black px-5 py-6 z-40'>
+              {isFilter && !openSort && (
+                <motion.div className='w-[320px] absolute top-full right-0  bg-black px-5 py-6 z-40'>
                   <div className='flex flex-col gap-8'>
                     <div className='flex flex-col gap-2.5'>
                       <div className='text-white  font-semibold border-b-2 border-b-white pb-3'>
@@ -261,6 +272,81 @@ const Page = () => {
                       </div>
                     </div>
                   </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+            <AnimatePresence>
+              {openSort && !isFilter && (
+                <div className='w-[300px] right-0 absolute top-full  bg-black px-5 py-6 z-40'>
+                  <div className='flex flex-col gap-4 text-white font-medium'>
+                    <SortToggleItem
+                      value={isSort.value}
+                      direction={isSort.direction}
+                      sort={'course id'}
+                      fn={() =>
+                        setIsSort({
+                          value: 'course id',
+                          direction: isSort.direction === 'ASC' ? 'DSC' : 'ASC',
+                        })
+                      }
+                    />
+                    <SortToggleItem
+                      value={isSort.value}
+                      direction={isSort.direction}
+                      sort={'title'}
+                      fn={() =>
+                        setIsSort({
+                          value: 'title',
+                          direction: isSort.direction === 'ASC' ? 'DSC' : 'ASC',
+                        })
+                      }
+                    />
+
+                    <SortToggleItem
+                      value={isSort.value}
+                      direction={isSort.direction}
+                      sort={'category'}
+                      fn={() =>
+                        setIsSort({
+                          value: 'category',
+                          direction: isSort.direction === 'ASC' ? 'DSC' : 'ASC',
+                        })
+                      }
+                    />
+                    <SortToggleItem
+                      value={isSort.value}
+                      direction={isSort.direction}
+                      sort={'price'}
+                      fn={() =>
+                        setIsSort({
+                          value: 'price',
+                          direction: isSort.direction === 'ASC' ? 'DSC' : 'ASC',
+                        })
+                      }
+                    />
+                    <SortToggleItem
+                      value={isSort.value}
+                      direction={isSort.direction}
+                      sort={'hours'}
+                      fn={() =>
+                        setIsSort({
+                          value: 'hours',
+                          direction: isSort.direction === 'ASC' ? 'DSC' : 'ASC',
+                        })
+                      }
+                    />
+                    <SortToggleItem
+                      value={isSort.value}
+                      direction={isSort.direction}
+                      sort={'lessons'}
+                      fn={() =>
+                        setIsSort({
+                          value: 'lessons',
+                          direction: isSort.direction === 'ASC' ? 'DSC' : 'ASC',
+                        })
+                      }
+                    />
+                  </div>
                 </div>
               )}
             </AnimatePresence>
@@ -273,11 +359,24 @@ const Page = () => {
               </div>
             )}
             <div
-              className='border-black border-2 cursor-pointer h-full flex gap-1 px-5 w-48 justify-center items-center transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 shadow-[2px_2px_0px_black] hover:shadow-[6px_6px_0px_black]'
-              onClick={() => setIsFilter(!isFilter)}
+              className='border-black border-2 cursor-pointer h-full flex gap-1 px-5 py-2 w-48 justify-center items-center transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 shadow-[2px_2px_0px_black] hover:shadow-[6px_6px_0px_black]'
+              onClick={() => {
+                setOpenSort(false);
+                setIsFilter(!isFilter);
+              }}
             >
               <MdFilterList size={24} />
               <div className='font-semibold'>Filter</div>
+            </div>
+            <div
+              className='border-black border-2 cursor-pointer h-full flex gap-1 px-5 py-2 w-48 justify-center items-center transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 shadow-[2px_2px_0px_black] hover:shadow-[6px_6px_0px_black]'
+              onClick={() => {
+                setIsFilter(false);
+                setOpenSort(!openSort);
+              }}
+            >
+              <MdSort size={24} />
+              <div className='font-semibold'>Sort</div>
             </div>
           </div>
         </div>
@@ -291,11 +390,11 @@ const Page = () => {
                 <div className='grid grid-cols-4'>
                   <div
                     className={`${
-                      isSort.value === 'id' ? 'underline' : ''
+                      isSort.value === 'course id' ? 'underline' : ''
                     } cursor-pointer col-span-1 text-sm font-semibold`}
                     onClick={() =>
                       setIsSort({
-                        value: 'id',
+                        value: 'course id',
                         direction: isSort.direction === 'ASC' ? 'DSC' : 'ASC',
                       })
                     }
@@ -409,13 +508,9 @@ const Page = () => {
           <div className='grid lg:grid-cols-3 xl:grid-cols-4 md:grid-cols-2 gap-y-10'>
             {sortedAndSearchedCourses &&
               sortedAndSearchedCourses.length > 0 &&
-              [...sortedAndSearchedCourses]
-                .sort((a, b) =>
-                  a.categoryArray[0].localeCompare(b.categoryArray[0])
-                )
-                .map((course) => (
-                  <LMSCourseCard id={course.id} key={course.id} />
-                ))}
+              [...sortedAndSearchedCourses].map((course) => (
+                <LMSCourseCard id={course.id} key={course.id} />
+              ))}
           </div>
         ) : (
           <div className='w-full h-full flex items-center justify-center'>
