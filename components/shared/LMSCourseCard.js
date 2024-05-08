@@ -46,7 +46,13 @@ const LMSCourseCard = ({ id, icons, coupon }) => {
   }, [id, allCourses]);
 
   const cardClickHandler = async () => {
-    await registgerCourseClick(isCourse.id, router.asPath, isCourse.slug);
+    await registgerCourseClick(
+      isCourse.id,
+      router.asPath,
+      location,
+      isCourse.slug,
+      'GRID'
+    );
 
     isCourse.altLink
       ? window.open(isCourse.altLink, '_blank')
@@ -60,7 +66,13 @@ const LMSCourseCard = ({ id, icons, coupon }) => {
   };
 
   const cardPurchaseHandler = async () => {
-    await registgerCourseClick(isCourse.id, router.asPath, isCourse.link);
+    await registgerCourseClick(
+      isCourse.id,
+      router.asPath,
+      location,
+      isCourse.link,
+      'GRID'
+    );
     window.open(isCourse.link, '_blank');
   };
 

@@ -13,11 +13,15 @@ import {
 import VideoPlayer from '../VideoPlayer';
 import { setColorByCategoryString } from '../../helpers/utils';
 import BrutalCircleIconTooltip from './BrutalCircleIconTooltip';
+import { registgerCourseClick } from '../../helpers/api';
+import { useSelector } from 'react-redux';
 
 const LMCCourseTableItem = ({ course }) => {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
+
+  const { location } = useSelector((state) => state.auth);
 
   const setCategoryText = (cat) => {
     switch (cat) {
@@ -50,11 +54,42 @@ const LMCCourseTableItem = ({ course }) => {
     }
   };
 
+  const cardClickHandler = async () => {
+    await registgerCourseClick(
+      course.id,
+      router.asPath,
+      location,
+      course.slug,
+      'TABLE'
+    );
+
+    course.altLink
+      ? window.open(course.altLink, '_blank')
+      : router.push(
+          `/${
+            course.type && course.type === 'COLLECTION'
+              ? 'collections'
+              : 'courses'
+          }/${course.slug}`
+        );
+  };
+
+  const cardPurchaseHandler = async () => {
+    await registgerCourseClick(
+      course.id,
+      router.asPath,
+      location,
+      course.link,
+      'TABLE'
+    );
+    window.open(course.link, '_blank');
+  };
+
   return (
     <div
       className={`w-full border-2 border-black ${setColorByCategoryString(
         course.categoryArray[0]
-      )} bg-opacity-20 relative`}
+      )} bg-opacity-20 relative group hover:scale-[102%] transition-all ease-in cursor-pointer`}
     >
       {/* VIDEO PLAYER */}
       <AnimatePresence>
@@ -88,7 +123,10 @@ const LMCCourseTableItem = ({ course }) => {
       {/* MAIN */}
 
       <div className='hidden lg:grid lg:grid-cols-12 gap-3 divide-x-black w-full px-2 py-2 h-[75px]'>
-        <div className='col-span-4 pl-2 content-center'>
+        <div
+          className='col-span-4 pl-2 content-center'
+          onClick={cardClickHandler}
+        >
           <div className='grid grid-cols-4'>
             <div className='col-span-1 text-xs content-center'>
               {course.courseId}
@@ -147,13 +185,11 @@ const LMCCourseTableItem = ({ course }) => {
               <div></div>
             )}
 
-            <div className='place-content-center mx-auto'>
+            <div className='place-content-center mx-auto group-hover:saturate-200'>
               <BrutalCircleIconTooltip
                 tooltip={'Buy'}
                 bgColor={'bg-brand-green'}
-                fn={() => {
-                  window.open(course.link, '_blank');
-                }}
+                fn={() => cardPurchaseHandler()}
               >
                 <MdLocalGroceryStore color='black' size={24} />
               </BrutalCircleIconTooltip>

@@ -48,7 +48,13 @@ const WiredCourseCard = ({
   }, [id]);
 
   const cardClickHandler = async () => {
-    await registgerCourseClick(isLesson.id, router.asPath, location);
+    await registgerCourseClick(
+      isLesson.id,
+      router.asPath,
+      location,
+      isLesson.link,
+      'LIBRARY'
+    );
 
     !external && !reference
       ? router.push(`/courses/${isLesson.slug}`)

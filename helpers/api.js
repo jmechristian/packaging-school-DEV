@@ -47,7 +47,13 @@ export const getAuthors = async (id) => {
   return items.data;
 };
 
-export const registgerCourseClick = async (id, page, location) => {
+export const registgerCourseClick = async (
+  id,
+  page,
+  location,
+  next,
+  format
+) => {
   // const ip = await fetch('https://api.ipify.org/?format=json').then((res) =>
   //   res.json()
   // );
@@ -58,6 +64,8 @@ export const registgerCourseClick = async (id, page, location) => {
       input: {
         courseID: id,
         page: page,
+        nextPath: next,
+        format: format,
         ipAddress: location.ip,
         country: location.country,
         lat: location.lat,
