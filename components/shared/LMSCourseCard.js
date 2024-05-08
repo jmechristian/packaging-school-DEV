@@ -12,7 +12,7 @@ import {
 } from 'react-icons/md';
 import { useSelector } from 'react-redux';
 import { useRouter } from 'next/router';
-import { registerClick } from '../../helpers/api';
+import { registerClick, registgerCourseClick } from '../../helpers/api';
 
 import VideoPlayer from '../VideoPlayer';
 import BrutalCircleIconTooltip from './BrutalCircleIconTooltip';
@@ -46,16 +46,22 @@ const LMSCourseCard = ({ id, icons, coupon }) => {
   }, [id, allCourses]);
 
   const cardClickHandler = async () => {
-    await registerClick(
-      id,
-      isCourse.link,
-      window.location.pathname,
-      window.location.search ? window.location.search : 'undefined',
-      'COURSE',
-      location.ip,
-      location.country
-    );
-    window.open(isCourse.link + '?coupon=INDIASITE2024');
+    await registgerCourseClick(isCourse.id, router.asPath, isCourse.slug);
+
+    isCourse.altLink
+      ? window.open(isCourse.altLink, '_blank')
+      : router.push(
+          `/${
+            isCourse.type && isCourse.type === 'COLLECTION'
+              ? 'collections'
+              : 'courses'
+          }/${isCourse.slug}`
+        );
+  };
+
+  const cardPurchaseHandler = async () => {
+    await registgerCourseClick(isCourse.id, router.asPath, isCourse.link);
+    window.open(isCourse.link, '_blank');
   };
 
   return (
@@ -75,7 +81,10 @@ const LMSCourseCard = ({ id, icons, coupon }) => {
           style={{ backgroundImage: `url(${isCourse.seoImage})` }}
         >
           {/* COURSE ID */}
-          <div className='absolute right-0 top-1 py1 px-1.5 text-xs text-white z-10'>
+          <div
+            className='absolute right-0 top-1 py1 px-1.5 text-xs text-white z-10 cursor-pointer'
+            onClick={cardClickHandler}
+          >
             {isCourse.courseId}
           </div>
           {/* VIDEO */}
@@ -99,8 +108,11 @@ const LMSCourseCard = ({ id, icons, coupon }) => {
           <div className='w-full h-48 bg-gradient-to-b from-black/80 absolute inset-x-0 top-0 z-0'></div>
           <div className='w-full h-28 bg-gradient-to-t from-black/80 absolute inset-x-0 bottom-0 z-0'></div>
           {/* CONTENT */}
-          <div className='flex flex-col gap-1.5 max-w-[160px] absolute z-20 top-3 left-3 w-fit'>
-            <div className='text-xl leading-none font-semibold text-white tracking-tight'>
+          <div
+            className='flex flex-col gap-1.5 max-w-[160px] absolute z-20 top-3 cursor-pointer left-3 w-fit'
+            onClick={cardClickHandler}
+          >
+            <div className='text-xl leading-none font-semibold text-white tracking-tight '>
               {isCourse.title}
             </div>
             <div className='flex items-center gap-2.5'>
@@ -143,17 +155,7 @@ const LMSCourseCard = ({ id, icons, coupon }) => {
                 <BrutalCircleIconTooltip
                   tooltip={'Buy'}
                   bgColor={'bg-brand-green'}
-                  fn={() => {
-                    isCourse.altLink
-                      ? window.open(isCourse.altLink, '_blank')
-                      : router.push(
-                          `/${
-                            isCourse.type && isCourse.type === 'COLLECTION'
-                              ? 'collections'
-                              : 'courses'
-                          }/${isCourse.slug}`
-                        );
-                  }}
+                  fn={() => cardPurchaseHandler()}
                 >
                   <MdLocalGroceryStore color='black' size={24} />
                 </BrutalCircleIconTooltip>
