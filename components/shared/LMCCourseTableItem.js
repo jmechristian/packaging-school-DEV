@@ -232,32 +232,39 @@ const LMCCourseTableItem = ({ course }) => {
             </div>
           </div>
         </div>
-        {/* <div className='flex items-start justify-between'>
-          <div className='font-semibold w-fit leading-tight px-2 py-2.5'>
-            {course.title}
-          </div>
-          <div className='w-6 h-6 border-l border-b border-black bg-white flex items-center justify-center'>
-            <div
-              className={`${isOpen ? 'rotate-180' : 'rotate-0'}`}
-              onClick={() => setIsOpen(!isOpen)}
-            >
-              <MdArrowDropDown size={20} />
-            </div>
-          </div>
-        </div> */}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div>
+              <div className='border-y-2 border-y-black bg-white p-2.5'>
+                <div className='text-sm leading-tight'>
+                  {course.subheadline}
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
         {/* INFO BAR */}
         <div
           className={`w-full ${setColorByCategoryString(
             course.categoryArray[0]
           )}`}
         >
-          <div className='w-full flex justify-between items-center  py-0.5 px-2 '>
-            <div className='grid grid-cols-3 w-fit gap-5'>
-              <div className='text-sm text-white font-semibold'>
+          <div className='w-full flex justify-between items-center'>
+            <div className='grid grid-cols-3 w-fit gap-5 content-center'>
+              <div className='w-6 h-full border-r-2 border-t-2 border-black bg-white flex items-center justify-center'>
+                <div
+                  className={`${isOpen ? 'rotate-180' : 'rotate-0'}`}
+                  onClick={() => setIsOpen(!isOpen)}
+                >
+                  <MdArrowDropDown size={20} />
+                </div>
+              </div>
+              <div className='text-sm text-white font-semibold content-center py-1'>
                 {course.price === 'FREE' ? 'FREE' : `$${course.price}`}
               </div>
             </div>
-            <div className='flex items-center gap-5'>
+            <div className='flex items-center gap-5 mr-3'>
               {course.preview ? (
                 <div
                   className='text-sm text-white/80 font-semibold text-right cursor-pointer'
@@ -283,17 +290,6 @@ const LMCCourseTableItem = ({ course }) => {
           </div>
         </div>
         {/* INFO */}
-        {/* <AnimatePresence>
-          {isOpen && (
-            <motion.div>
-              <div className='flex bg-white flex-col gap-3 px-2 py-2.5'>
-                <div className='text-sm leading-tight'>
-                  {course.subheadline}
-                </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence> */}
       </div>
     </div>
   );
