@@ -584,7 +584,7 @@ const Page = () => {
                   Title
                 </span>
               </div>
-              <div className='col-span-3 w-full grid grid-cols-3 content-center'>
+              <div className='col-span-3 w-full grid grid-cols-3 content-center text-right'>
                 <div
                   className={`${
                     isSort.value === 'hours' ? 'underline' : ''
