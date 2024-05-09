@@ -246,7 +246,7 @@ const LMCCourseTableItem = ({ course }) => {
           </div>
         </div> */}
         {/* INFO BAR */}
-        {/* <div
+        <div
           className={`w-full ${setColorByCategoryString(
             course.categoryArray[0]
           )}`}
@@ -256,33 +256,32 @@ const LMCCourseTableItem = ({ course }) => {
               <div className='text-sm text-white font-semibold'>
                 {course.price === 'FREE' ? 'FREE' : `$${course.price}`}
               </div>
-              <div className='flex items-center gap-1'>
-                <div className='text-sm text-white font-semibold'>
-                  {course.hours ? course.hours : <></>}
-                </div>
-                <div>
-                  <MdAccessTimeFilled size={16} color='white' />
-                </div>
-              </div>
-              <div className='flex items-center gap-1'>
-                <div className='text-sm text-white font-semibold'>
-                  {course.lessons ? course.lessons : <></>}
-                </div>
-                <div>
-                  <MdOutlineMenuBook size={16} color='white' />
-                </div>
-              </div>
             </div>
-            <div
-              className='text-sm text-white font-semibold text-right cursor-pointer'
-              onClick={() => {
-                window.open(course.link, '_blank');
-              }}
-            >
-              Purchase
+            <div className='flex items-center gap-5'>
+              {course.preview ? (
+                <div
+                  className='text-sm text-white/80 font-semibold text-right cursor-pointer'
+                  onClick={() => {
+                    setIsPlaying(true);
+                  }}
+                >
+                  Preview
+                </div>
+              ) : (
+                <></>
+              )}
+
+              <div
+                className='text-sm text-white font-semibold text-right cursor-pointer'
+                onClick={() => {
+                  window.open(course.link, '_blank');
+                }}
+              >
+                Purchase
+              </div>
             </div>
           </div>
-        </div> */}
+        </div>
         {/* INFO */}
         {/* <AnimatePresence>
           {isOpen && (

@@ -7,9 +7,6 @@ import {
   MdDehaze,
   MdSort,
   MdOutlineSearch,
-  MdArrowDropDown,
-  MdExpandLess,
-  MdExpandMore,
   MdAutorenew,
   MdEmojiEvents,
   MdAutoStories,
@@ -20,7 +17,6 @@ import {
 import { categoryMenu } from '../../../data/CategoryMenu';
 import { setCategoryIcon } from '../../../helpers/utils';
 import { setSelectedFilter } from '../../../features/all_courses/courseFilterSlice';
-
 import LMCCourseTableItem from '../../../components/shared/LMCCourseTableItem';
 import LMSCourseCard from '../../../components/shared/LMSCourseCard';
 import SortToggleItem from '../../../components/shared/SortToggleItem';

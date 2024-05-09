@@ -4,7 +4,13 @@ import { useRouter } from 'next/router';
 import '@algolia/autocomplete-theme-classic';
 import { createLocalStorageRecentSearchesPlugin } from '@algolia/autocomplete-plugin-recent-searches';
 import { createQuerySuggestionsPlugin } from '@algolia/autocomplete-plugin-query-suggestions';
-import { MagnifyingGlassIcon, XMarkIcon } from '@heroicons/react/24/solid';
+import {
+  ArrowLeftOnRectangleIcon,
+  FaceSmileIcon,
+  RocketLaunchIcon,
+  AcademicCapIcon,
+  ScaleIcon,
+} from '@heroicons/react/24/outline';
 import { useDispatch } from 'react-redux';
 import { closeSearch } from '../../features/navigation/navigationSlice';
 import CertIcon from '../icons/CertIcon';
@@ -13,15 +19,13 @@ import WorkshopIcon from '../icons/WorkshopIcon';
 import Link from 'next/link';
 import {
   Hits,
+  InfiniteHits,
   Index,
   InstantSearch,
   SearchBox,
   Highlight,
   Configure,
 } from 'react-instantsearch-hooks-web';
-import { ArrowUpRightIcon } from '@heroicons/react/24/outline';
-import CMPMIcon from '../icons/CMPMIcon';
-import GlobalMaterialsIcon from '../icons/GlobalMaterialsIcon';
 import LotmIcon from '../icons/LotmIcon';
 
 const searchClient = algoliasearch(
@@ -38,7 +42,7 @@ export function ProductItem({ hit }) {
           className='aa-ItemLink hover:bg-slate-700 cursor-pointer w-full'
           onClick={() => dispatch(closeSearch())}
         >
-          <div className='font-greycliff font-semibold leading-snug lg:text-lg dark:text-white w-full'>
+          <div className='font-greycliff font-semibold leading-snug  dark:text-white w-full'>
             <Highlight hit={hit} attribute='title' />
           </div>
         </a>
@@ -48,45 +52,43 @@ export function ProductItem({ hit }) {
 }
 
 export function CertItem({ hit }) {
-  const setBackground = () => {
-    switch (hit.title) {
-      case 'Certificate of Mastery in Packaging Management':
-        return 'bg-gradient-to-br from-base-brand to-slate-700';
-      case 'Certificate of Packaging Science':
-        return 'bg-gradient-to-br from-base-dark to-slate-900';
-      case 'Automotive Packaging Certificate':
-        return 'bg-gradient-to-br from-clemson to-orange-800';
-      case 'Certificate of Sustainable Packaging':
-        return 'bg-gradient-to-br from-brand-green to-green-900';
-      case 'Food Packaging Certificate':
-        return 'bg-gradient-to-br from-brand-yellow to-yellow-800';
-      default:
-        return 'bg-gradient-to-br from-base-brand to-slate-900';
-    }
-  };
-
   return (
     <a
       href={hit.slug}
-      className='aa-ItemLink hover:bg-slate-100 dark:hover:bg-dark-dark cursor-pointer'
+      className='w-full grid group cursor-pointer bg-white dark:bg-black transition-all ease-in hover:bg-base-light/50 rounded-xl border border-neutral-400 dark:border-neutral-600 shadow hover:shadow-xl overflow-hidden'
     >
-      <div className='grid grid-cols-5 w-full'>
-        <div className='lg:px-1.5 py-1.5 col-span-5'>
-          <div className='flex gap-3 w-full'>
-            <div>
-              <CMPMIcon scale={12} background={setBackground()} />
-            </div>
-            <div className='flex flex-col '>
-              <div className='font-greycliff font-semibold leading-snug lg:text-lg dark:text-white'>
+      <div className='w-full flex flex-col lg:h-[120px]'>
+        <div className='w-full flex items-center gap-3 md:gap-5 border-b border-b-neutral-400 md:border-0'>
+          <div
+            className='aspect-[1/1] md:aspect-[3/5] w-full max-w-[90px] md:max-w-[120px] md:max-h-[120px] bg-black bg-cover bg-center group-hover:scale-110  transition-all ease-in '
+            style={{ backgroundImage: `url(${hit.seoImage})` }}
+          ></div>
+          <div className='flex flex-col md:flex-row h-[90px] md:h-[120px] py-1.5 justify-between items-center w-full'>
+            <div className='flex flex-col gap-2 w-full'>
+              <div className='font-greycliff font-semibold leading-tight lg:text-lg dark:text-white pr-3'>
                 <Highlight hit={hit} attribute='title' />
               </div>
-              <div className='aa-ItemTitle text-sm md:text-base line-clamp-2  text-slate-600 dark:text-slate-400'>
+              <div className='aa-ItemTitle text-xs leading-snug dark:text-white/60 max-w-md hidden md:block'>
                 <Highlight hit={hit} attribute='subheadline' />
               </div>
-              <div className='aa-ItemTitle line-clamp-2   text-slate-600 dark:text-slate-400'>
-                <Highlight hit={hit} attribute='subhead' />
+            </div>
+            <div className='flex md:flex-col md:items-center justify-end gap-1.5 pr-2 w-full md:w-fit'>
+              <div className='w-8 h-8 rounded-full bg-base-mid flex items-center justify-center shadow border border-0.5 border-black/50'>
+                <FaceSmileIcon className='w-5 h-5 stroke-white' />
+              </div>
+              <div className='w-8 h-8 rounded-full bg-clemson flex items-center justify-center shadow border border-0.5 border-black/50'>
+                <RocketLaunchIcon className='w-5 h-5 stroke-white' />
               </div>
             </div>
+          </div>
+        </div>
+        {/* HIDDEN MD */}
+        <div className='w-full flex flex-col px-3 py-4 bg-neutral-100 dark:bg-black md:hidden'>
+          <div className='font-greycliff font-semibold leading-snug lg:text-lg dark:text-white hidden'>
+            <Highlight hit={hit} attribute='title' />
+          </div>
+          <div className='aa-ItemTitle text-xs leading-snug dark:text-white/60'>
+            <Highlight hit={hit} attribute='subheadline' />
           </div>
         </div>
       </div>
@@ -96,46 +98,52 @@ export function CertItem({ hit }) {
 
 export function CourseItem({ hit }) {
   const dispatch = useDispatch();
-  const setBackground = () => {
-    switch (hit.title) {
-      case 'Certificate of Mastery in Packaging Management':
-        return 'bg-gradient-to-br from-base-brand to-slate-700';
-      case 'Certificate of Packaging Science':
-        return 'bg-gradient-to-br from-base-dark to-slate-900';
-      case 'Automotive Packaging Certificate':
-        return 'bg-gradient-to-br from-clemson to-orange-800';
-      case 'Certificate of Sustainable Packaging':
-        return 'bg-gradient-to-br from-brand-green to-green-900';
-      case 'Food Packaging Certificate':
-        return 'bg-gradient-to-br from-brand-yellow to-yellow-800';
-      default:
-        return 'bg-gradient-to-br from-green-600 to-green-900';
-    }
-  };
 
   return (
-    <Link passHref href={`/courses/${hit.slug}`}>
+    <Link passHref href={hit.altLink ? hit.altLink : `/courses/${hit.slug}`}>
       <a
-        className='aa-ItemLink hover:bg-slate-100 dark:hover:bg-dark-dark cursor-pointer'
+        href={hit.slug}
+        className='w-full grid group cursor-pointer bg-white dark:bg-black transition-all ease-in hover:bg-base-light/50 rounded-xl border border-neutral-400 dark:border-neutral-600 shadow hover:shadow-xl overflow-hidden'
         onClick={() => dispatch(closeSearch())}
       >
-        <div className='grid grid-cols-5 w-full'>
-          <div className='px-1.5 py-1.5 col-span-5'>
-            <div className='flex gap-3 w-full'>
-              <div>
-                <GlobalMaterialsIcon scale={12} background={setBackground()} />
-              </div>
-              <div className='flex flex-col '>
-                <div className='font-greycliff font-semibold leading-snug md:text-lg dark:text-white'>
+        <div className='w-full flex flex-col lg:h-[120px]'>
+          <div className='w-full flex items-center gap-3 md:gap-5 border-b border-b-neutral-400 md:border-0'>
+            <div
+              className='aspect-[1/1] md:aspect-[3/5] w-full max-w-[100px] md:max-w-[120px] md:max-h-[120px] bg-black bg-cover bg-center group-hover:scale-110  transition-all ease-in '
+              style={{ backgroundImage: `url(${hit.seoImage})` }}
+            ></div>
+            <div className='flex flex-col md:flex-row h-[100px] md:h-[120px] py-1.5 justify-between items-center w-full'>
+              <div className='flex flex-col gap-1 w-full'>
+                <div className='font-greycliff font-semibold leading-tight text-sm lg:text-lg dark:text-white pr-3'>
                   <Highlight hit={hit} attribute='title' />
                 </div>
-                <div className='aa-ItemTitle line-clamp-2 text-sm md:text-base text-slate-600 dark:text-slate-400'>
+                <div className='aa-ItemTitle text-xs leading-snug dark:text-white/60 max-w-lg hidden md:block'>
                   <Highlight hit={hit} attribute='subheadline' />
                 </div>
-                <div className='aa-ItemTitle line-clamp-2  text-sm md:text-base text-slate-600 dark:text-slate-400'>
-                  <Highlight hit={hit} attribute='subhead' />
-                </div>
               </div>
+              <div className='flex items-end flex-col gap-1 pr-2'>
+                <div className='w-8 h-8 rounded-full bg-base-mid flex items-center justify-center shadow border border-0.5 border-black/50'>
+                  <FaceSmileIcon className='w-5 h-5 stroke-white' />
+                </div>
+                <div className='w-8 h-8 rounded-full bg-clemson flex items-center justify-center shadow border border-0.5 border-black/50'>
+                  <RocketLaunchIcon className='w-5 h-5 stroke-white' />
+                </div>
+                {/* <div className='w-8 h-8 rounded-full bg-brand-red flex items-center justify-center shadow border border-0.5 border-black/50'>
+                  <AcademicCapIcon className='w-5 h-5 stroke-white' />
+                </div>
+                <div className='w-8 h-8 rounded-full bg-green-600 flex items-center justify-center shadow border border-0.5 border-black/50'>
+                  <ScaleIcon className='w-5 h-5 stroke-white' />
+                </div> */}
+              </div>
+            </div>
+          </div>
+          {/* HIDDEN MD */}
+          <div className='w-full flex flex-col px-3 py-4 bg-neutral-100 dark:bg-black md:hidden'>
+            <div className='font-greycliff font-semibold leading-snug lg:text-lg dark:text-white hidden'>
+              <Highlight hit={hit} attribute='title' />
+            </div>
+            <div className='aa-ItemTitle text-xs leading-snug dark:text-white/60'>
+              <Highlight hit={hit} attribute='subheadline' />
             </div>
           </div>
         </div>
@@ -146,39 +154,56 @@ export function CourseItem({ hit }) {
 
 export function LOTMItem({ hit }) {
   const dispatch = useDispatch();
-  const setBackground = () => {
-    switch (hit.title) {
-      case 'Certificate of Mastery in Packaging Management':
-        return 'bg-gradient-to-br from-base-brand to-slate-700';
-      case 'Certificate of Packaging Science':
-        return 'bg-gradient-to-br from-base-dark to-slate-900';
-      case 'Automotive Packaging Certificate':
-        return 'bg-gradient-to-br from-clemson to-orange-800';
-      default:
-        return 'bg-gradient-to-br from-red-500 to-red-900';
-    }
-  };
 
   return (
-    <Link href={`/lessons/${hit.slug}`} passHref>
+    <Link passHref href={`/lessons/${hit.slug}`}>
       <a
-        className='aa-ItemLink hover:bg-slate-100 dark:hover:bg-dark-dark cursor-pointer'
+        href={hit.slug}
+        className='w-full grid group cursor-pointer bg-white dark:bg-black transition-all ease-in hover:bg-base-light/50 rounded-xl border border-neutral-400 dark:border-neutral-600 shadow hover:shadow-xl overflow-hidden'
         onClick={() => dispatch(closeSearch())}
       >
-        <div className='grid grid-cols-5 w-full'>
-          <div className='px-2 py-1.5 col-span-5'>
-            <div className='flex gap-3 w-full'>
-              <div className='flex flex-col '>
-                <div className='font-greycliff font-semibold leading-snug md:text-lg dark:text-white'>
+        <div className='w-full flex flex-col lg:h-[120px]'>
+          <div className='w-full flex items-center gap-3 md:gap-5 border-b border-b-neutral-400 md:border-0'>
+            <div
+              className='aspect-[1/1] md:aspect-[3/5] w-full max-w-[90px] md:max-w-[120px] md:max-h-[120px] bg-black bg-cover bg-center group-hover:scale-110  transition-all ease-in '
+              style={{ backgroundImage: `url(${hit.seoImage})` }}
+            ></div>
+            <div className='flex flex-col md:flex-row h-[90px] md:h-[120px] py-1.5 justify-between items-center w-full'>
+              <div className='flex flex-col gap-2 w-full'>
+                <div className='font-greycliff font-semibold leading-tight lg:text-lg dark:text-white pr-3'>
                   <Highlight hit={hit} attribute='title' />
                 </div>
-                <div className='aa-ItemTitle line-clamp-2 text-sm md:text-base text-slate-600 dark:text-slate-400'>
-                  <Highlight hit={hit} attribute='subheadline' />
-                </div>
-                <div className='aa-ItemTitle line-clamp-2  text-sm md:text-base text-slate-600 dark:text-slate-400'>
-                  <Highlight hit={hit} attribute='subhead' />
+                <div className='aa-ItemTitle text-xs leading-snug dark:text-white/60 max-w-lg hidden md:block line-clamp-3'>
+                  <Highlight
+                    hit={hit}
+                    attribute='subhead'
+                    classNames={{ root: 'line-clamp-3' }}
+                  />
                 </div>
               </div>
+              <div className='grid grid-cols-2 md:items-center justify-end gap-1.5 pr-3 w-full md:w-fit'>
+                <div className='w-8 h-8 rounded-full bg-base-mid flex items-center justify-center shadow border border-0.5 border-black/50'>
+                  <FaceSmileIcon className='w-5 h-5 stroke-white' />
+                </div>
+                <div className='w-8 h-8 rounded-full bg-clemson flex items-center justify-center shadow border border-0.5 border-black/50'>
+                  <RocketLaunchIcon className='w-5 h-5 stroke-white' />
+                </div>
+                <div className='w-8 h-8 rounded-full bg-brand-red flex items-center justify-center shadow border border-0.5 border-black/50'>
+                  <AcademicCapIcon className='w-5 h-5 stroke-white' />
+                </div>
+                <div className='w-8 h-8 rounded-full bg-green-600 flex items-center justify-center shadow border border-0.5 border-black/50'>
+                  <ScaleIcon className='w-5 h-5 stroke-white' />
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* HIDDEN MD */}
+          <div className='w-full flex flex-col px-3 py-4 bg-neutral-100 dark:bg-black md:hidden'>
+            <div className='font-greycliff font-semibold leading-snug lg:text-lg dark:text-white hidden'>
+              <Highlight hit={hit} attribute='title' />
+            </div>
+            <div className='aa-ItemTitle text-xs leading-snug dark:text-white/60 line-clamp-3'>
+              <Highlight hit={hit} attribute='subhead' />
             </div>
           </div>
         </div>
@@ -274,16 +299,20 @@ const SearchContainer = () => {
   });
 
   return (
-    <div className='fixed inset-0 justify-center items-between p-4 lg:py-20 bg-black/60 backdrop-blur-sm z-[110]'>
+    <div className='fixed inset-0 bg-black/60 dark:bg-white/30 backdrop-blur-sm z-[110]'>
       <div
+        className='absolute inset-0'
+        onClick={() => dispatch(closeSearch())}
+      ></div>
+      {/* <div
         className='absolute right-6 top-6 cursor-pointer z-[80]'
         onClick={() => dispatch(closeSearch())}
       >
         <XMarkIcon className='md:w-10 md:h-10 h-6 w-6 text-white' />
-      </div>
-      <div className='dark:bg-[#222] bg-white w-full h-full rounded-lg lg:max-w-6xl lg:mx-auto  grid lg:grid-cols-3'>
+      </div> */}
+      <div className='dark:bg-black fixed max-w-7xl z-[115] max-h-[92vh] top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 max-auto bg-base-light w-full h-full lg:rounded-xl lg:max-w-7xl lg:mx-auto  grid lg:grid-cols-3 gap-6 lg:gap-8 p-3 pt-4 md:p-9'>
         <div
-          className='col-span-1 lg:col-span-2 px-3 lg:px-9 py-10 grid overflow-y-scroll relative'
+          className='z-10 col-span-1 w-full lg:col-span-2 p-3 lg:p-6 flex flex-col overflow-y-scroll relative bg-white dark:bg-dark-mid rounded-xl shadow lg:shadow-xl'
           id='scrollers'
         >
           <InstantSearch
@@ -291,60 +320,97 @@ const SearchContainer = () => {
             indexName='COURSES'
             insights={true}
           >
-            <div className='w-full flex flex-col gap-6'>
-              <SearchBox
-                classNames={{
-                  input: 'w-full text-base md:text-xl font-medium py-4',
-                  submitIcon: 'hidden',
-                  resetIcon: 'hidden',
-                }}
-                placeholder='What do you want to learn today?...'
-              />
+            <div className='w-full flex flex-col gap-6 mt-3'>
+              <div className='flex flex-1 w-full items-center gap-1.5'>
+                <SearchBox
+                  classNames={{
+                    root: 'w-full',
+                    input:
+                      'w-full md:text-lg font-medium md:py-4 md:px-5 rounded shadow-md border-neutral-300 placeholder:text-neutral-400 dark:bg-neutral-600',
+                    submitIcon: 'hidden',
+                    resetIcon: 'hidden',
+                  }}
+                  placeholder='Search Certificates, Courses, and Lessons'
+                />
+                <div
+                  className='w-9 h-full flex items-center justify-center rounded-xl cursor-pointer'
+                  onClick={() => dispatch(closeSearch())}
+                >
+                  <div>
+                    <ArrowLeftOnRectangleIcon className='w-7 h-7 stroke-black dark:stroke-white' />
+                  </div>
+                </div>
+              </div>
 
-              <Index indexName='CERTIFICATES'>
-                <div className='w-full bg-slate-400 text-slate-700 text-sm font-bold font-greycliff px-6 py-1.5'>
-                  CERTIFICATES
+              <div className='flex flex-col gap-6'>
+                <div className='flex flex-col gap-4'>
+                  <Index indexName='CERTIFICATES'>
+                    <div className='w-full bg-black  text-white text-sm font-bold font-greycliff px-3 lg:px-6 py-1.5 leading-snug'>
+                      CERTIFICATES
+                    </div>
+                    <Hits
+                      hitComponent={CertItem}
+                      classNames={{ list: 'flex flex-col gap-3 justify-start' }}
+                    />
+                  </Index>
                 </div>
-                <Hits
-                  hitComponent={CertItem}
-                  classNames={{ list: 'flex flex-col gap-4' }}
-                />
-              </Index>
 
-              <Index indexName='COURSES'>
-                <Configure hitsPerPage={5} />
-                <div className='w-full bg-slate-400 text-slate-700 text-sm font-bold font-greycliff px-6 py-1.5'>
-                  COURSES
-                </div>
-                <Hits
-                  hitComponent={CourseItem}
-                  classNames={{ list: 'flex flex-col gap-4' }}
-                />
-              </Index>
-              <Index indexName='LESSONS'>
-                <div className='w-full bg-slate-400 text-slate-700 text-sm font-bold font-greycliff px-4 py-1.5'>
-                  LESSONS
-                </div>
-                <Hits
-                  hitComponent={LOTMItem}
-                  classNames={{ list: 'flex flex-col gap-4' }}
-                />
-              </Index>
-              <Index indexName='LIBRARY'>
-                <div className='w-full bg-slate-400 text-slate-700 text-sm font-bold font-greycliff px-6 py-1.5'>
+                <Index indexName='COURSES'>
+                  <Configure hitsPerPage={5} />
+                  <div className='w-full bg-black text-white text-sm font-bold font-greycliff px-6 py-1.5'>
+                    COURSES
+                  </div>
+                  <InfiniteHits
+                    hitComponent={CourseItem}
+                    showPrevious={false}
+                    classNames={{
+                      list: 'flex flex-col gap-3',
+                      loadMore:
+                        'rounded p-2 bg-base-mid text-white border border-black font-bold text-sm w-full mt-4',
+                    }}
+                  />
+                  {/* <InfiniteHits
+                    hitComponent={CourseItem}
+                    showPrevious={false}
+                    classNames={{
+                      list: 'flex flex-col gap-4',
+                      loadMore:
+                        'rounded-xl px-3 py-2 bg-clemson text-white font-bold text-sm w-full mt-4',
+                    }}
+                  /> */}
+                </Index>
+                <Index indexName='LESSONS'>
+                  <Configure hitsPerPage={5} filters='status:PUBLISHED' />
+                  <div className='w-full bg-black text-white text-sm font-bold font-greycliff px-4 py-1.5'>
+                    LESSONS
+                  </div>
+                  <InfiniteHits
+                    hitComponent={LOTMItem}
+                    showPrevious={false}
+                    classNames={{
+                      list: 'flex flex-col gap-3',
+                      loadMore:
+                        'rounded p-2 bg-base-mid text-white border border-black font-bold text-sm w-full mt-4',
+                    }}
+                  />
+                </Index>
+              </div>
+
+              {/* <Index indexName='LIBRARY'>
+                <div className='w-full bg-black text-white text-sm font-bold font-greycliff px-6 py-1.5'>
                   LIBRARY
                 </div>
                 <Hits
                   hitComponent={ProductItem}
                   classNames={{ list: 'flex flex-col gap-6 w-full' }}
                 />
-              </Index>
+              </Index> */}
             </div>
           </InstantSearch>
         </div>
-        <div className='hidden lg:block lg:col-span-1 dark:bg-black/70 bg-slate-100 rounded-lg py-6 px-2'>
-          <div className='flex flex-col gap-9'>
-            <div className='px-6 py-3 row-span-2 flex flex-col gap-3'>
+        <div className='hidden lg:block lg:col-span-1'>
+          <div className='flex flex-col gap-9  dark:bg-black/70 bg-slate-100 rounded-xl p-5'>
+            <div className='row-span-2 flex flex-col gap-3'>
               <div className='font-greycliff font-semibold text-slate-500 dark:text-clemson text-lg'>
                 Popular Content
               </div>
