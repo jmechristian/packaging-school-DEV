@@ -185,7 +185,7 @@ const LMCCourseTableItem = ({ course }) => {
               <div></div>
             )}
 
-            <div className='place-content-center mx-auto group-hover:saturate-200'>
+            <div className='place-content-center mx-auto'>
               <BrutalCircleIconTooltip
                 tooltip={'Buy'}
                 bgColor={'bg-brand-green'}
@@ -201,7 +201,38 @@ const LMCCourseTableItem = ({ course }) => {
       {/* MOBILE */}
       {/* MAIN */}
       <div className='flex flex-col lg:hidden'>
-        <div className='flex items-start justify-between'>
+        <div className='grid grid-cols-6 min-h-[68px] content-center'>
+          <div className='col-span-1 text-xs content-center px-1'>
+            {course.courseId}
+          </div>
+          <div className='col-span-3 flex flex-col gap-0 py-1.5 content-center'>
+            <div className='flex flex-col'>
+              {course.categoryArray.map((cat, i) => (
+                <div
+                  className='flex items-center pl-0.5 pr-0.5 first:pl-0'
+                  key={cat}
+                >
+                  <div className='text-xs font-semibold leading-tight text-neutral-500 px-1'>
+                    {setCategoryText(cat)}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className='font-semibold tracking-[-0.01em] leading-tight px-1 text-sm md:text-base pr-6'>
+              {course.title}
+            </div>
+          </div>
+          <div className='grid grid-cols-3 col-span-2 w-full content-center'>
+            <div className='text-xs font-medium col-span-1'>{course.hours}</div>
+            <div className='text-xs font-medium col-span-1'>
+              {course.lessons}
+            </div>
+            <div className='text-xs font-medium col-span-1'>
+              ${course.price}
+            </div>
+          </div>
+        </div>
+        {/* <div className='flex items-start justify-between'>
           <div className='font-semibold w-fit leading-tight px-2 py-2.5'>
             {course.title}
           </div>
@@ -213,9 +244,9 @@ const LMCCourseTableItem = ({ course }) => {
               <MdArrowDropDown size={20} />
             </div>
           </div>
-        </div>
+        </div> */}
         {/* INFO BAR */}
-        <div
+        {/* <div
           className={`w-full ${setColorByCategoryString(
             course.categoryArray[0]
           )}`}
@@ -251,9 +282,9 @@ const LMCCourseTableItem = ({ course }) => {
               Purchase
             </div>
           </div>
-        </div>
+        </div> */}
         {/* INFO */}
-        <AnimatePresence>
+        {/* <AnimatePresence>
           {isOpen && (
             <motion.div>
               <div className='flex bg-white flex-col gap-3 px-2 py-2.5'>
@@ -263,7 +294,7 @@ const LMCCourseTableItem = ({ course }) => {
               </div>
             </motion.div>
           )}
-        </AnimatePresence>
+        </AnimatePresence> */}
       </div>
     </div>
   );

@@ -26,6 +26,7 @@ import LMSCourseCard from '../../../components/shared/LMSCourseCard';
 import SortToggleItem from '../../../components/shared/SortToggleItem';
 import BrutalCircleIconTooltip from '../../../components/shared/BrutalCircleIconTooltip';
 import { createCourseSearch } from '../../../src/graphql/mutations';
+import { listLMSCourses } from '../../../src/graphql/queries';
 
 const Page = () => {
   const dispatch = useDispatch();
@@ -40,6 +41,20 @@ const Page = () => {
   const [isFilter, setIsFilter] = useState(false);
   const [openSort, setOpenSort] = useState(false);
   const [isTable, setIsTable] = useState(true);
+  const [isCourses, setIsCourses] = useState([]);
+
+  useEffect(() => {
+    const getCourses = async () => {
+      const courses = await API.graphql({
+        query: listLMSCourses,
+        variables: { filter: { type: { ne: 'CUSTOMER' } } },
+      });
+
+      setIsCourses(courses.data.listLMSCourses.items);
+    };
+
+    getCourses();
+  }, []);
 
   const filterClickHandler = (name, value) => {
     dispatch(setSelectedFilter({ name, value }));
@@ -53,17 +68,17 @@ const Page = () => {
 
   const filtered = useMemo(() => {
     if (selectedFilter.name === 'All') {
-      return allCourses;
+      return isCourses;
     } else if (selectedFilter.name === 'Collections') {
-      return allCourses.filter((o) => o.type === 'COLLECTION');
+      return isCourses.filter((o) => o.type === 'COLLECTION');
     } else if (selectedFilter.value === 'ELECTIVE') {
-      return allCourses.filter((o) => o.type === 'ELECTIVE');
+      return isCourses.filter((o) => o.type === 'ELECTIVE');
     } else {
-      return allCourses.filter((o) =>
+      return isCourses.filter((o) =>
         o.categoryArray.includes(selectedFilter.value)
       );
     }
-  }, [selectedFilter, allCourses]);
+  }, [selectedFilter, isCourses]);
 
   const sortedCourses = useMemo(() => {
     if (isSort.value === 'title' && isSort.direction === 'ASC') {
@@ -185,7 +200,7 @@ const Page = () => {
   }, [isSearchTerm, location, sortedAndSearchedCourses]);
 
   return (
-    <div className='container-base px-4 xl:px-0'>
+    <div className='container-base px-3 xl:px-0'>
       <div className='w-full flex flex-col gap-6'>
         {/* HEADING */}
         <div className='w-full pb-5 border-b-4 border-b-black flex justify-between items-center'>
@@ -410,7 +425,7 @@ const Page = () => {
         {sortedAndSearchedCourses &&
         sortedAndSearchedCourses.length > 0 &&
         isTable ? (
-          <div className='flex flex-col gap-1.5'>
+          <div className='flex flex-col gap-2'>
             <div className='hidden lg:grid lg:grid-cols-12 content-center gap-5 divide-x-black w-full px-2 py-2'>
               <div className='col-span-4'>
                 <div className='grid grid-cols-4'>
@@ -523,6 +538,91 @@ const Page = () => {
                   <div className='text-sm font-semibold'>
                     <div className='lg:hidden xl:block'>Purchase</div>
                   </div>
+                </div>
+              </div>
+            </div>
+            <div className='grid lg:hidden grid-cols-6 content-center gap-5 divide-x-black w-full px-2 py-2'>
+              <div
+                className={`${
+                  isSort.value === 'course id' ? 'underline' : ''
+                } cursor-pointer col-span-1 text-xs font-semibold`}
+                onClick={() =>
+                  setIsSort({
+                    value: 'course id',
+                    direction: isSort.direction === 'ASC' ? 'DSC' : 'ASC',
+                  })
+                }
+              >
+                Id
+              </div>
+              <div className='text-xs font-semibold col-span-2'>
+                <span
+                  className={`${
+                    isSort.value === 'category' ? 'underline' : ''
+                  } cursor-pointer `}
+                  onClick={() =>
+                    setIsSort({
+                      value: 'category',
+                      direction: isSort.direction === 'ASC' ? 'DSC' : 'ASC',
+                    })
+                  }
+                >
+                  Category
+                </span>{' '}
+                /{' '}
+                <span
+                  className={`${
+                    isSort.value === 'title' ? 'underline' : ''
+                  } cursor-pointer`}
+                  onClick={() =>
+                    setIsSort({
+                      value: 'title',
+                      direction: isSort.direction === 'ASC' ? 'DSC' : 'ASC',
+                    })
+                  }
+                >
+                  Title
+                </span>
+              </div>
+              <div className='col-span-3 w-full grid grid-cols-3 content-center'>
+                <div
+                  className={`${
+                    isSort.value === 'hours' ? 'underline' : ''
+                  } cursor-pointer col-span-1 text-xs font-semibold`}
+                  onClick={() =>
+                    setIsSort({
+                      value: 'hours',
+                      direction: isSort.direction === 'ASC' ? 'DSC' : 'ASC',
+                    })
+                  }
+                >
+                  Hours
+                </div>
+                <div
+                  className={`${
+                    isSort.value === 'lessons' ? 'underline' : ''
+                  } cursor-pointer col-span-1 text-xs font-semibold`}
+                  onClick={() =>
+                    setIsSort({
+                      value: 'lessons',
+                      direction: isSort.direction === 'ASC' ? 'DSC' : 'ASC',
+                    })
+                  }
+                >
+                  Lessons
+                </div>
+                <div
+                  className={`${
+                    isSort.value === 'price' ? 'underline' : ''
+                  } cursor-pointer col-span-1 text-xs font-semibold`}
+                  onClick={() =>
+                    setIsSort({
+                      value: 'price',
+                      direction: isSort.direction === 'ASC' ? 'DSC' : 'ASC',
+                    })
+                  }
+                >
+                  Price
                 </div>
               </div>
             </div>
