@@ -631,7 +631,11 @@ const Page = () => {
             {sortedAndSearchedCourses &&
               sortedAndSearchedCourses.length > 0 &&
               [...sortedAndSearchedCourses].map((course) => (
-                <LMSCourseCard id={course.id} key={course.id} />
+                <LMSCourseCard
+                  id={course.id}
+                  key={course.id}
+                  courses={isCourses}
+                />
               ))}
           </div>
         ) : (

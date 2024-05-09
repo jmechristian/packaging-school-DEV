@@ -17,7 +17,7 @@ import { registerClick, registgerCourseClick } from '../../helpers/api';
 import VideoPlayer from '../VideoPlayer';
 import BrutalCircleIconTooltip from './BrutalCircleIconTooltip';
 
-const LMSCourseCard = ({ id, icons, coupon }) => {
+const LMSCourseCard = ({ id, icons, coupon, courses }) => {
   const [isFlipped, setIsFlipped] = useState(false);
   const [isCourse, setIsCourse] = useState([]);
   const [isBackgroundColor, setIsBackgroudColor] = useState('bg-clemson');
@@ -32,7 +32,7 @@ const LMSCourseCard = ({ id, icons, coupon }) => {
   useEffect(() => {
     const getCourse = async () => {
       setIsLoading(true);
-      const course = allCourses.filter((cour) => cour.id === id);
+      const course = courses.filter((cour) => cour.id === id);
       if (course[0]) {
         setIsCourse(course[0]);
         setIsBackgroudColor(setColorByCategory(course[0].categoryArray));
@@ -42,8 +42,8 @@ const LMSCourseCard = ({ id, icons, coupon }) => {
       setIsLoading(false);
     };
 
-    allCourses && id && getCourse();
-  }, [id, allCourses]);
+    courses && id && getCourse();
+  }, [id, courses]);
 
   const cardClickHandler = async () => {
     await registgerCourseClick(
