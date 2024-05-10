@@ -35,6 +35,7 @@ const Page = () => {
 
   const [isSearchTerm, setIsSearchTerm] = useState('');
   const [isFilter, setIsFilter] = useState(false);
+  const [isFilters, setIsFilters] = useState([]);
   const [openSort, setOpenSort] = useState(false);
   const [isTable, setIsTable] = useState(true);
   const [isCourses, setIsCourses] = useState([]);
@@ -52,9 +53,27 @@ const Page = () => {
     getCourses();
   }, []);
 
-  const filterClickHandler = (name, value) => {
-    dispatch(setSelectedFilter({ name, value }));
-    setIsFilter(false);
+  const isInFilterArray = (value) => {
+    return isFilters.includes(value);
+  };
+
+  // const filterClickHandler = (name, value) => {
+  //   dispatch(setSelectedFilter({ name, value }));
+  //   setIsFilter(false);
+  // };
+
+  const filterClickHandler = (value) => {
+    if (value === 'ALL') {
+      setIsFilters([]);
+    }
+
+    if (value != 'ALL' && isFilters.includes(value)) {
+      setIsFilters([...isFilters].filter((val) => val != value));
+    }
+
+    if (value != 'ALL' && !isFilters.includes(value)) {
+      setIsFilters((prevState) => [...prevState, value]);
+    }
   };
 
   const [isSort, setIsSort] = useState({
@@ -63,18 +82,19 @@ const Page = () => {
   });
 
   const filtered = useMemo(() => {
-    if (selectedFilter.name === 'All') {
+    if (isFilters.length === 0) {
       return isCourses;
-    } else if (selectedFilter.name === 'Collections') {
-      return isCourses.filter((o) => o.type === 'COLLECTION');
-    } else if (selectedFilter.value === 'ELECTIVE') {
-      return isCourses.filter((o) => o.type === 'ELECTIVE');
-    } else {
-      return isCourses.filter((o) =>
-        o.categoryArray.includes(selectedFilter.value)
+    }
+
+    if (isFilters.length > 0) {
+      return isCourses.filter(
+        (course) =>
+          course.categoryArray.some((category) =>
+            isFilters.includes(category)
+          ) || isFilters.includes(course.type)
       );
     }
-  }, [selectedFilter, isCourses]);
+  }, [isCourses, isFilters]);
 
   const sortedCourses = useMemo(() => {
     if (isSort.value === 'title' && isSort.direction === 'ASC') {
@@ -237,61 +257,82 @@ const Page = () => {
               </div>
             </div>
           </div>
-          {/* FILTER */}
-          <div className='col-span-3 lg:col-span-1 flex gap-5 relative w-full'>
+          <div className='col-span-3 lg:col-span-1 flex justify-end gap-5 relative w-full'>
+            {/* FILTER */}
             <AnimatePresence>
               {isFilter && !openSort && (
-                <motion.div className='w-[320px] absolute top-full right-0  bg-black px-5 py-6 z-40'>
-                  <div className='flex flex-col gap-8'>
-                    <div className='flex flex-col gap-2.5'>
-                      <div className='text-white  font-semibold border-b-2 border-b-white pb-3'>
-                        Categories
+                <motion.div className='w-[320px] absolute top-full right-0 mt-2.5 bg-black px-5 py-6 z-40'>
+                  <div className='flex flex-col gap-5'>
+                    <div className='flex flex-col gap-0.5'>
+                      <div className='flex justify-between items-center w-full  border-b-2 border-b-white pb-3'>
+                        <div className='text-white  font-semibold'>
+                          Categories
+                        </div>
+                        <div
+                          className='bg-white px-2 py-1.5 text-xs font-medium cursor-pointer'
+                          onClick={() => {
+                            setIsFilter(false);
+                          }}
+                        >
+                          Close
+                        </div>
                       </div>
 
                       {categoryMenu.slice(0, 8).map((cat) => (
                         <div
                           key={cat.value}
-                          className='flex items-center gap-2 cursor-pointer'
-                          onClick={() =>
-                            filterClickHandler(cat.name, cat.value)
-                          }
+                          className={` transition-all ease-in flex w-full items-center justify-between px-2 cursor-pointer ${
+                            isInFilterArray(cat.value) ? 'bg-indigo-800' : ''
+                          }`}
+                          onClick={() => filterClickHandler(cat.value)}
                         >
-                          {setCategoryIcon(cat.value)}
-                          <div className='text-white font-medium  '>
-                            {cat.name}
+                          <div
+                            className={`flex items-center gap-2 py-2  w-full `}
+                          >
+                            {setCategoryIcon(cat.value)}
+                            <div className='text-white font-medium'>
+                              {cat.name}
+                            </div>
                           </div>
                         </div>
                       ))}
                     </div>
-                    <div className='flex flex-col gap-5'>
+                    <div className='flex flex-col gap-0.5 w-full pt-5 border-t-2 border-y-white'>
                       <div
-                        className='pt-4 border-t-2 border-y-white flex items-center gap-3 cursor-pointer'
-                        onClick={() =>
-                          filterClickHandler('Collections', 'COLLECTIONS')
-                        }
+                        className={`flex w-full items-center justify-between px-2 py-2  ${
+                          isInFilterArray('COLLECTION') ? 'bg-indigo-800' : ''
+                        }`}
+                        onClick={() => filterClickHandler('COLLECTION')}
                       >
-                        <div className='pl-1'>
-                          <MdAutoStories color='white' size={20} />
-                        </div>
-                        <div className='font-semibold text-white '>
-                          Collections
+                        <div className=' flex items-center gap-3 cursor-pointer'>
+                          <div className='pl-1'>
+                            <MdAutoStories color='white' size={20} />
+                          </div>
+                          <div className='font-semibold text-white '>
+                            Collections
+                          </div>
                         </div>
                       </div>
                       <div
-                        className='flex items-center gap-3 cursor-pointer'
-                        onClick={() =>
-                          filterClickHandler('CPS Electives', 'ELECTIVE')
-                        }
+                        className={`flex w-full items-center justify-between px-2 py-2  ${
+                          isInFilterArray('ELECTIVE') ? 'bg-indigo-800' : ''
+                        }`}
+                        onClick={() => filterClickHandler('ELECTIVE')}
                       >
-                        <div className='pl-1'>
-                          <MdEmojiEvents color='white' size={22} />
-                        </div>
-                        <div className='font-semibold text-white '>
-                          CPS Electives
+                        <div
+                          className='flex items-center gap-3 cursor-pointer'
+                          onClick={() => filterClickHandler('ELECTIVE')}
+                        >
+                          <div className='pl-1'>
+                            <MdEmojiEvents color='white' size={22} />
+                          </div>
+                          <div className='font-semibold text-white '>
+                            CPS Electives
+                          </div>
                         </div>
                       </div>
                       <div
-                        className='flex items-center gap-3 cursor-pointer'
+                        className='flex items-center gap-3 cursor-pointer py-2'
                         onClick={() => {
                           window.open(
                             'https://packagingschool.com/isbt',
@@ -303,7 +344,7 @@ const Page = () => {
                         <div className='pl-1'>
                           <MdScience color='white' size={22} />
                         </div>
-                        <div className='font-semibold text-white '>
+                        <div className='font-semibold text-white leading-tight'>
                           Beverage Institute by ISBT®
                         </div>
                       </div>
@@ -311,7 +352,9 @@ const Page = () => {
                   </div>
                 </motion.div>
               )}
+              {/* SORT */}
             </AnimatePresence>
+            {/* SORT */}
             <AnimatePresence>
               {openSort && !isFilter && (
                 <div className='w-[300px] right-0 absolute top-full  bg-black px-5 py-6 z-40'>
@@ -387,14 +430,16 @@ const Page = () => {
                 </div>
               )}
             </AnimatePresence>
-            {selectedFilter.value != 'all' && (
+            {/* CLEAR */}
+            {selectedFilter.value != 'ALL' && (
               <div
                 className='h-full flex justify-center items-center px-4 text-red-600 cursor-pointer'
-                onClick={() => filterClickHandler('All', 'all')}
+                onClick={() => filterClickHandler('All', 'ALL')}
               >
                 Clear
               </div>
             )}
+            {/* FILTER BUTTON */}
             <div
               className='border-black border-2 cursor-pointer h-full flex gap-1 px-5 py-2 w-48 justify-center items-center transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 shadow-[2px_2px_0px_black] hover:shadow-[6px_6px_0px_black]'
               onClick={() => {
@@ -405,8 +450,9 @@ const Page = () => {
               <MdFilterList size={24} />
               <div className='font-semibold'>Filter</div>
             </div>
+            {/* SORT BUTTON */}
             <div
-              className='border-black border-2 cursor-pointer h-full flex gap-1 px-5 py-2 w-48 justify-center items-center transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 shadow-[2px_2px_0px_black] hover:shadow-[6px_6px_0px_black]'
+              className='lg:hidden border-black border-2 cursor-pointer h-full flex gap-1 px-5 py-2 w-48 justify-center items-center transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 shadow-[2px_2px_0px_black] hover:shadow-[6px_6px_0px_black]'
               onClick={() => {
                 setIsFilter(false);
                 setOpenSort(!openSort);

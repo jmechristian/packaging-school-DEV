@@ -186,7 +186,7 @@ export const setCategoryIcon = (cat) => {
           <MdMiscellaneousServices color='white' size={18} />
         </div>
       );
-    case 'all':
+    case 'ALL':
       return (
         <div className='w-7 h-7 bg-black rounded-full flex items-center justify-center'>
           <MdAutoAwesome color='white' size={18} />

@@ -1,7 +1,7 @@
 export const categoryMenu = [
   {
     name: 'All',
-    value: 'all',
+    value: 'ALL',
   },
   {
     name: 'Automotive',

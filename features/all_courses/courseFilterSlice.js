@@ -6,7 +6,7 @@ const initialState = {
   mobileCourseFilter: false,
   selectedFilter: {
     name: 'All',
-    value: 'all',
+    value: 'ALL',
   },
   allCourses: null,
   allLessons: null,

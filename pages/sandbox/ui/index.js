@@ -33,7 +33,7 @@ const Page = () => {
   const [isFilter, setIsFilter] = useState(false);
 
   const filtered = useMemo(() => {
-    if (selectedFilter.name === 'All') {
+    if (selectedFilter.name === 'ALL') {
       return allCourses;
     } else if (selectedFilter.name === 'Collections') {
       return allCourses.filter((o) => o.type === 'COLLECTION');
