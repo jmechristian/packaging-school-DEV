@@ -19,7 +19,7 @@ import CSPCard from '../../../components/rive/CSPCard';
 import LMSCourseCard from '../../../components/shared/LMSCourseCard';
 import LMCCourseTableItem from '../../../components/shared/LMCCourseTableItem';
 import { setCategoryIcon } from '../../../helpers/utils';
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { setSelectedFilter } from '../../../features/all_courses/courseFilterSlice';
 
 const Page = () => {
@@ -31,9 +31,10 @@ const Page = () => {
   const [isSort, setIsSort] = useState({ value: 'title', direction: 'ASC' });
   const [isSearchTerm, setIsSearchTerm] = useState('');
   const [isFilter, setIsFilter] = useState(false);
+  const [openSort, setOpenSort] = useState(false);
 
   const filtered = useMemo(() => {
-    if (selectedFilter.name === 'ALL') {
+    if (selectedFilter.name === 'All') {
       return allCourses;
     } else if (selectedFilter.name === 'Collections') {
       return allCourses.filter((o) => o.type === 'COLLECTION');
@@ -205,59 +206,84 @@ const Page = () => {
               </div>
               {/* FILTER */}
               <div className='col-span-1 flex justify-end relative'>
-                <AnimatePresence>
-                  {isFilter && (
-                    <div className='w-[320px] absolute top-full -right-0.5 bg-black px-5 py-6 z-40'>
-                      <div className='flex flex-col gap-8'>
-                        <div className='flex flex-col gap-2.5'>
-                          <div className='text-white  font-semibold border-b-2 border-b-white pb-3'>
-                            Categories
+                {/* <AnimatePresence>
+                  {isFilter && !openSort && (
+                    <motion.div className='w-[320px] absolute top-full right-0 mt-2.5 bg-black px-5 py-6 z-40'>
+                      <div className='flex flex-col gap-5'>
+                        <div className='flex flex-col gap-0.5'>
+                          <div className='flex justify-between items-center w-full  border-b-2 border-b-white pb-3'>
+                            <div className='text-white  font-semibold'>
+                              Categories
+                            </div>
+                            <div
+                              className='bg-white px-2 py-1.5 text-xs font-medium cursor-pointer'
+                              onClick={() => {
+                                setIsFilter(false);
+                              }}
+                            >
+                              Close
+                            </div>
                           </div>
 
                           {categoryMenu.slice(0, 8).map((cat) => (
                             <div
                               key={cat.value}
-                              className='flex items-center gap-2 cursor-pointer'
-                              onClick={() =>
-                                filterClickHandler(cat.name, cat.value)
-                              }
+                              className={` transition-all ease-in flex w-full items-center justify-between px-2 cursor-pointer ${
+                                isInFilterArray(cat.value)
+                                  ? 'bg-indigo-800'
+                                  : ''
+                              }`}
+                              onClick={() => filterClickHandler(cat.value)}
                             >
-                              {setCategoryIcon(cat.value)}
-                              <div className='text-white font-medium  '>
-                                {cat.name}
+                              <div
+                                className={`flex items-center gap-2 py-2  w-full `}
+                              >
+                                {setCategoryIcon(cat.value)}
+                                <div className='text-white font-medium'>
+                                  {cat.name}
+                                </div>
                               </div>
                             </div>
                           ))}
                         </div>
-                        <div className='flex flex-col gap-5'>
+                        <div className='flex flex-col gap-0.5 w-full pt-5 border-t-2 border-y-white'>
                           <div
-                            className='pt-4 border-t-2 border-y-white flex items-center gap-3 cursor-pointer'
-                            onClick={() =>
-                              filterClickHandler('Collections', 'COLLECTIONS')
-                            }
+                            className={`flex w-full items-center justify-between px-2 py-2  ${
+                              isInFilterArray('COLLECTION')
+                                ? 'bg-indigo-800'
+                                : ''
+                            }`}
+                            onClick={() => filterClickHandler('COLLECTION')}
                           >
-                            <div className='pl-1'>
-                              <MdAutoStories color='white' size={20} />
-                            </div>
-                            <div className='font-semibold text-white '>
-                              Collections
+                            <div className=' flex items-center gap-3 cursor-pointer'>
+                              <div className='pl-1'>
+                                <MdAutoStories color='white' size={20} />
+                              </div>
+                              <div className='font-semibold text-white '>
+                                Collections
+                              </div>
                             </div>
                           </div>
                           <div
-                            className='flex items-center gap-3 cursor-pointer'
-                            onClick={() =>
-                              filterClickHandler('CPS Electives', 'ELECTIVE')
-                            }
+                            className={`flex w-full items-center justify-between px-2 py-2  ${
+                              isInFilterArray('ELECTIVE') ? 'bg-indigo-800' : ''
+                            }`}
+                            onClick={() => filterClickHandler('ELECTIVE')}
                           >
-                            <div className='pl-1'>
-                              <MdEmojiEvents color='white' size={22} />
-                            </div>
-                            <div className='font-semibold text-white '>
-                              CPS Electives
+                            <div
+                              className='flex items-center gap-3 cursor-pointer'
+                              onClick={() => filterClickHandler('ELECTIVE')}
+                            >
+                              <div className='pl-1'>
+                                <MdEmojiEvents color='white' size={22} />
+                              </div>
+                              <div className='font-semibold text-white '>
+                                CPS Electives
+                              </div>
                             </div>
                           </div>
                           <div
-                            className='flex items-center gap-3 cursor-pointer'
+                            className='flex items-center gap-3 cursor-pointer py-2'
                             onClick={() => {
                               window.open(
                                 'https://packagingschool.com/isbt',
@@ -269,15 +295,15 @@ const Page = () => {
                             <div className='pl-1'>
                               <MdScience color='white' size={22} />
                             </div>
-                            <div className='font-semibold text-white '>
+                            <div className='font-semibold text-white leading-tight'>
                               Beverage Institute by ISBT®
                             </div>
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </motion.div>
                   )}
-                </AnimatePresence>
+                </AnimatePresence> */}
                 <div
                   className='border-black border-2 cursor-pointer h-full flex gap-1 px-5 w-48 justify-center items-center transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 shadow-[2px_2px_0px_black] hover:shadow-[6px_6px_0px_black]'
                   onClick={() => setIsFilter(!isFilter)}
