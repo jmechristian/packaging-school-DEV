@@ -282,7 +282,7 @@ const Page = () => {
                         <div
                           key={cat.value}
                           className={` transition-all ease-in flex w-full items-center justify-between px-2 cursor-pointer ${
-                            isInFilterArray(cat.value) ? 'bg-indigo-800' : ''
+                            isInFilterArray(cat.value) ? 'bg-brand-indigo' : ''
                           }`}
                           onClick={() => filterClickHandler(cat.value)}
                         >
@@ -300,7 +300,7 @@ const Page = () => {
                     <div className='flex flex-col gap-0.5 w-full pt-5 border-t-2 border-y-white'>
                       <div
                         className={`flex w-full items-center justify-between px-2 py-2  ${
-                          isInFilterArray('COLLECTION') ? 'bg-indigo-800' : ''
+                          isInFilterArray('COLLECTION') ? 'bg-brand-indigo' : ''
                         }`}
                         onClick={() => filterClickHandler('COLLECTION')}
                       >
@@ -315,7 +315,7 @@ const Page = () => {
                       </div>
                       <div
                         className={`flex w-full items-center justify-between px-2 py-2  ${
-                          isInFilterArray('ELECTIVE') ? 'bg-indigo-800' : ''
+                          isInFilterArray('ELECTIVE') ? 'bg-brand-indigo' : ''
                         }`}
                         onClick={() => filterClickHandler('ELECTIVE')}
                       >
@@ -445,7 +445,7 @@ const Page = () => {
             <div
               className={`border-black border-2 cursor-pointer h-full flex gap-1 px-5 py-2 w-48 justify-center items-center transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 shadow-[2px_2px_0px_black] hover:shadow-[6px_6px_0px_black] ${
                 !isFilter && isFilters.length > 0
-                  ? 'bg-indigo-700 text-white'
+                  ? 'bg-brand-indigo text-white'
                   : 'bg-white'
               }`}
               onClick={() => {
