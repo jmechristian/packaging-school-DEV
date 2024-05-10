@@ -1,14 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import {
-  MdSort,
-  MdOutlineSearch,
-  MdArrowDropDown,
-  MdEmojiEvents,
-  MdAutoStories,
-  MdScience,
-  MdFilterList,
-} from 'react-icons/md';
+import { MdSort, MdOutlineSearch, MdFilterList } from 'react-icons/md';
 import { categoryMenu } from '../../../data/CategoryMenu';
 
 import CPSCard from '../../../components/rive/CPSCard';
