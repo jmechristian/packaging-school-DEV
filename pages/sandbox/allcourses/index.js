@@ -433,7 +433,7 @@ const Page = () => {
             {/* CLEAR */}
             {isFilters.length > 0 ? (
               <div
-                className='h-full flex justify-center items-center px-4 text-red-600 cursor-pointer'
+                className='h-full flex justify-center text-center leading-tight items-center px-4 text-red-600 cursor-pointer'
                 onClick={() => filterClickHandler('ALL')}
               >
                 Clear Filters
