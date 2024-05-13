@@ -34,8 +34,7 @@ const CourseMenuBlock = ({ onClose }) => {
   const categoryClickHandler = (name, value) => {
     onClose();
     let newVal = value?.toUpperCase();
-    router.push('/all_courses#courses');
-    dispatch(setSelectedFilter({ name: name, value: newVal }));
+    router.push(`/all_courses?category=${newVal}`);
     dispatch(closeMobileMenu());
     dispatch(setMenuItem());
     dispatch(setSelectedNav(null));

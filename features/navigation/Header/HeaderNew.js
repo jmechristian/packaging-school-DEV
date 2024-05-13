@@ -48,7 +48,7 @@ export default function HeaderNew() {
 
   const categoryClickHandler = (name, value) => {
     let newVal = value?.toUpperCase();
-    router.push('/all_courses#courses');
+    router.push(`/all_courses?category=${newVal}`);
     dispatch(setSelectedFilter({ name: name, value: value }));
     dispatch(closeMobileMenu());
     dispatch(setMenuItem());
@@ -270,7 +270,8 @@ export default function HeaderNew() {
                                 leaveFrom='opacity-100'
                                 leaveTo='opacity-0'
                               >
-                                <Popover.Panel className='absolute inset-x-0 top-full z-20'>
+                                {/* CERTIFICATES MEGAMENU */}
+                                <Popover.Panel className='absolute inset-x-0 top-full z-50'>
                                   {/* Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow */}
                                   <div
                                     className='absolute inset-0 top-1/2 bg-white  shadow'
@@ -338,127 +339,12 @@ export default function HeaderNew() {
                                         </div>
                                       </div>
                                       <div className='col-span-1 border w-full h-full rounded-xl bg-neutral-100 dark:bg-dark-mid shadow-xl'>
-                                        {/* <div className='w-full flex flex-col gap-4 p-4 justify-between h-full'>
-                                          <div
-                                            className='w-full aspect-[4/3] bg-cover bg-center rounded-xl relative cursor-pointer'
-                                            style={{
-                                              backgroundImage: `url('https://packschool.s3.amazonaws.com/JULIE-2018-sm.jpg')`,
-                                            }}
-                                          >
-                                            <div className='w-full h-full bg-gradient-to-t from-black/80  rounded-b-xl absolute inset-0 z-[10]'></div>
-                                            <div className='flex flex-col justify-between w-full h-full absolute inset-0 z-[20]'>
-                                              <div className='w-fit py-2 text-sm font-semibold px-3 text-white bg-clemson rounded-xl mt-2 ml-2'>
-                                                The Doctor is In!
-                                              </div>
-                                              <div className='flex flex-col gap-1 p-3 leading-tight'>
-                                                <div className='font-bold text-2xl text-white'>
-                                                  Questions about
-                                                  Certifications?
-                                                </div>
-                                                <div className='text-white'>
-                                                  Reach out to Dr. Julie Suggs
-                                                  for a personalized
-                                                  consultation for yourself or
-                                                  your team.
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                          <div>
-                                            <div className='flex flex-col gap-2'>
-                                              <div className='font-bold w-full border-b border-b-slate-400 pb-2 font-greycliff'>
-                                                Not Sure Where to Start?
-                                              </div>
-                                              <div
-                                                className='flex gap-2 justify-between items-center border-b border-b-slate-400 pb-2 cursor-pointer'
-                                                onClick={() => {
-                                                  router.push('/all_courses');
-                                                  close();
-                                                }}
-                                              >
-                                                <div className='text-sm text-slate-700 dark:text-slate-300'>
-                                                  Browse the Library
-                                                </div>
-                                                <div>
-                                                  <ArrowLongRightIcon className='h-5 w-5 stroke-slate-700' />
-                                                </div>
-                                              </div>
-                                              <div
-                                                className='flex gap-2 justify-between cursor-pointer items-center'
-                                                onClick={() => {
-                                                  router.push('/contact');
-                                                  close();
-                                                }}
-                                              >
-                                                <div className='text-sm text-slate-700 dark:text-slate-300'>
-                                                  Contact Our Team
-                                                </div>
-                                                <div>
-                                                  <ArrowLongRightIcon className='h-5 w-5 stroke-slate-700' />
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div> */}
                                         <CertMegaCallout
                                           onClose={() => close()}
                                         />
                                       </div>
-                                      {/* <CourseDropDownCourses
-                                          onClose={() => close()}
-                                        />
-                                        <CourseDropDownCallout
-                                          onClose={() => close()}
-                                        /> */}
                                     </div>
                                   </div>
-
-                                  {/* <div className='mx-auto bg-base-light/95 backdrop-blur dark:bg-dark-dark rounded-b-xl shadow-xl px-3 pt-3 pb-8'>
-                                    <div className='mx-auto max-w-7xl px-8'>
-                                      <div className='grid grid-cols-3 overflow-hidden items-start gap-x-8 gap-y-10 py-4'>
-                                        <div className='grid grid-cols-1 overflow-hidden col-span-1 gap-6 h-full'>
-                                          <CertMenuItem
-                                            title='Certificate of Mastery in Packaging Management'
-                                            apply='/certificate-of-mastery-in-packaging-management'
-                                            learnMore='/certifications/get-to-know-cmpm'
-                                            content='A 12-week, PhD-led program teaching you the latest technologies accelerating the packaging field in the space of packaging development, material procurement, and organizational management.'
-                                            bgColor='bg-gradient-to-br from-base-brand to-slate-700'
-                                            onClose={() => close()}
-                                            // icon={'academicHat'}
-                                          />
-
-                                          <CertMenuItem
-                                            title='Automotive Packaging Certificate'
-                                            bgColor='bg-gradient-to-br from-clemson to-orange-800'
-                                            content='The first and only 100% online academic program that will enable you to develop the professional skill set you need to be successful in the automotive packaging field.'
-                                            apply='https://learn.packagingschool.com/enroll/735516'
-                                            learnMore='/certifications/get-to-know-apc'
-                                            onClose={() => close()}
-                                          />
-                                        </div>
-                                        <div className='grid grid-cols-1 col-span-1 gap-6 h-full'>
-                                          <CertMenuItem
-                                            title='Certificate of Packaging Science'
-                                            apply='/certificate-of-packaging-science-application'
-                                            learnMore='/certifications/get-to-know-cps'
-                                            onClose={() => close()}
-                                            bgColor='bg-gradient-to-br from-base-dark to-slate-900'
-                                            content='A 12-month, online program teaching the materials, processes, and influences shaping the advancement of the industry. Speak the language of packaging and be a key differentiator for you and your company.'
-                                            // icon='beaker'
-                                          />
-                                          <CertMenuItem
-                                            title='Food Packaging Certificate'
-                                            onClose={() => close()}
-                                            bgColor='bg-gradient-to-br from-green-500 to-slate-900'
-                                            learnMore='/food-packaging'
-                                            content='In Development! Want to be a part? Interested In Sponsoring? Leave your mark on the packaging industry. Click below to apply or reach out to our Academic Director Dr. Julie Suggs'
-                                            // icon='food'
-                                          />
-                                        </div>
-                                        <CertMegaCallout close={close} />
-                                      </div>
-                                    </div>
-                                  </div> */}
                                 </Popover.Panel>
                               </Transition>
                             </>
@@ -493,7 +379,8 @@ export default function HeaderNew() {
                                 leaveFrom='opacity-100'
                                 leaveTo='opacity-0'
                               >
-                                <Popover.Panel className='absolute inset-x-0 top-full z-20'>
+                                {/* COURSES MEGAMENU */}
+                                <Popover.Panel className='absolute inset-x-0 top-full z-50'>
                                   {/* Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow */}
 
                                   <div className='relative'>

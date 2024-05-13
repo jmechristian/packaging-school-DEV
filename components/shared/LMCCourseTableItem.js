@@ -122,7 +122,7 @@ const LMCCourseTableItem = ({ course }) => {
       {/* DESKTOP */}
       {/* MAIN */}
 
-      <div className='hidden lg:grid lg:grid-cols-12 gap-3 divide-x-black w-full px-2 py-2 h-[75px]'>
+      <div className='hidden lg:grid lg:grid-cols-12 gap-3 divide-x-black w-full px-2 py-2 min-h-[75px]'>
         <div
           className='col-span-4 pl-2 content-center'
           onClick={cardClickHandler}
@@ -160,13 +160,38 @@ const LMCCourseTableItem = ({ course }) => {
             {course.price === 'FREE' ? 'Free' : '$' + course.price}
           </div>
         </div>
-        <div className='col-span-4 content-center'>
-          <div className='text-sm line-clamp-2 tracking-tight'>
-            {course.shortDescription
-              ? course.shortDescription
-              : course.subheadline}
+        <div className='flex items-center gap-2 col-span-4 '>
+          <div
+            className='w-4 h-4 border-2 cursor-pointer border-black bg-white flex items-center justify-center'
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            <div
+              className={`${
+                isOpen ? 'rotate-180' : 'rotate-0'
+              } transition-all ease-in`}
+            >
+              <MdArrowDropDown size={16} color='black' />
+            </div>
           </div>
+          <AnimatePresence>
+            {isOpen ? (
+              <motion.div>
+                <div className='content-center'>
+                  <div className='text-sm tracking-tight'>
+                    {course.subheadline}
+                  </div>
+                </div>
+              </motion.div>
+            ) : (
+              <motion.div className='content-center'>
+                <div className='text-sm tracking-tight line-clamp-2'>
+                  {course.subheadline}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
+
         <div className='col-span-3 content-center'>
           <div className='grid grid-cols-4 w-full gap-3 text-center text-sm'>
             <div className='font-bold content-center'>{course.hours}</div>
