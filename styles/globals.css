@@ -324,9 +324,9 @@ h4 {
   @apply font-medium underline text-base-mid !important;
 }
 
-/* .tiptap > p > a > span {
+.tiptap > p > a {
   @apply font-medium underline text-base-mid !important;
-} */
+}
 
 .cc-revoke,
 .cc-window {
