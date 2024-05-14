@@ -95,7 +95,7 @@ type Lesson @model @auth(rules: [{ allow: public }]) {
   content: String
   sources: [LessonSource] @hasMany
   links: [LessonLink] @hasMany
-  tags: [Tags] @hasMany
+  tags: [String]
   objectives: [String]
   actionCTA: String
   actionSubhead: String

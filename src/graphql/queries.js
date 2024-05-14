@@ -72,7 +72,6 @@ export const getTags = /* GraphQL */ `
       tag
       createdAt
       updatedAt
-      lessonTagsId
       blogTagsId
       articleTagsId
     }
@@ -90,7 +89,6 @@ export const listTags = /* GraphQL */ `
         tag
         createdAt
         updatedAt
-        lessonTagsId
         blogTagsId
         articleTagsId
       }
@@ -373,18 +371,7 @@ export const getLesson = /* GraphQL */ `
         }
         nextToken
       }
-      tags {
-        items {
-          id
-          tag
-          createdAt
-          updatedAt
-          lessonTagsId
-          blogTagsId
-          articleTagsId
-        }
-        nextToken
-      }
+      tags
       objectives
       actionCTA
       actionSubhead
@@ -428,9 +415,7 @@ export const listLessons = /* GraphQL */ `
         links {
           nextToken
         }
-        tags {
-          nextToken
-        }
+        tags
         objectives
         actionCTA
         actionSubhead
@@ -484,9 +469,7 @@ export const lessonsBySlug = /* GraphQL */ `
         links {
           nextToken
         }
-        tags {
-          nextToken
-        }
+        tags
         objectives
         actionCTA
         actionSubhead
@@ -558,7 +541,6 @@ export const getBlog = /* GraphQL */ `
           tag
           createdAt
           updatedAt
-          lessonTagsId
           blogTagsId
           articleTagsId
         }
@@ -644,7 +626,6 @@ export const getArticle = /* GraphQL */ `
           tag
           createdAt
           updatedAt
-          lessonTagsId
           blogTagsId
           articleTagsId
         }
