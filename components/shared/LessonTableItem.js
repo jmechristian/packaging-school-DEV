@@ -1,7 +1,12 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { API } from 'aws-amplify';
 import { getAuthor } from '../../src/graphql/queries';
-import { MdVideocam, MdCampaign, MdEye, MdExitToApp } from 'react-icons/md';
+import {
+  MdVideocam,
+  MdCampaign,
+  MdAccountCircle,
+  MdExitToApp,
+} from 'react-icons/md';
 import { useRouter } from 'next/router';
 import BrutalCircleIconTooltip from './BrutalCircleIconTooltip';
 
@@ -70,9 +75,14 @@ const LessonTableItem = ({ less }) => {
         <div className='flex flex-col gap-5 col-span-3'>
           <div className='flex flex-col'>
             <div className='h4-base'>{less.title}</div>
-            <div className='flex gap-1.5'>
+            <div className='flex gap-2'>
               {less.author.map((auth) => (
-                <AuthorName key={auth} id={auth} />
+                <div className='flex items-center gap-0.5' key={auth}>
+                  <div>
+                    <MdAccountCircle color='black' size={16} />
+                  </div>
+                  <AuthorName id={auth} />
+                </div>
               ))}
             </div>
           </div>

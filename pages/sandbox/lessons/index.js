@@ -5,15 +5,13 @@ import {
   MdSort,
   MdOutlineSearch,
   MdAutorenew,
+  MdAccountCircle,
   MdEmojiEvents,
   MdAutoStories,
   MdScience,
   MdFilterList,
 } from 'react-icons/md';
 import { AnimatePresence, motion } from 'framer-motion';
-import { API } from 'aws-amplify';
-import { getAuthor } from '../../../src/graphql/queries';
-import { data } from 'autoprefixer';
 import LessonTableItem from '../../../components/shared/LessonTableItem';
 
 const Page = () => {
@@ -23,7 +21,6 @@ const Page = () => {
   const [openSort, setOpenSort] = useState(false);
   const [isTable, setIsTable] = useState(true);
   const [isLessons, setIsLessons] = useState([]);
-  const [isAuthor, setIsAuthors] = useState([]);
 
   useEffect(() => {
     fetch('/api/lessons')
@@ -212,16 +209,18 @@ const Page = () => {
           </div>
         </div>
         {/* LESSONS */}
-        {isLessons && isTable ? (
+        {isLessons.length > 0 && isTable ? (
           <div className='flex flex-col gap-2'>
             {isLessons.map((less) => (
               <LessonTableItem less={less} key={less.id} />
             ))}
           </div>
-        ) : isLessons && !isTable ? (
+        ) : isLessons.length > 0 && !isTable ? (
           <div>Grid</div>
         ) : (
-          <div>Gathering Intel</div>
+          <div className='w-full text-center animate-pulse'>
+            Gathering Intel...
+          </div>
         )}
       </div>
     </div>
