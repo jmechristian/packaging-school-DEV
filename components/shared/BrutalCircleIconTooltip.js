@@ -14,7 +14,7 @@ const BrutalCircleIconTooltip = ({ children, tooltip, bgColor, fn }) => {
       <AnimatePresence>
         {isHovered && (
           <motion.div
-            className='absolute w-fit z-50 bottom-full mb-1'
+            className='absolute w-fit z-[50] bottom-full mb-1'
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
