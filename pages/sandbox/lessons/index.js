@@ -13,6 +13,8 @@ import {
 } from 'react-icons/md';
 import { AnimatePresence, motion } from 'framer-motion';
 import LessonTableItem from '../../../components/shared/LessonTableItem';
+import { listLessons } from '../../../src/graphql/queries';
+import { API } from 'aws-amplify';
 
 const Page = () => {
   const [isSearchTerm, setIsSearchTerm] = useState('');
@@ -27,11 +29,17 @@ const Page = () => {
   });
 
   useEffect(() => {
-    fetch('/api/lessons')
-      .then((res) => res.json())
-      .then((data) => {
-        setIsLessons(data.lessons);
+    const getLessons = async () => {
+      const lessons = await API.graphql({
+        query: listLessons,
+        variables: {
+          filter: { status: { eq: 'PUBLISHED' } },
+        },
       });
+      setIsLessons(lessons.data.listLessons.items);
+    };
+
+    getLessons();
   }, []);
 
   function parseDate(dateString) {
