@@ -36,8 +36,8 @@ export default function SalesDetails() {
       <div className='mx-auto max-w-7xl px-6 pb-96 pt-24 text-center sm:pt-32 lg:px-8'>
         <div className='mx-auto max-w-4xl'>
           <p className='mt-2 text-4xl font-bold tracking-tight text-white sm:text-5xl'>
-            Start Dates from
-            <br /> January 10 - October 31, 2023
+            Start Dates: New rounds start
+            <br /> every 4 weeks.
           </p>
         </div>
         <div className='relative mt-6'>
