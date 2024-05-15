@@ -79,7 +79,7 @@ const LessonTableItem = ({ less }) => {
               {less.author.map((auth) => (
                 <div className='flex items-center gap-0.5' key={auth}>
                   <div>
-                    <MdAccountCircle color='black' size={16} />
+                    <MdAccountCircle color='gray' size={16} />
                   </div>
                   <AuthorName id={auth} />
                 </div>
