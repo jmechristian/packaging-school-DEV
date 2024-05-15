@@ -66,8 +66,8 @@ const LessonTableItem = ({ less }) => {
           </div>
         </div>
       </div>
-      <div className='col-span-4 content-center p-5'>
-        <div className='flex flex-col gap-5'>
+      <div className='col-span-5 grid grid-cols-4 content-center p-5'>
+        <div className='flex flex-col gap-5 col-span-3'>
           <div className='flex flex-col'>
             <div className='h4-base'>{less.title}</div>
             <div className='flex gap-1.5'>
@@ -88,16 +88,32 @@ const LessonTableItem = ({ less }) => {
             </div>
           </div>
         </div>
+        <div className='flex justify-center items-center p-5'>
+          {less.type === 'LOTM' ? (
+            <div
+              className='w-full h-full bg-contain bg-center bg-no-repeat'
+              style={{
+                backgroundImage: `url('https://packschool.s3.amazonaws.com/LOTM+Logo+Final-Black.png')`,
+              }}
+            ></div>
+          ) : less.type === 'REGULATORY' ? (
+            <div className='w-full h-full flex justify-center items-center'>
+              ROTM
+            </div>
+          ) : (
+            <div></div>
+          )}
+        </div>
       </div>
       <div
-        className='col-span-6 content-center m-5 overflow-scroll scroll-mb-6 h-[120px]'
+        className='col-span-5 content-center m-5 overflow-scroll scroll-mb-6 h-[120px]'
         id='scrollers'
       >
         <div className='flex flex-col'>
           <div className='text-sm'>{less.subhead}</div>
         </div>
       </div>
-      <div className='col-span-1 flex flex-col gap-2 content-center justify-center'>
+      <div className='col-span-1 flex flex-col gap-1.5 content-center justify-center'>
         <div className='content-center mx-auto'>
           <BrutalCircleIconTooltip
             tooltip={'View'}

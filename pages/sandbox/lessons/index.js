@@ -59,7 +59,7 @@ const Page = () => {
           </div>
         </div>
         {/* SEARCH - FILTER */}
-        <div className='grid grid-cols-3 lg:mb-5 pb-3 gap-2.5'>
+        <div className='grid grid-cols-3 lg:mb-5 gap-2.5'>
           {/* SEARCH */}
           <div className='w-full col-span-3 lg:col-span-2 border-2 border-black p-1'>
             <div className='flex gap-2 items-center'>
