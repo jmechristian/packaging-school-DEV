@@ -86,13 +86,13 @@ const LessonTableItem = ({ less }) => {
             </div>
           </div>
           <div className='flex flex-wrap items-center gap-1.5'>
-            <div className='text-xs bg-white p-1.5 border border-black'>
+            <div className='text-xs bg-white p-1 border border-black'>
               Sustainability
             </div>
-            <div className='text-xs bg-white p-1.5 border border-black'>
+            <div className='text-xs bg-white p-1 border border-black'>
               Regulatory
             </div>
-            <div className='text-xs w-fit bg-white p-1.5 border border-black'>
+            <div className='text-xs w-fit bg-white p-1 border border-black'>
               Waste Management
             </div>
           </div>

@@ -15,6 +15,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import LessonTableItem from '../../../components/shared/LessonTableItem';
 import { listLessons } from '../../../src/graphql/queries';
 import { API } from 'aws-amplify';
+import LessonCardItem from '../../../components/shared/LessonCardItem';
 
 const Page = () => {
   const [isSearchTerm, setIsSearchTerm] = useState('');
@@ -247,7 +248,11 @@ const Page = () => {
             ))}
           </div>
         ) : sortedLessons.length > 0 && !isTable ? (
-          <div>Grid</div>
+          <div className='grid lg:grid-cols-3 md:grid-cols-2 gap-10'>
+            {sortedLessons.map((less) => (
+              <LessonCardItem less={less} key={less.id} />
+            ))}
+          </div>
         ) : (
           <div className='w-full text-center animate-pulse'>
             Gathering Intel...
