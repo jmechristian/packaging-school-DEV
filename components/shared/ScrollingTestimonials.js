@@ -12,7 +12,14 @@ const ScrollingTestimonials = () => {
     const getTestimonials = async () => {
       const res = await API.graphql({ query: listTestimonials });
       if (res.data) {
-        setIsTestimonials(res.data.listTestimonials.items);
+        setIsTestimonials(() =>
+          res.data.listTestimonials.items.filter(
+            (test) =>
+              test.tags.includes('CMPM') ||
+              test.tags.includes('CPS') ||
+              test.tags.includes('APC')
+          )
+        );
       }
     };
 
@@ -88,38 +95,29 @@ const TestimonialList = ({
         return (
           <div
             key={t.id}
-            className='shrink-0 w-[500px] hover:bg-amber-100 flex flex-col rounded-lg overflow-hidden group items-start relative ring-4 ring-black'
+            className='shrink-0 w-[500px] h-[265px] flex flex-col overflow-hidden group items-start relative border-2 border-black transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 shadow-[4px_4px_0px_rgba(0,0,0,0.20)] hover:shadow-[6px_6px_0px_rgba(0,0,0,0.20)]'
           >
-            <div className='flex gap-3 px-4 w-full'>
-              <div
-                className='aspect-[1/1] rounded-full bg-indigo-400 w-20 mx-auto mt-4 bg-cover bg-center border-4 border-black'
-                style={{ backgroundImage: `url(${t.headshot})` }}
-              ></div>
-              <div className='flex justify-between items-center w-full'>
+            <div className='flex items-start gap-3 px-4 w-fit py-4'>
+              <div className='h-full'>
+                <div
+                  className='aspect-[1/1] rounded-full bg-indigo-400 w-9 mx-auto bg-cover bg-center border-2 border-black'
+                  style={{ backgroundImage: `url(${t.headshot})` }}
+                ></div>
+              </div>
+              <div className='flex w-full'>
                 <div className='flex flex-col justify-center h-full'>
-                  <span className='block font-semibold text-lg mb-1'>
+                  <span className='block font-semibold leading-tight'>
                     {t.author}
                   </span>
-                  <span className='block text-sm font-medium'>
+                  <span className='block text-sm font-medium text-neutral-600'>
                     {t.title}, {t.company}
                   </span>
-                </div>
-                <div
-                  className='w-10 h-10 transition-all ease-in rounded-full bg-amber-300 group-hover:bg-neutral-900 flex items-center justify-center cursor-pointer'
-                  onClick={() => {
-                    setSelected(t.video);
-                    fn();
-                  }}
-                >
-                  <div>
-                    <PlayIcon className='w-6 h-6 fill-white group-hover:fill-ap-yellow' />
-                  </div>
                 </div>
               </div>
             </div>
             {/* <img src={t.img} className='w-full h-44 object-cover' /> */}
-            <div className='px-4 pt-4 pb-9'>
-              <span className='block leading-snug'>{t.content}</span>
+            <div className='px-4 pb-9'>
+              <span className='block leading-snug text-sm'>{t.content}</span>
             </div>
           </div>
         );

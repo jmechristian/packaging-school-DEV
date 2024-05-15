@@ -10,6 +10,7 @@ import CMPMCard from '../../../components/rive/CMPMCard';
 import APCCard from '../../../components/rive/APCCard';
 import CSPCard from '../../../components/rive/CSPCard';
 import FPCCard from '../../../components/rive/FPCCard';
+import ScrollingTestimonials from '../../../components/shared/ScrollingTestimonials';
 
 export const RiveDemo = () => {
   const { RiveComponent } = useRive({
@@ -29,10 +30,10 @@ const Index = () => {
   const [isIndex, setIsIndex] = useState(0);
   const [isTestimonials, setIsTestimonials] = useState([]);
   return (
-    <div className='max-w-7xl w-full mx-auto pb-40 md:pb-48 border-b-2 border-b-black pt-5 lg:pt-10'>
-      <div className='flex flex-col gap-28 md:gap-48 lg:gap-36'>
+    <div className='w-full pb-40 md:pb-48 border-b-2 border-b-black pt-5 lg:pt-10'>
+      <div className='flex flex-col gap-28 md:gap-48 lg:gap-36 '>
         {/* HERO */}
-        <div className='w-full flex flex-col lg:flex-row lg:items-center gap-10 md:px-10 lg:px-0'>
+        <div className='w-full flex flex-col lg:flex-row lg:items-center gap-10 md:px-10 lg:px-0 max-w-7xl  mx-auto '>
           <div className='w-full max-w-[800px] aspect-[4/3]'>
             <RiveDemo />
           </div>
@@ -49,7 +50,7 @@ const Index = () => {
         </div>
 
         {/* LOGOS */}
-        <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 w-full gap-10 lg:gap-20 px-6 xl:px-0 '>
+        <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 w-full gap-10 lg:gap-20 px-6 xl:px-0 max-w-7xl mx-auto'>
           <div className='flex justify-center items-center'>
             <Image
               src={'https://packschool.s3.amazonaws.com/cmpm-black.png'}
@@ -110,7 +111,7 @@ const Index = () => {
               procurement, and organizational management.
             </div>
           </div>
-          <div className='flex flex-col lg:flex-row lg:items-center gap-10'>
+          <div className='flex flex-col lg:flex-row lg:items-center gap-10 max-w-7xl w-full mx-auto'>
             <div className='w-full h-[550px] flex justify-center items-center relative'>
               {/* <div className=' absolute z-5 top-0 left-0 w-[360px] h-[520px] mx-auto rounded-2xl border-4 border-black bg-white shadow-[4px_4px_0px_black] overflow-hidden'></div>
               <div className=' absolute z-0 bottom-0 right-0 w-[360px] h-[520px] mx-auto rounded-2xl border-4 border-black bg-white shadow-[4px_4px_0px_black] overflow-hidden'></div> */}
@@ -123,60 +124,8 @@ const Index = () => {
           </div>
         </div>
 
-        {/* Testimonials */}
-        <div className='flex flex-col'>
-          <div className='py-16 md:py-20 lg:py-36 border-y-2 lg:border-2 lg:rounded-2xl border-black'>
-            <div className='w-full flex flex-col items-center justify-center px-6 xl:px-0 gap-12 max-w-2xl lg:max-w-5xl mx-auto'>
-              <div className='text-3xl md:text-4xl font-medium text-center md:leading-tight'>
-                &quot;The CMPM is a great program for both up-and-coming
-                professionals curious to know more about packaging engineering
-                as well as seasoned packaging professionals who are looking to
-                do deeper dives and obtain additional knowledge; very fun,
-                useful and engaging overall!&quot;
-              </div>
-              <div className='flex w-full items-center justify-center gap-5 leading-snug'>
-                <div
-                  className='aspect-[1/1] bg-cover bg-center w-16 rounded-full border-2 border-black bg-white shadow-[2px_2px_0px_black]'
-                  style={{
-                    backgroundImage: `url("https://packschool.s3.amazonaws.com/kruegerr.jpeg")`,
-                  }}
-                ></div>
-                <div className='flex flex-col'>
-                  <div className='font-bold'>Mario Barrios</div>
-                  <div className='text-neutral-500'>
-                    Senior Packaging Engineer,
-                    <br /> Colgate-Palmolive Company
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className='flex w-full justify-between items-center max-w-xl mx-auto md:mt-5'>
-            <div className='grid h-14 w-14 place-content-center text-3xl transition-colors hover:bg-black hover:text-white'>
-              <GoArrowLeft
-                onClick={() => {
-                  if (isIndex != 0) {
-                    setIsIndex((prevValue) => prevValue - 1);
-                  }
-                }}
-              />
-            </div>
-            <div>{isIndex + 1 + '/' + isTestimonials.length}</div>
-            <button
-              onClick={() => {
-                if (isIndex < isTestimonials.length - 1) {
-                  setIsIndex((prevValue) => prevValue + 1);
-                }
-              }}
-              className='grid h-14 w-14 place-content-center text-3xl transition-colors hover:bg-black hover:text-white'
-            >
-              <GoArrowRight />
-            </button>
-          </div>
-        </div>
-
         {/* APS/CSP */}
-        <div className='flex flex-col lg:flex-row lg:items-center gap-28 justify-center lg:justify-start'>
+        <div className='flex flex-col lg:flex-row lg:items-center gap-28 justify-center lg:justify-start max-w-7xl  mx-auto'>
           <div className='flex flex-col gap-10 max-w-xl mx-auto'>
             <div className='flex flex-col gap-5 px-5 xl:px-0'>
               <BrutalTag
@@ -232,7 +181,7 @@ const Index = () => {
         </div>
 
         {/* FPC */}
-        <div className='w-full py-16 border-y-2 border-black lg:border-2 lg:rounded-2xl bg-base-brand/60'>
+        <div className='w-full py-16 border-y-2 border-black lg:border-2 lg:rounded-2xl bg-base-brand/60 max-w-7xl  mx-auto'>
           <div className='flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-24 px-5 xl:px-0 max-w-xl lg:max-w-6xl mx-auto'>
             <div className='flex flex-col gap-4'>
               <div className='flex items-center gap-3'>
@@ -275,6 +224,9 @@ const Index = () => {
             </div>
           </div>
         </div>
+
+        {/* Testimonials */}
+        <ScrollingTestimonials />
 
         {/* Final CTA */}
         <div className='flex flex-col gap-5 px-5 xl:px-0 max-w-xl lg:max-w-4xl mx-auto lg:pt-10'>
