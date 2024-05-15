@@ -47,7 +47,8 @@ const LessonCardItem = ({ less }) => {
         ></div>
       </div>
       {/* CONTENT */}
-      <div className='bg-white border-black border flex flex-col gap-2 p-5 h-full'>
+      <div className='bg-white border-black border flex flex-col gap-2 p-5 h-full relative'>
+        <div className='absolute w-full h-16 bg-gradient-to-t from-white via-white z-10 bottom-0 left-0 right-0'></div>
         <div className='h4-base leading-tight'>{less.title}</div>
         <div className='flex flex-wrap max-w-[75%] gap-x-1.5 gap-y-1'>
           {less.author.map((auth) => (
@@ -59,7 +60,12 @@ const LessonCardItem = ({ less }) => {
             </div>
           ))}
         </div>
-        <div className='text-sm leading-tight line-clamp-6'>{less.subhead}</div>
+        <div
+          className='text-sm leading-tight max-h-[157px] overflow-scroll pb-10'
+          id='scrollers'
+        >
+          {less.subhead}
+        </div>
       </div>
       {/* BUTTONS */}
       <div className='flex w-full items-center justify-between gap-2.5 py-1.5'>
