@@ -21,6 +21,10 @@ const Page = () => {
   const [openSort, setOpenSort] = useState(false);
   const [isTable, setIsTable] = useState(true);
   const [isLessons, setIsLessons] = useState([]);
+  const [isSort, setIsSort] = useState({
+    value: 'createdAt',
+    direction: 'ASC',
+  });
 
   useEffect(() => {
     fetch('/api/lessons')
@@ -29,6 +33,25 @@ const Page = () => {
         setIsLessons(data.lessons);
       });
   }, []);
+
+  function parseDate(dateString) {
+    return new Date(dateString);
+  }
+
+  const sortedLessons = useMemo(() => {
+    return (
+      isLessons.length > 0 &&
+      isLessons.sort((a, b) => {
+        const dateA = a.backdate
+          ? parseDate(a.backdate)
+          : parseDate(a.createdAt);
+        const dateB = b.backdate
+          ? parseDate(b.backdate)
+          : parseDate(b.createdAt);
+        return dateB - dateA;
+      })
+    );
+  }, [isLessons]);
 
   return (
     <div className='container-base px-3 xl:px-0'>
@@ -209,13 +232,13 @@ const Page = () => {
           </div>
         </div>
         {/* LESSONS */}
-        {isLessons.length > 0 && isTable ? (
+        {sortedLessons.length > 0 && isTable ? (
           <div className='flex flex-col gap-2'>
-            {isLessons.map((less) => (
+            {sortedLessons.map((less) => (
               <LessonTableItem less={less} key={less.id} />
             ))}
           </div>
-        ) : isLessons.length > 0 && !isTable ? (
+        ) : sortedLessons.length > 0 && !isTable ? (
           <div>Grid</div>
         ) : (
           <div className='w-full text-center animate-pulse'>

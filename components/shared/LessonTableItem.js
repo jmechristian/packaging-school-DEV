@@ -31,9 +31,13 @@ const AuthorName = ({ id }) => {
 const LessonTableItem = ({ less }) => {
   const router = useRouter();
 
+  const isDateValid = (str) => {
+    !isNaN(new Date(str));
+  };
+
   const newDateTop =
     less &&
-    new Date(less.backdate ? less.backdate : less.updatedAt).toLocaleDateString(
+    new Date(less.backdate ? less.backdate : less.createdAt).toLocaleDateString(
       'en-US',
       {
         month: 'short',
@@ -43,12 +47,7 @@ const LessonTableItem = ({ less }) => {
 
   const newDateBottom =
     less &&
-    new Date(less.backdate ? less.backdate : less.updatedAt).toLocaleDateString(
-      'en-US',
-      {
-        year: 'numeric',
-      }
-    );
+    new Date(less.backdate ? less.backdate : less.createdAt).getFullYear();
 
   return (
     <div
