@@ -403,12 +403,6 @@ export async function getStaticProps({ params }) {
             }
           }
           subhead
-          tags {
-            items {
-              lessonTagsId
-              tag
-            }
-          }
           title
           featured
           related
