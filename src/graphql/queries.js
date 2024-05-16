@@ -386,6 +386,7 @@ export const getLesson = /* GraphQL */ `
       createdBy
       lastEditedBy
       videoLink
+      screengrab
       createdAt
       updatedAt
     }
@@ -430,6 +431,7 @@ export const listLessons = /* GraphQL */ `
         createdBy
         lastEditedBy
         videoLink
+        screengrab
         createdAt
         updatedAt
       }
@@ -484,6 +486,7 @@ export const lessonsBySlug = /* GraphQL */ `
         createdBy
         lastEditedBy
         videoLink
+        screengrab
         createdAt
         updatedAt
       }

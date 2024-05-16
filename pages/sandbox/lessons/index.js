@@ -16,6 +16,8 @@ import LessonTableItem from '../../../components/shared/LessonTableItem';
 import { listLessons } from '../../../src/graphql/queries';
 import { API } from 'aws-amplify';
 import LessonCardItem from '../../../components/shared/LessonCardItem';
+import BrutalButton from '../../../components/shared/BrutalButton';
+import FeaturedLesson from '../../../components/shared/FeaturedLesson';
 
 const Page = () => {
   const [isSearchTerm, setIsSearchTerm] = useState('');
@@ -62,8 +64,33 @@ const Page = () => {
     );
   }, [isLessons]);
 
+  const isLOTM = useMemo(() => {
+    return (
+      sortedLessons.length > 0 &&
+      sortedLessons.filter((less) => less.type === 'LOTM')
+    );
+  }, [sortedLessons]);
+
+  const isReg = useMemo(() => {
+    return (
+      sortedLessons.length > 0 &&
+      sortedLessons.filter((less) => less.type === 'REGULATORY')
+    );
+  }, [sortedLessons]);
+
   return (
-    <div className='container-base px-3 xl:px-0'>
+    <div className='container-base px-3 xl:px-0 flex flex-col gap-16'>
+      <div className='w-full flex flex-col gap-5'>
+        <div className='w-full pb-5 border-b-4 border-b-black'>
+          <div className='h2-base'>View The Latest</div>
+        </div>
+        <div className='grid lg:grid-cols-2 gap-8'>
+          {/* LOTM */}
+          <FeaturedLesson less={isLOTM && isLOTM[0]} />
+          {/* ROTM */}
+          <FeaturedLesson less={isReg && isReg[0]} />
+        </div>
+      </div>
       <div className='w-full flex flex-col gap-5'>
         {/* HEADING */}
         <div className='w-full pb-5 border-b-4 border-b-black flex justify-between items-center'>

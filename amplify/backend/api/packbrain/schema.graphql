@@ -110,6 +110,7 @@ type Lesson @model @auth(rules: [{ allow: public }]) {
   createdBy: String
   lastEditedBy: String
   videoLink: String
+  screengrab: String
 }
 
 type Author @model @auth(rules: [{ allow: public }]) {

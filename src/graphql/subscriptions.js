@@ -400,6 +400,7 @@ export const onCreateLesson = /* GraphQL */ `
       createdBy
       lastEditedBy
       videoLink
+      screengrab
       createdAt
       updatedAt
     }
@@ -456,6 +457,7 @@ export const onUpdateLesson = /* GraphQL */ `
       createdBy
       lastEditedBy
       videoLink
+      screengrab
       createdAt
       updatedAt
     }
@@ -512,6 +514,7 @@ export const onDeleteLesson = /* GraphQL */ `
       createdBy
       lastEditedBy
       videoLink
+      screengrab
       createdAt
       updatedAt
     }
