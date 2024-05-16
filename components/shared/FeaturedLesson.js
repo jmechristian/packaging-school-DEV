@@ -4,6 +4,16 @@ import AuthorName from './AuthorName';
 import { MdAccountCircle } from 'react-icons/md';
 
 const FeaturedLesson = ({ less }) => {
+  const newDate =
+    less &&
+    new Date(less.backdate ? less.backdate : less.createdAt).toLocaleDateString(
+      'en-US',
+      {
+        month: 'short',
+        day: 'numeric',
+        year: 'numeric',
+      }
+    );
   return (
     <div className='w-full h-full border-2 border-black p-6 shadow-[6px_6px_0px_rgba(0,0,0,0.20)] flex flex-col gap-5 '>
       <div className='flex h-full gap-5 items-start'>
@@ -18,6 +28,7 @@ const FeaturedLesson = ({ less }) => {
           ></div>
         </div>
         <div className='flex flex-wrap gap-x-3 gap-y-1'>
+          <div className='text-xs'>{newDate}</div>
           <div className='h3-base pr-4'>{less && less.title}</div>
           {less.author &&
             less.author.length > 0 &&

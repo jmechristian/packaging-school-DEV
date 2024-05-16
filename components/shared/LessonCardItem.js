@@ -29,9 +29,20 @@ const AuthorName = ({ id }) => {
 };
 
 const LessonCardItem = ({ less }) => {
+  const newDate =
+    less &&
+    new Date(less.backdate ? less.backdate : less.createdAt).toLocaleDateString(
+      'en-US',
+      {
+        month: 'short',
+        day: 'numeric',
+        year: 'numeric',
+      }
+    );
+
   return (
     <div
-      className={`w-full h-full border-2 border-black p-2 flex flex-col gap-2 ${
+      className={`w-full h-full border-2 border-black p-2 flex flex-col gap-2 relative ${
         less.type === 'LOTM'
           ? 'bg-brand-yellow/20'
           : less.type === 'REGULATORY'
@@ -49,6 +60,7 @@ const LessonCardItem = ({ less }) => {
       {/* CONTENT */}
       <div className='bg-white border-black border flex flex-col gap-2 p-5 h-full relative'>
         <div className='absolute w-full h-16 bg-gradient-to-t from-white via-white z-10 bottom-0 left-0 right-0'></div>
+        <div className='text-sm'>{newDate}</div>
         <div className='h4-base leading-tight'>{less.title}</div>
         <div className='flex flex-wrap max-w-[75%] gap-x-1.5 gap-y-1'>
           {less.author.map((auth) => (
