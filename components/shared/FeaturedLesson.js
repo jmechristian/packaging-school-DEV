@@ -15,7 +15,15 @@ const FeaturedLesson = ({ less }) => {
       }
     );
   return (
-    <div className='w-full h-full border-2 border-black p-6 shadow-[6px_6px_0px_rgba(0,0,0,0.20)] flex flex-col gap-5 '>
+    <div className=' relative w-full h-full border-2 border-black p-6 shadow-[6px_6px_0px_rgba(0,0,0,0.20)] flex flex-col gap-5 '>
+      <div className='w-24 h-24 rounded-full border border-black bg-brand-yellow flex items-center justify-center absolute top-2.5 -left-5'>
+        <div
+          className='w-20 h-20 bg-contain bg-center bg-no-repeat'
+          style={{
+            backgroundImage: `url('https://packschool.s3.amazonaws.com/LOTM+Logo+Final-Black.png')`,
+          }}
+        ></div>
+      </div>
       <div className='flex h-full gap-5 items-start'>
         <div className='grid w-full h-full'>
           <div
