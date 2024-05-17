@@ -111,15 +111,51 @@ const Index = () => {
               procurement, and organizational management.
             </div>
           </div>
-          <div className='flex flex-col lg:flex-row lg:items-center gap-10 max-w-7xl w-full mx-auto'>
-            <div className='w-full h-[550px] flex justify-center items-center relative'>
-              {/* <div className=' absolute z-5 top-0 left-0 w-[360px] h-[520px] mx-auto rounded-2xl border-4 border-black bg-white shadow-[4px_4px_0px_black] overflow-hidden'></div>
-              <div className=' absolute z-0 bottom-0 right-0 w-[360px] h-[520px] mx-auto rounded-2xl border-4 border-black bg-white shadow-[4px_4px_0px_black] overflow-hidden'></div> */}
-              <CMPMCard />
-              <CPSCard />
+          <div className='flex flex-col gap-5 w-full max-w-6xl mx-auto'>
+            <div className='w-full grid grid-cols-12 h-[550px]'>
+              <div className='col-span-2'></div>
+              <div className='col-span-5'>
+                <CMPMCard />
+              </div>
+              <div className='col-span-5'>
+                <CPSCard />
+              </div>
             </div>
-            <div>
-              <CertCompare />
+            <div className='w-full grid grid-cols-12'>
+              <div className='col-span-2 grid grid-flow-row gap-5 divide-y-2 divide-black h-full'>
+                <div className='pt-3'>&nbsp;</div>
+                <div className='h3-base pt-3'>Provider</div>
+                <div className='h3-base pt-3'>Cost</div>
+                <div className='h3-base pt-3'>Timeline</div>
+                <div className='h3-base pt-3'>Instructor Access</div>
+                <div className='h3-base pt-3'>Courses</div>
+              </div>
+              <div className='col-span-5 text-center grid grid-flow-row gap-5 divide-y-2 divide-black h-full'>
+                <div className='h4-base pt-3'>
+                  Certificate of Mastery in Packaging
+                </div>
+                <div className='pt-3'>
+                  Clemson School of Business and The Packaging School
+                </div>
+                <div className='pt-3'>
+                  $7,000<sup>*</sup>
+                </div>
+                <div className='pt-3'>Timeline</div>
+                <div className='pt-3'>Instructor Access</div>
+                <div className='pt-3'>Courses</div>
+              </div>
+              <div className='col-span-5 text-center grid grid-flow-row gap-5 divide-y-2 divide-black align-middle h-full'>
+                <div className='h4-base pt-3'>
+                  Certificate of Packaging Science
+                </div>
+                <div className='pt-3'>The Packaging School</div>
+                <div className='pt-3'>
+                  $3,999<sup>*</sup>
+                </div>
+                <div className='pt-3'>Timeline</div>
+                <div className='pt-3'>Instructor Access</div>
+                <div className='pt-3'>Courses</div>
+              </div>
             </div>
           </div>
         </div>
