@@ -13,15 +13,13 @@ const ReactGoogleSlides = dynamic(() => import('react-google-slides'), {
   ssr: false,
 });
 
-import VideoPlayer from '../VideoPlayer';
-
 const LibraryHeader = ({ displayName, email, logo, slides, video, pdf }) => {
   const [isMediaType, setIsMediaType] = useState('SLIDES');
   return (
     <div className='w-full h-full flex flex-col lg:flex-row lg:justify-between gap-12 lg:px-12 xl:px-0 lg:gap-16'>
       <div className='flex items-center'>
         <div className='w-full flex flex-col justify-center gap-5 lg:gap-4 lg:max-w-2xl'>
-          <div className='w-full h-full flex lg:-mt-4 max-w-[200px] md:max-w-[250px]'>
+          <div className='w-full h-full flex max-w-[200px] md:max-w-[250px]'>
             <img
               src={logo}
               alt={`${displayName} Logo`}
@@ -29,9 +27,7 @@ const LibraryHeader = ({ displayName, email, logo, slides, video, pdf }) => {
             />
           </div>
           <div>
-            <h1 className='font-bold text-5xl leading-tight'>
-              Welcome, {displayName} Members
-            </h1>
+            <h1 className='h1-base'>Welcome, {displayName} Members</h1>
           </div>
           <div className='text-lg leading-snug max-w-xl w-full'>
             Explore the {displayName} Knowledge Library below. To learn how to
@@ -45,7 +41,7 @@ const LibraryHeader = ({ displayName, email, logo, slides, video, pdf }) => {
           </div>
         </div>
       </div>
-      <div className='flex flex-col justify-center items-center border-2 border-black bg-white shadow-[4px_4px_0px_black] h-full w-full max-w-[550px] rounded-lg'>
+      <div className='flex flex-col justify-center items-center border-2 border-black bg-white shadow-[6px_6px_0px_rgba(0,0,0,0.20)] h-full w-full max-w-[580px]'>
         <div className='w-full aspect-[16/9]'>
           <ReactGoogleSlides
             width={'100%'}

@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import { motion } from 'framer-motion';
 
 import WiredCourseCard from '../shared/WiredCourseCard';
+import LMSCourseCard from '../shared/LMSCourseCard';
 
 const DemoOffering = ({ featured, reference }) => {
   return (
