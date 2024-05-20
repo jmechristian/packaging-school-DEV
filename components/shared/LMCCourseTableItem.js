@@ -89,7 +89,7 @@ const LMCCourseTableItem = ({ course }) => {
     <div
       className={`w-full border-2 border-black ${setColorByCategoryString(
         course.categoryArray[0]
-      )} bg-opacity-20 relative group transition-all ease-in cursor-pointer`}
+      )} bg-opacity-20 relative group transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 shadow-[0px_0px_0px_black] hover:shadow-[6px_6px_0px_rgba(0,0,0,0.20)] cursor-pointer`}
     >
       {/* VIDEO PLAYER */}
       <AnimatePresence>
