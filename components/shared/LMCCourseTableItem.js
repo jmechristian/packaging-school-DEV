@@ -122,7 +122,7 @@ const LMCCourseTableItem = ({ course }) => {
       {/* DESKTOP */}
       {/* MAIN */}
 
-      <div className='hidden lg:grid lg:grid-cols-12 gap-3 divide-x-black w-full px-2 py-2 min-h-[75px]'>
+      <div className='hidden lg:grid lg:grid-cols-12 gap-3 divide-x-black w-full px-2 py-2 min-h-[90px]'>
         <div
           className='col-span-4 pl-2 content-center'
           onClick={cardClickHandler}
@@ -160,7 +160,7 @@ const LMCCourseTableItem = ({ course }) => {
             {course.price === 'FREE' ? 'Free' : '$' + course.price}
           </div>
         </div>
-        <div className='flex items-center gap-2 col-span-4 '>
+        <div className='flex items-center gap-2 col-span-5 '>
           <div
             className='w-4 h-4 border-2 cursor-pointer border-black bg-white flex items-center justify-center'
             onClick={() => setIsOpen(!isOpen)}
@@ -184,7 +184,7 @@ const LMCCourseTableItem = ({ course }) => {
               </motion.div>
             ) : (
               <motion.div className='content-center'>
-                <div className='text-sm tracking-tight line-clamp-2'>
+                <div className='text-sm tracking-tight line-clamp-3'>
                   {course.subheadline}
                 </div>
               </motion.div>
@@ -192,8 +192,8 @@ const LMCCourseTableItem = ({ course }) => {
           </AnimatePresence>
         </div>
 
-        <div className='col-span-3 content-center'>
-          <div className='grid grid-cols-4 w-full gap-3 text-center text-sm'>
+        <div className='col-span-2 content-center'>
+          <div className='grid grid-cols-3 w-full gap-3 text-center text-sm'>
             <div className='font-bold content-center'>{course.hours}</div>
             <div className='font-bold content-center'>{course.lessons}</div>
             {course.preview ? (
@@ -209,16 +209,6 @@ const LMCCourseTableItem = ({ course }) => {
             ) : (
               <div></div>
             )}
-
-            <div className='place-content-center mx-auto'>
-              <BrutalCircleIconTooltip
-                tooltip={'Buy'}
-                bgColor={'bg-brand-green'}
-                fn={() => cardPurchaseHandler()}
-              >
-                <MdLocalGroceryStore color='black' size={24} />
-              </BrutalCircleIconTooltip>
-            </div>
           </div>
         </div>
       </div>
@@ -309,7 +299,7 @@ const LMCCourseTableItem = ({ course }) => {
                   window.open(course.link, '_blank');
                 }}
               >
-                Purchase
+                View More
               </div>
             </div>
           </div>

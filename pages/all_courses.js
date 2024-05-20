@@ -550,13 +550,13 @@ const Page = () => {
                   </div>
                 </div>
               </div>
-              <div className='col-span-4'>
+              <div className='col-span-5'>
                 <div className='text-sm font-semibold'>
                   <div>Description</div>
                 </div>
               </div>
-              <div className='col-span-3'>
-                <div className='grid grid-cols-4 w-full gap-3 text-center'>
+              <div className='col-span-2'>
+                <div className='grid grid-cols-3 w-full gap-3 text-center'>
                   <div className='text-sm font-semibold cursor-pointer'>
                     <div
                       className={`${
@@ -591,9 +591,7 @@ const Page = () => {
                   <div className='text-sm font-semibold'>
                     <div className='lg:hidden xl:block'>Preview</div>
                   </div>
-                  <div className='text-sm font-semibold'>
-                    <div className='lg:hidden xl:block'>Purchase</div>
-                  </div>
+                  <div className='text-sm font-semibold'></div>
                 </div>
               </div>
             </div>
