@@ -70,10 +70,18 @@ export const getTags = /* GraphQL */ `
     getTags(id: $id) {
       id
       tag
+      lesson {
+        items {
+          id
+          tagsId
+          lessonId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
-      blogTagsId
-      articleTagsId
     }
   }
 `;
@@ -87,10 +95,39 @@ export const listTags = /* GraphQL */ `
       items {
         id
         tag
+        lesson {
+          nextToken
+        }
         createdAt
         updatedAt
-        blogTagsId
-        articleTagsId
+      }
+      nextToken
+    }
+  }
+`;
+export const tagsByTag = /* GraphQL */ `
+  query TagsByTag(
+    $tag: String!
+    $sortDirection: ModelSortDirection
+    $filter: ModelTagsFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    tagsByTag(
+      tag: $tag
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        tag
+        lesson {
+          nextToken
+        }
+        createdAt
+        updatedAt
       }
       nextToken
     }
@@ -371,7 +408,16 @@ export const getLesson = /* GraphQL */ `
         }
         nextToken
       }
-      tags
+      tags {
+        items {
+          id
+          tagsId
+          lessonId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       objectives
       actionCTA
       actionSubhead
@@ -416,7 +462,9 @@ export const listLessons = /* GraphQL */ `
         links {
           nextToken
         }
-        tags
+        tags {
+          nextToken
+        }
         objectives
         actionCTA
         actionSubhead
@@ -471,7 +519,9 @@ export const lessonsBySlug = /* GraphQL */ `
         links {
           nextToken
         }
-        tags
+        tags {
+          nextToken
+        }
         objectives
         actionCTA
         actionSubhead
@@ -538,17 +588,7 @@ export const getBlog = /* GraphQL */ `
       media
       content
       author
-      tags {
-        items {
-          id
-          tag
-          createdAt
-          updatedAt
-          blogTagsId
-          articleTagsId
-        }
-        nextToken
-      }
+      tags
       date
       createdAt
       updatedAt
@@ -569,9 +609,7 @@ export const listBlogs = /* GraphQL */ `
         media
         content
         author
-        tags {
-          nextToken
-        }
+        tags
         date
         createdAt
         updatedAt
@@ -602,9 +640,7 @@ export const blogsBySlug = /* GraphQL */ `
         media
         content
         author
-        tags {
-          nextToken
-        }
+        tags
         date
         createdAt
         updatedAt
@@ -623,17 +659,7 @@ export const getArticle = /* GraphQL */ `
       media
       seoImage
       content
-      tags {
-        items {
-          id
-          tag
-          createdAt
-          updatedAt
-          blogTagsId
-          articleTagsId
-        }
-        nextToken
-      }
+      tags
       relatedCourses {
         items {
           id
@@ -664,9 +690,7 @@ export const listArticles = /* GraphQL */ `
         media
         seoImage
         content
-        tags {
-          nextToken
-        }
+        tags
         relatedCourses {
           nextToken
         }
@@ -700,9 +724,7 @@ export const articlesBySlug = /* GraphQL */ `
         media
         seoImage
         content
-        tags {
-          nextToken
-        }
+        tags
         relatedCourses {
           nextToken
         }
@@ -4989,6 +5011,239 @@ export const listClicks = /* GraphQL */ `
     }
   }
 `;
+export const getLessonTags = /* GraphQL */ `
+  query GetLessonTags($id: ID!) {
+    getLessonTags(id: $id) {
+      id
+      tagsId
+      lessonId
+      tags {
+        id
+        tag
+        lesson {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      lesson {
+        id
+        slug
+        title
+        subhead
+        type
+        media
+        mediaType
+        slides
+        seoImage
+        content
+        sources {
+          nextToken
+        }
+        links {
+          nextToken
+        }
+        tags {
+          nextToken
+        }
+        objectives
+        actionCTA
+        actionSubhead
+        actionLink
+        actionLinkTitle
+        actionExample
+        author
+        status
+        related
+        featured
+        backdate
+        createdBy
+        lastEditedBy
+        videoLink
+        screengrab
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listLessonTags = /* GraphQL */ `
+  query ListLessonTags(
+    $filter: ModelLessonTagsFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listLessonTags(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        tagsId
+        lessonId
+        tags {
+          id
+          tag
+          createdAt
+          updatedAt
+        }
+        lesson {
+          id
+          slug
+          title
+          subhead
+          type
+          media
+          mediaType
+          slides
+          seoImage
+          content
+          objectives
+          actionCTA
+          actionSubhead
+          actionLink
+          actionLinkTitle
+          actionExample
+          author
+          status
+          related
+          featured
+          backdate
+          createdBy
+          lastEditedBy
+          videoLink
+          screengrab
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const lessonTagsByTagsId = /* GraphQL */ `
+  query LessonTagsByTagsId(
+    $tagsId: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelLessonTagsFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    lessonTagsByTagsId(
+      tagsId: $tagsId
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        tagsId
+        lessonId
+        tags {
+          id
+          tag
+          createdAt
+          updatedAt
+        }
+        lesson {
+          id
+          slug
+          title
+          subhead
+          type
+          media
+          mediaType
+          slides
+          seoImage
+          content
+          objectives
+          actionCTA
+          actionSubhead
+          actionLink
+          actionLinkTitle
+          actionExample
+          author
+          status
+          related
+          featured
+          backdate
+          createdBy
+          lastEditedBy
+          videoLink
+          screengrab
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const lessonTagsByLessonId = /* GraphQL */ `
+  query LessonTagsByLessonId(
+    $lessonId: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelLessonTagsFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    lessonTagsByLessonId(
+      lessonId: $lessonId
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        tagsId
+        lessonId
+        tags {
+          id
+          tag
+          createdAt
+          updatedAt
+        }
+        lesson {
+          id
+          slug
+          title
+          subhead
+          type
+          media
+          mediaType
+          slides
+          seoImage
+          content
+          objectives
+          actionCTA
+          actionSubhead
+          actionLink
+          actionLinkTitle
+          actionExample
+          author
+          status
+          related
+          featured
+          backdate
+          createdBy
+          lastEditedBy
+          videoLink
+          screengrab
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
 export const getCertificateCourses = /* GraphQL */ `
   query GetCertificateCourses($id: ID!) {
     getCertificateCourses(id: $id) {
@@ -5282,9 +5537,7 @@ export const getArticleRelatedCourses = /* GraphQL */ `
         media
         seoImage
         content
-        tags {
-          nextToken
-        }
+        tags
         relatedCourses {
           nextToken
         }
@@ -5334,6 +5587,7 @@ export const listArticleRelatedCourses = /* GraphQL */ `
           media
           seoImage
           content
+          tags
           createdAt
           updatedAt
         }
@@ -5386,6 +5640,7 @@ export const articleRelatedCoursesByCourseId = /* GraphQL */ `
           media
           seoImage
           content
+          tags
           createdAt
           updatedAt
         }
@@ -5438,6 +5693,7 @@ export const articleRelatedCoursesByArticleId = /* GraphQL */ `
           media
           seoImage
           content
+          tags
           createdAt
           updatedAt
         }

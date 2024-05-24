@@ -81,10 +81,18 @@ export const onCreateTags = /* GraphQL */ `
     onCreateTags {
       id
       tag
+      lesson {
+        items {
+          id
+          tagsId
+          lessonId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
-      blogTagsId
-      articleTagsId
     }
   }
 `;
@@ -93,10 +101,18 @@ export const onUpdateTags = /* GraphQL */ `
     onUpdateTags {
       id
       tag
+      lesson {
+        items {
+          id
+          tagsId
+          lessonId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
-      blogTagsId
-      articleTagsId
     }
   }
 `;
@@ -105,10 +121,18 @@ export const onDeleteTags = /* GraphQL */ `
     onDeleteTags {
       id
       tag
+      lesson {
+        items {
+          id
+          tagsId
+          lessonId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
-      blogTagsId
-      articleTagsId
     }
   }
 `;
@@ -385,7 +409,16 @@ export const onCreateLesson = /* GraphQL */ `
         }
         nextToken
       }
-      tags
+      tags {
+        items {
+          id
+          tagsId
+          lessonId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       objectives
       actionCTA
       actionSubhead
@@ -442,7 +475,16 @@ export const onUpdateLesson = /* GraphQL */ `
         }
         nextToken
       }
-      tags
+      tags {
+        items {
+          id
+          tagsId
+          lessonId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       objectives
       actionCTA
       actionSubhead
@@ -499,7 +541,16 @@ export const onDeleteLesson = /* GraphQL */ `
         }
         nextToken
       }
-      tags
+      tags {
+        items {
+          id
+          tagsId
+          lessonId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       objectives
       actionCTA
       actionSubhead
@@ -571,17 +622,7 @@ export const onCreateBlog = /* GraphQL */ `
       media
       content
       author
-      tags {
-        items {
-          id
-          tag
-          createdAt
-          updatedAt
-          blogTagsId
-          articleTagsId
-        }
-        nextToken
-      }
+      tags
       date
       createdAt
       updatedAt
@@ -597,17 +638,7 @@ export const onUpdateBlog = /* GraphQL */ `
       media
       content
       author
-      tags {
-        items {
-          id
-          tag
-          createdAt
-          updatedAt
-          blogTagsId
-          articleTagsId
-        }
-        nextToken
-      }
+      tags
       date
       createdAt
       updatedAt
@@ -623,17 +654,7 @@ export const onDeleteBlog = /* GraphQL */ `
       media
       content
       author
-      tags {
-        items {
-          id
-          tag
-          createdAt
-          updatedAt
-          blogTagsId
-          articleTagsId
-        }
-        nextToken
-      }
+      tags
       date
       createdAt
       updatedAt
@@ -650,17 +671,7 @@ export const onCreateArticle = /* GraphQL */ `
       media
       seoImage
       content
-      tags {
-        items {
-          id
-          tag
-          createdAt
-          updatedAt
-          blogTagsId
-          articleTagsId
-        }
-        nextToken
-      }
+      tags
       relatedCourses {
         items {
           id
@@ -686,17 +697,7 @@ export const onUpdateArticle = /* GraphQL */ `
       media
       seoImage
       content
-      tags {
-        items {
-          id
-          tag
-          createdAt
-          updatedAt
-          blogTagsId
-          articleTagsId
-        }
-        nextToken
-      }
+      tags
       relatedCourses {
         items {
           id
@@ -722,17 +723,7 @@ export const onDeleteArticle = /* GraphQL */ `
       media
       seoImage
       content
-      tags {
-        items {
-          id
-          tag
-          createdAt
-          updatedAt
-          blogTagsId
-          articleTagsId
-        }
-        nextToken
-      }
+      tags
       relatedCourses {
         items {
           id
@@ -5953,6 +5944,180 @@ export const onDeleteClick = /* GraphQL */ `
     }
   }
 `;
+export const onCreateLessonTags = /* GraphQL */ `
+  subscription OnCreateLessonTags {
+    onCreateLessonTags {
+      id
+      tagsId
+      lessonId
+      tags {
+        id
+        tag
+        lesson {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      lesson {
+        id
+        slug
+        title
+        subhead
+        type
+        media
+        mediaType
+        slides
+        seoImage
+        content
+        sources {
+          nextToken
+        }
+        links {
+          nextToken
+        }
+        tags {
+          nextToken
+        }
+        objectives
+        actionCTA
+        actionSubhead
+        actionLink
+        actionLinkTitle
+        actionExample
+        author
+        status
+        related
+        featured
+        backdate
+        createdBy
+        lastEditedBy
+        videoLink
+        screengrab
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateLessonTags = /* GraphQL */ `
+  subscription OnUpdateLessonTags {
+    onUpdateLessonTags {
+      id
+      tagsId
+      lessonId
+      tags {
+        id
+        tag
+        lesson {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      lesson {
+        id
+        slug
+        title
+        subhead
+        type
+        media
+        mediaType
+        slides
+        seoImage
+        content
+        sources {
+          nextToken
+        }
+        links {
+          nextToken
+        }
+        tags {
+          nextToken
+        }
+        objectives
+        actionCTA
+        actionSubhead
+        actionLink
+        actionLinkTitle
+        actionExample
+        author
+        status
+        related
+        featured
+        backdate
+        createdBy
+        lastEditedBy
+        videoLink
+        screengrab
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteLessonTags = /* GraphQL */ `
+  subscription OnDeleteLessonTags {
+    onDeleteLessonTags {
+      id
+      tagsId
+      lessonId
+      tags {
+        id
+        tag
+        lesson {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      lesson {
+        id
+        slug
+        title
+        subhead
+        type
+        media
+        mediaType
+        slides
+        seoImage
+        content
+        sources {
+          nextToken
+        }
+        links {
+          nextToken
+        }
+        tags {
+          nextToken
+        }
+        objectives
+        actionCTA
+        actionSubhead
+        actionLink
+        actionLinkTitle
+        actionExample
+        author
+        status
+        related
+        featured
+        backdate
+        createdBy
+        lastEditedBy
+        videoLink
+        screengrab
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
 export const onCreateCertificateCourses = /* GraphQL */ `
   subscription OnCreateCertificateCourses {
     onCreateCertificateCourses {
@@ -6171,9 +6336,7 @@ export const onCreateArticleRelatedCourses = /* GraphQL */ `
         media
         seoImage
         content
-        tags {
-          nextToken
-        }
+        tags
         relatedCourses {
           nextToken
         }
@@ -6220,9 +6383,7 @@ export const onUpdateArticleRelatedCourses = /* GraphQL */ `
         media
         seoImage
         content
-        tags {
-          nextToken
-        }
+        tags
         relatedCourses {
           nextToken
         }
@@ -6269,9 +6430,7 @@ export const onDeleteArticleRelatedCourses = /* GraphQL */ `
         media
         seoImage
         content
-        tags {
-          nextToken
-        }
+        tags
         relatedCourses {
           nextToken
         }

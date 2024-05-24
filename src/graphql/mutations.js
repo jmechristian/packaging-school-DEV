@@ -102,10 +102,18 @@ export const createTags = /* GraphQL */ `
     createTags(input: $input, condition: $condition) {
       id
       tag
+      lesson {
+        items {
+          id
+          tagsId
+          lessonId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
-      blogTagsId
-      articleTagsId
     }
   }
 `;
@@ -117,10 +125,18 @@ export const updateTags = /* GraphQL */ `
     updateTags(input: $input, condition: $condition) {
       id
       tag
+      lesson {
+        items {
+          id
+          tagsId
+          lessonId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
-      blogTagsId
-      articleTagsId
     }
   }
 `;
@@ -132,10 +148,18 @@ export const deleteTags = /* GraphQL */ `
     deleteTags(input: $input, condition: $condition) {
       id
       tag
+      lesson {
+        items {
+          id
+          tagsId
+          lessonId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
-      blogTagsId
-      articleTagsId
     }
   }
 `;
@@ -433,7 +457,16 @@ export const createLesson = /* GraphQL */ `
         }
         nextToken
       }
-      tags
+      tags {
+        items {
+          id
+          tagsId
+          lessonId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       objectives
       actionCTA
       actionSubhead
@@ -493,7 +526,16 @@ export const updateLesson = /* GraphQL */ `
         }
         nextToken
       }
-      tags
+      tags {
+        items {
+          id
+          tagsId
+          lessonId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       objectives
       actionCTA
       actionSubhead
@@ -553,7 +595,16 @@ export const deleteLesson = /* GraphQL */ `
         }
         nextToken
       }
-      tags
+      tags {
+        items {
+          id
+          tagsId
+          lessonId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       objectives
       actionCTA
       actionSubhead
@@ -637,17 +688,7 @@ export const createBlog = /* GraphQL */ `
       media
       content
       author
-      tags {
-        items {
-          id
-          tag
-          createdAt
-          updatedAt
-          blogTagsId
-          articleTagsId
-        }
-        nextToken
-      }
+      tags
       date
       createdAt
       updatedAt
@@ -666,17 +707,7 @@ export const updateBlog = /* GraphQL */ `
       media
       content
       author
-      tags {
-        items {
-          id
-          tag
-          createdAt
-          updatedAt
-          blogTagsId
-          articleTagsId
-        }
-        nextToken
-      }
+      tags
       date
       createdAt
       updatedAt
@@ -695,17 +726,7 @@ export const deleteBlog = /* GraphQL */ `
       media
       content
       author
-      tags {
-        items {
-          id
-          tag
-          createdAt
-          updatedAt
-          blogTagsId
-          articleTagsId
-        }
-        nextToken
-      }
+      tags
       date
       createdAt
       updatedAt
@@ -725,17 +746,7 @@ export const createArticle = /* GraphQL */ `
       media
       seoImage
       content
-      tags {
-        items {
-          id
-          tag
-          createdAt
-          updatedAt
-          blogTagsId
-          articleTagsId
-        }
-        nextToken
-      }
+      tags
       relatedCourses {
         items {
           id
@@ -764,17 +775,7 @@ export const updateArticle = /* GraphQL */ `
       media
       seoImage
       content
-      tags {
-        items {
-          id
-          tag
-          createdAt
-          updatedAt
-          blogTagsId
-          articleTagsId
-        }
-        nextToken
-      }
+      tags
       relatedCourses {
         items {
           id
@@ -803,17 +804,7 @@ export const deleteArticle = /* GraphQL */ `
       media
       seoImage
       content
-      tags {
-        items {
-          id
-          tag
-          createdAt
-          updatedAt
-          blogTagsId
-          articleTagsId
-        }
-        nextToken
-      }
+      tags
       relatedCourses {
         items {
           id
@@ -6448,6 +6439,189 @@ export const deleteClick = /* GraphQL */ `
     }
   }
 `;
+export const createLessonTags = /* GraphQL */ `
+  mutation CreateLessonTags(
+    $input: CreateLessonTagsInput!
+    $condition: ModelLessonTagsConditionInput
+  ) {
+    createLessonTags(input: $input, condition: $condition) {
+      id
+      tagsId
+      lessonId
+      tags {
+        id
+        tag
+        lesson {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      lesson {
+        id
+        slug
+        title
+        subhead
+        type
+        media
+        mediaType
+        slides
+        seoImage
+        content
+        sources {
+          nextToken
+        }
+        links {
+          nextToken
+        }
+        tags {
+          nextToken
+        }
+        objectives
+        actionCTA
+        actionSubhead
+        actionLink
+        actionLinkTitle
+        actionExample
+        author
+        status
+        related
+        featured
+        backdate
+        createdBy
+        lastEditedBy
+        videoLink
+        screengrab
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateLessonTags = /* GraphQL */ `
+  mutation UpdateLessonTags(
+    $input: UpdateLessonTagsInput!
+    $condition: ModelLessonTagsConditionInput
+  ) {
+    updateLessonTags(input: $input, condition: $condition) {
+      id
+      tagsId
+      lessonId
+      tags {
+        id
+        tag
+        lesson {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      lesson {
+        id
+        slug
+        title
+        subhead
+        type
+        media
+        mediaType
+        slides
+        seoImage
+        content
+        sources {
+          nextToken
+        }
+        links {
+          nextToken
+        }
+        tags {
+          nextToken
+        }
+        objectives
+        actionCTA
+        actionSubhead
+        actionLink
+        actionLinkTitle
+        actionExample
+        author
+        status
+        related
+        featured
+        backdate
+        createdBy
+        lastEditedBy
+        videoLink
+        screengrab
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteLessonTags = /* GraphQL */ `
+  mutation DeleteLessonTags(
+    $input: DeleteLessonTagsInput!
+    $condition: ModelLessonTagsConditionInput
+  ) {
+    deleteLessonTags(input: $input, condition: $condition) {
+      id
+      tagsId
+      lessonId
+      tags {
+        id
+        tag
+        lesson {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      lesson {
+        id
+        slug
+        title
+        subhead
+        type
+        media
+        mediaType
+        slides
+        seoImage
+        content
+        sources {
+          nextToken
+        }
+        links {
+          nextToken
+        }
+        tags {
+          nextToken
+        }
+        objectives
+        actionCTA
+        actionSubhead
+        actionLink
+        actionLinkTitle
+        actionExample
+        author
+        status
+        related
+        featured
+        backdate
+        createdBy
+        lastEditedBy
+        videoLink
+        screengrab
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
 export const createCertificateCourses = /* GraphQL */ `
   mutation CreateCertificateCourses(
     $input: CreateCertificateCoursesInput!
@@ -6678,9 +6852,7 @@ export const createArticleRelatedCourses = /* GraphQL */ `
         media
         seoImage
         content
-        tags {
-          nextToken
-        }
+        tags
         relatedCourses {
           nextToken
         }
@@ -6730,9 +6902,7 @@ export const updateArticleRelatedCourses = /* GraphQL */ `
         media
         seoImage
         content
-        tags {
-          nextToken
-        }
+        tags
         relatedCourses {
           nextToken
         }
@@ -6782,9 +6952,7 @@ export const deleteArticleRelatedCourses = /* GraphQL */ `
         media
         seoImage
         content
-        tags {
-          nextToken
-        }
+        tags
         relatedCourses {
           nextToken
         }
