@@ -11,9 +11,10 @@ import {
   MdScience,
   MdFilterList,
 } from 'react-icons/md';
+import { IoMdPricetags } from 'react-icons/io';
 import { AnimatePresence, motion } from 'framer-motion';
 import LessonTableItem from '../../../components/shared/LessonTableItem';
-import { listLessons } from '../../../src/graphql/queries';
+import { listLessons, listTags } from '../../../src/graphql/queries';
 import { API } from 'aws-amplify';
 import LessonCardItem from '../../../components/shared/LessonCardItem';
 import BrutalButton from '../../../components/shared/BrutalButton';
@@ -26,6 +27,7 @@ const Page = () => {
   const [openSort, setOpenSort] = useState(false);
   const [isTable, setIsTable] = useState(true);
   const [isLessons, setIsLessons] = useState([]);
+  const [isTags, setIsTags] = useState([]);
   const [isSort, setIsSort] = useState({
     value: 'createdAt',
     direction: 'ASC',
@@ -42,7 +44,32 @@ const Page = () => {
       setIsLessons(lessons.data.listLessons.items);
     };
 
+    const getTagQuery = /* GraphQL */ `
+      query MyQuery {
+        listTags {
+          items {
+            tag
+            lesson {
+              items {
+                id
+              }
+            }
+            id
+          }
+        }
+      }
+    `;
+
+    const getTags = async () => {
+      const tags = await API.graphql({
+        query: getTagQuery,
+      });
+      setIsTags(tags.data.listTags.items);
+      console.log(tags.data.listTags.items);
+    };
+
     getLessons();
+    getTags();
   }, []);
 
   function parseDate(dateString) {
@@ -161,11 +188,13 @@ const Page = () => {
             {/* FILTER */}
             <AnimatePresence>
               {isFilter && (
-                <motion.div className='w-[320px] absolute top-full right-0 mt-2.5 bg-black px-5 py-6 z-40'>
+                <motion.div className='w-[400px] absolute top-full right-0 mt-2.5 bg-black px-5 py-4 z-40'>
                   <div className='flex flex-col gap-5'>
                     <div className='flex flex-col gap-0.5'>
                       <div className='flex justify-between items-center w-full  border-b-2 border-b-white pb-3'>
-                        <div className='text-white  font-semibold'>Type</div>
+                        <div className='text-white  font-semibold'>
+                          Filter by Tag
+                        </div>
                         <div
                           className='bg-white px-2 py-1.5 text-xs font-medium cursor-pointer'
                           onClick={() => {
@@ -174,6 +203,22 @@ const Page = () => {
                         >
                           Close
                         </div>
+                      </div>
+                      <div className='flex flex-wrap gap-1.5 mt-2'>
+                        {isTags &&
+                          isTags
+                            .sort(
+                              (a, b) =>
+                                b.lesson.items.length - a.lesson.items.length
+                            )
+                            .map((t) => (
+                              <div
+                                key={t.id}
+                                className='text-xs uppercase font-semibold border bg-white hover:bg-clemson transition-colors ease-in border-black px-1.5 py-1 cursor-pointer'
+                              >
+                                {t.tag} &#40;{t.lesson.items.length}&#41;
+                              </div>
+                            ))}
                       </div>
                     </div>
                   </div>
@@ -204,8 +249,8 @@ const Page = () => {
                 setIsFilter(!isFilter);
               }}
             >
-              <MdFilterList size={24} />
-              <div className='font-semibold'>Filter</div>
+              <IoMdPricetags size={24} />
+              <div className='font-semibold'>Tags</div>
             </div>
             {/* SORT BUTTON */}
             <div
