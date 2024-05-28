@@ -9,7 +9,7 @@ import { createClick } from '../../src/graphql/mutations';
 import { useSelector } from 'react-redux';
 import { registerClick } from '../../helpers/api';
 
-const BrutalCourseCard = ({ id, icons, coupon }) => {
+const BrutalCourseCard = ({ id, icons, coupon, discount }) => {
   const [isCourse, setIsCourse] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -102,7 +102,7 @@ const BrutalCourseCard = ({ id, icons, coupon }) => {
           <div className='flex justify-between w-full items-center px-4 pt-5 pb-5'>
             <div className='flex items-center gap-1.5'>
               <div className='font-bold text-3xl tracking-tighter'>
-                ${(isCourse.price - isCourse.price * 0.85).toFixed(2)}
+                ${(isCourse.price - isCourse.price * discount).toFixed(2)}
               </div>
               <div className='text-neutral-500 text-xl line-through'>
                 ${isCourse.price}

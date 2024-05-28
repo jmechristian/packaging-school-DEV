@@ -29,13 +29,13 @@ const Page = () => {
   return (
     <>
       <Meta
-        title={'Packaging School | India Student Discount'}
+        title={'Packaging School | Mexico Student Discount'}
         description={
-          'Unbox your potention with 85% OFF select Packaging School Courses'
+          'Unbox your potention with 60% OFF select Packaging School Courses'
         }
         image={'https://packschool.s3.amazonaws.com/firework-box-2-logo.webp'}
         keywords={
-          'packaging, online education, India, Indian Student, design, materials, business'
+          'packaging, online education, Mexico, student, design, materials, business'
         }
       />
       <div className='max-w-6xl mx-auto pb-16'>
@@ -47,7 +47,7 @@ const Page = () => {
             <div className='w-2/3 h-24 bg-neutral-300 animate-pulse rounded-lg'></div>
             <div className='w-2/3 h-24 bg-neutral-300 animate-pulse rounded-lg'></div>
           </div>
-        ) : location && location.country === 'India' ? (
+        ) : location && location.country === 'United States' ? (
           <>
             <div className='flex flex-col gap-12 py-10 md:py-16 w-full  border-b-black border-b-2'>
               <div className='flex flex-col gap-5 px-5 xl:px-0'>
@@ -57,7 +57,7 @@ const Page = () => {
                 <div className='text-5xl lg:max-w-3xl lg:text-7xl font-medium tracking-tighter lg:leading-[1.0em]'>
                   Unbox Your Potential: Dive into Expert-Crafted Courses at{' '}
                   <span className='text-base-brand font-bold'>
-                    85% OFF!<sup className='-mt-3'>*</sup>
+                    60% OFF!<sup className='-mt-3'>*</sup>
                   </span>
                 </div>
               </div>
@@ -90,12 +90,12 @@ const Page = () => {
                 <div className='md:grid md:grid-cols-2 xl:grid-cols-3 gap-10 w-fit hidden mt-7'>
                   {cpsIds.map((id) => (
                     <div key={id}>
-                      <BrutalCourseCard id={id} discount={0.85} />
+                      <BrutalCourseCard id={id} discount={0.6} />
                     </div>
                   ))}
                 </div>
                 <div className='flex w-full gap-5 pt-5 pb-3 md:hidden'>
-                  <BrutalCourseCard id={cpsIds[isIndex]} discount={0.85} />
+                  <BrutalCourseCard id={cpsIds[isIndex]} discount={0.6} />
                 </div>
                 <div className='flex w-full justify-between items-center md:hidden'>
                   <div className='grid h-14 w-14 place-content-center text-3xl transition-colors hover:bg-black hover:text-white'>
@@ -151,7 +151,7 @@ const Page = () => {
                 <div>
                   <BrutalCourseCard
                     id={'fef1f2a6-b9b9-4619-9900-c677f91681c7'}
-                    discount={0.85}
+                    discount={0.6}
                   />
                 </div>
               </div>
