@@ -1,23 +1,11 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import {
-  MdApps,
-  MdDehaze,
-  MdSort,
-  MdOutlineSearch,
-  MdAutorenew,
-  MdAccountCircle,
-  MdEmojiEvents,
-  MdAutoStories,
-  MdScience,
-  MdFilterList,
-} from 'react-icons/md';
+import { MdApps, MdDehaze, MdSort, MdOutlineSearch } from 'react-icons/md';
 import { IoMdPricetags } from 'react-icons/io';
 import { AnimatePresence, motion } from 'framer-motion';
 import LessonTableItem from '../../../components/shared/LessonTableItem';
-import { listLessons, listTags } from '../../../src/graphql/queries';
+import { listLessons } from '../../../src/graphql/queries';
 import { API } from 'aws-amplify';
 import LessonCardItem from '../../../components/shared/LessonCardItem';
-import BrutalButton from '../../../components/shared/BrutalButton';
 import FeaturedLesson from '../../../components/shared/FeaturedLesson';
 
 const Page = () => {
@@ -28,10 +16,6 @@ const Page = () => {
   const [isTable, setIsTable] = useState(true);
   const [isLessons, setIsLessons] = useState([]);
   const [isTags, setIsTags] = useState([]);
-  const [isSort, setIsSort] = useState({
-    value: 'createdAt',
-    direction: 'ASC',
-  });
 
   useEffect(() => {
     const getLessons = async () => {
@@ -132,7 +116,7 @@ const Page = () => {
   }, [sortedLessons]);
 
   return (
-    <div className='container-base px-3 xl:px-0 flex flex-col gap-16'>
+    <div className='container-base px-3 xl:px-0 flex flex-col gap-24'>
       <div className='w-full flex flex-col gap-5'>
         <div className='w-full pb-5 border-b-4 border-b-black'>
           <div className='h2-base'>View The Latest</div>
@@ -215,6 +199,7 @@ const Page = () => {
                               <div
                                 key={t.id}
                                 className='text-xs uppercase font-semibold border bg-white hover:bg-clemson transition-colors ease-in border-black px-1.5 py-1 cursor-pointer'
+                                onClick={() => tagFilterHandler(t.tag)}
                               >
                                 {t.tag} &#40;{t.lesson.items.length}&#41;
                               </div>
