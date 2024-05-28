@@ -1,9 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import BrutalButton from './BrutalButton';
 import AuthorName from './AuthorName';
 import { MdAccountCircle } from 'react-icons/md';
+import { API } from 'aws-amplify';
+import { lessonTagsByLessonId } from '../../src/graphql/queries';
+import Image from 'next/image';
 
 const FeaturedLesson = ({ less }) => {
+  const [isTags, setIsTags] = useState([]);
+
+  useEffect(() => {
+    const getTags = async () => {
+      const tags = await API.graphql({
+        query: lessonTagsByLessonId,
+        variables: { lessonId: less.id },
+      });
+      setIsTags(tags.data.lessonTagsByLessonId.items);
+    };
+
+    getTags();
+  }, [less]);
+
   const newDate =
     less &&
     new Date(less.backdate ? less.backdate : less.createdAt).toLocaleDateString(
@@ -17,12 +34,29 @@ const FeaturedLesson = ({ less }) => {
   return (
     <div className=' relative w-full h-full border-2 border-black p-6 shadow-[6px_6px_0px_rgba(0,0,0,0.20)] flex flex-col gap-5 '>
       <div className='w-24 h-24 rounded-full border border-black bg-brand-yellow flex items-center justify-center absolute top-2.5 -left-5'>
-        <div
-          className='w-20 h-20 bg-contain bg-center bg-no-repeat'
-          style={{
-            backgroundImage: `url('https://packschool.s3.amazonaws.com/LOTM+Logo+Final-Black.png')`,
-          }}
-        ></div>
+        <div className='w-20 h-20 flex items-center justify-center'>
+          {less.type === 'LOTM' ? (
+            <div className='w-full flex items-center justify-center'>
+              <Image
+                src={
+                  'https://packschool.s3.amazonaws.com/LOTM+Logo+Final-Black.png'
+                }
+                width={1699}
+                height={874}
+                alt='LOTM Logo'
+              />
+            </div>
+          ) : (
+            <div className='w-full flex items-center justify-center p-2 -mt-3'>
+              <Image
+                src={'https://packschool.s3.amazonaws.com/ROTM-logo.png'}
+                width={500}
+                height={482}
+                alt='ROTM Logo'
+              />
+            </div>
+          )}
+        </div>
       </div>
       <div className='flex h-full gap-5 items-start'>
         <div className='grid w-full h-full'>
@@ -54,15 +88,18 @@ const FeaturedLesson = ({ less }) => {
       <div className='flex items-end justify-between w-full'>
         {/* TAGS */}
         <div className='max-w-[33%] flex flex-wrap gap-1.5'>
-          <div className='text-xs bg-white/50 p-1 border border-black'>
-            Sustainability
-          </div>
-          <div className='text-xs bg-white/50 p-1 border border-black'>
-            Regulatory
-          </div>
-          <div className='text-xs w-fit bg-white/50 p-1 border border-black'>
-            Waste Management
-          </div>
+          {isTags && isTags.length > 0 ? (
+            isTags.map((t) => (
+              <div
+                className='text-xs bg-white/50 py-1 px-1.5 border border-black uppercase font-semibold'
+                key={t.id}
+              >
+                {t.tags.tag}
+              </div>
+            ))
+          ) : (
+            <></>
+          )}
         </div>
         <div className='w-fit'>
           <BrutalButton

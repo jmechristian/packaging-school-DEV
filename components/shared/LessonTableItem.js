@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { API } from 'aws-amplify';
-import { getAuthor } from '../../src/graphql/queries';
+import { getAuthor, lessonTagsByLessonId } from '../../src/graphql/queries';
 import {
   MdVideocam,
   MdCampaign,
@@ -30,6 +30,19 @@ const AuthorName = ({ id }) => {
 
 const LessonTableItem = ({ less }) => {
   const router = useRouter();
+  const [isTags, setIsTags] = useState([]);
+
+  useEffect(() => {
+    const getTags = async () => {
+      const tags = await API.graphql({
+        query: lessonTagsByLessonId,
+        variables: { lessonId: less.id },
+      });
+      setIsTags(tags.data.lessonTagsByLessonId.items);
+    };
+
+    getTags();
+  }, [less]);
 
   const isDateValid = (str) => {
     !isNaN(new Date(str));
@@ -86,18 +99,21 @@ const LessonTableItem = ({ less }) => {
             </div>
           </div>
           <div className='flex flex-wrap items-center gap-1.5'>
-            <div className='text-xs bg-white p-1 border border-black'>
-              Sustainability
-            </div>
-            <div className='text-xs bg-white p-1 border border-black'>
-              Regulatory
-            </div>
-            <div className='text-xs w-fit bg-white p-1 border border-black'>
-              Waste Management
-            </div>
+            {isTags && isTags.length > 0 ? (
+              isTags.map((t) => (
+                <div
+                  className='text-xs bg-white/40 py-1 px-1.5 border border-black uppercase font-semibold'
+                  key={t.id}
+                >
+                  {t.tags.tag}
+                </div>
+              ))
+            ) : (
+              <></>
+            )}
           </div>
         </div>
-        <div className='flex justify-center items-center p-5'>
+        <div className='flex justify-center items-center p-2'>
           {less.type === 'LOTM' ? (
             <div
               className='w-full h-full bg-contain bg-center bg-no-repeat'
@@ -106,9 +122,12 @@ const LessonTableItem = ({ less }) => {
               }}
             ></div>
           ) : less.type === 'REGULATORY' ? (
-            <div className='w-full h-full flex justify-center items-center'>
-              ROTM
-            </div>
+            <div
+              className='w-full h-full bg-contain bg-center bg-no-repeat'
+              style={{
+                backgroundImage: `url('https://packschool.s3.amazonaws.com/ROTM-logo-hor.svg')`,
+              }}
+            ></div>
           ) : (
             <div></div>
           )}
@@ -145,7 +164,7 @@ const LessonTableItem = ({ less }) => {
         ) : (
           <></>
         )}
-        <div className='content-center mx-auto'>
+        {/* <div className='content-center mx-auto'>
           <BrutalCircleIconTooltip
             tooltip={'Share'}
             bgColor={'bg-base-brand'}
@@ -153,7 +172,7 @@ const LessonTableItem = ({ less }) => {
           >
             <MdCampaign color='white' size={24} />
           </BrutalCircleIconTooltip>
-        </div>
+        </div> */}
       </div>
     </div>
   );

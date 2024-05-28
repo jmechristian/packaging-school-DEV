@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getAuthor } from '../../src/graphql/queries';
+import { getAuthor, lessonTagsByLessonId } from '../../src/graphql/queries';
 import {
   MdVideocam,
   MdCampaign,
@@ -29,6 +29,20 @@ const AuthorName = ({ id }) => {
 };
 
 const LessonCardItem = ({ less }) => {
+  const [isTags, setIsTags] = useState([]);
+
+  useEffect(() => {
+    const getTags = async () => {
+      const tags = await API.graphql({
+        query: lessonTagsByLessonId,
+        variables: { lessonId: less.id },
+      });
+      setIsTags(tags.data.lessonTagsByLessonId.items);
+    };
+
+    getTags();
+  }, [less]);
+
   const newDate =
     less &&
     new Date(less.backdate ? less.backdate : less.createdAt).toLocaleDateString(
@@ -82,15 +96,18 @@ const LessonCardItem = ({ less }) => {
       {/* BUTTONS */}
       <div className='flex w-full items-center justify-between gap-2.5 py-1.5'>
         <div className='max-w-2/3 flex flex-wrap gap-1.5'>
-          <div className='text-xs bg-white/50 p-1 border border-black'>
-            Sustainability
-          </div>
-          <div className='text-xs bg-white/50 p-1 border border-black'>
-            Regulatory
-          </div>
-          <div className='text-xs w-fit bg-white/50 p-1 border border-black'>
-            Waste Management
-          </div>
+          {isTags && isTags.length > 0 ? (
+            isTags.map((t) => (
+              <div
+                className='text-xs bg-white/40 py-1 px-1.5 border border-black uppercase font-semibold'
+                key={t.id}
+              >
+                {t.tags.tag}
+              </div>
+            ))
+          ) : (
+            <></>
+          )}
         </div>
         <div className='flex items-center gap-2'>
           <BrutalCircleIconTooltip
@@ -111,13 +128,13 @@ const LessonCardItem = ({ less }) => {
           ) : (
             <></>
           )}
-          <BrutalCircleIconTooltip
+          {/* <BrutalCircleIconTooltip
             tooltip={'Share'}
             bgColor={'bg-base-brand'}
             fn={() => setIsPlaying(!isPlaying)}
           >
             <MdCampaign color='white' size={24} />
-          </BrutalCircleIconTooltip>
+          </BrutalCircleIconTooltip> */}
         </div>
       </div>
     </div>

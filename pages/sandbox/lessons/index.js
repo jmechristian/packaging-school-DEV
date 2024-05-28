@@ -64,6 +64,32 @@ const Page = () => {
     );
   }, [isLessons]);
 
+  const filteredLessons = useMemo(() => {
+    if (isFilters.length === 0 && sortedLessons) {
+      return sortedLessons;
+    }
+
+    if (isFilters.length > 0 && sortedLessons) {
+      return sortedLessons.filter((less) => isFilters.includes(less.type));
+    }
+  }, [sortedLessons, isFilters]);
+
+  const lessonsToShow = useMemo(() => {
+    if (!isSearchTerm && filteredLessons) {
+      return filteredLessons;
+    }
+
+    if (isSearchTerm && filteredLessons) {
+      return filteredLessons.filter(
+        (cour) =>
+          cour.title.toLowerCase().includes(isSearchTerm.toLowerCase()) ||
+          cour.subhead.toLowerCase().includes(isSearchTerm.toLowerCase()) ||
+          (cour.content &&
+            cour.content.toLowerCase().includes(isSearchTerm.toLowerCase()))
+      );
+    }
+  }, [isSearchTerm, filteredLessons]);
+
   const isLOTM = useMemo(() => {
     return (
       sortedLessons.length > 0 &&
@@ -139,9 +165,7 @@ const Page = () => {
                   <div className='flex flex-col gap-5'>
                     <div className='flex flex-col gap-0.5'>
                       <div className='flex justify-between items-center w-full  border-b-2 border-b-white pb-3'>
-                        <div className='text-white  font-semibold'>
-                          Categories
-                        </div>
+                        <div className='text-white  font-semibold'>Type</div>
                         <div
                           className='bg-white px-2 py-1.5 text-xs font-medium cursor-pointer'
                           onClick={() => {
@@ -149,77 +173,6 @@ const Page = () => {
                           }}
                         >
                           Close
-                        </div>
-                      </div>
-
-                      {categoryMenu.slice(0, 8).map((cat) => (
-                        <div
-                          key={cat.value}
-                          className={` transition-all ease-in flex w-full items-center justify-between px-2 cursor-pointer ${
-                            isInFilterArray(cat.value) ? 'bg-brand-indigo' : ''
-                          }`}
-                          onClick={() => filterClickHandler(cat.value)}
-                        >
-                          <div
-                            className={`flex items-center gap-2 py-2  w-full `}
-                          >
-                            {setCategoryIcon(cat.value)}
-                            <div className='text-white font-medium'>
-                              {cat.name}
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                    <div className='flex flex-col gap-0.5 w-full pt-5 border-t-2 border-y-white'>
-                      <div
-                        className={`flex w-full items-center justify-between px-2 py-2  ${
-                          isInFilterArray('COLLECTION') ? 'bg-brand-indigo' : ''
-                        }`}
-                        onClick={() => filterClickHandler('COLLECTION')}
-                      >
-                        <div className=' flex items-center gap-3 cursor-pointer'>
-                          <div className='pl-1'>
-                            <MdAutoStories color='white' size={20} />
-                          </div>
-                          <div className='font-semibold text-white '>
-                            Collections
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        className={`flex w-full items-center justify-between px-2 py-2  ${
-                          isInFilterArray('ELECTIVE') ? 'bg-brand-indigo' : ''
-                        }`}
-                        onClick={() => filterClickHandler('ELECTIVE')}
-                      >
-                        <div
-                          className='flex items-center gap-3 cursor-pointer'
-                          onClick={() => filterClickHandler('ELECTIVE')}
-                        >
-                          <div className='pl-1'>
-                            <MdEmojiEvents color='white' size={22} />
-                          </div>
-                          <div className='font-semibold text-white '>
-                            CPS Electives
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        className='flex items-center gap-3 cursor-pointer py-2'
-                        onClick={() => {
-                          window.open(
-                            'https://packagingschool.com/isbt',
-                            '_blank'
-                          );
-                          setIsFilter(false);
-                        }}
-                      >
-                        <div className='pl-1'>
-                          <MdScience color='white' size={22} />
-                        </div>
-                        <div className='font-semibold text-white leading-tight'>
-                          Beverage Institute by ISBT®
                         </div>
                       </div>
                     </div>
@@ -268,15 +221,15 @@ const Page = () => {
           </div>
         </div>
         {/* LESSONS */}
-        {sortedLessons.length > 0 && isTable ? (
+        {lessonsToShow && lessonsToShow.length > 0 && isTable ? (
           <div className='flex flex-col gap-2'>
-            {sortedLessons.map((less) => (
+            {lessonsToShow.map((less) => (
               <LessonTableItem less={less} key={less.id} />
             ))}
           </div>
-        ) : sortedLessons.length > 0 && !isTable ? (
+        ) : lessonsToShow && lessonsToShow.length > 0 && !isTable ? (
           <div className='grid lg:grid-cols-3 md:grid-cols-2 gap-10'>
-            {sortedLessons.map((less) => (
+            {lessonsToShow.map((less) => (
               <LessonCardItem less={less} key={less.id} />
             ))}
           </div>
