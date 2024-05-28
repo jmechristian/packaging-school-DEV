@@ -47,7 +47,7 @@ const Page = () => {
             <div className='w-2/3 h-24 bg-neutral-300 animate-pulse rounded-lg'></div>
             <div className='w-2/3 h-24 bg-neutral-300 animate-pulse rounded-lg'></div>
           </div>
-        ) : location && location.country === 'India' ? (
+        ) : location && location.country === 'United States' ? (
           <>
             <div className='flex flex-col gap-12 py-10 md:py-16 w-full  border-b-black border-b-2'>
               <div className='flex flex-col gap-5 px-5 xl:px-0'>
@@ -90,12 +90,20 @@ const Page = () => {
                 <div className='md:grid md:grid-cols-2 xl:grid-cols-3 gap-10 w-fit hidden mt-7'>
                   {cpsIds.map((id) => (
                     <div key={id}>
-                      <BrutalCourseCard id={id} discount={0.85} />
+                      <BrutalCourseCard
+                        id={id}
+                        discount={0.85}
+                        coupon={'INDIASITE2024'}
+                      />
                     </div>
                   ))}
                 </div>
                 <div className='flex w-full gap-5 pt-5 pb-3 md:hidden'>
-                  <BrutalCourseCard id={cpsIds[isIndex]} discount={0.85} />
+                  <BrutalCourseCard
+                    id={cpsIds[isIndex]}
+                    discount={0.85}
+                    coupon={'INDIASITE2024'}
+                  />
                 </div>
                 <div className='flex w-full justify-between items-center md:hidden'>
                   <div className='grid h-14 w-14 place-content-center text-3xl transition-colors hover:bg-black hover:text-white'>
@@ -152,6 +160,7 @@ const Page = () => {
                   <BrutalCourseCard
                     id={'fef1f2a6-b9b9-4619-9900-c677f91681c7'}
                     discount={0.85}
+                    coupon={'INDIASITE2024'}
                   />
                 </div>
               </div>

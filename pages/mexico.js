@@ -90,12 +90,20 @@ const Page = () => {
                 <div className='md:grid md:grid-cols-2 xl:grid-cols-3 gap-10 w-fit hidden mt-7'>
                   {cpsIds.map((id) => (
                     <div key={id}>
-                      <BrutalCourseCard id={id} discount={0.6} />
+                      <BrutalCourseCard
+                        id={id}
+                        discount={0.6}
+                        coupon={'mexicosite2024'}
+                      />
                     </div>
                   ))}
                 </div>
                 <div className='flex w-full gap-5 pt-5 pb-3 md:hidden'>
-                  <BrutalCourseCard id={cpsIds[isIndex]} discount={0.6} />
+                  <BrutalCourseCard
+                    id={cpsIds[isIndex]}
+                    discount={0.6}
+                    coupon={'mexicosite2024'}
+                  />
                 </div>
                 <div className='flex w-full justify-between items-center md:hidden'>
                   <div className='grid h-14 w-14 place-content-center text-3xl transition-colors hover:bg-black hover:text-white'>
@@ -152,6 +160,7 @@ const Page = () => {
                   <BrutalCourseCard
                     id={'fef1f2a6-b9b9-4619-9900-c677f91681c7'}
                     discount={0.6}
+                    coupon={'mexicosite2024'}
                   />
                 </div>
               </div>

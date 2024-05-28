@@ -45,7 +45,7 @@ const BrutalCourseCard = ({ id, icons, coupon, discount }) => {
       location.ip,
       location.country
     );
-    window.open(isCourse.link + '?coupon=INDIASITE2024');
+    window.open(isCourse.link + `?coupon=${coupon}`);
   };
 
   return (
