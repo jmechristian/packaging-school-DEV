@@ -17,32 +17,58 @@ const Page = () => {
   const [isLessons, setIsLessons] = useState([]);
   const [isTags, setIsTags] = useState([]);
 
+  const getLessonsQuery = /* GraphQL */ `
+    query MyQuery {
+      listLessons(filter: { status: { eq: "PUBLISHED" } }) {
+        items {
+          author
+          backdate
+          content
+          createdAt
+          id
+          objectives
+          screengrab
+          seoImage
+          slug
+          tags {
+            items {
+              tags {
+                id
+                tag
+              }
+            }
+          }
+          title
+          type
+          subhead
+        }
+      }
+    }
+  `;
+
+  const getTagQuery = /* GraphQL */ `
+    query MyQuery {
+      listTags {
+        items {
+          tag
+          lesson {
+            items {
+              id
+            }
+          }
+          id
+        }
+      }
+    }
+  `;
+
   useEffect(() => {
     const getLessons = async () => {
       const lessons = await API.graphql({
-        query: listLessons,
-        variables: {
-          filter: { status: { eq: 'PUBLISHED' } },
-        },
+        query: getLessonsQuery,
       });
       setIsLessons(lessons.data.listLessons.items);
     };
-
-    const getTagQuery = /* GraphQL */ `
-      query MyQuery {
-        listTags {
-          items {
-            tag
-            lesson {
-              items {
-                id
-              }
-            }
-            id
-          }
-        }
-      }
-    `;
 
     const getTags = async () => {
       const tags = await API.graphql({
@@ -81,7 +107,9 @@ const Page = () => {
     }
 
     if (isFilters.length > 0 && sortedLessons) {
-      return sortedLessons.filter((less) => isFilters.includes(less.type));
+      return sortedLessons.filter((less) =>
+        less.tags.items.some((t) => isFilters.includes(t.tags.tag))
+      );
     }
   }, [sortedLessons, isFilters]);
 
@@ -114,6 +142,18 @@ const Page = () => {
       sortedLessons.filter((less) => less.type === 'REGULATORY')
     );
   }, [sortedLessons]);
+
+  const getItemLength = (tag) => {
+    const items = sortedLessons.filter((less) =>
+      less.tags.items.some((t) => t.tags.tag === tag)
+    );
+
+    return items.length.toString();
+  };
+
+  const tagFilterHandler = (tag) => {
+    setIsFilters((prevState) => [...prevState, tag]);
+  };
 
   return (
     <div className='container-base px-3 xl:px-0 flex flex-col gap-24'>
@@ -201,7 +241,7 @@ const Page = () => {
                                 className='text-xs uppercase font-semibold border bg-white hover:bg-clemson transition-colors ease-in border-black px-1.5 py-1 cursor-pointer'
                                 onClick={() => tagFilterHandler(t.tag)}
                               >
-                                {t.tag} &#40;{t.lesson.items.length}&#41;
+                                {t.tag} &#40;{getItemLength(t.tag)}&#41;
                               </div>
                             ))}
                       </div>
@@ -215,7 +255,7 @@ const Page = () => {
             {isFilters.length > 0 ? (
               <div
                 className='h-full flex justify-center text-center leading-tight items-center px-4 text-red-600 cursor-pointer'
-                onClick={() => filterClickHandler('ALL')}
+                onClick={() => setIsFilters([])}
               >
                 Clear Filters
               </div>

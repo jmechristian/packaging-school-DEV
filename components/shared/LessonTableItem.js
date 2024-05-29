@@ -85,9 +85,9 @@ const LessonTableItem = ({ less }) => {
       </div>
       <div className='col-span-5 grid grid-cols-4 content-center p-5'>
         <div className='flex flex-col gap-5 col-span-3'>
-          <div className='flex flex-col'>
+          <div className='flex flex-col pr-6'>
             <div className='h4-base'>{less.title}</div>
-            <div className='flex gap-2'>
+            <div className='flex gap-x-2 flex-wrap'>
               {less.author.map((auth) => (
                 <div className='flex items-center gap-0.5' key={auth}>
                   <div>
@@ -151,7 +151,7 @@ const LessonTableItem = ({ less }) => {
             <MdExitToApp color='white' size={22} />
           </BrutalCircleIconTooltip>
         </div>
-        {less.mediaType === 'VIDEO' ? (
+        {/* {less.mediaType === 'VIDEO' ? (
           <div className='content-center mx-auto'>
             <BrutalCircleIconTooltip
               tooltip={'Watch'}
@@ -163,7 +163,7 @@ const LessonTableItem = ({ less }) => {
           </div>
         ) : (
           <></>
-        )}
+        )} */}
         {/* <div className='content-center mx-auto'>
           <BrutalCircleIconTooltip
             tooltip={'Share'}
