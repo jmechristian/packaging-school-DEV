@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { MdApps, MdDehaze, MdSort, MdOutlineSearch } from 'react-icons/md';
 import { IoMdPricetags } from 'react-icons/io';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -7,6 +7,7 @@ import { listLessons } from '../../../src/graphql/queries';
 import { API } from 'aws-amplify';
 import LessonCardItem from '../../../components/shared/LessonCardItem';
 import FeaturedLesson from '../../../components/shared/FeaturedLesson';
+import Pagination from '../../../components/shared/Pagination';
 
 const Page = () => {
   const [isSearchTerm, setIsSearchTerm] = useState('');
@@ -16,6 +17,11 @@ const Page = () => {
   const [isTable, setIsTable] = useState(true);
   const [isLessons, setIsLessons] = useState([]);
   const [isTags, setIsTags] = useState([]);
+  const [isCurrentPage, setIsCurrentPage] = useState(1);
+
+  const pageSize = 15;
+
+  const lessonTop = useRef();
 
   const getLessonsQuery = /* GraphQL */ `
     query MyQuery {
@@ -75,7 +81,6 @@ const Page = () => {
         query: getTagQuery,
       });
       setIsTags(tags.data.listTags.items);
-      console.log(tags.data.listTags.items);
     };
 
     getLessons();
@@ -163,6 +168,19 @@ const Page = () => {
     if (!isInFilterArray(tag)) setIsFilters((prevState) => [...prevState, tag]);
   };
 
+  const GFG = (array, currentPage, pageSize) => {
+    const startIndex = (currentPage - 1) * pageSize;
+    const endIndex = startIndex + pageSize;
+    return array.slice(startIndex, endIndex);
+  };
+
+  const paginatedItems = useMemo(() => {
+    if (lessonsToShow) {
+      const currentPageData = GFG(lessonsToShow, isCurrentPage, pageSize);
+      return currentPageData;
+    }
+  }, [lessonsToShow, isCurrentPage]);
+
   return (
     <div className='container-base px-3 xl:px-0 flex flex-col gap-24'>
       <div className='w-full flex flex-col gap-5'>
@@ -178,7 +196,10 @@ const Page = () => {
       </div>
       <div className='w-full flex flex-col gap-5'>
         {/* HEADING */}
-        <div className='w-full pb-5 border-b-4 border-b-black flex justify-between items-center'>
+        <div
+          className='w-full pb-5 border-b-4 border-b-black flex justify-between items-center scroll-mt-6'
+          ref={lessonTop}
+        >
           <div className='h2-base'>Browse Lesson Library</div>
           <div className='grid grid-cols-2 w-fit'>
             <div
@@ -303,15 +324,15 @@ const Page = () => {
           </div>
         </div>
         {/* LESSONS */}
-        {lessonsToShow && lessonsToShow.length > 0 && isTable ? (
+        {paginatedItems && paginatedItems.length > 0 && isTable ? (
           <div className='flex flex-col gap-2'>
-            {lessonsToShow.map((less) => (
+            {paginatedItems.map((less) => (
               <LessonTableItem less={less} key={less.id} />
             ))}
           </div>
-        ) : lessonsToShow && lessonsToShow.length > 0 && !isTable ? (
+        ) : paginatedItems && paginatedItems.length > 0 && !isTable ? (
           <div className='grid lg:grid-cols-3 md:grid-cols-2 gap-10'>
-            {lessonsToShow.map((less) => (
+            {paginatedItems.map((less) => (
               <LessonCardItem less={less} key={less.id} />
             ))}
           </div>
@@ -320,6 +341,17 @@ const Page = () => {
             Gathering Intel...
           </div>
         )}
+        <div className='w-full flex justify-center items-center gap-1 mt-3'>
+          <Pagination
+            totalItems={lessonsToShow && lessonsToShow.length}
+            itemsPerPage={pageSize}
+            currentPage={isCurrentPage}
+            onPageChange={(page) => {
+              setIsCurrentPage(page);
+              lessonTop.current?.scrollIntoView({ behavior: 'smooth' });
+            }}
+          />
+        </div>
       </div>
     </div>
   );
