@@ -150,17 +150,16 @@ const Layout = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    fetch(
-      'https://geolocation-db.com/json/86f5f280-f4eb-11ec-8676-4f4388bc6daa'
-    )
+    fetch('https://ipinfo.io/?token=0133a1a5f7f332')
       .then((response) => response.json())
       .then((data) => {
+        const [lat, long] = data.loc.split(',');
         dispatch(
           setLocation({
-            ip: data.IPv4,
-            country: data.country_name,
-            lat: data.latitude,
-            long: data.longitude,
+            ip: data.ip,
+            country: data.country,
+            lat: lat,
+            long: long,
           })
         );
       })

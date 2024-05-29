@@ -47,7 +47,7 @@ const Page = () => {
             <div className='w-2/3 h-24 bg-neutral-300 animate-pulse rounded-lg'></div>
             <div className='w-2/3 h-24 bg-neutral-300 animate-pulse rounded-lg'></div>
           </div>
-        ) : location && location.country === 'Mexico' ? (
+        ) : location && location.country === 'MX' ? (
           <>
             <div className='flex flex-col gap-12 py-10 md:py-16 w-full  border-b-black border-b-2'>
               <div className='flex flex-col gap-5 px-5 xl:px-0'>
