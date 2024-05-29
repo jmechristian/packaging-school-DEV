@@ -151,8 +151,16 @@ const Page = () => {
     return items.length.toString();
   };
 
+  const isInFilterArray = (tag) => {
+    return isFilters.includes(tag);
+  };
+
   const tagFilterHandler = (tag) => {
-    setIsFilters((prevState) => [...prevState, tag]);
+    if (isInFilterArray(tag)) {
+      setIsFilters(isFilters.filter((t) => t != tag));
+    }
+
+    if (!isInFilterArray(tag)) setIsFilters((prevState) => [...prevState, tag]);
   };
 
   return (
@@ -238,7 +246,11 @@ const Page = () => {
                             .map((t) => (
                               <div
                                 key={t.id}
-                                className='text-xs uppercase font-semibold border bg-white hover:bg-clemson transition-colors ease-in border-black px-1.5 py-1 cursor-pointer'
+                                className={`text-xs uppercase font-semibold border ${
+                                  isInFilterArray(t.tag)
+                                    ? 'bg-white/50 border-amber-400 text-white'
+                                    : 'border-black bg-white'
+                                } hover:bg-clemson transition-colors ease-in  px-1.5 py-1 cursor-pointer`}
                                 onClick={() => tagFilterHandler(t.tag)}
                               >
                                 {t.tag} &#40;{getItemLength(t.tag)}&#41;
