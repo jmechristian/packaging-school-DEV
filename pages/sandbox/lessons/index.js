@@ -320,7 +320,7 @@ const Page = () => {
             ))}
           </div>
         ) : paginatedItems && paginatedItems.length > 0 && !isTable ? (
-          <div className='grid lg:grid-cols-3 md:grid-cols-2 gap-10'>
+          <div className='grid lg:grid-cols-3 md:grid-cols-2 gap-2 lg:gap-10'>
             {paginatedItems.map((less) => (
               <LessonCardItem less={less} key={less.id} />
             ))}

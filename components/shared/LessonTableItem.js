@@ -1,16 +1,10 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import { API } from 'aws-amplify';
 import { getAuthor, lessonTagsByLessonId } from '../../src/graphql/queries';
-import {
-  MdVideocam,
-  MdCampaign,
-  MdAccountCircle,
-  MdExitToApp,
-} from 'react-icons/md';
+import { MdAccountCircle, MdExitToApp } from 'react-icons/md';
 import { useRouter } from 'next/router';
 
 import BrutalCircleIconTooltip from './BrutalCircleIconTooltip';
-import OverflowComponent from './OverflowComponent';
 import ExpandableDiv from './ExpandableDiv';
 
 const AuthorName = ({ id }) => {
@@ -162,7 +156,6 @@ const LessonTableItem = ({ less }) => {
           )}
         </div>
       </div>
-      {/* <OverflowComponent content={less.subhead} type={less.type} /> */}
       <ExpandableDiv less={less} />
       <div className='hidden col-span-1 md:flex flex-col gap-1.5 content-center justify-center'>
         <div className='content-center mx-auto'>
@@ -174,28 +167,6 @@ const LessonTableItem = ({ less }) => {
             <MdExitToApp color='white' size={22} />
           </BrutalCircleIconTooltip>
         </div>
-        {/* {less.mediaType === 'VIDEO' ? (
-          <div className='content-center mx-auto'>
-            <BrutalCircleIconTooltip
-              tooltip={'Watch'}
-              bgColor={'bg-white'}
-              fn={() => setIsPlaying(!isPlaying)}
-            >
-              <MdVideocam color='black' size={24} />
-            </BrutalCircleIconTooltip>
-          </div>
-        ) : (
-          <></>
-        )} */}
-        {/* <div className='content-center mx-auto'>
-          <BrutalCircleIconTooltip
-            tooltip={'Share'}
-            bgColor={'bg-base-brand'}
-            fn={() => setIsPlaying(!isPlaying)}
-          >
-            <MdCampaign color='white' size={24} />
-          </BrutalCircleIconTooltip>
-        </div> */}
       </div>
     </div>
   );
