@@ -8,7 +8,10 @@ import {
   MdExitToApp,
 } from 'react-icons/md';
 import { useRouter } from 'next/router';
+
 import BrutalCircleIconTooltip from './BrutalCircleIconTooltip';
+import OverflowComponent from './OverflowComponent';
+import ExpandableDiv from './ExpandableDiv';
 
 const AuthorName = ({ id }) => {
   const [isName, setIsName] = useState('');
@@ -65,7 +68,7 @@ const LessonTableItem = ({ less }) => {
   return (
     <div
       key={less.id}
-      className={`w-full grid grid-cols-12 border-2 border-black content-center ${
+      className={`w-full flex gap-3 py-5 px-5 flex-col md:grid md:grid-cols-12 border-2 border-black content-center ${
         less.type === 'LOTM'
           ? 'bg-brand-yellow/20'
           : less.type === 'REGULATORY'
@@ -73,8 +76,9 @@ const LessonTableItem = ({ less }) => {
           : 'bg-base-brand/20'
       } transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 shadow-[0px_0px_0px_black] hover:shadow-[6px_6px_0px_rgba(0,0,0,0.20)]`}
     >
-      <div className='col-span-1 h-full max-w-full content-center'>
-        <div className='flex flex-col w-full justify-center items-center'>
+      {/* DATE */}
+      <div className='col-span-1 h-full max-w-full md:content-center'>
+        <div className='flex gap-1 md:flex-col w-full md:justify-center items-center'>
           <div className='font-semibold uppercase tracking-tighter text-sm'>
             {newDateTop}
           </div>
@@ -83,37 +87,62 @@ const LessonTableItem = ({ less }) => {
           </div>
         </div>
       </div>
-      <div className='col-span-5 grid grid-cols-4 content-center p-5'>
-        <div className='flex flex-col gap-5 col-span-3'>
-          <div className='flex flex-col pr-6'>
-            <div className='h4-base'>{less.title}</div>
-            <div className='flex gap-x-2 flex-wrap'>
-              {less.author.map((auth) => (
-                <div className='flex items-center gap-0.5' key={auth}>
-                  <div>
-                    <MdAccountCircle color='gray' size={16} />
-                  </div>
-                  <AuthorName id={auth} />
+      <div className='col-span-5 md:grid md:grid-cols-4 md:content-center'>
+        {/* TITLE */}
+        <div className='grid grid-cols-7 gap-2'>
+          <div className='col-span-5'>
+            <div className='flex flex-col gap-4 col-span-3'>
+              <div className='flex flex-col'>
+                <div className='h3-base'>{less.title}</div>
+                <div className='flex gap-x-2 flex-wrap'>
+                  {less.author.map((auth) => (
+                    <div className='flex items-center gap-0.5' key={auth}>
+                      <div>
+                        <MdAccountCircle color='gray' size={16} />
+                      </div>
+                      <AuthorName id={auth} />
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+              <div className='flex flex-wrap items-center gap-1.5'>
+                {isTags && isTags.length > 0 ? (
+                  isTags.map((t) => (
+                    <div
+                      className='text-xs bg-white/40 py-1 px-1.5 border border-black uppercase font-semibold'
+                      key={t.id}
+                    >
+                      {t.tags.tag}
+                    </div>
+                  ))
+                ) : (
+                  <></>
+                )}
+              </div>
             </div>
           </div>
-          <div className='flex flex-wrap items-center gap-1.5'>
-            {isTags && isTags.length > 0 ? (
-              isTags.map((t) => (
-                <div
-                  className='text-xs bg-white/40 py-1 px-1.5 border border-black uppercase font-semibold'
-                  key={t.id}
-                >
-                  {t.tags.tag}
-                </div>
-              ))
+          <div className='col-span-2 px-1'>
+            {less.type === 'LOTM' ? (
+              <div
+                className='w-full h-full bg-contain bg-center bg-no-repeat'
+                style={{
+                  backgroundImage: `url('https://packschool.s3.amazonaws.com/LOTM+Logo+Final-Black.png')`,
+                }}
+              ></div>
+            ) : less.type === 'REGULATORY' ? (
+              <div
+                className='w-full h-full bg-contain bg-center bg-no-repeat'
+                style={{
+                  backgroundImage: `url('https://packschool.s3.amazonaws.com/ROTM-logo-hor.svg')`,
+                }}
+              ></div>
             ) : (
-              <></>
+              <div></div>
             )}
           </div>
         </div>
-        <div className='flex justify-center items-center p-2'>
+
+        <div className='hidden lg:flex justify-center items-center p-2'>
           {less.type === 'LOTM' ? (
             <div
               className='w-full h-full bg-contain bg-center bg-no-repeat'
@@ -133,15 +162,9 @@ const LessonTableItem = ({ less }) => {
           )}
         </div>
       </div>
-      <div
-        className='col-span-5 content-center m-5 overflow-scroll scroll-mb-6 h-[120px]'
-        id='scrollers'
-      >
-        <div className='flex flex-col'>
-          <div className='text-sm'>{less.subhead}</div>
-        </div>
-      </div>
-      <div className='col-span-1 flex flex-col gap-1.5 content-center justify-center'>
+      {/* <OverflowComponent content={less.subhead} type={less.type} /> */}
+      <ExpandableDiv less={less} />
+      <div className='hidden col-span-1 md:flex flex-col gap-1.5 content-center justify-center'>
         <div className='content-center mx-auto'>
           <BrutalCircleIconTooltip
             tooltip={'View'}

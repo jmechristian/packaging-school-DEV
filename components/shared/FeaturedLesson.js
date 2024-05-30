@@ -33,7 +33,7 @@ const FeaturedLesson = ({ less }) => {
     );
   return (
     <div className=' relative w-full h-full border-2 border-black p-6 shadow-[6px_6px_0px_rgba(0,0,0,0.20)] flex flex-col gap-5 '>
-      <div className='w-24 h-24 rounded-full border border-black bg-brand-yellow flex items-center justify-center absolute top-2.5 -left-5'>
+      <div className='w-24 h-24 rounded-full border border-black bg-brand-yellow flex items-center justify-center absolute top-2.5 lg:-left-5 -left-2'>
         <div className='w-20 h-20 flex items-center justify-center'>
           {less.type === 'LOTM' ? (
             <div className='w-full flex items-center justify-center'>
@@ -58,10 +58,10 @@ const FeaturedLesson = ({ less }) => {
           )}
         </div>
       </div>
-      <div className='flex h-full gap-5 items-start'>
-        <div className='grid w-full h-full'>
+      <div className='flex flex-col md:flex-row h-full gap-5 items-start'>
+        <div className='lg:grid w-full h-full'>
           <div
-            className='w-60 h-full bg-indigo-200 bg-cover bg-center'
+            className='aspect-[16/9] w-full max-w-sm px-2 md:w-60 md:h-full bg-indigo-200 bg-cover bg-center'
             style={{
               backgroundImage: `url(${
                 less && less.screengrab ? less.screengrab : less.seoImage
@@ -69,19 +69,21 @@ const FeaturedLesson = ({ less }) => {
             }}
           ></div>
         </div>
-        <div className='flex flex-wrap gap-x-3 gap-y-1'>
+        <div className='flex flex-col gap-x-3 gap-y-1'>
           <div className='text-xs'>{newDate}</div>
           <div className='h3-base pr-4'>{less && less.title}</div>
-          {less.author &&
-            less.author.length > 0 &&
-            less.author.map((a) => (
-              <div className='flex items-center gap-0.5' key={a}>
-                <div>
-                  <MdAccountCircle color='gray' size={16} />
+          <div className='flex items-center flex-wrap gap-2'>
+            {less.author &&
+              less.author.length > 0 &&
+              less.author.map((a) => (
+                <div className='flex items-center gap-0.5' key={a}>
+                  <div>
+                    <MdAccountCircle color='gray' size={16} />
+                  </div>
+                  <AuthorName id={a} />
                 </div>
-                <AuthorName id={a} />
-              </div>
-            ))}
+              ))}
+          </div>
           <div className='text-sm mt-3'>{less && less.subhead}</div>
         </div>
       </div>
