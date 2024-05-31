@@ -5,7 +5,7 @@ export default function Document() {
   return (
     <Html
       style={{
-        scrollBehavior: 'smooth',
+        scrollBehavior: 'smooth!important',
       }}
       lang='en'
     >

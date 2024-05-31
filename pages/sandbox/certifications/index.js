@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 import Image from 'next/image';
 import { useRive, Layout, Fit, Alignment } from '@rive-app/react-canvas';
 import CertCompare from '../../../components/certifications/CertCompare';
@@ -10,6 +12,7 @@ import CMPMCard from '../../../components/rive/CMPMCard';
 import APCCard from '../../../components/rive/APCCard';
 import CSPCard from '../../../components/rive/CSPCard';
 import FPCCard from '../../../components/rive/FPCCard';
+import CmpmCpsCompare from '../../../components/shared/CmpmCpsCompare';
 import ScrollingTestimonials from '../../../components/shared/ScrollingTestimonials';
 
 export const RiveDemo = () => {
@@ -29,6 +32,9 @@ export const RiveDemo = () => {
 const Index = () => {
   const [isIndex, setIsIndex] = useState(0);
   const [isTestimonials, setIsTestimonials] = useState([]);
+
+  const router = useRouter();
+
   return (
     <div className='w-full pb-40 md:pb-48 border-b-2 border-b-black pt-5 lg:pt-10'>
       <div className='flex flex-col gap-28 md:gap-48 lg:gap-36 '>
@@ -50,53 +56,71 @@ const Index = () => {
         </div>
 
         {/* LOGOS */}
-        <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 w-full gap-10 lg:gap-20 px-6 xl:px-0 max-w-7xl mx-auto'>
-          <div className='flex justify-center items-center'>
-            <Image
-              src={'https://packschool.s3.amazonaws.com/cmpm-black.png'}
-              width={370}
-              height={114}
-              alt='Certificate of Packaging Management Logo'
-            />
-          </div>
-          <div className='flex justify-center items-center'>
-            <Image
-              src={'https://packschool.s3.amazonaws.com/cps-black.png'}
-              width={430}
-              height={118}
-              alt='Certificate of Packaging Science Logo'
-            />
-          </div>
-          <div className='flex justify-center items-center'>
-            <Image
-              src={'https://packschool.s3.amazonaws.com/aps-black.png'}
-              width={403}
-              height={109}
-              alt='Automotive Packaging Certificate Logo'
-            />
-          </div>
-          <div className='flex justify-center items-center'>
-            <Image
-              src={'https://packschool.s3.amazonaws.com/csp-black.png'}
-              width={310}
-              height={109}
-              alt='Certificate of Sustainable Packaging Logo'
-            />
-          </div>
-          <div className='flex justify-center items-center col-span-2 md:col-span-1'>
-            <div className='w-1/2 md:w-full mx-auto'>
+        <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 w-full gap-10 lg:gap-16 px-6 xl:px-0 max-w-7xl mx-auto'>
+          <div className='flex justify-center items-center hover:bg-black transition-all ease-in group cursor-pointer flex-1 p-3'>
+            <Link href={'#cmpm'} passHref shallow>
               <Image
-                src={'https://packschool.s3.amazonaws.com/fpc-black.png'}
-                width={429}
-                height={109}
-                alt='Food Packaging Certificate Logo'
+                src={'https://packschool.s3.amazonaws.com/cmpm-black.png'}
+                className='group-hover:invert'
+                width={370}
+                height={114}
+                alt='Certificate of Packaging Management Logo'
               />
+            </Link>
+          </div>
+          <div className='flex justify-center items-center hover:bg-black transition-all ease-in group cursor-pointer flex-1 p-3'>
+            <Link href={'#cmpm'} passHref shallow>
+              <Image
+                src={'https://packschool.s3.amazonaws.com/cps-black.png'}
+                width={430}
+                height={118}
+                alt='Certificate of Packaging Science Logo'
+                className='group-hover:invert'
+              />
+            </Link>
+          </div>
+          <div className='flex justify-center items-center hover:bg-black transition-all ease-in group cursor-pointer flex-1 p-3'>
+            <Link href={'#apc'} passHref shallow>
+              <Image
+                src={'https://packschool.s3.amazonaws.com/aps-black.png'}
+                className='group-hover:invert'
+                width={403}
+                height={109}
+                alt='Automotive Packaging Certificate Logo'
+              />
+            </Link>
+          </div>
+          <div className='flex justify-center items-center hover:bg-black transition-all ease-in group cursor-pointer flex-1 p-3'>
+            <Link href={'#apc'} passHref shallow>
+              <Image
+                src={'https://packschool.s3.amazonaws.com/csp-black.png'}
+                className='group-hover:invert'
+                width={310}
+                height={109}
+                alt='Certificate of Sustainable Packaging Logo'
+              />
+            </Link>
+          </div>
+          <div className='flex justify-center items-center col-span-2 md:col-span-1 hover:bg-black transition-all ease-in group cursor-pointer flex-1 p-3'>
+            <div className='w-1/2 md:w-full mx-auto '>
+              <Link href={'#fpc'} passHref shallow>
+                <Image
+                  src={'https://packschool.s3.amazonaws.com/fpc-black.png'}
+                  className='group-hover:invert'
+                  width={429}
+                  height={109}
+                  alt='Food Packaging Certificate Logo'
+                />
+              </Link>
             </div>
           </div>
         </div>
 
         {/* CMPM/CPS */}
-        <div className='flex flex-col gap-10 lg:gap-16 px-5 xl:px-0 lg:py-10'>
+        <div
+          className='flex flex-col gap-10 lg:gap-16 px-5 xl:px-0 lg:py-10 scroll-mt-6'
+          id='cmpm'
+        >
           <div className='flex flex-col gap-5 text-center justify-center max-w-xl mx-auto lg:max-w-4xl'>
             <div>
               <h2 className='font-bold text-2xl md:text-3xl leading-tight'>
@@ -112,56 +136,30 @@ const Index = () => {
             </div>
           </div>
           <div className='flex flex-col gap-5 w-full max-w-6xl mx-auto'>
-            <div className='w-full grid grid-cols-12 h-[550px]'>
+            <div className='w-full grid grid-cols-12 h-[550px] mb-5'>
               <div className='col-span-2'></div>
-              <div className='col-span-5'>
+              <div
+                className='col-span-5 cursor-pointer'
+                onClick={() => router.push('/certifications/get-to-know-cmpm')}
+              >
                 <CMPMCard />
               </div>
-              <div className='col-span-5'>
+              <div
+                className='col-span-5 cursor-pointer'
+                onClick={() => router.push('/certifications/get-to-know-cps')}
+              >
                 <CPSCard />
               </div>
             </div>
-            <div className='w-full grid grid-cols-12'>
-              <div className='col-span-2 grid grid-flow-row gap-5 divide-y-2 divide-black h-full'>
-                <div className='pt-3'>&nbsp;</div>
-                <div className='h3-base pt-3'>Provider</div>
-                <div className='h3-base pt-3'>Cost</div>
-                <div className='h3-base pt-3'>Timeline</div>
-                <div className='h3-base pt-3'>Instructor Access</div>
-                <div className='h3-base pt-3'>Courses</div>
-              </div>
-              <div className='col-span-5 text-center grid grid-flow-row gap-5 divide-y-2 divide-black h-full'>
-                <div className='h4-base pt-3'>
-                  Certificate of Mastery in Packaging
-                </div>
-                <div className='pt-3'>
-                  Clemson School of Business and The Packaging School
-                </div>
-                <div className='pt-3'>
-                  $7,000<sup>*</sup>
-                </div>
-                <div className='pt-3'>Timeline</div>
-                <div className='pt-3'>Instructor Access</div>
-                <div className='pt-3'>Courses</div>
-              </div>
-              <div className='col-span-5 text-center grid grid-flow-row gap-5 divide-y-2 divide-black align-middle h-full'>
-                <div className='h4-base pt-3'>
-                  Certificate of Packaging Science
-                </div>
-                <div className='pt-3'>The Packaging School</div>
-                <div className='pt-3'>
-                  $3,999<sup>*</sup>
-                </div>
-                <div className='pt-3'>Timeline</div>
-                <div className='pt-3'>Instructor Access</div>
-                <div className='pt-3'>Courses</div>
-              </div>
-            </div>
+            <CmpmCpsCompare />
           </div>
         </div>
 
         {/* APS/CSP */}
-        <div className='flex flex-col lg:flex-row lg:items-center gap-28 justify-center lg:justify-start max-w-7xl  mx-auto'>
+        <div
+          className='flex flex-col lg:flex-row lg:items-center gap-28 justify-center lg:justify-start max-w-7xl mx-auto scroll-mt-6'
+          id='apc'
+        >
           <div className='flex flex-col gap-10 max-w-xl mx-auto'>
             <div className='flex flex-col gap-5 px-5 xl:px-0'>
               <BrutalTag
@@ -182,7 +180,10 @@ const Index = () => {
                 sales, and customer service teams in the automotive industry.
               </div>
             </div>
-            <div className='w-full max-w-[400px] h-[520px]'>
+            <div
+              className='w-full max-w-[400px] h-[520px] cursor-pointer'
+              onClick={() => router.push('/certifications/get-to-know-apc')}
+            >
               <APCCard />
             </div>
           </div>
@@ -209,7 +210,10 @@ const Index = () => {
               </div>
             </div>
             <div className='w-full flex justify-center lg:justify-start items-center'>
-              <div className='w-full max-w-[400px] h-[520px]'>
+              <div
+                className='w-full max-w-[400px] h-[520px] cursor-pointer'
+                onClick={() => router.push('/certifications/get-to-know-csp')}
+              >
                 <CSPCard />
               </div>
             </div>
@@ -217,7 +221,10 @@ const Index = () => {
         </div>
 
         {/* FPC */}
-        <div className='w-full py-16 border-y-2 border-black lg:border-2 lg:rounded-2xl bg-base-brand/60 max-w-7xl  mx-auto'>
+        <div
+          className='w-full py-16 border-y-2 border-black lg:border-2 lg:rounded-2xl bg-base-brand/60 max-w-7xl  mx-auto'
+          id='fpc'
+        >
           <div className='flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-24 px-5 xl:px-0 max-w-xl lg:max-w-6xl mx-auto'>
             <div className='flex flex-col gap-4'>
               <div className='flex items-center gap-3'>
@@ -254,7 +261,10 @@ const Index = () => {
               </div>
             </div>
             <div className='w-full flex justify-center items-center'>
-              <div className='w-full max-w-[400px] h-[520px]'>
+              <div
+                className='w-full max-w-[400px] h-[520px] cursor-pointer'
+                onClick={() => router.push('/food-packaging')}
+              >
                 <FPCCard />
               </div>
             </div>

@@ -3,6 +3,8 @@
 @layer base {
   html {
     @apply text-neutral-900 font-sans;
+    --scroll-behavior: smooth !important;
+    scroll-behavior: smooth !important;
   }
 
   .container-base {
