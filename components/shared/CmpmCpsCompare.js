@@ -98,11 +98,11 @@ const CmpmCpsCompare = () => {
                 className='px-2 py-3 transition-all ease-in text-neutral-800 block md:table-cell border-y-2 border-y-black bg-neutral-200'
                 colSpan={2}
               >
-                <div className='flex justify-start items-center gap-1.5 w-fit'>
-                  <strong
-                    className='text-center cursor-pointer w-full'
-                    onClick={() => setIsExpanded(!isExpanded)}
-                  >
+                <div
+                  className='flex justify-start items-center gap-1.5 w-fit'
+                  onClick={() => setIsExpanded(!isExpanded)}
+                >
+                  <strong className='text-center cursor-pointer w-full'>
                     {isExpanded ? 'Hide' : 'Show'} Comparison
                   </strong>
                   <div
