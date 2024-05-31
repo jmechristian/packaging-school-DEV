@@ -71,7 +71,7 @@ const LessonTableItem = ({ less }) => {
       } transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 shadow-[0px_0px_0px_black] hover:shadow-[6px_6px_0px_rgba(0,0,0,0.20)]`}
     >
       {/* DATE */}
-      <div className='col-span-1 h-full max-w-full md:content-center'>
+      <div className='h-full max-w-full md:hidden lg:block lg:col-span-1 lg:content-center'>
         <div className='flex gap-1 md:flex-col w-full md:justify-center items-center'>
           <div className='font-semibold uppercase tracking-tighter text-sm'>
             {newDateTop}
@@ -81,12 +81,20 @@ const LessonTableItem = ({ less }) => {
           </div>
         </div>
       </div>
-      <div className='col-span-5 md:grid md:grid-cols-4 md:content-center'>
+      <div className='col-span-5 md:col-span-6 lg:col-span-5 lg:grid lg:grid-cols-4 lg:content-center'>
         {/* TITLE */}
-        <div className='grid grid-cols-7 gap-2'>
+        <div className='grid grid-cols-7 gap-2 w-full lg:col-span-4'>
           <div className='col-span-5'>
             <div className='flex flex-col gap-4 col-span-3'>
-              <div className='flex flex-col'>
+              <div className='flex flex-col gap-1'>
+                <div className='hidden md:flex lg:hidden items-center gap-1 text-neutral-600'>
+                  <div className='font-semibold uppercase tracking-tighter text-sm'>
+                    {newDateTop}
+                  </div>
+                  <div className='font-semibold uppercase tracking-tighter text-sm'>
+                    {newDateBottom}
+                  </div>
+                </div>
                 <div className='h3-base'>{less.title}</div>
                 <div className='flex gap-x-2 flex-wrap'>
                   {less.author.map((auth) => (
@@ -115,7 +123,7 @@ const LessonTableItem = ({ less }) => {
               </div>
             </div>
           </div>
-          <div className='col-span-2 px-1'>
+          <div className='col-span-2 px-1 xl:px-3'>
             {less.type === 'LOTM' ? (
               <div
                 className='w-full h-full bg-contain bg-center bg-no-repeat'
@@ -136,7 +144,7 @@ const LessonTableItem = ({ less }) => {
           </div>
         </div>
 
-        <div className='hidden lg:flex justify-center items-center p-2'>
+        <div className='lg:flex justify-center items-center p-2'>
           {less.type === 'LOTM' ? (
             <div
               className='w-full h-full bg-contain bg-center bg-no-repeat'
