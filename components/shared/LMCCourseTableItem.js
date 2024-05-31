@@ -74,16 +74,16 @@ const LMCCourseTableItem = ({ course }) => {
         );
   };
 
-  const cardPurchaseHandler = async () => {
-    await registgerCourseClick(
-      course.id,
-      router.asPath,
-      location,
-      course.link,
-      'TABLE'
-    );
-    window.open(course.link, '_blank');
-  };
+  // const cardPurchaseHandler = async () => {
+  //   await registgerCourseClick(
+  //     course.id,
+  //     router.asPath,
+  //     location,
+  //     course.link,
+  //     'TABLE'
+  //   );
+  //   window.open(course.link, '_blank');
+  // };
 
   return (
     <div
@@ -295,9 +295,7 @@ const LMCCourseTableItem = ({ course }) => {
 
               <div
                 className='text-sm text-white font-semibold text-right cursor-pointer'
-                onClick={() => {
-                  window.open(course.link, '_blank');
-                }}
+                onClick={cardClickHandler}
               >
                 View More
               </div>
