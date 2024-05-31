@@ -62,13 +62,14 @@ const LessonTableItem = ({ less }) => {
   return (
     <div
       key={less.id}
-      className={`w-full flex gap-3 py-5 px-5 flex-col md:grid md:grid-cols-12 border-2 border-black content-center ${
+      className={`w-full flex gap-3 cursor-pointer py-5 px-5 flex-col md:grid md:grid-cols-12 border-2 border-black content-center ${
         less.type === 'LOTM'
           ? 'bg-brand-yellow/20'
           : less.type === 'REGULATORY'
           ? 'bg-clemson/20'
           : 'bg-base-brand/20'
       } transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 shadow-[0px_0px_0px_black] hover:shadow-[6px_6px_0px_rgba(0,0,0,0.20)]`}
+      onClick={() => router.push(`/lessons/${less.slug}`)}
     >
       {/* DATE */}
       <div className='h-full max-w-full md:hidden lg:block lg:col-span-1 lg:content-center'>
