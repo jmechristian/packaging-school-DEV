@@ -123,7 +123,7 @@ const LessonTableItem = ({ less }) => {
               </div>
             </div>
           </div>
-          <div className='col-span-2 px-1 xl:px-3'>
+          <div className='col-span-2 px-1 xl:px-5'>
             {less.type === 'LOTM' ? (
               <div
                 className='w-full h-full bg-contain bg-center bg-no-repeat'

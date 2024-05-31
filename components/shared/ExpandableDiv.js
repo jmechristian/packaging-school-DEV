@@ -19,8 +19,8 @@ const ExpandableDiv = ({ less }) => {
   return (
     <div className='col-span-5 content-center'>
       <div
-        className={`overflow-hidden ${
-          isExpanded ? 'max-h-none' : 'max-h-[120px]'
+        className={`overflow-hidden content-center ${
+          isExpanded ? 'max-h-none' : 'h-[120px]'
         }`}
         style={{ transition: 'max-height 0.3s ease' }}
       >
