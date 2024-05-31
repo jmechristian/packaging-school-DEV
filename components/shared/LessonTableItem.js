@@ -69,10 +69,12 @@ const LessonTableItem = ({ less }) => {
           ? 'bg-clemson/20'
           : 'bg-base-brand/20'
       } transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 shadow-[0px_0px_0px_black] hover:shadow-[6px_6px_0px_rgba(0,0,0,0.20)]`}
-      onClick={() => router.push(`/lessons/${less.slug}`)}
     >
       {/* DATE */}
-      <div className='h-full max-w-full md:hidden lg:block lg:col-span-1 lg:content-center'>
+      <div
+        className='h-full max-w-full md:hidden lg:block lg:col-span-1 lg:content-center'
+        onClick={() => router.push(`/lessons/${less.slug}`)}
+      >
         <div className='flex gap-1 md:flex-col w-full md:justify-center items-center'>
           <div className='font-semibold uppercase tracking-tighter text-sm'>
             {newDateTop}
@@ -82,7 +84,10 @@ const LessonTableItem = ({ less }) => {
           </div>
         </div>
       </div>
-      <div className='col-span-5 md:col-span-6 lg:col-span-5 lg:grid lg:grid-cols-4 lg:content-center'>
+      <div
+        className='col-span-5 md:col-span-6 lg:col-span-5 lg:grid lg:grid-cols-4 lg:content-center'
+        onClick={() => router.push(`/lessons/${less.slug}`)}
+      >
         {/* TITLE */}
         <div className='grid grid-cols-7 gap-2 w-full lg:col-span-4'>
           <div className='col-span-5'>
@@ -166,7 +171,10 @@ const LessonTableItem = ({ less }) => {
         </div>
       </div>
       <ExpandableDiv less={less} />
-      <div className='hidden col-span-1 md:flex flex-col gap-1.5 content-center justify-center'>
+      <div
+        className='hidden col-span-1 md:flex flex-col gap-1.5 content-center justify-center'
+        onClick={() => router.push(`/lessons/${less.slug}`)}
+      >
         <div className='content-center mx-auto'>
           <BrutalCircleIconTooltip
             tooltip={'View'}

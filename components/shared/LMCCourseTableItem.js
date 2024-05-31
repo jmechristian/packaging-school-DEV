@@ -74,22 +74,11 @@ const LMCCourseTableItem = ({ course }) => {
         );
   };
 
-  // const cardPurchaseHandler = async () => {
-  //   await registgerCourseClick(
-  //     course.id,
-  //     router.asPath,
-  //     location,
-  //     course.link,
-  //     'TABLE'
-  //   );
-  //   window.open(course.link, '_blank');
-  // };
-
   return (
     <div
       className={`w-full border-2 border-black ${setColorByCategoryString(
         course.categoryArray[0]
-      )} bg-opacity-20 relative group  cursor-pointer`}
+      )} bg-opacity-20 relative group`}
     >
       {/* VIDEO PLAYER */}
       <AnimatePresence>
@@ -124,7 +113,7 @@ const LMCCourseTableItem = ({ course }) => {
 
       <div className='hidden lg:grid lg:grid-cols-12 gap-3 divide-x-black w-full px-2 py-2 min-h-[90px]'>
         <div
-          className='col-span-4 pl-2 content-center'
+          className='col-span-4 pl-2 content-center cursor-pointer'
           onClick={cardClickHandler}
         >
           <div className='grid grid-cols-4'>
@@ -155,7 +144,10 @@ const LMCCourseTableItem = ({ course }) => {
             </div>
           </div>
         </div>
-        <div className='col-span-1 content-center'>
+        <div
+          className='col-span-1 content-center cursor-pointer'
+          onClick={cardClickHandler}
+        >
           <div className='font-semibold text-sm'>
             {course.price === 'FREE' ? 'Free' : '$' + course.price}
           </div>
@@ -192,10 +184,20 @@ const LMCCourseTableItem = ({ course }) => {
           </AnimatePresence>
         </div>
 
-        <div className='col-span-2 content-center'>
+        <div className='col-span-2 content-center cursor-pointer'>
           <div className='grid grid-cols-3 w-full gap-3 text-center text-sm'>
-            <div className='font-bold content-center'>{course.hours}</div>
-            <div className='font-bold content-center'>{course.lessons}</div>
+            <div
+              className='font-bold content-center'
+              onClick={cardClickHandler}
+            >
+              {course.hours}
+            </div>
+            <div
+              className='font-bold content-center'
+              onClick={cardClickHandler}
+            >
+              {course.lessons}
+            </div>
             {course.preview ? (
               <div className='content-center mx-auto'>
                 <BrutalCircleIconTooltip
