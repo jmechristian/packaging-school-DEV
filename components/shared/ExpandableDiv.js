@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { MdArrowDropDown } from 'react-icons/md';
 
-const ExpandableDiv = ({ less }) => {
+const ExpandableDiv = ({ content }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isOverflowing, setIsOverflowing] = useState(false);
   const contentRef = useRef(null);
@@ -10,14 +10,14 @@ const ExpandableDiv = ({ less }) => {
     if (contentRef.current) {
       setIsOverflowing(contentRef.current.scrollHeight > 120);
     }
-  }, [less]);
+  }, [content]);
 
   const toggleExpand = () => {
     setIsExpanded(!isExpanded);
   };
 
   return (
-    <div className='col-span-5 content-center'>
+    <div className='col-span-5 content-center flex items-center gap-1'>
       <div
         className={`overflow-hidden content-center ${
           isExpanded ? 'max-h-none' : 'h-[120px]'
@@ -28,7 +28,7 @@ const ExpandableDiv = ({ less }) => {
           ref={contentRef}
           className={`text-sm ${!isExpanded ? 'line-clamp-6' : ''}`}
         >
-          {less.subhead}
+          {content}
         </div>
       </div>
       {isOverflowing && (

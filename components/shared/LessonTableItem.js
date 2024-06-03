@@ -3,7 +3,8 @@ import { API } from 'aws-amplify';
 import { getAuthor, lessonTagsByLessonId } from '../../src/graphql/queries';
 import { MdAccountCircle, MdExitToApp } from 'react-icons/md';
 import { useRouter } from 'next/router';
-
+import { registgerLessonClick } from '../../helpers/api';
+import { useSelector } from 'react-redux';
 import BrutalCircleIconTooltip from './BrutalCircleIconTooltip';
 import ExpandableDiv from './ExpandableDiv';
 
@@ -28,6 +29,7 @@ const AuthorName = ({ id }) => {
 const LessonTableItem = ({ less }) => {
   const router = useRouter();
   const [isTags, setIsTags] = useState([]);
+  const { location } = useSelector((state) => state.auth);
 
   useEffect(() => {
     const getTags = async () => {
@@ -40,6 +42,11 @@ const LessonTableItem = ({ less }) => {
 
     getTags();
   }, [less]);
+
+  const clickHandler = async () => {
+    await registgerLessonClick(less.id, router.asPath, location);
+    router.push(`/lessons/${less.slug}`);
+  };
 
   const isDateValid = (str) => {
     !isNaN(new Date(str));
@@ -73,7 +80,7 @@ const LessonTableItem = ({ less }) => {
       {/* DATE */}
       <div
         className='h-full max-w-full md:hidden lg:block lg:col-span-1 lg:content-center'
-        onClick={() => router.push(`/lessons/${less.slug}`)}
+        onClick={clickHandler}
       >
         <div className='flex gap-1 md:flex-col w-full md:justify-center items-center'>
           <div className='font-semibold uppercase tracking-tighter text-sm'>
@@ -86,7 +93,7 @@ const LessonTableItem = ({ less }) => {
       </div>
       <div
         className='col-span-5 md:col-span-6 lg:col-span-5 lg:grid lg:grid-cols-4 lg:content-center'
-        onClick={() => router.push(`/lessons/${less.slug}`)}
+        onClick={clickHandler}
       >
         {/* TITLE */}
         <div className='grid grid-cols-7 gap-2 w-full lg:col-span-4'>
@@ -170,16 +177,16 @@ const LessonTableItem = ({ less }) => {
           )}
         </div>
       </div>
-      <ExpandableDiv less={less} />
+      <ExpandableDiv content={less.subhead} />
       <div
         className='hidden col-span-1 md:flex flex-col gap-1.5 content-center justify-center'
-        onClick={() => router.push(`/lessons/${less.slug}`)}
+        onClick={clickHandler}
       >
         <div className='content-center mx-auto'>
           <BrutalCircleIconTooltip
             tooltip={'View'}
             bgColor={'bg-[#ff9321]'}
-            fn={() => router.push(`/lessons/${less.slug}`)}
+            fn={clickHandler}
           >
             <MdExitToApp color='white' size={22} />
           </BrutalCircleIconTooltip>

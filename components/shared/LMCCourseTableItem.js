@@ -15,6 +15,7 @@ import { setColorByCategoryString } from '../../helpers/utils';
 import BrutalCircleIconTooltip from './BrutalCircleIconTooltip';
 import { registgerCourseClick } from '../../helpers/api';
 import { useSelector } from 'react-redux';
+import ExpandableDiv from './ExpandableDiv';
 
 const LMCCourseTableItem = ({ course }) => {
   const router = useRouter();
@@ -78,7 +79,7 @@ const LMCCourseTableItem = ({ course }) => {
     <div
       className={`w-full border-2 border-black ${setColorByCategoryString(
         course.categoryArray[0]
-      )} bg-opacity-20 relative group`}
+      )} bg-opacity-20 relative group hover:bg-opacity-40 transition-all ease-in`}
     >
       {/* VIDEO PLAYER */}
       <AnimatePresence>
@@ -153,35 +154,7 @@ const LMCCourseTableItem = ({ course }) => {
           </div>
         </div>
         <div className='flex items-center gap-2 col-span-5 '>
-          <div
-            className='w-4 h-4 border-2 cursor-pointer border-black bg-white flex items-center justify-center'
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            <div
-              className={`${
-                isOpen ? 'rotate-180' : 'rotate-0'
-              } transition-all ease-in`}
-            >
-              <MdArrowDropDown size={16} color='black' />
-            </div>
-          </div>
-          <AnimatePresence>
-            {isOpen ? (
-              <motion.div>
-                <div className='content-center'>
-                  <div className='text-sm tracking-tight'>
-                    {course.subheadline}
-                  </div>
-                </div>
-              </motion.div>
-            ) : (
-              <motion.div className='content-center'>
-                <div className='text-sm tracking-tight line-clamp-3'>
-                  {course.subheadline}
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+          <ExpandableDiv content={course.subheadline} />
         </div>
 
         <div className='col-span-2 content-center cursor-pointer'>
