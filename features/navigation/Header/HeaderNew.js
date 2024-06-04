@@ -60,7 +60,7 @@ export default function HeaderNew() {
     pages: [
       { name: 'Certifications', href: '/certifications' },
       { name: 'Courses', href: '/all_courses' },
-      { name: 'Library', href: '/library' },
+      { name: 'Lessons', href: '/lessons' },
       { name: 'About', href: '/about' },
       // { name: 'Campus Store', href: '#' },
     ],
