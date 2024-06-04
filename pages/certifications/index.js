@@ -134,16 +134,16 @@ const Index = () => {
             </div>
           </div>
           <div className='flex flex-col gap-5 w-full max-w-6xl mx-auto'>
-            <div className='w-full flex flex-col lg:grid lg:grid-cols-12 lg:h-[550px] mb-5'>
-              <div className='col-span-2'></div>
+            <div className='w-full flex flex-col md:grid md:grid-cols-12 md:h-[550px] mb-5'>
+              <div className='hidden lg:col-span-2 lg:block'></div>
               <div
-                className='col-span-5 cursor-pointer'
+                className='col-span-5 md:col-span-6 lg:col-span-5 cursor-pointer'
                 onClick={() => router.push('/certifications/get-to-know-cmpm')}
               >
                 <CMPMCard />
               </div>
               <div
-                className='col-span-5 cursor-pointer'
+                className='col-span-5 md:col-span-6 lg:col-span-5 cursor-pointer'
                 onClick={() => router.push('/certifications/get-to-know-cps')}
               >
                 <CPSCard />
@@ -177,6 +177,11 @@ const Index = () => {
                 designed for packaging and logistics professionals, engineers,
                 sales, and customer service teams in the automotive industry.
               </div>
+              <Link passHref href={'/certifications/get-to-know-apc'}>
+                <div className='lg:hidden font-semibold text-brand-indigo'>
+                  View Certificate
+                </div>
+              </Link>
             </div>
             <div className='w-full flex justify-center lg:justify-start items-center'>
               <div
@@ -208,6 +213,11 @@ const Index = () => {
                 and don&apos;ts of sustainable packaging, creating a positive
                 force for change within organizations.
               </div>
+              <Link passHref href={'/certifications/get-to-know-csp'}>
+                <div className='lg:hidden font-semibold text-brand-indigo'>
+                  View Certificate
+                </div>
+              </Link>
             </div>
             <div className='w-full flex justify-center lg:justify-start items-center'>
               <div

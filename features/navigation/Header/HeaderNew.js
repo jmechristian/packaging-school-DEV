@@ -116,7 +116,7 @@ export default function HeaderNew() {
 
                 {/* Links */}
 
-                <div className='space-y-6 px-4 py-6'>
+                <div className='space-y-3 px-4 py-6'>
                   {navigation.pages.map((page) => (
                     <div
                       key={page.name}
@@ -134,7 +134,7 @@ export default function HeaderNew() {
                     </div>
                   ))}
                 </div>
-                <div className='space-y-3 text-white px-4 py-6'>
+                <div className='space-y-2 text-white px-4 py-6'>
                   <div className='flow-root'>
                     <Link href={'/partner-with-us'}>
                       <a className='-m-2 block p-2 h3-base text-white'>
