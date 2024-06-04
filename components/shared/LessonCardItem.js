@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getAuthor, lessonTagsByLessonId } from '../../src/graphql/queries';
+import { registgerLessonClick } from '../../helpers/api';
 import {
   MdVideocam,
   MdCampaign,
@@ -7,6 +8,7 @@ import {
   MdExitToApp,
 } from 'react-icons/md';
 import { useRouter } from 'next/router';
+import { useSelector } from 'react-redux';
 import { API } from 'aws-amplify';
 import BrutalCircleIconTooltip from './BrutalCircleIconTooltip';
 
@@ -29,7 +31,13 @@ const AuthorName = ({ id }) => {
 };
 
 const LessonCardItem = ({ less }) => {
+  const router = useRouter();
   const [isTags, setIsTags] = useState([]);
+  const { location } = useSelector((state) => state.auth);
+  const clickHandler = async () => {
+    await registgerLessonClick(less.id, router.asPath, location, 'GRID');
+    router.push(`/lessons/${less.slug}`);
+  };
 
   useEffect(() => {
     const getTags = async () => {
@@ -113,7 +121,7 @@ const LessonCardItem = ({ less }) => {
           <BrutalCircleIconTooltip
             tooltip={'View'}
             bgColor={'bg-[#ff9321]'}
-            fn={() => router.push(`/lessons/${less.slug}`)}
+            fn={clickHandler}
           >
             <MdExitToApp color='white' size={22} />
           </BrutalCircleIconTooltip>

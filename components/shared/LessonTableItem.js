@@ -44,7 +44,7 @@ const LessonTableItem = ({ less }) => {
   }, [less]);
 
   const clickHandler = async () => {
-    await registgerLessonClick(less.id, router.asPath, location);
+    await registgerLessonClick(less.id, router.asPath, location, 'TABLE');
     router.push(`/lessons/${less.slug}`);
   };
 

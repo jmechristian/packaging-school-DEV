@@ -76,7 +76,7 @@ export const registgerCourseClick = async (
   return items.data;
 };
 
-export const registgerLessonClick = async (id, page, location) => {
+export const registgerLessonClick = async (id, page, location, format) => {
   // const ip = await fetch('https://api.ipify.org/?format=json').then((res) =>
   //   res.json()
   // );
@@ -91,6 +91,7 @@ export const registgerLessonClick = async (id, page, location) => {
         country: location.country,
         lat: location.lat,
         long: location.long,
+        format: format,
       },
     },
   });
