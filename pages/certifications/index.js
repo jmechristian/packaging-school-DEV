@@ -143,10 +143,10 @@ const Index = () => {
               </div>
             </div>
             <div className='flex flex-col gap-5 w-full max-w-6xl mx-auto'>
-              <div className='w-full flex flex-col md:grid md:grid-cols-12 md:h-[550px] mb-5'>
+              <div className='w-full grid md:grid-cols-12 md:h-[550px] mb-5'>
                 <div className='hidden lg:col-span-2 lg:block'></div>
                 <div
-                  className='col-span-5 md:col-span-6 lg:col-span-5 cursor-pointer min-h-[550px]'
+                  className='md:col-span-6 lg:col-span-5 cursor-pointer min-h-[550px]'
                   onClick={() =>
                     router.push('/certifications/get-to-know-cmpm')
                   }
@@ -154,7 +154,7 @@ const Index = () => {
                   <CMPMCard />
                 </div>
                 <div
-                  className='col-span-5 md:col-span-6 lg:col-span-5 cursor-pointer min-h-[550px]'
+                  className='md:col-span-6 lg:col-span-5 cursor-pointer min-h-[550px]'
                   onClick={() => router.push('/certifications/get-to-know-cps')}
                 >
                   <CPSCard />
