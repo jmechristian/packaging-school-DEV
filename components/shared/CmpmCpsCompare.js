@@ -4,7 +4,8 @@ import { MdArrowDownward } from 'react-icons/md';
 const data = {
   CMPM: {
     'Hosted By': "Clemson University's Center for Corporate Learning",
-    Timeline: '3 months asynchronous with PhD instructor coaching and review',
+    Timeline:
+      '3 months synchronous with additional 12 months access and PhD instructor coaching and review',
     Organization: 'PhD Led',
     Credits: '80 hours (8 credits)',
     'Instructor Access':
@@ -64,7 +65,7 @@ const CmpmCpsCompare = () => {
         <table className='min-w-full border-collapse block md:table mb-4'>
           <thead className='block md:table-header-group'>
             <tr className='border border-neutral-300 md:border-none block md:table-row'>
-              <th className='bg-neutral-800 text-white px-2 py-3 font-semibold text-left block md:table-cell'></th>
+              <th className='hidden bg-neutral-800 text-white px-2 py-3 font-semibold text-left lg:block md:table-cell'></th>
               <th className='bg-neutral-800 text-white px-2 py-3 font-semibold text-left block md:table-cell'>
                 Certificate of Mastery In Packaging Management
               </th>
@@ -78,13 +79,19 @@ const CmpmCpsCompare = () => {
               .filter((key) => key !== 'Courses')
               .map((key) => (
                 <tr key={key} className='md:table-row border-b border-black'>
-                  <td className='px-2 py-3 text-neutral-800 font-semibold block md:table-cell'>
+                  <td className='px-2 py-3 text-neutral-800 font-semibold block md:table-cell lg:min-w-[280px]'>
                     {key}
                   </td>
                   <td className='px-2 py-3 text-neutral-800 block md:table-cell'>
+                    <span className='md:hidden text-xs font-bold text-white mr-1.5 bg-black px-1.5 py-1'>
+                      CMPM
+                    </span>
                     {data.CMPM[key]}
                   </td>
                   <td className='px-2 py-3 text-neutral-800 block md:table-cell'>
+                    <span className='md:hidden text-xs font-bold text-white mr-1.5 bg-black px-1.5 py-1'>
+                      CPS
+                    </span>
                     {data.CPS[key]}
                   </td>
                 </tr>
@@ -125,9 +132,15 @@ const CmpmCpsCompare = () => {
                     {course}
                   </td>
                   <td className='px-5 py-4 text-neutral-800 block md:table-cell border-y border-y-black'>
+                    <span className='md:hidden text-xs font-bold text-white mr-1.5 bg-black px-1.5 py-1'>
+                      CMPM
+                    </span>
                     {data.CMPM.Courses.includes(course) ? '✔️' : '✖'}
                   </td>
                   <td className='px-5 py-4 text-neutral-800 block md:table-cell border-y border-y-black'>
+                    <span className='md:hidden text-xs font-bold text-white mr-1.5 bg-black px-1.5 py-1'>
+                      CPS
+                    </span>
                     {data.CPS.Courses.includes(course) ? '✔️' : '✖'}
                   </td>
                 </tr>

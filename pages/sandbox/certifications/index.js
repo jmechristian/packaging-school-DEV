@@ -136,8 +136,8 @@ const Index = () => {
             </div>
           </div>
           <div className='flex flex-col gap-5 w-full max-w-6xl mx-auto'>
-            <div className='w-full grid grid-cols-12 h-[550px] mb-5'>
-              <div className='col-span-2'></div>
+            <div className='w-full flex flex-col lg:grid lg:grid-cols-12 lg:h-[550px] mb-5'>
+              <div className='hidden lg:col-span-2'></div>
               <div
                 className='col-span-5 cursor-pointer'
                 onClick={() => router.push('/certifications/get-to-know-cmpm')}
@@ -180,11 +180,13 @@ const Index = () => {
                 sales, and customer service teams in the automotive industry.
               </div>
             </div>
-            <div
-              className='w-full max-w-[400px] h-[520px] cursor-pointer'
-              onClick={() => router.push('/certifications/get-to-know-apc')}
-            >
-              <APCCard />
+            <div className='w-full flex justify-center lg:justify-start items-center'>
+              <div
+                className='w-full max-w-[400px] h-[520px] cursor-pointer'
+                onClick={() => router.push('/certifications/get-to-know-apc')}
+              >
+                <APCCard />
+              </div>
             </div>
           </div>
           <div className='flex flex-col gap-10 max-w-xl mx-auto'>

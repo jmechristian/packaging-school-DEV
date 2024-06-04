@@ -31,7 +31,7 @@ const FeaturedLesson = ({ less }) => {
         year: 'numeric',
       }
     );
-  return (
+  return less ? (
     <div className=' relative w-full h-full border-2 border-black p-6 shadow-[6px_6px_0px_rgba(0,0,0,0.20)] flex flex-col gap-5 '>
       <div className='w-24 h-24 rounded-full border border-black bg-brand-yellow flex items-center justify-center absolute top-2.5 lg:-left-5 -left-2'>
         <div className='w-20 h-20 flex items-center justify-center'>
@@ -111,6 +111,29 @@ const FeaturedLesson = ({ less }) => {
             link={`/lessons/${less.slug}`}
             small={true}
           />
+        </div>
+      </div>
+    </div>
+  ) : (
+    <div className='w-full h-96 border-2 border-neutral-300 p-6 shadow-[6px_6px_0px_rgba(0,0,0,0.20)] flex flex-col gap-5'>
+      <div className='grid gap-5 grid-cols-6 w-full h-full'>
+        <div className='col-span-2 bg-neutral-200 w-full h-full rounded-lg'></div>
+        <div className='col-span-4 w-full h-full'>
+          <div className='flex flex-col justify-between h-full'>
+            <div className='bg-neutral-200 h-7 w-full rounded-xl'></div>
+            <div className='bg-neutral-200 h-7 w-full rounded-xl'></div>
+            <div className='bg-neutral-200 h-3 w-full rounded-xl'></div>
+            <div className='bg-neutral-200 h-3 w-full rounded-xl'></div>
+            <div className='bg-neutral-200 h-3 w-full rounded-xl'></div>
+            <div className='bg-neutral-200 h-3 w-full rounded-xl'></div>
+            <div className='bg-neutral-200 h-3 w-full rounded-xl'></div>
+            <div className='bg-neutral-200 h-3 w-full rounded-xl'></div>
+            <div className='bg-neutral-200 h-3 w-full rounded-xl'></div>
+            <div className='bg-neutral-200 h-3 w-full rounded-xl'></div>
+            <div className='bg-neutral-200 h-3 w-full rounded-xl'></div>
+            <div className='bg-neutral-200 h-3 w-full rounded-xl'></div>
+            <div className='bg-neutral-200 h-3 w-full rounded-xl'></div>
+          </div>
         </div>
       </div>
     </div>
