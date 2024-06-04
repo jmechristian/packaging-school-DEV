@@ -14,7 +14,7 @@ import {
   MdScience,
   MdFilterList,
 } from 'react-icons/md';
-
+import Meta from '../components/shared/Meta';
 import { categoryMenu } from '../data/CategoryMenu';
 import { setCategoryIcon } from '../helpers/utils';
 import { setSelectedFilter } from '../features/all_courses/courseFilterSlice';
@@ -218,327 +218,475 @@ const Page = () => {
   }, [isSearchTerm, location, sortedAndSearchedCourses]);
 
   return (
-    <div className='container-base px-3 xl:px-0'>
-      <div className='w-full flex flex-col gap-6'>
-        {/* HEADING */}
-        <div className='w-full pb-5 border-b-4 border-b-black flex justify-between items-center'>
-          <div className='h2-base'>Browse All Courses</div>
-          <div className='grid grid-cols-2 w-fit'>
-            <div
-              className={`w-10 h-10 ${
-                isTable ? 'bg-black' : 'bg-neutral-300'
-              } flex items-center justify-center cursor-pointer`}
-              onClick={() => setIsTable(true)}
-            >
-              <MdDehaze color={isTable ? 'white' : 'gray'} size={24} />
-            </div>
-            <div
-              className={`w-10 h-10 ${
-                isTable ? 'bg-neutral-300' : 'bg-black'
-              } flex items-center justify-center cursor-pointer`}
-              onClick={() => setIsTable(false)}
-            >
-              <MdApps color={isTable ? 'gray' : 'white'} size={24} />
-            </div>
-          </div>
-        </div>
-        {/* SEARCH - FILTER */}
-        <div className='grid grid-cols-3 lg:mb-5 border-b-2 border-b-black pb-6 gap-2.5'>
-          {/* SEARCH */}
-          <div className='w-full col-span-3 lg:col-span-2 border-2 border-black p-1'>
-            <div className='flex gap-2 items-center'>
-              <input
-                type='text'
-                className='w-full flex border-none ring-0 focus:ring-0'
-                placeholder='Search Courses'
-                value={isSearchTerm}
-                onChange={(e) => setIsSearchTerm(e.target.value)}
-              />
-              <div>
-                <MdOutlineSearch size={28} />
+    <>
+      <Meta
+        title={'Packaging School Courses'}
+        description={
+          'Browse the extensive catalog of Packaging School course covering subjects from Business, Design, Materials, Food and Beverage, Supply Chain and Logistics, Automotive, and Industry.'
+        }
+        image={'https://packschool.s3.amazonaws.com/all-courses-seoImage.webp'}
+      />
+      <div className='container-base px-3 xl:px-0'>
+        <div className='w-full flex flex-col gap-6'>
+          {/* HEADING */}
+          <div className='w-full pb-5 border-b-4 border-b-black flex justify-between items-center'>
+            <div className='h2-base'>Browse All Courses</div>
+            <div className='grid grid-cols-2 w-fit'>
+              <div
+                className={`w-10 h-10 ${
+                  isTable ? 'bg-black' : 'bg-neutral-300'
+                } flex items-center justify-center cursor-pointer`}
+                onClick={() => setIsTable(true)}
+              >
+                <MdDehaze color={isTable ? 'white' : 'gray'} size={24} />
+              </div>
+              <div
+                className={`w-10 h-10 ${
+                  isTable ? 'bg-neutral-300' : 'bg-black'
+                } flex items-center justify-center cursor-pointer`}
+                onClick={() => setIsTable(false)}
+              >
+                <MdApps color={isTable ? 'gray' : 'white'} size={24} />
               </div>
             </div>
           </div>
-          <div className='col-span-3 lg:col-span-1 flex justify-end gap-5 relative w-full'>
-            {/* FILTER */}
-            <AnimatePresence>
-              {isFilter && !openSort && (
-                <motion.div className='w-[310px] absolute top-full right-0 mt-2 bg-black px-3 py-6 z-40'>
-                  <div className='flex flex-col gap-5'>
-                    <div className='flex flex-col gap-0.5'>
-                      <div className='flex justify-between items-center w-full  border-b-2 border-b-white pb-3'>
-                        <div className='text-white  font-semibold'>
-                          Categories
-                        </div>
-                        <div
-                          className='bg-white px-2 py-1.5 text-xs font-medium cursor-pointer'
-                          onClick={() => {
-                            setIsFilter(false);
-                          }}
-                        >
-                          Close
-                        </div>
-                      </div>
-
-                      {categoryMenu.slice(0, 8).map((cat) => (
-                        <div
-                          key={cat.value}
-                          className={` transition-all ease-in flex w-full items-center justify-between px-2 cursor-pointer ${
-                            isInFilterArray(cat.value) ? 'bg-white' : ''
-                          }`}
-                          onClick={() => filterClickHandler(cat.value)}
-                        >
+          {/* SEARCH - FILTER */}
+          <div className='grid grid-cols-3 lg:mb-5 border-b-2 border-b-black pb-6 gap-2.5'>
+            {/* SEARCH */}
+            <div className='w-full col-span-3 lg:col-span-2 border-2 border-black p-1'>
+              <div className='flex gap-2 items-center'>
+                <input
+                  type='text'
+                  className='w-full flex border-none ring-0 focus:ring-0'
+                  placeholder='Search Courses'
+                  value={isSearchTerm}
+                  onChange={(e) => setIsSearchTerm(e.target.value)}
+                />
+                <div>
+                  <MdOutlineSearch size={28} />
+                </div>
+              </div>
+            </div>
+            <div className='col-span-3 lg:col-span-1 flex justify-end gap-5 relative w-full'>
+              {/* FILTER */}
+              <AnimatePresence>
+                {isFilter && !openSort && (
+                  <motion.div className='w-[310px] absolute top-full right-0 mt-2 bg-black px-3 py-6 z-40'>
+                    <div className='flex flex-col gap-5'>
+                      <div className='flex flex-col gap-0.5'>
+                        <div className='flex justify-between items-center w-full  border-b-2 border-b-white pb-3'>
+                          <div className='text-white  font-semibold'>
+                            Categories
+                          </div>
                           <div
-                            className={`flex items-center gap-2 py-2  w-full `}
+                            className='bg-white px-2 py-1.5 text-xs font-medium cursor-pointer'
+                            onClick={() => {
+                              setIsFilter(false);
+                            }}
                           >
-                            {setCategoryIcon(cat.value)}
+                            Close
+                          </div>
+                        </div>
+
+                        {categoryMenu.slice(0, 8).map((cat) => (
+                          <div
+                            key={cat.value}
+                            className={` transition-all ease-in flex w-full items-center justify-between px-2 cursor-pointer ${
+                              isInFilterArray(cat.value) ? 'bg-white' : ''
+                            }`}
+                            onClick={() => filterClickHandler(cat.value)}
+                          >
                             <div
-                              className={`${
-                                isInFilterArray(cat.value)
-                                  ? 'text-black'
-                                  : ' text-white'
-                              } font-medium`}
+                              className={`flex items-center gap-2 py-2  w-full `}
                             >
-                              {cat.name}
+                              {setCategoryIcon(cat.value)}
+                              <div
+                                className={`${
+                                  isInFilterArray(cat.value)
+                                    ? 'text-black'
+                                    : ' text-white'
+                                } font-medium`}
+                              >
+                                {cat.name}
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                      <div className='flex flex-col gap-0.5 w-full pt-5 border-t-2 border-y-white'>
+                        <div
+                          className={`flex w-full items-center justify-between px-2 py-2  ${
+                            isInFilterArray('COLLECTION')
+                              ? 'bg-brand-indigo'
+                              : ''
+                          }`}
+                          onClick={() => filterClickHandler('COLLECTION')}
+                        >
+                          <div className=' flex items-center gap-3 cursor-pointer'>
+                            <div className='pl-1'>
+                              <MdAutoStories color='white' size={20} />
+                            </div>
+                            <div className='font-semibold text-white '>
+                              Collections
                             </div>
                           </div>
                         </div>
-                      ))}
-                    </div>
-                    <div className='flex flex-col gap-0.5 w-full pt-5 border-t-2 border-y-white'>
-                      <div
-                        className={`flex w-full items-center justify-between px-2 py-2  ${
-                          isInFilterArray('COLLECTION') ? 'bg-brand-indigo' : ''
-                        }`}
-                        onClick={() => filterClickHandler('COLLECTION')}
-                      >
-                        <div className=' flex items-center gap-3 cursor-pointer'>
-                          <div className='pl-1'>
-                            <MdAutoStories color='white' size={20} />
-                          </div>
-                          <div className='font-semibold text-white '>
-                            Collections
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        className={`flex w-full items-center justify-between px-2 py-2  ${
-                          isInFilterArray('ELECTIVE') ? 'bg-brand-indigo' : ''
-                        }`}
-                        onClick={() => filterClickHandler('ELECTIVE')}
-                      >
                         <div
-                          className='flex items-center gap-3 cursor-pointer'
+                          className={`flex w-full items-center justify-between px-2 py-2  ${
+                            isInFilterArray('ELECTIVE') ? 'bg-brand-indigo' : ''
+                          }`}
                           onClick={() => filterClickHandler('ELECTIVE')}
                         >
+                          <div
+                            className='flex items-center gap-3 cursor-pointer'
+                            onClick={() => filterClickHandler('ELECTIVE')}
+                          >
+                            <div className='pl-1'>
+                              <MdEmojiEvents color='white' size={22} />
+                            </div>
+                            <div className='font-semibold text-white '>
+                              CPS Electives
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          className='flex items-center gap-3 cursor-pointer py-2'
+                          onClick={() => {
+                            window.open(
+                              'https://packagingschool.com/isbt',
+                              '_blank'
+                            );
+                            setIsFilter(false);
+                          }}
+                        >
                           <div className='pl-1'>
-                            <MdEmojiEvents color='white' size={22} />
+                            <MdScience color='white' size={22} />
                           </div>
-                          <div className='font-semibold text-white '>
-                            CPS Electives
+                          <div className='font-semibold text-white leading-tight'>
+                            Beverage Institute by ISBT®
                           </div>
-                        </div>
-                      </div>
-                      <div
-                        className='flex items-center gap-3 cursor-pointer py-2'
-                        onClick={() => {
-                          window.open(
-                            'https://packagingschool.com/isbt',
-                            '_blank'
-                          );
-                          setIsFilter(false);
-                        }}
-                      >
-                        <div className='pl-1'>
-                          <MdScience color='white' size={22} />
-                        </div>
-                        <div className='font-semibold text-white leading-tight'>
-                          Beverage Institute by ISBT®
                         </div>
                       </div>
                     </div>
-                  </div>
-                </motion.div>
-              )}
+                  </motion.div>
+                )}
+                {/* SORT */}
+              </AnimatePresence>
               {/* SORT */}
-            </AnimatePresence>
-            {/* SORT */}
-            <AnimatePresence>
-              {openSort && !isFilter && (
-                <div className='w-[300px] right-0 absolute top-full  bg-black px-5 py-6 z-40'>
-                  <div className='flex flex-col gap-4 text-white font-medium'>
-                    <SortToggleItem
-                      value={isSort.value}
-                      direction={isSort.direction}
-                      sort={'course id'}
-                      fn={() =>
-                        setIsSort({
-                          value: 'course id',
-                          direction: isSort.direction === 'ASC' ? 'DSC' : 'ASC',
-                        })
-                      }
-                    />
-                    <SortToggleItem
-                      value={isSort.value}
-                      direction={isSort.direction}
-                      sort={'title'}
-                      fn={() =>
-                        setIsSort({
-                          value: 'title',
-                          direction: isSort.direction === 'ASC' ? 'DSC' : 'ASC',
-                        })
-                      }
-                    />
-
-                    <SortToggleItem
-                      value={isSort.value}
-                      direction={isSort.direction}
-                      sort={'category'}
-                      fn={() =>
-                        setIsSort({
-                          value: 'category',
-                          direction: isSort.direction === 'ASC' ? 'DSC' : 'ASC',
-                        })
-                      }
-                    />
-                    <SortToggleItem
-                      value={isSort.value}
-                      direction={isSort.direction}
-                      sort={'price'}
-                      fn={() =>
-                        setIsSort({
-                          value: 'price',
-                          direction: isSort.direction === 'ASC' ? 'DSC' : 'ASC',
-                        })
-                      }
-                    />
-                    <SortToggleItem
-                      value={isSort.value}
-                      direction={isSort.direction}
-                      sort={'hours'}
-                      fn={() =>
-                        setIsSort({
-                          value: 'hours',
-                          direction: isSort.direction === 'ASC' ? 'DSC' : 'ASC',
-                        })
-                      }
-                    />
-                    <SortToggleItem
-                      value={isSort.value}
-                      direction={isSort.direction}
-                      sort={'lessons'}
-                      fn={() =>
-                        setIsSort({
-                          value: 'lessons',
-                          direction: isSort.direction === 'ASC' ? 'DSC' : 'ASC',
-                        })
-                      }
-                    />
-                  </div>
-                </div>
-              )}
-            </AnimatePresence>
-            {/* CLEAR */}
-            {isFilters.length > 0 ? (
-              <div
-                className='h-full flex justify-center text-center leading-none items-center px-4 text-white bg-brand-red border-2 border-black cursor-pointer transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 shadow-[2px_2px_0px_black] hover:shadow-[6px_6px_0px_black] text-sm'
-                onClick={() => filterClickHandler('ALL')}
-              >
-                Clear Filters
-              </div>
-            ) : (
-              <></>
-            )}
-            {/* FILTER BUTTON */}
-            <div
-              className={`border-black border-2 cursor-pointer h-full flex gap-1 px-5 py-2 w-48 justify-center items-center transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 shadow-[2px_2px_0px_black] hover:shadow-[6px_6px_0px_black] ${
-                !isFilter && isFilters.length > 0
-                  ? 'bg-base-brand text-white'
-                  : 'bg-white'
-              }`}
-              onClick={() => {
-                setOpenSort(false);
-                setIsFilter(!isFilter);
-              }}
-            >
-              <MdFilterList size={24} />
-              <div className='font-semibold'>Filter</div>
-            </div>
-            {/* SORT BUTTON */}
-            <div
-              className='lg:hidden border-black border-2 cursor-pointer h-full flex gap-1 px-5 py-2 w-48 justify-center items-center transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 shadow-[2px_2px_0px_black] hover:shadow-[6px_6px_0px_black]'
-              onClick={() => {
-                setIsFilter(false);
-                setOpenSort(!openSort);
-              }}
-            >
-              <MdSort size={24} />
-              <div className='font-semibold'>Sort</div>
-            </div>
-          </div>
-        </div>
-        {/* COURSES */}
-        {sortedAndSearchedCourses &&
-        sortedAndSearchedCourses.length > 0 &&
-        isTable ? (
-          <div className='flex flex-col gap-2'>
-            <div className='hidden lg:grid lg:grid-cols-12 content-center gap-5 divide-x-black w-full px-2 py-2'>
-              <div className='col-span-4'>
-                <div className='grid grid-cols-4'>
-                  <div
-                    className={`${
-                      isSort.value === 'course id' ? 'underline' : ''
-                    } cursor-pointer col-span-1 text-sm font-semibold`}
-                    onClick={() =>
-                      setIsSort({
-                        value: 'course id',
-                        direction: isSort.direction === 'ASC' ? 'DSC' : 'ASC',
-                      })
-                    }
-                  >
-                    Course Id
-                  </div>
-                  <div className='text-sm font-semibold col-span-3'>
-                    <div>
-                      <span
-                        className={`${
-                          isSort.value === 'category' ? 'underline' : ''
-                        } cursor-pointer`}
-                        onClick={() =>
+              <AnimatePresence>
+                {openSort && !isFilter && (
+                  <div className='w-[300px] right-0 absolute top-full  bg-black px-5 py-6 z-40'>
+                    <div className='flex flex-col gap-4 text-white font-medium'>
+                      <SortToggleItem
+                        value={isSort.value}
+                        direction={isSort.direction}
+                        sort={'course id'}
+                        fn={() =>
                           setIsSort({
-                            value: 'category',
+                            value: 'course id',
                             direction:
                               isSort.direction === 'ASC' ? 'DSC' : 'ASC',
                           })
                         }
-                      >
-                        Category
-                      </span>{' '}
-                      /{' '}
-                      <span
-                        className={`${
-                          isSort.value === 'title' ? 'underline' : ''
-                        } cursor-pointer`}
-                        onClick={() =>
+                      />
+                      <SortToggleItem
+                        value={isSort.value}
+                        direction={isSort.direction}
+                        sort={'title'}
+                        fn={() =>
                           setIsSort({
                             value: 'title',
                             direction:
                               isSort.direction === 'ASC' ? 'DSC' : 'ASC',
                           })
                         }
-                      >
-                        Title
-                      </span>
+                      />
+
+                      <SortToggleItem
+                        value={isSort.value}
+                        direction={isSort.direction}
+                        sort={'category'}
+                        fn={() =>
+                          setIsSort({
+                            value: 'category',
+                            direction:
+                              isSort.direction === 'ASC' ? 'DSC' : 'ASC',
+                          })
+                        }
+                      />
+                      <SortToggleItem
+                        value={isSort.value}
+                        direction={isSort.direction}
+                        sort={'price'}
+                        fn={() =>
+                          setIsSort({
+                            value: 'price',
+                            direction:
+                              isSort.direction === 'ASC' ? 'DSC' : 'ASC',
+                          })
+                        }
+                      />
+                      <SortToggleItem
+                        value={isSort.value}
+                        direction={isSort.direction}
+                        sort={'hours'}
+                        fn={() =>
+                          setIsSort({
+                            value: 'hours',
+                            direction:
+                              isSort.direction === 'ASC' ? 'DSC' : 'ASC',
+                          })
+                        }
+                      />
+                      <SortToggleItem
+                        value={isSort.value}
+                        direction={isSort.direction}
+                        sort={'lessons'}
+                        fn={() =>
+                          setIsSort({
+                            value: 'lessons',
+                            direction:
+                              isSort.direction === 'ASC' ? 'DSC' : 'ASC',
+                          })
+                        }
+                      />
+                    </div>
+                  </div>
+                )}
+              </AnimatePresence>
+              {/* CLEAR */}
+              {isFilters.length > 0 ? (
+                <div
+                  className='h-full flex justify-center text-center leading-none items-center px-4 text-white bg-brand-red border-2 border-black cursor-pointer transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 shadow-[2px_2px_0px_black] hover:shadow-[6px_6px_0px_black] text-sm'
+                  onClick={() => filterClickHandler('ALL')}
+                >
+                  Clear Filters
+                </div>
+              ) : (
+                <></>
+              )}
+              {/* FILTER BUTTON */}
+              <div
+                className={`border-black border-2 cursor-pointer h-full flex gap-1 px-5 py-2 w-48 justify-center items-center transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 shadow-[2px_2px_0px_black] hover:shadow-[6px_6px_0px_black] ${
+                  !isFilter && isFilters.length > 0
+                    ? 'bg-base-brand text-white'
+                    : 'bg-white'
+                }`}
+                onClick={() => {
+                  setOpenSort(false);
+                  setIsFilter(!isFilter);
+                }}
+              >
+                <MdFilterList size={24} />
+                <div className='font-semibold'>Filter</div>
+              </div>
+              {/* SORT BUTTON */}
+              <div
+                className='lg:hidden border-black border-2 cursor-pointer h-full flex gap-1 px-5 py-2 w-48 justify-center items-center transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 shadow-[2px_2px_0px_black] hover:shadow-[6px_6px_0px_black]'
+                onClick={() => {
+                  setIsFilter(false);
+                  setOpenSort(!openSort);
+                }}
+              >
+                <MdSort size={24} />
+                <div className='font-semibold'>Sort</div>
+              </div>
+            </div>
+          </div>
+          {/* COURSES */}
+          {sortedAndSearchedCourses &&
+          sortedAndSearchedCourses.length > 0 &&
+          isTable ? (
+            <div className='flex flex-col gap-2'>
+              <div className='hidden lg:grid lg:grid-cols-12 content-center gap-5 divide-x-black w-full px-2 py-2'>
+                <div className='col-span-4'>
+                  <div className='grid grid-cols-4'>
+                    <div
+                      className={`${
+                        isSort.value === 'course id' ? 'underline' : ''
+                      } cursor-pointer col-span-1 text-sm font-semibold`}
+                      onClick={() =>
+                        setIsSort({
+                          value: 'course id',
+                          direction: isSort.direction === 'ASC' ? 'DSC' : 'ASC',
+                        })
+                      }
+                    >
+                      Course Id
+                    </div>
+                    <div className='text-sm font-semibold col-span-3'>
+                      <div>
+                        <span
+                          className={`${
+                            isSort.value === 'category' ? 'underline' : ''
+                          } cursor-pointer`}
+                          onClick={() =>
+                            setIsSort({
+                              value: 'category',
+                              direction:
+                                isSort.direction === 'ASC' ? 'DSC' : 'ASC',
+                            })
+                          }
+                        >
+                          Category
+                        </span>{' '}
+                        /{' '}
+                        <span
+                          className={`${
+                            isSort.value === 'title' ? 'underline' : ''
+                          } cursor-pointer`}
+                          onClick={() =>
+                            setIsSort({
+                              value: 'title',
+                              direction:
+                                isSort.direction === 'ASC' ? 'DSC' : 'ASC',
+                            })
+                          }
+                        >
+                          Title
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
+                <div className='col-span-1'>
+                  <div className='text-sm font-semibold cursor-pointer'>
+                    <div
+                      className={`${
+                        isSort.value === 'price' ? 'underline' : ''
+                      } cursor-pointer`}
+                      onClick={() =>
+                        setIsSort({
+                          value: 'price',
+                          direction: isSort.direction === 'ASC' ? 'DSC' : 'ASC',
+                        })
+                      }
+                    >
+                      Price
+                    </div>
+                  </div>
+                </div>
+                <div className='col-span-5'>
+                  <div className='text-sm font-semibold'>
+                    <div>Description</div>
+                  </div>
+                </div>
+                <div className='col-span-2'>
+                  <div className='grid grid-cols-3 w-full gap-3 text-center'>
+                    <div className='text-sm font-semibold cursor-pointer'>
+                      <div
+                        className={`${
+                          isSort.value === 'hours' ? 'underline' : ''
+                        } cursor-pointer`}
+                        onClick={() =>
+                          setIsSort({
+                            value: 'hours',
+                            direction:
+                              isSort.direction === 'ASC' ? 'DSC' : 'ASC',
+                          })
+                        }
+                      >
+                        Hours
+                      </div>
+                    </div>
+                    <div className='text-sm font-semibold cursor-pointer'>
+                      <div
+                        className={`${
+                          isSort.value === 'lessons' ? 'underline' : ''
+                        } cursor-pointer`}
+                        onClick={() =>
+                          setIsSort({
+                            value: 'lessons',
+                            direction:
+                              isSort.direction === 'ASC' ? 'DSC' : 'ASC',
+                          })
+                        }
+                      >
+                        Lessons
+                      </div>
+                    </div>
+
+                    <div className='text-sm font-semibold'>
+                      <div className='lg:hidden xl:block'>Preview</div>
+                    </div>
+                    <div className='text-sm font-semibold'></div>
+                  </div>
+                </div>
               </div>
-              <div className='col-span-1'>
-                <div className='text-sm font-semibold cursor-pointer'>
+              <div className='grid lg:hidden grid-cols-6 content-center gap-5 divide-x-black w-full px-2 py-2'>
+                <div
+                  className={`${
+                    isSort.value === 'course id' ? 'underline' : ''
+                  } cursor-pointer col-span-1 text-xs font-semibold`}
+                  onClick={() =>
+                    setIsSort({
+                      value: 'course id',
+                      direction: isSort.direction === 'ASC' ? 'DSC' : 'ASC',
+                    })
+                  }
+                >
+                  Id
+                </div>
+                <div className='text-xs font-semibold col-span-2'>
+                  <span
+                    className={`${
+                      isSort.value === 'category' ? 'underline' : ''
+                    } cursor-pointer `}
+                    onClick={() =>
+                      setIsSort({
+                        value: 'category',
+                        direction: isSort.direction === 'ASC' ? 'DSC' : 'ASC',
+                      })
+                    }
+                  >
+                    Category
+                  </span>{' '}
+                  /{' '}
+                  <span
+                    className={`${
+                      isSort.value === 'title' ? 'underline' : ''
+                    } cursor-pointer`}
+                    onClick={() =>
+                      setIsSort({
+                        value: 'title',
+                        direction: isSort.direction === 'ASC' ? 'DSC' : 'ASC',
+                      })
+                    }
+                  >
+                    Title
+                  </span>
+                </div>
+                <div className='col-span-3 w-full grid grid-cols-3 content-center text-right'>
+                  <div
+                    className={`${
+                      isSort.value === 'hours' ? 'underline' : ''
+                    } cursor-pointer col-span-1 text-xs font-semibold`}
+                    onClick={() =>
+                      setIsSort({
+                        value: 'hours',
+                        direction: isSort.direction === 'ASC' ? 'DSC' : 'ASC',
+                      })
+                    }
+                  >
+                    Hours
+                  </div>
+                  <div
+                    className={`${
+                      isSort.value === 'lessons' ? 'underline' : ''
+                    } cursor-pointer col-span-1 text-xs font-semibold`}
+                    onClick={() =>
+                      setIsSort({
+                        value: 'lessons',
+                        direction: isSort.direction === 'ASC' ? 'DSC' : 'ASC',
+                      })
+                    }
+                  >
+                    Lessons
+                  </div>
                   <div
                     className={`${
                       isSort.value === 'price' ? 'underline' : ''
-                    } cursor-pointer`}
+                    } cursor-pointer col-span-1 text-xs font-semibold`}
                     onClick={() =>
                       setIsSort({
                         value: 'price',
@@ -550,180 +698,51 @@ const Page = () => {
                   </div>
                 </div>
               </div>
-              <div className='col-span-5'>
-                <div className='text-sm font-semibold'>
-                  <div>Description</div>
-                </div>
-              </div>
-              <div className='col-span-2'>
-                <div className='grid grid-cols-3 w-full gap-3 text-center'>
-                  <div className='text-sm font-semibold cursor-pointer'>
-                    <div
-                      className={`${
-                        isSort.value === 'hours' ? 'underline' : ''
-                      } cursor-pointer`}
-                      onClick={() =>
-                        setIsSort({
-                          value: 'hours',
-                          direction: isSort.direction === 'ASC' ? 'DSC' : 'ASC',
-                        })
-                      }
-                    >
-                      Hours
-                    </div>
-                  </div>
-                  <div className='text-sm font-semibold cursor-pointer'>
-                    <div
-                      className={`${
-                        isSort.value === 'lessons' ? 'underline' : ''
-                      } cursor-pointer`}
-                      onClick={() =>
-                        setIsSort({
-                          value: 'lessons',
-                          direction: isSort.direction === 'ASC' ? 'DSC' : 'ASC',
-                        })
-                      }
-                    >
-                      Lessons
-                    </div>
-                  </div>
-
-                  <div className='text-sm font-semibold'>
-                    <div className='lg:hidden xl:block'>Preview</div>
-                  </div>
-                  <div className='text-sm font-semibold'></div>
-                </div>
-              </div>
-            </div>
-            <div className='grid lg:hidden grid-cols-6 content-center gap-5 divide-x-black w-full px-2 py-2'>
-              <div
-                className={`${
-                  isSort.value === 'course id' ? 'underline' : ''
-                } cursor-pointer col-span-1 text-xs font-semibold`}
-                onClick={() =>
-                  setIsSort({
-                    value: 'course id',
-                    direction: isSort.direction === 'ASC' ? 'DSC' : 'ASC',
-                  })
-                }
-              >
-                Id
-              </div>
-              <div className='text-xs font-semibold col-span-2'>
-                <span
-                  className={`${
-                    isSort.value === 'category' ? 'underline' : ''
-                  } cursor-pointer `}
-                  onClick={() =>
-                    setIsSort({
-                      value: 'category',
-                      direction: isSort.direction === 'ASC' ? 'DSC' : 'ASC',
-                    })
-                  }
-                >
-                  Category
-                </span>{' '}
-                /{' '}
-                <span
-                  className={`${
-                    isSort.value === 'title' ? 'underline' : ''
-                  } cursor-pointer`}
-                  onClick={() =>
-                    setIsSort({
-                      value: 'title',
-                      direction: isSort.direction === 'ASC' ? 'DSC' : 'ASC',
-                    })
-                  }
-                >
-                  Title
-                </span>
-              </div>
-              <div className='col-span-3 w-full grid grid-cols-3 content-center text-right'>
-                <div
-                  className={`${
-                    isSort.value === 'hours' ? 'underline' : ''
-                  } cursor-pointer col-span-1 text-xs font-semibold`}
-                  onClick={() =>
-                    setIsSort({
-                      value: 'hours',
-                      direction: isSort.direction === 'ASC' ? 'DSC' : 'ASC',
-                    })
-                  }
-                >
-                  Hours
-                </div>
-                <div
-                  className={`${
-                    isSort.value === 'lessons' ? 'underline' : ''
-                  } cursor-pointer col-span-1 text-xs font-semibold`}
-                  onClick={() =>
-                    setIsSort({
-                      value: 'lessons',
-                      direction: isSort.direction === 'ASC' ? 'DSC' : 'ASC',
-                    })
-                  }
-                >
-                  Lessons
-                </div>
-                <div
-                  className={`${
-                    isSort.value === 'price' ? 'underline' : ''
-                  } cursor-pointer col-span-1 text-xs font-semibold`}
-                  onClick={() =>
-                    setIsSort({
-                      value: 'price',
-                      direction: isSort.direction === 'ASC' ? 'DSC' : 'ASC',
-                    })
-                  }
-                >
-                  Price
-                </div>
-              </div>
-            </div>
-            {sortedAndSearchedCourses.map((course, i) => (
-              <LMCCourseTableItem course={course} key={course.id} />
-            ))}
-          </div>
-        ) : sortedAndSearchedCourses && !isTable ? (
-          <div className='grid lg:grid-cols-3 xl:grid-cols-4 md:grid-cols-2 gap-y-10'>
-            {sortedAndSearchedCourses &&
-              sortedAndSearchedCourses.length > 0 &&
-              [...sortedAndSearchedCourses].map((course) => (
-                <LMSCourseCard
-                  id={course.id}
-                  key={course.id}
-                  courses={isCourses}
-                />
+              {sortedAndSearchedCourses.map((course, i) => (
+                <LMCCourseTableItem course={course} key={course.id} />
               ))}
-          </div>
-        ) : (
-          <div className='w-full h-full flex items-center justify-center'>
-            <div className='max-w-5xl py-10 w-full mx-auto justify-center items-center flex flex-col gap-3'>
-              {isSearchTerm.length > 3 ? (
-                <>
-                  <div className='text-lg font-semibold'>
-                    No results returned
-                  </div>
-                  <BrutalCircleIconTooltip
-                    tooltip={'Reset'}
-                    bgColor={'bg-base-brand'}
-                    fn={() => {
-                      setIsSearchTerm('');
-                    }}
-                  >
-                    <MdAutorenew color='white' size={40} />
-                  </BrutalCircleIconTooltip>
-                </>
-              ) : (
-                <div className='font-medium animate-pulse'>
-                  Gathering Intel...
-                </div>
-              )}
             </div>
-          </div>
-        )}
+          ) : sortedAndSearchedCourses && !isTable ? (
+            <div className='grid lg:grid-cols-3 xl:grid-cols-4 md:grid-cols-2 gap-y-10'>
+              {sortedAndSearchedCourses &&
+                sortedAndSearchedCourses.length > 0 &&
+                [...sortedAndSearchedCourses].map((course) => (
+                  <LMSCourseCard
+                    id={course.id}
+                    key={course.id}
+                    courses={isCourses}
+                  />
+                ))}
+            </div>
+          ) : (
+            <div className='w-full h-full flex items-center justify-center'>
+              <div className='max-w-5xl py-10 w-full mx-auto justify-center items-center flex flex-col gap-3'>
+                {isSearchTerm.length > 3 ? (
+                  <>
+                    <div className='text-lg font-semibold'>
+                      No results returned
+                    </div>
+                    <BrutalCircleIconTooltip
+                      tooltip={'Reset'}
+                      bgColor={'bg-base-brand'}
+                      fn={() => {
+                        setIsSearchTerm('');
+                      }}
+                    >
+                      <MdAutorenew color='white' size={40} />
+                    </BrutalCircleIconTooltip>
+                  </>
+                ) : (
+                  <div className='font-medium animate-pulse'>
+                    Gathering Intel...
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

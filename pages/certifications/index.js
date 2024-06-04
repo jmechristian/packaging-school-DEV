@@ -127,7 +127,7 @@ const Index = () => {
               </h2>
             </div>
             <div className='text-lg'>
-              Developed by the industry leaders in pacakging education, these
+              Developed by the industry leaders in packaging education, these
               programs cover the core components of packaging materials and
               processes in the space of packaging development, material
               procurement, and organizational management.
