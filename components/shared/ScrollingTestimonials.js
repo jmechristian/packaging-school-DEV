@@ -97,6 +97,23 @@ const TestimonialList = ({
             key={t.id}
             className='shrink-0 w-[500px] h-[265px] flex flex-col overflow-hidden group items-start relative border-2 border-black transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 shadow-[4px_4px_0px_rgba(0,0,0,0.20)] hover:shadow-[6px_6px_0px_rgba(0,0,0,0.20)]'
           >
+            <div className='absolute right-2 top-2 z-20'>
+              {t.tags.includes('CMPM') ? (
+                <div className='border border-black p-1 text-xs uppercase'>
+                  CMPM
+                </div>
+              ) : t.tags.includes('CPS') ? (
+                <div className='border border-black p-1 text-xs uppercase'>
+                  CPS
+                </div>
+              ) : t.tags.includes('APC') ? (
+                <div className='border border-black p-1 text-xs uppercase'>
+                  apc
+                </div>
+              ) : (
+                <></>
+              )}
+            </div>
             <div className='flex items-start gap-3 px-4 w-fit py-4'>
               <div className='h-full'>
                 <div
