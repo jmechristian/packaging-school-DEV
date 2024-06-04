@@ -137,7 +137,7 @@ const Index = () => {
           </div>
           <div className='flex flex-col gap-5 w-full max-w-6xl mx-auto'>
             <div className='w-full flex flex-col lg:grid lg:grid-cols-12 lg:h-[550px] mb-5'>
-              <div className='hidden lg:col-span-2'></div>
+              <div className='col-span-2'></div>
               <div
                 className='col-span-5 cursor-pointer'
                 onClick={() => router.push('/certifications/get-to-know-cmpm')}
