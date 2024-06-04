@@ -18,7 +18,7 @@ import {
 import { useSelector } from 'react-redux';
 import CourseCardVideoHeader from '../shared/CourseCardVideoHeader';
 import NewCouseCard from '../shared/NewCouseCard';
-
+import { useRouter } from 'next/router';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   MagnifyingGlassIcon,
@@ -30,6 +30,7 @@ import {
   BoltIcon as Bolt,
 } from '@heroicons/react/24/solid';
 import WiredLessonCardToo from '../shared/WiredLessonCardToo';
+import { registgerLessonClick } from '../../helpers/api';
 
 const createDate = (date) => {
   const newDate = new Date(date);
@@ -40,10 +41,11 @@ const createDate = (date) => {
 };
 
 const CustomerSearchLOTMContainer = () => {
+  const router = useRouter();
   const [isExpanded, setIsExpanded] = useState(false);
   const [isActiveSearch, setIsActiveSearch] = useState(false);
   const [isSearchTerm, setIsSearchTerm] = useState('');
-
+  const { location } = useSelector((state) => state.auth);
   const { allLessons } = useSelector((state) => state.course_filter);
 
   const lessonsToShow = useMemo(() => {
@@ -66,6 +68,16 @@ const CustomerSearchLOTMContainer = () => {
         o.subhead.toLowerCase().includes(isSearchTerm.toLowerCase())
     );
   }, [allLessons, isSearchTerm]);
+
+  const lessonClickHandler = async () => {
+    await registgerLessonClick(
+      lessonsToShow[0].id,
+      router.asPath,
+      location,
+      'LIBRARY'
+    );
+    window.open(`/lessons/${lessonsToShow[0].slug}`, '_blank');
+  };
 
   return (
     <motion.section className='px-0 lg:px-6 w-full flex flex-col gap-12'>
@@ -191,9 +203,7 @@ const CustomerSearchLOTMContainer = () => {
                 </motion.div>
                 <motion.div
                   className='bg-black text-white font-bold w-fit rounded-xl px-6 py-2 mt-2 cursor-pointer'
-                  onClick={() =>
-                    window.open(`/lessons/${lessonsToShow[0].slug}`, '_blank')
-                  }
+                  onClick={lessonClickHandler}
                 >
                   View Lesson
                 </motion.div>
