@@ -6,7 +6,7 @@ const data = {
     'Hosted By': "Clemson University's Center for Corporate Learning",
     Timeline:
       '3 months synchronous with additional 12 months access and PhD instructor coaching and review',
-    Organization: 'PhD Led',
+    Organization: 'PhD-led',
     Credits: '80 hours (8 credits)',
     'Instructor Access':
       'PhD led, feedback, coaching, oversight, and weekly office hours',
@@ -34,7 +34,7 @@ const data = {
     Organization: 'Self-paced',
     Credits: '60 hours (6 credits)',
     'Instructor Access':
-      'Email Access, Completing one course a month is recommended',
+      'Email access, completing one course a month is recommended',
     Courses: [
       'Packaging Foundations',
       'Paperboard Cartons',
@@ -65,7 +65,7 @@ const CmpmCpsCompare = () => {
         <table className='min-w-full border-collapse block md:table mb-4'>
           <thead className='block md:table-header-group'>
             <tr className='border border-neutral-300 md:border-none block md:table-row'>
-              <th className='hidden bg-neutral-800 text-white px-2 py-3 font-semibold text-left lg:block md:table-cell'></th>
+              <th className='bg-neutral-800 text-white px-2 py-3 font-semibold text-left block md:table-cell'></th>
               <th className='bg-neutral-800 text-white px-2 py-3 font-semibold text-left block md:table-cell'>
                 Certificate of Mastery In Packaging Management
               </th>

@@ -37,7 +37,7 @@ const Index = () => {
 
   return (
     <div className='w-full pb-40 md:pb-48 border-b-2 border-b-black pt-5 lg:pt-10'>
-      <div className='flex flex-col gap-28 md:gap-48 lg:gap-36 '>
+      <div className='flex flex-col gap-28 md:gap-48 lg:gap-32 '>
         {/* HERO */}
         <div className='w-full flex flex-col lg:flex-row lg:items-center gap-10 md:px-10 lg:px-0 max-w-7xl  mx-auto '>
           <div className='w-full max-w-[800px] aspect-[4/3]'>
@@ -224,7 +224,7 @@ const Index = () => {
 
         {/* FPC */}
         <div
-          className='w-full py-16 border-y-2 border-black lg:border-2 lg:rounded-2xl bg-base-brand/60 max-w-7xl  mx-auto'
+          className='w-full py-10 border-y-2 border-black lg:border-2 lg:rounded-2xl bg-base-brand/60 max-w-7xl  mx-auto'
           id='fpc'
         >
           <div className='flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-24 px-5 xl:px-0 max-w-xl lg:max-w-6xl mx-auto'>
@@ -288,7 +288,9 @@ const Index = () => {
           </div>
           <div className='w-fit mx-auto mt-3'>
             <BrutalButton
-              link={'/contact'}
+              link={
+                'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ35Hm4GpLbs5oMIYuUcefaOcrSb_F1jFkU_9mCus2H5P9gIObXySikly5zZxVPXuiw-Ou5wZwfg'
+              }
               background={'bg-clemson'}
               text={'Introduce Yourself'}
               textColor={'text-black'}
