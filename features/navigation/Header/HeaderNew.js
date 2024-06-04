@@ -2,11 +2,7 @@ import { Fragment, Suspense, useState } from 'react';
 import { Dialog, Popover, Tab, Transition } from '@headlessui/react';
 import { useSelector } from 'react-redux';
 import {
-  AcademicCapIcon,
   Bars3Icon,
-  BeakerIcon,
-  Cog6ToothIcon,
-  CogIcon,
   MagnifyingGlassIcon,
   UserIcon,
   XMarkIcon,
@@ -14,9 +10,6 @@ import {
 import Logo from '../../../components/layout/Logo';
 import Link from 'next/link';
 import CertMegaMenu from '../../../components/nav/CertMegaMenu';
-import CertMenuItem from '../../../components/shared/CertMenuItem';
-import CourseMenuBlock from '../shared/CourseMenuBlock';
-import MobileMenuCoursesCallout from '../MobileMenu/MobileMenuComponents/MobileMenuCoursesCallout';
 import CertMegaCallout from '../../../components/nav/CertMegaCallout';
 import { showSearch } from '../navigationSlice';
 import { setDark, setLight, toggleSignInModal } from '../../layout/layoutSlice';
@@ -32,6 +25,7 @@ import { MoonIcon, ArrowLongRightIcon } from '@heroicons/react/24/solid';
 import LogoSquare from '../../../components/layout/LogoSquare';
 import { useRouter } from 'next/router';
 import SalesBar from './SalesBar';
+import LogoWhite from '../../../components/layout/LogoWhite';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -64,6 +58,7 @@ export default function HeaderNew() {
       },
     ],
     pages: [
+      { name: 'Certifications', href: '/certifications' },
       { name: 'Courses', href: '/all_courses' },
       { name: 'Library', href: '/library' },
       { name: 'About', href: '/about' },
@@ -102,57 +97,26 @@ export default function HeaderNew() {
               leaveFrom='translate-x-0'
               leaveTo='-translate-x-full'
             >
-              <Dialog.Panel className='relative flex w-full max-w-full flex-col overflow-y-auto bg-slate-100 dark:bg-dark-dark pb-12 shadow-xl'>
-                <div className='flex pb-2 pt-2 pl-2'>
+              <Dialog.Panel className='relative flex w-full max-w-full flex-col justify-between overflow-y-auto bg-base-brand dark:bg-dark-dark shadow-xl'>
+                <div className='flex w-full justify-between p-4 mb-5'>
+                  <Link href='/'>
+                    <div className='h-full w-44'>
+                      <LogoWhite />
+                    </div>
+                  </Link>
                   <button
                     type='button'
-                    className='-m-2 inline-flex items-center justify-center rounded-md p-2 text-gray-400'
+                    className='-m-2 inline-flex items-center justify-center rounded-md p-2 text-white'
                     onClick={() => setOpen(false)}
                   >
                     <span className='sr-only'>Close menu</span>
-                    <XMarkIcon className='h-6 w-6' aria-hidden='true' />
+                    <XMarkIcon className='h-7 w-7' aria-hidden='true' />
                   </button>
                 </div>
 
                 {/* Links */}
-                <Tab.Group as='div' className='mt-2'>
-                  <div className='border-b border-gray-400'>
-                    <Tab.List className='-mb-px flex space-x-8 px-4'>
-                      {navigation.categories.map((category) => (
-                        <Tab
-                          key={category.name}
-                          className={({ selected }) =>
-                            classNames(
-                              selected
-                                ? ' text-base-brand dark:text-white'
-                                : 'border-transparent text-gray-900 dark:text-gray-500',
-                              'flex-1 whitespace-nowrap border-b-2 px-1 py-4 text-base font-medium'
-                            )
-                          }
-                        >
-                          {category.name}
-                        </Tab>
-                      ))}
-                    </Tab.List>
-                  </div>
-                  <Tab.Panels as={Fragment}>
-                    {navigation.categories.map((category, categoryIdx) => (
-                      <Tab.Panel
-                        key={category.name}
-                        className='space-y-12 px-4 pb-6 pt-10'
-                      >
-                        <div className='flex flex-col items-start gap-x-6 gap-y-10 w-full'>
-                          <div className='flex flex-col gap-x-6 gap-y-10 w-full'>
-                            <div>{category.body}</div>
-                            <div>{category.callout}</div>
-                          </div>
-                        </div>
-                      </Tab.Panel>
-                    ))}
-                  </Tab.Panels>
-                </Tab.Group>
 
-                <div className='space-y-6 border-t border-gray-400 px-4 py-6'>
+                <div className='space-y-6 px-4 py-6'>
                   {navigation.pages.map((page) => (
                     <div
                       key={page.name}
@@ -162,7 +126,7 @@ export default function HeaderNew() {
                       <Link href={page.href}>
                         <a
                           href={page.href}
-                          className='-m-2 block p-2 font-medium text-gray-900 dark:text-white'
+                          className='-m-2 block p-2 h1-base text-white dark:text-white'
                         >
                           {page.name}
                         </a>
@@ -170,24 +134,37 @@ export default function HeaderNew() {
                     </div>
                   ))}
                 </div>
-
-                <div className='space-y-6 border-t border-gray-400 px-4 py-6'>
+                <div className='space-y-3 text-white px-4 py-6'>
+                  <div className='flow-root'>
+                    <Link href={'/partner-with-us'}>
+                      <a className='-m-2 block p-2 h3-base text-white'>
+                        Collaborate
+                      </a>
+                    </Link>
+                  </div>
+                  <div className='flow-root'>
+                    <Link href={'/faq'}>
+                      <a className='-m-2 block p-2 h3-base text-white'>FAQs</a>
+                    </Link>
+                  </div>
+                  <div className='flow-root'>
+                    <Link href={'/certificates'}>
+                      <a className='-m-2 block p-2 h3-base text-white'>
+                        Team Learning
+                      </a>
+                    </Link>
+                  </div>
+                </div>
+                <div className='space-y-5 border-t-2 border-white bg-black text-neutral-400 px-4 py-6'>
                   <div className='flow-root'>
                     <a
                       href='https://learn.packagingschool.com'
                       target='_blank'
                       rel='noreferrer'
-                      className='dark:text-white font-semibold'
+                      className='dark:text-white font-medium'
                     >
                       Go to My Learning Dashbooard
                     </a>
-                    {/* {!user && (
-                      <Link href={`/api/auth/login?returnTo=${currentPath}`}>
-                        <a className='-m-2 block p-2 font-medium text-gray-900 dark:text-white'>
-                          Create a Free account
-                        </a>
-                      </Link>
-                    )} */}
                   </div>
                   <div className='flow-root'>
                     <Link
@@ -197,7 +174,7 @@ export default function HeaderNew() {
                           : `/api/auth/login?returnTo=${currentPath}`
                       }
                     >
-                      <a className='-m-2 block p-2 font-medium text-gray-900 dark:text-white'>
+                      <a className='-m-2 block p-2 font-medium text-neutral-400'>
                         {user ? 'Sign Out' : 'Sign In to Packagingschool.com'}
                       </a>
                     </Link>
@@ -234,7 +211,7 @@ export default function HeaderNew() {
                     {/* Mega menus */}
                     <Popover.Group className='ml-8'>
                       <div className='flex h-full justify-center space-x-8'>
-                        <Popover
+                        {/* <Popover
                           key={navigation.categories[0].name}
                           className='flex'
                         >
@@ -261,87 +238,10 @@ export default function HeaderNew() {
                                 leave='transition ease-in duration-150'
                                 leaveFrom='opacity-100'
                                 leaveTo='opacity-0'
-                              >
-                                {/* CERTIFICATES MEGAMENU */}
-                                <Popover.Panel className='absolute inset-x-0 top-full z-50'>
-                                  {/* Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow */}
-                                  <div
-                                    className='absolute inset-0 top-1/2 bg-white  shadow'
-                                    aria-hidden='true'
-                                  />
-                                  <div className='mx-auto bg-base-light/95 dark:bg-dark-dark backdrop-blur  rounded-b-xl shadow-xl px-3 pt-6 pb-10'>
-                                    <div className='grid grid-cols-3 items-start gap-3 max-w-7xl mx-auto h-full'>
-                                      <div className='col-span-2 h-full'>
-                                        <div className='flex flex-col gap-3 h-full'>
-                                          <div className='w-full rounded-xl border bg-white dark:bg-dark-dark shadow-lg'>
-                                            <div className='flex flex-col gap-4 p-4'>
-                                              <h3 className='text-xl dark:text-white'>
-                                                Comprehensive Certificate
-                                                Programs
-                                              </h3>
-                                              <div className='grid grid-cols-2 gap-3'>
-                                                <div className='border rounded-xl'>
-                                                  <CertMenuItem
-                                                    title='Certificate of Mastery in Packaging Management'
-                                                    apply='/certificate-of-mastery-in-packaging-management'
-                                                    learnMore='/certifications/get-to-know-cmpm'
-                                                    content='A 12-week, PhD-led program teaching you the latest technologies accelerating the packaging field in the space of packaging development, material procurement, and organizational management.'
-                                                    bgColor='bg-gradient-to-br from-base-brand to-slate-700'
-                                                    onClose={() => close()}
-                                                    // icon={'academicHat'}
-                                                  />
-                                                </div>
-                                                <div className='border rounded-xl'>
-                                                  <CertMenuItem
-                                                    title='Certificate of Packaging Science'
-                                                    apply='/certificate-of-packaging-science-application'
-                                                    learnMore='/certifications/get-to-know-cps'
-                                                    onClose={() => close()}
-                                                    bgColor='bg-gradient-to-br from-base-dark to-slate-900'
-                                                    content='A 12-month, online program teaching the materials, processes, and influences shaping the advancement of the industry. Speak the language of packaging and be a key differentiator for you and your company.'
-                                                    // icon='beaker'
-                                                  />
-                                                </div>
-                                                <div className='border rounded-xl'>
-                                                  <CertMenuItem
-                                                    title='Automotive Packaging Certificate'
-                                                    bgColor='bg-gradient-to-br from-clemson to-orange-800'
-                                                    content='The first and only 100% online academic program that will enable you to develop the professional skill set you need to be successful in the automotive packaging field.'
-                                                    apply='https://learn.packagingschool.com/enroll/735516'
-                                                    learnMore='/certifications/get-to-know-apc'
-                                                    enroll={true}
-                                                    onClose={() => close()}
-                                                  />
-                                                </div>
-                                                <div className='border rounded-xl'>
-                                                  <CertMenuItem
-                                                    enroll={true}
-                                                    title='Certificate of Sustainable Packaging'
-                                                    apply='https://learn.packagingschool.com/enroll/2772370'
-                                                    learnMore='/certifications/get-to-know-csp'
-                                                    onClose={() => close()}
-                                                    bgColor='bg-gradient-to-br from-brand-green to-slate-900'
-                                                    content="Introducing a transformative program empowering industry professionals to navigate the complexities of sustainable design. This initiative equips companies with internal champions, well-versed in the dos and don'ts of sustainable packaging, fostering a positive force for change within organizations."
-                                                    callout={'Newly Released!'}
-                                                  />
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                      <div className='col-span-1 border w-full h-full rounded-xl bg-neutral-100 dark:bg-dark-mid shadow-xl'>
-                                        <CertMegaCallout
-                                          onClose={() => close()}
-                                        />
-                                      </div>
-                                    </div>
-                                  </div>
-                                </Popover.Panel>
-                              </Transition>
+                              ></Transition>
                             </>
                           )}
-                        </Popover>
+                        </Popover> */}
 
                         {navigation.pages.map((page) => (
                           <Link passHref href={page.href} key={page.name}>

@@ -65,7 +65,7 @@ const CmpmCpsCompare = () => {
         <table className='min-w-full border-collapse block md:table mb-4'>
           <thead className='block md:table-header-group'>
             <tr className='border border-neutral-300 md:border-none block md:table-row'>
-              <th className='bg-neutral-800 text-white px-2 py-3 font-semibold text-left block md:table-cell'></th>
+              <th className='hidden bg-neutral-800 text-white px-2 py-3 font-semibold text-left md:table-cell'></th>
               <th className='bg-neutral-800 text-white px-2 py-3 font-semibold text-left block md:table-cell'>
                 Certificate of Mastery In Packaging Management
               </th>
@@ -96,7 +96,7 @@ const CmpmCpsCompare = () => {
                   </td>
                 </tr>
               ))}
-            <tr className='bg-neutral-100 border border-neutral-300 md:border-none block md:table-row'>
+            <tr className='bg-neutral-100 md:border border-neutral-300 md:border-none block md:table-row'>
               <td className='px-2 py-3 text-neutral-800 block md:table-cell border-y-2 border-y-black bg-neutral-200'>
                 <strong>Courses</strong>
               </td>

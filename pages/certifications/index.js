@@ -1,133 +1,302 @@
-import React from 'react';
-import GradientCTA from '../../components/GradientCTA';
-import ChooseCert from '../../components/certifications/ChooseCert';
-import PatternBackground from '../../components/layout/PatternBackground';
-import { ArrowDownCircleIcon } from '@heroicons/react/24/solid';
-import Meta from '../../components/shared/Meta';
+import React, { useState } from 'react';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
+import Image from 'next/image';
+import { useRive, Layout, Fit, Alignment } from '@rive-app/react-canvas';
+import BrutalTag from '../../components/shared/BrutalTag';
+import BrutalButton from '../../components/shared/BrutalButton';
+import CPSCard from '../../components/rive/CPSCard';
+import CMPMCard from '../../components/rive/CMPMCard';
+import APCCard from '../../components/rive/APCCard';
+import CSPCard from '../../components/rive/CSPCard';
+import FPCCard from '../../components/rive/FPCCard';
+import CmpmCpsCompare from '../../components/shared/CmpmCpsCompare';
+import ScrollingTestimonials from '../../components/shared/ScrollingTestimonials';
+
+export const RiveDemo = () => {
+  const { RiveComponent } = useRive({
+    // Load a local riv `clean_the_car.riv` or upload your own!
+    src: 'https://packschool.s3.amazonaws.com/cert_rocket.riv',
+    stateMachines: 'mainMachine',
+    // Be sure to specify the correct state machine (or animation) name
+    onLoadError: (err) => console.log(err),
+    // This is optional.Provides additional layout control.
+    autoplay: true,
+  });
+
+  return <RiveComponent />;
+};
 
 const Index = () => {
+  const [isIndex, setIsIndex] = useState(0);
+  const [isTestimonials, setIsTestimonials] = useState([]);
+
+  const router = useRouter();
+
   return (
-    <>
-      <Meta
-        title={'Packaging School Comprehensive Certificates'}
-        description={
-          "Designed for those students who want to separate themselves from their peers, these comprehensive certificate programs allow for structured or self-paced instructor from the industry's most trusted subject-matter experts."
-        }
-        image={
-          'https://packschool.s3.amazonaws.com/certifications-seoImage.webp'
-        }
-        keywords={
-          'packaging, packaging design, food packaging, packaging regulations, logistic, supply chain, certicates'
-        }
-      />
-      <div className='scroll-smooth isolate relative'>
-        <PatternBackground />
-        {/* Hero section */}
-        <div className='pt-14'>
-          <div className='mx-auto max-w-7xl px-6 py-32 sm:py-40 lg:px-8'>
-            <div className='mx-auto max-w-2xl lg:mx-0 lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-x-16 lg:gap-y-6 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8'>
-              <h1 className='max-w-2xl text-4xl font-bold tracking-tight font-greycliff text-gray-900 sm:text-6xl lg:col-span-2 xl:col-auto'>
-                Level Up with One of Our Elite Packaging Certificates
-              </h1>
-              <div className='mt-6 max-w-xl lg:mt-0 xl:col-end-1 xl:row-start-1'>
-                <p className='text-lg md:text-xl text-gray-500 md:leading-9'>
-                  Designed for those students who want to separate themselves
-                  from their peers, these comprehensive certificate programs
-                  allow for structured or self-paced instructor from the
-                  industry&apos;s most trusted subject-matter experts.
-                </p>
-                <div className='flex gap-1 items-center mt-6 md:mt-12'>
-                  <p className='font-greycliff font-bold text-lg md:text-2xl'>
-                    <a href='#perfectcert'>Find Your Perfect Certificate</a>
-                  </p>
-                  <div>
-                    <ArrowDownCircleIcon className='w-7 h-7 text-clemson' />
-                  </div>
-                </div>
-              </div>
-              <img
-                src='https://packschool.s3.amazonaws.com/chris-marsh-psgrad02.jpeg'
-                alt='Certificate of Packaging Science Graduate'
-                className='mt-10 aspect-[6/5] w-full max-w-lg rounded-2xl object-cover sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 xl:mt-36'
+    <div className='w-full pb-40 md:pb-48 border-b-2 border-b-black pt-5 lg:pt-10'>
+      <div className='flex flex-col gap-28 md:gap-48 lg:gap-32 '>
+        {/* HERO */}
+        <div className='w-full flex flex-col lg:flex-row lg:items-center gap-10 md:px-10 lg:px-0 max-w-7xl  mx-auto '>
+          <div className='w-full max-w-[800px] aspect-[4/3]'>
+            <RiveDemo />
+          </div>
+          <div className='flex flex-col gap-5 px-5 xl:px-0 '>
+            <div className='w-full text-center h1-base'>
+              Boost Your Packaging Career with Our Exclusive Certificates
+            </div>
+            <div className='w-full text-center lg:text-left text-xl'>
+              Expert-led curriculum designed to elevate your expertise in
+              packaging management and design, automotive packaging, and food
+              packaging.
+            </div>
+          </div>
+        </div>
+
+        {/* LOGOS */}
+        <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 w-full gap-10 lg:gap-16 px-6 xl:px-0 max-w-7xl mx-auto'>
+          <div className='flex justify-center items-center hover:bg-black transition-all ease-in group cursor-pointer flex-1 p-3'>
+            <Link href={'#cmpm'} passHref shallow>
+              <Image
+                src={'https://packschool.s3.amazonaws.com/cmpm-black.png'}
+                className='group-hover:invert'
+                width={370}
+                height={114}
+                alt='Certificate of Packaging Management Logo'
               />
+            </Link>
+          </div>
+          <div className='flex justify-center items-center hover:bg-black transition-all ease-in group cursor-pointer flex-1 p-3'>
+            <Link href={'#cmpm'} passHref shallow>
+              <Image
+                src={'https://packschool.s3.amazonaws.com/cps-black.png'}
+                width={430}
+                height={118}
+                alt='Certificate of Packaging Science Logo'
+                className='group-hover:invert'
+              />
+            </Link>
+          </div>
+          <div className='flex justify-center items-center hover:bg-black transition-all ease-in group cursor-pointer flex-1 p-3'>
+            <Link href={'#apc'} passHref shallow>
+              <Image
+                src={'https://packschool.s3.amazonaws.com/aps-black.png'}
+                className='group-hover:invert'
+                width={403}
+                height={109}
+                alt='Automotive Packaging Certificate Logo'
+              />
+            </Link>
+          </div>
+          <div className='flex justify-center items-center hover:bg-black transition-all ease-in group cursor-pointer flex-1 p-3'>
+            <Link href={'#apc'} passHref shallow>
+              <Image
+                src={'https://packschool.s3.amazonaws.com/csp-black.png'}
+                className='group-hover:invert'
+                width={310}
+                height={109}
+                alt='Certificate of Sustainable Packaging Logo'
+              />
+            </Link>
+          </div>
+          <div className='flex justify-center items-center col-span-2 md:col-span-1 hover:bg-black transition-all ease-in group cursor-pointer flex-1 p-3'>
+            <div className='w-1/2 md:w-full mx-auto '>
+              <Link href={'#fpc'} passHref shallow>
+                <Image
+                  src={'https://packschool.s3.amazonaws.com/fpc-black.png'}
+                  className='group-hover:invert'
+                  width={429}
+                  height={109}
+                  alt='Food Packaging Certificate Logo'
+                />
+              </Link>
             </div>
           </div>
-          <div className='absolute inset-x-0 bottom-0 -z-10 h-24 bg-gradient-to-t from-white sm:h-32' />
         </div>
-        <div className='scroll-mt-16' id='perfectcert'>
-          <ChooseCert />
-        </div>
-        <section className='bg-white py-12 sm:py-16 mb-16'>
-          <div className='mx-auto max-w-7xl px-6 lg:px-8'>
-            <div className='mx-auto grid max-w-2xl grid-cols-1 lg:mx-0 lg:max-w-none lg:grid-cols-2'>
-              <div className='flex flex-col pb-10 sm:pb-16 lg:pb-0 lg:pr-8 xl:pr-20'>
-                <img
-                  className='h-20 self-start'
-                  src='https://packschool.s3.amazonaws.com/skg_logo.png'
-                  alt=''
-                />
-                <figure className='mt-10 flex flex-auto flex-col justify-between'>
-                  <blockquote className='text-lg leading-8 text-gray-900'>
-                    <p>
-                      “The CMPM is a very complete and inspiring program, its
-                      content has contributed to reinforce my knowledge in key
-                      areas such as materials, production processes, and supply
-                      chain. This allowed me to keep growing as a packaging
-                      professional and will further contribute to strengthen my
-                      value proposition and packaging solutions to my customers”
-                    </p>
-                  </blockquote>
-                  <figcaption className='mt-10 flex items-center gap-x-6'>
-                    <div className='text-base'>
-                      <div className='font-semibold text-gray-900'>
-                        Carolina Aristizábal Molina
-                      </div>
-                      <div className='mt-1 text-gray-500'>
-                        Packaging Engineer, Smurfit Kappa
-                      </div>
-                    </div>
-                  </figcaption>
-                </figure>
+
+        {/* CMPM/CPS */}
+        <div
+          className='flex flex-col gap-10 lg:gap-16 px-5 xl:px-0 lg:py-10 scroll-mt-6'
+          id='cmpm'
+        >
+          <div className='flex flex-col gap-5 text-center justify-center max-w-xl mx-auto lg:max-w-4xl'>
+            <div>
+              <h2 className='h2-base'>
+                Comprehensive Packaging Certificate Programs Designed for Those
+                Who Want to Advance Their Careers.
+              </h2>
+            </div>
+            <div className='text-lg'>
+              Developed by the industry leaders in pacakging education, these
+              programs cover the core components of packaging materials and
+              processes in the space of packaging development, material
+              procurement, and organizational management.
+            </div>
+          </div>
+          <div className='flex flex-col gap-5 w-full max-w-6xl mx-auto'>
+            <div className='w-full flex flex-col lg:grid lg:grid-cols-12 lg:h-[550px] mb-5'>
+              <div className='col-span-2'></div>
+              <div
+                className='col-span-5 cursor-pointer'
+                onClick={() => router.push('/certifications/get-to-know-cmpm')}
+              >
+                <CMPMCard />
               </div>
-              <div className='flex flex-col border-t border-gray-900/10 pt-10 sm:pt-16 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-8 xl:pl-20'>
-                <img
-                  className='h-20 self-start'
-                  src='https://packschool.s3.amazonaws.com/colgate.png'
-                  alt=''
-                />
-                <figure className='mt-10 flex flex-auto flex-col justify-between'>
-                  <blockquote className='text-lg leading-8 text-gray-900'>
-                    <p>
-                      “The CMPM is a great program for both up-and-coming
-                      professionals curious to know more about packaging
-                      engineering as well as seasoned packaging professionals
-                      who are looking to do deeper dives and obtain additional
-                      knowledge; very fun, useful and engaging overall!”
-                    </p>
-                  </blockquote>
-                  <figcaption className='mt-10 flex items-center gap-x-6'>
-                    <div className='text-base'>
-                      <div className='font-semibold text-gray-900'>
-                        Mario Barrios
-                      </div>
-                      <div className='mt-1 text-gray-500'>
-                        Senior Packaging Engineer, Colgate-Palmolive Company
-                      </div>
-                    </div>
-                  </figcaption>
-                </figure>
+              <div
+                className='col-span-5 cursor-pointer'
+                onClick={() => router.push('/certifications/get-to-know-cps')}
+              >
+                <CPSCard />
+              </div>
+            </div>
+            <CmpmCpsCompare />
+          </div>
+        </div>
+
+        {/* APS/CSP */}
+        <div
+          className='flex flex-col lg:flex-row lg:items-center gap-28 justify-center lg:justify-start max-w-7xl mx-auto scroll-mt-6'
+          id='apc'
+        >
+          <div className='flex flex-col gap-10 max-w-xl mx-auto'>
+            <div className='flex flex-col gap-5 px-5 xl:px-0'>
+              <BrutalTag
+                text={'Automotive'}
+                textColor={'text-white'}
+                backgroundColor={'bg-base-brand'}
+              />
+              <div>
+                <h2 className='h2-base'>
+                  Revolutionize Your Career in Automotive Packaging with the
+                  First 100% Online Academic Program Tailored for Industry
+                  Professionals.
+                </h2>
+              </div>
+              <div>
+                Master the essential skills for success with our program,
+                designed for packaging and logistics professionals, engineers,
+                sales, and customer service teams in the automotive industry.
+              </div>
+            </div>
+            <div className='w-full flex justify-center lg:justify-start items-center'>
+              <div
+                className='w-full max-w-[400px] h-[520px] cursor-pointer'
+                onClick={() => router.push('/certifications/get-to-know-apc')}
+              >
+                <APCCard />
               </div>
             </div>
           </div>
-        </section>
-        <GradientCTA
-          headline='Ready to Elevate Your Career?'
-          subheadline='Try a demo, risk-free.'
-          buttonText='Get Started For Free'
-          secondaryButtonText='Need More Info?'
-        />
+          <div className='flex flex-col gap-10 max-w-xl mx-auto'>
+            <div className='flex flex-col gap-4 px-5 xl:px-0'>
+              <BrutalTag
+                text={'Sustainability'}
+                backgroundColor={'bg-brand-green'}
+                textColor={'text-black'}
+              />
+              <div>
+                <h2 className='h2-base'>
+                  Transform Your Packaging: Empower Your Team with Our
+                  Revolutionary Sustainable Design Program.
+                </h2>
+              </div>
+              <div>
+                The Packaging School introduces a transformative program
+                designed to empower industry professionals to master the
+                complexities of sustainable design. This initiative prepares
+                companies with internal champions knowledgeable about the dos
+                and don&apos;ts of sustainable packaging, creating a positive
+                force for change within organizations.
+              </div>
+            </div>
+            <div className='w-full flex justify-center lg:justify-start items-center'>
+              <div
+                className='w-full max-w-[400px] h-[520px] cursor-pointer'
+                onClick={() => router.push('/certifications/get-to-know-csp')}
+              >
+                <CSPCard />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* FPC */}
+        <div
+          className='w-full py-10 border-y-2 border-black lg:border-2 lg:rounded-2xl bg-base-brand/60 max-w-7xl  mx-auto'
+          id='fpc'
+        >
+          <div className='flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-24 px-5 xl:px-0 max-w-xl lg:max-w-6xl mx-auto'>
+            <div className='flex flex-col gap-4'>
+              <div className='flex items-center gap-3'>
+                <BrutalTag
+                  backgroundColor={'bg-white'}
+                  text={'In Development!'}
+                  textColor={'text-black'}
+                />
+                <BrutalTag
+                  backgroundColor={'bg-brand-yellow'}
+                  text={'Food and Bev'}
+                  textColor={'text-black'}
+                />
+              </div>
+              <h2 className='h2-base'>
+                Lead the Way in Food Packaging Innovation: Sponsorship
+                Opportunities to Showcase Your Brand and Expertise.
+              </h2>
+              <div className='text-lg'>
+                Elevate Your Brand, Enlighten the Industry. By sponsoring, you
+                contribute to the education of hundreds of food packaging
+                professionals, enhancing their understanding of the industry and
+                the unique value your company offers. Position your company at
+                the forefront and showcase your leaders as the go-to
+                subject-matter experts.
+              </div>
+              <div className='w-fit'>
+                <BrutalButton
+                  text={'Get Involved'}
+                  background={'bg-white'}
+                  textColor={'text-black'}
+                  link={'/food-packaging'}
+                />
+              </div>
+            </div>
+            <div className='w-full flex justify-center items-center'>
+              <div
+                className='w-full max-w-[400px] h-[520px] cursor-pointer'
+                onClick={() => router.push('/food-packaging')}
+              >
+                <FPCCard />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Testimonials */}
+        <ScrollingTestimonials />
+
+        {/* Final CTA */}
+        <div className='flex flex-col gap-5 px-5 xl:px-0 max-w-xl lg:max-w-4xl mx-auto lg:pt-10'>
+          <div className='w-full text-center h1-base'>
+            Seeking Seamless Onboarding? Ensure a Smooth Start Here!
+          </div>
+          <div className='w-full text-center text-xl'>
+            Schedule an appointment with one of our curriculum counselors. We
+            can find the perfect library fit and transition plan to set and
+            forget your onboarding education process for good.
+          </div>
+          <div className='w-fit mx-auto mt-3'>
+            <BrutalButton
+              link={
+                'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ35Hm4GpLbs5oMIYuUcefaOcrSb_F1jFkU_9mCus2H5P9gIObXySikly5zZxVPXuiw-Ou5wZwfg'
+              }
+              background={'bg-clemson'}
+              text={'Introduce Yourself'}
+              textColor={'text-black'}
+            />
+          </div>
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 
