@@ -1,32 +1,13 @@
 import { useState, useMemo } from 'react';
 import { useSelector } from 'react-redux';
-import {
-  ArrowTopRightOnSquareIcon,
-  ArrowLongRightIcon,
-  AcademicCapIcon,
-  ArchiveBoxIcon,
-  BriefcaseIcon,
-  Cog6ToothIcon,
-  SwatchIcon,
-  TruckIcon,
-  InformationCircleIcon,
-  RocketLaunchIcon,
-  SparklesIcon,
-  SignalIcon,
-  BoltSlashIcon,
-} from '@heroicons/react/24/outline';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   MagnifyingGlassIcon,
   ArrowsUpDownIcon,
-  PlayCircleIcon,
   ChevronDoubleDownIcon,
-  StarIcon,
   XMarkIcon,
-  BoltIcon,
 } from '@heroicons/react/24/solid';
 
-import NewCouseCard from '../shared/NewCouseCard';
 import WiredCourseCard from '../shared/WiredCourseCard';
 
 const CustomerSearchContainer = ({ courses, reference, link_text }) => {
@@ -40,18 +21,17 @@ const CustomerSearchContainer = ({ courses, reference, link_text }) => {
   /////////Forget all this, just pass the courses array, sort by clicks, populate the NewCourseCard inside each one
 
   const initCourses = useMemo(() => {
-    // Filter allCourses by a sorted by click count Courses array
-    // const filtered = allCourses.filter((c) =>
-    //   courses.find((s) => s.courseId === c.id)
-    // );
-    const filtered = courses.map((c) => {
-      const matchedCourse = allCourses.find((ac) => ac.id === c.courseId);
-      return {
-        ...c,
-        ...matchedCourse,
-        targetedId: c.id,
-      };
-    });
+    const filtered =
+      courses &&
+      courses.map((c) => {
+        const matchedCourse =
+          allCourses && allCourses.find((ac) => ac.id === c.courseId);
+        return {
+          ...c,
+          ...matchedCourse,
+          targetedId: c.id,
+        };
+      });
     return filtered;
   }, [courses, allCourses]);
 

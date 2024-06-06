@@ -2,23 +2,16 @@ import React, { useState } from 'react';
 import Head from 'next/head';
 import { API } from 'aws-amplify';
 import { getCustomer } from '../../../src/graphql/queries';
-import {
-  MinusSmallIcon,
-  PlusSmallIcon,
-  BookmarkSquareIcon,
-} from '@heroicons/react/24/outline';
+import { MinusSmallIcon, PlusSmallIcon } from '@heroicons/react/24/outline';
 import { HiAcademicCap } from 'react-icons/hi2';
 import { Disclosure } from '@headlessui/react';
 import { MdAutoStories } from 'react-icons/md';
 
 import CustomerSearchContainer from '../../../components/customers/CustomerSearchContainer';
-import BrutalFunctionButton from '../../../components/shared/BrutalFunctionButton';
-import FullWidthDropDown from '../../../components/shared/FullWidthDropDown';
 import CustomerSearchLOTMContainer from '../../../components/customers/CustomerSearchLOTMContainer';
 import LibraryHeader from '../../../components/library/LibraryHeader';
 import DemoOffering from '../../../components/library/DemoOffering';
 import CustomerDropdown from '../../../components/customers/CustomerDropdown';
-import StageOne from '../../../components/library/StageOne';
 
 const faqs = [
   {
@@ -201,97 +194,12 @@ const Page = ({ customer }) => {
         <meta name='robots' content='noindex,nofollow' />
       </Head>
       <div className='w-full relative'>
-        {isTour ? (
-          <div className='fixed inset-0 bg-black/50 z-30 flex justify-center items-center'>
-            {isStage === 1 && (
-              <div className='w-full max-w-2xl bg-white border-2 border-black p-10 flex flex-col gap-5 items-center'>
-                <div className='h2-base'>Welcome to Your Library</div>
-                <div className='text-center'>
-                  Here, your employees can easily access all their custom
-                  Packaging School content in one convenient place. Explore
-                  tailored courses, resources, and materials designed to enhance
-                  skills and knowledge in the packaging industry. Enjoy seamless
-                  learning!
-                </div>
-                <div className='grid grid-cols-2 gap-5 items-center mt-5'>
-                  <div className='w-fit cursor-pointer'>
-                    <BrutalFunctionButton
-                      text={'Skip Tour'}
-                      background={'bg-neutral-400'}
-                      textColor={'text-white/60'}
-                      fn={() => cancel()}
-                    />
-                  </div>
-                  <div className='w-full cursor-pointer'>
-                    <BrutalFunctionButton
-                      text={'Continue'}
-                      background={'bg-clemson'}
-                      textColor={'text-white'}
-                      fn={() => forward()}
-                    />
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-        ) : (
-          <></>
-        )}
         <div className=' max-w-7xl mx-auto px-3 md:px-6 lg:px-0 flex flex-col gap-4 md:gap-24 py-5 md:py-6 lg:py-16 relative'>
-          {isStage === 2 || isStage === 3 ? (
-            <>
-              <div className='absolute w-[1400px] z-40 bg-white left-1/2 -translate-x-1/2 py-10 -mt-10'>
-                <div className='max-w-7xl mx-auto'>
-                  <LibraryHeader
-                    displayName={'Acme'}
-                    email={'Bobbo@acme.com'}
-                    logo={'https://packschool.s3.amazonaws.com/acme-logo.png'}
-                  />
-                </div>
-                <div
-                  className={`${
-                    isStage === 3 ? 'left-1/2 top-full' : 'right-1/2 top-1/2'
-                  } absolute w-full max-w-xl bg-white border-2 border-black p-10 flex flex-col gap-5 items-center`}
-                >
-                  <div className='h3-base'>Your Library, Your Branding</div>
-                  <div className='text-center'>
-                    Customize your library&apos;s branding and contact
-                    information to reflect your unique identity and make it
-                    easily recognizable to your employees.
-                  </div>
-                  <div className='grid grid-cols-2 gap-5 items-center mt-5'>
-                    <div className='w-fit cursor-pointer'>
-                      <BrutalFunctionButton
-                        text={'Skip Tour'}
-                        background={'bg-neutral-400'}
-                        textColor={'text-white/60'}
-                        fn={() => cancel()}
-                      />
-                    </div>
-                    <div className='w-full cursor-pointer'>
-                      <BrutalFunctionButton
-                        text={'Continue'}
-                        background={'bg-clemson'}
-                        textColor={'text-white'}
-                        fn={() => forward()}
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <LibraryHeader
-                displayName={'Acme'}
-                email={'Bobbo@acme.com'}
-                logo={'https://packschool.s3.amazonaws.com/acme-logo.png'}
-              />
-            </>
-          ) : (
-            <LibraryHeader
-              displayName={'Acme'}
-              email={'Bobbo@acme.com'}
-              logo={'https://packschool.s3.amazonaws.com/acme-logo.png'}
-            />
-          )}
+          <LibraryHeader
+            displayName={'Acme'}
+            email={'Bobbo@acme.com'}
+            logo={'https://packschool.s3.amazonaws.com/acme-logo.png'}
+          />
 
           <div className='flex flex-col gap-5'>
             <CustomerDropdown
