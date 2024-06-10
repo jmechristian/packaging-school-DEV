@@ -5317,6 +5317,9 @@ export const onCreateTrackedCourse = /* GraphQL */ `
         slide
         video
         offered
+        pscourses {
+          nextToken
+        }
         courses {
           nextToken
         }
@@ -5349,6 +5352,9 @@ export const onUpdateTrackedCourse = /* GraphQL */ `
         slide
         video
         offered
+        pscourses {
+          nextToken
+        }
         courses {
           nextToken
         }
@@ -5381,6 +5387,111 @@ export const onDeleteTrackedCourse = /* GraphQL */ `
         slide
         video
         offered
+        pscourses {
+          nextToken
+        }
+        courses {
+          nextToken
+        }
+        offerings
+        status
+        createdAt
+        updatedAt
+      }
+      customerId
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateIncludedCourse = /* GraphQL */ `
+  subscription OnCreateIncludedCourse {
+    onCreateIncludedCourse {
+      id
+      courseId
+      customer {
+        id
+        displayName
+        link
+        logo
+        email
+        primaryColor
+        highlightColor
+        pdf
+        slide
+        video
+        offered
+        pscourses {
+          nextToken
+        }
+        courses {
+          nextToken
+        }
+        offerings
+        status
+        createdAt
+        updatedAt
+      }
+      customerId
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateIncludedCourse = /* GraphQL */ `
+  subscription OnUpdateIncludedCourse {
+    onUpdateIncludedCourse {
+      id
+      courseId
+      customer {
+        id
+        displayName
+        link
+        logo
+        email
+        primaryColor
+        highlightColor
+        pdf
+        slide
+        video
+        offered
+        pscourses {
+          nextToken
+        }
+        courses {
+          nextToken
+        }
+        offerings
+        status
+        createdAt
+        updatedAt
+      }
+      customerId
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteIncludedCourse = /* GraphQL */ `
+  subscription OnDeleteIncludedCourse {
+    onDeleteIncludedCourse {
+      id
+      courseId
+      customer {
+        id
+        displayName
+        link
+        logo
+        email
+        primaryColor
+        highlightColor
+        pdf
+        slide
+        video
+        offered
+        pscourses {
+          nextToken
+        }
         courses {
           nextToken
         }
@@ -5409,6 +5520,16 @@ export const onCreateCustomer = /* GraphQL */ `
       slide
       video
       offered
+      pscourses {
+        items {
+          id
+          courseId
+          customerId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       courses {
         items {
           id
@@ -5441,6 +5562,16 @@ export const onUpdateCustomer = /* GraphQL */ `
       slide
       video
       offered
+      pscourses {
+        items {
+          id
+          courseId
+          customerId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       courses {
         items {
           id
@@ -5473,6 +5604,16 @@ export const onDeleteCustomer = /* GraphQL */ `
       slide
       video
       offered
+      pscourses {
+        items {
+          id
+          courseId
+          customerId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       courses {
         items {
           id

@@ -31,19 +31,19 @@ const ScrollingTestimonials = () => {
       <div className='px-4 pt-4 overflow-x-hidden relative'>
         <div className='flex items-center mb-4'>
           <TestimonialList
-            list={isTestimonials.slice(0, 3)}
+            list={isTestimonials.slice(0, 5)}
             duration={125}
             fn={() => setIsOpen(true)}
             setSelected={(val) => setIsSelectedVid(val)}
           />
           <TestimonialList
-            list={isTestimonials.slice(0, 3)}
+            list={isTestimonials.slice(0, 5)}
             duration={125}
             fn={() => setIsOpen(true)}
             setSelected={(val) => setIsSelectedVid(val)}
           />
           <TestimonialList
-            list={isTestimonials.slice(0, 3)}
+            list={isTestimonials.slice(0, 5)}
             duration={125}
             fn={() => setIsOpen(true)}
             setSelected={(val) => setIsSelectedVid(val)}
@@ -51,21 +51,21 @@ const ScrollingTestimonials = () => {
         </div>
         <div className='flex items-center mb-2'>
           <TestimonialList
-            list={isTestimonials.slice(5, 9)}
+            list={isTestimonials.slice(6, 11)}
             duration={75}
             reverse
             fn={() => setIsOpen(true)}
             setSelected={(val) => setIsSelectedVid(val)}
           />
           <TestimonialList
-            list={isTestimonials.slice(5, 9)}
+            list={isTestimonials.slice(6, 11)}
             duration={75}
             reverse
             fn={() => setIsOpen(true)}
             setSelected={(val) => setIsSelectedVid(val)}
           />
           <TestimonialList
-            list={isTestimonials.slice(5, 9)}
+            list={isTestimonials.slice(6, 11)}
             duration={75}
             reverse
             fn={() => setIsOpen(true)}

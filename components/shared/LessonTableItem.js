@@ -108,7 +108,7 @@ const LessonTableItem = ({ less }) => {
                     {newDateBottom}
                   </div>
                 </div>
-                <div className='h3-base'>{less.title}</div>
+                <div className='h4-base'>{less.title}</div>
                 <div className='flex gap-x-2 flex-wrap'>
                   {less.author.map((auth) => (
                     <div className='flex items-center gap-0.5' key={auth}>

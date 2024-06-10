@@ -20,7 +20,7 @@
   }
 
   .h3-base {
-    @apply font-semibold text-lg lg:text-xl leading-tight lg:leading-tight tracking-[-0.04em];
+    @apply font-semibold text-xl lg:text-2xl leading-tight lg:leading-tight tracking-[-0.04em];
   }
 
   .h4-base {

@@ -80,16 +80,28 @@ const Layout = ({ children }) => {
   useEffect(() => {
     const getLessons = /* GraphQL */ `
       query MyQuery {
-        listLessons(limit: 300, filter: { status: { eq: "PUBLISHED" } }) {
+        listLessons(limit: 250, filter: { status: { eq: "PUBLISHED" } }) {
           items {
-            title
-            subhead
-            slug
-            id
-            seoImage
-            type
+            author
+            backdate
+            content
             createdAt
-            status
+            id
+            objectives
+            screengrab
+            seoImage
+            slug
+            tags {
+              items {
+                tags {
+                  id
+                  tag
+                }
+              }
+            }
+            title
+            type
+            subhead
           }
         }
       }

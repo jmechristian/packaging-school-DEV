@@ -16,6 +16,8 @@ import { registerClick, registgerCourseClick } from '../../helpers/api';
 
 import VideoPlayer from '../VideoPlayer';
 import BrutalCircleIconTooltip from './BrutalCircleIconTooltip';
+import { API } from 'aws-amplify';
+import { getLMSCourse } from '../../src/graphql/queries';
 
 const LMSCourseCard = ({ id, icons, coupon, courses }) => {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -32,10 +34,17 @@ const LMSCourseCard = ({ id, icons, coupon, courses }) => {
   useEffect(() => {
     const getCourse = async () => {
       setIsLoading(true);
-      const course = courses.filter((cour) => cour.id === id);
-      if (course[0]) {
-        setIsCourse(course[0]);
-        setIsBackgroudColor(setColorByCategory(course[0].categoryArray));
+      const course = await API.graphql({
+        query: getLMSCourse,
+        variables: {
+          id: id,
+        },
+      });
+      if (course.data.getLMSCourse) {
+        setIsCourse(course.data.getLMSCourse);
+        setIsBackgroudColor(
+          setColorByCategory(course.data.getLMSCourse.categoryArray)
+        );
       } else {
         setIsError(true);
       }

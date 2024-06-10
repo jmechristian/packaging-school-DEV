@@ -29,7 +29,7 @@ const CustomerDropdown = ({
 
   return (
     <motion.div
-      className={`w-full ${bg} flex flex-col transition-all border-2 border-black shadow-[4px_4px_0px_rgba(0,0,0,0.20)]`}
+      className={`w-full ${bg} flex flex-col transition-all border-2 border-black shadow-[6px_6px_0px_rgba(0,0,0,0.20)]`}
     >
       <motion.div
         className={`w-full transition-all ease-in duration-200 flex justify-between py-7 px-6 cursor-pointer ${

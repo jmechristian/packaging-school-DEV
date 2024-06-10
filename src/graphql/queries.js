@@ -4319,6 +4319,9 @@ export const getTrackedCourse = /* GraphQL */ `
         slide
         video
         offered
+        pscourses {
+          nextToken
+        }
         courses {
           nextToken
         }
@@ -4415,6 +4418,118 @@ export const trackedCoursesByCustomerIdAndClicks = /* GraphQL */ `
     }
   }
 `;
+export const getIncludedCourse = /* GraphQL */ `
+  query GetIncludedCourse($id: ID!) {
+    getIncludedCourse(id: $id) {
+      id
+      courseId
+      customer {
+        id
+        displayName
+        link
+        logo
+        email
+        primaryColor
+        highlightColor
+        pdf
+        slide
+        video
+        offered
+        pscourses {
+          nextToken
+        }
+        courses {
+          nextToken
+        }
+        offerings
+        status
+        createdAt
+        updatedAt
+      }
+      customerId
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listIncludedCourses = /* GraphQL */ `
+  query ListIncludedCourses(
+    $filter: ModelIncludedCourseFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listIncludedCourses(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        courseId
+        customer {
+          id
+          displayName
+          link
+          logo
+          email
+          primaryColor
+          highlightColor
+          pdf
+          slide
+          video
+          offered
+          offerings
+          status
+          createdAt
+          updatedAt
+        }
+        customerId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const includedCoursesByCustomerId = /* GraphQL */ `
+  query IncludedCoursesByCustomerId(
+    $customerId: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelIncludedCourseFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    includedCoursesByCustomerId(
+      customerId: $customerId
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        courseId
+        customer {
+          id
+          displayName
+          link
+          logo
+          email
+          primaryColor
+          highlightColor
+          pdf
+          slide
+          video
+          offered
+          offerings
+          status
+          createdAt
+          updatedAt
+        }
+        customerId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
 export const getCustomer = /* GraphQL */ `
   query GetCustomer($id: ID!) {
     getCustomer(id: $id) {
@@ -4429,6 +4544,16 @@ export const getCustomer = /* GraphQL */ `
       slide
       video
       offered
+      pscourses {
+        items {
+          id
+          courseId
+          customerId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       courses {
         items {
           id
@@ -4466,6 +4591,9 @@ export const listCustomers = /* GraphQL */ `
         slide
         video
         offered
+        pscourses {
+          nextToken
+        }
         courses {
           nextToken
         }

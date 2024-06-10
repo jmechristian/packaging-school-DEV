@@ -5716,6 +5716,9 @@ export const createTrackedCourse = /* GraphQL */ `
         slide
         video
         offered
+        pscourses {
+          nextToken
+        }
         courses {
           nextToken
         }
@@ -5751,6 +5754,9 @@ export const updateTrackedCourse = /* GraphQL */ `
         slide
         video
         offered
+        pscourses {
+          nextToken
+        }
         courses {
           nextToken
         }
@@ -5786,6 +5792,120 @@ export const deleteTrackedCourse = /* GraphQL */ `
         slide
         video
         offered
+        pscourses {
+          nextToken
+        }
+        courses {
+          nextToken
+        }
+        offerings
+        status
+        createdAt
+        updatedAt
+      }
+      customerId
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createIncludedCourse = /* GraphQL */ `
+  mutation CreateIncludedCourse(
+    $input: CreateIncludedCourseInput!
+    $condition: ModelIncludedCourseConditionInput
+  ) {
+    createIncludedCourse(input: $input, condition: $condition) {
+      id
+      courseId
+      customer {
+        id
+        displayName
+        link
+        logo
+        email
+        primaryColor
+        highlightColor
+        pdf
+        slide
+        video
+        offered
+        pscourses {
+          nextToken
+        }
+        courses {
+          nextToken
+        }
+        offerings
+        status
+        createdAt
+        updatedAt
+      }
+      customerId
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateIncludedCourse = /* GraphQL */ `
+  mutation UpdateIncludedCourse(
+    $input: UpdateIncludedCourseInput!
+    $condition: ModelIncludedCourseConditionInput
+  ) {
+    updateIncludedCourse(input: $input, condition: $condition) {
+      id
+      courseId
+      customer {
+        id
+        displayName
+        link
+        logo
+        email
+        primaryColor
+        highlightColor
+        pdf
+        slide
+        video
+        offered
+        pscourses {
+          nextToken
+        }
+        courses {
+          nextToken
+        }
+        offerings
+        status
+        createdAt
+        updatedAt
+      }
+      customerId
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteIncludedCourse = /* GraphQL */ `
+  mutation DeleteIncludedCourse(
+    $input: DeleteIncludedCourseInput!
+    $condition: ModelIncludedCourseConditionInput
+  ) {
+    deleteIncludedCourse(input: $input, condition: $condition) {
+      id
+      courseId
+      customer {
+        id
+        displayName
+        link
+        logo
+        email
+        primaryColor
+        highlightColor
+        pdf
+        slide
+        video
+        offered
+        pscourses {
+          nextToken
+        }
         courses {
           nextToken
         }
@@ -5817,6 +5937,16 @@ export const createCustomer = /* GraphQL */ `
       slide
       video
       offered
+      pscourses {
+        items {
+          id
+          courseId
+          customerId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       courses {
         items {
           id
@@ -5852,6 +5982,16 @@ export const updateCustomer = /* GraphQL */ `
       slide
       video
       offered
+      pscourses {
+        items {
+          id
+          courseId
+          customerId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       courses {
         items {
           id
@@ -5887,6 +6027,16 @@ export const deleteCustomer = /* GraphQL */ `
       slide
       video
       offered
+      pscourses {
+        items {
+          id
+          courseId
+          customerId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       courses {
         items {
           id

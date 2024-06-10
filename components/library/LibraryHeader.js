@@ -27,7 +27,7 @@ const LibraryHeader = ({ displayName, email, logo, slides, video, pdf }) => {
             />
           </div>
           <div>
-            <h1 className='h1-base'>Welcome, {displayName} Members</h1>
+            <h1 className='h2-base'>Welcome, {displayName} Members</h1>
           </div>
           <div className='text-lg leading-snug max-w-xl w-full'>
             Explore the {displayName} Knowledge Library below. To learn how to
