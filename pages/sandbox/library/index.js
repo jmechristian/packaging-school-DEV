@@ -118,7 +118,7 @@ const Page = ({ customer, lessons }) => {
       <div className='w-full max-w-7xl px-3 md:px-6 lg:px-0 flex flex-col gap-10 md:gap-24 py-5 md:py-10 lg:py-16 mx-auto relative'>
         {/* INIT MODAL */}
         {isSnooze ? (
-          <div className='fixed bottom-5 left-10 z-20'>
+          <div className='fixed bottom-5 left-5 md:left-10 z-20'>
             <div className='w-16 h-16 rounded-full bg-clemson border-2 border-black flex items-center justify-center transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 shadow-[2px_2px_0px_black] hover:shadow-[4px_4px_0px_black] cursor-pointer'>
               <MdSnooze size={28} color='white' />
             </div>
