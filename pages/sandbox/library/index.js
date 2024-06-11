@@ -119,7 +119,7 @@ const Page = ({ customer, lessons }) => {
         {/* INIT MODAL */}
         {isSnooze ? (
           <div className='fixed bottom-5 left-10 z-20'>
-            <div className='w-16 h-16 rounded-full bg-clemson border-2 border-black flex items-center justify-center'>
+            <div className='w-16 h-16 rounded-full bg-clemson border-2 border-black flex items-center justify-center transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 shadow-[2px_2px_0px_black] hover:shadow-[4px_4px_0px_black] cursor-pointer'>
               <MdSnooze size={28} color='white' />
             </div>
           </div>
