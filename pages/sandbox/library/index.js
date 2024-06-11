@@ -1,4 +1,4 @@
-import React, { useMemo, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import Head from 'next/head';
 import { API } from 'aws-amplify';
 import { getCustomer, listLessons } from '../../../src/graphql/queries';
@@ -12,12 +12,26 @@ import {
 import LibraryHeader from '../../../components/library/LibraryHeader';
 import SearchableCourseContainer from '../../../components/shared/SearchableCourseContainer';
 import SearchableLessonContainer from '../../../components/shared/SearchableLessonContainer';
+import StepZero from '../../../components/tour/StepZero';
+import StepOne from '../../../components/tour/StepOne';
+import StepTwo from '../../../components/tour/StepTwo';
+import StepThree from '../../../components/tour/StepThree';
+import StepFour from '../../../components/tour/StepFour';
+import StepFive from '../../../components/tour/StepFive';
+import StepSix from '../../../components/tour/StepSix';
 
 const Page = ({ customer, lessons }) => {
   const [isSending, setIsSending] = useState(false);
   const [isSent, setIsSent] = useState(false);
   const [isForm, setIsForm] = useState('');
   const [isError, setError] = useState(false);
+  const [isStage, setIsStage] = useState(0);
+
+  const oneRef = useRef();
+  const twoRef = useRef();
+  const threeRef = useRef();
+  const fourRef = useRef();
+  const fiveRef = useRef();
 
   const submitHandler = async () => {};
 
@@ -48,11 +62,45 @@ const Page = ({ customer, lessons }) => {
     },
   ];
 
-  const oneRef = useRef();
-  const twoRef = useRef();
-  const threeRef = useRef();
-  const fourRef = useRef();
-  const fiveRef = useRef();
+  const stepChangeHandler = (step) => {
+    setIsStage(step);
+  };
+
+  useEffect(() => {
+    if (isStage === -1) {
+      return;
+    }
+
+    if (isStage === 1) {
+      oneRef.current?.scrollIntoView({
+        behavior: 'smooth',
+      });
+    }
+
+    if (isStage === 2) {
+      twoRef.current?.scrollIntoView({
+        behavior: 'smooth',
+      });
+    }
+
+    if (isStage === 3) {
+      threeRef.current?.scrollIntoView({
+        behavior: 'smooth',
+      });
+    }
+
+    if (isStage === 4) {
+      fourRef.current?.scrollIntoView({
+        behavior: 'smooth',
+      });
+    }
+
+    if (isStage === 5) {
+      fiveRef.current?.scrollIntoView({
+        behavior: 'smooth',
+      });
+    }
+  }, [isStage]);
 
   return (
     <>
@@ -60,8 +108,40 @@ const Page = ({ customer, lessons }) => {
         <title>Packaging School | Acme</title>
         <meta name='robots' content='noindex,nofollow' />
       </Head>
-      <div className='w-full max-w-7xl px-3 md:px-6 lg:px-0 flex flex-col gap-10 md:gap-28 py-5 md:py-6 lg:py-16 mx-auto'>
-        <div id='one' ref={oneRef}>
+      <div className='w-full max-w-7xl px-3 md:px-6 lg:px-0 flex flex-col gap-10 md:gap-24 py-5 md:py-10 lg:py-16 mx-auto relative'>
+        {/* INIT MODAL */}
+        {isStage === 0 ? (
+          <div className='inset-0 bg-black/60 backdrop-blur-sm fixed z-[60] flex items-center justify-center px-4'>
+            <StepZero
+              snooze={() => stepChangeHandler(-1)}
+              next={() => stepChangeHandler(1)}
+            />
+          </div>
+        ) : (
+          <></>
+        )}
+        {isStage === 6 ? (
+          <div className='inset-0 bg-black/60 backdrop-blur-sm fixed z-[60] flex items-center justify-center px-4'>
+            <StepSix
+              snooze={() => stepChangeHandler(-1)}
+              next={() => stepChangeHandler(1)}
+            />
+          </div>
+        ) : (
+          <></>
+        )}
+        <div id='one' ref={oneRef} className='relative'>
+          {isStage === 1 ? (
+            <div className='top-40 left-0 lg:right-0 absolute z-[60] flex items-center justify-center px-4'>
+              <StepOne
+                snooze={() => stepChangeHandler(-1)}
+                next={() => stepChangeHandler(2)}
+                back={() => stepChangeHandler(0)}
+              />
+            </div>
+          ) : (
+            <></>
+          )}
           <LibraryHeader
             displayName={customer.displayName}
             email={customer.email}
@@ -69,7 +149,18 @@ const Page = ({ customer, lessons }) => {
           />
         </div>
         <div className='flex flex-col gap-5'>
-          <div id='two' ref={twoRef}>
+          <div id='two' ref={twoRef} className='relative'>
+            {isStage === 2 ? (
+              <div className='top-28 left-0 absolute z-[60] flex items-center justify-center px-4'>
+                <StepTwo
+                  snooze={() => stepChangeHandler(-1)}
+                  next={() => stepChangeHandler(3)}
+                  back={() => stepChangeHandler(1)}
+                />
+              </div>
+            ) : (
+              <></>
+            )}
             <SearchableCourseContainer
               title={'Acme Knowledge Library Topics'}
               open={true}
@@ -81,10 +172,21 @@ const Page = ({ customer, lessons }) => {
               highlight={'bg-black'}
             />
           </div>
-          <div id='three' ref={threeRef}>
+          <div id='three' ref={threeRef} className='relative'>
+            {isStage === 3 ? (
+              <div className='top-28 left-0 absolute z-[60] flex items-center justify-center px-4'>
+                <StepThree
+                  snooze={() => stepChangeHandler(-1)}
+                  next={() => stepChangeHandler(4)}
+                  back={() => stepChangeHandler(2)}
+                />
+              </div>
+            ) : (
+              <></>
+            )}
             <SearchableCourseContainer
               title={'Packaging School Course Offerings'}
-              open={false}
+              open={true}
               table={true}
               courses={customer.pscourses.items}
               Icon={AcademicCapIcon}
@@ -94,10 +196,21 @@ const Page = ({ customer, lessons }) => {
               text={'text-white'}
             />
           </div>
-          <div id='four' ref={fourRef}>
+          <div id='four' ref={fourRef} className='relative'>
+            {isStage === 4 ? (
+              <div className='top-20 left-0 absolute z-[60] flex items-center justify-center px-4'>
+                <StepFour
+                  snooze={() => stepChangeHandler(-1)}
+                  next={() => stepChangeHandler(5)}
+                  back={() => stepChangeHandler(3)}
+                />
+              </div>
+            ) : (
+              <></>
+            )}
             <SearchableLessonContainer
               title={'Learning of the Month'}
-              open={false}
+              open={true}
               table={true}
               lessons={lessons}
               Icon={BookmarkSquareIcon}
@@ -106,11 +219,22 @@ const Page = ({ customer, lessons }) => {
               text={'text-white'}
             />
           </div>
-          <div id='five' ref={fiveRef}>
+          <div id='five' ref={fiveRef} className='relative'>
+            {isStage === 5 ? (
+              <div className='top-40 left-0 absolute z-[60] flex items-center justify-center px-4'>
+                <StepFive
+                  snooze={() => stepChangeHandler(-1)}
+                  next={() => stepChangeHandler(6)}
+                  back={() => stepChangeHandler(4)}
+                />
+              </div>
+            ) : (
+              <></>
+            )}
             <div className='bg-neutral-200'>
-              <div className='mx-auto max-w-7xl px-6 py-12 lg:px-16 flex flex-col gap-12'>
-                <div className='flex flex-col lg:flex-row items-center bg-neutral-100/80 px-6 py-9 border border-black'>
-                  <div className='flex flex-col gap-4 pb-10 max-w-sm h-full justify-center'>
+              <div className='mx-auto max-w-7xl px-3 md:px-6 py-12 lg:px-16 flex flex-col gap-12'>
+                <div className='flex flex-col lg:flex-row items-center md:items-start bg-neutral-100/80 px-6 py-9 border border-black'>
+                  <div className='flex flex-col gap-4 pb-10 max-w-sm md:max-w-full h-full justify-center'>
                     <h2 className='text-xl lg:text-2xl font-bold leading-10 tracking-tight text-gray-900'>
                       Looking to Learn More?
                     </h2>

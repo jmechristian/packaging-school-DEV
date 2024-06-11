@@ -168,7 +168,7 @@ const SearchableLessonContainer = ({
         <div className='w-full flex flex-col'>
           {/* HEADING */}
           <div
-            className={`w-full px-3 md:px-6 py-8 flex justify-between items-end ${bg} ${text} border-2 border-black`}
+            className={`w-full px-3 md:px-6 py-6 md:py-8 flex justify-between items-end ${bg} ${text} border-2 border-black`}
           >
             <div className='flex items-center gap-2'>
               <div
@@ -256,7 +256,7 @@ const SearchableLessonContainer = ({
                     </div>
                   </div>
                 </div>
-                <div className='border-2 border-black px-6 py-9'>
+                <div className='border-2 border-black px-3 md:px-6 py-9'>
                   {paginatedItems && paginatedItems.length > 0 && isTable ? (
                     <div className='flex flex-col gap-2'>
                       {paginatedItems.map((less) => (

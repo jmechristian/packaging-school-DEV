@@ -69,7 +69,6 @@ const SearchableCourseContainer = ({
     fetchAllData(courses)
       .then((results) => {
         setIsCourses(results);
-        console.log(isCourses);
       })
       .catch((error) => {
         console.error('Error fetching data:', error);
@@ -236,9 +235,9 @@ const SearchableCourseContainer = ({
         <div className='w-full flex flex-col'>
           {/* HEADING */}
           <div
-            className={`w-full px-3 md:px-6 py-8 flex justify-between items-end ${bg} ${text} border-2 border-black`}
+            className={`w-full px-3 md:px-6 py-6 md:py-8 flex justify-between items-end ${bg} ${text} border-2 border-black`}
           >
-            <div className='flex items-center gap-2'>
+            <div className='flex items-center gap-2 max-w-[70%]'>
               <div>
                 <div
                   className={`w-10 h-10 flex justify-center items-center ${highlight} rounded-full shadow`}
@@ -248,7 +247,7 @@ const SearchableCourseContainer = ({
                   />
                 </div>
               </div>
-              <div className='h3-base'>{title}</div>
+              <div className='h3-base relative'>{title}</div>
               {cash && (
                 <motion.div
                   className='w-5 h-5 rounded-full relative'

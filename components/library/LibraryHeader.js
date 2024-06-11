@@ -16,10 +16,10 @@ const ReactGoogleSlides = dynamic(() => import('react-google-slides'), {
 const LibraryHeader = ({ displayName, email, logo, slides, video, pdf }) => {
   const [isMediaType, setIsMediaType] = useState('SLIDES');
   return (
-    <div className='w-full h-full flex flex-col lg:flex-row lg:justify-between gap-12 lg:px-12 xl:px-0 lg:gap-16'>
+    <div className='w-full h-full flex flex-col md:items-center lg:flex-row lg:justify-between gap-12 lg:px-12 xl:px-0 lg:gap-16'>
       <div className='flex items-center'>
-        <div className='w-full flex flex-col justify-center gap-5 lg:gap-4 lg:max-w-2xl'>
-          <div className='w-full h-full flex max-w-[200px] md:max-w-[250px]'>
+        <div className='w-full flex flex-col md:items-center lg:items-start justify-center gap-5 lg:gap-4 lg:max-w-2xl'>
+          <div className='w-full h-full flex max-w-[200px] md:max-w-[220px]'>
             <img
               src={logo}
               alt={`${displayName} Logo`}
