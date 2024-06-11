@@ -10,7 +10,7 @@ const StepTwo = ({ snooze, next, back }) => {
         </div>
         <div className='text-sm text-gray-400'>3/6</div>
       </div>
-      <div className='bg-white px-3 py-5 text-lg leading-snug'>
+      <div className='bg-white p-5 lg:p-10 text-lg leading-snug'>
         Courses developed specifically for your company by the industry-leading
         subject-matter experts.
       </div>

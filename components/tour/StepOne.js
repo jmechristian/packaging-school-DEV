@@ -10,7 +10,7 @@ const StepOne = ({ snooze, next, back }) => {
         </div>
         <div className='text-sm text-gray-400'>2/6</div>
       </div>
-      <div className='bg-white px-3 py-5 text-lg leading-snug'>
+      <div className='bg-white p-5 lg:p-10 text-lg leading-snug'>
         Co-Branded content designed to make your employees feel at home. This is
         not the best line. What is the value?
       </div>

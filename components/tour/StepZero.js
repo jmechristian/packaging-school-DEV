@@ -11,7 +11,7 @@ const StepZero = ({ snooze, next }) => {
         </div>
         <div className='text-sm text-gray-400'>1/6</div>
       </div>
-      <div className='bg-white px-3 py-5 text-lg leading-snug'>
+      <div className='bg-white p-5 lg:p-10 text-lg leading-snug'>
         Welcome to your branded Employee Training Library tour! Join us as we
         guide you through a custom-curated selection of courses and lessons,
         meticulously designed to enhance your skills and knowledge in one

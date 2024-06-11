@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { API } from 'aws-amplify';
 import { getCustomer, listLessons } from '../../../src/graphql/queries';
 import { Disclosure } from '@headlessui/react';
+import { MdSnooze } from 'react-icons/md';
 import {
   MinusSmallIcon,
   PlusSmallIcon,
@@ -26,6 +27,7 @@ const Page = ({ customer, lessons }) => {
   const [isForm, setIsForm] = useState('');
   const [isError, setError] = useState(false);
   const [isStage, setIsStage] = useState(0);
+  const [isSnooze, setIsSnooze] = useState(false);
 
   const oneRef = useRef();
   const twoRef = useRef();
@@ -64,6 +66,11 @@ const Page = ({ customer, lessons }) => {
 
   const stepChangeHandler = (step) => {
     setIsStage(step);
+  };
+
+  const snoozeHandler = () => {
+    stepChangeHandler(-1);
+    setIsSnooze(true);
   };
 
   useEffect(() => {
@@ -110,10 +117,19 @@ const Page = ({ customer, lessons }) => {
       </Head>
       <div className='w-full max-w-7xl px-3 md:px-6 lg:px-0 flex flex-col gap-10 md:gap-24 py-5 md:py-10 lg:py-16 mx-auto relative'>
         {/* INIT MODAL */}
+        {isSnooze ? (
+          <div className='fixed bottom-5 left-10 z-20'>
+            <div className='w-16 h-16 rounded-full bg-clemson border-2 border-black flex items-center justify-center'>
+              <MdSnooze size={28} color='white' />
+            </div>
+          </div>
+        ) : (
+          <></>
+        )}
         {isStage === 0 ? (
           <div className='inset-0 bg-black/60 backdrop-blur-sm fixed z-[60] flex items-center justify-center px-4'>
             <StepZero
-              snooze={() => stepChangeHandler(-1)}
+              snooze={() => snoozeHandler()}
               next={() => stepChangeHandler(1)}
             />
           </div>
@@ -123,7 +139,7 @@ const Page = ({ customer, lessons }) => {
         {isStage === 6 ? (
           <div className='inset-0 bg-black/60 backdrop-blur-sm fixed z-[60] flex items-center justify-center px-4'>
             <StepSix
-              snooze={() => stepChangeHandler(-1)}
+              snooze={() => snoozeHandler()}
               next={() => stepChangeHandler(1)}
             />
           </div>
@@ -132,9 +148,9 @@ const Page = ({ customer, lessons }) => {
         )}
         <div id='one' ref={oneRef} className='relative'>
           {isStage === 1 ? (
-            <div className='top-40 left-0 lg:right-0 absolute z-[60] flex items-center justify-center px-4'>
+            <div className='top-0 left-20 lg:right-0 absolute z-[60] flex items-center justify-center px-4'>
               <StepOne
-                snooze={() => stepChangeHandler(-1)}
+                snooze={() => snoozeHandler()}
                 next={() => stepChangeHandler(2)}
                 back={() => stepChangeHandler(0)}
               />
@@ -153,7 +169,7 @@ const Page = ({ customer, lessons }) => {
             {isStage === 2 ? (
               <div className='top-28 left-0 absolute z-[60] flex items-center justify-center px-4'>
                 <StepTwo
-                  snooze={() => stepChangeHandler(-1)}
+                  snooze={() => snoozeHandler()}
                   next={() => stepChangeHandler(3)}
                   back={() => stepChangeHandler(1)}
                 />
@@ -176,7 +192,7 @@ const Page = ({ customer, lessons }) => {
             {isStage === 3 ? (
               <div className='top-28 left-0 absolute z-[60] flex items-center justify-center px-4'>
                 <StepThree
-                  snooze={() => stepChangeHandler(-1)}
+                  snooze={() => snoozeHandler()}
                   next={() => stepChangeHandler(4)}
                   back={() => stepChangeHandler(2)}
                 />
@@ -200,7 +216,7 @@ const Page = ({ customer, lessons }) => {
             {isStage === 4 ? (
               <div className='top-20 left-0 absolute z-[60] flex items-center justify-center px-4'>
                 <StepFour
-                  snooze={() => stepChangeHandler(-1)}
+                  snooze={() => snoozeHandler()}
                   next={() => stepChangeHandler(5)}
                   back={() => stepChangeHandler(3)}
                 />
@@ -223,7 +239,7 @@ const Page = ({ customer, lessons }) => {
             {isStage === 5 ? (
               <div className='top-40 left-0 absolute z-[60] flex items-center justify-center px-4'>
                 <StepFive
-                  snooze={() => stepChangeHandler(-1)}
+                  snooze={() => snoozeHandler()}
                   next={() => stepChangeHandler(6)}
                   back={() => stepChangeHandler(4)}
                 />
