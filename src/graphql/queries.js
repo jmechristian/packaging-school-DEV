@@ -553,6 +553,16 @@ export const getAuthor = /* GraphQL */ `
       linkedIn
       title
       company
+      templates {
+        items {
+          id
+          authorId
+          indexTemplateId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -572,6 +582,9 @@ export const listAuthors = /* GraphQL */ `
         linkedIn
         title
         company
+        templates {
+          nextToken
+        }
         createdAt
         updatedAt
       }
@@ -3326,6 +3339,8 @@ export const getLMSCourse = /* GraphQL */ `
       partOf
       altLink
       shortDescription
+      subscriptionLink
+      subscriptionPrice
       createdAt
       updatedAt
       studentCourseEnrolledId
@@ -3374,6 +3389,8 @@ export const listLMSCourses = /* GraphQL */ `
         partOf
         altLink
         shortDescription
+        subscriptionLink
+        subscriptionPrice
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -3432,6 +3449,8 @@ export const lMSCoursesBySlug = /* GraphQL */ `
         partOf
         altLink
         shortDescription
+        subscriptionLink
+        subscriptionPrice
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -3961,6 +3980,8 @@ export const getStudent = /* GraphQL */ `
           partOf
           altLink
           shortDescription
+          subscriptionLink
+          subscriptionPrice
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -5139,6 +5160,142 @@ export const listClicks = /* GraphQL */ `
     }
   }
 `;
+export const getIndexTemplate = /* GraphQL */ `
+  query GetIndexTemplate($id: ID!) {
+    getIndexTemplate(id: $id) {
+      id
+      slug
+      title
+      subhead
+      authors {
+        items {
+          id
+          authorId
+          indexTemplateId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      rows {
+        items {
+          id
+          indexTemplateId
+          indexRowId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listIndexTemplates = /* GraphQL */ `
+  query ListIndexTemplates(
+    $filter: ModelIndexTemplateFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listIndexTemplates(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        slug
+        title
+        subhead
+        authors {
+          nextToken
+        }
+        rows {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const indexTemplatesBySlug = /* GraphQL */ `
+  query IndexTemplatesBySlug(
+    $slug: String!
+    $sortDirection: ModelSortDirection
+    $filter: ModelIndexTemplateFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    indexTemplatesBySlug(
+      slug: $slug
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        slug
+        title
+        subhead
+        authors {
+          nextToken
+        }
+        rows {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getIndexRow = /* GraphQL */ `
+  query GetIndexRow($id: ID!) {
+    getIndexRow(id: $id) {
+      id
+      headline
+      subhead
+      type
+      content
+      templates {
+        items {
+          id
+          indexTemplateId
+          indexRowId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listIndexRows = /* GraphQL */ `
+  query ListIndexRows(
+    $filter: ModelIndexRowFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listIndexRows(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        headline
+        subhead
+        type
+        content
+        templates {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
 export const getLessonTags = /* GraphQL */ `
   query GetLessonTags($id: ID!) {
     getLessonTags(id: $id) {
@@ -5832,6 +5989,168 @@ export const articleRelatedCoursesByArticleId = /* GraphQL */ `
     }
   }
 `;
+export const getAuthorTemplates = /* GraphQL */ `
+  query GetAuthorTemplates($id: ID!) {
+    getAuthorTemplates(id: $id) {
+      id
+      authorId
+      indexTemplateId
+      author {
+        id
+        name
+        headshot
+        linkedIn
+        title
+        company
+        templates {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      indexTemplate {
+        id
+        slug
+        title
+        subhead
+        authors {
+          nextToken
+        }
+        rows {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listAuthorTemplates = /* GraphQL */ `
+  query ListAuthorTemplates(
+    $filter: ModelAuthorTemplatesFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listAuthorTemplates(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        authorId
+        indexTemplateId
+        author {
+          id
+          name
+          headshot
+          linkedIn
+          title
+          company
+          createdAt
+          updatedAt
+        }
+        indexTemplate {
+          id
+          slug
+          title
+          subhead
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const authorTemplatesByAuthorId = /* GraphQL */ `
+  query AuthorTemplatesByAuthorId(
+    $authorId: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelAuthorTemplatesFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    authorTemplatesByAuthorId(
+      authorId: $authorId
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        authorId
+        indexTemplateId
+        author {
+          id
+          name
+          headshot
+          linkedIn
+          title
+          company
+          createdAt
+          updatedAt
+        }
+        indexTemplate {
+          id
+          slug
+          title
+          subhead
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const authorTemplatesByIndexTemplateId = /* GraphQL */ `
+  query AuthorTemplatesByIndexTemplateId(
+    $indexTemplateId: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelAuthorTemplatesFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    authorTemplatesByIndexTemplateId(
+      indexTemplateId: $indexTemplateId
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        authorId
+        indexTemplateId
+        author {
+          id
+          name
+          headshot
+          linkedIn
+          title
+          company
+          createdAt
+          updatedAt
+        }
+        indexTemplate {
+          id
+          slug
+          title
+          subhead
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
 export const getAPSUser = /* GraphQL */ `
   query GetAPSUser($id: ID!) {
     getAPSUser(id: $id) {
@@ -6351,6 +6670,8 @@ export const getCirriculumCourses = /* GraphQL */ `
         partOf
         altLink
         shortDescription
+        subscriptionLink
+        subscriptionPrice
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -6410,6 +6731,8 @@ export const listCirriculumCourses = /* GraphQL */ `
           partOf
           altLink
           shortDescription
+          subscriptionLink
+          subscriptionPrice
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -6475,6 +6798,8 @@ export const cirriculumCoursesByLMSCirriculumId = /* GraphQL */ `
           partOf
           altLink
           shortDescription
+          subscriptionLink
+          subscriptionPrice
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -6540,6 +6865,8 @@ export const cirriculumCoursesByLMSCourseId = /* GraphQL */ `
           partOf
           altLink
           shortDescription
+          subscriptionLink
+          subscriptionPrice
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -6592,6 +6919,8 @@ export const getCourseLessons = /* GraphQL */ `
         partOf
         altLink
         shortDescription
+        subscriptionLink
+        subscriptionPrice
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -6656,6 +6985,8 @@ export const listCourseLessons = /* GraphQL */ `
           partOf
           altLink
           shortDescription
+          subscriptionLink
+          subscriptionPrice
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -6724,6 +7055,8 @@ export const courseLessonsByLMSCourseId = /* GraphQL */ `
           partOf
           altLink
           shortDescription
+          subscriptionLink
+          subscriptionPrice
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -6792,6 +7125,8 @@ export const courseLessonsByLMSLessonId = /* GraphQL */ `
           partOf
           altLink
           shortDescription
+          subscriptionLink
+          subscriptionPrice
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -6856,6 +7191,8 @@ export const getCourseInstructors = /* GraphQL */ `
         partOf
         altLink
         shortDescription
+        subscriptionLink
+        subscriptionPrice
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -6938,6 +7275,8 @@ export const listCourseInstructors = /* GraphQL */ `
           partOf
           altLink
           shortDescription
+          subscriptionLink
+          subscriptionPrice
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -7000,6 +7339,8 @@ export const courseInstructorsByLMSCourseId = /* GraphQL */ `
           partOf
           altLink
           shortDescription
+          subscriptionLink
+          subscriptionPrice
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -7062,6 +7403,8 @@ export const courseInstructorsByInstructorId = /* GraphQL */ `
           partOf
           altLink
           shortDescription
+          subscriptionLink
+          subscriptionPrice
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -7069,6 +7412,168 @@ export const courseInstructorsByInstructorId = /* GraphQL */ `
         instructor {
           id
           userId
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getIndexTemplateRows = /* GraphQL */ `
+  query GetIndexTemplateRows($id: ID!) {
+    getIndexTemplateRows(id: $id) {
+      id
+      indexTemplateId
+      indexRowId
+      indexTemplate {
+        id
+        slug
+        title
+        subhead
+        authors {
+          nextToken
+        }
+        rows {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      indexRow {
+        id
+        headline
+        subhead
+        type
+        content
+        templates {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listIndexTemplateRows = /* GraphQL */ `
+  query ListIndexTemplateRows(
+    $filter: ModelIndexTemplateRowsFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listIndexTemplateRows(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        indexTemplateId
+        indexRowId
+        indexTemplate {
+          id
+          slug
+          title
+          subhead
+          createdAt
+          updatedAt
+        }
+        indexRow {
+          id
+          headline
+          subhead
+          type
+          content
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const indexTemplateRowsByIndexTemplateId = /* GraphQL */ `
+  query IndexTemplateRowsByIndexTemplateId(
+    $indexTemplateId: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelIndexTemplateRowsFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    indexTemplateRowsByIndexTemplateId(
+      indexTemplateId: $indexTemplateId
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        indexTemplateId
+        indexRowId
+        indexTemplate {
+          id
+          slug
+          title
+          subhead
+          createdAt
+          updatedAt
+        }
+        indexRow {
+          id
+          headline
+          subhead
+          type
+          content
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const indexTemplateRowsByIndexRowId = /* GraphQL */ `
+  query IndexTemplateRowsByIndexRowId(
+    $indexRowId: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelIndexTemplateRowsFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    indexTemplateRowsByIndexRowId(
+      indexRowId: $indexRowId
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        indexTemplateId
+        indexRowId
+        indexTemplate {
+          id
+          slug
+          title
+          subhead
+          createdAt
+          updatedAt
+        }
+        indexRow {
+          id
+          headline
+          subhead
+          type
+          content
           createdAt
           updatedAt
         }

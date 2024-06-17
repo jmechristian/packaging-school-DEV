@@ -580,6 +580,16 @@ export const onCreateAuthor = /* GraphQL */ `
       linkedIn
       title
       company
+      templates {
+        items {
+          id
+          authorId
+          indexTemplateId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -594,6 +604,16 @@ export const onUpdateAuthor = /* GraphQL */ `
       linkedIn
       title
       company
+      templates {
+        items {
+          id
+          authorId
+          indexTemplateId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -608,6 +628,16 @@ export const onDeleteAuthor = /* GraphQL */ `
       linkedIn
       title
       company
+      templates {
+        items {
+          id
+          authorId
+          indexTemplateId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -3710,6 +3740,8 @@ export const onCreateLMSCourse = /* GraphQL */ `
       partOf
       altLink
       shortDescription
+      subscriptionLink
+      subscriptionPrice
       createdAt
       updatedAt
       studentCourseEnrolledId
@@ -3774,6 +3806,8 @@ export const onUpdateLMSCourse = /* GraphQL */ `
       partOf
       altLink
       shortDescription
+      subscriptionLink
+      subscriptionPrice
       createdAt
       updatedAt
       studentCourseEnrolledId
@@ -3838,6 +3872,8 @@ export const onDeleteLMSCourse = /* GraphQL */ `
       partOf
       altLink
       shortDescription
+      subscriptionLink
+      subscriptionPrice
       createdAt
       updatedAt
       studentCourseEnrolledId
@@ -4496,6 +4532,8 @@ export const onCreateStudent = /* GraphQL */ `
           partOf
           altLink
           shortDescription
+          subscriptionLink
+          subscriptionPrice
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -4640,6 +4678,8 @@ export const onUpdateStudent = /* GraphQL */ `
           partOf
           altLink
           shortDescription
+          subscriptionLink
+          subscriptionPrice
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -4784,6 +4824,8 @@ export const onDeleteStudent = /* GraphQL */ `
           partOf
           altLink
           shortDescription
+          subscriptionLink
+          subscriptionPrice
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -6085,6 +6127,171 @@ export const onDeleteClick = /* GraphQL */ `
     }
   }
 `;
+export const onCreateIndexTemplate = /* GraphQL */ `
+  subscription OnCreateIndexTemplate {
+    onCreateIndexTemplate {
+      id
+      slug
+      title
+      subhead
+      authors {
+        items {
+          id
+          authorId
+          indexTemplateId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      rows {
+        items {
+          id
+          indexTemplateId
+          indexRowId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateIndexTemplate = /* GraphQL */ `
+  subscription OnUpdateIndexTemplate {
+    onUpdateIndexTemplate {
+      id
+      slug
+      title
+      subhead
+      authors {
+        items {
+          id
+          authorId
+          indexTemplateId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      rows {
+        items {
+          id
+          indexTemplateId
+          indexRowId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteIndexTemplate = /* GraphQL */ `
+  subscription OnDeleteIndexTemplate {
+    onDeleteIndexTemplate {
+      id
+      slug
+      title
+      subhead
+      authors {
+        items {
+          id
+          authorId
+          indexTemplateId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      rows {
+        items {
+          id
+          indexTemplateId
+          indexRowId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateIndexRow = /* GraphQL */ `
+  subscription OnCreateIndexRow {
+    onCreateIndexRow {
+      id
+      headline
+      subhead
+      type
+      content
+      templates {
+        items {
+          id
+          indexTemplateId
+          indexRowId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateIndexRow = /* GraphQL */ `
+  subscription OnUpdateIndexRow {
+    onUpdateIndexRow {
+      id
+      headline
+      subhead
+      type
+      content
+      templates {
+        items {
+          id
+          indexTemplateId
+          indexRowId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteIndexRow = /* GraphQL */ `
+  subscription OnDeleteIndexRow {
+    onDeleteIndexRow {
+      id
+      headline
+      subhead
+      type
+      content
+      templates {
+        items {
+          id
+          indexTemplateId
+          indexRowId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
 export const onCreateLessonTags = /* GraphQL */ `
   subscription OnCreateLessonTags {
     onCreateLessonTags {
@@ -6573,6 +6780,120 @@ export const onDeleteArticleRelatedCourses = /* GraphQL */ `
         content
         tags
         relatedCourses {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateAuthorTemplates = /* GraphQL */ `
+  subscription OnCreateAuthorTemplates {
+    onCreateAuthorTemplates {
+      id
+      authorId
+      indexTemplateId
+      author {
+        id
+        name
+        headshot
+        linkedIn
+        title
+        company
+        templates {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      indexTemplate {
+        id
+        slug
+        title
+        subhead
+        authors {
+          nextToken
+        }
+        rows {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateAuthorTemplates = /* GraphQL */ `
+  subscription OnUpdateAuthorTemplates {
+    onUpdateAuthorTemplates {
+      id
+      authorId
+      indexTemplateId
+      author {
+        id
+        name
+        headshot
+        linkedIn
+        title
+        company
+        templates {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      indexTemplate {
+        id
+        slug
+        title
+        subhead
+        authors {
+          nextToken
+        }
+        rows {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteAuthorTemplates = /* GraphQL */ `
+  subscription OnDeleteAuthorTemplates {
+    onDeleteAuthorTemplates {
+      id
+      authorId
+      indexTemplateId
+      author {
+        id
+        name
+        headshot
+        linkedIn
+        title
+        company
+        templates {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      indexTemplate {
+        id
+        slug
+        title
+        subhead
+        authors {
+          nextToken
+        }
+        rows {
           nextToken
         }
         createdAt
@@ -7173,6 +7494,8 @@ export const onCreateCirriculumCourses = /* GraphQL */ `
         partOf
         altLink
         shortDescription
+        subscriptionLink
+        subscriptionPrice
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -7235,6 +7558,8 @@ export const onUpdateCirriculumCourses = /* GraphQL */ `
         partOf
         altLink
         shortDescription
+        subscriptionLink
+        subscriptionPrice
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -7297,6 +7622,8 @@ export const onDeleteCirriculumCourses = /* GraphQL */ `
         partOf
         altLink
         shortDescription
+        subscriptionLink
+        subscriptionPrice
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -7347,6 +7674,8 @@ export const onCreateCourseLessons = /* GraphQL */ `
         partOf
         altLink
         shortDescription
+        subscriptionLink
+        subscriptionPrice
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -7415,6 +7744,8 @@ export const onUpdateCourseLessons = /* GraphQL */ `
         partOf
         altLink
         shortDescription
+        subscriptionLink
+        subscriptionPrice
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -7483,6 +7814,8 @@ export const onDeleteCourseLessons = /* GraphQL */ `
         partOf
         altLink
         shortDescription
+        subscriptionLink
+        subscriptionPrice
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -7551,6 +7884,8 @@ export const onCreateCourseInstructors = /* GraphQL */ `
         partOf
         altLink
         shortDescription
+        subscriptionLink
+        subscriptionPrice
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -7633,6 +7968,8 @@ export const onUpdateCourseInstructors = /* GraphQL */ `
         partOf
         altLink
         shortDescription
+        subscriptionLink
+        subscriptionPrice
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -7715,6 +8052,8 @@ export const onDeleteCourseInstructors = /* GraphQL */ `
         partOf
         altLink
         shortDescription
+        subscriptionLink
+        subscriptionPrice
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -7746,6 +8085,117 @@ export const onDeleteCourseInstructors = /* GraphQL */ `
           userStudentIdId
         }
         coursesTaught {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateIndexTemplateRows = /* GraphQL */ `
+  subscription OnCreateIndexTemplateRows {
+    onCreateIndexTemplateRows {
+      id
+      indexTemplateId
+      indexRowId
+      indexTemplate {
+        id
+        slug
+        title
+        subhead
+        authors {
+          nextToken
+        }
+        rows {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      indexRow {
+        id
+        headline
+        subhead
+        type
+        content
+        templates {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateIndexTemplateRows = /* GraphQL */ `
+  subscription OnUpdateIndexTemplateRows {
+    onUpdateIndexTemplateRows {
+      id
+      indexTemplateId
+      indexRowId
+      indexTemplate {
+        id
+        slug
+        title
+        subhead
+        authors {
+          nextToken
+        }
+        rows {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      indexRow {
+        id
+        headline
+        subhead
+        type
+        content
+        templates {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteIndexTemplateRows = /* GraphQL */ `
+  subscription OnDeleteIndexTemplateRows {
+    onDeleteIndexTemplateRows {
+      id
+      indexTemplateId
+      indexRowId
+      indexTemplate {
+        id
+        slug
+        title
+        subhead
+        authors {
+          nextToken
+        }
+        rows {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      indexRow {
+        id
+        headline
+        subhead
+        type
+        content
+        templates {
           nextToken
         }
         createdAt

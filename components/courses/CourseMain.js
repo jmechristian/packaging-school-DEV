@@ -3,8 +3,6 @@ import CourseIntro from './CourseIntro';
 import CourseInfo from './CourseInfo';
 import CourseObjectives from './CourseObjectives';
 import { motion } from 'framer-motion';
-import YouTubeEmbed from '../YouTubeEmbed';
-import VideoPlayer from '../VideoPlayer';
 
 const CourseMain = ({ data }) => {
   return (
@@ -46,6 +44,12 @@ const CourseMain = ({ data }) => {
                   trialLink={`${data.link}?et=free_trial`}
                   partOf={data.partOf ? data.partOf : undefined}
                   seoImage={data.seoImage}
+                  subscriptionLink={
+                    data.subscriptionLink ? data.subscriptionLink : null
+                  }
+                  subscriptionPrice={
+                    data.subscriptionPrice ? data.subscriptionPrice : null
+                  }
                 />
               </div>
               <CourseObjectives
@@ -61,6 +65,12 @@ const CourseMain = ({ data }) => {
                 certification={''}
                 link={data.link}
                 trialLink={`${data.link}?et=free_trial`}
+                subscriptionLink={
+                  data.subscriptionLink ? data.subscriptionLink : null
+                }
+                subscriptionPrice={
+                  data.subscriptionPrice ? data.subscriptionPrice : null
+                }
                 partOf={data.partOf ? data.partOf : undefined}
                 seoImage={data.seoImage}
               />

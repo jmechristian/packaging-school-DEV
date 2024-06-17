@@ -121,6 +121,7 @@ type Author @model @auth(rules: [{ allow: public }]) {
   linkedIn: String
   title: String
   company: String
+  templates: [IndexTemplate] @manyToMany(relationName: "AuthorTemplates")
   # lessons: [Lesson] @manyToMany(relationName: "AuthorLessons")
 }
 
@@ -536,6 +537,8 @@ type LMSCourse @model @auth(rules: [{ allow: public }]) {
   partOf: [String]
   altLink: String
   shortDescription: String
+  subscriptionLink: String
+  subscriptionPrice: String
 }
 
 type LMSLesson @model @auth(rules: [{ allow: public }]) {
@@ -779,4 +782,24 @@ type Click @model @auth(rules: [{ allow: public }]) {
   nextPath: String
   ipAddress: String
   location: String
+}
+
+######### INDEX TEMPLATES #########
+
+type IndexTemplate @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  slug: String! @index(name: "indexBySlug")
+  title: String!
+  subhead: String
+  authors: [Author] @manyToMany(relationName: "AuthorTemplates")
+  rows: [IndexRow] @manyToMany(relationName: "IndexTemplateRows")
+}
+
+type IndexRow @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  headline: String
+  subhead: String
+  type: String
+  content: [String]
+  templates: [IndexTemplate] @manyToMany(relationName: "IndexTemplateRows")
 }

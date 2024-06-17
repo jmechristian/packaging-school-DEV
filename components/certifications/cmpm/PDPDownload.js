@@ -92,8 +92,13 @@ const PDPDownload = () => {
             tailored to your unique requirements.
           </div>
           <div className='mt-3 flex gap-3 items-center'>
-            <div className='font-bold leading-tight'>
-              Click to learn more about the projects our alumni completed.
+            <div className='flex flex-col gap-3'>
+              <div className='font-bold leading-tight'>
+                Click to learn more about the projects our alumni completed.
+              </div>
+              <div className='text-sm font-semibold'>
+                Please note: Pop-ups must be disabled
+              </div>
             </div>
             <div>
               <MdArrowOutward color='black' size={'70'} />

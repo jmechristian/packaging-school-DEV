@@ -637,6 +637,16 @@ export const createAuthor = /* GraphQL */ `
       linkedIn
       title
       company
+      templates {
+        items {
+          id
+          authorId
+          indexTemplateId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -654,6 +664,16 @@ export const updateAuthor = /* GraphQL */ `
       linkedIn
       title
       company
+      templates {
+        items {
+          id
+          authorId
+          indexTemplateId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -671,6 +691,16 @@ export const deleteAuthor = /* GraphQL */ `
       linkedIn
       title
       company
+      templates {
+        items {
+          id
+          authorId
+          indexTemplateId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -4019,6 +4049,8 @@ export const createLMSCourse = /* GraphQL */ `
       partOf
       altLink
       shortDescription
+      subscriptionLink
+      subscriptionPrice
       createdAt
       updatedAt
       studentCourseEnrolledId
@@ -4086,6 +4118,8 @@ export const updateLMSCourse = /* GraphQL */ `
       partOf
       altLink
       shortDescription
+      subscriptionLink
+      subscriptionPrice
       createdAt
       updatedAt
       studentCourseEnrolledId
@@ -4153,6 +4187,8 @@ export const deleteLMSCourse = /* GraphQL */ `
       partOf
       altLink
       shortDescription
+      subscriptionLink
+      subscriptionPrice
       createdAt
       updatedAt
       studentCourseEnrolledId
@@ -4841,6 +4877,8 @@ export const createStudent = /* GraphQL */ `
           partOf
           altLink
           shortDescription
+          subscriptionLink
+          subscriptionPrice
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -4988,6 +5026,8 @@ export const updateStudent = /* GraphQL */ `
           partOf
           altLink
           shortDescription
+          subscriptionLink
+          subscriptionPrice
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -5135,6 +5175,8 @@ export const deleteStudent = /* GraphQL */ `
           partOf
           altLink
           shortDescription
+          subscriptionLink
+          subscriptionPrice
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -6589,6 +6631,189 @@ export const deleteClick = /* GraphQL */ `
     }
   }
 `;
+export const createIndexTemplate = /* GraphQL */ `
+  mutation CreateIndexTemplate(
+    $input: CreateIndexTemplateInput!
+    $condition: ModelIndexTemplateConditionInput
+  ) {
+    createIndexTemplate(input: $input, condition: $condition) {
+      id
+      slug
+      title
+      subhead
+      authors {
+        items {
+          id
+          authorId
+          indexTemplateId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      rows {
+        items {
+          id
+          indexTemplateId
+          indexRowId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateIndexTemplate = /* GraphQL */ `
+  mutation UpdateIndexTemplate(
+    $input: UpdateIndexTemplateInput!
+    $condition: ModelIndexTemplateConditionInput
+  ) {
+    updateIndexTemplate(input: $input, condition: $condition) {
+      id
+      slug
+      title
+      subhead
+      authors {
+        items {
+          id
+          authorId
+          indexTemplateId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      rows {
+        items {
+          id
+          indexTemplateId
+          indexRowId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteIndexTemplate = /* GraphQL */ `
+  mutation DeleteIndexTemplate(
+    $input: DeleteIndexTemplateInput!
+    $condition: ModelIndexTemplateConditionInput
+  ) {
+    deleteIndexTemplate(input: $input, condition: $condition) {
+      id
+      slug
+      title
+      subhead
+      authors {
+        items {
+          id
+          authorId
+          indexTemplateId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      rows {
+        items {
+          id
+          indexTemplateId
+          indexRowId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createIndexRow = /* GraphQL */ `
+  mutation CreateIndexRow(
+    $input: CreateIndexRowInput!
+    $condition: ModelIndexRowConditionInput
+  ) {
+    createIndexRow(input: $input, condition: $condition) {
+      id
+      headline
+      subhead
+      type
+      content
+      templates {
+        items {
+          id
+          indexTemplateId
+          indexRowId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateIndexRow = /* GraphQL */ `
+  mutation UpdateIndexRow(
+    $input: UpdateIndexRowInput!
+    $condition: ModelIndexRowConditionInput
+  ) {
+    updateIndexRow(input: $input, condition: $condition) {
+      id
+      headline
+      subhead
+      type
+      content
+      templates {
+        items {
+          id
+          indexTemplateId
+          indexRowId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteIndexRow = /* GraphQL */ `
+  mutation DeleteIndexRow(
+    $input: DeleteIndexRowInput!
+    $condition: ModelIndexRowConditionInput
+  ) {
+    deleteIndexRow(input: $input, condition: $condition) {
+      id
+      headline
+      subhead
+      type
+      content
+      templates {
+        items {
+          id
+          indexTemplateId
+          indexRowId
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
 export const createLessonTags = /* GraphQL */ `
   mutation CreateLessonTags(
     $input: CreateLessonTagsInput!
@@ -7104,6 +7329,129 @@ export const deleteArticleRelatedCourses = /* GraphQL */ `
         content
         tags
         relatedCourses {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createAuthorTemplates = /* GraphQL */ `
+  mutation CreateAuthorTemplates(
+    $input: CreateAuthorTemplatesInput!
+    $condition: ModelAuthorTemplatesConditionInput
+  ) {
+    createAuthorTemplates(input: $input, condition: $condition) {
+      id
+      authorId
+      indexTemplateId
+      author {
+        id
+        name
+        headshot
+        linkedIn
+        title
+        company
+        templates {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      indexTemplate {
+        id
+        slug
+        title
+        subhead
+        authors {
+          nextToken
+        }
+        rows {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateAuthorTemplates = /* GraphQL */ `
+  mutation UpdateAuthorTemplates(
+    $input: UpdateAuthorTemplatesInput!
+    $condition: ModelAuthorTemplatesConditionInput
+  ) {
+    updateAuthorTemplates(input: $input, condition: $condition) {
+      id
+      authorId
+      indexTemplateId
+      author {
+        id
+        name
+        headshot
+        linkedIn
+        title
+        company
+        templates {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      indexTemplate {
+        id
+        slug
+        title
+        subhead
+        authors {
+          nextToken
+        }
+        rows {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteAuthorTemplates = /* GraphQL */ `
+  mutation DeleteAuthorTemplates(
+    $input: DeleteAuthorTemplatesInput!
+    $condition: ModelAuthorTemplatesConditionInput
+  ) {
+    deleteAuthorTemplates(input: $input, condition: $condition) {
+      id
+      authorId
+      indexTemplateId
+      author {
+        id
+        name
+        headshot
+        linkedIn
+        title
+        company
+        templates {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      indexTemplate {
+        id
+        slug
+        title
+        subhead
+        authors {
+          nextToken
+        }
+        rows {
           nextToken
         }
         createdAt
@@ -7725,6 +8073,8 @@ export const createCirriculumCourses = /* GraphQL */ `
         partOf
         altLink
         shortDescription
+        subscriptionLink
+        subscriptionPrice
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -7790,6 +8140,8 @@ export const updateCirriculumCourses = /* GraphQL */ `
         partOf
         altLink
         shortDescription
+        subscriptionLink
+        subscriptionPrice
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -7855,6 +8207,8 @@ export const deleteCirriculumCourses = /* GraphQL */ `
         partOf
         altLink
         shortDescription
+        subscriptionLink
+        subscriptionPrice
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -7908,6 +8262,8 @@ export const createCourseLessons = /* GraphQL */ `
         partOf
         altLink
         shortDescription
+        subscriptionLink
+        subscriptionPrice
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -7979,6 +8335,8 @@ export const updateCourseLessons = /* GraphQL */ `
         partOf
         altLink
         shortDescription
+        subscriptionLink
+        subscriptionPrice
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -8050,6 +8408,8 @@ export const deleteCourseLessons = /* GraphQL */ `
         partOf
         altLink
         shortDescription
+        subscriptionLink
+        subscriptionPrice
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -8121,6 +8481,8 @@ export const createCourseInstructors = /* GraphQL */ `
         partOf
         altLink
         shortDescription
+        subscriptionLink
+        subscriptionPrice
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -8206,6 +8568,8 @@ export const updateCourseInstructors = /* GraphQL */ `
         partOf
         altLink
         shortDescription
+        subscriptionLink
+        subscriptionPrice
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -8291,6 +8655,8 @@ export const deleteCourseInstructors = /* GraphQL */ `
         partOf
         altLink
         shortDescription
+        subscriptionLink
+        subscriptionPrice
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -8322,6 +8688,126 @@ export const deleteCourseInstructors = /* GraphQL */ `
           userStudentIdId
         }
         coursesTaught {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createIndexTemplateRows = /* GraphQL */ `
+  mutation CreateIndexTemplateRows(
+    $input: CreateIndexTemplateRowsInput!
+    $condition: ModelIndexTemplateRowsConditionInput
+  ) {
+    createIndexTemplateRows(input: $input, condition: $condition) {
+      id
+      indexTemplateId
+      indexRowId
+      indexTemplate {
+        id
+        slug
+        title
+        subhead
+        authors {
+          nextToken
+        }
+        rows {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      indexRow {
+        id
+        headline
+        subhead
+        type
+        content
+        templates {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateIndexTemplateRows = /* GraphQL */ `
+  mutation UpdateIndexTemplateRows(
+    $input: UpdateIndexTemplateRowsInput!
+    $condition: ModelIndexTemplateRowsConditionInput
+  ) {
+    updateIndexTemplateRows(input: $input, condition: $condition) {
+      id
+      indexTemplateId
+      indexRowId
+      indexTemplate {
+        id
+        slug
+        title
+        subhead
+        authors {
+          nextToken
+        }
+        rows {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      indexRow {
+        id
+        headline
+        subhead
+        type
+        content
+        templates {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteIndexTemplateRows = /* GraphQL */ `
+  mutation DeleteIndexTemplateRows(
+    $input: DeleteIndexTemplateRowsInput!
+    $condition: ModelIndexTemplateRowsConditionInput
+  ) {
+    deleteIndexTemplateRows(input: $input, condition: $condition) {
+      id
+      indexTemplateId
+      indexRowId
+      indexTemplate {
+        id
+        slug
+        title
+        subhead
+        authors {
+          nextToken
+        }
+        rows {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      indexRow {
+        id
+        headline
+        subhead
+        type
+        content
+        templates {
           nextToken
         }
         createdAt
