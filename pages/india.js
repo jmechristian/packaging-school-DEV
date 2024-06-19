@@ -6,18 +6,54 @@ import BrutalCourseCard from '../components/shared/BrutalCourseCard';
 import Meta from '../components/shared/Meta';
 
 const cpsIds = [
-  'ff174f01-5f76-486c-8d7a-849d6d3ff914',
-  '672c1d2b-ba6c-4e02-8c34-83e8c3e4f7b3',
-  '2418801f-a352-4eae-a394-87a5c0c55f79',
-  '4e6c079e-b396-4762-8b7f-4fa4dea64969',
-  'f2fad11c-4548-41ea-b39d-be5a4913a4f5',
-  '452ec0d8-7464-4bd6-bfc2-eab051a9b40b',
-  '431ce262-cf48-4a7c-8ff1-2909f548149b',
-  '5d84ef6e-3fa3-423d-8e33-67d32605cb93',
-  'f2bd57ba-adbf-45ab-88f0-d68ac20c5b7e',
-  '73139212-0b15-4d96-9942-1757fa058fdf',
-  'e39e127a-11bc-448d-a8c0-209b3abbfdb9',
-  '4e32d164-d4d9-4ba2-bcc5-ce882df75b71',
+  {
+    id: 'ff174f01-5f76-486c-8d7a-849d6d3ff914',
+    altPayment: 'https://buy.stripe.com/8wMeVQ8bY7zyecg5kn',
+  },
+  {
+    id: '672c1d2b-ba6c-4e02-8c34-83e8c3e4f7b3',
+    altPayment: 'https://buy.stripe.com/eVafZUboag640lq9AE',
+  },
+  {
+    id: '2418801f-a352-4eae-a394-87a5c0c55f79',
+    altPayment: 'https://buy.stripe.com/eVa4hc8bY3jigko3ch',
+  },
+  {
+    id: '4e6c079e-b396-4762-8b7f-4fa4dea64969',
+    altPayment: 'https://buy.stripe.com/8wM9Bwcse7zy8RW28e',
+  },
+  {
+    id: 'f2fad11c-4548-41ea-b39d-be5a4913a4f5',
+    altPayment: 'https://buy.stripe.com/aEUfZUeAm6vu5FK6ov',
+  },
+  {
+    id: '452ec0d8-7464-4bd6-bfc2-eab051a9b40b',
+    altPayment: 'https://buy.stripe.com/4gw5lg2REf206JOcMU',
+  },
+  {
+    id: '431ce262-cf48-4a7c-8ff1-2909f548149b',
+    altPayment: 'https://buy.stripe.com/7sIbJE4ZMbPO0lqeV3',
+  },
+  {
+    id: '5d84ef6e-3fa3-423d-8e33-67d32605cb93',
+    altPayment: 'https://buy.stripe.com/8wM00W9g26vud8c28i',
+  },
+  {
+    id: 'f2bd57ba-adbf-45ab-88f0-d68ac20c5b7e',
+    altPayment: 'https://buy.stripe.com/00geVQboa7zyd8c28j',
+  },
+  {
+    id: '73139212-0b15-4d96-9942-1757fa058fdf',
+    altPayment: 'https://buy.stripe.com/00geVQboa7zyd8c28j',
+  },
+  {
+    id: 'e39e127a-11bc-448d-a8c0-209b3abbfdb9',
+    altPayment: 'https://buy.stripe.com/6oE6pk2RE4nm6JO5kx',
+  },
+  {
+    id: '4e32d164-d4d9-4ba2-bcc5-ce882df75b71',
+    altPayment: 'https://buy.stripe.com/7sI8xs0Jwg645FKfZc',
+  },
 ];
 
 const Page = () => {
@@ -50,30 +86,32 @@ const Page = () => {
         ) : (location && location.country === 'IN') ||
           location.country === 'India' ? (
           <>
-            <div className='flex flex-col gap-12 py-10 md:py-16 w-full  border-b-black border-b-2'>
+            <div className='flex flex-col gap-12 pt-10 md:pt-16 w-full '>
               <div className='flex flex-col gap-5 px-5 xl:px-0'>
                 <div className='bg-brand-red border-black border-2 text-white font-bold px-4 py-2 rounded-lg w-fit shadow-[4px_4px_0px_black] lg:text-lg'>
-                  Limited Time!
+                  Act Fast!
                 </div>
-                <div className='text-5xl lg:max-w-3xl lg:text-7xl font-medium tracking-tighter lg:leading-[1.0em]'>
-                  Unbox Your Potential: Dive into Expert-Crafted Courses at{' '}
-                  <span className='text-base-brand font-bold'>
-                    85% OFF!<sup className='-mt-3'>*</sup>
-                  </span>
+                <div className='text-5xl lg:text-7xl font-medium tracking-tighter lg:leading-[1.0em]'>
+                  Advance Your Future in Packaging:{' '}
+                  <span className='font-bold text-base-brand'>
+                    Save 85% on Courses
+                  </span>{' '}
+                  for a Limited Time!
                 </div>
               </div>
             </div>
             <div className='flex flex-col gap-10 py-10 px-5 xl:px-0 border-b-2 border-b-black'>
               <div className='flex flex-col gap-5'>
-                <div className='text-2xl'>
-                  <h3>Certificate of Packaging Science Core Courses</h3>
-                </div>
-                <div className=' max-w-4xl w-full'>
-                  The Certificate of Packaging Science offers a comprehensive
-                  program consisting of 12 courses that cover all major aspects
-                  of packaging materials, processes, and design. Interested in a
-                  structured, comprehensive learning program over the next 12
-                  months?{' '}
+                <div className='w-full lg:text-lg'>
+                  Are you ready to elevate your career in the packaging
+                  industry? Seize this incredible opportunity to save 85% on
+                  top-tier courses designed specifically for students eager to
+                  make a mark in this dynamic field. Our comprehensive programs
+                  provide you with the skills, knowledge, and confidence needed
+                  to excel and innovate. Don’t let this limited-time offer slip
+                  away – take your future into your own hands and empower
+                  yourself with the education that will set you apart. Join us
+                  and become a leader in the packaging industry today!
                   <span
                     className='underline text-base-mid font-semibold'
                     onClick={() =>
@@ -88,25 +126,26 @@ const Page = () => {
                   Looking to just get a jump start? Puchase an individual course
                   below.
                 </div>
-                <div className='md:grid md:grid-cols-2 xl:grid-cols-3 gap-10 w-fit hidden mt-7'>
+                <div className='grid md:grid-cols-2 xl:grid-cols-3 gap-10 w-full mt-7'>
                   {cpsIds.map((id) => (
-                    <div key={id}>
+                    <div key={id} className='flex justify-center w-full'>
                       <BrutalCourseCard
-                        id={id}
+                        id={id.id}
                         discount={0.85}
                         coupon={'INDIASITE2024'}
+                        altPayment={id.altPayment}
                       />
                     </div>
                   ))}
                 </div>
-                <div className='flex w-full gap-5 pt-5 pb-3 md:hidden'>
+                {/* <div className='flex w-full gap-5 pt-5 pb-3 md:hidden'>
                   <BrutalCourseCard
-                    id={cpsIds[isIndex]}
+                    id={cpsIds.id[isIndex]}
                     discount={0.85}
                     coupon={'INDIASITE2024'}
                   />
-                </div>
-                <div className='flex w-full justify-between items-center md:hidden'>
+                </div> */}
+                {/* <div className='flex w-full justify-between items-center md:hidden'>
                   <div className='grid h-14 w-14 place-content-center text-3xl transition-colors hover:bg-black hover:text-white'>
                     <GoArrowLeft
                       onClick={() => {
@@ -127,7 +166,7 @@ const Page = () => {
                   >
                     <GoArrowRight />
                   </button>
-                </div>
+                </div> */}
               </div>
             </div>
             <div className='flex flex-col gap-10 pt-16 pb-16 px-5 xl:px-0 border-b-2 border-b-black'>
@@ -162,6 +201,7 @@ const Page = () => {
                     id={'fef1f2a6-b9b9-4619-9900-c677f91681c7'}
                     discount={0.85}
                     coupon={'INDIASITE2024'}
+                    altPayment={'https://buy.stripe.com/14kfZUak65rqb04cN1'}
                   />
                 </div>
               </div>

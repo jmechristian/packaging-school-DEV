@@ -9,7 +9,7 @@ import { createClick } from '../../src/graphql/mutations';
 import { useSelector } from 'react-redux';
 import { registerClick } from '../../helpers/api';
 
-const BrutalCourseCard = ({ id, icons, coupon, discount }) => {
+const BrutalCourseCard = ({ id, icons, coupon, discount, altPayment }) => {
   const [isCourse, setIsCourse] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -45,7 +45,7 @@ const BrutalCourseCard = ({ id, icons, coupon, discount }) => {
       location.ip,
       location.country
     );
-    window.open(isCourse.link + `?coupon=${coupon}`);
+    window.open(altPayment);
   };
 
   return (
@@ -113,7 +113,7 @@ const BrutalCourseCard = ({ id, icons, coupon, discount }) => {
                 onClick={cardClickHandler}
                 className={` cursor-pointer flex justify-center border-2 border-black items-center gap-2 rounded px-4 py-2 font-medium uppercase text-white text-sm transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 shadow-[4px_4px_0px_black] hover:shadow-[8px_8px_0px_black] bg-clemson`}
               >
-                <span className='font-semibold'>Purchase</span>
+                <span className='font-semibold'>Save 85%!</span>
               </div>
             </div>
           </div>
