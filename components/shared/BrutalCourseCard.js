@@ -49,10 +49,10 @@ const BrutalCourseCard = ({ id, icons, coupon, discount, altPayment }) => {
   };
 
   return (
-    <div className='min-w-[320px] max-w-[360px] w-full h-[520px] mx-auto rounded-2xl border-4 border-black bg-white shadow-[4px_4px_0px_black] overflow-hidden'>
+    <div className='w-[281px] h-[405px] mx-auto rounded-2xl border-4 border-black bg-white shadow-[4px_4px_0px_black] overflow-hidden'>
       <div className='flex flex-col h-full'>
         <div
-          className='w-full aspect-[16/9] h-full bg-base-brand bg-cover bg-center overflow-hidden cursor-pointer relative'
+          className='w-full aspect-[16/9]  bg-base-brand bg-cover bg-center overflow-hidden cursor-pointer relative'
           style={{
             backgroundImage: `url(${isCourse.seoImage})`,
           }}

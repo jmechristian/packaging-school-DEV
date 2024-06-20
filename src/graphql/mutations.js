@@ -6631,6 +6631,114 @@ export const deleteClick = /* GraphQL */ `
     }
   }
 `;
+export const createIndiaClick = /* GraphQL */ `
+  mutation CreateIndiaClick(
+    $input: CreateIndiaClickInput!
+    $condition: ModelIndiaClickConditionInput
+  ) {
+    createIndiaClick(input: $input, condition: $condition) {
+      id
+      courseID
+      page
+      ipAddress
+      country
+      lat
+      long
+      referrer
+      nextPath
+      format
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateIndiaClick = /* GraphQL */ `
+  mutation UpdateIndiaClick(
+    $input: UpdateIndiaClickInput!
+    $condition: ModelIndiaClickConditionInput
+  ) {
+    updateIndiaClick(input: $input, condition: $condition) {
+      id
+      courseID
+      page
+      ipAddress
+      country
+      lat
+      long
+      referrer
+      nextPath
+      format
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteIndiaClick = /* GraphQL */ `
+  mutation DeleteIndiaClick(
+    $input: DeleteIndiaClickInput!
+    $condition: ModelIndiaClickConditionInput
+  ) {
+    deleteIndiaClick(input: $input, condition: $condition) {
+      id
+      courseID
+      page
+      ipAddress
+      country
+      lat
+      long
+      referrer
+      nextPath
+      format
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createIndiaCourseSearch = /* GraphQL */ `
+  mutation CreateIndiaCourseSearch(
+    $input: CreateIndiaCourseSearchInput!
+    $condition: ModelIndiaCourseSearchConditionInput
+  ) {
+    createIndiaCourseSearch(input: $input, condition: $condition) {
+      id
+      term
+      ipAddress
+      country
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateIndiaCourseSearch = /* GraphQL */ `
+  mutation UpdateIndiaCourseSearch(
+    $input: UpdateIndiaCourseSearchInput!
+    $condition: ModelIndiaCourseSearchConditionInput
+  ) {
+    updateIndiaCourseSearch(input: $input, condition: $condition) {
+      id
+      term
+      ipAddress
+      country
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteIndiaCourseSearch = /* GraphQL */ `
+  mutation DeleteIndiaCourseSearch(
+    $input: DeleteIndiaCourseSearchInput!
+    $condition: ModelIndiaCourseSearchConditionInput
+  ) {
+    deleteIndiaCourseSearch(input: $input, condition: $condition) {
+      id
+      term
+      ipAddress
+      country
+      createdAt
+      updatedAt
+    }
+  }
+`;
 export const createIndexTemplate = /* GraphQL */ `
   mutation CreateIndexTemplate(
     $input: CreateIndexTemplateInput!

@@ -5160,6 +5160,144 @@ export const listClicks = /* GraphQL */ `
     }
   }
 `;
+export const getIndiaClick = /* GraphQL */ `
+  query GetIndiaClick($id: ID!) {
+    getIndiaClick(id: $id) {
+      id
+      courseID
+      page
+      ipAddress
+      country
+      lat
+      long
+      referrer
+      nextPath
+      format
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listIndiaClicks = /* GraphQL */ `
+  query ListIndiaClicks(
+    $filter: ModelIndiaClickFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listIndiaClicks(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        courseID
+        page
+        ipAddress
+        country
+        lat
+        long
+        referrer
+        nextPath
+        format
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const indiaClicksByCourseID = /* GraphQL */ `
+  query IndiaClicksByCourseID(
+    $courseID: String!
+    $sortDirection: ModelSortDirection
+    $filter: ModelIndiaClickFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    indiaClicksByCourseID(
+      courseID: $courseID
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        courseID
+        page
+        ipAddress
+        country
+        lat
+        long
+        referrer
+        nextPath
+        format
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getIndiaCourseSearch = /* GraphQL */ `
+  query GetIndiaCourseSearch($id: ID!) {
+    getIndiaCourseSearch(id: $id) {
+      id
+      term
+      ipAddress
+      country
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listIndiaCourseSearches = /* GraphQL */ `
+  query ListIndiaCourseSearches(
+    $filter: ModelIndiaCourseSearchFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listIndiaCourseSearches(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        term
+        ipAddress
+        country
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const indiaCourseSearchesByTerm = /* GraphQL */ `
+  query IndiaCourseSearchesByTerm(
+    $term: String!
+    $sortDirection: ModelSortDirection
+    $filter: ModelIndiaCourseSearchFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    indiaCourseSearchesByTerm(
+      term: $term
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        term
+        ipAddress
+        country
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
 export const getIndexTemplate = /* GraphQL */ `
   query GetIndexTemplate($id: ID!) {
     getIndexTemplate(id: $id) {

@@ -6127,6 +6127,96 @@ export const onDeleteClick = /* GraphQL */ `
     }
   }
 `;
+export const onCreateIndiaClick = /* GraphQL */ `
+  subscription OnCreateIndiaClick {
+    onCreateIndiaClick {
+      id
+      courseID
+      page
+      ipAddress
+      country
+      lat
+      long
+      referrer
+      nextPath
+      format
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateIndiaClick = /* GraphQL */ `
+  subscription OnUpdateIndiaClick {
+    onUpdateIndiaClick {
+      id
+      courseID
+      page
+      ipAddress
+      country
+      lat
+      long
+      referrer
+      nextPath
+      format
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteIndiaClick = /* GraphQL */ `
+  subscription OnDeleteIndiaClick {
+    onDeleteIndiaClick {
+      id
+      courseID
+      page
+      ipAddress
+      country
+      lat
+      long
+      referrer
+      nextPath
+      format
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateIndiaCourseSearch = /* GraphQL */ `
+  subscription OnCreateIndiaCourseSearch {
+    onCreateIndiaCourseSearch {
+      id
+      term
+      ipAddress
+      country
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateIndiaCourseSearch = /* GraphQL */ `
+  subscription OnUpdateIndiaCourseSearch {
+    onUpdateIndiaCourseSearch {
+      id
+      term
+      ipAddress
+      country
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteIndiaCourseSearch = /* GraphQL */ `
+  subscription OnDeleteIndiaCourseSearch {
+    onDeleteIndiaCourseSearch {
+      id
+      term
+      ipAddress
+      country
+      createdAt
+      updatedAt
+    }
+  }
+`;
 export const onCreateIndexTemplate = /* GraphQL */ `
   subscription OnCreateIndexTemplate {
     onCreateIndexTemplate {

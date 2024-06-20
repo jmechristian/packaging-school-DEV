@@ -3,6 +3,7 @@ import { getAuthor, listSalesBars } from '../src/graphql/queries';
 import {
   createClick,
   createCourseClick,
+  createIndiaClick,
   createLessonClick,
   listLMSCourses,
 } from '../src/graphql/mutations';
@@ -60,6 +61,35 @@ export const registgerCourseClick = async (
 
   const items = await API.graphql({
     query: createCourseClick,
+    variables: {
+      input: {
+        courseID: id,
+        page: page,
+        nextPath: next,
+        format: format,
+        ipAddress: location.ip,
+        country: location.country,
+        lat: location.lat,
+        long: location.long,
+      },
+    },
+  });
+  return items.data;
+};
+
+export const registgerIndiaCourseClick = async (
+  id,
+  page,
+  location,
+  next,
+  format
+) => {
+  // const ip = await fetch('https://api.ipify.org/?format=json').then((res) =>
+  //   res.json()
+  // );
+
+  const items = await API.graphql({
+    query: createIndiaClick,
     variables: {
       input: {
         courseID: id,

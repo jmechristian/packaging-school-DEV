@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useRouter } from 'next/router';
-import { GoArrowLeft, GoArrowRight } from 'react-icons/go';
-import BrutalCourseCard from '../components/shared/BrutalCourseCard';
 import Meta from '../components/shared/Meta';
+import IndiaCourseCard from '../components/shared/IndiaCourseCard';
+import { MagnifyingGlassCircleIcon } from '@heroicons/react/24/solid';
 
 const cpsIds = [
   {
@@ -58,6 +58,7 @@ const cpsIds = [
 
 const Page = () => {
   const [isIndex, setIsIndex] = useState(0);
+  const [isTerm, setIsTerm] = useState('');
   const [isLocation, setIsLocation] = useState(null);
   const router = useRouter();
   const { location } = useSelector((state) => state.auth);
@@ -74,9 +75,9 @@ const Page = () => {
           'packaging, online education, India, Indian Student, design, materials, business'
         }
       />
-      <div className='max-w-6xl mx-auto pb-16'>
+      <div className='max-w-7xl mx-auto pb-16'>
         {!location || !location.country ? (
-          <div className='flex flex-col gap-6 py-10 md:py-16 w-full'>
+          <div className='flex flex-col gap-6 py-10 md:py-10 w-full'>
             <div className='w-1/4 h-16 bg-neutral-300 animate-pulse rounded-lg'></div>
             <div className='w-2/3 h-24 bg-neutral-300 animate-pulse rounded-lg'></div>
             <div className='w-2/3 h-24 bg-neutral-300 animate-pulse rounded-lg'></div>
@@ -86,7 +87,7 @@ const Page = () => {
         ) : (location && location.country === 'IN') ||
           location.country === 'India' ? (
           <>
-            <div className='flex flex-col gap-12 pt-10 md:pt-16 w-full '>
+            <div className='flex flex-col gap-12 pt-10 md:pt-10 w-full '>
               <div className='flex flex-col gap-5 px-5 xl:px-0'>
                 <div className='bg-brand-red border-black border-2 text-white font-bold px-4 py-2 rounded-lg w-fit shadow-[4px_4px_0px_black] lg:text-lg'>
                   Act Fast!
@@ -100,76 +101,63 @@ const Page = () => {
                 </div>
               </div>
             </div>
-            <div className='flex flex-col gap-10 py-10 px-5 xl:px-0 border-b-2 border-b-black'>
+            <div className='flex flex-col gap-10 pt-5 pb-10 px-5 xl:px-0 border-b-2 border-b-black'>
               <div className='flex flex-col gap-5'>
                 <div className='w-full lg:text-lg'>
-                  Are you ready to elevate your career in the packaging
-                  industry? Seize this incredible opportunity to save 85% on
-                  top-tier courses designed specifically for students eager to
-                  make a mark in this dynamic field. Our comprehensive programs
-                  provide you with the skills, knowledge, and confidence needed
-                  to excel and innovate. Don’t let this limited-time offer slip
-                  away – take your future into your own hands and empower
-                  yourself with the education that will set you apart. Join us
-                  and become a leader in the packaging industry today!
-                  <span
-                    className='underline text-base-mid font-semibold'
-                    onClick={() =>
-                      window.open(
-                        'https://packagingschool.com/certificate-of-packaging-science-application',
-                        '_blank'
-                      )
-                    }
-                  >
-                    Apply now!
-                  </span>{' '}
-                  Looking to just get a jump start? Puchase an individual course
-                  below.
+                  Seize this incredible opportunity to save 85% on top-tier
+                  courses designed specifically for students eager to make a
+                  mark in this dynamic field. Our comprehensive programs provide
+                  you with the skills, knowledge, and confidence needed to excel
+                  and innovate. Don’t let this limited-time offer slip away –
+                  take your future into your own hands and empower yourself with
+                  the education that will set you apart. Become a leader in the
+                  packaging industry today!
                 </div>
-                <div className='grid md:grid-cols-2 xl:grid-cols-3 gap-10 w-full mt-7'>
+                {/* <div className='border-y-2 border-y-black py-8 md:px-5'>
+                  <div className='flex flex-col md:flex-row gap-5 justify-between w-full items-center'>
+                    <div className='h3-base w-full'>
+                      Browse Selected Courses
+                    </div>
+                    <div className='relative mt-2 w-full max-w-2xl border border-neutral-600'>
+                      <input
+                        type='text'
+                        name='india-search'
+                        id='india-search'
+                        value={isTerm}
+                        onChange={(e) => setIsTerm(e.target.value)}
+                        className='block w-full rounded-md border-0 py-2 pr-10 text-gray-900 placeholder:text-gray-500 ring-0 focus:ring-0'
+                        placeholder='Search courses by title or keyword.'
+                      />
+                      <div className='pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3'>
+                        <MagnifyingGlassCircleIcon
+                          className='h-7 w-7 text-gray-400'
+                          aria-hidden='true'
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div> */}
+                <div className='grid md:grid-cols-2 xl:grid-cols-4 gap-10 w-full mt-7'>
                   {cpsIds.map((id) => (
                     <div key={id} className='flex justify-center w-full'>
-                      <BrutalCourseCard
+                      <IndiaCourseCard id={id.id} paymentLink={id.altPayment} />
+                      {/* <BrutalCourseCard
                         id={id.id}
                         discount={0.85}
                         coupon={'INDIASITE2024'}
                         altPayment={id.altPayment}
-                      />
+                      /> */}
                     </div>
                   ))}
                 </div>
-                {/* <div className='flex w-full gap-5 pt-5 pb-3 md:hidden'>
-                  <BrutalCourseCard
-                    id={cpsIds.id[isIndex]}
-                    discount={0.85}
-                    coupon={'INDIASITE2024'}
-                  />
-                </div> */}
-                {/* <div className='flex w-full justify-between items-center md:hidden'>
-                  <div className='grid h-14 w-14 place-content-center text-3xl transition-colors hover:bg-black hover:text-white'>
-                    <GoArrowLeft
-                      onClick={() => {
-                        if (isIndex != 0) {
-                          setIsIndex((prevValue) => prevValue - 1);
-                        }
-                      }}
-                    />
-                  </div>
-                  <div>{isIndex + 1 + '/' + cpsIds.length}</div>
-                  <button
-                    onClick={() => {
-                      if (isIndex < cpsIds.length - 1) {
-                        setIsIndex((prevValue) => prevValue + 1);
-                      }
-                    }}
-                    className='grid h-14 w-14 place-content-center text-3xl transition-colors hover:bg-black hover:text-white'
-                  >
-                    <GoArrowRight />
-                  </button>
-                </div> */}
+
+                <div className='flex w-full px-5 py-5 text-xs font-semibold items-center leading-none'>
+                  <sup>*</sup> Price may fluctuate slightly based on current
+                  converstion rates.
+                </div>
               </div>
             </div>
-            <div className='flex flex-col gap-10 pt-16 pb-16 px-5 xl:px-0 border-b-2 border-b-black'>
+            <div className='flex flex-col gap-10 pt-16 pb-16 px-5 xl:px-0 border-y-2 border-b-black'>
               <div className='flex flex-col lg:flex-row lg:justify-between lg:items-center gap-5'>
                 <div className='flex flex-col gap-6 w-full max-w-xl'>
                   <div className='text-4xl'>
@@ -197,12 +185,16 @@ const Page = () => {
                   </div>
                 </div>
                 <div>
-                  <BrutalCourseCard
+                  <IndiaCourseCard
+                    id={'fef1f2a6-b9b9-4619-9900-c677f91681c7'}
+                    paymentLink={'https://buy.stripe.com/14kfZUak65rqb04cN1'}
+                  />
+                  {/* <BrutalCourseCard
                     id={'fef1f2a6-b9b9-4619-9900-c677f91681c7'}
                     discount={0.85}
                     coupon={'INDIASITE2024'}
                     altPayment={'https://buy.stripe.com/14kfZUak65rqb04cN1'}
-                  />
+                  /> */}
                 </div>
               </div>
             </div>
