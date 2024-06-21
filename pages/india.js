@@ -1,10 +1,12 @@
 import React, { useState, useMemo, useEffect } from 'react';
+import { API } from 'aws-amplify';
 import { useSelector } from 'react-redux';
 import { useRouter } from 'next/router';
 import Meta from '../components/shared/Meta';
 import IndiaCourseCard from '../components/shared/IndiaCourseCard';
 import { MagnifyingGlassCircleIcon } from '@heroicons/react/24/solid';
 import { setCoursesFromIds } from '../helpers/api';
+import { createIndiaCourseSearch } from '../src/graphql/mutations';
 
 const cpsIds = [
   {
@@ -100,6 +102,23 @@ const Page = () => {
       );
     }
   }, [isTerm, isCourses]);
+
+  useEffect(() => {
+    const sendSearchTracking = async () => {
+      await API.graphql({
+        query: createIndiaCourseSearch,
+        variables: {
+          input: {
+            country: location.country,
+            ipAddress: location.ip,
+            term: isTerm,
+          },
+        },
+      });
+    };
+
+    isTerm.length > 3 && coursesToShow.length === 0 && sendSearchTracking();
+  }, [isTerm, location, coursesToShow]);
 
   return (
     <>
