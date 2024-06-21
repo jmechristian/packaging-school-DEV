@@ -111,10 +111,10 @@ const IndiaCourseCard = ({ course, id, icons, coupon, paymentLink }) => {
       isCourse.id,
       router.asPath,
       location,
-      paymentLink,
+      isCourse.stripeLink,
       'PURCHASE'
     );
-    window.open(paymentLink, '_blank');
+    window.open(isCourse.stripeLink, '_blank');
   };
 
   return !isCourse || isLoading ? (
