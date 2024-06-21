@@ -1,5 +1,5 @@
 import { Amplify, API } from 'aws-amplify';
-import { getAuthor, listSalesBars } from '../src/graphql/queries';
+import { getAuthor, listSalesBars, getLMSCourse } from '../src/graphql/queries';
 import {
   createClick,
   createCourseClick,
@@ -126,4 +126,24 @@ export const registgerLessonClick = async (id, page, location, format) => {
     },
   });
   return items.data;
+};
+
+export const setCoursesFromIds = async (ids) => {
+  async function fetchData(id) {
+    const response = await API.graphql({
+      query: getLMSCourse,
+      variables: { id: id },
+    });
+    const data = await response.data.getLMSCourse;
+    return data;
+  }
+
+  try {
+    const promises = ids.map((id) => fetchData(id));
+    const results = await Promise.all(promises);
+    return results;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    throw error; // rethrow error to be handled by the calling code if needed
+  }
 };

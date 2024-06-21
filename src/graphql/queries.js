@@ -3341,6 +3341,7 @@ export const getLMSCourse = /* GraphQL */ `
       shortDescription
       subscriptionLink
       subscriptionPrice
+      stripeLink
       createdAt
       updatedAt
       studentCourseEnrolledId
@@ -3391,6 +3392,7 @@ export const listLMSCourses = /* GraphQL */ `
         shortDescription
         subscriptionLink
         subscriptionPrice
+        stripeLink
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -3451,6 +3453,7 @@ export const lMSCoursesBySlug = /* GraphQL */ `
         shortDescription
         subscriptionLink
         subscriptionPrice
+        stripeLink
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -3982,6 +3985,7 @@ export const getStudent = /* GraphQL */ `
           shortDescription
           subscriptionLink
           subscriptionPrice
+          stripeLink
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -6810,6 +6814,7 @@ export const getCirriculumCourses = /* GraphQL */ `
         shortDescription
         subscriptionLink
         subscriptionPrice
+        stripeLink
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -6871,6 +6876,7 @@ export const listCirriculumCourses = /* GraphQL */ `
           shortDescription
           subscriptionLink
           subscriptionPrice
+          stripeLink
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -6938,6 +6944,7 @@ export const cirriculumCoursesByLMSCirriculumId = /* GraphQL */ `
           shortDescription
           subscriptionLink
           subscriptionPrice
+          stripeLink
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -7005,6 +7012,7 @@ export const cirriculumCoursesByLMSCourseId = /* GraphQL */ `
           shortDescription
           subscriptionLink
           subscriptionPrice
+          stripeLink
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -7059,6 +7067,7 @@ export const getCourseLessons = /* GraphQL */ `
         shortDescription
         subscriptionLink
         subscriptionPrice
+        stripeLink
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -7125,6 +7134,7 @@ export const listCourseLessons = /* GraphQL */ `
           shortDescription
           subscriptionLink
           subscriptionPrice
+          stripeLink
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -7195,6 +7205,7 @@ export const courseLessonsByLMSCourseId = /* GraphQL */ `
           shortDescription
           subscriptionLink
           subscriptionPrice
+          stripeLink
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -7265,6 +7276,7 @@ export const courseLessonsByLMSLessonId = /* GraphQL */ `
           shortDescription
           subscriptionLink
           subscriptionPrice
+          stripeLink
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -7331,6 +7343,7 @@ export const getCourseInstructors = /* GraphQL */ `
         shortDescription
         subscriptionLink
         subscriptionPrice
+        stripeLink
         createdAt
         updatedAt
         studentCourseEnrolledId
@@ -7415,6 +7428,7 @@ export const listCourseInstructors = /* GraphQL */ `
           shortDescription
           subscriptionLink
           subscriptionPrice
+          stripeLink
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -7479,6 +7493,7 @@ export const courseInstructorsByLMSCourseId = /* GraphQL */ `
           shortDescription
           subscriptionLink
           subscriptionPrice
+          stripeLink
           createdAt
           updatedAt
           studentCourseEnrolledId
@@ -7543,6 +7558,7 @@ export const courseInstructorsByInstructorId = /* GraphQL */ `
           shortDescription
           subscriptionLink
           subscriptionPrice
+          stripeLink
           createdAt
           updatedAt
           studentCourseEnrolledId

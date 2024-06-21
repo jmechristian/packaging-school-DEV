@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useRouter } from 'next/router';
 import Meta from '../components/shared/Meta';
 import IndiaCourseCard from '../components/shared/IndiaCourseCard';
 import { MagnifyingGlassCircleIcon } from '@heroicons/react/24/solid';
+import { setCoursesFromIds } from '../helpers/api';
 
 const cpsIds = [
   {
@@ -56,12 +57,49 @@ const cpsIds = [
   },
 ];
 
+const justCpsIds = [
+  'ff174f01-5f76-486c-8d7a-849d6d3ff914',
+  '672c1d2b-ba6c-4e02-8c34-83e8c3e4f7b3',
+  '2418801f-a352-4eae-a394-87a5c0c55f79',
+  '4e6c079e-b396-4762-8b7f-4fa4dea64969',
+  'f2fad11c-4548-41ea-b39d-be5a4913a4f5',
+  '452ec0d8-7464-4bd6-bfc2-eab051a9b40b',
+  '431ce262-cf48-4a7c-8ff1-2909f548149b',
+  '5d84ef6e-3fa3-423d-8e33-67d32605cb93',
+  'f2bd57ba-adbf-45ab-88f0-d68ac20c5b7e',
+  '73139212-0b15-4d96-9942-1757fa058fdf',
+  'e39e127a-11bc-448d-a8c0-209b3abbfdb9',
+  '4e32d164-d4d9-4ba2-bcc5-ce882df75b71',
+];
+
 const Page = () => {
   const [isIndex, setIsIndex] = useState(0);
+  const [isCourses, setIsCourses] = useState([]);
   const [isTerm, setIsTerm] = useState('');
   const [isLocation, setIsLocation] = useState(null);
   const router = useRouter();
   const { location } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    const getCourses = setCoursesFromIds(justCpsIds);
+    getCourses.then((res) => setIsCourses(res));
+  }, []);
+
+  const coursesToShow = useMemo(() => {
+    if (!isTerm && isCourses) {
+      return isCourses;
+    }
+
+    if (isTerm && isCourses) {
+      return isCourses.filter(
+        (cour) =>
+          cour.title.toLowerCase().includes(isTerm.toLowerCase()) ||
+          cour.subheadline.toLowerCase().includes(isTerm.toLowerCase()) ||
+          (cour.what_learned &&
+            cour.what_learned.toLowerCase().includes(isTerm.toLowerCase()))
+      );
+    }
+  }, [isTerm, isCourses]);
 
   return (
     <>
@@ -113,7 +151,7 @@ const Page = () => {
                   the education that will set you apart. Become a leader in the
                   packaging industry today!
                 </div>
-                {/* <div className='border-y-2 border-y-black py-8 md:px-5'>
+                <div className='border-y-2 border-y-black py-8 md:px-5'>
                   <div className='flex flex-col md:flex-row gap-5 justify-between w-full items-center'>
                     <div className='h3-base w-full'>
                       Browse Selected Courses
@@ -136,25 +174,29 @@ const Page = () => {
                       </div>
                     </div>
                   </div>
-                </div> */}
-                <div className='grid md:grid-cols-2 xl:grid-cols-4 gap-10 w-full mt-7'>
-                  {cpsIds.map((id) => (
-                    <div key={id} className='flex justify-center w-full'>
-                      <IndiaCourseCard id={id.id} paymentLink={id.altPayment} />
-                      {/* <BrutalCourseCard
-                        id={id.id}
-                        discount={0.85}
-                        coupon={'INDIASITE2024'}
-                        altPayment={id.altPayment}
-                      /> */}
+                </div>
+                {coursesToShow.length > 0 ? (
+                  <>
+                    <div className='grid md:grid-cols-2 xl:grid-cols-4 gap-10 w-full mt-7'>
+                      {coursesToShow.map((course) => (
+                        <div
+                          key={course.id}
+                          className='flex justify-center w-full'
+                        >
+                          <IndiaCourseCard course={course} />
+                        </div>
+                      ))}
                     </div>
-                  ))}
-                </div>
-
-                <div className='flex w-full px-5 py-5 text-xs font-semibold items-center leading-none'>
-                  <sup>*</sup> Price may fluctuate slightly based on current
-                  converstion rates.
-                </div>
+                    <div className='flex w-full px-5 py-5 text-xs font-semibold items-center leading-none'>
+                      <sup>*</sup> Price may fluctuate slightly based on current
+                      converstion rates.
+                    </div>
+                  </>
+                ) : (
+                  <div className='w-full text-center py-16 flex flex-col'>
+                    <div>No results returned</div>
+                  </div>
+                )}
               </div>
             </div>
             <div className='flex flex-col gap-10 pt-16 pb-16 px-5 xl:px-0 border-y-2 border-b-black'>
@@ -189,12 +231,6 @@ const Page = () => {
                     id={'fef1f2a6-b9b9-4619-9900-c677f91681c7'}
                     paymentLink={'https://buy.stripe.com/14kfZUak65rqb04cN1'}
                   />
-                  {/* <BrutalCourseCard
-                    id={'fef1f2a6-b9b9-4619-9900-c677f91681c7'}
-                    discount={0.85}
-                    coupon={'INDIASITE2024'}
-                    altPayment={'https://buy.stripe.com/14kfZUak65rqb04cN1'}
-                  /> */}
                 </div>
               </div>
             </div>

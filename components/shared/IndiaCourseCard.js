@@ -13,9 +13,9 @@ import BrutalCircleIconTooltip from './BrutalCircleIconTooltip';
 import { API } from 'aws-amplify';
 import { getLMSCourse } from '../../src/graphql/queries';
 
-const IndiaCourseCard = ({ id, icons, coupon, paymentLink }) => {
+const IndiaCourseCard = ({ course, id, icons, coupon, paymentLink }) => {
   const [isFlipped, setIsFlipped] = useState(false);
-  const [isCourse, setIsCourse] = useState([]);
+  const [isCourse, setIsCourse] = useState(course ? course : undefined);
   const [isBackgroundColor, setIsBackgroudColor] = useState('bg-clemson');
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
@@ -27,7 +27,6 @@ const IndiaCourseCard = ({ id, icons, coupon, paymentLink }) => {
 
   useEffect(() => {
     const getCourse = async () => {
-      setIsLoading(true);
       const course = await API.graphql({
         query: getLMSCourse,
         variables: {
@@ -42,11 +41,25 @@ const IndiaCourseCard = ({ id, icons, coupon, paymentLink }) => {
       } else {
         setIsError(true);
       }
-      setIsLoading(false);
     };
 
-    id && getCourse();
-  }, [id]);
+    if (course) {
+      setIsLoading(true);
+      setIsCourse(course);
+      setIsBackgroudColor(setColorByCategory(course.categoryArray));
+      setIsLoading(false);
+    }
+
+    if (!course && id) {
+      setIsLoading(true);
+      getCourse();
+      setIsLoading(false);
+    }
+
+    // if (!course || !id) {
+    //   return;
+    // }
+  }, [id, course]);
 
   function convertAndDiscount(
     amountUSD,
@@ -66,7 +79,7 @@ const IndiaCourseCard = ({ id, icons, coupon, paymentLink }) => {
   }
 
   // Example usage
-  let amountUSD = isCourse.price;
+  let amountUSD = isCourse && isCourse.price;
   let discountPercentage = 85;
   let conversionRate = isRate; // 1 USD = 82 INR
   let amountINR = convertAndDiscount(
@@ -75,7 +88,11 @@ const IndiaCourseCard = ({ id, icons, coupon, paymentLink }) => {
     conversionRate
   );
 
-  const ogPriceConverted = convertAndDiscount(isCourse.price, 0, isRate);
+  const ogPriceConverted = convertAndDiscount(
+    isCourse && isCourse.price,
+    0,
+    isRate
+  );
 
   const cardClickHandler = async () => {
     await registgerIndiaCourseClick(
@@ -100,7 +117,7 @@ const IndiaCourseCard = ({ id, icons, coupon, paymentLink }) => {
     window.open(paymentLink, '_blank');
   };
 
-  return isLoading ? (
+  return !isCourse || isLoading ? (
     <div className='w-[281px] h-[405px] relative mx-auto border-2 border-neutral-400 bg-neutral-200 rounded-2xl'>
       <div className='w-full h-full flex flex-col justify-between animate-pulse'>
         <div className='flex flex-col p-3 gap-1'>
