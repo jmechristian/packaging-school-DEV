@@ -98,7 +98,7 @@ const CMPMReviews = () => {
             <div>
               <div className='max-w-3xl'>
                 <p className='text-4xl font-bold tracking-tight text-gray-900 dark:text-white xl:text-5xl'>
-                  We have worked with tens of thousands of amazing people.
+                  We have worked with thousands of amazing people.
                 </p>
               </div>
               <div className='mx-auto mt-16 flow-root max-w-2xl sm:mt-20 lg:mx-0 lg:max-w-none'>
