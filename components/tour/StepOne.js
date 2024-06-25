@@ -4,15 +4,18 @@ import { MdWavingHand, MdSnooze } from 'react-icons/md';
 const StepOne = ({ snooze, next, back }) => {
   return (
     <div className='w-full max-w-xl bg-white border-2 border-black flex flex-col shadow-2xl'>
-      <div className='w-full bg-black py-2 px-3 flex items-center justify-between'>
+      <div className='w-full bg-black py-3 px-3 flex items-center justify-between'>
         <div className='w-full flex gap-1 items-center'>
-          <div className=' text-white h3-base'>Your Library, Your Brand.</div>
+          <div className=' text-white h3-base'>
+            The Library is branded to you.
+          </div>
         </div>
         <div className='text-sm text-gray-400'>2/6</div>
       </div>
       <div className='bg-white p-5 lg:p-10 text-lg leading-snug'>
-        Co-Branded content designed to make your employees feel at home. This is
-        not the best line. What is the value?
+        This library is crafted to feel like an extension of you. With intuitive
+        interfaces and customizable features, it ensures that you and your
+        colleagues will feel right at home.
       </div>
       <div className='flex items-end justify-between p-3'>
         <div

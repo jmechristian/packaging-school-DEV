@@ -96,13 +96,13 @@ const Page = ({ customer, lessons }) => {
       });
     }
 
-    if (isStage === 4) {
+    if (isStage === 5) {
       fourRef.current?.scrollIntoView({
         behavior: 'smooth',
       });
     }
 
-    if (isStage === 5) {
+    if (isStage === 4) {
       fiveRef.current?.scrollIntoView({
         behavior: 'smooth',
       });
@@ -146,7 +146,7 @@ const Page = ({ customer, lessons }) => {
         ) : (
           <></>
         )}
-        <div id='one' ref={oneRef} className='relative'>
+        <div id='one' ref={oneRef} className='relative scroll-mt-10'>
           {isStage === 1 ? (
             <div className='top-0 left-20 lg:right-0 absolute z-[60] flex items-center justify-center px-4'>
               <StepOne
@@ -213,12 +213,12 @@ const Page = ({ customer, lessons }) => {
             />
           </div>
           <div id='four' ref={fourRef} className='relative'>
-            {isStage === 4 ? (
+            {isStage === 5 ? (
               <div className='top-20 left-0 absolute z-[60] flex items-center justify-center px-4'>
                 <StepFour
                   snooze={() => snoozeHandler()}
-                  next={() => stepChangeHandler(5)}
-                  back={() => stepChangeHandler(3)}
+                  next={() => stepChangeHandler(6)}
+                  back={() => stepChangeHandler(4)}
                 />
               </div>
             ) : (
@@ -236,12 +236,12 @@ const Page = ({ customer, lessons }) => {
             />
           </div>
           <div id='five' ref={fiveRef} className='relative'>
-            {isStage === 5 ? (
+            {isStage === 4 ? (
               <div className='top-40 left-0 absolute z-[60] flex items-center justify-center px-4'>
                 <StepFive
                   snooze={() => snoozeHandler()}
-                  next={() => stepChangeHandler(6)}
-                  back={() => stepChangeHandler(4)}
+                  next={() => stepChangeHandler(5)}
+                  back={() => stepChangeHandler(3)}
                 />
               </div>
             ) : (

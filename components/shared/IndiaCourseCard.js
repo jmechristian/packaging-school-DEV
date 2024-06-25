@@ -106,6 +106,16 @@ const IndiaCourseCard = ({ course, id, icons, coupon, paymentLink }) => {
     router.push(`/courses/${isCourse.slug}`);
   };
 
+  const cardFlipHandler = async () => {
+    await registgerIndiaCourseClick(
+      isCourse.id,
+      router.asPath,
+      location,
+      isCourse.slug,
+      'FLIP'
+    );
+  };
+
   const cardPurchaseHandler = async () => {
     await registgerIndiaCourseClick(
       isCourse.id,
@@ -232,6 +242,7 @@ const IndiaCourseCard = ({ course, id, icons, coupon, paymentLink }) => {
                     tooltip={'Flip'}
                     bgColor={'bg-white'}
                     fn={() => {
+                      cardFlipHandler();
                       setIsFlipped(!isFlipped);
                     }}
                   >

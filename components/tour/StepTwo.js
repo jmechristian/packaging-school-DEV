@@ -4,15 +4,14 @@ import { MdWavingHand, MdSnooze } from 'react-icons/md';
 const StepTwo = ({ snooze, next, back }) => {
   return (
     <div className='w-full max-w-2xl bg-white border-2 border-black flex flex-col shadow-2xl'>
-      <div className='w-full bg-black py-2 px-3 flex items-center justify-between'>
+      <div className='w-full bg-black py-3 px-3 flex items-center justify-between'>
         <div className='w-full flex gap-1 items-center'>
-          <div className=' text-white h3-base'>Co-Produced Custom Courses</div>
+          <div className=' text-white h3-base'>Infinitely Scalable</div>
         </div>
         <div className='text-sm text-gray-400'>3/6</div>
       </div>
       <div className='bg-white p-5 lg:p-10 text-lg leading-snug'>
-        Courses developed specifically for your company by the industry-leading
-        subject-matter experts.
+        Add existing learning content in many formats.
       </div>
       <div className='flex items-end justify-between p-3'>
         <div

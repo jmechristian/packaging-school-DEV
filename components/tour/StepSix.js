@@ -4,7 +4,7 @@ import { MdMarkUnreadChatAlt, MdSnooze } from 'react-icons/md';
 const StepSix = ({ snooze, next, back }) => {
   return (
     <div className='w-full max-w-2xl bg-white border-2 border-black flex flex-col'>
-      <div className='w-full bg-black py-2 px-3 flex items-center justify-between'>
+      <div className='w-full bg-black py-3 px-3 flex items-center justify-between'>
         <div className='w-full flex gap-1 items-center'>
           <MdMarkUnreadChatAlt size={20} color='white' />
           <div className=' text-white h3-base'>Let&apos;s get started!</div>
