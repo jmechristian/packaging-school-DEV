@@ -251,7 +251,7 @@ const Page = ({ lesson }) => {
               </div>
 
               {/* Sidebar */}
-              <div className='w-full lg:max-w-[280px] h-full bg-dark-dark dark:bg-dark-mid text-white rounded-xl flex flex-col md:items-start md:grid md:grid-cols-3 lg:flex lg:flex-col gap-6 py-2 px-6 md:px-0'>
+              <div className='w-full lg:max-w-[280px] h-full bg-dark-dark dark:bg-dark-mid text-white flex flex-col md:items-start md:grid md:grid-cols-3 lg:flex lg:flex-col gap-6 py-2 px-6 md:px-0'>
                 <div className='flex flex-col justify-center md:items-start items-center gap-6 p-4 mx-auto'>
                   <div className='flex flex-col gap-1.5 '>
                     <div className='flex gap-1 items-center'>

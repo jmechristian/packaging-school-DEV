@@ -4,6 +4,7 @@ import { API } from 'aws-amplify';
 import { getCustomer, listLessons } from '../../../src/graphql/queries';
 import { Disclosure } from '@headlessui/react';
 import { MdSnooze } from 'react-icons/md';
+import { useRouter } from 'next/router';
 import {
   MinusSmallIcon,
   PlusSmallIcon,
@@ -34,6 +35,8 @@ const Page = ({ customer, lessons }) => {
   const threeRef = useRef();
   const fourRef = useRef();
   const fiveRef = useRef();
+
+  const router = useRouter();
 
   const submitHandler = async () => {};
 
@@ -69,8 +72,7 @@ const Page = ({ customer, lessons }) => {
   };
 
   const snoozeHandler = () => {
-    stepChangeHandler(-1);
-    setIsSnooze(true);
+    router.push('/certifications');
   };
 
   useEffect(() => {

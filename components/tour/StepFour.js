@@ -1,5 +1,5 @@
 import React from 'react';
-import { MdWavingHand, MdSnooze } from 'react-icons/md';
+import { MdWavingHand, MdSnooze, MdDirections } from 'react-icons/md';
 
 const StepFour = ({ snooze, next, back }) => {
   return (
@@ -19,8 +19,8 @@ const StepFour = ({ snooze, next, back }) => {
           className='flex items-center gap-0.5 cursor-pointer'
           onClick={() => snooze()}
         >
-          <MdSnooze size={16} color='gray' />
-          <div className='font-bold text-sm text-gray-500'>Snooze</div>
+          <MdDirections size={16} color='gray' />
+          <div className='font-bold text-sm text-gray-500'>Exit Tour</div>
         </div>
         <div className='flex items-center gap-3'>
           <div
