@@ -23,12 +23,12 @@ const CourseInfo = ({
         <div className='flex flex-col gap-4 border-b border-b-slate-200 dark:border-b-slate-700 p-4 md:p-6 pt-8 lg:pt-8 lg:p-8'>
           <div className='flex flex-col gap-10'>
             {embedid ? (
-              <div className='block h-full max-w-md aspect-[16/9]'>
+              <div className='block max-w-md aspect-[16/9]'>
                 <VideoPlayer videoEmbedLink={embedid} hideSupport={true} />
               </div>
             ) : (
               <div
-                className='block h-full max-w-md aspect-[4/3] bg-cover bg-center'
+                className='block max-w-md aspect-[4/3] bg-cover bg-center'
                 style={{
                   backgroundImage: `url(${
                     seoImage
@@ -44,7 +44,7 @@ const CourseInfo = ({
                 {subscriptionLink && subscriptionPrice ? (
                   <div className='grid grid-cols-2 border border-black'>
                     <div
-                      className='w-full h-full flex flex-col justify-center items-center border-l border-black p-5 gap-1.5 bg-white hover:bg-neutral-200 transition-all ease-in cursor-pointer'
+                      className='w-full flex flex-col justify-center items-center border-l border-black p-5 gap-1.5 bg-white hover:bg-neutral-200 transition-all ease-in cursor-pointer'
                       onClick={() => window.open(`${link}`, '_blank')}
                     >
                       <div className='h4-base'>Buy Now</div>
@@ -59,7 +59,7 @@ const CourseInfo = ({
                       </div>
                     </div>
                     <div
-                      className='w-full h-full flex flex-col justify-center items-center border-l border-black p-5 gap-1.5 bg-base-mid hover:bg-neutral-800 transition-all ease-in cursor-pointer'
+                      className='w-full flex flex-col justify-center items-center border-l border-black p-5 gap-1.5 bg-base-mid hover:bg-neutral-800 transition-all ease-in cursor-pointer'
                       onClick={() =>
                         window.open(`${subscriptionLink}`, '_blank')
                       }
