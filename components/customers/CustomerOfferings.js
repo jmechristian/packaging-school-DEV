@@ -36,6 +36,24 @@ const CustomerOfferings = ({ featured, reference }) => {
         external={true}
         link_text={'Select Topic'}
       />
+      <WiredCourseCard
+        id={'8bc8c4ff-6c1d-40cd-9a2e-e9a71e826fa8'}
+        reference={reference}
+        external={true}
+        link_text={'Select Topic'}
+      />
+      <WiredCourseCard
+        id={'83b10e68-0bb0-44e6-a746-cfca4cbbe56e'}
+        reference={reference}
+        external={true}
+        link_text={'Select Topic'}
+      />
+      <WiredCourseCard
+        id={'e0dcbb7d-5a5a-4e36-a907-772a60766ccd'}
+        reference={reference}
+        external={true}
+        link_text={'Select Topic'}
+      />
     </motion.div>
   );
 };
