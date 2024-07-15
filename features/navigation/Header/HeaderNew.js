@@ -87,7 +87,7 @@ export default function HeaderNew() {
             <div className='fixed inset-0 bg-black bg-opacity-25' />
           </Transition.Child>
 
-          <div className='fixed inset-0 z-40 flex'>
+          <div className='fixed inset-0 z-40 flex max-h-screen'>
             <Transition.Child
               as={Fragment}
               enter='transition ease-in-out duration-300 transform'
@@ -97,10 +97,10 @@ export default function HeaderNew() {
               leaveFrom='translate-x-0'
               leaveTo='-translate-x-full'
             >
-              <Dialog.Panel className='relative flex w-full max-w-full flex-col justify-between overflow-y-auto bg-base-brand dark:bg-dark-dark shadow-xl'>
+              <Dialog.Panel className='relative flex w-full h-full max-w-full flex-col justify-between overflow-y-scroll bg-base-brand dark:bg-dark-dark shadow-xl'>
                 <div className='flex w-full justify-between p-4 mb-5'>
                   <Link href='/'>
-                    <div className='h-full w-44'>
+                    <div className=' w-44'>
                       <LogoWhite />
                     </div>
                   </Link>

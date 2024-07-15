@@ -71,8 +71,8 @@ const CCCourseMain = ({ data }) => {
                   <div className='h3-base'>Contact Hours:</div>
                   <div className='text-lg'>
                     Ten hours over the course of five weeks (includes six live
-                    virtual meetings with Cory!) (content will be progressively
-                    disclosed as assigned per week)
+                    virtual meetings with Cory!) where content will be
+                    progressively disclosed as assigned per week.
                   </div>
                 </div>
                 <div className='flex flex-col gap-3'>
@@ -165,7 +165,7 @@ const CCCourseMain = ({ data }) => {
                 </div>
                 <div>
                   <span className='font-bold block text-base-brand'>
-                    Long-term Support and Alumni Networks:
+                    Long-Term Support and Alumni Networks:
                   </span>
                   Cohorts often continue to stay connected even after completing
                   the program. This can lead to long-term professional
