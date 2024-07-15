@@ -8,6 +8,7 @@ import CourseContentMenu from '../../components/courses/CourseContentMenu';
 import { lMSCoursesBySlug } from '../../src/graphql/queries';
 import { API } from 'aws-amplify';
 import Meta from '../../components/shared/Meta';
+import CCCourseBottom from '../../components/courses/CCCourseBottom';
 
 const Page = ({ course }) => {
   const dispatch = useDispatch();
@@ -21,7 +22,7 @@ const Page = ({ course }) => {
       />
       <div className='relative'>
         <CCCourseMain data={course} />
-        <CourseBottom
+        <CCCourseBottom
           category={course && course.category}
           id={course && course.id}
         />

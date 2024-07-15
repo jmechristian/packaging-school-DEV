@@ -165,15 +165,6 @@ const CCCourseMain = ({ data }) => {
                 </div>
                 <div>
                   <span className='font-bold block text-base-brand'>
-                    Accountability and Commitment:
-                  </span>
-                  Being part of a cohort encourages commitment to the program
-                  and deadlines. Peer accountability can motivate students to
-                  stay focused and dedicated to their studies, reducing
-                  procrastination and enhancing productivity.
-                </div>
-                <div>
-                  <span className='font-bold block text-base-brand'>
                     Long-term Support and Alumni Networks:
                   </span>
                   Cohorts often continue to stay connected even after completing
