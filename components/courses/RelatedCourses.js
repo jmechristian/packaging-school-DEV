@@ -3,6 +3,7 @@ import { motion, useMotionValue, animate, useScroll } from 'framer-motion';
 import Scroller from '../Scroller';
 import CourseCard from '../course-card/CourseCard';
 import { useSelector } from 'react-redux';
+import LMSCourseCard from '../shared/LMSCourseCard';
 
 const RelatedCourses = ({ category, id }) => {
   const desktopRef = useRef();
@@ -39,19 +40,7 @@ const RelatedCourses = ({ category, id }) => {
         {isRelated &&
           isRelated.slice(0, 8).map((course, i) => (
             <div key={course.id} className='inline-block'>
-              <CourseCard
-                courseId={course.id}
-                title={course.title}
-                desc={course.subheadline}
-                video={course.preview}
-                hours={course.hours}
-                lessons={course.lessons}
-                price={course.price}
-                slug={course.slug}
-                category={course.category}
-                savedCourses={user?.savedCourses}
-                type={course.type ? course.type : undefined}
-              />
+              <LMSCourseCard id={course.id} courses={isRelated} />
             </div>
           ))}
       </div>
