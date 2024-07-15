@@ -4,6 +4,7 @@ import CourseInfo from './CourseInfo';
 import CourseObjectives from './CourseObjectives';
 import { motion } from 'framer-motion';
 import CCCourseIntro from './CCCourseIntro';
+import CCCourseInfo from './CCCourseInfo';
 
 const CCCourseMain = ({ data }) => {
   return (
@@ -40,7 +41,7 @@ const CCCourseMain = ({ data }) => {
               />
             </div>
             <div className='hidden lg:inline-grid lg:col-span-2 pl-8'>
-              <CourseInfo
+              <CCCourseInfo
                 embedid={data.preview}
                 videos={data.videos}
                 price={data.price}
