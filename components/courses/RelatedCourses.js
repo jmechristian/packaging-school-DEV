@@ -37,7 +37,7 @@ const RelatedCourses = ({ category, id }) => {
     <div className='overflow-hidden' ref={desktopRef}>
       <div className='grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 container-7xl gap-4'>
         {isRelated &&
-          isRelated.map((course, i) => (
+          isRelated.slice(0, 8).map((course, i) => (
             <div key={course.id} className='inline-block'>
               <CourseCard
                 courseId={course.id}
