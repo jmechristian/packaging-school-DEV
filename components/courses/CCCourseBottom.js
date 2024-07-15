@@ -12,7 +12,9 @@ const CCCourseBottom = ({ category, id }) => {
           <div className='text-center h2-base'>
             Discover the Impact of Our Courses from Your Peers!
           </div>
-          <ScrollingTestimonials />
+          <div className='max-w-full overflow-hidden'>
+            <ScrollingTestimonials />
+          </div>
         </div>
         <div>
           <div className='container__inner'>
