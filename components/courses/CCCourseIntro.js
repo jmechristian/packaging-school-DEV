@@ -50,9 +50,7 @@ const CCCourseIntro = ({
           <h1>{title}</h1>
         </div>
         <CourseDetails hours={hours} lessons={lessons} videos={videos} />
-        <div className='text-slate-700 dark:text-gray-400 text-lg'>
-          {subtitle}
-        </div>
+        <div className='text-slate-700 dark:text-white text-lg'>{subtitle}</div>
       </div>
       <div className='grid grid-cols-5 w-full mt-3 max-w-sm'>
         <div
@@ -62,14 +60,19 @@ const CCCourseIntro = ({
               "url('https://packschool.s3.amazonaws.com/sustainable-packaging-Podcast-logo-2022.png')",
           }}
         ></div>
-        <div className='col-span-3 flex flex-col gap-0'>
+        <div className='col-span-3 flex flex-col gap-0 dark:text-white'>
           <div className='font-semibold leading-snug'>
             Cory Connors, Sustainable Packaging Consultant
           </div>
           <div>Landsberg Orora</div>
           <div>Portland, Oregon </div>
-          <div className='cursor-pointer font-semibold underline'>
-            Corygated.com
+          <div
+            className='cursor-pointer font-semibold underline'
+            onClick={() =>
+              window.open('https://www.linkedin.com/in/cory-connors/', '_blank')
+            }
+          >
+            LinkedIn
           </div>
         </div>
       </div>

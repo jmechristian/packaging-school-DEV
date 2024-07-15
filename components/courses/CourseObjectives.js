@@ -16,7 +16,7 @@ const CourseObjectives = ({ what, items }) => {
         <div className='font-semibold font-greycliff text-2xl black__white '>
           What You Will Learn
         </div>
-        <div className='text-slate-700 dark:text-gray-400 text-lg'>{what}</div>
+        <div className='text-slate-700 dark:text-white text-lg'>{what}</div>
       </div>
       {items && items.length > 1 && (
         <div className='flex flex-col gap-6'>
@@ -28,7 +28,7 @@ const CourseObjectives = ({ what, items }) => {
               className='flex gap-1 items-center'
               onClick={() => setShowObjectives(!showObjectives)}
             >
-              <div className='text-neutral-700 dark:text-neutral-400'>
+              <div className='text-neutral-700 dark:text-white'>
                 {showObjectives ? 'Hide' : 'View'} All Objectives
               </div>
               <RotatingCaret
@@ -57,7 +57,7 @@ const CourseObjectives = ({ what, items }) => {
                         <motion.div>
                           <CheckBadgeIcon className='w-6 h-6 fill-base-brand' />
                         </motion.div>
-                        <motion.div className='gray__white text-lg'>
+                        <motion.div className='dark:text-white text-lg'>
                           {item}
                         </motion.div>
                       </motion.div>
@@ -70,7 +70,7 @@ const CourseObjectives = ({ what, items }) => {
                         <motion.div>
                           <CheckBadgeIcon className='w-6 h-6 fill-base-brand' />
                         </motion.div>
-                        <motion.div className='gray__white text-lg'>
+                        <motion.div className='dark:text-white text-lg'>
                           {item}
                         </motion.div>
                       </motion.div>
