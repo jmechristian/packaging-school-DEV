@@ -22,7 +22,7 @@ const CCCourseMain = ({ data }) => {
           }}
           key={data.courseId}
         >
-          <div className='grid grid-cols-1 lg:grid-cols-5 py-16'>
+          <div className='grid grid-cols-1 lg:grid-cols-5 pb-16'>
             <div className='flex flex-col gap-10 lg:gap-16 lg:col-span-3'>
               <CCCourseIntro
                 id={data.courseId}
