@@ -70,7 +70,7 @@ const WhyCohort = () => {
                 {it.icon}
               </div>
               <div className='h4-base text-base-brand'>{it.title}</div>
-              <div className='text-sm leading-snug tracking-normal'>
+              <div className='text-sm leading-snug tracking-normal dark:text-neutral-700'>
                 {it.content}
               </div>
             </div>
