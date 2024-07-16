@@ -9,7 +9,7 @@ const CCCourseBottom = ({ category, id }) => {
     <section className='bg-white dark:bg-slate-300'>
       <div className='py-16 flex flex-col gap-16'>
         <div className='flex flex-col items-center gap-10'>
-          <div className='text-center h2-base'>
+          <div className='text-center h2-base px-5'>
             Discover the Impact of Our Courses from Your Peers!
           </div>
           <div className='max-w-full overflow-hidden'>
@@ -18,7 +18,7 @@ const CCCourseBottom = ({ category, id }) => {
         </div>
         <div>
           <div className='container__inner'>
-            <div className='pb-6'>
+            <div className='pb-6 mt-10'>
               <div className='font-bold font-greycliff text-2xl lg:text-3xl'>
                 <h3>Related Courses</h3>
               </div>
