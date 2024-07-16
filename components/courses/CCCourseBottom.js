@@ -10,7 +10,7 @@ const CCCourseBottom = ({ category, id }) => {
       <div className='py-16 flex flex-col gap-16'>
         <div className='flex flex-col items-center gap-10'>
           <div className='text-center h2-base px-5'>
-            Discover the Impact of Our Courses from Your Peers!
+            Discover the Impact of Our Courses From Your Peers!
           </div>
           <div className='max-w-full overflow-hidden'>
             <ScrollingTestimonials />

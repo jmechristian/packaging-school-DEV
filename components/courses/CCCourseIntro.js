@@ -22,8 +22,9 @@ const CCCourseIntro = ({
       <div className='w-full bg-green-600 p-3 flex items-center gap-2 border-2 border-black'>
         <div className='flex flex-col gap-1'></div>
         <div className='text-white font-semibold uppercase'>
-          Sign up between now and July 31 (start date Aug. 1)— <br />
-          only 10 spots available
+          Sign up between now and July 31 (start date Aug. 1)
+          <br />
+          <i>only 10 spots available!</i>
         </div>
       </div>
       <div className='flex flex-wrap flex-row gap-3'>
