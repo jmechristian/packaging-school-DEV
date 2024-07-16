@@ -27,7 +27,7 @@ const ScrollingTestimonials = () => {
   }, []);
 
   return (
-    <div className='bg-white relative'>
+    <div className='relative'>
       <div className='px-4 pt-4 overflow-x-hidden relative'>
         <div className='flex items-center mb-4'>
           <TestimonialList
@@ -95,7 +95,7 @@ const TestimonialList = ({
         return (
           <div
             key={t.id}
-            className='shrink-0 w-[500px] h-[265px] flex flex-col overflow-hidden group items-start relative border-2 border-black transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 shadow-[4px_4px_0px_rgba(0,0,0,0.20)] hover:shadow-[6px_6px_0px_rgba(0,0,0,0.20)]'
+            className='shrink-0 bg-white w-[500px] h-[265px] flex flex-col overflow-hidden group items-start relative border-2 border-black transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 shadow-[4px_4px_0px_rgba(0,0,0,0.20)] hover:shadow-[6px_6px_0px_rgba(0,0,0,0.20)]'
           >
             <div className='absolute right-2 top-2 z-20'>
               {t.tags.includes('CMPM') ? (
