@@ -63,7 +63,7 @@ const WhyCohort = () => {
         <div className='grid lg:grid-cols-3 gap-5'>
           {content.map((it) => (
             <div
-              className='w-full h-full border-white bg-white border flex flex-col gap-3 p-6'
+              className='w-full border-white bg-white border flex flex-col gap-3 p-6'
               key={it.id}
             >
               <div className='w-12 h-12 bg-clemson rounded-full flex items-center justify-center'>
