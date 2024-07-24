@@ -16,15 +16,15 @@
   }
 
   .h2-base {
-    @apply font-semibold text-3xl md:text-4xl leading-tight lg:leading-tight tracking-[-0.04em];
+    @apply font-semibold text-2xl md:text-4xl leading-tight lg:leading-tight tracking-[-0.04em];
   }
 
   .h3-base {
-    @apply font-semibold text-2xl lg:text-2xl leading-tight lg:leading-tight tracking-[-0.04em];
+    @apply font-semibold text-xl lg:text-2xl leading-tight lg:leading-tight tracking-[-0.04em];
   }
 
   .h4-base {
-    @apply font-bold lg:text-lg leading-tight lg:leading-tight tracking-tight;
+    @apply font-bold lg:text-lg leading-tight lg:leading-tight tracking-[-0.02em];
   }
 
   .container-7xl {
@@ -157,6 +157,18 @@
   .wp-content > p {
     @apply py-9;
   }
+}
+
+.faqs > p {
+  @apply mb-4;
+}
+
+.faqs ul {
+  @apply list-disc !important;
+}
+
+.faqs ul li {
+  @apply ml-8;
 }
 
 @tailwind components;
