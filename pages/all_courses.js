@@ -47,7 +47,7 @@ const Page = () => {
       const filter = router.query.category;
       const courses = await API.graphql({
         query: listLMSCourses,
-        variables: { filter: { type: { ne: 'CUSTOMER' } } },
+        variables: { filter: { type: { ne: 'CUSTOMER' } }, limit: 300 },
       });
 
       setIsCourses(courses.data.listLMSCourses.items);
