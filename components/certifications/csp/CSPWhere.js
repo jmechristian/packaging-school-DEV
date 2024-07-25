@@ -26,7 +26,7 @@ const CSPWhere = () => {
               className='w-full md:w-fit py-2 md:pl-6 md:pr-9 bg-base-brand cursor-pointer rounded-lg mt-9 flex gap-2 justify-center items-center'
               onClick={() =>
                 window.open(
-                  'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ35Hm4GpLbs5oMIYuUcefaOcrSb_F1jFkU_9mCus2H5P9gIObXySikly5zZxVPXuiw-Ou5wZwfg',
+                  'https://calendar.app.google/qUZMKuFbF7NhpxgL8',
                   '_blank'
                 )
               }

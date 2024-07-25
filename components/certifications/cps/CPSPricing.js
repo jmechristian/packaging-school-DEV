@@ -47,7 +47,7 @@ const CPSPricing = () => {
           className='w-full lg:w-fit py-2 lg:pl-6 lg:pr-9 bg-base-brand cursor-pointer rounded-lg mt-9 flex gap-2 items-center'
           onClick={() =>
             window.open(
-              'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ35Hm4GpLbs5oMIYuUcefaOcrSb_F1jFkU_9mCus2H5P9gIObXySikly5zZxVPXuiw-Ou5wZwfg',
+              'https://calendar.app.google/qUZMKuFbF7NhpxgL8',
               '_blank'
             )
           }

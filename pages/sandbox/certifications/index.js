@@ -288,9 +288,7 @@ const Index = () => {
           </div>
           <div className='w-fit mx-auto mt-3'>
             <BrutalButton
-              link={
-                'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ35Hm4GpLbs5oMIYuUcefaOcrSb_F1jFkU_9mCus2H5P9gIObXySikly5zZxVPXuiw-Ou5wZwfg'
-              }
+              link={'https://calendar.app.google/qUZMKuFbF7NhpxgL8'}
               background={'bg-clemson'}
               text={'Introduce Yourself'}
               textColor={'text-black'}
