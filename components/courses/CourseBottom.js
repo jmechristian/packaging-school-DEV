@@ -2,13 +2,19 @@ import React from 'react';
 import RelatedCourses from './RelatedCourses';
 import SkillsCTA from '../SkillsCTA';
 import StudentSuccess from '../StudentSuccess';
+import CourseTestimonials from './CourseTestimonials';
 
 const CourseBottom = ({ category, id }) => {
   return (
     <section className='bg-white dark:bg-slate-300'>
       <div className='py-16 flex flex-col gap-16'>
-        <div className='container__inner'>
-          <StudentSuccess />
+        <div className='flex flex-col items-center gap-10'>
+          <div className='text-center h2-base px-5 w-full max-w-sm md:max-w-full'>
+            Discover the Impact of Our Courses From Your Peers!
+          </div>
+          <div className='max-w-full overflow-hidden'>
+            <CourseTestimonials />
+          </div>
         </div>
         <div>
           <div className='container__inner'>
