@@ -33,31 +33,27 @@ const FeaturedLesson = ({ less }) => {
     );
   return less ? (
     <div className=' relative w-full h-full border-2 border-black p-6 shadow-[6px_6px_0px_rgba(0,0,0,0.20)] flex flex-col gap-5 '>
-      <div className='w-24 h-24 rounded-full border border-black bg-brand-yellow flex items-center justify-center absolute top-2.5 lg:-left-5 -left-2'>
-        <div className='w-20 h-20 flex items-center justify-center'>
-          {less.type === 'LOTM' ? (
-            <div className='w-full flex items-center justify-center'>
-              <Image
-                src={
-                  'https://packschool.s3.amazonaws.com/LOTM+Logo+Final-Black.png'
-                }
-                width={1699}
-                height={874}
-                alt='LOTM Logo'
-              />
-            </div>
-          ) : (
-            <div className='w-full flex items-center justify-center p-2 -mt-3'>
-              <Image
-                src={'https://packschool.s3.amazonaws.com/ROTM-logo.png'}
-                width={500}
-                height={482}
-                alt='ROTM Logo'
-              />
-            </div>
-          )}
+      {less.type === 'LOTM' && (
+        <div className='w-24 h-24 rounded-full border border-black bg-brand-yellow flex items-center justify-center absolute top-2.5 lg:-left-5 -left-2'>
+          <div className='w-20 h-20 flex items-center justify-center'>
+            {less.type === 'LOTM' ? (
+              <div className='w-full flex items-center justify-center'>
+                <Image
+                  src={
+                    'https://packschool.s3.amazonaws.com/LOTM+Logo+Final-Black.png'
+                  }
+                  width={1699}
+                  height={874}
+                  alt='LOTM Logo'
+                />
+              </div>
+            ) : (
+              <></>
+            )}
+          </div>
         </div>
-      </div>
+      )}
+
       <div className='flex flex-col md:flex-row h-full gap-5 items-start'>
         <div className='lg:grid w-full h-full'>
           <div
