@@ -191,7 +191,7 @@ const Page = ({ customer }) => {
         <title>Packaging School | Packaging Distributors of America</title>
         <meta name='robots' content='noindex,nofollow' />
       </Head>
-      <div className='w-full max-w-7xl px-3 md:px-6 lg:px-0 flex flex-col gap-4 md:gap-24 py-5 md:py-6 lg:py-16 mx-auto'>
+      <div className='w-full max-w-7xl px-3 md:px-6 lg:px-0 flex flex-col gap-10 md:gap-24 py-5 md:py-6 lg:py-16 mx-auto'>
         <LibraryHeader
           pdf={
             'https://packschool.s3.amazonaws.com/PDA-Instructions-for-Libary.pdf'

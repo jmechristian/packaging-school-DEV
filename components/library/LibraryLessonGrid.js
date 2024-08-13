@@ -93,7 +93,15 @@ const SocialGridItem = ({ lesson }) => {
           </div>
         </div>
         <div className='flex w-full max-w-1/2 items-center'>
-          <div className='flex items-center justify-end gap-1 mt-2 cursor-pointer w-full'>
+          <div
+            className='flex items-center justify-end gap-1 mt-2 cursor-pointer w-full'
+            onClick={() =>
+              window.open(
+                `https://www.packagingschool.com/lessons/${lesson.slug}`,
+                '_blank'
+              )
+            }
+          >
             <div className='text-sm uppercase font-semibold underline'>
               View Article
             </div>
