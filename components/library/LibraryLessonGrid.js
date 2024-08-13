@@ -199,7 +199,7 @@ const LibraryLessonGrid = () => {
             ref={libraryRef}
           >
             <div
-              className='w-full border h-full aspect-[16/9] bg-cover bg-center group-hover:-translate-x-1 group-hover:shadow-[6px_6px_0px_black] group-hover:-translate-y-2 transition-all ease-in-out'
+              className='w-full border max-h-[400px] aspect-[16/9] bg-cover bg-center group-hover:-translate-x-1 group-hover:shadow-[6px_6px_0px_black] group-hover:-translate-y-2 transition-all ease-in-out'
               style={{
                 backgroundImage: `url(${
                   paginatedItems[0].screengrab
