@@ -13,7 +13,15 @@ const ReactGoogleSlides = dynamic(() => import('react-google-slides'), {
   ssr: false,
 });
 
-const LibraryHeader = ({ displayName, email, logo, slides, video, pdf }) => {
+const LibraryHeader = ({
+  displayName,
+  email,
+  logo,
+  slides,
+  video,
+  pdf,
+  subhead,
+}) => {
   const [isMediaType, setIsMediaType] = useState('SLIDES');
   return (
     <div className='w-full h-full flex flex-col md:items-center lg:flex-row lg:justify-between gap-12 lg:px-12 xl:px-0 lg:gap-16'>
@@ -29,16 +37,26 @@ const LibraryHeader = ({ displayName, email, logo, slides, video, pdf }) => {
           <div>
             <h1 className='h2-base'>Welcome, {displayName} Members</h1>
           </div>
-          <div className='text-lg leading-snug max-w-xl w-full'>
-            Explore the {displayName} Knowledge Library below. To learn how to
-            make the most of your library, select your preferred instructional
-            method to the right (advance through the slides or download them as
-            a PDF). For additional assistance, feel free to contact us at{' '}
-            <a href={`mailto:${email}`} rel='noreferrer' target='_blank'>
-              {email}
-            </a>
-            .
-          </div>
+          {subhead ? (
+            <div className='text-lg leading-snug w-full max-w-xl flex flex-col gap-3'>
+              <div>{subhead}</div>
+              <div className='font-bold'>
+                Find your library courses below. If you have any questions,
+                please reach out to <a href={`mailto:${email}`}>{email}</a>
+              </div>
+            </div>
+          ) : (
+            <div className='text-lg leading-snug max-w-xl w-full'>
+              Explore the {displayName} Knowledge Library below. To learn how to
+              make the most of your library, select your preferred instructional
+              method to the right (advance through the slides or download them
+              as a PDF). For additional assistance, feel free to contact us at{' '}
+              <a href={`mailto:${email}`} rel='noreferrer' target='_blank'>
+                {email}
+              </a>
+              .
+            </div>
+          )}
         </div>
       </div>
       <div className='flex flex-col justify-center items-center border-2 border-black bg-white shadow-[6px_6px_0px_rgba(0,0,0,0.20)] h-full w-full max-w-[580px]'>
@@ -46,21 +64,31 @@ const LibraryHeader = ({ displayName, email, logo, slides, video, pdf }) => {
           <ReactGoogleSlides
             width={'100%'}
             height={'100%'}
-            slidesLink='https://docs.google.com/presentation/d/1njv_Q25JTyNzsDVjP7GqIq_U3Udfg7DSpgoBP-gqLWg/edit?usp=sharing'
+            slidesLink={
+              slides
+                ? slides
+                : 'https://docs.google.com/presentation/d/1njv_Q25JTyNzsDVjP7GqIq_U3Udfg7DSpgoBP-gqLWg/edit?usp=sharing'
+            }
             position={1}
             showControls
             loop
           />
         </div>
-        <div
-          className='w-full flex items-center justify-center py-4 gap-1 cursor-pointer'
-          onClick={() => {}}
-        >
-          <div>
-            <DocumentArrowDownIcon className='w-5 h-5' />
+        {pdf ? (
+          <div
+            className='w-full flex items-center justify-center py-4 gap-1 cursor-pointer'
+            onClick={() => {
+              window.open(pdf, '_blank');
+            }}
+          >
+            <div>
+              <DocumentArrowDownIcon className='w-5 h-5' />
+            </div>
+            <div className='text-sm font-medium'>Download as PDF</div>
           </div>
-          <div className='text-sm font-medium'>Download as PDF</div>
-        </div>
+        ) : (
+          <></>
+        )}
       </div>
     </div>
   );

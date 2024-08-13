@@ -13,6 +13,7 @@ const nextConfig = {
       'psupdatetemp.wpengine.com',
       'psadmin.s3.amazonaws.com',
       'media.licdn.com',
+      'packmedia54032-staging.s3.amazonaws.com',
     ],
   },
   async redirects() {
