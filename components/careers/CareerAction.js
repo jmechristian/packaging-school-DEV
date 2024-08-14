@@ -159,9 +159,9 @@ const CareerAction = ({
             <Link
               href='/certificates'
               aria-describedby='Certificate of Mastery in Packaging Management'
-              className='bg-base-mid text-white shadow-sm hover:bg-base-dark focus-visible:outline-base-mid mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2'
               // : 'bg-white/10 text-white hover:bg-white/20 focus-visible:outline-white'
-            >
+              className='bg-base-mid text-white shadow-sm hover:bg-base-dark focus-visible:outline-base-mid mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2'
+              legacyBehavior>
               <div className='bg-base-mid text-white shadow-sm hover:bg-base-dark focus-visible:outline-base-mid mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2'>
                 View Certificates
               </div>
@@ -299,7 +299,7 @@ const CareerAction = ({
               <Link
                 href='/all_courses'
                 aria-describedby='Certificate of Mastery in Packaging Management'
-              >
+                legacyBehavior>
                 <div className='bg-white/10 cursor-pointer text-white hover:bg-white/20 focus-visible:outline-white bg-base-mid shadow-sm hover:bg-indigo-400 mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2'>
                   View Courses
                 </div>

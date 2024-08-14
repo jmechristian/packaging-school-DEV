@@ -22,7 +22,7 @@ const FooterCourses = () => {
       </div>
       <div className='grid grid-cols-2 gap-y-1 gap-x-8 lg:gap-x-4 justify-between'>
         <div className='flex flex-col gap-1'>
-          <Link className='w-fit' href='/all_courses'>
+          <Link className='w-fit' href='/all_courses' legacyBehavior>
             <div className='text-gray-500 dark:text-gray-500 cursor-pointer'>
               All Courses
             </div>

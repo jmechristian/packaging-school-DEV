@@ -57,10 +57,12 @@ const Page = () => {
               </span>
             </p>
             <div className='mt-10 flex items-center gap-x-12'>
-              <Link href='/sws-bmw-survey'>
-                <a className='rounded-md text-lg bg-clemson px-8 py-2.5 font-semibold text-white shadow-sm hover:bg-clemson-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-clemson'>
+              <Link
+                href='/sws-bmw-survey'
+                className='rounded-md text-lg bg-clemson px-8 py-2.5 font-semibold text-white shadow-sm hover:bg-clemson-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-clemson'>
+                
                   Yes
-                </a>
+                
               </Link>
               <a
                 href='https://learn.packagingschool.com/users/sign_in'

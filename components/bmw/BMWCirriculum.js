@@ -31,9 +31,9 @@ const BMWCirriculum = () => {
       </div>
       <div className='w-full mt-6 bg-clemson  py-4 text-center rounded'>
         <Link href={'/sws-bmw-start-survey'} className='w-full'>
-          <a className='w-full rounded-lg  text-white font-bold text-lg'>
+          
             Start Here: Survey
-          </a>
+          
         </Link>
       </div>
     </div>

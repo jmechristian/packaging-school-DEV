@@ -107,10 +107,12 @@ const CPSPricing = () => {
                   USD
                 </span>
               </p>
-              <Link href='/certificate-of-packaging-science-application'>
-                <a className='mt-10 block w-full rounded-md bg-clemson px-3 py-3 text-center text-lg font-semibold text-white shadow-sm hover:bg-clemson-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-clemson'>
+              <Link
+                href='/certificate-of-packaging-science-application'
+                className='mt-10 block w-full rounded-md bg-clemson px-3 py-3 text-center text-lg font-semibold text-white shadow-sm hover:bg-clemson-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-clemson'>
+                
                   Apply Now
-                </a>
+                
               </Link>
               <p className='mt-6 text-xs leading-4 text-gray-600'>
                 Invoices and receipts available for easy company reimbursement

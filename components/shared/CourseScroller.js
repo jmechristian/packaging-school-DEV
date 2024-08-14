@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { client } from '../../helpers/apollo-client';
 import CourseCard from '../course-card/CourseCard';
 import { useSelector } from 'react-redux';
 import Scroller from '../Scroller';
@@ -91,7 +90,9 @@ const CourseScroller = ({
             </div>
           </div>
           <div className='bg-white border border-slate-600 rounded-lg p-3 font-greycliff hidden lg:block font-semibold'>
-            <Link href={link}>{link_text}</Link>
+            <Link href={link} legacyBehavior>
+              {link_text}
+            </Link>
           </div>
         </div>
       </div>

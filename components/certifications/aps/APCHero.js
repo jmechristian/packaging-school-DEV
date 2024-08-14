@@ -1,7 +1,6 @@
 import React from 'react';
 import HeadlineMotion from '../../../helpers/HeadlineMotion';
 import FadeIn from '../../../helpers/FadeIn';
-import CertHeroImage from '../../../slices/CertificateHero/components/CertHeroImage';
 import Link from 'next/link';
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';

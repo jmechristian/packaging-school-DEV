@@ -1,9 +1,7 @@
 import React, { useEffect, useMemo, useState, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { MdArrowOutward, MdSearch } from 'react-icons/md';
-import Pagination from '../shared/Pagination';
 import LMSCourseCard from '../shared/LMSCourseCard';
-import { H2 } from '@jmechristian/ps-component-library';
 
 const LibraryCourseGrid = ({ courses, coupon, discount }) => {
   const [isSearchTerm, setIsSearchTerm] = useState('');

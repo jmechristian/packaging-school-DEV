@@ -21,10 +21,11 @@ const WhyUs = () => {
               come take a journey of discovery with us..
             </p>
             <div className='mt-10 flex cursor-pointer'>
-              <Link href='/about'>
-                <a className='text-lg font-greycliff font-bold leading-6 text-clemson'>
-                  Why Choose Us? <span aria-hidden='true'>&rarr;</span>
-                </a>
+              <Link
+                href='/about'
+                className='text-lg font-greycliff font-bold leading-6 text-clemson'>
+                Why Choose Us?<span aria-hidden='true'>&rarr;</span>
+
               </Link>
             </div>
           </div>

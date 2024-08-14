@@ -56,10 +56,12 @@ const CSPWhere = () => {
                   USD
                 </span>
               </p>
-              <Link href='https://learn.packagingschool.com/enroll/2772370?price_id=3600658'>
-                <a className='block w-full rounded-md bg-clemson px-3 py-3 text-center text-lg font-semibold text-white shadow-sm hover:bg-clemson-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-clemson'>
+              <Link
+                href='https://learn.packagingschool.com/enroll/2772370?price_id=3600658'
+                className='block w-full rounded-md bg-clemson px-3 py-3 text-center text-lg font-semibold text-white shadow-sm hover:bg-clemson-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-clemson'>
+                
                   Enroll Now
-                </a>
+                
               </Link>
               <p className='mt-6 text-xs leading-4 text-gray-600'>
                 Invoices and receipts available for easy company reimbursement

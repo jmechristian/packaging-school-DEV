@@ -1,5 +1,4 @@
 import React from 'react';
-import Instructor from './Instructor';
 import CourseItems from './CourseItems';
 import CourseDetails from './CourseDetails';
 
@@ -46,7 +45,6 @@ const CourseIntro = ({
           {subtitle}
         </div>
       </div>
-      {/* <Instructor instructor={instructor} /> */}
       <CourseDetails hours={hours} lessons={lessons} videos={videos} />
       <CourseItems infoSheet={infoSheet} />
     </div>

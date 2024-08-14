@@ -1,6 +1,4 @@
 import React from 'react';
-import Instructor from './Instructor';
-import CourseItems from './CourseItems';
 import CourseDetails from './CourseDetails';
 
 import { setTextColor, setCategoryText } from '../../helpers/utils';
@@ -77,9 +75,6 @@ const CCCourseIntro = ({
           </div>
         </div>
       </div>
-      {/* <Instructor instructor={instructor} /> */}
-
-      {/* <CourseItems infoSheet={infoSheet} /> */}
     </div>
   );
 };

@@ -7,27 +7,27 @@ const FooterCerts = () => {
       <div className='font-extrabold text-sm uppercase tracking-widest dark:text-gray-200 font-greycliff'>
         Certifications
       </div>
-      <Link href={'/certifications/get-to-know-cmpm'}>
+      <Link href={'/certifications/get-to-know-cmpm'} legacyBehavior>
         <p className='text-gray-600 dark:text-gray-500 cursor-pointer'>
           Certificate of Mastery in Packaging Management
         </p>
       </Link>
-      <Link href={'/certifications/get-to-know-cps'}>
+      <Link href={'/certifications/get-to-know-cps'} legacyBehavior>
         <p className='text-gray-600 dark:text-gray-500'>
           Certificate of Packaging Science
         </p>
       </Link>
-      <Link href={'/certifications/get-to-know-apc'}>
+      <Link href={'/certifications/get-to-know-apc'} legacyBehavior>
         <p className='text-gray-600 dark:text-gray-500'>
           Automotive Packaging Certificate
         </p>
       </Link>
-      <Link href={'/certifications/get-to-know-csp'}>
+      <Link href={'/certifications/get-to-know-csp'} legacyBehavior>
         <p className='text-gray-600 dark:text-gray-500'>
           Certificate of Sustainable Packaging
         </p>
       </Link>
-      <Link href={'/food-packaging'}>
+      <Link href={'/food-packaging'} legacyBehavior>
         <p className='text-gray-600 dark:text-gray-500'>
           Food Packaging Certificate
         </p>
