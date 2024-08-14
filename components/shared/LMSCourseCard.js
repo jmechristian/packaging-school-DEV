@@ -20,7 +20,7 @@ import BrutalCircleIconTooltip from './BrutalCircleIconTooltip';
 import { API } from 'aws-amplify';
 import { getLMSCourse } from '../../src/graphql/queries';
 
-const LMSCourseCard = ({ id, icons, coupon, courses }) => {
+const LMSCourseCard = ({ id, icons, coupon, courses, discount }) => {
   const [isFlipped, setIsFlipped] = useState(false);
   const [isCourse, setIsCourse] = useState([]);
   const [isBackgroundColor, setIsBackgroudColor] = useState('bg-clemson');
@@ -84,8 +84,20 @@ const LMSCourseCard = ({ id, icons, coupon, courses }) => {
       isCourse.link,
       'GRID'
     );
-    window.open(isCourse.link, '_blank');
+    coupon
+      ? window.open(isCourse.link + `?${coupon}`, '_blank')
+      : window.open(isLesson.link, '_blank');
   };
+
+  function applyDiscount(originalPrice, discountPercentage) {
+    // Calculate the discount amount
+    const discountAmount = (originalPrice * discountPercentage) / 100;
+
+    // Subtract the discount amount from the original price to get the discounted price
+    const discountedPrice = originalPrice - discountAmount;
+
+    return discountedPrice;
+  }
 
   return (
     <div className='w-[281px] h-[405px] relative mx-auto overflow-hidden'>
@@ -159,11 +171,34 @@ const LMSCourseCard = ({ id, icons, coupon, courses }) => {
                 </div>
               </div>
               {/* BOTTOM */}
-              <div className={`absolute z-20 right-0 left-0 bottom-0 p-1`}>
-                <div className='flex items-end justify-between'>
-                  <div className='pl-3 text-lg font-bold text-white tracking-tight'>
-                    {isCourse.price === 'FREE' ? 'FREE' : '$' + isCourse.price}
-                  </div>
+              <div
+                className={`absolute z-20 right-0 left-0 bottom-0 w-full pb-1`}
+              >
+                <div className='flex items-end justify-between w-full px-1'>
+                  {discount ? (
+                    <div className='flex flex-col items-center'>
+                      <div>
+                        <div className='bg-black text-white font-bold px-2 py-1'>
+                          <div className='text-xl'>
+                            {'$'}
+                            {parseInt(applyDiscount(isCourse.price, discount))}
+                          </div>
+                        </div>
+                        <div className='line-through text-white text-center'>
+                          {isCourse.price === 'FREE'
+                            ? 'FREE'
+                            : '$' + isCourse.price}
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className='text-lg font-bold text-white tracking-tight'>
+                      {isCourse.price === 'FREE'
+                        ? 'FREE'
+                        : '$' + isCourse.price}
+                    </div>
+                  )}
+
                   <div className='grid grid-cols-3 gap-1'>
                     {isCourse.preview ? (
                       <BrutalCircleIconTooltip

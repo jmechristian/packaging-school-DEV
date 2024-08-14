@@ -226,7 +226,11 @@ const Page = ({ customer }) => {
             bg='bg-base-mid'
             bgdark='bg-base-dark'
             content={
-              <LibraryCourseGrid courses={customer && customer.courses.items} />
+              <LibraryCourseGrid
+                courses={customer && customer.courses.items}
+                coupon={'coupon=pscpspda2024'}
+                discount={81.2}
+              />
             }
             highlight={'bg-clemson'}
             bgContent={'bg-neutral-200 border'}
