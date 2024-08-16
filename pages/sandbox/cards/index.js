@@ -2,7 +2,7 @@ import React, { useMemo, useState } from 'react';
 import Card from '../../../components/cards/Card';
 import CardTwo from '../../../components/cards/CardTwo';
 import CardThree from '../../../components/cards/CardThree';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import { useSelector } from 'react-redux';
 import CMPMCard from '../../../components/cards/CMPMCard';
 import Head from 'next/head';

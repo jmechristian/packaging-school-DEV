@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import { useRive, Layout, Fit, Alignment } from '@rive-app/react-canvas';
 import CertCompare from '../../../components/certifications/CertCompare';
 import { GoArrowLeft, GoArrowRight } from 'react-icons/go';

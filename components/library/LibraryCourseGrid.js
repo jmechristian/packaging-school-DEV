@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { MdArrowOutward, MdSearch } from 'react-icons/md';
+
 import LMSCourseCard from '../shared/LMSCourseCard';
 
 const LibraryCourseGrid = ({ courses, coupon, discount }) => {

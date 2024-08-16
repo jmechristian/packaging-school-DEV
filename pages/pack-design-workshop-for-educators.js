@@ -11,7 +11,7 @@ import {
 } from '@heroicons/react/24/outline';
 import { Disclosure, Dialog } from '@headlessui/react';
 import { ChevronRightIcon } from '@heroicons/react/20/solid';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import { useRouter } from 'next/router';
 
 import ClassPackForm from '../components/forms/ClassPackForm';
